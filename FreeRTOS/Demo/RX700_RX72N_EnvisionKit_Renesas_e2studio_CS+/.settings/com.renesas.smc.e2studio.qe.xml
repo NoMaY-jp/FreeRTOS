@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QE>
+<Segment id="Pin">
+<Setting id="44" value="TXD2"/>
+<Setting id="144" value="P07"/>
+<Setting id="45" value="RXD2"/>
+<Setting id="50" value="CLKOUT25M"/>
+<Setting id="141" value="P40"/>
+</Segment>
+<Segment id="Device">
+<Setting id="Series" value="RX700"/>
+<Setting id="Group" value="RX72N"/>
+<Setting id="PartNo" value="R5F572NNHxFB"/>
+<Setting id="PinCount" value="144"/>
+</Segment>
+<Segment id="Component">
+<Setting id="r_bsp" value="FIT"/>
+<Setting id="r_dtc_rx" value="FIT"/>
+<Setting id="FreeRTOS_Object" value=""/>
+<Setting id="r_byteq" value="FIT"/>
+<Setting id="r_gpio_rx" value="FIT"/>
+<Setting id="r_sci_rx" value="FIT"/>
+<Setting id="FreeRTOS_Kernel" value=""/>
+</Segment>
+<Segment id="Clock">
+<Setting id="PCLKD" value="60000.0"/>
+<Setting id="PCLKB" value="60000.0"/>
+<Setting id="CacHocoCLK" value="20000.0"/>
+<Setting id="VCC" value="3.3"/>
+<Setting id="PCLKC" value="60000.0"/>
+<Setting id="BusCLK" value="80000.0"/>
+<Setting id="PCLKA" value="120000.0"/>
+<Setting id="ICLK" value="240000.0"/>
+<Setting id="FCLK" value="60000.0"/>
+<Setting id="SysCLKSrc" value="4.0"/>
+<Setting id="ExtCLK" value="24000.0"/>
+</Segment>
+</QE>
