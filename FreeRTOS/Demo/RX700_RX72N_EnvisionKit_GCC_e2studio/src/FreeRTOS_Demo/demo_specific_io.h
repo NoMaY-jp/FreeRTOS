@@ -28,11 +28,30 @@
 #ifndef LED_IO_H
 #define LED_IO_H
 
-/* Select one of the following defines. Note tha you must change the target device
-on the RX Smart Configrator then genarate code when you change the target board. */
+/* Select one of the following defines. Note that you must change the target device
+by using e2 studio's menu: 'Project' --> 'Change Device'. */
 
 	//#define RSKRX72N
 	#define EnvisionRX72N
+
+/* Moreover, in case of GNURX project, you must exclude 'Change Device for RTOSDemo'
+--> 'Project Files' --> 'src/linker_script.ld' to prevent loosing the following three
+KEEP() statements int the src/linker_script.ld file. */
+
+/*
+	.text 0xFFC00000: AT(0xFFC00000)
+	{
+		*(.text)
+		KEEP(*(.text.*ISR))
+		KEEP(*(.text.*_isr))
+		KEEP(*(.text.*_interrupt))
+		*(.text.*)
+		*(P)
+		etext = .;
+	} > ROM
+*/
+
+/* Board support settings. */
 
 	#ifdef RSKRX72N
 
@@ -99,6 +118,18 @@ on the RX Smart Configrator then genarate code when you change the target board.
 	#ifndef LED0
 		#error The hardware platform is not defined
 	#endif
+
+/* Board Support Data Structures. */
+
+#include "r_sci_rx_if.h"
+#include "r_dtc_rx_if.h"
+
+extern sci_hdl_t xSerialSciHandle;
+extern dtc_transfer_data_t xSerialTxDtcInfo;
+
+/* Board Support Callback Functions. */
+
+extern void vSerialSciCallback( void *pvArgs );
 
 #endif /* LED_IO_H */
 

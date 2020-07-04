@@ -13,7 +13,7 @@
 /* Workaround for warning messages caused by missing 'void' argument prototype.
  */
 void R_SCI_PinSet_SCI2(void);
-////#define R_SCI_PinSet_SCI2() R_SCI_PinSet_SCI2(void)
+void R_SCI_PinSet_SCI9(void);
 
 #if defined(__ICCRX__)
 
@@ -24,14 +24,6 @@ void R_SCI_PinSet_SCI2(void);
 #endif /* defined(__ICCRX__) */
 
 #else /* FIT_PATCH_H */
-
-////#if defined(CG_USER_DEF_H)
-////
-/////* Workaround for missing 'void' argument prototype.
-//// */
-////#undef R_SCI_PinSet_SCI2
-////
-////#endif /* defined(CG_USER_DEF_H) */
 
 #if defined(R_RX_COMPILER_H)
 

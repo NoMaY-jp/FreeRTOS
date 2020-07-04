@@ -9,7 +9,7 @@
 </toolchain>
 </configuration>
 <platform id="R5F572NNHxFB"/>
-<option id="board" value="カスタムユーザボード"/>
+<option id="board" value="Custom User Board"/>
 </general>
 <tool id="Clock">
 <Item current="true" id="vccSetting.isSelected"/>
@@ -292,8 +292,8 @@
 <pinItem allocation="" comments="" direction="None" id="EXTAL" isUsedBySoftware="false" locked="false" status="0"/>
 <pinItem allocation="45" comments="" direction="None" id="RXD2" isUsedBySoftware="true" locked="false" status="0"/>
 <pinItem allocation="44" comments="" direction="None" id="TXD2" isUsedBySoftware="true" locked="false" status="0"/>
-<pinItem allocation="144" comments="" direction="None" id="P07" isUsedBySoftware="false" locked="false" status="65280"/>
-<pinItem allocation="141" comments="" direction="None" id="P40" isUsedBySoftware="false" locked="false" status="65280"/>
+<pinItem allocation="79" comments="" direction="None" id="RXD9" isUsedBySoftware="true" locked="false" status="0"/>
+<pinItem allocation="78" comments="" direction="None" id="TXD9" isUsedBySoftware="true" locked="false" status="0"/>
 </tool>
 <tool id="Interrupt">
 <Item id="BSC_BUSERR" priority="15"/>
@@ -522,7 +522,7 @@
 <Item id="PERIA_INTA255" priority="15"/>
 </tool>
 <tool id="SWComponent" version="1.0.0.0">
-<configuration id="e6bcfc9f-450f-4c80-8fcd-11c8392e11dd" inuse="true" name="FreeRTOS_Kernel">
+<configuration id="cd9c5dcf-9eb1-4458-9c0f-b4dfe68d8930" inuse="true" name="FreeRTOS_Kernel">
 <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to configure kernel setting of FreeRTOS." detailDescription="" display="FreeRTOS_Kernel" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.kernel" version="1.0.0">
 <gridItem id="configUSE_PREEMPTION" selectedIndex="1"/>
 <gridItem id="configUSE_IDLE_HOOK" selectedIndex="1"/>
@@ -592,7 +592,7 @@
 </component>
 <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
 </configuration>
-<configuration id="a7bf9e52-7afd-4e31-8652-146c211702eb" inuse="true" name="FreeRTOS_Object">
+<configuration id="69122a3f-6cfe-4250-bf8a-c770b6604efd" inuse="true" name="FreeRTOS_Object">
 <allocatable id="OBJECT" name="OBJECT">
 <allocatable id="TASK" name="TASK">
 <option defaultValue="0" id="LinkNum" value=""/>
@@ -744,10 +744,10 @@
 <gridItem id="CTS8#/RTS8#/SS8#" selectedIndex="0"/>
 <gridItem id="SCI8" selectedIndex="0"/>
 <gridItem id="SCK9" selectedIndex="0"/>
-<gridItem id="RXD9/SMISO9/SSCL9" selectedIndex="0"/>
-<gridItem id="TXD9/SMOSI9/SSDA9" selectedIndex="0"/>
+<gridItem id="RXD9/SMISO9/SSCL9" selectedIndex="1"/>
+<gridItem id="TXD9/SMOSI9/SSDA9" selectedIndex="1"/>
 <gridItem id="CTS9#/RTS9#/SS9#" selectedIndex="0"/>
-<gridItem id="SCI9" selectedIndex="0"/>
+<gridItem id="SCI9" selectedIndex="1"/>
 <gridItem id="SCK10" selectedIndex="0"/>
 <gridItem id="RXD10/SMISO10/SSCL10" selectedIndex="0"/>
 <gridItem id="TXD10/SMOSI10/SSDA10" selectedIndex="0"/>
@@ -786,7 +786,7 @@
 <gridItem id="SCI_CFG_CH6_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH7_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH8_INCLUDED" selectedIndex="0"/>
-<gridItem id="SCI_CFG_CH9_INCLUDED" selectedIndex="0"/>
+<gridItem id="SCI_CFG_CH9_INCLUDED" selectedIndex="1"/>
 <gridItem id="SCI_CFG_CH10_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH11_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH12_INCLUDED" selectedIndex="0"/>

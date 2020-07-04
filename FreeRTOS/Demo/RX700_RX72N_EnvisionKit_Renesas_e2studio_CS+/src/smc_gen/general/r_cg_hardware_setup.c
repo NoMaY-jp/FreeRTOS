@@ -22,7 +22,7 @@
 * Version      : 1.0.1
 * Device(s)    : R5F572NNHxFB
 * Description  : Initialization file for code generation configurations.
-* Creation Date: 2020-07-03
+* Creation Date: 2020-07-05
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -51,8 +51,9 @@ Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
 
+/* Board Support Data Structures. */
 sci_hdl_t xSerialSciHandle;
-void vSerialSciCallback( void *pvArgs );
+dtc_transfer_data_t xSerialTxDtcInfo;
 
 /* Workaround to execute FIT Board Support Settings */
 void R_CG_Config_Create(void);

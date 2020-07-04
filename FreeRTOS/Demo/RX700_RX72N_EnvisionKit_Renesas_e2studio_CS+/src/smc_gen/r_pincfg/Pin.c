@@ -22,7 +22,7 @@
 * Version      : 1.0.2
 * Device(s)    : R5F572NNHxFB
 * Description  : This file implements SMC pin code generation.
-* Creation Date: 2020-07-03
+* Creation Date: 2020-07-05
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -64,11 +64,21 @@ void R_Pins_Create(void)
     MPC.P12PFS.BYTE = 0x0AU;
     PORT1.PMR.BYTE |= 0x04U;
 
+    /* Set RXD9 pin */
+    MPC.PB6PFS.BYTE = 0x0AU;
+    PORTB.PMR.BYTE |= 0x40U;
+
     /* Set TXD2 pin */
     PORT1.PODR.BYTE |= 0x08U;
     MPC.P13PFS.BYTE = 0x0AU;
     PORT1.PDR.BYTE |= 0x08U;
     // PORT1.PMR.BIT.B3 = 1U; // Please set the PMR bit after TE bit is set to 1.
+
+    /* Set TXD9 pin */
+    PORTB.PODR.BYTE |= 0x80U;
+    MPC.PB7PFS.BYTE = 0x0AU;
+    PORTB.PDR.BYTE |= 0x80U;
+    // PORTB.PMR.BIT.B7 = 1U; // Please set the PMR bit after TE bit is set to 1.
 
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
 }   

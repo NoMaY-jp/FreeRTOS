@@ -11,7 +11,7 @@
 </toolchain>
 </configuration>
 <platform id="R5F572NNHxFB"/>
-<option id="board" value="カスタムユーザボード"/>
+<option id="board" value="Custom User Board"/>
 </general>
 <tool id="Clock">
 <Item current="true" id="vccSetting.isSelected"/>
@@ -294,8 +294,8 @@
 <pinItem allocation="" comments="" direction="None" id="EXTAL" isUsedBySoftware="false" locked="false" status="0"/>
 <pinItem allocation="45" comments="" direction="None" id="RXD2" isUsedBySoftware="true" locked="false" status="0"/>
 <pinItem allocation="44" comments="" direction="None" id="TXD2" isUsedBySoftware="true" locked="false" status="0"/>
-<pinItem allocation="144" comments="" direction="None" id="P07" isUsedBySoftware="false" locked="false" status="65280"/>
-<pinItem allocation="141" comments="" direction="None" id="P40" isUsedBySoftware="false" locked="false" status="65280"/>
+<pinItem allocation="79" comments="" direction="None" id="RXD9" isUsedBySoftware="true" locked="false" status="0"/>
+<pinItem allocation="78" comments="" direction="None" id="TXD9" isUsedBySoftware="true" locked="false" status="0"/>
 </tool>
 <tool id="Interrupt">
 <Item id="BSC_BUSERR" priority="15"/>
@@ -746,10 +746,10 @@
 <gridItem id="CTS8#/RTS8#/SS8#" selectedIndex="0"/>
 <gridItem id="SCI8" selectedIndex="0"/>
 <gridItem id="SCK9" selectedIndex="0"/>
-<gridItem id="RXD9/SMISO9/SSCL9" selectedIndex="0"/>
-<gridItem id="TXD9/SMOSI9/SSDA9" selectedIndex="0"/>
+<gridItem id="RXD9/SMISO9/SSCL9" selectedIndex="1"/>
+<gridItem id="TXD9/SMOSI9/SSDA9" selectedIndex="1"/>
 <gridItem id="CTS9#/RTS9#/SS9#" selectedIndex="0"/>
-<gridItem id="SCI9" selectedIndex="0"/>
+<gridItem id="SCI9" selectedIndex="1"/>
 <gridItem id="SCK10" selectedIndex="0"/>
 <gridItem id="RXD10/SMISO10/SSCL10" selectedIndex="0"/>
 <gridItem id="TXD10/SMOSI10/SSDA10" selectedIndex="0"/>
@@ -788,7 +788,7 @@
 <gridItem id="SCI_CFG_CH6_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH7_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH8_INCLUDED" selectedIndex="0"/>
-<gridItem id="SCI_CFG_CH9_INCLUDED" selectedIndex="0"/>
+<gridItem id="SCI_CFG_CH9_INCLUDED" selectedIndex="1"/>
 <gridItem id="SCI_CFG_CH10_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH11_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH12_INCLUDED" selectedIndex="0"/>

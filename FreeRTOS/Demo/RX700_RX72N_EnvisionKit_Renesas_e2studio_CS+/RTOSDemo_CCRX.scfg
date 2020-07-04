@@ -11,7 +11,7 @@
 </toolchain>
 </configuration>
 <platform id="R5F572NNHxFB"/>
-<option id="board" value="カスタムユーザボード"/>
+<option id="board" value="Custom User Board"/>
 </general>
 <tool id="Clock">
 <Item current="true" id="vccSetting.isSelected"/>
@@ -153,7 +153,7 @@
 <Item current="true" id="uclkSourceSelect.buttonDisable.0"/>
 <Item current="false" id="uclkSourceSelect.buttonDisable.1"/>
 <Item current="true" id="outckSourceSelect.isSelected"/>
-<Item current="200.0 MHz" id="outckSourceSelect.InputValue"/>
+<Item current="240.0 MHz" id="outckSourceSelect.InputValue"/>
 <Item current="200.0 MHz" id="outckSourceSelect.OutputValue"/>
 <Item current="swtppll" id="outckSourceSelect.radiobutton"/>
 <Item current="1" id="outckSourceSelect.CurrentValue"/>
@@ -294,8 +294,8 @@
 <pinItem allocation="" comments="" direction="None" id="EXTAL" isUsedBySoftware="false" locked="false" status="0"/>
 <pinItem allocation="45" comments="" direction="None" id="RXD2" isUsedBySoftware="true" locked="false" status="0"/>
 <pinItem allocation="44" comments="" direction="None" id="TXD2" isUsedBySoftware="true" locked="false" status="0"/>
-<pinItem allocation="144" comments="" direction="None" id="P07" isUsedBySoftware="false" locked="false" status="65280"/>
-<pinItem allocation="141" comments="" direction="None" id="P40" isUsedBySoftware="false" locked="false" status="65280"/>
+<pinItem allocation="79" comments="" direction="None" id="RXD9" isUsedBySoftware="true" locked="false" status="0"/>
+<pinItem allocation="78" comments="" direction="None" id="TXD9" isUsedBySoftware="true" locked="false" status="0"/>
 </tool>
 <tool id="Interrupt">
 <Item id="BSC_BUSERR" priority="15"/>
@@ -524,7 +524,7 @@
 <Item id="PERIA_INTA255" priority="15"/>
 </tool>
 <tool id="SWComponent" version="1.0.0.0">
-<configuration id="ba308e8a-327e-431f-80c5-30c884ef1a56" inuse="true" name="FreeRTOS_Kernel">
+<configuration id="cd9c5dcf-9eb1-4458-9c0f-b4dfe68d8930" inuse="true" name="FreeRTOS_Kernel">
 <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to configure kernel setting of FreeRTOS." detailDescription="" display="FreeRTOS_Kernel" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.kernel" version="1.0.0">
 <gridItem id="configUSE_PREEMPTION" selectedIndex="1"/>
 <gridItem id="configUSE_IDLE_HOOK" selectedIndex="1"/>
@@ -594,8 +594,30 @@
 </component>
 <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
 </configuration>
-<configuration id="57dc0680-d6f6-42b6-9dac-af3b53c15305" inuse="true" name="FreeRTOS_Object">
-<allocatable id="OBJECT" name="OBJECT"/>
+<configuration id="69122a3f-6cfe-4250-bf8a-c770b6604efd" inuse="true" name="FreeRTOS_Object">
+<allocatable id="OBJECT" name="OBJECT">
+<allocatable id="TASK" name="TASK">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+<allocatable id="QUEUE" name="QUEUE">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+<allocatable id="SEMAPHORE" name="SEMAPHORE">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+<allocatable id="SWTIMER" name="SWTIMER">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+<allocatable id="EVENTGROUP" name="EVENTGROUP">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+<allocatable id="STREAMBUFFER" name="STREAMBUFFER">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+<allocatable id="MESSAGEBUFFER" name="MESSAGEBUFFER">
+<option defaultValue="0" id="LinkNum" value=""/>
+</allocatable>
+</allocatable>
 <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to create and configure new object of FreeRTOS." detailDescription="" display="FreeRTOS_Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.object" version="1.0.0"/>
 <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
 </configuration>
@@ -669,6 +691,13 @@
 <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
 <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
 </configuration>
+<configuration inuse="true" name="r_gpio_rx">
+<component description="Dependency : r_bsp version(s) 5.52&#10;This code implements a General Purpose Input/Output driver. Common features such as reading, writing, and setting the direction of ports and pins is supported. Enabling features such as open-drain outputs and internal pull-ups are also supported." detailDescription="General Purpose Input/Output Driver" display="r_gpio_rx" id="r_gpio_rx3.50" version="3.50">
+<gridItem id="GPIO_CFG_PARAM_CHECKING_ENABLE" selectedIndex="0"/>
+</component>
+<source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+<source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+</configuration>
 <configuration inuse="true" name="r_sci_rx">
 <component description="Dependency : r_bsp version(s) 5.52&#10;Dependency : r_byteq version(s) 1.40, 1.50, 1.60, 1.70, 1.71, 1.80&#10;This module allows any number of SCI channels on the MCU to run in full duplex Asynchronous mode, single master Simple SPI mode, or master Synchronous mode simultaneously. The driver is interrupt driven and non-blocking. Transmit and receive buffer queues are used in Asynchronous mode and their sizes may be configured independently for each channel. Resources for unused channels or modes may be removed via settings in the driver's config.h file." detailDescription="Multi-Channel Multi-Mode SCI Driver." display="r_sci_rx" id="r_sci_rx3.50" version="3.50">
 <gridItem id="SCK0" selectedIndex="0"/>
@@ -717,10 +746,10 @@
 <gridItem id="CTS8#/RTS8#/SS8#" selectedIndex="0"/>
 <gridItem id="SCI8" selectedIndex="0"/>
 <gridItem id="SCK9" selectedIndex="0"/>
-<gridItem id="RXD9/SMISO9/SSCL9" selectedIndex="0"/>
-<gridItem id="TXD9/SMOSI9/SSDA9" selectedIndex="0"/>
+<gridItem id="RXD9/SMISO9/SSCL9" selectedIndex="1"/>
+<gridItem id="TXD9/SMOSI9/SSDA9" selectedIndex="1"/>
 <gridItem id="CTS9#/RTS9#/SS9#" selectedIndex="0"/>
-<gridItem id="SCI9" selectedIndex="0"/>
+<gridItem id="SCI9" selectedIndex="1"/>
 <gridItem id="SCK10" selectedIndex="0"/>
 <gridItem id="RXD10/SMISO10/SSCL10" selectedIndex="0"/>
 <gridItem id="TXD10/SMOSI10/SSDA10" selectedIndex="0"/>
@@ -759,7 +788,7 @@
 <gridItem id="SCI_CFG_CH6_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH7_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH8_INCLUDED" selectedIndex="0"/>
-<gridItem id="SCI_CFG_CH9_INCLUDED" selectedIndex="0"/>
+<gridItem id="SCI_CFG_CH9_INCLUDED" selectedIndex="1"/>
 <gridItem id="SCI_CFG_CH10_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH11_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH12_INCLUDED" selectedIndex="0"/>
@@ -818,13 +847,6 @@
 <gridItem id="SCI_CFG_CH9_DATA_MATCH_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH10_DATA_MATCH_INCLUDED" selectedIndex="0"/>
 <gridItem id="SCI_CFG_CH11_DATA_MATCH_INCLUDED" selectedIndex="0"/>
-</component>
-<source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-<source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-</configuration>
-<configuration inuse="true" name="r_gpio_rx">
-<component description="Dependency : r_bsp version(s) 5.52&#10;This code implements a General Purpose Input/Output driver. Common features such as reading, writing, and setting the direction of ports and pins is supported. Enabling features such as open-drain outputs and internal pull-ups are also supported." detailDescription="General Purpose Input/Output Driver" display="r_gpio_rx" id="r_gpio_rx3.50" version="3.50">
-<gridItem id="GPIO_CFG_PARAM_CHECKING_ENABLE" selectedIndex="0"/>
 </component>
 <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
 <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>

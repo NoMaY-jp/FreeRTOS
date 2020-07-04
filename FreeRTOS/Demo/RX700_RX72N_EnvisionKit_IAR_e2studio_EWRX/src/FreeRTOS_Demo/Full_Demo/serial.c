@@ -55,13 +55,6 @@ wait for the transmission to end.  The task handle is then used from the UART
 transmit end interrupt to remove the task from the Blocked state. */
 static TaskHandle_t xSendingTask = NULL;
 
-/* Renesas API's data structures. */
-static dtc_transfer_data_t xSerialTxDtcInfo;
-extern sci_hdl_t xSerialSciHandle;
-
-/* Renesas API's callback function. */
-void vSerialSciCallback( void *pvArgs );
-
 /* Callback function which is called from Renesas API's interrupt service routine. */
 void vSerialSciCallback( void *pvArgs )
 {
