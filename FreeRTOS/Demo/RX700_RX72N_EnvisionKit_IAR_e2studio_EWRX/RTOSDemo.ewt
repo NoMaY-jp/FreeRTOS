@@ -2974,6 +2974,9 @@
                 </file>
             </group>
             <file>
+                <name>$PROJ_DIR$\src\smc_workaround\CC_patch.h</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\src\smc_workaround\CG_patch.h</name>
             </file>
             <file>
@@ -2983,7 +2986,16 @@
                 <name>$PROJ_DIR$\src\smc_workaround\FIT_patch.h</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\src\smc_workaround\FIT_patch2.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\src\smc_workaround\IDE_patch.h</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\src\smc_workaround\smc_workaround.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\src\smc_workaround\smc_workaround2.h</name>
             </file>
         </group>
     </group>

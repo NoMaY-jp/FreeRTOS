@@ -5,7 +5,7 @@
 
 #if defined(__GNUC__) || defined(__ICCRX__)
 
-#include "smc_workaround.h"
+#include "smc_workaround2.h"
 
 #endif /* defined(__GNUC__) || defined(__ICCRX__) */
 

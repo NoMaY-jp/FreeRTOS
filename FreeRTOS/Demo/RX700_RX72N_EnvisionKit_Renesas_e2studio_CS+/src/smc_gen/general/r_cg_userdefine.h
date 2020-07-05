@@ -32,10 +32,6 @@
 Includes
 ***********************************************************************************************************************/
 /* Start user code for include. Do not edit comment generated here */
-
-/* Include for various workarounds. */
-#include "smc_workaround.h"
-
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

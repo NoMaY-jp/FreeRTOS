@@ -17,7 +17,7 @@
 
 #endif /* defined(__GNUC__) || defined(__ICCRX__) */
 
-#endif /* SMC_WORKAROUND_H */
-
 #include "CG_patch.h"
 #include "FIT_patch.h"
+
+#endif /* SMC_WORKAROUND_H */
