@@ -1,18 +1,29 @@
 #ifndef IDE_PATCH_H
 #define IDE_PATCH_H
 
+#if defined(__CDT_PARSER__)
+
 #if defined(__CCRX__)
 
-/* This file has to be included by using CC-RX's -preinclude option. */
+/* Workaround for missing pre-defined macro in the Renesas Toolchain Builtin
+ * Language Settings.
+ */
+#ifndef __TFU
+#define __TFU 1
+#endif
 
-/* Workaround to turn off FIT module's trigonometric function unit support
-because somehow both CS+ and e2 sutudio do not have a GUI element to remove
--tfu compile option of CC-RX.
-*/
-#ifdef __TFU
-#undef __TFU
+/* Workaround for wrong pre-defined macro in the Renesas Toolchain Builtin
+ * Language Settings.
+ */
+#ifdef __DBL4
+#undef __DBL4
+#endif
+#ifndef __DBL8
+#define __DBL8 1
 #endif
 
 #endif /* defined(__CCRX__) */
+
+#endif /* defined(__CDT_PARSER__) */
 
 #endif /* IDE_PATCH_H */

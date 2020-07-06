@@ -968,13 +968,6 @@
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
-    <Instance Guid="eaa4fd2e-7517-474c-b033-6ab4e10d2ba0">
-      <Name>smc_workaround2.h</Name>
-      <Type>File</Type>
-      <RelativePath>src\smc_workaround\smc_workaround2.h</RelativePath>
-      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
-      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
-    </Instance>
     <Instance Guid="e5efeb7d-d0af-40ee-ad96-13d1fde3253e">
       <Name>platform.h</Name>
       <Type>File</Type>
@@ -2235,6 +2228,7 @@
       <GeneralOptionPatch-DefaultValue>None</GeneralOptionPatch-DefaultValue>
       <GeneralOptionSaveAcc-DefaultValue>False</GeneralOptionSaveAcc-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486979142004</TimeTagModified--0>
       <BuildMode-0>DefaultBuild</BuildMode-0>
       <Memo-0 />
       <OutputMessageFormat-0>%TargetFiles%</OutputMessageFormat-0>
@@ -2253,7 +2247,7 @@
       <GeneralOptionEnableParallelBuilding-0>True</GeneralOptionEnableParallelBuilding-0>
       <GeneralOptionOutputFolder-0>%BuildModeName%</GeneralOptionOutputFolder-0>
       <GeneralOptionPid-0>None</GeneralOptionPid-0>
-      <DependencyFileExistCheckingType-0>Rebuild</DependencyFileExistCheckingType-0>
+      <DependencyFileExistCheckingType-0>IgnoreRebuild</DependencyFileExistCheckingType-0>
       <GeneralOptionFpu-0>Fpu</GeneralOptionFpu-0>
       <GeneralOptionNousePidRegister-0>True</GeneralOptionNousePidRegister-0>
       <LinkOptionConvertFolder-0>%BuildModeName%</LinkOptionConvertFolder-0>
@@ -2270,7 +2264,7 @@
       <GeneralOptionDenormalize-0>Off</GeneralOptionDenormalize-0>
       <AsmOptionShowDefinitions-0>False</AsmOptionShowDefinitions-0>
       <COptionListfile-0>True</COptionListfile-0>
-      <GeneralOptionDblSize-0>SinglePrecision</GeneralOptionDblSize-0>
+      <GeneralOptionDblSize-0>DoublePrecision</GeneralOptionDblSize-0>
       <AsmOptionShowExpansions-0>False</AsmOptionShowExpansions-0>
       <COptionShowSource-0>True</COptionShowSource-0>
       <GeneralOptionIntToShort-0>False</GeneralOptionIntToShort-0>
@@ -2371,7 +2365,6 @@
 -include=src\FreeRTOS_Demo\Full_Demo
 -include=src\FreeRTOS_Demo
 -preinclude=src\smc_workaround\CC_patch.h
--preinclude=src\smc_workaround\IDE_patch.h
 -nomessage=11174,21644,20010,23034,23035,20177,23033
 -utf8
 -output=obj
@@ -2455,6 +2448,7 @@
       <COptionFloatOrder-DefaultValue>False</COptionFloatOrder-DefaultValue>
       <COptionIncode-DefaultValue>Sjis</COptionIncode-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486978517108</TimeTagModified--0>
       <COptionLangC-0>C99</COptionLangC-0>
       <COptionListfile-0>True</COptionListfile-0>
       <COptionLogo-0>False</COptionLogo-0>
@@ -2496,13 +2490,13 @@ src\smc_gen\r_bsp\board\user
 src\smc_gen\r_bsp\board\generic_rx72n
 src\smc_gen\r_bsp
 src\smc_gen\general
+src\smc_workaround
+src\smc_workaround\r_bsp_patch
 ..\..\Source\include
 ..\..\Source\portable\Renesas\RX700v3_DPFPU
 src\frtos_startup
 src\frtos_config
 src\frtos_skeleton
-src\smc_workaround
-src\smc_workaround\r_bsp_patch
 src
 ..\..\..\FreeRTOS-Plus\Source\FreeRTOS-Plus-CLI
 ..\Common\include
@@ -2523,7 +2517,6 @@ src\FreeRTOS_Demo
       <COptionMisra2004RuleNumberIgnore-0 />
       <COptionOtherAdditionalOptions-0 />
       <COptionPreinclude-0>src\smc_workaround\CC_patch.h
-src\smc_workaround\IDE_patch.h
 </COptionPreinclude-0>
       <COptionSectionP-0>P</COptionSectionP-0>
       <COptionShowExpansions-0>False</COptionShowExpansions-0>
@@ -2567,7 +2560,6 @@ src\smc_workaround\IDE_patch.h
 -include=src\FreeRTOS_Demo\Full_Demo
 -include=src\FreeRTOS_Demo
 -preinclude=src\smc_workaround\CC_patch.h
--preinclude=src\smc_workaround\IDE_patch.h
 -nomessage=11174,21644,20010,23034,23035,20177,23033
 -utf8
 -output=obj
@@ -2681,6 +2673,7 @@ src\smc_workaround\IDE_patch.h
 -bank
 </AsmOptionCommandLine-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486978048352</TimeTagModified--0>
       <AsmOptionChkpm-0>False</AsmOptionChkpm-0>
       <AsmOptionGoptimize-0>True</AsmOptionGoptimize-0>
       <AsmOptionInclude-0 />
@@ -2817,6 +2810,7 @@ D_1=R_1
 </LinkOptionCommandLine-DefaultValue>
       <LinkOptionSplitVect-DefaultValue>False</LinkOptionSplitVect-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486978048352</TimeTagModified--0>
       <LinkOptionCpu-0>False</LinkOptionCpu-0>
       <LinkOptionForm-0>Absolute</LinkOptionForm-0>
       <LinkOptionFormConvert-0>Stype</LinkOptionFormConvert-0>
@@ -2961,6 +2955,7 @@ D_1=R_1
       <LinkOptionS9-DefaultValue>False</LinkOptionS9-DefaultValue>
       <HexOptionCreateUnfilledArea-DefaultValue>False</HexOptionCreateUnfilledArea-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486977579609</TimeTagModified--0>
       <HexOptionForm-0>Stype</HexOptionForm-0>
       <HexOptionOutput-0>True</HexOptionOutput-0>
       <HexOptionSameLinkMessage-0>True</HexOptionSameLinkMessage-0>
@@ -3037,6 +3032,7 @@ D_1=R_1
       <LibOptionOtherAdditionalOptions-DefaultValue />
       <LibOptionCommandLine-DefaultValue />
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486977423377</TimeTagModified--0>
       <LibOptionForm-0>LibraryU</LibOptionForm-0>
       <LibOptionInput-0 />
       <LibOptionListShow-0>None</LibOptionListShow-0>
@@ -3148,6 +3144,7 @@ D_1=R_1
       <LbgOptionFpu-DefaultValue>Fpu</LbgOptionFpu-DefaultValue>
       <LbgOptionFloatOrder-DefaultValue>False</LbgOptionFloatOrder-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586075486976954466</TimeTagModified--0>
       <LbgOptionLanguage-0>C99</LbgOptionLanguage-0>
       <LbgOptionLibraryMode-0>MakeOptionChanged</LbgOptionLibraryMode-0>
       <LbgOptionLogo-0>False</LbgOptionLogo-0>
@@ -4453,10 +4450,6 @@ D_1=R_1
       <ItemAddTime>637296040271524923</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="eaa4fd2e-7517-474c-b033-6ab4e10d2ba0">
-      <ItemAddTime>637296042056238672</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
     <Instance Guid="a7be515f-f007-45ed-9059-4e1500c0f74d">
       <TimeTagModified-SourceItem0--0>-8586275301238494160</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -4670,9 +4663,9 @@ D_1=R_1
       <SourceItem53-IsLockedByUser>False</SourceItem53-IsLockedByUser>
       <SourceItem53-BuildingTarget-0>True</SourceItem53-BuildingTarget-0>
       <SourceItem53-IndividualCompileOption-0>False</SourceItem53-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem54--0>-8586079359780873178</TimeTagModified-SourceItem54--0>
+      <TimeTagModified-SourceItem54--0>-8586075517512417694</TimeTagModified-SourceItem54--0>
       <SourceItem54-IsLockedByUser>False</SourceItem54-IsLockedByUser>
-      <SourceItem54-BuildingTarget-0>True</SourceItem54-BuildingTarget-0>
+      <SourceItem54-BuildingTarget-0>False</SourceItem54-BuildingTarget-0>
       <SourceItem54-IndividualCompileOption-0>False</SourceItem54-IndividualCompileOption-0>
       <TimeTagModified-SourceItem55--0>-8586079359780873178</TimeTagModified-SourceItem55--0>
       <SourceItem55-IsLockedByUser>False</SourceItem55-IsLockedByUser>

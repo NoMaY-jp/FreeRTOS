@@ -1,5 +1,5 @@
-#ifndef CCRX_PATCH_H
-#define CCRX_PATCH_H
+#ifndef CC_PATCH_H
+#define CC_PATCH_H
 
 #if defined(__CCRX__)
 
@@ -19,4 +19,4 @@
 
 #endif /* defined(__CCRX__) */
 
-#endif /* CCRX_PATCH_H */
+#endif /* CC_PATCH_H */

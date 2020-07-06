@@ -22,7 +22,7 @@
  *       R_BSP_ASM(    SUB     #01H, R1                  )
  *                             ^
  * "XXX\r_bsp_common.c",NNN  Remark[Pe010]: "#" not expected here
-
+ *
  *       R_BSP_ASM_BEGIN
  *       ^
  * "XXX\r_bsp_common.c",NNN  Remark[Pa174]: inline assembler statement has no declared
@@ -53,8 +53,8 @@
                                   R_BSP_PRAGMA(diag_default = Pe010)\
                                   R_BSP_PRAGMA(diag_default = Pa174)
 
-#endif /* defined(__ICCRX__) */
-
 #endif /* !defined(__CDT_PARSER__) */
+
+#endif /* defined(__ICCRX__) */
 
 #endif /* FIT_PATCH2_H */
