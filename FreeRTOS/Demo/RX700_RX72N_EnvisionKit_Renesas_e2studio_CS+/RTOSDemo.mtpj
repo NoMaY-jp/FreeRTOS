@@ -975,6 +975,13 @@
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>3e49a941-4f19-4932-b0a9-59a722f4456e</ParentItem>
     </Instance>
+    <Instance Guid="d94115bb-5db0-4c22-9f42-7cc7a78ed5e5">
+      <Name>resetprg.c</Name>
+      <Type>File</Type>
+      <RelativePath>src\smc_workaround\r_bsp_patch\resetprg.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>3e49a941-4f19-4932-b0a9-59a722f4456e</ParentItem>
+    </Instance>
     <Instance Guid="ec4fb1ee-72e7-4aca-8aea-af09b104d2a7">
       <Name>general</Name>
       <Type>Category</Type>
@@ -2143,7 +2150,9 @@
       <SourceItemType69>CSource</SourceItemType69>
       <SourceItemGuid70>fce669c7-2399-4aaa-a036-7136c7ca3c88</SourceItemGuid70>
       <SourceItemType70>CSource</SourceItemType70>
-      <SourceItemCount>71</SourceItemCount>
+      <SourceItemGuid71>d94115bb-5db0-4c22-9f42-7cc7a78ed5e5</SourceItemGuid71>
+      <SourceItemType71>CSource</SourceItemType71>
+      <SourceItemCount>72</SourceItemCount>
       <LastDeviceChangedCounter>1</LastDeviceChangedCounter>
     </Instance>
     <Instance Guid="9e208646-ccba-4100-a676-29b1efe6545f">
@@ -2800,7 +2809,7 @@ D_1=R_1
 -list=%BuildModeName%\%ProjectName%.map
 -show=all
 -optimize=speed
--start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
+-start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,PResetPRG,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
 -rom=D_8=R_8,D=R,D_2=R_2,D_1=R_1
 -stack
 -change_message=warning=2300,2142
@@ -2818,7 +2827,7 @@ D_1=R_1
       <LinkOptionListShow-0>ListShowAll</LinkOptionListShow-0>
       <LinkOptionOptimize-0>Speed</LinkOptionOptimize-0>
       <LinkOptionStack-0>True</LinkOptionStack-0>
-      <LinkOptionStart-0>B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC</LinkOptionStart-0>
+      <LinkOptionStart-0>B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,PResetPRG,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC</LinkOptionStart-0>
       <LinkOptionCompress-0>False</LinkOptionCompress-0>
       <LinkOptionCpuInformation-0 />
       <LinkOptionDebug-0>Debug</LinkOptionDebug-0>
@@ -2902,7 +2911,7 @@ D_1=R_1
 -list=%BuildModeName%\%ProjectName%.map
 -show=all
 -optimize=speed
--start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
+-start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,PResetPRG,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
 -rom=D_8=R_8,D=R,D_2=R_2,D_1=R_1
 -stack
 -change_message=warning=2300,2142
@@ -4450,6 +4459,10 @@ D_1=R_1
       <ItemAddTime>637296040271524923</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="d94115bb-5db0-4c22-9f42-7cc7a78ed5e5">
+      <ItemAddTime>637297729841912622</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="a7be515f-f007-45ed-9059-4e1500c0f74d">
       <TimeTagModified-SourceItem0--0>-8586275301238494160</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -4635,9 +4648,9 @@ D_1=R_1
       <SourceItem46-IsLockedByUser>False</SourceItem46-IsLockedByUser>
       <SourceItem46-BuildingTarget-0>True</SourceItem46-BuildingTarget-0>
       <SourceItem46-IndividualCompileOption-0>False</SourceItem46-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem47--0>-8586079359780873178</TimeTagModified-SourceItem47--0>
+      <TimeTagModified-SourceItem47--0>-8586074631293329062</TimeTagModified-SourceItem47--0>
       <SourceItem47-IsLockedByUser>False</SourceItem47-IsLockedByUser>
-      <SourceItem47-BuildingTarget-0>True</SourceItem47-BuildingTarget-0>
+      <SourceItem47-BuildingTarget-0>False</SourceItem47-BuildingTarget-0>
       <SourceItem47-IndividualCompileOption-0>False</SourceItem47-IndividualCompileOption-0>
       <TimeTagModified-SourceItem48--0>-8586079359780873178</TimeTagModified-SourceItem48--0>
       <SourceItem48-IsLockedByUser>False</SourceItem48-IsLockedByUser>
@@ -4731,6 +4744,10 @@ D_1=R_1
       <SourceItem70-IsLockedByUser>False</SourceItem70-IsLockedByUser>
       <SourceItem70-BuildingTarget-0>True</SourceItem70-BuildingTarget-0>
       <SourceItem70-IndividualCompileOption-0>False</SourceItem70-IndividualCompileOption-0>
+      <TimeTagModified-SourceItem71--0>-8586074631012863186</TimeTagModified-SourceItem71--0>
+      <SourceItem71-IsLockedByUser>False</SourceItem71-IsLockedByUser>
+      <SourceItem71-BuildingTarget-0>True</SourceItem71-BuildingTarget-0>
+      <SourceItem71-IndividualCompileOption-0>False</SourceItem71-IndividualCompileOption-0>
     </Instance>
     <Instance Guid="c20a78d9-8038-46fe-9b87-bc2fa2aa9bdc">
       <TimeTagModified-SourceItem12--0>-8586275301238193728</TimeTagModified-SourceItem12--0>
