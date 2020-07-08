@@ -36,7 +36,7 @@ by using e2 studio's menu: 'Project' --> 'Change Device'. */
 
 /* Moreover, in case of GNURX project, you must exclude 'Change Device for RTOSDemo'
 --> 'Project Files' --> 'src/linker_script.ld' to prevent loosing the following three
-KEEP() statements int the src/linker_script.ld file. */
+KEEP() statements in the src/linker_script.ld file. */
 
 /*
 	.text 0xFFC00000: AT(0xFFC00000)

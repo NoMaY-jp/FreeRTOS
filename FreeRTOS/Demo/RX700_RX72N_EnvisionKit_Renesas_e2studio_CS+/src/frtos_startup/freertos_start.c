@@ -472,8 +472,8 @@ void demo_main( void )
 
 static void prvSetupHardware( void )
 {
-    /* Nothing to do here.
-    (The system initialization had been done in the r_cg_hardware_setup.c.) */
+    /* Nothing to do here. (The system initialization had been done in the
+    src/smc_gen/general/r_cg_hardware_setup.c.) */
 }
 /*-----------------------------------------------------------*/
 

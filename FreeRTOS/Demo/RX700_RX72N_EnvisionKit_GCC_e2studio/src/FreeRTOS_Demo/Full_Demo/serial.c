@@ -67,7 +67,6 @@ sci_cb_args_t *pxArgs = (sci_cb_args_t *)pvArgs;
     {
         BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-        /* The body of configASSERT() is vAssertCalled() in the freertos_start.c */
         configASSERT( xRxQueue );
 
         /* Characters received from the UART are stored in this queue, ready to be
@@ -114,7 +113,7 @@ xComPortHandle xSerialPortInitMinimal( unsigned long ulWantedBaud, unsigned port
     configASSERT( xRxQueue );
 
     /* Set interrupt priority. (Other UART settings had been initialized in the
-    r_cg_hardware_setup.c.) */
+    src/smc_gen/general/r_cg_hardware_setup.c.) */
     uint8_t ucInterruptPriority = configMAX_SYSCALL_INTERRUPT_PRIORITY - 1;
     R_SCI_Control( xSerialSciHandle, SCI_CMD_SET_RXI_PRIORITY, ( void * ) &ucInterruptPriority );
     R_SCI_Control( xSerialSciHandle, SCI_CMD_SET_TXI_PRIORITY, ( void * ) &ucInterruptPriority );
@@ -144,10 +143,10 @@ const TickType_t xMaxBlockTime = pdMS_TO_TICKS( 5000 );
         the task when the transmission has completed. */
         xSendingTask = xTaskGetCurrentTaskHandle();
 
-        /* Send the string using the Renesas API wiyh a workaround. */
+        /* Send the string using the Renesas API with a workaround. */
         if( usStringLength > 1 )
         {
-            /* Set up Data Transfer Contole. */
+            /* Set up Data Transfer Control. */
             dtc_cmd_arg_t xSerialTxDtcArg;
             dtc_transfer_data_cfg_t xSerialTxDtcConfig;
 

@@ -29,8 +29,6 @@
 #define INT_QUEUE_TIMER_H
 
 void vInitialiseTimerForIntQueueTest( void );
-BaseType_t xTimer0Handler( void );
-BaseType_t xTimer1Handler( void );
 
 #endif
 

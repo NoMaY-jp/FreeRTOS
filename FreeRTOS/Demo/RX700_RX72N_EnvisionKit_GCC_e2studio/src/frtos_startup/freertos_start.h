@@ -74,6 +74,4 @@ Exported global functions (to be accessed by other files)
 extern void Processing_Before_Start_Kernel(void);
 extern void Kernel_Object_init(void);
 
-extern void demo_main(void);
-
 #endif /* FREERTOS_START_H_ */

@@ -28,16 +28,6 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
-/* Renesas hardware definition header. */
-#ifdef __ICCRX__
-////////////	#include <iorx71m.h>
-////////////	#include <machine.h>
-#endif
-
-#ifdef __GNUC__
-////////////	#include "iodefine.h"
-#endif
-
 /*-----------------------------------------------------------
  * Application specific definitions.
  *
