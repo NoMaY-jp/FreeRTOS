@@ -36,6 +36,7 @@ Includes   <System Includes> , "Project Includes"
 #include "platform.h"
 #include "freertos_start.h"
 #include "demo_main.h"
+#include "demo_specific_io.h"
 
 #if (BSP_CFG_RTOS_USED == 1)
 
@@ -472,8 +473,9 @@ void demo_main( void )
 
 static void prvSetupHardware( void )
 {
-    /* Nothing to do here. (The system initialization had been done in the
+    /* Turn on LED0 at start. (The system initialization had been done in the
     src/smc_gen/general/r_cg_hardware_setup.c.) */
+	LED0 = LED_ON;
 }
 /*-----------------------------------------------------------*/
 
