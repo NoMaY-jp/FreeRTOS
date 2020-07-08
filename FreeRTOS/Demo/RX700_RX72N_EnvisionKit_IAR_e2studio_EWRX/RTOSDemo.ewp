@@ -1396,38 +1396,18 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\general</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_bsp</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_byteq</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_config</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_gpio_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_pincfg</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_sci_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_byteq\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_gpio_rx\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_GCC_e2studio_IAR\src\smc_gen\r_sci_rx\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\general</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_bsp</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_byteq</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_config</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_gpio_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_pincfg</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_sci_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_byteq\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_gpio_rx\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_EWRX\src\smc_gen\r_sci_rx\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\general</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_bsp</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_config</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_pincfg</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx\src</state>
-                    <state>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx\src</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\general</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_bsp</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_config</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_pincfg</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq\src</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx\src</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx\src</state>
+                    <state>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx\src</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>

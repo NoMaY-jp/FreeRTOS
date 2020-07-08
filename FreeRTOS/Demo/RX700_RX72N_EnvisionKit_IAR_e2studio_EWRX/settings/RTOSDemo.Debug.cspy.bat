@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Renesas\EWB\8.4\common\bin\cspybat" -f "C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.general.xcl" --backend -f "C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.driver.xcl" 
+"C:\Renesas\EWB\8.4\common\bin\cspybat" -f "C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.general.xcl" --backend -f "C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Renesas\EWB\8.4\common\bin\cspybat" -f "C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.driver.xcl" 
+"C:\Renesas\EWB\8.4\common\bin\cspybat" -f "C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\settings\RTOSDemo.Debug.driver.xcl" 
 
 @echo off 
 :end

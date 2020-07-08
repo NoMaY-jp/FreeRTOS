@@ -7,6 +7,6 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LAUNCH_CONFIGURATION_BUILD_SCOPE" value="${none}"/>
 <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="C:\Windows\System32\cmd.exe"/>
-<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="/c start &quot;&quot; &quot;${eclipse_home}\..\..\SmartConfigurator\RX\eclipse\SmartConfigurator.exe&quot; &quot;${workspace_loc:/RTOSDemo_ICCRX}/RTOSDemo_ICCRX.scfg&quot;"/>
-<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/RTOSDemo_ICCRX}"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="/c start &quot;&quot; &quot;${eclipse_home}\..\..\SmartConfigurator\RX\eclipse\SmartConfigurator.exe&quot; &quot;${workspace_loc:/RTOSDemo}/RTOSDemo_ICCRX.scfg&quot;"/>
+<stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc:/RTOSDemo}"/>
 </launchConfiguration>

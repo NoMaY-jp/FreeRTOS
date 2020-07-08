@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- IAR Project Connection File -->
 <iarProjectConnection version="1.6" name="Renesas_AP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="IarProjectConnection_1.8.xsd">
 <includePath>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\general</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_bsp</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_config</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_pincfg</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq\src</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx\src</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx\src</path>
-    <path>C:\Renesas\FreeRTOS\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx\src</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\general</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_bsp</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_config</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_pincfg</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_byteq\src</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_gpio_rx\src</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_sci_rx\src</path>
+    <path>C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\src\smc_gen\r_dtc_rx\src</path>
 </includePath>
 <files>
 <group name="smc_gen">
