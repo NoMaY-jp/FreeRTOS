@@ -475,7 +475,7 @@ static void prvSetupHardware( void )
 {
     /* Turn on LED0 at start. (The system initialization had been done in the
     src/smc_gen/general/r_cg_hardware_setup.c.) */
-	LED0 = LED_ON;
+    LED0 = LED_ON;
 }
 /*-----------------------------------------------------------*/
 
