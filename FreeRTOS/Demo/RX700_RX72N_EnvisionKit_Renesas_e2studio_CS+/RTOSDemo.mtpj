@@ -2374,7 +2374,7 @@
 -include=src\FreeRTOS_Demo\Full_Demo
 -include=src\FreeRTOS_Demo
 -preinclude=src\smc_workaround\CC_patch.h
--nomessage=11174,21644,20010,23034,23035,20177,23033
+-nomessage=21644,20010,23034,23035,20177,23033
 -utf8
 -output=obj
 -obj_path=%BuildModeName%
@@ -2569,7 +2569,7 @@ src\FreeRTOS_Demo
 -include=src\FreeRTOS_Demo\Full_Demo
 -include=src\FreeRTOS_Demo
 -preinclude=src\smc_workaround\CC_patch.h
--nomessage=11174,21644,20010,23034,23035,20177,23033
+-nomessage=21644,20010,23034,23035,20177,23033
 -utf8
 -output=obj
 -obj_path=%BuildModeName%
@@ -2601,7 +2601,7 @@ src\FreeRTOS_Demo
       <COptionMisra2012RuleFile-0 />
       <COptionSectionL-0>L</COptionSectionL-0>
       <COptionMisra2012RuleNumberApply-0 />
-      <COptionNoMessageErrorNumber-0>11174,21644,5010,6,8,5177,5</COptionNoMessageErrorNumber-0>
+      <COptionNoMessageErrorNumber-0>21644,5010,6,8,5177,5</COptionNoMessageErrorNumber-0>
       <COptionSectionW-0>W</COptionSectionW-0>
       <COptionVolatile-0>False</COptionVolatile-0>
       <COptionConstCopy-0>Auto</COptionConstCopy-0>
