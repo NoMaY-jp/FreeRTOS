@@ -24,6 +24,19 @@
 
 #endif /* defined(__CCRX__) */
 
+#if defined(__GNUC__) || defined(__ICCRX__)
+
+/* Workaround to reduce errors/warnings caused by e2 studio CDT's INDEXER and CODAN.
+ */
+#ifndef __asm
+#define __asm asm
+#endif
+#ifndef __attribute__
+#define __attribute__(...)
+#endif
+
+#endif /* defined(__GNUC__) || defined(__ICCRX__) */
+
 #endif /* defined(__CDT_PARSER__) */
 
 #endif /* IDE_PATCH_H */
