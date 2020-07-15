@@ -2612,6 +2612,9 @@
                             <name>rx72n</name>
                             <file>
                                 <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\targets\rx72n\r_dtc_rx_target.c</name>
+                                <excluded>
+                                    <configuration>Debug</configuration>
+                                </excluded>
                             </file>
                             <file>
                                 <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\targets\rx72n\r_dtc_rx_target.h</name>
@@ -2623,6 +2626,9 @@
                     </group>
                     <file>
                         <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\r_dtc_rx.c</name>
+                        <excluded>
+                            <configuration>Debug</configuration>
+                        </excluded>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\r_dtc_rx_private.h</name>
@@ -2774,6 +2780,18 @@
                 <name>r_bsp_patch</name>
                 <file>
                     <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\platform.h</name>
+                </file>
+            </group>
+            <group>
+                <name>r_dtc_rx_patch</name>
+                <file>
+                    <name>$PROJ_DIR$\src\smc_workaround\r_dtc_rx_patch\r_dtc_rx.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\smc_workaround\r_dtc_rx_patch\r_dtc_rx_private.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\smc_workaround\r_dtc_rx_patch\r_dtc_rx_target.c</name>
                 </file>
             </group>
             <file>
