@@ -530,8 +530,8 @@
 <gridItem id="configCPU_CLOCK_HZ" selectedIndex="BSP_ICLK_HZ"/>
 <gridItem id="configPERIPHERAL_CLOCK_HZ" selectedIndex="BSP_PCLKB_HZ"/>
 <gridItem id="configTICK_RATE_HZ" selectedIndex="( TickType_t ) 1000"/>
-<gridItem id="configMINIMAL_STACK_SIZE" selectedIndex="( unsigned short ) 140"/>
-<gridItem id="configTOTAL_HEAP_SIZE_N" selectedIndex="50"/>
+<gridItem id="configMINIMAL_STACK_SIZE" selectedIndex="( unsigned short ) 170"/>
+<gridItem id="configTOTAL_HEAP_SIZE_N" selectedIndex="60"/>
 <gridItem id="configTOTAL_HEAP_SIZE" selectedIndex="( size_t ) ( configTOTAL_HEAP_SIZE_N * 1024 )"/>
 <gridItem id="configMAX_TASK_NAME_LEN" selectedIndex="12"/>
 <gridItem id="configUSE_TRACE_FACILITY" selectedIndex="1"/>

@@ -42,22 +42,8 @@
 /* Renesas includes. */
 #include "platform.h"
 
-#if defined( __CCRX__)
-
 #define tmrTIMER_0_1_FREQUENCY	( 2000UL )
-#define tmrTIMER_2_3_FREQUENCY	( 2407UL ) /* This is different from GNUC/ICCRX, but not used. */
-
-#elif defined( __GNUC__ )
-
-#define tmrTIMER_0_1_FREQUENCY	( 2000UL )
-#define tmrTIMER_2_3_FREQUENCY	( 2301UL ) /* This is different from CCRX, but not used. */
-
-#elif defined( __ICCRX__ )
-
-#define tmrTIMER_0_1_FREQUENCY	( 2000UL )
-#define tmrTIMER_2_3_FREQUENCY	( 2301UL ) /* This is different from CCRX, but not used. */
-
-#endif
+#define tmrTIMER_2_3_FREQUENCY	( 2000UL )
 
 void vInitialiseTimerForIntQueueTest( void )
 {
@@ -85,7 +71,7 @@ void vInitialiseTimerForIntQueueTest( void )
 
 		/* Set the compare match value. */
 		TMR01.TCORA = ( unsigned short ) ( ( ( configPERIPHERAL_CLOCK_HZ / tmrTIMER_0_1_FREQUENCY ) -1 ) / 8 );
-		TMR23.TCORA = ( unsigned short ) ( ( ( configPERIPHERAL_CLOCK_HZ / tmrTIMER_0_1_FREQUENCY ) -1 ) / 8 );
+		TMR23.TCORA = ( unsigned short ) ( ( ( configPERIPHERAL_CLOCK_HZ / tmrTIMER_2_3_FREQUENCY ) -1 ) / 8 );
 
 		/* 16 bit operation ( count from timer 1,2 ). */
 		TMR0.TCCR.BIT.CSS = 3;
