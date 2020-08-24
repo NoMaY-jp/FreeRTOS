@@ -1,8 +1,8 @@
-/* aes_asm.s
+/* aes_asm.S
  *
- * Copyright (C) 2006-2015 wolfSSL Inc.
+ * Copyright (C) 2006-2020 wolfSSL Inc.
  *
- * This file is part of wolfSSL. (formerly known as CyaSSL)
+ * This file is part of wolfSSL.
  *
  * wolfSSL is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,15 +16,16 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1335, USA
  */
 
+
+
+/* This file is in at&t asm syntax, see .asm for intel syntax */
 
 /* See Intel® Advanced Encryption Standard (AES) Instructions Set White Paper
  * by Intel Mobility Group, Israel Development Center, Israel Shay Gueron
  */
-
-/* This file is in at&t asm syntax, see .asm for intel syntax */
 
 
 /*
@@ -35,8 +36,13 @@ AES_CBC_encrypt (const unsigned char *in,
 	const unsigned char *KS,
 	int nr)
 */
+#ifndef __APPLE__
 .globl AES_CBC_encrypt
 AES_CBC_encrypt:
+#else
+.globl _AES_CBC_encrypt
+_AES_CBC_encrypt:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 # parameter 3: %rdx
@@ -85,18 +91,23 @@ jne	LOOP
 ret
 
 
-
+#if defined(WOLFSSL_AESNI_BY4)
 
 /*
-AES_CBC_decrypt (const unsigned char *in,
+AES_CBC_decrypt_by4 (const unsigned char *in,
   unsigned char *out,
   unsigned char ivec[16],
   unsigned long length,
   const unsigned char *KS,
   int nr)
 */
-.globl AES_CBC_decrypt
-AES_CBC_decrypt:
+#ifndef __APPLE__
+.globl AES_CBC_decrypt_by4
+AES_CBC_decrypt_by4:
+#else
+.globl _AES_CBC_decrypt_by4
+_AES_CBC_decrypt_by4:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 # parameter 3: %rdx
@@ -104,165 +115,648 @@ AES_CBC_decrypt:
 # parameter 5: %r8
 # parameter 6: %r9d
 
-movq    %rcx, %r10
-shrq $4, %rcx
-shlq   $60, %r10
-je    DNO_PARTS_4
-addq    $1, %rcx
+        movq        %rcx, %r10
+        shrq        $4, %rcx
+        shlq        $60, %r10
+        je          DNO_PARTS_4
+        addq        $1, %rcx
 DNO_PARTS_4:
-movq   %rcx, %r10
-shlq    $62, %r10
-shrq  $62, %r10
-shrq  $2, %rcx
-movdqu (%rdx),%xmm5
-je DREMAINDER_4
-subq   $64, %rsi
+        movq        %rcx, %r10
+        shlq        $62, %r10
+        shrq        $62, %r10
+        shrq        $2, %rcx
+        movdqu      (%rdx),%xmm5
+        je          DREMAINDER_4
+        subq        $64, %rsi
 DLOOP_4:
-movdqu (%rdi), %xmm1
-movdqu  16(%rdi), %xmm2
-movdqu  32(%rdi), %xmm3
-movdqu  48(%rdi), %xmm4
-movdqa  %xmm1, %xmm6
-movdqa %xmm2, %xmm7
-movdqa %xmm3, %xmm8
-movdqa %xmm4, %xmm15
-movdqa    (%r8), %xmm9
-movdqa 16(%r8), %xmm10
-movdqa  32(%r8), %xmm11
-movdqa  48(%r8), %xmm12
-pxor    %xmm9, %xmm1
-pxor   %xmm9, %xmm2
-pxor   %xmm9, %xmm3
-
-pxor    %xmm9, %xmm4
-aesdec %xmm10, %xmm1
-aesdec    %xmm10, %xmm2
-aesdec    %xmm10, %xmm3
-aesdec    %xmm10, %xmm4
-aesdec    %xmm11, %xmm1
-aesdec    %xmm11, %xmm2
-aesdec    %xmm11, %xmm3
-aesdec    %xmm11, %xmm4
-aesdec    %xmm12, %xmm1
-aesdec    %xmm12, %xmm2
-aesdec    %xmm12, %xmm3
-aesdec    %xmm12, %xmm4
-movdqa    64(%r8), %xmm9
-movdqa   80(%r8), %xmm10
-movdqa  96(%r8), %xmm11
-movdqa  112(%r8), %xmm12
-aesdec %xmm9, %xmm1
-aesdec %xmm9, %xmm2
-aesdec %xmm9, %xmm3
-aesdec %xmm9, %xmm4
-aesdec %xmm10, %xmm1
-aesdec    %xmm10, %xmm2
-aesdec    %xmm10, %xmm3
-aesdec    %xmm10, %xmm4
-aesdec    %xmm11, %xmm1
-aesdec    %xmm11, %xmm2
-aesdec    %xmm11, %xmm3
-aesdec    %xmm11, %xmm4
-aesdec    %xmm12, %xmm1
-aesdec    %xmm12, %xmm2
-aesdec    %xmm12, %xmm3
-aesdec    %xmm12, %xmm4
-movdqa    128(%r8), %xmm9
-movdqa  144(%r8), %xmm10
-movdqa 160(%r8), %xmm11
-cmpl   $12, %r9d
-aesdec  %xmm9, %xmm1
-aesdec %xmm9, %xmm2
-aesdec %xmm9, %xmm3
-aesdec %xmm9, %xmm4
-aesdec %xmm10, %xmm1
-aesdec    %xmm10, %xmm2
-aesdec    %xmm10, %xmm3
-aesdec    %xmm10, %xmm4
-jb    DLAST_4
-movdqa  160(%r8), %xmm9
-movdqa  176(%r8), %xmm10
-movdqa 192(%r8), %xmm11
-cmpl   $14, %r9d
-aesdec  %xmm9, %xmm1
-aesdec %xmm9, %xmm2
-aesdec %xmm9, %xmm3
-aesdec %xmm9, %xmm4
-aesdec %xmm10, %xmm1
-aesdec    %xmm10, %xmm2
-aesdec    %xmm10, %xmm3
-aesdec    %xmm10, %xmm4
-jb    DLAST_4
-
-movdqa  192(%r8), %xmm9
-movdqa  208(%r8), %xmm10
-movdqa 224(%r8), %xmm11
-aesdec %xmm9, %xmm1
-aesdec %xmm9, %xmm2
-aesdec %xmm9, %xmm3
-aesdec %xmm9, %xmm4
-aesdec %xmm10, %xmm1
-aesdec    %xmm10, %xmm2
-aesdec    %xmm10, %xmm3
-aesdec    %xmm10, %xmm4
+        movdqu      (%rdi), %xmm1
+        movdqu      16(%rdi), %xmm2
+        movdqu      32(%rdi), %xmm3
+        movdqu      48(%rdi), %xmm4
+        movdqa      %xmm1, %xmm6
+        movdqa      %xmm2, %xmm7
+        movdqa      %xmm3, %xmm8
+        movdqa      %xmm4, %xmm15
+        movdqa      (%r8), %xmm9
+        movdqa      16(%r8), %xmm10
+        movdqa      32(%r8), %xmm11
+        movdqa      48(%r8), %xmm12
+        pxor        %xmm9, %xmm1
+        pxor        %xmm9, %xmm2
+        pxor        %xmm9, %xmm3
+        pxor        %xmm9, %xmm4
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm12, %xmm1
+        aesdec      %xmm12, %xmm2
+        aesdec      %xmm12, %xmm3
+        aesdec      %xmm12, %xmm4
+        movdqa      64(%r8), %xmm9
+        movdqa      80(%r8), %xmm10
+        movdqa      96(%r8), %xmm11
+        movdqa      112(%r8), %xmm12
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm12, %xmm1
+        aesdec      %xmm12, %xmm2
+        aesdec      %xmm12, %xmm3
+        aesdec      %xmm12, %xmm4
+        movdqa      128(%r8), %xmm9
+        movdqa      144(%r8), %xmm10
+        movdqa      160(%r8), %xmm11
+        cmpl        $12, %r9d
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        jb          DLAST_4
+        movdqa      160(%r8), %xmm9
+        movdqa      176(%r8), %xmm10
+        movdqa      192(%r8), %xmm11
+        cmpl        $14, %r9d
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        jb          DLAST_4
+        movdqa      192(%r8), %xmm9
+        movdqa      208(%r8), %xmm10
+        movdqa      224(%r8), %xmm11
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
 DLAST_4:
-addq   $64, %rdi
-addq    $64, %rsi
-decq  %rcx
-aesdeclast %xmm11, %xmm1
-aesdeclast %xmm11, %xmm2
-aesdeclast %xmm11, %xmm3
-aesdeclast %xmm11, %xmm4
-pxor   %xmm5 ,%xmm1
-pxor    %xmm6 ,%xmm2
-pxor   %xmm7 ,%xmm3
-pxor   %xmm8 ,%xmm4
-movdqu %xmm1, (%rsi)
-movdqu    %xmm2, 16(%rsi)
-movdqu  %xmm3, 32(%rsi)
-movdqu  %xmm4, 48(%rsi)
-movdqa  %xmm15,%xmm5
-jne    DLOOP_4
-addq    $64, %rsi
+        addq        $64, %rdi
+        addq        $64, %rsi
+        decq        %rcx
+        aesdeclast  %xmm11, %xmm1
+        aesdeclast  %xmm11, %xmm2
+        aesdeclast  %xmm11, %xmm3
+        aesdeclast  %xmm11, %xmm4
+        pxor        %xmm5, %xmm1
+        pxor        %xmm6, %xmm2
+        pxor        %xmm7, %xmm3
+        pxor        %xmm8, %xmm4
+        movdqu      %xmm1, (%rsi)
+        movdqu      %xmm2, 16(%rsi)
+        movdqu      %xmm3, 32(%rsi)
+        movdqu      %xmm4, 48(%rsi)
+        movdqa      %xmm15,%xmm5
+        jne         DLOOP_4
+        addq        $64, %rsi
 DREMAINDER_4:
-cmpq    $0, %r10
-je  DEND_4
+        cmpq        $0, %r10
+        je          DEND_4
 DLOOP_4_2:
-movdqu  (%rdi), %xmm1
-movdqa    %xmm1 ,%xmm15
-addq  $16, %rdi
-pxor  (%r8), %xmm1
-movdqu 160(%r8), %xmm2
-cmpl    $12, %r9d
-aesdec    16(%r8), %xmm1
-aesdec   32(%r8), %xmm1
-aesdec   48(%r8), %xmm1
-aesdec   64(%r8), %xmm1
-aesdec   80(%r8), %xmm1
-aesdec   96(%r8), %xmm1
-aesdec   112(%r8), %xmm1
-aesdec  128(%r8), %xmm1
-aesdec  144(%r8), %xmm1
-jb  DLAST_4_2
-movdqu    192(%r8), %xmm2
-cmpl    $14, %r9d
-aesdec    160(%r8), %xmm1
-aesdec  176(%r8), %xmm1
-jb  DLAST_4_2
-movdqu    224(%r8), %xmm2
-aesdec  192(%r8), %xmm1
-aesdec  208(%r8), %xmm1
+        movdqu      (%rdi), %xmm1
+        movdqa      %xmm1, %xmm15
+        addq        $16, %rdi
+        pxor        (%r8), %xmm1
+        movdqu      160(%r8), %xmm2
+        cmpl        $12, %r9d
+        aesdec      16(%r8), %xmm1
+        aesdec      32(%r8), %xmm1
+        aesdec      48(%r8), %xmm1
+        aesdec      64(%r8), %xmm1
+        aesdec      80(%r8), %xmm1
+        aesdec      96(%r8), %xmm1
+        aesdec      112(%r8), %xmm1
+        aesdec      128(%r8), %xmm1
+        aesdec      144(%r8), %xmm1
+        jb          DLAST_4_2
+        movdqu      192(%r8), %xmm2
+        cmpl        $14, %r9d
+        aesdec      160(%r8), %xmm1
+        aesdec      176(%r8), %xmm1
+        jb          DLAST_4_2
+        movdqu      224(%r8), %xmm2
+        aesdec      192(%r8), %xmm1
+        aesdec      208(%r8), %xmm1
 DLAST_4_2:
-aesdeclast %xmm2, %xmm1
-pxor    %xmm5, %xmm1
-movdqa %xmm15, %xmm5
-movdqu    %xmm1, (%rsi)
-
-addq    $16, %rsi
-decq    %r10
-jne DLOOP_4_2
+        aesdeclast  %xmm2, %xmm1
+        pxor        %xmm5, %xmm1
+        movdqa      %xmm15, %xmm5
+        movdqu      %xmm1, (%rsi)
+        addq        $16, %rsi
+        decq        %r10
+        jne         DLOOP_4_2
 DEND_4:
-ret
+        ret
+
+#elif defined(WOLFSSL_AESNI_BY6)
+
+/*
+AES_CBC_decrypt_by6 (const unsigned char *in,
+  unsigned char *out,
+  unsigned char ivec[16],
+  unsigned long length,
+  const unsigned char *KS,
+  int nr)
+*/
+#ifndef __APPLE__
+.globl AES_CBC_decrypt_by6
+AES_CBC_decrypt_by6:
+#else
+.globl _AES_CBC_decrypt_by6
+_AES_CBC_decrypt_by6:
+#endif
+# parameter 1: %rdi - in
+# parameter 2: %rsi - out
+# parameter 3: %rdx - ivec
+# parameter 4: %rcx - length
+# parameter 5: %r8  - KS
+# parameter 6: %r9d - nr
+
+        movq        %rcx, %r10
+        shrq        $4, %rcx
+        shlq        $60, %r10
+        je          DNO_PARTS_6
+        addq        $1, %rcx
+DNO_PARTS_6:
+        movq        %rax, %r12
+        movq        %rdx, %r13
+        movq        %rbx, %r14
+        movq        $0, %rdx
+        movq        %rcx, %rax
+        movq        $6, %rbx
+        div         %rbx
+        movq        %rax, %rcx
+        movq        %rdx, %r10
+        movq        %r12, %rax
+        movq        %r13, %rdx
+        movq        %r14, %rbx
+        cmpq        $0, %rcx
+        movdqu      (%rdx), %xmm7
+        je          DREMAINDER_6
+        subq        $96, %rsi
+DLOOP_6:
+        movdqu      (%rdi), %xmm1
+        movdqu      16(%rdi), %xmm2
+        movdqu      32(%rdi), %xmm3
+        movdqu      48(%rdi), %xmm4
+        movdqu      64(%rdi), %xmm5
+        movdqu      80(%rdi), %xmm6
+        movdqa      (%r8), %xmm8
+        movdqa      16(%r8), %xmm9
+        movdqa      32(%r8), %xmm10
+        movdqa      48(%r8), %xmm11
+        pxor        %xmm8, %xmm1
+        pxor        %xmm8, %xmm2
+        pxor        %xmm8, %xmm3
+        pxor        %xmm8, %xmm4
+        pxor        %xmm8, %xmm5
+        pxor        %xmm8, %xmm6
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm9, %xmm5
+        aesdec      %xmm9, %xmm6
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm10, %xmm5
+        aesdec      %xmm10, %xmm6
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        movdqa      64(%r8), %xmm8
+        movdqa      80(%r8), %xmm9
+        movdqa      96(%r8), %xmm10
+        movdqa      112(%r8), %xmm11
+        aesdec      %xmm8, %xmm1
+        aesdec      %xmm8, %xmm2
+        aesdec      %xmm8, %xmm3
+        aesdec      %xmm8, %xmm4
+        aesdec      %xmm8, %xmm5
+        aesdec      %xmm8, %xmm6
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm9, %xmm5
+        aesdec      %xmm9, %xmm6
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm10, %xmm5
+        aesdec      %xmm10, %xmm6
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        movdqa      128(%r8), %xmm8
+        movdqa      144(%r8), %xmm9
+        movdqa      160(%r8), %xmm10
+        cmpl        $12, %r9d
+        aesdec      %xmm8, %xmm1
+        aesdec      %xmm8, %xmm2
+        aesdec      %xmm8, %xmm3
+        aesdec      %xmm8, %xmm4
+        aesdec      %xmm8, %xmm5
+        aesdec      %xmm8, %xmm6
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm9, %xmm5
+        aesdec      %xmm9, %xmm6
+        jb          DLAST_6
+        movdqa      160(%r8), %xmm8
+        movdqa      176(%r8), %xmm9
+        movdqa      192(%r8), %xmm10
+        cmpl        $14, %r9d
+        aesdec      %xmm8, %xmm1
+        aesdec      %xmm8, %xmm2
+        aesdec      %xmm8, %xmm3
+        aesdec      %xmm8, %xmm4
+        aesdec      %xmm8, %xmm5
+        aesdec      %xmm8, %xmm6
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm9, %xmm5
+        aesdec      %xmm9, %xmm6
+        jb          DLAST_6
+        movdqa      192(%r8), %xmm8
+        movdqa      208(%r8), %xmm9
+        movdqa      224(%r8), %xmm10
+        aesdec      %xmm8, %xmm1
+        aesdec      %xmm8, %xmm2
+        aesdec      %xmm8, %xmm3
+        aesdec      %xmm8, %xmm4
+        aesdec      %xmm8, %xmm5
+        aesdec      %xmm8, %xmm6
+        aesdec      %xmm9, %xmm1
+        aesdec      %xmm9, %xmm2
+        aesdec      %xmm9, %xmm3
+        aesdec      %xmm9, %xmm4
+        aesdec      %xmm9, %xmm5
+        aesdec      %xmm9, %xmm6
+DLAST_6:
+        addq        $96, %rsi
+        aesdeclast  %xmm10, %xmm1
+        aesdeclast  %xmm10, %xmm2
+        aesdeclast  %xmm10, %xmm3
+        aesdeclast  %xmm10, %xmm4
+        aesdeclast  %xmm10, %xmm5
+        aesdeclast  %xmm10, %xmm6
+        movdqu      (%rdi), %xmm8
+        movdqu      16(%rdi), %xmm9
+        movdqu      32(%rdi), %xmm10
+        movdqu      48(%rdi), %xmm11
+        movdqu      64(%rdi), %xmm12
+        movdqu      80(%rdi), %xmm13
+        pxor        %xmm7, %xmm1
+        pxor        %xmm8, %xmm2
+        pxor        %xmm9, %xmm3
+        pxor        %xmm10, %xmm4
+        pxor        %xmm11, %xmm5
+        pxor        %xmm12, %xmm6
+        movdqu      %xmm13, %xmm7
+        movdqu      %xmm1, (%rsi)
+        movdqu      %xmm2, 16(%rsi)
+        movdqu      %xmm3, 32(%rsi)
+        movdqu      %xmm4, 48(%rsi)
+        movdqu      %xmm5, 64(%rsi)
+        movdqu      %xmm6, 80(%rsi)
+        addq        $96, %rdi
+        decq        %rcx
+        jne         DLOOP_6
+        addq        $96, %rsi
+DREMAINDER_6:
+        cmpq        $0, %r10
+        je          DEND_6
+DLOOP_6_2:
+        movdqu      (%rdi), %xmm1
+        movdqa      %xmm1, %xmm10
+        addq        $16, %rdi
+        pxor        (%r8), %xmm1
+        movdqu      160(%r8), %xmm2
+        cmpl        $12, %r9d
+        aesdec      16(%r8), %xmm1
+        aesdec      32(%r8), %xmm1
+        aesdec      48(%r8), %xmm1
+        aesdec      64(%r8), %xmm1
+        aesdec      80(%r8), %xmm1
+        aesdec      96(%r8), %xmm1
+        aesdec      112(%r8), %xmm1
+        aesdec      128(%r8), %xmm1
+        aesdec      144(%r8), %xmm1
+        jb          DLAST_6_2
+        movdqu      192(%r8), %xmm2
+        cmpl        $14, %r9d
+        aesdec      160(%r8), %xmm1
+        aesdec      176(%r8), %xmm1
+        jb          DLAST_6_2
+        movdqu      224(%r8), %xmm2
+        aesdec      192(%r8), %xmm1
+        aesdec      208(%r8), %xmm1
+DLAST_6_2:
+        aesdeclast  %xmm2, %xmm1
+        pxor        %xmm7, %xmm1
+        movdqa      %xmm10, %xmm7
+        movdqu      %xmm1, (%rsi)
+        addq        $16, %rsi
+        decq        %r10
+        jne         DLOOP_6_2
+DEND_6:
+        ret
+
+#else /* WOLFSSL_AESNI_BYx */
+
+/*
+AES_CBC_decrypt_by8 (const unsigned char *in,
+  unsigned char *out,
+  unsigned char ivec[16],
+  unsigned long length,
+  const unsigned char *KS,
+  int nr)
+*/
+#ifndef __APPLE__
+.globl AES_CBC_decrypt_by8
+AES_CBC_decrypt_by8:
+#else
+.globl _AES_CBC_decrypt_by8
+_AES_CBC_decrypt_by8:
+#endif
+# parameter 1: %rdi - in
+# parameter 2: %rsi - out
+# parameter 3: %rdx - ivec
+# parameter 4: %rcx - length
+# parameter 5: %r8  - KS
+# parameter 6: %r9d - nr
+
+        movq        %rcx, %r10
+        shrq        $4, %rcx
+        shlq        $60, %r10
+        je          DNO_PARTS_8
+        addq        $1, %rcx
+DNO_PARTS_8:
+        movq        %rcx, %r10
+        shlq        $61, %r10
+        shrq        $61, %r10
+        shrq        $3, %rcx
+        movdqu      (%rdx), %xmm9
+        je          DREMAINDER_8
+        subq        $128, %rsi
+DLOOP_8:
+        movdqu      (%rdi), %xmm1
+        movdqu      16(%rdi), %xmm2
+        movdqu      32(%rdi), %xmm3
+        movdqu      48(%rdi), %xmm4
+        movdqu      64(%rdi), %xmm5
+        movdqu      80(%rdi), %xmm6
+        movdqu      96(%rdi), %xmm7
+        movdqu      112(%rdi), %xmm8
+        movdqa      (%r8), %xmm10
+        movdqa      16(%r8), %xmm11
+        movdqa      32(%r8), %xmm12
+        movdqa      48(%r8), %xmm13
+        pxor        %xmm10, %xmm1
+        pxor        %xmm10, %xmm2
+        pxor        %xmm10, %xmm3
+        pxor        %xmm10, %xmm4
+        pxor        %xmm10, %xmm5
+        pxor        %xmm10, %xmm6
+        pxor        %xmm10, %xmm7
+        pxor        %xmm10, %xmm8
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        aesdec      %xmm11, %xmm7
+        aesdec      %xmm11, %xmm8
+        aesdec      %xmm12, %xmm1
+        aesdec      %xmm12, %xmm2
+        aesdec      %xmm12, %xmm3
+        aesdec      %xmm12, %xmm4
+        aesdec      %xmm12, %xmm5
+        aesdec      %xmm12, %xmm6
+        aesdec      %xmm12, %xmm7
+        aesdec      %xmm12, %xmm8
+        aesdec      %xmm13, %xmm1
+        aesdec      %xmm13, %xmm2
+        aesdec      %xmm13, %xmm3
+        aesdec      %xmm13, %xmm4
+        aesdec      %xmm13, %xmm5
+        aesdec      %xmm13, %xmm6
+        aesdec      %xmm13, %xmm7
+        aesdec      %xmm13, %xmm8
+        movdqa      64(%r8), %xmm10
+        movdqa      80(%r8), %xmm11
+        movdqa      96(%r8), %xmm12
+        movdqa      112(%r8), %xmm13
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm10, %xmm5
+        aesdec      %xmm10, %xmm6
+        aesdec      %xmm10, %xmm7
+        aesdec      %xmm10, %xmm8
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        aesdec      %xmm11, %xmm7
+        aesdec      %xmm11, %xmm8
+        aesdec      %xmm12, %xmm1
+        aesdec      %xmm12, %xmm2
+        aesdec      %xmm12, %xmm3
+        aesdec      %xmm12, %xmm4
+        aesdec      %xmm12, %xmm5
+        aesdec      %xmm12, %xmm6
+        aesdec      %xmm12, %xmm7
+        aesdec      %xmm12, %xmm8
+        aesdec      %xmm13, %xmm1
+        aesdec      %xmm13, %xmm2
+        aesdec      %xmm13, %xmm3
+        aesdec      %xmm13, %xmm4
+        aesdec      %xmm13, %xmm5
+        aesdec      %xmm13, %xmm6
+        aesdec      %xmm13, %xmm7
+        aesdec      %xmm13, %xmm8
+        movdqa      128(%r8), %xmm10
+        movdqa      144(%r8), %xmm11
+        movdqa      160(%r8), %xmm12
+        cmpl        $12, %r9d
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm10, %xmm5
+        aesdec      %xmm10, %xmm6
+        aesdec      %xmm10, %xmm7
+        aesdec      %xmm10, %xmm8
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        aesdec      %xmm11, %xmm7
+        aesdec      %xmm11, %xmm8
+        jb          DLAST_8
+        movdqa      160(%r8), %xmm10
+        movdqa      176(%r8), %xmm11
+        movdqa      192(%r8), %xmm12
+        cmpl        $14, %r9d
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm10, %xmm5
+        aesdec      %xmm10, %xmm6
+        aesdec      %xmm10, %xmm7
+        aesdec      %xmm10, %xmm8
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        aesdec      %xmm11, %xmm7
+        aesdec      %xmm11, %xmm8
+        jb          DLAST_8
+        movdqa      192(%r8), %xmm10
+        movdqa      208(%r8), %xmm11
+        movdqa      224(%r8), %xmm12
+        aesdec      %xmm10, %xmm1
+        aesdec      %xmm10, %xmm2
+        aesdec      %xmm10, %xmm3
+        aesdec      %xmm10, %xmm4
+        aesdec      %xmm10, %xmm5
+        aesdec      %xmm10, %xmm6
+        aesdec      %xmm10, %xmm7
+        aesdec      %xmm10, %xmm8
+        aesdec      %xmm11, %xmm1
+        aesdec      %xmm11, %xmm2
+        aesdec      %xmm11, %xmm3
+        aesdec      %xmm11, %xmm4
+        aesdec      %xmm11, %xmm5
+        aesdec      %xmm11, %xmm6
+        aesdec      %xmm11, %xmm7
+        aesdec      %xmm11, %xmm8
+DLAST_8:
+        addq        $128, %rsi
+        aesdeclast  %xmm12, %xmm1
+        aesdeclast  %xmm12, %xmm2
+        aesdeclast  %xmm12, %xmm3
+        aesdeclast  %xmm12, %xmm4
+        aesdeclast  %xmm12, %xmm5
+        aesdeclast  %xmm12, %xmm6
+        aesdeclast  %xmm12, %xmm7
+        aesdeclast  %xmm12, %xmm8
+        movdqu      (%rdi), %xmm10
+        movdqu      16(%rdi), %xmm11
+        movdqu      32(%rdi), %xmm12
+        movdqu      48(%rdi), %xmm13
+        pxor        %xmm9, %xmm1
+        pxor        %xmm10, %xmm2
+        pxor        %xmm11, %xmm3
+        pxor        %xmm12, %xmm4
+        pxor        %xmm13, %xmm5
+        movdqu      64(%rdi), %xmm10
+        movdqu      80(%rdi), %xmm11
+        movdqu      96(%rdi), %xmm12
+        movdqu      112(%rdi), %xmm9
+        pxor        %xmm10, %xmm6
+        pxor        %xmm11, %xmm7
+        pxor        %xmm12, %xmm8
+        movdqu      %xmm1, (%rsi)
+        movdqu      %xmm2, 16(%rsi)
+        movdqu      %xmm3, 32(%rsi)
+        movdqu      %xmm4, 48(%rsi)
+        movdqu      %xmm5, 64(%rsi)
+        movdqu      %xmm6, 80(%rsi)
+        movdqu      %xmm7, 96(%rsi)
+        movdqu      %xmm8, 112(%rsi)
+        addq        $128, %rdi
+        decq        %rcx
+        jne         DLOOP_8
+        addq        $128, %rsi
+DREMAINDER_8:
+        cmpq        $0, %r10
+        je          DEND_8
+DLOOP_8_2:
+        movdqu      (%rdi), %xmm1
+        movdqa      %xmm1, %xmm10
+        addq        $16, %rdi
+        pxor        (%r8), %xmm1
+        movdqu      160(%r8), %xmm2
+        cmpl        $12, %r9d
+        aesdec      16(%r8), %xmm1
+        aesdec      32(%r8), %xmm1
+        aesdec      48(%r8), %xmm1
+        aesdec      64(%r8), %xmm1
+        aesdec      80(%r8), %xmm1
+        aesdec      96(%r8), %xmm1
+        aesdec      112(%r8), %xmm1
+        aesdec      128(%r8), %xmm1
+        aesdec      144(%r8), %xmm1
+        jb          DLAST_8_2
+        movdqu      192(%r8), %xmm2
+        cmpl        $14, %r9d
+        aesdec      160(%r8), %xmm1
+        aesdec      176(%r8), %xmm1
+        jb          DLAST_8_2
+        movdqu      224(%r8), %xmm2
+        aesdec      192(%r8), %xmm1
+        aesdec      208(%r8), %xmm1
+DLAST_8_2:
+        aesdeclast  %xmm2, %xmm1
+        pxor        %xmm9, %xmm1
+        movdqa      %xmm10, %xmm9
+        movdqu      %xmm1, (%rsi)
+        addq        $16, %rsi
+        decq        %r10
+        jne         DLOOP_8_2
+DEND_8:
+        ret
+
+#endif /* WOLFSSL_AESNI_BYx */
 
 
 /*
@@ -272,8 +766,13 @@ AES_ECB_encrypt (const unsigned char *in,
 	const unsigned char *KS,
 	int nr)
 */
+#ifndef __APPLE__
 .globl AES_ECB_encrypt
 AES_ECB_encrypt:
+#else
+.globl _AES_ECB_encrypt
+_AES_ECB_encrypt:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 # parameter 3: %rdx
@@ -431,8 +930,13 @@ AES_ECB_decrypt (const unsigned char *in,
   const unsigned char *KS,
   int nr)
 */
+#ifndef __APPLE__
 .globl AES_ECB_decrypt
 AES_ECB_decrypt:
+#else
+.globl _AES_ECB_decrypt
+_AES_ECB_decrypt:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 # parameter 3: %rdx
@@ -591,8 +1095,13 @@ void AES_128_Key_Expansion(const unsigned char* userkey,
    unsigned char* key_schedule);
 */
 .align  16,0x90
+#ifndef __APPLE__
 .globl AES_128_Key_Expansion
 AES_128_Key_Expansion:
+#else
+.globl _AES_128_Key_Expansion
+_AES_128_Key_Expansion:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 movl    $10, 240(%rsi)
@@ -651,13 +1160,18 @@ ret
 void AES_192_Key_Expansion (const unsigned char *userkey,
   unsigned char *key)
 */
+#ifndef __APPLE__
 .globl AES_192_Key_Expansion
 AES_192_Key_Expansion:
+#else
+.globl _AES_192_Key_Expansion
+_AES_192_Key_Expansion:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 
 movdqu (%rdi), %xmm1
-movdqu 16(%rdi), %xmm3
+movq 16(%rdi), %xmm3
 movdqa %xmm1, (%rsi)
 movdqa %xmm3, %xmm5
 
@@ -731,14 +1245,19 @@ pslldq $4, %xmm4
 pxor   %xmm4, %xmm3
 pxor   %xmm2, %xmm3
 ret
- 
+
 
 /*
 void AES_256_Key_Expansion (const unsigned char *userkey,
   unsigned char *key)
 */
+#ifndef __APPLE__
 .globl AES_256_Key_Expansion
 AES_256_Key_Expansion:
+#else
+.globl _AES_256_Key_Expansion
+_AES_256_Key_Expansion:
+#endif
 # parameter 1: %rdi
 # parameter 2: %rsi
 
@@ -814,3 +1333,6 @@ pxor  %xmm4, %xmm3
 pxor   %xmm2, %xmm3
 ret
 
+#if defined(__linux__) && defined(__ELF__)
+    .section .note.GNU-stack,"",%progbits
+#endif
