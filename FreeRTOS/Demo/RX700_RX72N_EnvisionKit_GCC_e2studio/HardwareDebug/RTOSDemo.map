@@ -550,7 +550,7 @@ Discarded input sections
  .text.xStreamBufferBytesAvailable
                 0x00000000       0x38 ./src/FreeRTOS/Source/stream_buffer.o
  .text.xStreamBufferSend
-                0x00000000      0x258 ./src/FreeRTOS/Source/stream_buffer.o
+                0x00000000      0x280 ./src/FreeRTOS/Source/stream_buffer.o
  .text.xStreamBufferReceive
                 0x00000000      0x100 ./src/FreeRTOS/Source/stream_buffer.o
  .text.xStreamBufferNextMessageLengthBytes
@@ -2138,7 +2138,7 @@ END GROUP
                 0xffc0ee85       0x1a ./src/FreeRTOS_Demo/Full_Demo/main_full.o
  .rodata.vTaskList.str1.1
                 0xffc0ee9f        0xf ./src/FreeRTOS/Source/tasks.o
- .rodata.CSWTCH.155
+ .rodata.CSWTCH.154
                 0xffc0eeae        0x5 ./src/FreeRTOS/Source/tasks.o
  .rodata.xTimerCreateTimerTask.str1.1
                 0xffc0eeb3        0x8 ./src/FreeRTOS/Source/timers.o
@@ -2194,14 +2194,14 @@ END GROUP
                 0x00000048        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
  .data.xErrorStatus
                 0x0000004c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .data.uxTick.2163
+ .data.uxTick.2168
                 0x00000050        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
  .data.xTestStatus
                 0x00000054        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .data.usLastCreationCount.2021
+ .data.usLastCreationCount.2026
                 0x00000058        0x2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
  *fill*         0x0000005a        0x2 
- .data.pxLastCommandInList.2032
+ .data.pxLastCommandInList.2037
                 0x0000005c        0x4 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
  .data.xRegisteredCommands
                 0x00000060        0x8 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
@@ -2232,7 +2232,7 @@ END GROUP
                 0x000001fd       0x50 ./src/smc_gen/r_sci_rx/src/r_sci_rx.o
  .bss.ch2_tx_buf
                 0x0000024d       0x50 ./src/smc_gen/r_sci_rx/src/r_sci_rx.o
- .bss.qcb_init.24814
+ .bss.qcb_init.24819
                 0x0000029d        0x1 ./src/smc_gen/r_byteq/src/r_byteq.o
  *fill*         0x0000029e        0x2 
  .bss.g_qcb     0x000002a0      0x180 ./src/smc_gen/r_byteq/src/r_byteq.o
@@ -2250,23 +2250,23 @@ END GROUP
                 0x000005db        0x1 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
  .bss.s_bsp_swint_task
                 0x000005dc       0x6c ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
- .bss.sLastBlockingProducerCount.2151
+ .bss.sLastBlockingProducerCount.2156
                 0x00000648        0x6 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .bss.sLastBlockingConsumerCount.2150
+ .bss.sLastBlockingConsumerCount.2155
                 0x0000064e        0x6 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
  .bss.sBlockingProducerCount
                 0x00000654        0x6 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
  .bss.sBlockingConsumerCount
                 0x0000065a        0x6 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .bss.ulPreviousISRCycles.2113
+ .bss.ulPreviousISRCycles.2118
                 0x00000660        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .bss.ulPreviousWaitBitCycles.2111
+ .bss.ulPreviousWaitBitCycles.2116
                 0x00000664        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .bss.ulPreviousSetBitCycles.2112
+ .bss.ulPreviousSetBitCycles.2117
                 0x00000668        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .bss.xISRTestError.2101
+ .bss.xISRTestError.2106
                 0x0000066c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .bss.xCallCount.2100
+ .bss.xCallCount.2105
                 0x00000670        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
  .bss.xSyncTask2
                 0x00000674        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
@@ -2282,9 +2282,9 @@ END GROUP
                 0x00000688        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
  .bss.ulTestMasterCycles
                 0x0000068c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .bss.ulLastLoopCounter2.2184
+ .bss.ulLastLoopCounter2.2189
                 0x00000690        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .bss.ulLastLoopCounter.2183
+ .bss.ulLastLoopCounter.2188
                 0x00000694        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
  .bss.xBlockWasAborted
                 0x00000698        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
@@ -2300,17 +2300,17 @@ END GROUP
                 0x000006ac        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
  .bss.xErrorDetected
                 0x000006b0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .bss.uxLastLowPriorityLoops2.2242
+ .bss.uxLastLowPriorityLoops2.2247
                 0x000006b4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .bss.uxLastLowPriorityLoops1.2241
+ .bss.uxLastLowPriorityLoops1.2246
                 0x000006b8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .bss.uxLastHighPriorityLoops2.2240
+ .bss.uxLastHighPriorityLoops2.2245
                 0x000006bc        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .bss.uxLastHighPriorityLoops1.2239
+ .bss.uxLastHighPriorityLoops1.2244
                 0x000006c0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .bss.uxNextOperation.2230
+ .bss.uxNextOperation.2235
                 0x000006c4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .bss.uxNextOperation.2221
+ .bss.uxNextOperation.2226
                 0x000006c8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
  .bss.ucNormallyFullReceivedValues
                 0x000006cc       0xc8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
@@ -2336,11 +2336,11 @@ END GROUP
                 0x0000087c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
  .bss.xNormallyEmptyQueue
                 0x00000880        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .bss.ulLastCountingSemaphoreLoops.2167
+ .bss.ulLastCountingSemaphoreLoops.2172
                 0x00000884        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .bss.ulLastMasterLoopCounter.2166
+ .bss.ulLastMasterLoopCounter.2171
                 0x00000888        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .bss.xLastGiveTime.2160
+ .bss.xLastGiveTime.2165
                 0x0000088c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
  .bss.xOkToGiveCountingSemaphore
                 0x00000890        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
@@ -2360,19 +2360,19 @@ END GROUP
                 0x000008ac        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
  .bss.xErrorDetected
                 0x000008b0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .bss.ulCallCount.2070
+ .bss.ulCallCount.2075
                 0x000008b4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
  .bss.xISRQueue
                 0x000008b8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
  .bss.ulLoopCounter
                 0x000008bc        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
- .bss.ulLastNotifyCycleCount.2060
+ .bss.ulLastNotifyCycleCount.2065
                 0x000008c0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .bss.xAPIToUse.2048
+ .bss.xAPIToUse.2053
                 0x000008c4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .bss.xCallCount.2047
+ .bss.xCallCount.2052
                 0x000008c8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .bss.ulCallCount.2031
+ .bss.ulCallCount.2036
                 0x000008cc        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
  .bss.uxNextRand
                 0x000008d0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
@@ -2385,13 +2385,13 @@ END GROUP
                 0x000008e0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
  .bss.ulNotifyCycleCount
                 0x000008e4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .bss.ulLastLoopCounter.2101
+ .bss.ulLastLoopCounter.2106
                 0x000008e8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .bss.xIterationsWithoutCounterIncrement.2104
+ .bss.xIterationsWithoutCounterIncrement.2109
                 0x000008ec        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .bss.xLastCycleFrequency.2105
+ .bss.xLastCycleFrequency.2110
                 0x000008f0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .bss.uxCallCount.2172
+ .bss.uxCallCount.2177
                 0x000008f4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
  .bss.xBasePeriod
                 0x000008f8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
@@ -2417,9 +2417,9 @@ END GROUP
                 0x0000091c       0x18 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
  .bss.ulLoopCounter
                 0x00000934        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .bss.xLastSecondaryCycleCount.2119
+ .bss.xLastSecondaryCycleCount.2124
                 0x00000938        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .bss.xLastPrimaryCycleCount.2118
+ .bss.xLastPrimaryCycleCount.2123
                 0x0000093c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
  .bss.xRunIndicator
                 0x00000940        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
@@ -2433,9 +2433,9 @@ END GROUP
                 0x00000950        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
  .bss.xTestQueue
                 0x00000954        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .bss.uxLastCount1.2084
+ .bss.uxLastCount1.2089
                 0x00000958        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
- .bss.uxLastCount0.2083
+ .bss.uxLastCount0.2088
                 0x0000095c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
  .bss.xParameters
                 0x00000960       0x18 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
@@ -2446,12 +2446,12 @@ END GROUP
  .bss.usCreationCount
                 0x00000980        0x2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
  *fill*         0x00000982        0x2 
- .bss.ulLastExpectedValue.2168
+ .bss.ulLastExpectedValue.2173
                 0x00000984        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
- .bss.usLastTaskCheck.2167
+ .bss.usLastTaskCheck.2172
                 0x00000988        0x2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
  *fill*         0x0000098a        0x2 
- .bss.ulValueToSend.2154
+ .bss.ulValueToSend.2159
                 0x0000098c        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
  .bss.ulExpectedValue
                 0x00000990        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
@@ -2470,11 +2470,11 @@ END GROUP
                 0x000009a8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
  .bss.usTaskCheck
                 0x000009ac        0x8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
- .bss.uxLastPollingCycles.2084
+ .bss.uxLastPollingCycles.2089
                 0x000009b4        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .bss.uxLastBlockingCycles.2083
+ .bss.uxLastBlockingCycles.2088
                 0x000009b8        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .bss.uxLastControllingCycles.2082
+ .bss.uxLastControllingCycles.2087
                 0x000009bc        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
  .bss.xBlockingTaskHandle
                 0x000009c0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
@@ -2493,31 +2493,31 @@ END GROUP
  .bss.xErrorOccurred
                 0x000009dc        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
  .bss.xMutex    0x000009e0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .bss.sLastCheckVariables.2140
+ .bss.sLastCheckVariables.2145
                 0x000009e4        0x8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
  .bss.sNextCheckVariable
                 0x000009ec        0x2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
  .bss.sCheckVariables
                 0x000009ee        0x8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
  *fill*         0x000009f6        0x2 
- .bss.pxCommand.2040
+ .bss.pxCommand.2045
                 0x000009f8        0x4 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .bss.pxCommand.2074
+ .bss.pxCommand.2079
                 0x000009fc        0x4 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
  .bss.cOutputBuffer
                 0x00000a00      0xdac ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .bss.uxParameterNumber.2162
+ .bss.uxParameterNumber.2167
                 0x000017ac        0x4 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .bss.uxParameterNumber.2171
+ .bss.uxParameterNumber.2176
                 0x000017b0        0x4 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .bss.cLastInputString.2256
+ .bss.cLastInputString.2261
                 0x000017b4       0x32 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .bss.cInputString.2255
+ .bss.cInputString.2260
                 0x000017e6       0x32 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
  .bss.xTxMutex  0x00001818        0x4 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .bss.ulLastRegTest2Value.25170
+ .bss.ulLastRegTest2Value.25175
                 0x0000181c        0x4 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
- .bss.ulLastRegTest1Value.25169
+ .bss.ulLastRegTest1Value.25174
                 0x00001820        0x4 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
  .bss.ulRegTest2LoopCounter
                 0x00001824        0x4 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
@@ -2587,7 +2587,7 @@ END GROUP
  .bss.pxCurrentTCB
                 0x00010980        0x4 ./src/FreeRTOS/Source/tasks.o
                 0x00010980                pxCurrentTCB
- .bss.xLastTime.2302
+ .bss.xLastTime.2307
                 0x00010984        0x4 ./src/FreeRTOS/Source/timers.o
  .bss.xTimerTaskHandle
                 0x00010988        0x4 ./src/FreeRTOS/Source/timers.o
@@ -2748,7 +2748,7 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_frame   0x00002d60      0x71c ./src/FreeRTOS/Source/tasks.o
  .debug_frame   0x0000347c      0x240 ./src/FreeRTOS/Source/timers.o
 
-.debug_info     0x00000000    0xa8024
+.debug_info     0x00000000    0xa8034
  .debug_info    0x00000000     0x83aa ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
  .debug_info    0x000083aa     0x2b33 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.o
  .debug_info    0x0000aedd      0x1be ./src/smc_workaround/FIT_patch.o
@@ -2803,9 +2803,9 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_info    0x0009e0fd      0xcdf ./src/FreeRTOS/Source/event_groups.o
  .debug_info    0x0009eddc      0x2ac ./src/FreeRTOS/Source/list.o
  .debug_info    0x0009f088     0x2702 ./src/FreeRTOS/Source/queue.o
- .debug_info    0x000a178a     0x1780 ./src/FreeRTOS/Source/stream_buffer.o
- .debug_info    0x000a2f0a     0x3b26 ./src/FreeRTOS/Source/tasks.o
- .debug_info    0x000a6a30     0x15f4 ./src/FreeRTOS/Source/timers.o
+ .debug_info    0x000a178a     0x1791 ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_info    0x000a2f1b     0x3b25 ./src/FreeRTOS/Source/tasks.o
+ .debug_info    0x000a6a40     0x15f4 ./src/FreeRTOS/Source/timers.o
 
 .debug_abbrev   0x00000000     0x81cd
  .debug_abbrev  0x00000000      0x4db ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
@@ -2866,50 +2866,50 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_abbrev  0x00007a5e      0x439 ./src/FreeRTOS/Source/tasks.o
  .debug_abbrev  0x00007e97      0x336 ./src/FreeRTOS/Source/timers.o
 
-.debug_loc      0x00000000    0x13d6e
+.debug_loc      0x00000000    0x13e43
  .debug_loc     0x00000000      0xd8e ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
  .debug_loc     0x00000d8e       0x63 ./src/smc_workaround/FIT_patch.o
  .debug_loc     0x00000df1      0x934 ./src/smc_gen/r_sci_rx/src/targets/rx72n/r_sci_rx72n.o
  .debug_loc     0x00001725      0xb68 ./src/smc_gen/r_sci_rx/src/r_sci_rx.o
- .debug_loc     0x0000228d      0xed4 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
- .debug_loc     0x00003161      0x28e ./src/smc_gen/r_byteq/src/r_byteq.o
- .debug_loc     0x000033ef      0x17e ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
- .debug_loc     0x0000356d      0x13b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
- .debug_loc     0x000036a8       0xa0 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
- .debug_loc     0x00003748      0x2d8 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
- .debug_loc     0x00003a20     0x19ce ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
- .debug_loc     0x000053ee      0x11d ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
- .debug_loc     0x0000550b     0x1038 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
- .debug_loc     0x00006543      0x5c8 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
- .debug_loc     0x00006b0b       0x42 ./src/frtos_startup/freertos_start.o
- .debug_loc     0x00006b4d      0x263 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .debug_loc     0x00006db0      0x3ba ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .debug_loc     0x0000716a      0x1a2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .debug_loc     0x0000730c      0x7dd ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .debug_loc     0x00007ae9       0xc1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .debug_loc     0x00007baa       0x88 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
- .debug_loc     0x00007c32      0x382 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .debug_loc     0x00007fb4      0x6ca ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .debug_loc     0x0000867e      0x23c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .debug_loc     0x000088ba      0x190 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
- .debug_loc     0x00008a4a       0xd1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
- .debug_loc     0x00008b1b      0x1ae ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
- .debug_loc     0x00008cc9      0x42a ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
- .debug_loc     0x000090f3       0x8f ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .debug_loc     0x00009182      0x16d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
- .debug_loc     0x000092ef      0x43c ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .debug_loc     0x0000972b      0x313 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .debug_loc     0x00009a3e      0x13a ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .debug_loc     0x00009b78       0xf3 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
- .debug_loc     0x00009c6b      0x2f4 ./src/FreeRTOS_Demo/Full_Demo/serial.o
- .debug_loc     0x00009f5f      0x57f ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_loc     0x0000a4de       0xb6 ./src/FreeRTOS/Source/portable/GCC/RX700v3_DPFPU/port.o
- .debug_loc     0x0000a594     0x1011 ./src/FreeRTOS/Source/event_groups.o
- .debug_loc     0x0000b5a5       0x58 ./src/FreeRTOS/Source/list.o
- .debug_loc     0x0000b5fd     0x24d6 ./src/FreeRTOS/Source/queue.o
- .debug_loc     0x0000dad3     0x1e82 ./src/FreeRTOS/Source/stream_buffer.o
- .debug_loc     0x0000f955     0x3515 ./src/FreeRTOS/Source/tasks.o
- .debug_loc     0x00012e6a      0xf04 ./src/FreeRTOS/Source/timers.o
+ .debug_loc     0x0000228d      0xf00 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
+ .debug_loc     0x0000318d      0x28e ./src/smc_gen/r_byteq/src/r_byteq.o
+ .debug_loc     0x0000341b      0x17e ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
+ .debug_loc     0x00003599      0x13b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
+ .debug_loc     0x000036d4       0xa0 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
+ .debug_loc     0x00003774      0x2d8 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
+ .debug_loc     0x00003a4c     0x19ce ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
+ .debug_loc     0x0000541a      0x11d ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
+ .debug_loc     0x00005537     0x1038 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
+ .debug_loc     0x0000656f      0x5c8 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
+ .debug_loc     0x00006b37       0x42 ./src/frtos_startup/freertos_start.o
+ .debug_loc     0x00006b79      0x263 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
+ .debug_loc     0x00006ddc      0x3ba ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
+ .debug_loc     0x00007196      0x1a2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
+ .debug_loc     0x00007338      0x7dd ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
+ .debug_loc     0x00007b15       0xc1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
+ .debug_loc     0x00007bd6       0x88 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
+ .debug_loc     0x00007c5e      0x382 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
+ .debug_loc     0x00007fe0      0x6ca ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
+ .debug_loc     0x000086aa      0x23c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
+ .debug_loc     0x000088e6      0x190 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
+ .debug_loc     0x00008a76       0xd1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
+ .debug_loc     0x00008b47      0x1ae ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
+ .debug_loc     0x00008cf5      0x42a ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
+ .debug_loc     0x0000911f       0x8f ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
+ .debug_loc     0x000091ae      0x16d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
+ .debug_loc     0x0000931b      0x43c ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
+ .debug_loc     0x00009757      0x313 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
+ .debug_loc     0x00009a6a      0x13a ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
+ .debug_loc     0x00009ba4       0xf3 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
+ .debug_loc     0x00009c97      0x2f4 ./src/FreeRTOS_Demo/Full_Demo/serial.o
+ .debug_loc     0x00009f8b      0x57f ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_loc     0x0000a50a       0xb6 ./src/FreeRTOS/Source/portable/GCC/RX700v3_DPFPU/port.o
+ .debug_loc     0x0000a5c0     0x1011 ./src/FreeRTOS/Source/event_groups.o
+ .debug_loc     0x0000b5d1       0x58 ./src/FreeRTOS/Source/list.o
+ .debug_loc     0x0000b629     0x24d6 ./src/FreeRTOS/Source/queue.o
+ .debug_loc     0x0000daff     0x1f43 ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_loc     0x0000fa42     0x34fd ./src/FreeRTOS/Source/tasks.o
+ .debug_loc     0x00012f3f      0xf04 ./src/FreeRTOS/Source/timers.o
 
 .debug_aranges  0x00000000     0x12f0
  .debug_aranges
@@ -3027,7 +3027,7 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_aranges
                 0x00001248       0xa8 ./src/FreeRTOS/Source/timers.o
 
-.debug_ranges   0x00000000     0x2df8
+.debug_ranges   0x00000000     0x2e08
  .debug_ranges  0x00000000      0x170 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
  .debug_ranges  0x00000170       0x18 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.o
  .debug_ranges  0x00000188       0x20 ./src/smc_workaround/FIT_patch.o
@@ -3078,11 +3078,11 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_ranges  0x00001818       0xf0 ./src/FreeRTOS/Source/event_groups.o
  .debug_ranges  0x00001908       0x30 ./src/FreeRTOS/Source/list.o
  .debug_ranges  0x00001938      0x590 ./src/FreeRTOS/Source/queue.o
- .debug_ranges  0x00001ec8      0x2a0 ./src/FreeRTOS/Source/stream_buffer.o
- .debug_ranges  0x00002168      0xa50 ./src/FreeRTOS/Source/tasks.o
- .debug_ranges  0x00002bb8      0x240 ./src/FreeRTOS/Source/timers.o
+ .debug_ranges  0x00001ec8      0x2b0 ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_ranges  0x00002178      0xa50 ./src/FreeRTOS/Source/tasks.o
+ .debug_ranges  0x00002bc8      0x240 ./src/FreeRTOS/Source/timers.o
 
-.debug_line     0x00000000    0x1bc80
+.debug_line     0x00000000    0x1bc82
  .debug_line    0x00000000      0xf16 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
  .debug_line    0x00000f16      0x367 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.o
  .debug_line    0x0000127d      0x242 ./src/smc_workaround/FIT_patch.o
@@ -3137,11 +3137,11 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_line    0x00013d9f      0x8f7 ./src/FreeRTOS/Source/event_groups.o
  .debug_line    0x00014696      0x345 ./src/FreeRTOS/Source/list.o
  .debug_line    0x000149db     0x1d52 ./src/FreeRTOS/Source/queue.o
- .debug_line    0x0001672d     0x12a2 ./src/FreeRTOS/Source/stream_buffer.o
- .debug_line    0x000179cf     0x364d ./src/FreeRTOS/Source/tasks.o
- .debug_line    0x0001b01c      0xc64 ./src/FreeRTOS/Source/timers.o
+ .debug_line    0x0001672d     0x12ba ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_line    0x000179e7     0x3637 ./src/FreeRTOS/Source/tasks.o
+ .debug_line    0x0001b01e      0xc64 ./src/FreeRTOS/Source/timers.o
 
-.debug_str      0x00000000    0x10e4d
+.debug_str      0x00000000    0x10e59
  .debug_str     0x00000000     0x2de9 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
                                0x2f12 (size before relaxing)
  .debug_str     0x00002de9     0x1596 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.o
@@ -3248,11 +3248,11 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
                                 0x31c (size before relaxing)
  .debug_str     0x0000f611      0x5e6 ./src/FreeRTOS/Source/queue.o
                                 0xb83 (size before relaxing)
- .debug_str     0x0000fbf7      0x4dd ./src/FreeRTOS/Source/stream_buffer.o
-                                0x8dd (size before relaxing)
- .debug_str     0x000100d4      0x915 ./src/FreeRTOS/Source/tasks.o
+ .debug_str     0x0000fbf7      0x4e9 ./src/FreeRTOS/Source/stream_buffer.o
+                                0x8e9 (size before relaxing)
+ .debug_str     0x000100e0      0x915 ./src/FreeRTOS/Source/tasks.o
                                0x125a (size before relaxing)
- .debug_str     0x000109e9      0x464 ./src/FreeRTOS/Source/timers.o
+ .debug_str     0x000109f5      0x464 ./src/FreeRTOS/Source/timers.o
                                 0x9ba (size before relaxing)
 
 .comment        0x00000000       0x6c

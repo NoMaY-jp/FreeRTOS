@@ -1,9 +1,8 @@
-﻿========== Start rebuild all(2020/7/23 8:31:35) ==========
+﻿========== Start rebuild all(2020年8月24日 14:44:48) ==========
 ------ Start build(RTOSDemo, DefaultBuild) ------
->DefaultBuild\RTOSDemo.lib
 >..\..\Source\event_groups.c ..\..\Source\list.c ..\..\Source\portable\MemMang\heap_4.c ..\..\Source\portable\Renesas\RX700v3_DPFPU\port.c ..\..\Source\queue.c ..\..\Source\stream_buffer.c ..\..\Source\tasks.c ..\..\Source\timers.c src\FreeRTOS_Demo\Blinky_Demo\main_blinky.c ..\..\..\FreeRTOS-Plus\Source\FreeRTOS-Plus-CLI\FreeRTOS_CLI.c src\FreeRTOS_Demo\Full_Demo\IntQueueTimer.c ..\..\..\FreeRTOS-Plus\Demo\Common\FreeRTOS_Plus_CLI_Demos\Sample-CLI-commands.c ..\Common\Minimal\BlockQ.c ..\Common\Minimal\EventGroupsDemo.c ..\Common\Minimal\GenQTest.c ..\Common\Minimal\IntQueue.c ..\Common\Minimal\IntSemTest.c ..\Common\Minimal\QueueOverwrite.c ..\Common\Minimal\TaskNotify.c ..\Common\Minimal\TimerDemo.c ..\Common\Minimal\blocktim.c ..\Common\Minimal\countsem.c ..\Common\Minimal\death.c ..\Common\Minimal\dynamic.c ..\Common\Minimal\flop.c ..\Common\Minimal\recmutex.c ..\Common\Minimal\semtest.c ..\..\..\FreeRTOS-Plus\Demo\Common\FreeRTOS_Plus_CLI_Demos\UARTCommandConsole.c src\FreeRTOS_Demo\Full_Demo\main_full.c src\FreeRTOS_Demo\Full_Demo\serial.c src\frtos_startup\freertos_object_init.c src\frtos_startup\freertos_start.c src\smc_gen\general\r_cg_hardware_setup.c src\smc_gen\general\r_smc_cgc.c src\smc_gen\general\r_smc_cgc_user.c src\smc_gen\general\r_smc_interrupt.c src\smc_gen\r_bsp\board\generic_rx72n\hwsetup.c src\smc_gen\r_bsp\mcu\all\dbsct.c src\smc_gen\r_bsp\mcu\all\lowlvl.c src\smc_gen\r_bsp\mcu\all\lowsrc.c src\smc_gen\r_bsp\mcu\all\mcu_locks.c src\smc_gen\r_bsp\mcu\all\r_bsp_common.c src\smc_gen\r_bsp\mcu\all\r_bsp_cpu.c src\smc_gen\r_bsp\mcu\all\r_bsp_interrupts.c src\smc_gen\r_bsp\mcu\all\r_bsp_locking.c src\smc_gen\r_bsp\mcu\all\r_bsp_mcu_startup.c src\smc_gen\r_bsp\mcu\all\r_bsp_software_interrupt.c src\smc_gen\r_bsp\mcu\all\sbrk.c src\smc_gen\r_bsp\mcu\rx72n\mcu_clocks.c src\smc_gen\r_bsp\mcu\rx72n\mcu_init.c src\smc_gen\r_bsp\mcu\rx72n\mcu_interrupts.c src\smc_gen\r_bsp\mcu\rx72n\mcu_mapped_interrupts.c src\smc_gen\r_bsp\mcu\rx72n\vecttbl.c src\smc_gen\r_byteq\src\r_byteq.c src\smc_gen\r_gpio_rx\src\r_gpio_rx.c src\smc_gen\r_gpio_rx\src\targets\rx72n\r_gpio_rx72n.c src\smc_gen\r_pincfg\r_sci_rx_pinset.c src\smc_gen\r_sci_rx\src\r_sci_rx.c src\smc_gen\r_sci_rx\src\targets\rx72n\r_sci_rx72n.c src\smc_gen\r_sci_rx\src\targets\rx72n\r_sci_rx72n_data.c src\smc_workaround\FIT_patch.c src\smc_workaround\r_bsp_patch\resetprg.c src\smc_workaround\r_dtc_rx_patch\r_dtc_rx.c src\smc_workaround\r_dtc_rx_patch\r_dtc_rx_target.c
-Library Generator Completed
 >..\..\Source\portable\Renesas\RX700v3_DPFPU\port_asm.src
+..\..\Source\portable\Renesas\RX700v3_DPFPU\port.c(32):W0521105:#warning directive: Testing for DFPU support in this port is not yet complete
 src\smc_gen\r_pincfg\r_sci_rx_pinset.h(39):M0523076:Function declarations should have prototype
 src\smc_gen\r_pincfg\r_sci_rx_pinset.h(40):M0523076:Function declarations should have prototype
 src\smc_gen\r_bsp\mcu\all\r_bsp_common.c(104):M0520826:Parameter "loop_cnt" was never referenced
@@ -25,11 +24,12 @@ src\smc_workaround\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(394):M0520381:Extr
 >DefaultBuild\RTOSDemo.abs DefaultBuild\RTOSDemo.mot
 RAMDATA SECTION:  00011186 Byte(s)
 ROMDATA SECTION:  00001aeb Byte(s)
-PROGRAM SECTION:  0000df41 Byte(s)
+PROGRAM SECTION:  0000df32 Byte(s)
 Renesas Optimizing Linker Completed
------- Build ended(Error:0, Warning:2)(RTOSDemo, DefaultBuild) ------
-========== Ended(Success:1 Projects, Failed:0 Projects)(2020/7/23 8:33:26) ==========
+------ Build ended(Error:0, Warning:3)(RTOSDemo, DefaultBuild) ------
+========== Ended(Success:1 Projects, Failed:0 Projects)(2020年8月24日 14:46:19) ==========
 
+(W)	W0521105	..\..\Source\portable\Renesas\RX700v3_DPFPU\port.c(32):W0521105:#warning directive: Testing for DFPU support in this port is not yet complete	port.c	32	RTOSDemo.mtpj
 (I)	M0520826	src\smc_gen\r_bsp\mcu\all\r_bsp_common.c(104):M0520826:Parameter "loop_cnt" was never referenced	r_bsp_common.c	104	RTOSDemo.mtpj
 (I)	M0520826	src\smc_gen\r_bsp\mcu\all\r_bsp_software_interrupt.c(949):M0520826:Parameter "p_dummy_context" was never referenced	r_bsp_software_interrupt.c	949	RTOSDemo.mtpj
 (I)	M0520111	src\smc_workaround\r_dtc_rx_patch\../../smc_gen/r_dtc_rx/src/r_dtc_rx.c(729):M0520111:Statement is unreachable	r_dtc_rx.c	729	RTOSDemo.mtpj
