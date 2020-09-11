@@ -1,4 +1,4 @@
-﻿Live logging to 'C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\Debug\List\BuildLog.log' enabled.
+Live logging to 'C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\Debug\List\BuildLog.log' enabled.
 Building configuration: RTOSDemo - Debug
 Updating build tree...
 
@@ -277,9 +277,9 @@ iccrx.exe C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_Envis
    Copyright 2009-2019 IAR Systems AB.
    PC-locked license - IAR Embedded Workbench for Renesas RX, 64K KickStart Edition 4.14
 
- 850 bytes of CODE  memory
-  26 bytes of CONST memory
-  16 bytes of DATA  memory
+ 1'458 bytes of CODE  memory
+    26 bytes of CONST memory
+    16 bytes of DATA  memory
 
 Errors: none
 Warnings: none
@@ -808,14 +808,14 @@ ilinkrx.exe C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_Env
 Warning[Ls016]: [stack usage analysis] the program contains at least one indirect call. Example: from "_R_BSP_InterruptControl". A complete list of such functions is in the map file.
 Warning[Ls017]: [stack usage analysis] the program contains at least one instance of recursion for which stack usage analysis has not been able to calculate a maximum stack depth. One function involved is "_xTaskResumeAll". A complete list of all recursion nests is in the map file.
 
-  45'227 bytes of readonly  code memory
+  45'835 bytes of readonly  code memory
    3'467 bytes of readonly  data memory
   69'366 bytes of readwrite data memory
 
 Errors: none
 Warnings: 2
 
-Link time:   1.27 (CPU)   1.38 (elapsed)
+Link time:   1.20 (CPU)   1.28 (elapsed)
 
 RTOSDemo.out
 Output Converter
