@@ -31,8 +31,12 @@
 /* Select one of the following defines. Note that you must change the target device
 by using e2 studio's menu: 'Project' --> 'Change Device'. */
 
-	//#define RSKRX72N
-	#define EnvisionRX72N
+	#if !defined(RSKRX72N) && !defined(EnvisionRX72N)
+
+		//#define RSKRX72N
+		#define EnvisionRX72N
+
+	#endif
 
 /* Moreover, in case of GNURX project, you must exclude 'Change Device for RTOSDemo'
 --> 'Project Files' --> 'src/linker_script.ld' to prevent loosing the following three
