@@ -3082,7 +3082,7 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_ranges  0x00002178      0xa50 ./src/FreeRTOS/Source/tasks.o
  .debug_ranges  0x00002bc8      0x240 ./src/FreeRTOS/Source/timers.o
 
-.debug_line     0x00000000    0x1bca7
+.debug_line     0x00000000    0x1bca9
  .debug_line    0x00000000      0xf16 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
  .debug_line    0x00000f16      0x367 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.o
  .debug_line    0x0000127d      0x242 ./src/smc_workaround/FIT_patch.o
@@ -3133,13 +3133,13 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_line    0x00012117      0x8ed ./src/FreeRTOS_Demo/Full_Demo/main_full.o
  .debug_line    0x00012a04      0x7ec ./src/FreeRTOS_Demo/Full_Demo/serial.o
  .debug_line    0x000131f0      0x6cd ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x000138bd      0x507 ./src/FreeRTOS/Source/portable/GCC/RX700v3_DPFPU/port.o
- .debug_line    0x00013dc4      0x8f7 ./src/FreeRTOS/Source/event_groups.o
- .debug_line    0x000146bb      0x345 ./src/FreeRTOS/Source/list.o
- .debug_line    0x00014a00     0x1d52 ./src/FreeRTOS/Source/queue.o
- .debug_line    0x00016752     0x12ba ./src/FreeRTOS/Source/stream_buffer.o
- .debug_line    0x00017a0c     0x3637 ./src/FreeRTOS/Source/tasks.o
- .debug_line    0x0001b043      0xc64 ./src/FreeRTOS/Source/timers.o
+ .debug_line    0x000138bd      0x509 ./src/FreeRTOS/Source/portable/GCC/RX700v3_DPFPU/port.o
+ .debug_line    0x00013dc6      0x8f7 ./src/FreeRTOS/Source/event_groups.o
+ .debug_line    0x000146bd      0x345 ./src/FreeRTOS/Source/list.o
+ .debug_line    0x00014a02     0x1d52 ./src/FreeRTOS/Source/queue.o
+ .debug_line    0x00016754     0x12ba ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_line    0x00017a0e     0x3637 ./src/FreeRTOS/Source/tasks.o
+ .debug_line    0x0001b045      0xc64 ./src/FreeRTOS/Source/timers.o
 
 .debug_str      0x00000000    0x10e59
  .debug_str     0x00000000     0x2de9 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
