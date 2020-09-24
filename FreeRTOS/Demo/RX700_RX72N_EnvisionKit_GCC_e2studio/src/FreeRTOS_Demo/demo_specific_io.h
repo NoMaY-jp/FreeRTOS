@@ -28,19 +28,19 @@
 #ifndef LED_IO_H
 #define LED_IO_H
 
-/* Select one of the following defines. Note that you must change the target device
-by using e2 studio's menu: 'Project' --> 'Change Device'. */
+/* Select one of the following defines. Note that you don't have to
+change the target device. */
 
-	#if !defined(RSKRX72N) && !defined(EnvisionRX72N)
+	#if !defined(RSK_RX72N) && !defined(RPB_RX72N)
 
-		//#define RSKRX72N
-		#define EnvisionRX72N
+		//#define RSK_RX72N		/* Renesas Starter Kit+ for RX72N */
+		#define RPB_RX72N		/* Renesas Envision Kit RPBRX72N */
 
 	#endif
 
-/* Moreover, in case of GNURX project, you must exclude 'Change Device for RTOSDemo'
---> 'Project Files' --> 'src/linker_script.ld' to prevent loosing the following three
-KEEP() statements in the src/linker_script.ld file. */
+/* But, in case of GNURX project, if you change the target device,
+please take care of the following three KEEP() statements in the
+src/linker_script.ld file by your hand. */
 
 /*
 	.text 0xFFC00000: AT(0xFFC00000)
@@ -57,45 +57,46 @@ KEEP() statements in the src/linker_script.ld file. */
 
 /* Board support settings. */
 
-	#ifdef RSKRX72N
+	#ifdef RSK_RX72N
 
-		/* R5F572NNDDBD (or R5F572NNHDBD) 224pin LFBGA */
+		/* R5F572NNDDBD (or R5F572NNHDBD) 224-pin LFBGA */
 
 		/* General Values */
 		#define LED_ON					(0)
 		#define LED_OFF 				(1)
-		#define SW_PUSH 				(0)
-		#define SW_RELEASE				(1)
+		#define SET_BIT_HIGH			(1)
+		#define SET_BIT_LOW 			(0)
 
 		/* Switches */
-		#define SW1 					(PORT1.PIDR.BIT.B5)
-		#define SW2 					(PORT1.PIDR.BIT.B2)
+		#define SW1 					(PORT4.PIDR.BIT.B5)
+		#define SW2 					(PORT4.PIDR.BIT.B4)
 		#define SW3 					(PORT0.PIDR.BIT.B7)
-		#define U_GPIO_PIN_SW1			(GPIO_PORT_1_PIN_5)
-		#define U_GPIO_PIN_SW2			(GPIO_PORT_1_PIN_2)
+		#define U_GPIO_PIN_SW1			(GPIO_PORT_4_PIN_5)
+		#define U_GPIO_PIN_SW2			(GPIO_PORT_4_PIN_4)
 		#define U_GPIO_PIN_SW3			(GPIO_PORT_0_PIN_7)
 
 		/* LED port settings */
-		#define LED0					(PORT0.PODR.BIT.B3)
-		#define LED1					(PORT0.PODR.BIT.B5)
-		#define LED2					(PORT2.PODR.BIT.B6)
-		#define LED3					(PORT2.PODR.BIT.B7)
-		#define U_GPIO_PIN_LED0 		(GPIO_PORT_0_PIN_3)
-		#define U_GPIO_PIN_LED1 		(GPIO_PORT_0_PIN_5)
-		#define U_GPIO_PIN_LED2 		(GPIO_PORT_2_PIN_6)
-		#define U_GPIO_PIN_LED3 		(GPIO_PORT_2_PIN_7)
+		#define LED0					(PORT7.PODR.BIT.B1)
+		#define LED1					(PORTH.PODR.BIT.B6)
+		#define LED2					(PORTL.PODR.BIT.B7)
+		#define LED3					(PORTL.PODR.BIT.B6)
+		#define U_GPIO_PIN_LED0 		(GPIO_PORT_7_PIN_1)
+		#define U_GPIO_PIN_LED1 		(GPIO_PORT_H_PIN_6)
+		#define U_GPIO_PIN_LED2 		(GPIO_PORT_L_PIN_7)
+		#define U_GPIO_PIN_LED3 		(GPIO_PORT_L_PIN_6)
 
 		/* FreeRTOS CLI Command Console */
-		#define U_SCI_UART_CLI_PINSET()	R_SCI_PinSet_SCI9()
+		extern void R_SCI_PinSet_SCI9_RSK_RX72N(void);
+		#define U_SCI_UART_CLI_PINSET()	R_SCI_PinSet_SCI9_RSK_RX72N()
 		#define U_SCI_UART_CLI_SCI_CH	(SCI_CH9)
 		#define U_DTC_UART_CLI_TX_ACT	((dtc_activation_source_t)VECT(SCI9,TXI9))
 		#define U_DTC_UART_CLI_TX_DR	(SCI9.TDR)
 
-	#endif /* RSKRX72N */
+	#endif /* RSK_RX72N */
 
-	#ifdef EnvisionRX72N
+	#ifdef RPB_RX72N
 
-		/* R5F572NDHDFB 144pin LQFP */
+		/* R5F572NDHDFB 144-pin LFQFP */
 
 		/* General Values */
 		#define LED_ON					(0)
@@ -117,11 +118,18 @@ KEEP() statements in the src/linker_script.ld file. */
 		#define U_DTC_UART_CLI_TX_ACT	((dtc_activation_source_t)VECT(SCI2,TXI2))
 		#define U_DTC_UART_CLI_TX_DR	(SCI2.TDR)
 
-	#endif /* EnvisionRX72N */
+	#endif /* RPB_RX72N */
 
 	#ifndef LED0
 		#error The hardware platform is not defined
 	#endif
+
+#endif /* LED_IO_H */
+
+#ifdef BSP_CFG_MCU_PART_PACKAGE
+
+#ifndef LED_IO_H_EXT
+#define LED_IO_H_EXT
 
 /* Board Support Data Structures. */
 
@@ -135,5 +143,7 @@ extern dtc_transfer_data_t xSerialTxDtcInfo;
 
 extern void vSerialSciCallback( void *pvArgs );
 
-#endif /* LED_IO_H */
+#endif /* LED_IO_H_EXT */
+
+#endif /* BSP_CFG_MCU_PART_PACKAGE */
 

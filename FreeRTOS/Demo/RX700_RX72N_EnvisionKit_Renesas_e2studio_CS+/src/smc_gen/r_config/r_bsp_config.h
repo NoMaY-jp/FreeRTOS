@@ -33,6 +33,9 @@
 /* Include for various workarounds. */
 #include "smc_workaround.h"
 
+/* Include for selecting eval board. */
+#include "demo_specific_io.h"
+
 /***********************************************************************************************************************
 Configuration Options
 ***********************************************************************************************************************/
@@ -769,6 +772,12 @@ NOTE: The RAM areas are not contiguous.It is separated by 512 KB each.
          It is possible to dynamically change the IPR.
 */
 #define BSP_CFG_SWINT_IPR_INITIAL_VALUE     (0x1)
+
+/* Definition which should be replaced depending on the selected eval board. */
+#ifdef RSK_RX72N
+    #undef BSP_CFG_MCU_PART_PACKAGE
+    #define BSP_CFG_MCU_PART_PACKAGE        (0x2)
+#endif
 
 #endif /* R_BSP_CONFIG_REF_HEADER_FILE */
 

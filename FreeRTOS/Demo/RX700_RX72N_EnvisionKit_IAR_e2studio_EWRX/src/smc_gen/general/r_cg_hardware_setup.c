@@ -140,5 +140,24 @@ void R_FIT_Board_Support_Settings(void)
     R_DTC_Control(DTC_CMD_DTC_START, NULL, NULL);
 }
 
+#ifdef RSK_RX72N
+
+void R_SCI_PinSet_SCI9_RSK_RX72N(void)
+{
+    R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
+
+    /* Set RXD9/SMISO9/SSCL9 pin */
+    MPC.PL1PFS.BYTE = 0x0AU;
+    PORTL.PMR.BIT.B1 = 1U;
+
+    /* Set TXD9/SMOSI9/SSDA9 pin */
+    MPC.PB7PFS.BYTE = 0x0AU;
+    PORTB.PMR.BIT.B7 = 1U;
+
+    R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
+}
+
+#endif /* RSK_RX72N */
+
 /* End user code. Do not edit comment generated here */
 
