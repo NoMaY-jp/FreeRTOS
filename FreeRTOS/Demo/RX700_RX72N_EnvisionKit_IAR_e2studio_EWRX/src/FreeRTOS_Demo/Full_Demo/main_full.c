@@ -98,6 +98,7 @@
 #include "IntQueue.h"
 #include "EventGroupsDemo.h"
 #include "TaskNotify.h"
+#include "TaskNotifyArray.h"
 #include "IntSemTest.h"
 
 /* Renesas includes. */
@@ -216,6 +217,7 @@ void main_full( void )
 	vStartQueueOverwriteTask( mainQUEUE_OVERWRITE_PRIORITY );
 	vStartEventGroupTasks();
 	vStartTaskNotifyTask();
+	vStartTaskNotifyArrayTask();
 	vStartInterruptSemaphoreTasks();
 
 	/* Create the register check tasks, as described at the top of this	file.
@@ -359,6 +361,11 @@ char * pcStatusMessage = pcPassMessage;
 			pcStatusMessage = "ERROR: Task notification demo/tests.\r\n";
 		}
 
+		if( xAreTaskNotificationArrayTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Task notification array demo/tests.\r\n";
+		}
+
 		if( xAreInterruptSemaphoreTasksStillRunning() == pdFALSE )
 		{
 			pcStatusMessage = "ERROR: Interrupt semaphore demo/tests.\r\n";
@@ -464,6 +471,7 @@ void vFullDemoTickHook( void )
 
 	/* Use task notifications from an interrupt. */
 	xNotifyTaskFromISR();
+	xNotifyArrayTaskFromISR();
 
 	/* Use mutexes from interrupts. */
 	vInterruptSemaphorePeriodicTest();

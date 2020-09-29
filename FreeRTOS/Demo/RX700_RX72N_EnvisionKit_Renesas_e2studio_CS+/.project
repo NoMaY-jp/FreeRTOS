@@ -216,6 +216,15 @@
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-TaskNotifyArray.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1442773470150</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-TimerDemo.c</arguments>
 			</matcher>
 		</filter>

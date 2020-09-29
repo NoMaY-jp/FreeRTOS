@@ -2469,6 +2469,9 @@
                     <name>$PROJ_DIR$\..\Common\Minimal\TaskNotify.c</name>
                 </file>
                 <file>
+                    <name>$PROJ_DIR$\..\Common\Minimal\TaskNotifyArray.c</name>
+                </file>
+                <file>
                     <name>$PROJ_DIR$\..\Common\Minimal\TimerDemo.c</name>
                 </file>
             </group>
