@@ -36,7 +36,7 @@
 /* Renesas includes. */
 #include "platform.h"
 #include "r_dtc_rx_if.h"
-#include "r_sci_rx_if.h"
+#include "u_sci_rx_ext_if.h"
 #include "r_byteq_if.h"
 
 /* Eval board specific definitions. */
@@ -115,8 +115,7 @@ xComPortHandle xSerialPortInitMinimal( unsigned long ulWantedBaud, unsigned port
     /* Set interrupt priority. (Other UART settings had been initialized in the
     src/smc_gen/general/r_cg_hardware_setup.c.) */
     uint8_t ucInterruptPriority = configMAX_SYSCALL_INTERRUPT_PRIORITY - 1;
-    R_SCI_Control( xSerialSciHandle, SCI_CMD_SET_RXI_PRIORITY, ( void * ) &ucInterruptPriority );
-    R_SCI_Control( xSerialSciHandle, SCI_CMD_SET_TXI_PRIORITY, ( void * ) &ucInterruptPriority );
+    U_SCI_Control_EXT( xSerialSciHandle, SCI_CMD_SET_INT_PRIORITY, ( void * ) &ucInterruptPriority );
 
     /* Only one UART is supported, so it doesn't matter what is returned
     here. */

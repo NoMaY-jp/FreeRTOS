@@ -12,8 +12,19 @@
 
 /* Workaround for warning messages caused by missing 'void' argument prototype.
  */
+void R_SCI_PinSet_SCI0(void);
+void R_SCI_PinSet_SCI1(void);
 void R_SCI_PinSet_SCI2(void);
+void R_SCI_PinSet_SCI3(void);
+void R_SCI_PinSet_SCI4(void);
+void R_SCI_PinSet_SCI5(void);
+void R_SCI_PinSet_SCI6(void);
+void R_SCI_PinSet_SCI7(void);
+void R_SCI_PinSet_SCI8(void);
 void R_SCI_PinSet_SCI9(void);
+void R_SCI_PinSet_SCI10(void);
+void R_SCI_PinSet_SCI11(void);
+void R_SCI_PinSet_SCI12(void);
 
 #if defined(__ICCRX__)
 

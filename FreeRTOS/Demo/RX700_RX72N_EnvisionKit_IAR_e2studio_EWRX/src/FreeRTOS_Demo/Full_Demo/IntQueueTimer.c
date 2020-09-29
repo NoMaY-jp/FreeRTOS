@@ -89,6 +89,20 @@ void vInitialiseTimerForIntQueueTest( void )
 		TMR0.TCR.BIT.CMIEA = 1;
 		TMR2.TCR.BIT.CMIEA = 1;
 
+#if defined(BSP_MCU_RX130) || defined(BSP_MCU_RX231) || defined(BSP_MCU_RX65N)
+
+		/* Set interrupt priority and enable. */
+		IPR( TMR0, CMIA0 ) = configMAX_SYSCALL_INTERRUPT_PRIORITY - 1;
+		IR( TMR0, CMIA0 ) = 0U;
+		IEN( TMR0, CMIA0 ) = 1U;
+
+		/* Do the same for TMR2, but to vector 129. */
+		IPR( TMR2, CMIA2 ) = configMAX_SYSCALL_INTERRUPT_PRIORITY - 2;
+		IR( TMR2, CMIA2 ) = 0U;
+		IEN( TMR2, CMIA2 ) = 1U;
+
+#elif defined(BSP_MCU_RX72N)
+
 		/* Set priority and enable interrupt. */
 		ICU.SLIBXR128.BYTE = 3; /* Three is TMR0 compare match A. */
 		IPR( PERIB, INTB128 ) = configMAX_SYSCALL_INTERRUPT_PRIORITY - 1;
@@ -103,12 +117,30 @@ void vInitialiseTimerForIntQueueTest( void )
 		IPR( PERIB, INTB129 ) = configMAX_SYSCALL_INTERRUPT_PRIORITY - 2;
 		IEN( PERIB, INTB129 ) = 1;
 		IR( PERIB, INTB129 ) = 0;
+
+#else
+
+	#error "Currently the specified MCU is not supported. Please modify the code here."
+
+#endif
 	}
 	portEXIT_CRITICAL();
 }
 /*-----------------------------------------------------------*/
 
-R_BSP_PRAGMA_STATIC_INTERRUPT( prvIntQTimer_0_1_ISR, VECT( PERIB, INTB128) )
+#if defined(BSP_MCU_RX130) || defined(BSP_MCU_RX231) || defined(BSP_MCU_RX65N)
+
+	R_BSP_PRAGMA_STATIC_INTERRUPT( prvIntQTimer_0_1_ISR, VECT( TMR0, CMIA0) )
+
+#elif defined(BSP_MCU_RX72N)
+
+	R_BSP_PRAGMA_STATIC_INTERRUPT( prvIntQTimer_0_1_ISR, VECT( PERIB, INTB128) )
+
+#else
+
+	#error "Currently the specified MCU is not supported. Please modify the code here."
+
+#endif
 R_BSP_ATTRIB_STATIC_INTERRUPT void prvIntQTimer_0_1_ISR( void )
 {
 	/* Enable interrupts to allow interrupt nesting. */
@@ -118,7 +150,19 @@ R_BSP_ATTRIB_STATIC_INTERRUPT void prvIntQTimer_0_1_ISR( void )
 }
 /*-----------------------------------------------------------*/
 
-R_BSP_PRAGMA_STATIC_INTERRUPT( prvIntQTimer_2_3_ISR, VECT( PERIB, INTB129) )
+#if defined(BSP_MCU_RX130) || defined(BSP_MCU_RX231) || defined(BSP_MCU_RX65N)
+
+	R_BSP_PRAGMA_STATIC_INTERRUPT( prvIntQTimer_2_3_ISR, VECT( TMR2, CMIA2) )
+
+#elif defined(BSP_MCU_RX72N)
+
+	R_BSP_PRAGMA_STATIC_INTERRUPT( prvIntQTimer_2_3_ISR, VECT( PERIB, INTB129) )
+
+#else
+
+	#error "Currently the specified MCU is not supported. Please modify the code here."
+
+#endif
 R_BSP_ATTRIB_STATIC_INTERRUPT void prvIntQTimer_2_3_ISR( void )
 {
 	/* Enable interrupts to allow interrupt nesting. */

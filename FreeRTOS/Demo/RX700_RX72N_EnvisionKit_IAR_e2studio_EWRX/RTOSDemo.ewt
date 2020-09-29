@@ -3006,6 +3006,12 @@
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\smc_workaround.h</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\src\smc_workaround\u_sci_rx_ext.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\src\smc_workaround\u_sci_rx_ext_if.h</name>
+            </file>
         </group>
     </group>
     <file>
