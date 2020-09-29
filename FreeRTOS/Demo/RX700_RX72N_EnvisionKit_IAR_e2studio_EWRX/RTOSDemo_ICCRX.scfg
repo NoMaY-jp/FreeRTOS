@@ -287,9 +287,7 @@
 <Item current="20" id="cachclk.CurrentValue"/>
 </tool>
 <tool id="Pins" version="1.0.1.0">
-<pinItem allocation="" comments="" direction="None" id="XTAL" isUsedBySoftware="false" locked="false" status="0"/>
 <pinItem allocation="50" comments="" direction="None" id="CLKOUT25M" isUsedBySoftware="true" locked="false" status="0"/>
-<pinItem allocation="" comments="" direction="None" id="EXTAL" isUsedBySoftware="false" locked="false" status="0"/>
 <pinItem allocation="45" comments="" direction="None" id="RXD2" isUsedBySoftware="true" locked="false" status="0"/>
 <pinItem allocation="44" comments="" direction="None" id="TXD2" isUsedBySoftware="true" locked="false" status="0"/>
 <pinItem allocation="79" comments="" direction="None" id="RXD9" isUsedBySoftware="true" locked="false" status="0"/>
@@ -530,8 +528,8 @@
 <gridItem id="configCPU_CLOCK_HZ" selectedIndex="BSP_ICLK_HZ"/>
 <gridItem id="configPERIPHERAL_CLOCK_HZ" selectedIndex="BSP_PCLKB_HZ"/>
 <gridItem id="configTICK_RATE_HZ" selectedIndex="( TickType_t ) 1000"/>
-<gridItem id="configMINIMAL_STACK_SIZE" selectedIndex="( unsigned short ) 170"/>
-<gridItem id="configTOTAL_HEAP_SIZE_N" selectedIndex="60"/>
+<gridItem id="configMINIMAL_STACK_SIZE" selectedIndex="( unsigned short ) 130"/>
+<gridItem id="configTOTAL_HEAP_SIZE_N" selectedIndex="46"/>
 <gridItem id="configTOTAL_HEAP_SIZE" selectedIndex="( size_t ) ( configTOTAL_HEAP_SIZE_N * 1024 )"/>
 <gridItem id="configMAX_TASK_NAME_LEN" selectedIndex="12"/>
 <gridItem id="configUSE_TRACE_FACILITY" selectedIndex="1"/>

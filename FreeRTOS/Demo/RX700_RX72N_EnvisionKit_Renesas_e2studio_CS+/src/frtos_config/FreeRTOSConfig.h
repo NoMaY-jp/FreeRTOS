@@ -46,8 +46,8 @@
 #define configCPU_CLOCK_HZ				(BSP_ICLK_HZ)
 #define configPERIPHERAL_CLOCK_HZ		(BSP_PCLKB_HZ)
 #define configTICK_RATE_HZ				(( TickType_t ) 1000)
-#define configMINIMAL_STACK_SIZE		(( unsigned short ) 170)
-#define configTOTAL_HEAP_SIZE_N			(60)
+#define configMINIMAL_STACK_SIZE		(( unsigned short ) 130)
+#define configTOTAL_HEAP_SIZE_N			(46)
 #define configTOTAL_HEAP_SIZE			(( size_t ) ( configTOTAL_HEAP_SIZE_N * 1024 ))
 #define configMAX_TASK_NAME_LEN			(12)
 #define configUSE_TRACE_FACILITY		1
@@ -143,6 +143,11 @@ required to ensure flase positive timing errors are not reported. */
 #define bktPRIMARY_PRIORITY		(( configMAX_PRIORITIES - 3 ))
 #define bktSECONDARY_PRIORITY	(( configMAX_PRIORITIES - 4 ))
 #define intqHIGHER_PRIORITY		(( configMAX_PRIORITIES - 3 ))
+
+/* Override some of the stack sizes set in the common demo tasks.  Almost these
+tasks are created using configMINIMAL_STACK_SIZE (in this FreeRTOSConfig.h, it is
+130) for the stack size setting as default but some of then need more stack. */
+#define ebEVENT_GROUP_SET_BITS_TEST_TASK_STACK_SIZE		(( unsigned short ) 150)
 
 /* When the FIT configurator or the Smart Configurator is used, platform.h has to be used. */
 #define configINCLUDE_PLATFORM_H_INSTEAD_OF_IODEFINE_H  1
