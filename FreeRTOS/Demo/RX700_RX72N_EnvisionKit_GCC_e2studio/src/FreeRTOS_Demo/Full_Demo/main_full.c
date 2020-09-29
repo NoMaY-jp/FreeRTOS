@@ -26,12 +26,11 @@
  */
 
 /******************************************************************************
- * NOTE 1:  This project provides two demo applications.  A simple blinky
- * style project, and a more comprehensive test and demo application.  The
- * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting in main.c is used to
- * select between the two.  See the notes on using
- * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY in main.c.  This file implements the
- * comprehensive version.
+ * NOTE 1:  This project provides two demo applications.  A simple blinky style
+ * project, and a more comprehensive test and demo application.  The
+ * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting in main.c is used to select
+ * between the two.  See the notes on using mainCREATE_SIMPLE_BLINKY_DEMO_ONLY
+ * in main.c.  This file implements the comprehensive test and demo version.
  *
  * NOTE 2:  This file only contains the source code that is specific to the
  * full demo.  Generic functions, such FreeRTOS hook functions, and functions
@@ -39,19 +38,13 @@
  *
  ******************************************************************************
  *
- * main_full() creates a set of demo application tasks and software timers, then
+ * main_full() creates all the demo application tasks and software timers, then
  * starts the scheduler.  The web documentation provides more details of the
  * standard demo application tasks, which provide no particular functionality,
  * but do provide a good example of how to use the FreeRTOS API.
  *
  * In addition to the standard demo tasks, the following tasks and tests are
  * defined and/or created within this file:
- *
- * "FreeRTOS+CLI command console" -  The command console uses SCI1 for its
- * input and output.  The baud rate is set to 19200.  Type "help" to see a list
- * of registered commands.  The FreeRTOS+CLI license is different to the
- * FreeRTOS license, see http://www.FreeRTOS.org/cli for license and usage
- * details.
  *
  * "Reg test" tasks - These fill both the core and floating point registers with
  * known values, then check that each register maintains its expected value for
@@ -60,19 +53,26 @@
  * frequently.  A register containing an unexpected value is indicative of an
  * error in the context switching mechanism.
  *
- * "Check" task - The check task period is initially set to three seconds.  The
- * task checks that all the standard demo tasks are not only still executing,
- * but are executing without reporting any errors.  If the check task discovers
- * that a task has either stalled, or reported an error, then it changes its own
- * execution period from the initial three seconds, to just 200ms.  The check
- * task also toggles an LED on each iteration of its loop.  This provides a
- * visual indication of the system status:  If the LED toggles every three
- * seconds, then no issues have been discovered.  If the LED toggles every
- * 200ms, then an issue has been discovered with at least one task.
+ * "Check" task - The check executes every three seconds.  It checks that all
+ * the standard demo tasks, and the register check tasks, are not only still
+ * executing, but are executing without reporting any errors.  The check task
+ * toggles the LED every three seconds if all the standard demo tasks are
+ * executing as expected, or every 500ms if a potential error is discovered in
+ * any task.  And the check task writes the pass message or the fail status
+ * message to the UART and/or something like a dedicated debug console (thease
+ * are used in place of the LED to allow easy execution in simulator such as
+ * QEMU or debugger).
+ *
+ * "FreeRTOS+CLI command console" -  The command console uses SCIx for its
+ * input and output.  The baud rate is set to 115200.  Type "help" to see a list
+ * of registered commands.  The FreeRTOS+CLI license is different to the
+ * FreeRTOS license, see http://www.FreeRTOS.org/cli for license and usage
+ * details.
  */
 
 /* Standard includes. */
 #include <stdio.h>
+#include <string.h>
 
 /* Kernel includes. */
 #include "FreeRTOS.h"
@@ -104,6 +104,7 @@
 #include "platform.h"
 
 /* Eval board specific definitions. */
+#include "demo_main.h"
 #include "demo_specific_io.h"
 
 /* Priorities for the demo application tasks. */
@@ -118,52 +119,56 @@
 /* The priority used by the UART command console task. */
 #define mainUART_COMMAND_CONSOLE_TASK_PRIORITY	( configMAX_PRIORITIES - 2 )
 
-/* The period of the check task, in ms, provided no errors have been reported by
-any of the standard demo tasks.  ms are converted to the equivalent in ticks
-using the portTICK_PERIOD_MS constant. */
+/* The period of the check task, in ms, converted to ticks using the
+pdMS_TO_TICKS() macro.  mainNO_ERROR_CHECK_TASK_PERIOD is used if no errors have
+been found, mainERROR_CHECK_TASK_PERIOD is used if an error has been found. */
 #define mainNO_ERROR_CHECK_TASK_PERIOD		pdMS_TO_TICKS( 3000UL )
-
-/* The period of the check task, in ms, if an error has been reported in one of
-the standard demo tasks.  ms are converted to the equivalent in ticks using the
-portTICK_PERIOD_MS constant. */
-#define mainERROR_CHECK_TASK_PERIOD 		pdMS_TO_TICKS( 200UL )
+#define mainERROR_CHECK_TASK_PERIOD 		pdMS_TO_TICKS( 500UL )
 
 /* Parameters that are passed into the register check tasks solely for the
 purpose of ensuring parameters are passed into tasks correctly. */
-#define mainREG_TEST_1_PARAMETER			( ( void * ) 0x12121212UL )
-#define mainREG_TEST_2_PARAMETER			( ( void * ) 0x12345678UL )
+#define mainREG_TEST_TASK_1_PARAMETER		( ( void * ) 0x12345678 )
+#define mainREG_TEST_TASK_2_PARAMETER		( ( void * ) 0x87654321 )
 
 /* The base period used by the timer test tasks. */
 #define mainTIMER_TEST_PERIOD				( 50 )
 
+/* The size of the stack allocated to the check task (as described in the
+comments at the top of this file. */
+#define mainCHECK_TASK_STACK_SIZE_WORDS 100
+
+/* Size of the stacks to allocated for the register check tasks. */
+#define mainREG_TEST_STACK_SIZE_WORDS 80
+
 /*-----------------------------------------------------------*/
 
 /*
- * Entry point for the comprehensive demo (as opposed to the simple blinky
- * demo).
+ * Called by demo_main() to run the full demo (as opposed to the blinky demo)
+ * when mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 0.
  */
 void main_full( void );
 
 /*
- * The full demo includes some functionality called from the tick hook.
- */
-void vFullDemoTickHook( void );
-
- /*
  * The check task, as described at the top of this file.
  */
 static void prvCheckTask( void *pvParameters );
 
 /*
- * Register check tasks, and the tasks used to write over and check the contents
- * of the registers, as described at the top of this file.  The nature of these
- * files necessitates that they are written in assembly, but the entry points
- * are kept in the C file for the convenience of checking the task parameter.
+ * Register check tasks as described at the top of this file.  The nature of
+ * these files necessitates that they are written in an assembly file, but the
+ * entry points are kept in the C file for the convenience of checking the task
+ * parameter.
  */
-static void prvRegTest1Task( void *pvParameters );
-static void prvRegTest2Task( void *pvParameters );
+static void prvRegTestTaskEntry1( void *pvParameters );
 static void prvRegTest1Implementation( void );
+static void prvRegTestTaskEntry2( void *pvParameters );
 static void prvRegTest2Implementation( void );
+
+/*
+ * Tick hook used by the full demo, which includes code that interacts with
+ * some of the tests.
+ */
+void vFullDemoTickHook( void );
 
 /*
  * A high priority task that does nothing other than execute at a pseudo random
@@ -189,7 +194,7 @@ extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriori
 register check tasks to the check task.  If the variables keep incrementing,
 then the register check tasks have not discovered any errors.  If a variable
 stops incrementing, then an error has been found. */
-volatile unsigned long ulRegTest1LoopCounter = 0UL, ulRegTest2LoopCounter = 0UL;
+volatile uint32_t ulRegTest1LoopCounter = 0UL, ulRegTest2LoopCounter = 0UL;
 
 /*-----------------------------------------------------------*/
 
@@ -213,9 +218,16 @@ void main_full( void )
 	vStartTaskNotifyTask();
 	vStartInterruptSemaphoreTasks();
 
-	/* Create the register check tasks, as described at the top of this	file */
-	xTaskCreate( prvRegTest1Task, "RegTst1", configMINIMAL_STACK_SIZE, mainREG_TEST_1_PARAMETER, tskIDLE_PRIORITY, NULL );
-	xTaskCreate( prvRegTest2Task, "RegTst2", configMINIMAL_STACK_SIZE, mainREG_TEST_2_PARAMETER, tskIDLE_PRIORITY, NULL );
+	/* Create the register check tasks, as described at the top of this	file.
+	Use xTaskCreateStatic() to create a task using only statically allocated
+	memory. */
+	xTaskCreate( prvRegTestTaskEntry1, 			/* The function that implements the task. */
+				 "Reg1", 						/* The name of the task. */
+				 mainREG_TEST_STACK_SIZE_WORDS, /* Size of stack to allocate for the task - in words not bytes!. */
+				 mainREG_TEST_TASK_1_PARAMETER, /* Parameter passed into the task. */
+				 tskIDLE_PRIORITY, 				/* Priority of the task. */
+				 NULL );						/* Can be used to pass out a handle to the created task. */
+	xTaskCreate( prvRegTestTaskEntry2, "Reg2", mainREG_TEST_STACK_SIZE_WORDS, mainREG_TEST_TASK_2_PARAMETER, tskIDLE_PRIORITY, NULL );
 
 	/* Create the task that just adds a little random behaviour. */
 	xTaskCreate( prvPseudoRandomiser, "Rnd", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, NULL );
@@ -229,7 +241,7 @@ void main_full( void )
 
 	/* Create the task that performs the 'check' functionality,	as described at
 	the top of this file. */
-	xTaskCreate( prvCheckTask, "Check", configMINIMAL_STACK_SIZE, NULL, mainCHECK_TASK_PRIORITY, NULL );
+	xTaskCreate( prvCheckTask, "Check", mainCHECK_TASK_STACK_SIZE_WORDS, NULL, mainCHECK_TASK_PRIORITY, NULL );
 
 	/* The set of tasks created by the following function call have to be
 	created last as they keep account of the number of tasks they expect to see
@@ -253,8 +265,9 @@ static void prvCheckTask( void *pvParameters )
 {
 TickType_t xDelayPeriod = mainNO_ERROR_CHECK_TASK_PERIOD;
 TickType_t xLastExecutionTime;
-static unsigned long ulLastRegTest1Value = 0, ulLastRegTest2Value = 0;
-unsigned long ulErrorFound = pdFALSE;
+uint32_t ulLastRegTest1Value = 0, ulLastRegTest2Value = 0;
+char * const pcPassMessage = ".";
+char * pcStatusMessage = pcPassMessage;
 
 	/* Just to stop compiler warnings. */
 	( void ) pvParameters;
@@ -276,101 +289,116 @@ unsigned long ulErrorFound = pdFALSE;
 
 		/* Check all the demo tasks (other than the flash tasks) to ensure
 		that they are all still running, and that none have detected an error. */
-		if( xAreIntQueueTasksStillRunning() != pdTRUE )
+		if( xAreIntQueueTasksStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 0UL;
+			pcStatusMessage = "ERROR: Queue interrupt demo/tests.\r\n";
 		}
 
-		if( xAreMathsTaskStillRunning() != pdTRUE )
+		if( xAreMathsTaskStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 1UL;
+			pcStatusMessage = "ERROR: Flop demo/tests.\r\n";
 		}
 
-		if( xAreDynamicPriorityTasksStillRunning() != pdTRUE )
+		if( xAreDynamicPriorityTasksStillRunning() == pdFALSE )
 		{
-			ulErrorFound |= 1UL << 2UL;
+			pcStatusMessage = "ERROR: Dynamic priority demo/tests.\r\n";
 		}
 
-		if( xAreBlockingQueuesStillRunning() != pdTRUE )
+		if( xAreBlockingQueuesStillRunning() == pdFALSE )
 		{
-			ulErrorFound |= 1UL << 3UL;
+			pcStatusMessage = "ERROR: Blocking queue demo/tests.\r\n";
 		}
 
-		if ( xAreBlockTimeTestTasksStillRunning() != pdTRUE )
+		if( xAreBlockTimeTestTasksStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 4UL;
+			pcStatusMessage = "ERROR: Block time demo/tests.\r\n";
 		}
 
-		if ( xAreGenericQueueTasksStillRunning() != pdTRUE )
+		if ( xAreGenericQueueTasksStillRunning() == pdFALSE )
 		{
-			ulErrorFound |= 1UL << 5UL;
+			pcStatusMessage = "ERROR: Generic queue demo/tests.\r\n";
 		}
 
-		if ( xAreRecursiveMutexTasksStillRunning() != pdTRUE )
+		if ( xAreRecursiveMutexTasksStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 6UL;
+			pcStatusMessage = "ERROR: Recursive mutex demo/tests.\r\n";
 		}
 
-		if( xIsCreateTaskStillRunning() != pdTRUE )
+		if( xIsCreateTaskStillRunning() == pdFALSE )
 		{
-			ulErrorFound |= 1UL << 7UL;
+			pcStatusMessage = "ERROR: Suicide task demo/tests.\r\n";
 		}
 
-		if( xAreSemaphoreTasksStillRunning() != pdTRUE )
+		if( xAreSemaphoreTasksStillRunning() == pdFALSE )
 		{
-			ulErrorFound |= 1UL << 8UL;
+			pcStatusMessage = "ERROR: Semaphore demo/tests.\r\n";
 		}
 
-		if( xAreTimerDemoTasksStillRunning( ( TickType_t ) mainNO_ERROR_CHECK_TASK_PERIOD ) != pdPASS )
+		if( xAreTimerDemoTasksStillRunning( ( TickType_t ) xDelayPeriod ) == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 9UL;
+			pcStatusMessage = "ERROR: Timer demo/tests.\r\n";
 		}
 
-		if( xAreCountingSemaphoreTasksStillRunning() != pdTRUE )
+		if( xAreCountingSemaphoreTasksStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 10UL;
+			pcStatusMessage = "ERROR: Counting semaphore demo/tests.\r\n";
 		}
 
-		if( xIsQueueOverwriteTaskStillRunning() != pdPASS )
+		if( xIsQueueOverwriteTaskStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 11UL;
+			pcStatusMessage = "ERROR: Queue overwrite demo/tests.\r\n";
 		}
 
-		if( xAreEventGroupTasksStillRunning() != pdPASS )
+		if( xAreEventGroupTasksStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 12UL;
+			pcStatusMessage = "ERROR: Event group demo/tests.\r\n";
 		}
 
-		if( xAreTaskNotificationTasksStillRunning() != pdTRUE )
+		if( xAreTaskNotificationTasksStillRunning() == pdFAIL )
 		{
-			ulErrorFound |= 1UL << 13UL;
+			pcStatusMessage = "ERROR: Task notification demo/tests.\r\n";
 		}
 
-		if( xAreInterruptSemaphoreTasksStillRunning() != pdTRUE )
+		if( xAreInterruptSemaphoreTasksStillRunning() == pdFALSE )
 		{
-			ulErrorFound |= 1UL << 14UL;
+			pcStatusMessage = "ERROR: Interrupt semaphore demo/tests.\r\n";
 		}
 
 		/* Check that the register test 1 task is still running. */
 		if( ulLastRegTest1Value == ulRegTest1LoopCounter )
 		{
-			ulErrorFound |= 1UL << 15UL;
+			pcStatusMessage = "ERROR: Register test 1.\r\n";
 		}
 		ulLastRegTest1Value = ulRegTest1LoopCounter;
 
 		/* Check that the register test 2 task is still running. */
 		if( ulLastRegTest2Value == ulRegTest2LoopCounter )
 		{
-			ulErrorFound |= 1UL << 16UL;
+			pcStatusMessage = "ERROR: Register test 2.\r\n";
 		}
 		ulLastRegTest2Value = ulRegTest2LoopCounter;
 
-		/* Toggle the check LED to give an indication of the system status.  If
-		the LED toggles every mainNO_ERROR_CHECK_TASK_PERIOD milliseconds then
-		everything is ok.  A faster toggle indicates an error. */
-		LED0 = !LED0;
+		/* Write the status message to the UART and toggle the LED to show the
+		system status if the UART is not connected. */
+		if( pcStatusMessage == pcPassMessage )
+		{
+			/* Write the pass message to a dedicated debug console. */
+			vSendString( pcPassMessage );
+		}
+		else
+		{
+			if( xDelayPeriod == mainNO_ERROR_CHECK_TASK_PERIOD )
+			{
+				/* Write the fail status message to a dedicated debug console. */
+				vSendString( "\r\n" );
+				vSendString( pcStatusMessage );
+			}
+		}
+		vToggleLED();
 
-		if( ulErrorFound != pdFALSE )
+		/* If an error has been found then increase the LED toggle rate by
+		increasing the cycle frequency. */
+		if( pcStatusMessage != pcPassMessage )
 		{
 			/* An error has been detected in one of the tasks - flash the LED
 			at a higher frequency to give visible feedback that something has
@@ -421,6 +449,9 @@ volatile uint32_t ulNextRand = ( uint32_t ) &pvParameters, ulValue;
 
 void vFullDemoTickHook( void )
 {
+	/* Called from vApplicationTickHook() when the project is configured to
+	build the full test/demo applications. */
+
 	/* The full demo includes a software timer demo/test that requires
 	prodding periodically from the tick interrupt. */
 	vTimerPeriodicISRTests();
@@ -439,55 +470,55 @@ void vFullDemoTickHook( void )
 }
 /*-----------------------------------------------------------*/
 
-/* This function is explained in the comments at the top of this file. */
-static void prvRegTest1Task( void *pvParameters )
+static void prvRegTestTaskEntry1( void *pvParameters )
 {
-	if( pvParameters != mainREG_TEST_1_PARAMETER )
+	/* Although the regtest task is written in assembler, its entry point is
+	written in C for convenience of checking the task parameter is being passed
+	in correctly. */
+	if( pvParameters == mainREG_TEST_TASK_1_PARAMETER )
 	{
-		/* The parameter did not contain the expected value. */
-		for( ;; )
-		{
-			/* Stop the tick interrupt so its obvious something has gone wrong. */
-			taskDISABLE_INTERRUPTS();
-		}
-	}
-
 #if defined(__DPFPU)
 
-	/* Tell the kernel that this task require a DPFPU context before any DPFPU 
-	instructions are executed. */
-	portTASK_USES_DPFPU();
+		/* Tell the kernel that this task require a DPFPU context before any DPFPU 
+		instructions are executed. */
+		portTASK_USES_DPFPU();
 
 #endif /* defined(__DPFPU) */
 
-	/* This is an inline asm function that never returns. */
-	prvRegTest1Implementation();
+		/* Start the part of the test that is written in assembler. */
+		prvRegTest1Implementation();
+	}
+
+	/* The following line will only execute if the task parameter is found to
+	be incorrect.  The check task will detect that the regtest loop counter is
+	not being incremented and flag an error. */
+	vTaskDelete( NULL );
 }
 /*-----------------------------------------------------------*/
 
-/* This function is explained in the comments at the top of this file. */
-static void prvRegTest2Task( void *pvParameters )
+static void prvRegTestTaskEntry2( void *pvParameters )
 {
-	if( pvParameters != mainREG_TEST_2_PARAMETER )
+	/* Although the regtest task is written in assembler, its entry point is
+	written in C for convenience of checking the task parameter is being passed
+	in correctly. */
+	if( pvParameters == mainREG_TEST_TASK_2_PARAMETER )
 	{
-		/* The parameter did not contain the expected value. */
-		for( ;; )
-		{
-			/* Stop the tick interrupt so its obvious something has gone wrong. */
-			taskDISABLE_INTERRUPTS();
-		}
-	}
-
 #if defined(__DPFPU)
 
-	/* Tell the kernel that this task require a DPFPU context before any DPFPU 
-	instructions are executed. */
-	portTASK_USES_DPFPU();
+		/* Tell the kernel that this task require a DPFPU context before any DPFPU 
+		instructions are executed. */
+		portTASK_USES_DPFPU();
 
 #endif /* defined(__DPFPU) */
 
-	/* This is an inline asm function that never returns. */
-	prvRegTest2Implementation();
+		/* Start the part of the test that is written in assembler. */
+		prvRegTest2Implementation();
+	}
+
+	/* The following line will only execute if the task parameter is found to
+	be incorrect.  The check task will detect that the regtest loop counter is
+	not being incremented and flag an error. */
+	vTaskDelete( NULL );
 }
 /*-----------------------------------------------------------*/
 
@@ -841,7 +872,4 @@ R_BSP_ASM_LAB(22:)	/* RegTest2Error: */
 R_BSP_ASM_END
 }
 /*-----------------------------------------------------------*/
-
-
-
 

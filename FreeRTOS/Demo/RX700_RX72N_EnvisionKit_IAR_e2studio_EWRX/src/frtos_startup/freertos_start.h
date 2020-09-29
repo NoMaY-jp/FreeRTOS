@@ -71,6 +71,7 @@ Exported global variables
 /******************************************************************************
 Exported global functions (to be accessed by other files)
 ******************************************************************************/
+extern void vPrintString(const char *pcMessage);
 extern void Processing_Before_Start_Kernel(void);
 extern void Kernel_Object_init(void);
 

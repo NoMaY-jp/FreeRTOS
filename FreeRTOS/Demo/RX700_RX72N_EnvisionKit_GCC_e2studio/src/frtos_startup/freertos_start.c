@@ -254,6 +254,9 @@ void vAssertCalled(void)
 
     taskENTER_CRITICAL();
     {
+        vPrintString( "\r\n" );
+        vPrintString( "Assertion failed!\n" );
+
         /* Use the debugger to set ul to a non-zero value in order to step out
         of this function to determine why it was called. */
         while( 0 == ul )
@@ -329,6 +332,10 @@ void vApplicationMallocFailedHook(void)
     timers, and semaphores.  The size of the FreeRTOS heap is set by the
     configTOTAL_HEAP_SIZE configuration constant in FreeRTOSConfig.h. */
 
+    taskENTER_CRITICAL();
+    vPrintString( "\r\n" );
+    vPrintString( "Insufficient heap memory!\n" );
+
     /* Force an assert. */
     configASSERT( ( volatile void * ) NULL );
 
@@ -359,6 +366,10 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
     configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
     function is called if a stack overflow is detected. */
 
+    taskENTER_CRITICAL();
+    vPrintString( "\r\n" );
+    vPrintString( "Stack Overflow!\n" );
+
     /* Force an assert. */
     configASSERT( ( volatile void * ) NULL );
 
@@ -369,6 +380,32 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
     };
 
 } /* End of function vApplicationStackOverflowHook() */
+
+/******************************************************************************
+* Function Name: vPrintString
+* Description  : This function is used to write a string to the Debug Console.
+*                NOTE: EWRX doesn't have the Debug Console. When you use ICCRX,
+*                if you want to use the Debug Console, use e2 studio instead.
+* Arguments    : pcMessage -
+*                    Pointer to the string
+* Arguments    : pcMessage.
+* Return Value : None.
+******************************************************************************/
+void vPrintString(const char *pcMessage)
+{
+    /* Write the string to the Debug Console, using a critical section
+    as a crude method of mutual exclusion. */
+
+    taskENTER_CRITICAL();
+    {
+        while( *pcMessage )
+        {
+            charput(*pcMessage++);
+        }
+    }
+    taskEXIT_CRITICAL();
+
+} /* End of function vPrintString() */
 
 /******************************************************************************
 * Function Name : Processing_Before_Start_Kernel
@@ -434,6 +471,8 @@ void Processing_Before_Start_Kernel(void)
 
 } /* End of function Processing_Before_Start_Kernel() */
 
+/*-----------------------------------------------------------*/
+
 /*
  * Configure the hardware as necessary to run this demo.
  */
@@ -448,6 +487,8 @@ static void prvSetupHardware( void );
 #else
     extern void main_full( void );
 #endif /* #if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 */
+
+/*-----------------------------------------------------------*/
 
 void demo_main( void )
 {
@@ -473,9 +514,35 @@ void demo_main( void )
 
 static void prvSetupHardware( void )
 {
-    /* Turn on LED0 at start. (The system initialization had been done in the
+    /* Turn on the LED at start. (The system initialization had been done in the
     src/smc_gen/general/r_cg_hardware_setup.c.) */
-    LED0 = LED_ON;
+    vToggleLED();
+
+    /* Write "\r\n" to the UART and/or the Debug Console. */
+    vSendString( "\r\n" );
+}
+/*-----------------------------------------------------------*/
+
+void vToggleLED( void )
+{
+    /* Toggle the LED */
+    LED0 = !LED0;
+}
+/*-----------------------------------------------------------*/
+
+void vSendString( const char * const pcString )
+{
+    /* Write the string to the Debug Console. */
+    vPrintString( pcString );
+
+    /* Write the string to the UART. It is done in case of the simple blinky demo
+    only but it isn't done in case of the full demo because the UART is used for
+    other purpos "FreeRTOS+CLI command console" by the full demo. */
+    #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
+    {
+        R_SCI_Send( xSerialSciHandle, ( uint8_t * )pcString, strlen(pcString) );
+    }
+    #endif
 }
 /*-----------------------------------------------------------*/
 

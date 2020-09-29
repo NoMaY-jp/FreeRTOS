@@ -26,8 +26,8 @@
  */
 
 /******************************************************************************
- * NOTE 1:  This project provides two demo applications.  A simple blinky style
- * project, and a more comprehensive test and demo application.  The
+ * NOTE 1:  This project provides two demo applications.  A simple blinky
+ * style project, and a more comprehensive test and demo application.  The
  * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting in main.c is used to select
  * between the two.  See the notes on using mainCREATE_SIMPLE_BLINKY_DEMO_ONLY
  * in main.c.  This file implements the simply blinky style version.
@@ -42,38 +42,58 @@
  *
  * The Queue Send Task:
  * The queue send task is implemented by the prvQueueSendTask() function in
- * this file.  It sends the value 100 to the queue every 200 milliseconds.
+ * this file.  prvQueueSendTask() sits in a loop that causes it to repeatedly
+ * block for 1000 milliseconds, before sending the value 100 to the queue that
+ * was created within main_blinky().  Once the value is sent, the task loops
+ * back around to block for another 1000 milliseconds...and so on.
  *
  * The Queue Receive Task:
  * The queue receive task is implemented by the prvQueueReceiveTask() function
- * in this file.  It blocks on the queue to wait for data to arrive from the
- * queue send task - toggling the LED each time it receives the value 100.  The
- * queue send task writes to the queue every 200ms, so the LED should toggle
- * every 200ms.
+ * in this file.  prvQueueReceiveTask() sits in a loop where it repeatedly
+ * blocks on attempts to read data from the queue that was created within
+ * main_blinky().  When data is received, the task checks the value of the
+ * data, and if the value equals the expected 100, writes 'Blink' to the UART
+ * and/or something like a dedicated debug console (these are used in place of
+ * the LED to allow easy execution in simulator such as QEMU or debugger).  The
+ * 'block time' parameter passed to the queue receive function specifies that
+ * the task should be held in the Blocked state indefinitely to wait for data to
+ * be available on the queue.  The queue receive task will only leave the
+ * Blocked state when the queue send task writes to the queue.  As the queue
+ * send task writes to the queue every 1000 milliseconds, the queue receive
+ * task leaves the Blocked state every 1000 milliseconds, and therefore toggles
+ * the LED every 1000 milliseconds.
  */
+
+/* Standard includes. */
+#include <stdio.h>
+#include <string.h>
 
 /* Kernel includes. */
 #include "FreeRTOS.h"
 #include "task.h"
-#include "semphr.h"
+#include "queue.h"
 
 /* Renesas includes. */
 #include "platform.h"
 
 /* Eval board specific definitions. */
+#include "demo_main.h"
 #include "demo_specific_io.h"
 
-/* Priorities at which the tasks are created. */
+/* Priorities used by the tasks. */
 #define mainQUEUE_RECEIVE_TASK_PRIORITY		( tskIDLE_PRIORITY + 2 )
 #define	mainQUEUE_SEND_TASK_PRIORITY		( tskIDLE_PRIORITY + 1 )
 
-/* The rate at which data is sent to the queue.  The 200ms value is converted
-to ticks using the portTICK_PERIOD_MS constant. */
-#define mainQUEUE_SEND_FREQUENCY_MS			( pdMS_TO_TICKS( 200UL ) )
+/* The rate at which data is sent to the queue.  The 1000ms value is converted
+to ticks using the pdMS_TO_TICKS() macro. */
+#define mainQUEUE_SEND_FREQUENCY_MS			pdMS_TO_TICKS( 1000 )
 
-/* The number of items the queue can hold.  This is 1 as the receive task
-will remove items as they are added, meaning the send task should always find
-the queue empty. */
+/* The maximum number items the queue can hold.  The priority of the receiving
+task is above the priority of the sending task, so the receiving task will
+preempt the sending task and remove the queue items each time the sending task
+writes to the queue.  Therefore the queue will never have more than one item in
+it at any time, and even with a queue length of 1, the sending task will never
+find the queue full. */
 #define mainQUEUE_LENGTH					( 1 )
 
 /*-----------------------------------------------------------*/
@@ -133,6 +153,7 @@ static void prvQueueSendTask( void *pvParameters )
 {
 TickType_t xNextWakeTime;
 const unsigned long ulValueToSend = 100UL;
+BaseType_t xReturned;
 
 	/* Remove compiler warning about unused parameter. */
 	( void ) pvParameters;
@@ -149,7 +170,8 @@ const unsigned long ulValueToSend = 100UL;
 		toggle the LED.  0 is used as the block time so the sending operation
 		will not block - it shouldn't need to block as the queue should always
 		be empty at this point in the code. */
-		xQueueSend( xQueue, &ulValueToSend, 0U );
+		xReturned = xQueueSend( xQueue, &ulValueToSend, 0U );
+		configASSERT( xReturned == pdPASS );
 	}
 }
 /*-----------------------------------------------------------*/
@@ -158,6 +180,10 @@ static void prvQueueReceiveTask( void *pvParameters )
 {
 unsigned long ulReceivedValue;
 const unsigned long ulExpectedValue = 100UL;
+const char * const pcPassMessage = "Blink\r\n";
+const char * const pcFailMessage = "Unexpected value received\r\n";
+extern void vSendString( const char * const pcString );
+extern void vToggleLED( void );
 
 	/* Remove compiler warning about unused parameter. */
 	( void ) pvParameters;
@@ -170,11 +196,18 @@ const unsigned long ulExpectedValue = 100UL;
 		xQueueReceive( xQueue, &ulReceivedValue, portMAX_DELAY );
 
 		/*  To get here something must have been received from the queue, but
-		is it the expected value?  If it is, toggle the LED. */
+		is it the expected value?  If it is, toggle the LED and write the pass
+		message to the UART and/or something like a dedicated debug console.
+		If it isn't, don't toggle the LED and write the fail message to them. */
 		if( ulReceivedValue == ulExpectedValue )
 		{
-			LED0 = !LED0;
+			vSendString( pcPassMessage );
+			vToggleLED();
 			ulReceivedValue = 0U;
+		}
+		else
+		{
+			vSendString( pcFailMessage );
 		}
 	}
 }

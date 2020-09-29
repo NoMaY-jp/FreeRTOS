@@ -2970,6 +2970,9 @@
             <group>
                 <name>r_bsp_patch</name>
                 <file>
+                    <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\lowlvl.c</name>
+                </file>
+                <file>
                     <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\platform.h</name>
                 </file>
             </group>
