@@ -142,7 +142,7 @@ void R_FIT_Board_Support_Settings(void)
 
 #ifdef RSK_RX72N
 
-void R_SCI_PinSet_SCI9_RSK_RX72N(void)
+void U_SCI_PinSet_SCI9_RSK_RX72N(void)
 {
     R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
 

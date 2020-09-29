@@ -59,6 +59,8 @@ src/linker_script.ld file by your hand. */
 
 	#ifdef RSK_RX72N
 
+		/* https://www.renesas.com/jp/ja/products/software-tools/boards-and-kits/starter-kits/renesas-starter-kitplus-for-rx72n.html */
+
 		/* R5F572NNDDBD (or R5F572NNHDBD) 224-pin LFBGA */
 
 		/* General Values */
@@ -86,8 +88,8 @@ src/linker_script.ld file by your hand. */
 		#define U_GPIO_PIN_LED3 		(GPIO_PORT_L_PIN_6)
 
 		/* FreeRTOS CLI Command Console */
-		extern void R_SCI_PinSet_SCI9_RSK_RX72N(void);
-		#define U_SCI_UART_CLI_PINSET()	R_SCI_PinSet_SCI9_RSK_RX72N()
+		extern void U_SCI_PinSet_SCI9_RSK_RX72N(void);
+		#define U_SCI_UART_CLI_PINSET()	U_SCI_PinSet_SCI9_RSK_RX72N()
 		#define U_SCI_UART_CLI_SCI_CH	(SCI_CH9)
 		#define U_DTC_UART_CLI_TX_ACT	((dtc_activation_source_t)VECT(SCI9,TXI9))
 		#define U_DTC_UART_CLI_TX_DR	(SCI9.TDR)
@@ -95,6 +97,8 @@ src/linker_script.ld file by your hand. */
 	#endif /* RSK_RX72N */
 
 	#ifdef RPB_RX72N
+
+		/* https://www.renesas.com/jp/ja/products/software-tools/boards-and-kits/eval-kits/rx72n-envision-kit.html */
 
 		/* R5F572NDHDFB 144-pin LFQFP */
 
