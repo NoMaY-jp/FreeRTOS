@@ -12,7 +12,7 @@ extern void demo_main( void );
 /* The following functions are placed in the src/frtos_startup/freertos_start.c
 and these are called from the src/FreeRTOS_Demo/Blinky_Demo/main_blinky.c or the
 src/FreeRTOS_Demo/Full_Demo/main_full.c according to the macro setting. */
-extern void vToggleLED(void);
-extern void vSendString(const char* const pcString);
+extern void vToggleLED( void );
+extern void vSendString( const char * const pcString );
 
 #endif
