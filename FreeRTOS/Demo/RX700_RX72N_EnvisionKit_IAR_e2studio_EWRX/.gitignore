@@ -1,0 +1,24 @@
+# Ignore build results and automatically created unnecessary setting files by e2 studio
+HardwareDebug/
+e2studio_project.prefs
+language.settings.xml
+cgprojectDatas.datas
+CoverageSetting.xml
+DebugVirtualConsoleSetting.xml
+
+# Ignore build results and automatically created unnecessary setting files by EWRX
+Debug/
+RTOSDemo.custom_argvars
+RTOSDemo.dep
+RTOSDemo.ewt
+RTOSDemo.crun
+RTOSDemo.dbgdt
+RTOSDemo.Debug.cspy.bat
+RTOSDemo.Debug.cspy.ps1
+RTOSDemo.Debug.driver.xcl
+RTOSDemo.Debug.general.xcl
+RTOSDemo.wsdt
+
+# Ignore build results and automatically created unnecessary setting files by CS+
+DefaultBuild/
+RTOSDemo.*.mtud
