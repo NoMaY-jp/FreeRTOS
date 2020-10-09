@@ -6,20 +6,31 @@
 #if defined(__CCRX__)
 
 /* Workaround for missing pre-defined macro in the Renesas Toolchain Builtin
- * Language Settings.
+ * Language Settings. The following definition is demo specific.
  */
+#ifdef __RXV3
 #ifndef __TFU
 #define __TFU 1
 #endif
+#endif
 
 /* Workaround for wrong pre-defined macro in the Renesas Toolchain Builtin
- * Language Settings.
+ * Language Settings. The following definition is demo specific.
  */
+#ifdef __RXV3
 #ifdef __DBL4
 #undef __DBL4
 #endif
 #ifndef __DBL8
 #define __DBL8 1
+#endif
+#else
+#ifndef __DBL4
+#define __DBL4 1
+#endif
+#ifdef __DBL8
+#undef __DBL8
+#endif
 #endif
 
 #endif /* defined(__CCRX__) */
