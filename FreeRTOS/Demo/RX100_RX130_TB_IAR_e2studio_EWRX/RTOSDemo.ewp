@@ -2561,9 +2561,6 @@
                     <name>$PROJ_DIR$\src\smc_gen\r_config\r_bsp_config_readme.txt</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\src\smc_gen\r_config\r_bsp_interrupt_config.h</name>
-                </file>
-                <file>
                     <name>$PROJ_DIR$\src\smc_gen\r_config\r_byteq_config.h</name>
                 </file>
                 <file>
