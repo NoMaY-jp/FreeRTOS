@@ -536,6 +536,41 @@ void prvRegTest1Implementation( void )
 {
 R_BSP_ASM_BEGIN
 
+	/* Put a known value in each accumulator. */
+#if defined(__RXV1)
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MOV.L	#0ABCD0000H, R15	)
+	R_BSP_ASM(	MVTACLO	R15 				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MOV.L	#023456789H, R15	)
+	R_BSP_ASM(	MVTACHI	R15 				)
+#else /* defined(__RXV1) */
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MOV.L	#0BBCCDDEEH, R15	)
+	R_BSP_ASM(	MVTACLO	R15, A0				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MOV.L	#0778899AAH, R15	)
+	R_BSP_ASM(	MVTACHI	R15, A0				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MOV.L	#000000066H, R15	)
+	R_BSP_ASM(	MVTACGU	R15, A0				)
+
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MOV.L	#0EEFF0011H, R15	)
+	R_BSP_ASM(	MVTACLO	R15, A1				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MOV.L	#0AABBCCDDH, R15	)
+	R_BSP_ASM(	MVTACHI	R15, A1				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MOV.L	#0FFFFFF99H, R15	)
+	R_BSP_ASM(	MVTACGU	R15, A1				)
+#endif /* defined(__RXV1) */
+
 	/* Put a known value in each register. */
 	R_BSP_ASM(	MOV.L	#1, R1			)
 	R_BSP_ASM(	MOV.L	#2, R2			)
@@ -595,6 +630,75 @@ R_BSP_ASM_LAB(1:)	/* TestLoop1: */
 
 	/* Restore the clobbered registers. */
 	R_BSP_ASM(	POPM	R14-R15			)
+
+#if defined(__RXV1)
+	/* Push the registers that are going to get clobbered. */
+	R_BSP_ASM(	PUSHM	R14-R15					)
+
+	/* Clear result register. */
+	R_BSP_ASM(	MOV.L	#0, R14					)
+
+	/* Middle word. */
+	R_BSP_ASM(	MVFACMI	R15	 					)
+
+	/* Shifted left as it is restored to the low order word. */
+	R_BSP_ASM(	SHLL	#16, R15				)
+	R_BSP_ASM(	XOR		#0ABCD0000H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* High word. */
+	R_BSP_ASM(	MVFACHI	R15 					)
+	R_BSP_ASM(	XOR		#023456789H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Restore the clobbered registers. */
+	R_BSP_ASM(	POPM	R14-R15					)
+
+	/* Check the result. */
+	R_BSP_ASM(	BNE.W	R_BSP_ASM_LAB_NEXT(11)	)	/* BNE RegTest1Error */
+#else /* defined(__RXV1) */
+	/* Push the registers that are going to get clobbered. */
+	R_BSP_ASM(	PUSHM	R14-R15					)
+
+	/* Clear result register. */
+	R_BSP_ASM(	MOV.L	#0, R14					)
+
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MVFACLO	#0, A0, R15 			)
+	R_BSP_ASM(	XOR		#0BBCCDDEEH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MVFACHI	#0, A0, R15 			)
+	R_BSP_ASM(	XOR		#0778899AAH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MVFACGU	#0, A0, R15 			)
+	R_BSP_ASM(	XOR		#000000066H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MVFACLO	#0, A1, R15 			)
+	R_BSP_ASM(	XOR		#0EEFF0011H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MVFACHI	#0, A1, R15 			)
+	R_BSP_ASM(	XOR		#0AABBCCDDH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MVFACGU	#0, A1, R15 			)
+	R_BSP_ASM(	XOR		#0FFFFFF99H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Restore the clobbered registers. */
+	R_BSP_ASM(	POPM	R14-R15					)
+
+	/* Check the result. */
+	R_BSP_ASM(	BNE.W	R_BSP_ASM_LAB_NEXT(11)	)	/* BNE RegTest1Error */
+#endif /* defined(__RXV1) */
 
 	/* Now compare each register to ensure it still contains the value that was
 	set before this loop was entered. */
@@ -715,6 +819,40 @@ void prvRegTest2Implementation( void )
 {
 R_BSP_ASM_BEGIN
 
+#if defined(__RXV1)
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MOV.L	#0BCDE0000H, R15	)
+	R_BSP_ASM(	MVTACLO	R15 				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MOV.L	#03456789AH, R15	)
+	R_BSP_ASM(	MVTACHI	R15 				)
+#else /* defined(__RXV1) */
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MOV.L	#0AABBCCDDH, R15	)
+	R_BSP_ASM(	MVTACLO	R15, A0				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MOV.L	#066778899H, R15	)
+	R_BSP_ASM(	MVTACHI	R15, A0				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MOV.L	#000000055H, R15	)
+	R_BSP_ASM(	MVTACGU	R15, A0				)
+
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MOV.L	#0FF001122H, R15	)
+	R_BSP_ASM(	MVTACLO	R15, A1				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MOV.L	#0BBCCDDEEH, R15	)
+	R_BSP_ASM(	MVTACHI	R15, A1				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MOV.L	#0FFFFFFAAH, R15	)
+	R_BSP_ASM(	MVTACGU	R15, A1				)
+#endif /* defined(__RXV1) */
+
 	/* Put a known value in each register. */
 	R_BSP_ASM(	MOV.L	#10, R1			)
 	R_BSP_ASM(	MOV.L	#20, R2			)
@@ -767,6 +905,75 @@ R_BSP_ASM_LAB(2:)	/* TestLoop2: */
 
 	/* Restore the clobbered registers. */
 	R_BSP_ASM(	POPM	R14-R15			)
+
+#if defined(__RXV1)
+	/* Push the registers that are going to get clobbered. */
+	R_BSP_ASM(	PUSHM	R14-R15					)
+
+	/* Clear result register. */
+	R_BSP_ASM(	MOV.L	#0, R14					)
+
+	/* Middle word. */
+	R_BSP_ASM(	MVFACMI	R15	 					)
+
+	/* Shifted left as it is restored to the low order word. */
+	R_BSP_ASM(	SHLL	#16, R15				)
+	R_BSP_ASM(	XOR		#0BCDE0000H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* High word. */
+	R_BSP_ASM(	MVFACHI	R15 					)
+	R_BSP_ASM(	XOR		#03456789AH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Restore the clobbered registers. */
+	R_BSP_ASM(	POPM	R14-R15					)
+
+	/* Check the result. */
+	R_BSP_ASM(	BNE.W	R_BSP_ASM_LAB_NEXT(22)	)	/* BNE RegTest2Error */
+#else /* defined(__RXV1) */
+	/* Push the registers that are going to get clobbered. */
+	R_BSP_ASM(	PUSHM	R14-R15					)
+
+	/* Clear result register. */
+	R_BSP_ASM(	MOV.L	#0, R14					)
+
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MVFACLO	#0, A0, R15 			)
+	R_BSP_ASM(	XOR		#0AABBCCDDH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MVFACHI	#0, A0, R15 			)
+	R_BSP_ASM(	XOR		#066778899H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MVFACGU	#0, A0, R15 			)
+	R_BSP_ASM(	XOR		#000000055H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator low 32 bits. */
+	R_BSP_ASM(	MVFACLO	#0, A1, R15 			)
+	R_BSP_ASM(	XOR		#0FF001122H, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator high 32 bits. */
+	R_BSP_ASM(	MVFACHI	#0, A1, R15 			)
+	R_BSP_ASM(	XOR		#0BBCCDDEEH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Accumulator guard. */
+	R_BSP_ASM(	MVFACGU	#0, A1, R15 			)
+	R_BSP_ASM(	XOR		#0FFFFFFAAH, R15		)
+	R_BSP_ASM(	OR		R15, R14				)
+
+	/* Restore the clobbered registers. */
+	R_BSP_ASM(	POPM	R14-R15					)
+
+	/* Check the result. */
+	R_BSP_ASM(	BNE.W	R_BSP_ASM_LAB_NEXT(22)	)	/* BNE RegTest2Error */
+#endif /* defined(__RXV1) */
 
 	/* Now compare each register to ensure it still contains the value that was
 	set before this loop was entered. */
