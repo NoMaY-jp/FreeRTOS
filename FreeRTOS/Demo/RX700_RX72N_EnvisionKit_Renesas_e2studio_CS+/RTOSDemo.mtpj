@@ -343,28 +343,28 @@
       <ParentItem>ffb01823-5dc6-4968-b142-a7c8600614cb</ParentItem>
     </Instance>
     <Instance Guid="221885de-1c7f-43f2-ab3d-44f5b120831b">
-      <Name>RX700v3_DPFPU</Name>
+      <Name>RX</Name>
       <Type>Category</Type>
       <ParentItem>412b9113-10f6-485d-b0d5-cedaa7a2d91c</ParentItem>
     </Instance>
     <Instance Guid="5132ef99-1b81-4ef7-993d-7196333244de">
       <Name>port.c</Name>
       <Type>File</Type>
-      <RelativePath>..\..\Source\portable\Renesas\RX700v3_DPFPU\port.c</RelativePath>
+      <RelativePath>..\..\Source\portable\Renesas\RX\port.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>221885de-1c7f-43f2-ab3d-44f5b120831b</ParentItem>
     </Instance>
     <Instance Guid="840a6aad-0ada-4b3d-a69b-1da57074518d">
       <Name>portmacro.h</Name>
       <Type>File</Type>
-      <RelativePath>..\..\Source\portable\Renesas\RX700v3_DPFPU\portmacro.h</RelativePath>
+      <RelativePath>..\..\Source\portable\Renesas\RX\portmacro.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>221885de-1c7f-43f2-ab3d-44f5b120831b</ParentItem>
     </Instance>
     <Instance Guid="981806ad-5d7a-404e-84c8-ae18cbb37112">
       <Name>port_asm.src</Name>
       <Type>File</Type>
-      <RelativePath>..\..\Source\portable\Renesas\RX700v3_DPFPU\port_asm.src</RelativePath>
+      <RelativePath>..\..\Source\portable\Renesas\RX\port_asm.src</RelativePath>
       <TreeImageGuid>f654126d-e7ad-426d-be34-8455271d959b</TreeImageGuid>
       <ParentItem>221885de-1c7f-43f2-ab3d-44f5b120831b</ParentItem>
     </Instance>
@@ -2393,62 +2393,7 @@
       <COptionPreinclude-DefaultValue />
       <COptionSectionP-DefaultValue>P</COptionSectionP-DefaultValue>
       <COptionShowExpansions-DefaultValue>False</COptionShowExpansions-DefaultValue>
-      <COptionCommandLine-DefaultValue>-isa=rxv3
--fpu
--dpfpu
--dbl_size=8
--include=src\smc_gen\r_sci_rx\src\targets\rx72n
--include=src\smc_gen\r_sci_rx\src
--include=src\smc_gen\r_sci_rx\ref
--include=src\smc_gen\r_sci_rx
--include=src\smc_gen\r_pincfg
--include=src\smc_gen\r_gpio_rx\src\targets\rx72n
--include=src\smc_gen\r_gpio_rx\ref
--include=src\smc_gen\r_gpio_rx
--include=src\smc_gen\r_dtc_rx\src\targets\rx72n
--include=src\smc_gen\r_dtc_rx\src
--include=src\smc_gen\r_dtc_rx\ref
--include=src\smc_gen\r_dtc_rx
--include=src\smc_gen\r_config
--include=src\smc_gen\r_byteq\src
--include=src\smc_gen\r_byteq\ref
--include=src\smc_gen\r_byteq
--include=src\smc_gen\r_bsp\mcu\rx72n\register_access\ccrx
--include=src\smc_gen\r_bsp\mcu\rx72n
--include=src\smc_gen\r_bsp\mcu\all
--include=src\smc_gen\r_bsp\board\user
--include=src\smc_gen\r_bsp\board\generic_rx72n
--include=src\smc_gen\r_bsp
--include=src\smc_gen\general
--include=src\smc_workaround
--include=src\smc_workaround\r_bsp_patch
--include=..\..\Source\include
--include=..\..\Source\portable\Renesas\RX700v3_DPFPU
--include=src\frtos_startup
--include=src\frtos_config
--include=src\frtos_skeleton
--include=src
--include=..\..\..\FreeRTOS-Plus\Source\FreeRTOS-Plus-CLI
--include=..\Common\include
--include=src\FreeRTOS_Demo\Full_Demo
--include=src\FreeRTOS_Demo
--preinclude=src\smc_workaround\CC_patch.h
--nomessage=21644,20010,23034,23035,20177,23033
--utf8
--output=obj
--obj_path=%BuildModeName%
--debug
--g_line
--outcode=utf8
--listfile=%BuildModeName%
--show=source
--optimize=max
--goptimize
--speed
--tfu=intrinsic
--nologo
--asmopt=-bank
-</COptionCommandLine-DefaultValue>
+      <COptionCommandLine-DefaultValue />
       <COptionDefine-DefaultValue />
       <COptionInline-DefaultValue>Auto</COptionInline-DefaultValue>
       <COptionMisra2004RuleNumberRequiredAdd-DefaultValue />
@@ -2561,7 +2506,7 @@ src\smc_gen\general
 src\smc_workaround
 src\smc_workaround\r_bsp_patch
 ..\..\Source\include
-..\..\Source\portable\Renesas\RX700v3_DPFPU
+..\..\Source\portable\Renesas\RX
 src\frtos_startup
 src\frtos_config
 src\frtos_skeleton
@@ -2618,7 +2563,7 @@ src\FreeRTOS_Demo
 -include=src\smc_workaround
 -include=src\smc_workaround\r_bsp_patch
 -include=..\..\Source\include
--include=..\..\Source\portable\Renesas\RX700v3_DPFPU
+-include=..\..\Source\portable\Renesas\RX
 -include=src\frtos_startup
 -include=src\frtos_config
 -include=src\frtos_skeleton
@@ -2728,18 +2673,7 @@ src\FreeRTOS_Demo
       <AsmOptionPreAssembleCommands-DefaultValue />
       <AsmOptionPostAssembleCommands-DefaultValue />
       <AsmOptionOtherAdditionalOptions-DefaultValue />
-      <AsmOptionCommandLine-DefaultValue>-isa=rxv3
--fpu
--dpfpu
--utf8
--output=obj
--obj_path=%BuildModeName%
--debug
--goptimize
--listfile=%BuildModeName%
--nologo
--bank
-</AsmOptionCommandLine-DefaultValue>
+      <AsmOptionCommandLine-DefaultValue />
       <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8586075486978048352</TimeTagModified--0>
       <AsmOptionChkpm-0>False</AsmOptionChkpm-0>
@@ -2862,20 +2796,7 @@ D_1=R_1
       <LinkOptionS9-DefaultValue>False</LinkOptionS9-DefaultValue>
       <LinkOptionCFIIgnoreModule-DefaultValue />
       <LinkOptionOtherAdditionalOptionsForConvertFile-DefaultValue />
-      <LinkOptionCommandLine-DefaultValue>-noprelink
--output=%BuildModeName%\%ProjectName%.abs
--vect=_undefined_interrupt_source_isr
--list=%BuildModeName%\%ProjectName%.map
--show=all
--optimize=speed
--start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,PResetPRG,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
--rom=D_8=R_8,D=R,D_2=R_2,D_1=R_1
--stack
--change_message=warning=2300,2142
--total_size
--nologo
--exit
-</LinkOptionCommandLine-DefaultValue>
+      <LinkOptionCommandLine-DefaultValue />
       <LinkOptionSplitVect-DefaultValue>False</LinkOptionSplitVect-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8586002235299823075</TimeTagModified--0>
@@ -3006,13 +2927,7 @@ D_1=R_1
       <LinkOptionByteCountValue-DefaultValue>FF</LinkOptionByteCountValue-DefaultValue>
       <LinkOptionCrc-DefaultValue>None</LinkOptionCrc-DefaultValue>
       <LinkOptionOtherAdditionalOptionsForConvertFile-DefaultValue />
-      <HexOptionCommandLine-DefaultValue>-end
--input=%BuildModeName%\%ProjectName%.abs
--form=stype
--output=%BuildModeName%\%ProjectName%.mot
--change_message=warning=2300,2142
--exit
-</HexOptionCommandLine-DefaultValue>
+      <HexOptionCommandLine-DefaultValue />
       <LinkOptionCrc2-DefaultValue>False</LinkOptionCrc2-DefaultValue>
       <LinkOptionCrcOutputAddress-DefaultValue>0</LinkOptionCrcOutputAddress-DefaultValue>
       <LinkOptionCrcCalculationRange-DefaultValue />
@@ -3152,18 +3067,7 @@ D_1=R_1
       <LbgOptionOtherAdditionalOptions-DefaultValue />
       <LbgOptionReent-DefaultValue>False</LbgOptionReent-DefaultValue>
       <LbgOptionSpeedAndSize-DefaultValue>Size</LbgOptionSpeedAndSize-DefaultValue>
-      <LbgOptionCommandLine-DefaultValue>-isa=rxv3
--fpu
--dpfpu
--dbl_size=8
--lang=c99
--head=runtime,math,stdio,stdlib,string
--output=%BuildModeName%\%ProjectName%.lib
--optimize=max
--goptimize
--speed
--nologo
-</LbgOptionCommandLine-DefaultValue>
+      <LbgOptionCommandLine-DefaultValue />
       <LbgOptionHeadMathH-DefaultValue>False</LbgOptionHeadMathH-DefaultValue>
       <LbgOptionLoop-DefaultValue>Auto</LbgOptionLoop-DefaultValue>
       <LbgOptionSecureMalloc-DefaultValue>False</LbgOptionSecureMalloc-DefaultValue>

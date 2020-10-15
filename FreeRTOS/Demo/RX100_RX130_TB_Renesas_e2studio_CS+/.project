@@ -243,7 +243,7 @@
 			<type>9</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-RX100</arguments>
+				<arguments>1.0-name-matches-false-false-RX</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

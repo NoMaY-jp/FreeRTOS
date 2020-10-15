@@ -343,28 +343,28 @@
       <ParentItem>ffb01823-5dc6-4968-b142-a7c8600614cb</ParentItem>
     </Instance>
     <Instance Guid="221885de-1c7f-43f2-ab3d-44f5b120831b">
-      <Name>RX600v2</Name>
+      <Name>RX</Name>
       <Type>Category</Type>
       <ParentItem>412b9113-10f6-485d-b0d5-cedaa7a2d91c</ParentItem>
     </Instance>
     <Instance Guid="5132ef99-1b81-4ef7-993d-7196333244de">
       <Name>port.c</Name>
       <Type>File</Type>
-      <RelativePath>..\..\Source\portable\Renesas\RX600v2\port.c</RelativePath>
+      <RelativePath>..\..\Source\portable\Renesas\RX\port.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>221885de-1c7f-43f2-ab3d-44f5b120831b</ParentItem>
     </Instance>
     <Instance Guid="840a6aad-0ada-4b3d-a69b-1da57074518d">
       <Name>portmacro.h</Name>
       <Type>File</Type>
-      <RelativePath>..\..\Source\portable\Renesas\RX600v2\portmacro.h</RelativePath>
+      <RelativePath>..\..\Source\portable\Renesas\RX\portmacro.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>221885de-1c7f-43f2-ab3d-44f5b120831b</ParentItem>
     </Instance>
     <Instance Guid="981806ad-5d7a-404e-84c8-ae18cbb37112">
       <Name>port_asm.src</Name>
       <Type>File</Type>
-      <RelativePath>..\..\Source\portable\Renesas\RX600v2\port_asm.src</RelativePath>
+      <RelativePath>..\..\Source\portable\Renesas\RX\port_asm.src</RelativePath>
       <TreeImageGuid>f654126d-e7ad-426d-be34-8455271d959b</TreeImageGuid>
       <ParentItem>221885de-1c7f-43f2-ab3d-44f5b120831b</ParentItem>
     </Instance>
@@ -2506,7 +2506,7 @@ src\smc_gen\general
 src\smc_workaround
 src\smc_workaround\r_bsp_patch
 ..\..\Source\include
-..\..\Source\portable\Renesas\RX600v2
+..\..\Source\portable\Renesas\RX
 src\frtos_startup
 src\frtos_config
 src\frtos_skeleton
@@ -2563,7 +2563,7 @@ src\FreeRTOS_Demo
 -include=src\smc_workaround
 -include=src\smc_workaround\r_bsp_patch
 -include=..\..\Source\include
--include=..\..\Source\portable\Renesas\RX600v2
+-include=..\..\Source\portable\Renesas\RX
 -include=src\frtos_startup
 -include=src\frtos_config
 -include=src\frtos_skeleton

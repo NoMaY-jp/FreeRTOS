@@ -345,7 +345,7 @@
                     <state>$PROJ_DIR$\src\smc_workaround</state>
                     <state>$PROJ_DIR$\src\smc_workaround\r_bsp_patch</state>
                     <state>$PROJ_DIR$\..\..\Source\include</state>
-                    <state>$PROJ_DIR$\..\..\Source\portable\IAR\RX700v3_DPFPU</state>
+                    <state>$PROJ_DIR$\..\..\Source\portable\IAR\RX</state>
                     <state>$PROJ_DIR$\src\frtos_startup</state>
                     <state>$PROJ_DIR$\src\frtos_config</state>
                     <state>$PROJ_DIR$\src\frtos_skeleton</state>
@@ -2177,10 +2177,10 @@
                 </file>
             </group>
             <file>
-                <name>$PROJ_DIR$\..\..\Source\portable\IAR\RX700v3_DPFPU\port.c</name>
+                <name>$PROJ_DIR$\..\..\Source\portable\IAR\RX\port.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\..\..\Source\portable\IAR\RX700v3_DPFPU\portmacro.h</name>
+                <name>$PROJ_DIR$\..\..\Source\portable\IAR\RX\portmacro.h</name>
             </file>
         </group>
         <file>
