@@ -142,7 +142,13 @@ tasks are created using configMINIMAL_STACK_SIZE (in this FreeRTOSConfig.h, it i
 100) for the stack size setting as default but some of then need more stack. */
 #define ebEVENT_GROUP_SET_BITS_TEST_TASK_STACK_SIZE		(( unsigned short ) 120)
 
-/* When the FIT configurator or the Smart Configurator is used, platform.h has to be used. */
+/* If configINCLUDE_PLATFORM_H_INSTEAD_OF_IODEFINE_H is set to 0 then iodefine.h
+is included and used in FreeRTOS Kernel's Renesas RX port.  If the macro is set
+to 1 then platform.h is included and used in the port.  If the macro is set to 2
+then neither iodefine.h nor platform.h are included.  If the macro is undefined,
+it is set to 0 (CC-RX/GNURX) or 2 (ICCRX) internally for backward compatibility.
+When the FIT configurator or the Smart Configurator is used, platform.h has to be
+used. */
 #define configINCLUDE_PLATFORM_H_INSTEAD_OF_IODEFINE_H  1
 
 #endif /* FREERTOS_CONFIG_H */
