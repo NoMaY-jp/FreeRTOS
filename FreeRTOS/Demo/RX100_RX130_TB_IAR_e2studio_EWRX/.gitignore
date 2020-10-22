@@ -3,6 +3,7 @@ HardwareDebug/
 e2studio_project.prefs
 language.settings.xml
 cgprojectDatas.datas
+com.renesas.smc.e2studio.qe.xml
 CoverageSetting.xml
 DebugVirtualConsoleSetting.xml
 
