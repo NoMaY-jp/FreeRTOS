@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V4.14.1.5408 for Renesas RX              15/Oct/2020  21:10:58
+# IAR ELF Linker V4.14.1.5408 for Renesas RX              22/Oct/2020  23:30:45
 # Copyright 2009-2019 IAR Systems AB.
 #
 #    Output file  =  RTOSDemo.out
@@ -376,7 +376,7 @@ No sections matched the following patterns:
   .data24.rodata     const    0xffc0'0a71     0x2  main_full.o [5]
                             - 0xffc0'0a73   0xa73
 
-"ROM32":                                   0xca7a
+"ROM32":                                   0xca62
   .text              ro code  0xffc0'0a78  0x18c9  tasks.o [1]
   .switch.rodata     const    0xffc0'2344    0x1a  r_bsp_software_interrupt.o [11]
   .text              ro code  0xffc0'2360   0x23d  heap_4.o [3]
@@ -438,31 +438,31 @@ No sections matched the following patterns:
   .text              ro code  0xffc0'd0c6    0xa5  r_cg_hardware_setup.o [9]
   .text              ro code  0xffc0'd16b    0x44  r_gpio_rx.o [14]
   .text              ro code  0xffc0'd1af    0x2c  r_sci_rx_pinset.o [16]
-  .text              ro code  0xffc0'd1db    0x1b  r_smc_cgc.o [9]
-  .text              ro code  0xffc0'd1f6     0x1  r_smc_cgc_user.o [9]
-  .text              ro code  0xffc0'd1f7    0x9c  mcu_init.o [12]
-  .text              ro code  0xffc0'd293    0x81  hwsetup.o [10]
-  .text              ro code  0xffc0'd314    0x74  packbits_init.o [23]
-  .text              ro code  0xffc0'd388     0xf  __dbg_abort.o [22]
-  .text              ro code  0xffc0'd398     0x1  __dbg_break.o [22]
-  .text              ro code  0xffc0'd39c    0x12  __dbg_xxexit.o [22]
-  .text              ro code  0xffc0'd3ae    0x43  resetprg.o [11]
-  .text              ro code  0xffc0'd3f8    0x20  data_init.o [23]
-  .text              ro code  0xffc0'd418    0x33  cstartup.o [24]
-  .text              ro code  0xffc0'd44c     0x4  exit.o [23]
-  .text              ro code  0xffc0'd450     0x8  cexit.o [23]
-  .iar.init_table    const    0xffc0'd458    0x2c  - Linker created -
-  .switch.rodata     const    0xffc0'd484    0x18  r_dtc_rx.o [21]
-  .text              ro code  0xffc0'd49c    0x18  zero_init2.o [23]
-  .switch.rodata     const    0xffc0'd4b4    0x10  r_bsp_cpu.o [11]
-  .switch.rodata     const    0xffc0'd4c4     0xe  r_bsp_interrupts.o [11]
-  .switch.rodata     const    0xffc0'd4d4     0xe  xprintftiny.o [23]
-  .text              ro code  0xffc0'd4e4     0xe  interrupt_table.o [23]
-                            - 0xffc0'd4f2  0xca7a
+  .text              ro code  0xffc0'd1db     0x4  r_smc_cgc.o [9]
+  .text              ro code  0xffc0'd1df     0x1  r_smc_cgc_user.o [9]
+  .text              ro code  0xffc0'd1e0    0x9c  mcu_init.o [12]
+  .text              ro code  0xffc0'd27c    0x81  hwsetup.o [10]
+  .text              ro code  0xffc0'd300    0x74  packbits_init.o [23]
+  .text              ro code  0xffc0'd374     0xf  __dbg_abort.o [22]
+  .text              ro code  0xffc0'd384     0x1  __dbg_break.o [22]
+  .text              ro code  0xffc0'd388    0x12  __dbg_xxexit.o [22]
+  .text              ro code  0xffc0'd39a    0x43  resetprg.o [11]
+  .text              ro code  0xffc0'd3e0    0x20  data_init.o [23]
+  .text              ro code  0xffc0'd400    0x33  cstartup.o [24]
+  .text              ro code  0xffc0'd434     0x4  exit.o [23]
+  .text              ro code  0xffc0'd438     0x8  cexit.o [23]
+  .iar.init_table    const    0xffc0'd440    0x2c  - Linker created -
+  .switch.rodata     const    0xffc0'd46c    0x18  r_dtc_rx.o [21]
+  .text              ro code  0xffc0'd484    0x18  zero_init2.o [23]
+  .switch.rodata     const    0xffc0'd49c    0x10  r_bsp_cpu.o [11]
+  .switch.rodata     const    0xffc0'd4ac     0xe  r_bsp_interrupts.o [11]
+  .switch.rodata     const    0xffc0'd4bc     0xe  xprintftiny.o [23]
+  .text              ro code  0xffc0'd4cc     0xe  interrupt_table.o [23]
+                            - 0xffc0'd4da  0xca62
 
 "ROM24", part 2 of 2:                        0x4e
-  Initializer bytes  const    0xffc0'd4f2    0x4e  <for RAM24 s0>
-                            - 0xffc0'd540    0x4e
+  Initializer bytes  const    0xffc0'd4da    0x4e  <for RAM24 s0>
+                            - 0xffc0'd528    0x4e
 
 "A2":                                        0x7c
   .exceptvect                 0xffff'ff80    0x7c  <Block>
@@ -480,7 +480,7 @@ Unused ranges:
        0xd338     0x7'fbff   0x7'28c8
     0x80'0000    0x87'ffff   0x8'0000
   0xffc0'0a73  0xffc0'0a77        0x5
-  0xffc0'd540  0xffff'ff7f  0x3f'2a40
+  0xffc0'd528  0xffff'ff7f  0x3f'2a58
 
 
 *******************************************************************************
@@ -495,7 +495,7 @@ Zero (___iar_zero_init2)
 
 Copy/packbits (___iar_packbits_init2)
     1 source range, total size 0x4e (20% of destination):
-          0xffc0'd4f2    0x4e
+          0xffc0'd4da    0x4e
     1 destination range, total size 0x174:
                   0x4   0x174
 
@@ -512,7 +512,7 @@ Copy/packbits (___iar_packbits_init2)
 
 
 Program entry
-  "__iar_program_start": 0xffc0'd418
+  "__iar_program_start": 0xffc0'd400
 
   Maximum call chain                            *?* 376  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll")
@@ -789,7 +789,7 @@ interrupt
     "_R_BYTEQ_Get"                                  4
 
 interrupt
-  "_default_handler": 0xffc0'd4e4
+  "_default_handler": 0xffc0'd4cc
 
   Maximum call chain                               56  bytes
 
@@ -1782,10 +1782,10 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\general: [9]
     r_cg_hardware_setup.o           165                20
-    r_smc_cgc.o                      27
+    r_smc_cgc.o                       4
     r_smc_cgc_user.o                  1
     -----------------------------------------------------
-    Total:                          193                20
+    Total:                          170                20
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_bsp\board\generic_rx72n: [10]
     hwsetup.o                       129
@@ -1890,10 +1890,10 @@ rtrx3dll.a: [24]
     -----------------------------------------------------
     Total:                          563      244
 
-    Gaps                             98       11
+    Gaps                             97       11
     Linker created                            44    1'024
 ---------------------------------------------------------
-    Grand Total:                 50'633    4'198   55'090
+    Grand Total:                 50'609    4'198   55'090
 
 
 *******************************************************************************
@@ -1904,8 +1904,8 @@ Entry                       Address    Size  Type      Object
 -----                       -------    ----  ----      ------
 .exceptvect$$Base       0xffff'ff80           --   Gb  - Linker created -
 .exceptvect$$Limit      0xffff'fffc           --   Gb  - Linker created -
-.iar.init_table$$Base   0xffc0'd458           --   Gb  - Linker created -
-.iar.init_table$$Limit  0xffc0'd484           --   Gb  - Linker created -
+.iar.init_table$$Base   0xffc0'd440           --   Gb  - Linker created -
+.iar.init_table$$Limit  0xffc0'd46c           --   Gb  - Linker created -
 .inttable$$Base         0xffc0'c720           --   Gb  - Linker created -
 .inttable$$Limit        0xffc0'cb20           --   Gb  - Linker created -
 FreeRTOS_CLIProcessCommand::pxCommand
@@ -1915,8 +1915,8 @@ FreeRTOS_CLIRegisterCommand::pxLastCommandInList
 ISTACK$$Base               0x7'fc00           --   Gb  - Linker created -
 ISTACK$$Limit              0x8'0000           --   Gb  - Linker created -
 R_BYTEQ_Open::qcb_init       0xd334     0x1  Data  Lc  r_byteq.o [13]
-Region$$Table$$Base     0xffc0'd458           --   Gb  - Linker created -
-Region$$Table$$Limit    0xffc0'd484           --   Gb  - Linker created -
+Region$$Table$$Base     0xffc0'd440           --   Gb  - Linker created -
+Region$$Table$$Limit    0xffc0'd46c           --   Gb  - Linker created -
 STACKS$$Base               0x7'fc00           --   Gb  - Linker created -
 STACKS$$Limit              0x8'0000           --   Gb  - Linker created -
 USTACK$$Base               0x7'fc00           --   Gb  - Linker created -
@@ -1963,8 +1963,8 @@ _R_BYTEQ_Open           0xffc0'b70d    0x9a  Code  Gb  r_byteq.o [13]
 _R_BYTEQ_Put            0xffc0'b7a7    0x31  Code  Gb  r_byteq.o [13]
 _R_BYTEQ_Unused         0xffc0'b833    0x17  Code  Gb  r_byteq.o [13]
 _R_BYTEQ_Used           0xffc0'b820    0x13  Code  Gb  r_byteq.o [13]
-_R_CGC_Create           0xffc0'd1db    0x1b  Code  Gb  r_smc_cgc.o [9]
-_R_CGC_Create_UserInit  0xffc0'd1f6     0x1  Code  Gb  r_smc_cgc_user.o [9]
+_R_CGC_Create           0xffc0'd1db     0x4  Code  Gb  r_smc_cgc.o [9]
+_R_CGC_Create_UserInit  0xffc0'd1df     0x1  Code  Gb  r_smc_cgc_user.o [9]
 _R_CG_Config_Create     0xffc0'd11d    0x47  Code  Gb  r_cg_hardware_setup.o [9]
 _R_DTC_Control          0xffc0'a0e8   0x240  Code  Gb  r_dtc_rx.o [21]
 _R_DTC_Create           0xffc0'a019    0xce  Code  Gb  r_dtc_rx.o [21]
@@ -1995,13 +1995,13 @@ __SPCC {Abs}            0xffff'ffff           --   Gb  vecttbl.o [12]
 __SProut                0xffc0'533c     0xa  Code  Gb  xsprout.o [23]
 __TMEF {Abs}            0xffff'ffff           --   Gb  vecttbl.o [12]
 __TMINF {Abs}           0xffff'ffff           --   Gb  vecttbl.o [12]
-___DebugBreak           0xffc0'd398     0x1  Code  Gb  __dbg_break.o [22]
+___DebugBreak           0xffc0'd384     0x1  Code  Gb  __dbg_break.o [22]
 ___NMI_handler          0xffc0'b4d8   0x1cc  Code  Gb  r_bsp_interrupts.o [11]
 ___excep_access_inst    0xffc0'b489    0x17  Code  Gb  r_bsp_interrupts.o [11]
-___exit                 0xffc0'd39c    0x12  Code  Gb  __dbg_xxexit.o [22]
-___iar_data_init2       0xffc0'd3f8    0x20  Code  Gb  data_init.o [23]
-___iar_packbits_init2   0xffc0'd314    0x74  Code  Gb  packbits_init.o [23]
-___iar_zero_init2       0xffc0'd49c    0x18  Code  Gb  zero_init2.o [23]
+___exit                 0xffc0'd388    0x12  Code  Gb  __dbg_xxexit.o [22]
+___iar_data_init2       0xffc0'd3e0    0x20  Code  Gb  data_init.o [23]
+___iar_packbits_init2   0xffc0'd300    0x74  Code  Gb  packbits_init.o [23]
+___iar_zero_init2       0xffc0'd484    0x18  Code  Gb  zero_init2.o [23]
 ___interrupt_102        0xffc0'ae34          Code  Gb  r_sci_rx72n.o [18]
 ___interrupt_103        0xffc0'adfc          Code  Gb  r_sci_rx72n.o [18]
 ___interrupt_106        0xffc0'c6a1          Code  Gb  mcu_interrupts.o [12]
@@ -2019,25 +2019,25 @@ ___interrupt_27         0xffc0'2707          Code  Gb  port.o [2]
 ___interrupt_28         0xffc0'27b7          Code  Gb  port.o [2]
 ___interrupt_62         0xffc0'ae21          Code  Gb  r_sci_rx72n.o [18]
 ___interrupt_63         0xffc0'ade9          Code  Gb  r_sci_rx72n.o [18]
-___low_level_init       0xffc0'd3ae    0x43  Code  Gb  resetprg.o [11]
+___low_level_init       0xffc0'd39a    0x43  Code  Gb  resetprg.o [11]
 ___privileged_handler   0xffc0'b472    0x17  Code  Gb  r_bsp_interrupts.o [11]
 ___undefined_handler    0xffc0'b4a0    0x17  Code  Gb  r_bsp_interrupts.o [11]
 ___undefined_interrupt_source_handler
                         0xffc0'b6a4    0x31  Code  Gb  r_bsp_interrupts.o [11]
 __exceptvect_v3         0xffff'ff80          Data  Gb  exceptvect.o [24]
-__exit                  0xffc0'd450          Code  Gb  cexit.o [23]
+__exit                  0xffc0'd438          Code  Gb  cexit.o [23]
 __float_placeholder     0xffc0'b4b7    0x21  Code  Gb  r_bsp_interrupts.o [11]
 __iar_call_low_level_init
-                        0xffc0'd434          Code  Gb  cstartup.o [24]
-__iar_cstart_end        0xffc0'd44b          Code  Gb  cstartup.o [24]
+                        0xffc0'd41c          Code  Gb  cstartup.o [24]
+__iar_cstart_end        0xffc0'd433          Code  Gb  cstartup.o [24]
 __iar_div64u            0xffc0'cec6          Code  Gb  div64u.o [24]
-__iar_main_call         0xffc0'd441          Code  Gb  cstartup.o [24]
-__iar_program_start     0xffc0'd418          Code  Gb  cstartup.o [24]
+__iar_main_call         0xffc0'd429          Code  Gb  cstartup.o [24]
+__iar_program_start     0xffc0'd400          Code  Gb  cstartup.o [24]
 __iar_reset_vector      0xffff'fffc          Data  Gb  resetvect.o [24]
 __link_file_version_4 {Abs}
                                 0x1          Data  Gb  <internal module>
 __option_mem_2          0xfe7f'5d00          Data  Gb  option_mem.o [24]
-_abort                  0xffc0'd388     0xf  Code  Gb  __dbg_abort.o [22]
+_abort                  0xffc0'd374     0xf  Code  Gb  __dbg_abort.o [22]
 _async_baud             0xffc0'04d8    0x36  Data  Gb  r_sci_rx72n_data.o [18]
 _bsp_interrupt_enable_disable
                         0xffc0'bdfc    0x72  Code  Gb  mcu_interrupts.o [12]
@@ -2045,7 +2045,7 @@ _bsp_interrupt_open     0xffc0'aff0    0x38  Code  Gb  r_bsp_interrupts.o [11]
 _bsp_mapped_interrupt_open
                         0xffc0'b852   0x1c5  Code  Gb  mcu_mapped_interrupts.o [12]
 _bsp_non_existent_port_init
-                        0xffc0'd1f7    0x9c  Code  Gb  mcu_init.o [12]
+                        0xffc0'd1e0    0x9c  Code  Gb  mcu_init.o [12]
 _bsp_ram_initialize     0xffc0'afb4     0xd  Code  Gb  r_bsp_cpu.o [11]
 _bsp_register_protect_open
                         0xffc0'afa2    0x12  Code  Gb  r_bsp_cpu.o [11]
@@ -2062,11 +2062,11 @@ _ch9_rom                0xffc0'03b0    0x44  Data  Gb  r_sci_rx72n_data.o [18]
 _ch9_rx_buf                  0xd048    0x50  Data  Lc  r_sci_rx.o [17]
 _ch9_tx_buf                  0xcff8    0x50  Data  Lc  r_sci_rx.o [17]
 _charput                0xffc0'2e1a    0x11  Code  Gb  lowlvl.o [20]
-_default_handler        0xffc0'd4e4     0xe  Code  Gb  interrupt_table.o [23]
+_default_handler        0xffc0'd4cc     0xe  Code  Gb  interrupt_table.o [23]
 _delay_wait             0xffc0'cdeb     0x9  Code  Lc  r_bsp_common.o [11]
 _eTaskGetState          0xffc0'0e42    0x6f  Code  Gb  tasks.o [1]
 _eri_handler            0xffc0'a738    0x74  Code  Gb  r_sci_rx.o [17]
-_exit                   0xffc0'd44c     0x4  Code  Gb  exit.o [23]
+_exit                   0xffc0'd434     0x4  Code  Gb  exit.o [23]
 _g_bsp_Locks                 0xc724   0x210  Data  Gb  mcu_locks.o [11]
 _g_bsp_swint_access_ctrl
                              0xd318     0x4  Data  Gb  r_bsp_software_interrupt.o [11]
@@ -2083,7 +2083,7 @@ _group_bl0_handler_isr  0xffc0'be6e   0x2c8  Code  Lc  mcu_interrupts.o [12]
 _group_bl1_handler_isr  0xffc0'c136   0x246  Code  Lc  mcu_interrupts.o [12]
 _group_bl2_handler_isr  0xffc0'c37c    0x72  Code  Lc  mcu_interrupts.o [12]
 _group_ie0_handler_isr  0xffc0'c672    0x2f  Code  Lc  mcu_interrupts.o [12]
-_hardware_setup         0xffc0'd293    0x81  Code  Gb  hwsetup.o [10]
+_hardware_setup         0xffc0'd27c    0x81  Code  Gb  hwsetup.o [10]
 _lab_vSoftwareInterruptISR_1
                         0xffc0'2758          Code  Gb  port.o [2]
 _lab_vSoftwareInterruptISR_2
@@ -2796,7 +2796,7 @@ xSecondTimerHandler::uxNextOperation
 [23] = dlrxdlln.a
 [24] = rtrx3dll.a
 
-  50'633 bytes of readonly  code memory
+  50'609 bytes of readonly  code memory
    4'198 bytes of readonly  data memory
   55'090 bytes of readwrite data memory
 

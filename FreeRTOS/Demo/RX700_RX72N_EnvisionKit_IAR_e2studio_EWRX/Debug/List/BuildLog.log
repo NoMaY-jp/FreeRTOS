@@ -365,7 +365,7 @@ iccrx.exe C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Source\portable\IAR\RX
    IAR C/C++ Compiler V4.14.1.5408 for Renesas RX
    Copyright 2009-2019 IAR Systems AB.
    PC-locked license - IAR Embedded Workbench for Renesas RX, 64K KickStart Edition 4.14
-C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Source\portable\IAR\RX\port.c(47) : Warning[Pa183]: #warning directive: Testing for DPFPU support in this port is not yet complete
+C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Source\portable\IAR\RX\port.c(51) : Warning[Pa183]: #warning directive: Testing for DPFPU support in this port is not yet complete
  
  419 bytes of CODE memory
    4 bytes of DATA memory
@@ -634,7 +634,7 @@ iccrx.exe C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_Envis
    Copyright 2009-2019 IAR Systems AB.
    PC-locked license - IAR Embedded Workbench for Renesas RX, 64K KickStart Edition 4.14
  
- 27 bytes of CODE memory
+ 4 bytes of CODE memory
 
 Errors: none
 Warnings: none
@@ -848,14 +848,14 @@ ilinkrx.exe C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_Env
 Warning[Ls016]: [stack usage analysis] the program contains at least one indirect call. Example: from "_R_BSP_InterruptControl". A complete list of such functions is in the map file.
 Warning[Ls017]: [stack usage analysis] the program contains at least one instance of recursion for which stack usage analysis has not been able to calculate a maximum stack depth. One function involved is "_xTaskResumeAll". A complete list of all recursion nests is in the map file.
 
-  50'633 bytes of readonly  code memory
+  50'609 bytes of readonly  code memory
    4'198 bytes of readonly  data memory
   55'090 bytes of readwrite data memory
 
 Errors: none
 Warnings: 2
 
-Link time:   1.27 (CPU)   1.36 (elapsed)
+Link time:   1.28 (CPU)   2.87 (elapsed)
 
 RTOSDemo.out
 Output Converter
