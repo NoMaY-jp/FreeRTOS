@@ -1225,15 +1225,15 @@
       <ParentItem>a29b4abd-ec28-48db-8bb9-d91b5875b512</ParentItem>
     </Instance>
     <Instance Guid="cfe7aeb6-166b-4703-a00e-456ca0d9b3fe">
-      <Name>r01an1685ej0552-rx-bsp.pdf</Name>
+      <Name>r01an1685ej0561-rx-bsp.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_bsp\doc\en\r01an1685ej0552-rx-bsp.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</RelativePath>
       <ParentItem>0faa0af5-bd0b-485a-8911-82c95a53738a</ParentItem>
     </Instance>
     <Instance Guid="1f765635-8148-46b6-8a82-98a78ebdebc2">
-      <Name>r01an1685jj0552-rx-bsp.pdf</Name>
+      <Name>r01an1685jj0561-rx-bsp.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_bsp\doc\ja\r01an1685jj0552-rx-bsp.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</RelativePath>
       <ParentItem>76a80a75-8b18-40ee-9a51-4a491488c016</ParentItem>
     </Instance>
     <Instance Guid="93c1bd5f-6490-4550-ae3e-a15be16e1119">

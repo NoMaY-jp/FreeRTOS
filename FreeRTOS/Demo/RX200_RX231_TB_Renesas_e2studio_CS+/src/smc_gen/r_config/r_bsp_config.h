@@ -144,7 +144,7 @@ Configuration Options
    6            = 0x6             = 256KB/32KB/8KB
    5            = 0x5             = 128KB/32KB/8KB
 */
-#define BSP_CFG_MCU_PART_MEMORY_SIZE    (0x8)
+#define BSP_CFG_MCU_PART_MEMORY_SIZE    (0x8) /* Generated value. Do not edit this manually */
 
 /* Group name.
    Character(s) = Value for macro = Description

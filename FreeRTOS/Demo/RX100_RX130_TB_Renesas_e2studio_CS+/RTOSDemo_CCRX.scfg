@@ -14,170 +14,177 @@
         <option id="board" value="Custom User Board"/>
     </general>
     <tool id="Clock">
-        <Item current="true" id="vccSetting.isSelected"/>
-        <Item current="" id="vccSetting.InputValue"/>
-        <Item current="vcc2_7-5_5" id="vccSetting.OutputValue"/>
-        <Item current="3.3" id="vccSetting.vccTxt"/>
-        <Item current="false" id="mainclock.selectBox"/>
-        <Item current="" id="mainclock.InputValue"/>
-        <Item current="" id="mainclock.OutputValue"/>
-        <Item current="8" error="false" id="mainclock.frequencyTxt"/>
-        <Item current="srcR" id="mainclock.sourceBox"/>
-        <Item current="9980" id="mainclock.cycleValueTxt"/>
-        <Item current="false" id="subclock.selectBox"/>
-        <Item current="" id="subclock.InputValue"/>
-        <Item current="" id="subclock.OutputValue"/>
-        <Item current="32.768" error="false" id="subclock.frequencyTxt"/>
-        <Item current="standardCL" id="subclock.generalBox"/>
-        <Item current="2000" id="subclock.cycleValueTxt"/>
-        <Item current="true" id="hococlock.selectBox"/>
-        <Item current="" id="hococlock.InputValue"/>
-        <Item current="32 MHz" id="hococlock.OutputValue"/>
-        <Item current="frq20" id="hococlock.frequencyListBox"/>
-        <Item current="false" id="lococlock.selectBox"/>
-        <Item current="" id="lococlock.InputValue"/>
-        <Item current="" id="lococlock.OutputValue"/>
-        <Item current="4" error="false" id="lococlock.frequencyTxt"/>
-        <Item current="false" id="iwdtclock.selectBox"/>
-        <Item current="" id="iwdtclock.InputValue"/>
-        <Item current="" id="iwdtclock.OutputValue"/>
-        <Item current="15" error="false" id="iwdtclock.frequencyTxt"/>
-        <Item current="false" id="pll.isSelected"/>
-        <Item current="" id="pll.InputValue"/>
-        <Item current="" id="pll.OutputValue"/>
-        <Item current="mul8-1" error="false" id="pll.multiplyBox"/>
-        <Item current="div1-2" error="false" id="pll.dividerBox"/>
-        <Item current="" error="false" id="pll.MiddleValue"/>
-        <Item current="true" id="sckselector.isSelected"/>
-        <Item current="" id="sckselector.InputValue"/>
-        <Item current="32 MHz" id="sckselector.OutputValue"/>
-        <Item current="swthococlock" id="sckselector.radiobutton"/>
-        <Item current="3" id="sckselector.CurrentValue"/>
-        <Item current="true" id="sckselector.buttonDisable.0"/>
-        <Item current="true" id="sckselector.buttonDisable.1"/>
-        <Item current="true" id="sckselector.buttonDisable.2"/>
-        <Item current="false" id="sckselector.buttonDisable.3"/>
-        <Item current="true" id="sckselector.buttonDisable.4"/>
-        <Item current="true" id="fclkdivider.isSelected"/>
-        <Item current="32 MHz" id="fclkdivider.InputValue"/>
-        <Item current="32.0 MHz" id="fclkdivider.OutputValue"/>
-        <Item current="sckselector.radiobutton.swthococlock" id="fclkdivider.Condition"/>
-        <Item current="comboBox1-1" error="false" id="fclkdivider.comboBox"/>
-        <Item current="true" id="pclkddivider.isSelected"/>
-        <Item current="32 MHz" id="pclkddivider.InputValue"/>
-        <Item current="32.0 MHz" id="pclkddivider.OutputValue"/>
-        <Item current="sckselector.radiobutton.swthococlock" id="pclkddivider.Condition"/>
-        <Item current="comboBox1-1" error="false" id="pclkddivider.comboBox"/>
-        <Item current="32.0 MHz" error="false" id="pclkddivider.PreOutput"/>
-        <Item current="pclkbdivider" error="false" id="pclkddivider.PreOutputController"/>
-        <Item current="true" id="pclkbdivider.isSelected"/>
-        <Item current="32 MHz" id="pclkbdivider.InputValue"/>
-        <Item current="32.0 MHz" id="pclkbdivider.OutputValue"/>
-        <Item current="sckselector.radiobutton.swthococlock" id="pclkbdivider.Condition"/>
-        <Item current="comboBox1-1" error="false" id="pclkbdivider.comboBox"/>
-        <Item current="32.0 MHz" error="false" id="pclkbdivider.PreOutput"/>
-        <Item current="iclkdivider" error="false" id="pclkbdivider.PreOutputController"/>
-        <Item current="true" id="iclkdivider.isSelected"/>
-        <Item current="32 MHz" id="iclkdivider.InputValue"/>
-        <Item current="32.0 MHz" id="iclkdivider.OutputValue"/>
-        <Item current="sckselector.radiobutton.swthococlock" id="iclkdivider.Condition"/>
-        <Item current="comboBox1-1" error="false" id="iclkdivider.comboBox"/>
-        <Item current="true" id="fclk.isSelected"/>
-        <Item current="32.0 MHz" id="fclk.InputValue"/>
-        <Item current="32.0 MHz" id="fclk.OutputValue"/>
-        <Item current="32.0" id="fclk.frequencyTxt"/>
-        <Item current="MHz" id="fclk.unitTxt"/>
-        <Item current="32.0" id="fclk.CurrentValue"/>
-        <Item current="false" id="fclk.Disabled"/>
-        <Item current="true" id="iclk.isSelected"/>
-        <Item current="32.0 MHz" id="iclk.InputValue"/>
-        <Item current="32.0 MHz" id="iclk.OutputValue"/>
-        <Item current="32.0" id="iclk.frequencyTxt"/>
-        <Item current="MHz" id="iclk.unitTxt"/>
-        <Item current="32.0" id="iclk.CurrentValue"/>
-        <Item current="false" id="iclk.Disabled"/>
-        <Item current="true" id="pclkb.isSelected"/>
-        <Item current="32.0 MHz" id="pclkb.InputValue"/>
-        <Item current="32.0 MHz" id="pclkb.OutputValue"/>
-        <Item current="32.0" id="pclkb.frequencyTxt"/>
-        <Item current="MHz" id="pclkb.unitTxt"/>
-        <Item current="32.0" id="pclkb.CurrentValue"/>
-        <Item current="false" id="pclkb.Disabled"/>
-        <Item current="true" id="pclkd.isSelected"/>
-        <Item current="32.0 MHz" id="pclkd.InputValue"/>
-        <Item current="32.0 MHz" id="pclkd.OutputValue"/>
-        <Item current="32.0" id="pclkd.frequencyTxt"/>
-        <Item current="MHz" id="pclkd.unitTxt"/>
-        <Item current="32.0" id="pclkd.CurrentValue"/>
-        <Item current="false" id="pclkd.Disabled"/>
-        <Item current="false" id="cacilsclk.isSelected"/>
-        <Item current="" id="cacilsclk.InputValue"/>
-        <Item current="0" id="cacilsclk.OutputValue"/>
-        <Item current="-" id="cacilsclk.frequencyTxt"/>
-        <Item current="MHz" id="cacilsclk.unitTxt"/>
-        <Item current="true" id="cacilsclk.Disabled"/>
-        <Item current="false" id="caclclk.isSelected"/>
-        <Item current="" id="caclclk.InputValue"/>
-        <Item current="0" id="caclclk.OutputValue"/>
-        <Item current="-" id="caclclk.frequencyTxt"/>
-        <Item current="MHz" id="caclclk.unitTxt"/>
-        <Item current="true" id="caclclk.Disabled"/>
-        <Item current="true" id="cachclk.isSelected"/>
-        <Item current="32 MHz" id="cachclk.InputValue"/>
-        <Item current="32 MHz" id="cachclk.OutputValue"/>
-        <Item current="32" id="cachclk.frequencyTxt"/>
-        <Item current="MHz" id="cachclk.unitTxt"/>
-        <Item current="false" id="cachclk.Disabled"/>
-        <Item current="false" id="cacsclk.isSelected"/>
-        <Item current="" id="cacsclk.InputValue"/>
-        <Item current="0" id="cacsclk.OutputValue"/>
-        <Item current="-" id="cacsclk.frequencyTxt"/>
-        <Item current="kHz" id="cacsclk.unitTxt"/>
-        <Item current="true" id="cacsclk.Disabled"/>
-        <Item current="false" id="rtcclk.selectBox"/>
-        <Item current="" id="rtcclk.InputValue"/>
-        <Item current="0" id="rtcclk.OutputValue"/>
-        <Item current="-" id="rtcclk.frequencyTxt"/>
-        <Item current="kHz" id="rtcclk.unitTxt"/>
-        <Item current="true" id="rtcclk.Disabled"/>
-        <Item current="true" id="rtcclk.SelectBoxDisabled"/>
-        <Item current="false" id="cacmclk.isSelected"/>
-        <Item current="" id="cacmclk.InputValue"/>
-        <Item current="0" id="cacmclk.OutputValue"/>
-        <Item current="-" id="cacmclk.frequencyTxt"/>
-        <Item current="MHz" id="cacmclk.unitTxt"/>
-        <Item current="8" id="cacmclk.CurrentValue"/>
-        <Item current="true" id="cacmclk.Disabled"/>
-        <Item current="32" id="cachclk.CurrentValue"/>
-        <Item current="sBox32768" id="mainclock.cycleBox"/>
-        <Item current="32" error="false" id="hococlock.frequencyTxt"/>
-        <Item current="false" id="lptselector.isSelected"/>
-        <Item current="" id="lptselector.InputValue"/>
-        <Item current="" id="lptselector.OutputValue"/>
-        <Item current="swtsubclock" id="lptselector.radiobutton"/>
-        <Item current="0" id="lptselector.CurrentValue"/>
-        <Item current="true" id="lptselector.buttonDisable.0"/>
-        <Item current="true" id="lptselector.buttonDisable.1"/>
-        <Item current="32.0 MHz" error="false" id="fclkdivider.PreOutput"/>
-        <Item current="iclkdivider" error="false" id="fclkdivider.PreOutputController"/>
-        <Item current="false" id="lptclk.isSelected"/>
-        <Item current="" id="lptclk.InputValue"/>
-        <Item current="0" id="lptclk.OutputValue"/>
-        <Item current="-" id="lptclk.frequencyTxt"/>
-        <Item current="kHz" id="lptclk.unitTxt"/>
-        <Item current="true" id="lptclk.Disabled"/>
-        <Item current="32.768" id="cacsclk.CurrentValue"/>
-        <Item current="32.768" id="lptclk.CurrentValue"/>
-        <Item current="32.768" id="rtcclk.CurrentValue"/>
-    </tool>
-    <tool id="Pins" version="1.0.1.0">
-        <pinItem allocation="20" comments="" direction="None" id="RXD1" isUsedBySoftware="true" locked="false" status="0"/>
-        <pinItem allocation="22" comments="" direction="None" id="TXD1" isUsedBySoftware="true" locked="false" status="0"/>
+        <option enabled="true" id="vccinput" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="3.3" value="3.300"/>
+        </option>
+        <option enabled="true" id="mainclockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="mainsourcebox" selection="srcR">
+            <item enabled="true" id="srcR"/>
+            <item enabled="true" id="srcEOI"/>
+        </option>
+        <option enabled="false" id="mainfrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="8" value="8.000000"/>
+        </option>
+        <option enabled="false" id="mainwaitcycle" selection="sBox32768">
+            <item enabled="true" id="sBox2"/>
+            <item enabled="true" id="sBox1024"/>
+            <item enabled="true" id="sBox2048"/>
+            <item enabled="true" id="sBox4096"/>
+            <item enabled="true" id="sBox8192"/>
+            <item enabled="true" id="sBox16384"/>
+            <item enabled="true" id="sBox32768"/>
+            <item enabled="true" id="sBox65536"/>
+        </option>
+        <option enabled="false" id="mainwaittime" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="8192"/>
+        </option>
+        <option enabled="true" id="subclockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="subfrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="32.768"/>
+        </option>
+        <option enabled="false" id="subdrivecap" selection="standardCL">
+            <item enabled="true" id="standardCL"/>
+            <item enabled="true" id="lowCL"/>
+        </option>
+        <option enabled="true" id="hococlockenable" selection="check">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="true" id="hocofrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="32"/>
+        </option>
+        <option enabled="true" id="hocooscenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="true" id="lococlockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="locofrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="4"/>
+        </option>
+        <option enabled="true" id="iwdtclockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="iwdtfrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="15"/>
+        </option>
+        <option enabled="false" id="plldivider" selection="div1-2">
+            <item enabled="true" id="div1-1"/>
+            <item enabled="true" id="div1-2"/>
+            <item enabled="false" id="div1-4"/>
+        </option>
+        <option enabled="false" id="pllmul" selection="mul8-1">
+            <item enabled="false" id="mul4-1"/>
+            <item enabled="false" id="mul4_5-1"/>
+            <item enabled="false" id="mul5-1"/>
+            <item enabled="false" id="mul5_5-1"/>
+            <item enabled="true" id="mul6-1"/>
+            <item enabled="true" id="mul6_5-1"/>
+            <item enabled="true" id="mul7-1"/>
+            <item enabled="true" id="mul7_5-1"/>
+            <item enabled="true" id="mul8-1"/>
+        </option>
+        <option enabled="true" id="sckswitcher" selection="hoco">
+            <item enabled="false" id="pll" input="" value="32.0"/>
+            <item enabled="false" id="main" input="" value="8.0"/>
+            <item enabled="false" id="sub" input="" value="0.032768"/>
+            <item enabled="true" id="hoco" input="" value="32"/>
+            <item enabled="false" id="loco" input="" value="4"/>
+        </option>
+        <option enabled="true" id="lptswitcher" selection="lptsub">
+            <item enabled="false" id="lptsub" input="" value="32.768"/>
+            <item enabled="false" id="lptiwdt" input="" value="15"/>
+        </option>
+        <option enabled="true" id="fclkdivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="iclkdivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="pclkbdivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="pclkddivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="false" id="comboBox1-16"/>
+            <item enabled="false" id="comboBox1-32"/>
+            <item enabled="false" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="fclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32"/>
+        </option>
+        <option enabled="true" id="iclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32"/>
+        </option>
+        <option enabled="true" id="pclkb" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32"/>
+        </option>
+        <option enabled="true" id="pclkd" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32"/>
+        </option>
+        <option enabled="true" id="cachclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32"/>
+        </option>
+        <option enabled="false" id="cacmclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="8.0"/>
+        </option>
+        <option enabled="false" id="caclclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="4"/>
+        </option>
+        <option enabled="false" id="cacsclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.768"/>
+        </option>
+        <option enabled="false" id="lptclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.768"/>
+        </option>
+        <option enabled="false" id="cacilclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="15"/>
+        </option>
+        <option enabled="false" id="rtcsclkenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="rtcsclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.768"/>
+        </option>
+        <option enabled="true" id="bspversion" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="3.40" value="5.61"/>
+        </option>
     </tool>
     <tool id="Interrupt">
         <Item currentVect="16" id="BSC_BUSERR" priority="15" usedState="Not Use"/>
         <Item currentVect="23" id="FCU_FRDYI" priority="15" usedState="Not Use"/>
-        <Item currentVect="27" id="ICU_SWINT" priority="1" usedState="Not Use"/>
+        <Item currentVect="27" id="ICU_SWINT" priority="15" usedState="Not Use"/>
         <Item currentVect="28" id="CMT0_CMI0" priority="15" usedState="Not Use"/>
         <Item currentVect="29" id="CMT1_CMI1" priority="15" usedState="Not Use"/>
         <Item currentVect="32" id="CAC_FERRF" priority="15" usedState="Not Use"/>
@@ -291,8 +298,12 @@
         <Item currentVect="248" id="RIIC0_TXI0" priority="15" usedState="Not Use"/>
         <Item currentVect="249" id="RIIC0_TEI0" priority="15" usedState="Not Use"/>
     </tool>
+    <tool id="Pins" version="1.0.1.0">
+        <pinItem allocation="20" comments="" direction="None" id="RXD1" isUsedBySoftware="true" locked="false" status="0"/>
+        <pinItem allocation="22" comments="" direction="None" id="TXD1" isUsedBySoftware="true" locked="false" status="0"/>
+    </tool>
     <tool id="SWComponent" version="1.0.0.0">
-        <configuration id="f0016227-4392-4c33-becb-ef49b76d3854" inuse="true" name="FreeRTOS_Kernel">
+        <configuration id="2d671144-2c13-4e91-967a-96acf850437c" inuse="true" name="FreeRTOS_Kernel">
             <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to configure kernel setting of FreeRTOS." detailDescription="" display="FreeRTOS_Kernel" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.kernel" version="1.0.100">
                 <gridItem id="configUSE_PREEMPTION" selectedIndex="1"/>
                 <gridItem id="configUSE_IDLE_HOOK" selectedIndex="1"/>
@@ -362,7 +373,7 @@
             </component>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
         </configuration>
-        <configuration id="8ab80eeb-f91b-44d7-a4d0-eeea082b54ad" inuse="true" name="FreeRTOS_Object">
+        <configuration id="a2b55487-fcdb-4e06-93b8-8b093f66c452" inuse="true" name="FreeRTOS_Object">
             <allocatable id="OBJECT" name="OBJECT">
                 <allocatable id="TASK" name="TASK">
                     <option defaultValue="0" id="LinkNum" value=""/>
@@ -388,42 +399,6 @@
             </allocatable>
             <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to create and configure new object of FreeRTOS." detailDescription="" display="FreeRTOS_Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.object" version="1.0.100"/>
             <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
-        <configuration inuse="true" name="r_bsp">
-            <component description="Dependencies : None&#10;The r_bsp package provides a foundation for code to be built on top of. It provides startup code, iodefines, and MCU information for different boards. There are 2 folders that make up the r_bsp package. The 'mcu' folder contains files that are common to a MCU group. These files provide functionality such as easy register access, CPU functions, and a file named 'mcu_info.h' for each MCU group. The 'mcu_info.h' file has information about the MCU on the board and is configured based on the information given in r_bsp_config.h. The information in 'mcu_info.h' is used to help configure Renesas middleware that uses the r_bsp package. The 'board' folder has a folder with startup code for each supported board.  Which MCU and board is chosen is decided by the settings in 'platform.h'. The user can choose which board they are using by uncommenting the include path that applies to their board. For example, if you are using the RSK+RX64M then you would uncomment the #include &quot;./board/generic_rx64m/r_bsp.h&quot; include path. Users are encouraged to add their own boards to the 'board' directory. BSPs are configured by using the r_bsp_config.h file. Each board will have a reference configuration file named r_bsp_config_reference.h. The user should copy this file to their project, rename it to r_bsp_config.h, and use the options inside the file to configure the BSP for their project." detailDescription="Board Support Packages." display="r_bsp" id="r_bsp5.52" version="5.52">
-                <gridItem id="BSP_CFG_STARTUP_DISABLE" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USER_STACK_ENABLE" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USTACK_BYTES" selectedIndex="0x0"/>
-                <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x400"/>
-                <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x0"/>
-                <gridItem id="BSP_CFG_IO_LIB_ENABLE" selectedIndex="1"/>
-                <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USER_CHARGET_FUNCTION" selectedIndex="my_sw_charget_function"/>
-                <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USER_CHARPUT_FUNCTION" selectedIndex="my_sw_charput_function"/>
-                <gridItem id="BSP_CFG_RUN_IN_USER_MODE" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_ID_CODE_LONG_1" selectedIndex="0xFFFFFFFF"/>
-                <gridItem id="BSP_CFG_ID_CODE_LONG_2" selectedIndex="0xFFFFFFFF"/>
-                <gridItem id="BSP_CFG_ID_CODE_LONG_3" selectedIndex="0xFFFFFFFF"/>
-                <gridItem id="BSP_CFG_ID_CODE_LONG_4" selectedIndex="0xFFFFFFFF"/>
-                <gridItem id="BSP_CFG_USER_LOCKING_ENABLED" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USER_LOCKING_TYPE" selectedIndex="bsp_lock_t"/>
-                <gridItem id="BSP_CFG_USER_LOCKING_HW_LOCK_FUNCTION" selectedIndex="my_hw_locking_function"/>
-                <gridItem id="BSP_CFG_USER_LOCKING_HW_UNLOCK_FUNCTION" selectedIndex="my_hw_unlocking_function"/>
-                <gridItem id="BSP_CFG_USER_LOCKING_SW_LOCK_FUNCTION" selectedIndex="my_sw_locking_function"/>
-                <gridItem id="BSP_CFG_USER_LOCKING_SW_UNLOCK_FUNCTION" selectedIndex="my_sw_unlocking_function"/>
-                <gridItem id="BSP_CFG_USER_WARM_START_CALLBACK_PRE_INITC_ENABLED" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USER_WARM_START_PRE_C_FUNCTION" selectedIndex="my_sw_warmstart_prec_function"/>
-                <gridItem id="BSP_CFG_USER_WARM_START_CALLBACK_POST_INITC_ENABLED" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_USER_WARM_START_POST_C_FUNCTION" selectedIndex="my_sw_warmstart_postc_function"/>
-                <gridItem id="BSP_CFG_PARAM_CHECKING_ENABLE" selectedIndex="1"/>
-                <gridItem id="BSP_CFG_FIT_IPL_MAX" selectedIndex="15"/>
-                <gridItem id="BSP_CFG_SWINT_UNIT1_ENABLE" selectedIndex="0"/>
-                <gridItem id="BSP_CFG_SWINT_TASK_BUFFER_NUMBER" selectedIndex="8"/>
-                <gridItem id="BSP_CFG_SWINT_IPR_INITIAL_VALUE" selectedIndex="1"/>
-            </component>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
-            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
         </configuration>
         <configuration inuse="true" name="r_byteq">
             <component description="Dependency : r_bsp version(s) 3.10&#10;This module allocates a queue control block in an Open() call to handle indexing for buffers provided by the user application. Additional functions are provided to put and get data from the buffer queue, inspect the number of bytes available or in use, and to flush the queue. There is no limit to the number of queues supported, and queue control blocks can be allocated statically at build time or dynamically at run time." detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq1.80" version="1.80">
@@ -593,6 +568,42 @@
                 <gridItem id="DTC_CFG_TRANSFER_DATA_READ_SKIP_EN" selectedIndex="1"/>
                 <gridItem id="DTC_CFG_USE_DMAC_FIT_MODULE" selectedIndex="0"/>
                 <gridItem id="DTC_CFG_USE_SEQUENCE_TRANSFER" selectedIndex="0"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration inuse="true" name="r_bsp">
+            <component description="Dependencies : None&#10;The r_bsp package provides a foundation for code to be built on top of. It provides startup code, iodefines, and MCU information for different boards. There are 2 folders that make up the r_bsp package. The 'mcu' folder contains files that are common to a MCU group. These files provide functionality such as easy register access, CPU functions, and a file named 'mcu_info.h' for each MCU group. The 'mcu_info.h' file has information about the MCU on the board and is configured based on the information given in r_bsp_config.h. The information in 'mcu_info.h' is used to help configure Renesas middleware that uses the r_bsp package. The 'board' folder has a folder with startup code for each supported board.  Which MCU and board is chosen is decided by the settings in 'platform.h'. The user can choose which board they are using by uncommenting the include path that applies to their board. For example, if you are using the RSK+RX64M then you would uncomment the #include &quot;./board/generic_rx64m/r_bsp.h&quot; include path. Users are encouraged to add their own boards to the 'board' directory. BSPs are configured by using the r_bsp_config.h file. Each board will have a reference configuration file named r_bsp_config_reference.h. The user should copy this file to their project, rename it to r_bsp_config.h, and use the options inside the file to configure the BSP for their project." detailDescription="Board Support Packages." display="r_bsp" id="r_bsp5.61" version="5.61">
+                <gridItem id="BSP_CFG_STARTUP_DISABLE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_STACK_ENABLE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USTACK_BYTES" selectedIndex="0x0"/>
+                <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x400"/>
+                <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x0"/>
+                <gridItem id="BSP_CFG_IO_LIB_ENABLE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_CHARGET_FUNCTION" selectedIndex="my_sw_charget_function"/>
+                <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_CHARPUT_FUNCTION" selectedIndex="my_sw_charput_function"/>
+                <gridItem id="BSP_CFG_RUN_IN_USER_MODE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_1" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_2" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_3" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_4" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_TYPE" selectedIndex="bsp_lock_t"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_HW_LOCK_FUNCTION" selectedIndex="my_hw_locking_function"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_HW_UNLOCK_FUNCTION" selectedIndex="my_hw_unlocking_function"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_SW_LOCK_FUNCTION" selectedIndex="my_sw_locking_function"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_SW_UNLOCK_FUNCTION" selectedIndex="my_sw_unlocking_function"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_CALLBACK_PRE_INITC_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_PRE_C_FUNCTION" selectedIndex="my_sw_warmstart_prec_function"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_CALLBACK_POST_INITC_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_POST_C_FUNCTION" selectedIndex="my_sw_warmstart_postc_function"/>
+                <gridItem id="BSP_CFG_PARAM_CHECKING_ENABLE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_FIT_IPL_MAX" selectedIndex="15"/>
+                <gridItem id="BSP_CFG_SWINT_UNIT1_ENABLE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_SWINT_TASK_BUFFER_NUMBER" selectedIndex="8"/>
+                <gridItem id="BSP_CFG_SWINT_IPR_INITIAL_VALUE" selectedIndex="1"/>
             </component>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
             <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>

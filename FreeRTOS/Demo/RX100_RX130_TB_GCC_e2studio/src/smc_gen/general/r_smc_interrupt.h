@@ -19,7 +19,7 @@
 
 /***********************************************************************************************************************
 * File Name    : r_smc_interrupt.h
-* Version      : 1.1.0
+* Version      : 1.2.0
 * Device(s)    : R5F51308AxFP
 * Description  : This file implements interrupt setting.
 ***********************************************************************************************************************/
@@ -59,7 +59,7 @@ Macro definitions
  */
 #define ICU_BSC_BUSERR_PRIORITY                    (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_FCU_FRDYI_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
-#define ICU_ICU_SWINT_PRIORITY                     (_01_ICU_PRIORITY_LEVEL1)
+#define ICU_ICU_SWINT_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_CMT0_CMI0_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_CMT1_CMI1_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_CAC_FERRF_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)

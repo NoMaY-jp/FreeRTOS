@@ -19,7 +19,7 @@
 
 /***********************************************************************************************************************
 * File Name    : r_smc_cgc.c
-* Version      : 1.6.101
+* Version      : 1.6.102
 * Device(s)    : R5F572NNHxFB
 * Description  : This file implements CGC setting.
 ***********************************************************************************************************************/
@@ -54,13 +54,8 @@ Global variables and functions
 
 void R_CGC_Create(void)
 {
-    /* Set CLKOUT25M pin */
-    MPC.P56PFS.BYTE = 0x2AU;
-    PORT5.DSCR2.BYTE |= 0x40U;
-    PORT5.PMR.BYTE |= 0x40U;
-
     R_CGC_Create_UserInit();
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */   
+/* End user code. Do not edit comment generated here */

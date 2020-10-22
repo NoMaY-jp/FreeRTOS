@@ -2382,13 +2382,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\en\r01an1685ej0552-rx-bsp.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\ja\r01an1685jj0552-rx-bsp.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</name>
                         </file>
                     </group>
                 </group>

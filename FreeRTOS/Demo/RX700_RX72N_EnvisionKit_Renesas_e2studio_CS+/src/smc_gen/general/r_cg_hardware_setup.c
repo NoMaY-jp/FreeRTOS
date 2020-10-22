@@ -159,5 +159,5 @@ void U_SCI_PinSet_SCI9_RSK_RX72N(void)
 
 #endif /* RSK_RX72N */
 
-/* End user code. Do not edit comment generated here */   
+/* End user code. Do not edit comment generated here */
 

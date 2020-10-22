@@ -25,6 +25,7 @@
 ************************************************************************************************************************
 * History : DD.MM.YYYY Version  Description
 *         : 08.10.2019 1.00     First Release.
+*         : 31.07.2020 1.01     Modified comment.
 ***********************************************************************************************************************/
 #ifndef R_BSP_CONFIG_REF_HEADER_FILE
 #define R_BSP_CONFIG_REF_HEADER_FILE
@@ -51,7 +52,7 @@ Configuration Options
    | | | |  |  | | | |  Macro Name                             Description
    | | | |  |  | | | |__BSP_CFG_MCU_PART_PACKAGE             = Package type, number of pins, and pin pitch
    | | | |  |  | | |____not used                             = Products with wide temperature range
-   | | | |  |  | |______BSP_CFG_MCU_PART_ENCRYPTION_INCLUDED = Encryption module included/not included
+   | | | |  |  | |______BSP_CFG_MCU_PART_FUNCTION            = Encryption module included/not included
    | | | |  |  |________BSP_CFG_MCU_PART_MEMORY_SIZE         = ROM, RAM, and Data Flash Capacity
    | | | |  |___________BSP_CFG_MCU_PART_GROUP               = Group name
    | | | |______________BSP_CFG_MCU_PART_SERIES              = Series name
@@ -354,7 +355,6 @@ NOTE: The RAM areas are not contiguous.It is separated by 512 KB each.
 
 /* Configure SDCLK output pin (only effective when external bus enabled)
    Values 0=no output, 1 = BCK frequency
-   NOTE: The definition is invalid.
 */
 #define BSP_CFG_SDCLK_OUTPUT            (0)
 
@@ -544,7 +544,7 @@ NOTE: The RAM areas are not contiguous.It is separated by 512 KB each.
                                             - 111: The TM function in the address range from FFDE 0000h to 
                                                    FFDE FFFFh is disabled in dual mode.
        b27     Reserved (set to 1)
-       b26:b24 TMEFF  - TM Enable - 000: TM function is enabled.
+       b26:b24 TMEF   - TM Enable - 000: TM function is enabled.
                                   - 111: TM function is disabled.
        b23:b0  Reserved (set to 1)
        NOTE: If the dual bank function has not been incorporated in a device,

@@ -54,6 +54,7 @@
 *                                Modified comment for added support of Renesas RTOS (RI600V4 or RI600PX).
 *                                Added the following macro definition.
 *                                - BSP_CFG_RENESAS_RTOS_USED
+*         : 31.07.2020 2.03      Modified comment.
 ***********************************************************************************************************************/
 #ifndef R_BSP_CONFIG_REF_HEADER_FILE
 #define R_BSP_CONFIG_REF_HEADER_FILE
@@ -430,7 +431,7 @@ Configuration Options
                                             - 111: The TM function in the address range from FFEE 0000h to 
                                                    FFEE FFFFh is disabled in dual mode.
        b27     Reserved (set to 1)
-       b26:b24 TMEFF  - TM Enable - 000: TM function is enabled.
+       b26:b24 TMEF   - TM Enable - 000: TM function is enabled.
                                   - 111: TM function is disabled.
        b23:b0  Reserved (set to 1)
        NOTE: If the dual bank function has not been incorporated in a device,

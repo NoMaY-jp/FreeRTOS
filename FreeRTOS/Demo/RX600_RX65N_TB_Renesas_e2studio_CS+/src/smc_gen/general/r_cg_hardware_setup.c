@@ -159,5 +159,5 @@ void U_SCI_PinSet_SCI8_RSK_RX65N(void)
 
 #endif /* RSK_RX65N */
 
-/* End user code. Do not edit comment generated here */   
+/* End user code. Do not edit comment generated here */
 

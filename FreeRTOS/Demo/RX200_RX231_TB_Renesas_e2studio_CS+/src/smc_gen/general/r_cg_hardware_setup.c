@@ -19,7 +19,7 @@
 
 /***********************************************************************************************************************
 * File Name    : r_cg_hardware_setup.c
-* Version      : 1.1.101
+* Version      : 1.1.102
 * Device(s)    : R5F52318AxFP
 * Description  : Initialization file for code generation configurations.
 ***********************************************************************************************************************/
@@ -140,5 +140,5 @@ void R_FIT_Board_Support_Settings(void)
     R_DTC_Control(DTC_CMD_DTC_START, NULL, NULL);
 }
 
-/* End user code. Do not edit comment generated here */   
+/* End user code. Do not edit comment generated here */
 

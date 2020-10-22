@@ -55,10 +55,6 @@ void R_Pins_Create(void)
 {
     R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
 
-    /* Set CLKOUT25M pin */
-    MPC.P56PFS.BYTE = 0x2AU;
-    PORT5.PMR.BYTE |= 0x40U;
-
     /* Set RXD2 pin */
     MPC.P12PFS.BYTE = 0x0AU;
     PORT1.PMR.BYTE |= 0x04U;
@@ -80,5 +76,5 @@ void R_Pins_Create(void)
     // PORTB.PMR.BIT.B7 = 1U; // Please set the PMR bit after TE bit is set to 1.
 
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
-}   
+}
 

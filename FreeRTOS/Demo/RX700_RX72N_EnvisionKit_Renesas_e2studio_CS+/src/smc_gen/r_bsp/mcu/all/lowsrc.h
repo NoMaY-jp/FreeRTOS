@@ -25,6 +25,8 @@
 *         : 28.02.2019 2.00     Merged processing of all devices.
 *                               Added support for GNUC and ICCRX.
 *                               Fixed coding style.
+*         : 31.07.2020 2.01     Fixed an issue that caused build errors when the _REENTRANT option was specified in 
+*                               the CCRX compiler.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -58,9 +60,9 @@ long write(long  fileno, const unsigned char *buf, long  count);
 long read(long fileno, unsigned char *buf, long count);
 long lseek(long fileno, long offset, long base);
 #ifdef _REENTRANT
-long *errno_addr(void)
-long wait_sem(long semnum)
-long signal_sem(long semnum)
+long *errno_addr(void);
+long wait_sem(long semnum);
+long signal_sem(long semnum);
 #endif
 #endif /* defined(__CCRX__) */
 

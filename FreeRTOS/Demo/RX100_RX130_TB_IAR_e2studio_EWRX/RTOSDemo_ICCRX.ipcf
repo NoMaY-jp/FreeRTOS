@@ -110,7 +110,7 @@
         <group name ="r_bsp">
             <group name ="doc">
                 <group name ="en">
-                    <path>.\src\smc_gen\r_bsp\doc\en\r01an1685ej0552-rx-bsp.pdf</path>
+                    <path>.\src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</path>
                 </group>
             </group>
         </group>
@@ -119,7 +119,7 @@
         <group name ="r_bsp">
             <group name ="doc">
                 <group name ="ja">
-                    <path>.\src\smc_gen\r_bsp\doc\ja\r01an1685jj0552-rx-bsp.pdf</path>
+                    <path>.\src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</path>
                 </group>
             </group>
         </group>

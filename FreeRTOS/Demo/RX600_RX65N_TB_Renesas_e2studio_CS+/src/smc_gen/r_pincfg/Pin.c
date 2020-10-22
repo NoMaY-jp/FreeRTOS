@@ -76,5 +76,5 @@ void R_Pins_Create(void)
     // PORTC.PMR.BIT.B3 = 1U; // Please set the PMR bit after TE bit is set to 1.
 
     R_BSP_RegisterProtectEnable(BSP_REG_PROTECT_MPC);
-}   
+}
 

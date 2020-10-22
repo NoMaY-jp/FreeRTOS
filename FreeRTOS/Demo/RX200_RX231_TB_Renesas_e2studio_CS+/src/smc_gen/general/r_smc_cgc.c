@@ -19,7 +19,7 @@
 
 /***********************************************************************************************************************
 * File Name    : r_smc_cgc.c
-* Version      : 1.6.101
+* Version      : 1.6.102
 * Device(s)    : R5F52318AxFP
 * Description  : This file implements CGC setting.
 ***********************************************************************************************************************/
@@ -47,16 +47,15 @@ Global variables and functions
 
 /***********************************************************************************************************************
 * Function Name: R_CGC_Create
-* Description  : This function Used to initializes the clock generator
+* Description  : This function initializes the clock generator
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
 
 void R_CGC_Create(void)
 {
-
     R_CGC_Create_UserInit();
 }
 
 /* Start user code for adding. Do not edit comment generated here */
-/* End user code. Do not edit comment generated here */   
+/* End user code. Do not edit comment generated here */
