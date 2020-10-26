@@ -393,6 +393,12 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
 ******************************************************************************/
 void vPrintString(const char *pcMessage)
 {
+#ifdef ideDISABLE_DEBUG_CONSOLE
+
+    INTERNAL_NOT_USED( pcMessage );
+
+#else
+
     /* Write the string to the Debug Console, using a critical section
     as a crude method of mutual exclusion. */
 
@@ -405,6 +411,7 @@ void vPrintString(const char *pcMessage)
     }
     taskEXIT_CRITICAL();
 
+#endif
 } /* End of function vPrintString() */
 
 /******************************************************************************

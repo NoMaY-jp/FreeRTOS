@@ -270,6 +270,7 @@
                 <option>
                     <name>CCDefines</name>
                     <state>__RX</state>
+                    <state>ideDISABLE_DEBUG_CONSOLE</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
