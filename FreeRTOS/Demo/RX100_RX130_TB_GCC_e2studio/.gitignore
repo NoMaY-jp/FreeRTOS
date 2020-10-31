@@ -5,6 +5,7 @@ language.settings.xml
 cgprojectDatas.datas
 com.renesas.smc.e2studio.qe.xml
 CoverageSetting.xml
+IORegisterSetting.xml
 
 # Ignore build results and automatically created unnecessary setting files by EWRX
 Debug/
