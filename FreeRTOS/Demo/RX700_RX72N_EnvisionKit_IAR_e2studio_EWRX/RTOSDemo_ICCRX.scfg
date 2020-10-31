@@ -6,9 +6,6 @@
 <property id="com.renesas.smc.service.project.buildType" values="com.renesas.smc.service.project.buildType.release"/>
 <toolchain id="com.renesas.smc.toolchain.iccrx.toolchain.iccrx">
 <option id="com.renesas.smc.toolchain.option.buildArtefactType" key="com.renesas.smc.toolchain.option.buildArtefactType.exe"/>
-                <option id="com.renesas.smc.toolchain.option.rtos" key="com.renesas.smc.toolchain.option.rtos.freertos">
-                    <item id="com.renesas.smc.toolchain.option.rtos.freertos" value="FreeRTOS_RX_v10.0.03"/>
-                </option>
 </toolchain>
 </configuration>
 <platform id="R5F572NNHxFB"/>
@@ -367,7 +364,7 @@
 <Item currentVect="18" id="RAM_RAMERR" priority="15" usedState="Not Use"/>
 <Item currentVect="21" id="FCU_FIFERR" priority="15" usedState="Not Use"/>
 <Item currentVect="23" id="FCU_FRDYI" priority="15" usedState="Not Use"/>
-<Item currentVect="26" id="ICU_SWINT2" priority="1" usedState="Used"/>
+<Item currentVect="26" id="ICU_SWINT2" priority="1" usedState="Not Use"/>
 <Item currentVect="27" id="ICU_SWINT" priority="1" usedState="Not Use"/>
 <Item currentVect="28" id="CMT0_CMI0" priority="15" usedState="Not Use"/>
 <Item currentVect="29" id="CMT1_CMI1" priority="15" usedState="Not Use"/>
@@ -594,103 +591,6 @@
 <pinItem allocation="78" comments="" direction="None" id="TXD9" isUsedBySoftware="true" locked="false" status="0"/>
 </tool>
 <tool id="SWComponent" version="1.0.0.0">
-        <configuration id="c095caae-1db9-46de-ac61-ec5c98c9c91d" inuse="true" name="FreeRTOS_Kernel">
-            <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to configure kernel setting of FreeRTOS." detailDescription="" display="FreeRTOS_Kernel" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.kernel" version="1.0.100">
-                <gridItem id="configUSE_PREEMPTION" selectedIndex="1"/>
-                <gridItem id="configUSE_IDLE_HOOK" selectedIndex="1"/>
-                <gridItem id="configUSE_TICK_HOOK" selectedIndex="1"/>
-                <gridItem id="configCPU_CLOCK_HZ" selectedIndex="BSP_ICLK_HZ"/>
-                <gridItem id="configPERIPHERAL_CLOCK_HZ" selectedIndex="BSP_PCLKB_HZ"/>
-                <gridItem id="configTICK_RATE_HZ" selectedIndex="( TickType_t ) 1000"/>
-                <gridItem id="configMINIMAL_STACK_SIZE" selectedIndex="( unsigned short ) 130"/>
-                <gridItem id="configTOTAL_HEAP_SIZE_N" selectedIndex="46"/>
-                <gridItem id="configTOTAL_HEAP_SIZE" selectedIndex="( size_t ) ( configTOTAL_HEAP_SIZE_N * 1024 )"/>
-                <gridItem id="configMAX_TASK_NAME_LEN" selectedIndex="12"/>
-                <gridItem id="configUSE_TRACE_FACILITY" selectedIndex="1"/>
-                <gridItem id="configUSE_16_BIT_TICKS" selectedIndex="0"/>
-                <gridItem id="configIDLE_SHOULD_YIELD" selectedIndex="1"/>
-                <gridItem id="configUSE_CO_ROUTINES" selectedIndex="0"/>
-                <gridItem id="configUSE_MUTEXES" selectedIndex="1"/>
-                <gridItem id="configGENERATE_RUN_TIME_STATS" selectedIndex="0"/>
-                <gridItem id="configCHECK_FOR_STACK_OVERFLOW" selectedIndex="2"/>
-                <gridItem id="configUSE_RECURSIVE_MUTEXES" selectedIndex="1"/>
-                <gridItem id="configQUEUE_REGISTRY_SIZE" selectedIndex="0"/>
-                <gridItem id="configUSE_MALLOC_FAILED_HOOK" selectedIndex="1"/>
-                <gridItem id="configUSE_APPLICATION_TASK_TAG" selectedIndex="0"/>
-                <gridItem id="configUSE_QUEUE_SETS" selectedIndex="1"/>
-                <gridItem id="configUSE_COUNTING_SEMAPHORES" selectedIndex="1"/>
-                <gridItem id="configMAX_PRIORITIES" selectedIndex="7"/>
-                <gridItem id="configMAX_CO_ROUTINE_PRIORITIES" selectedIndex="2"/>
-                <gridItem id="configUSE_TIMERS" selectedIndex="1"/>
-                <gridItem id="configTIMER_TASK_PRIORITY" selectedIndex="6"/>
-                <gridItem id="configTIMER_QUEUE_LENGTH" selectedIndex="5"/>
-                <gridItem id="configTIMER_TASK_STACK_DEPTH" selectedIndex="configMINIMAL_STACK_SIZE"/>
-                <gridItem id="configKERNEL_INTERRUPT_PRIORITY" selectedIndex="1"/>
-                <gridItem id="configMAX_SYSCALL_INTERRUPT_PRIORITY" selectedIndex="4"/>
-                <gridItem id="configTICK_VECTOR" selectedIndex="0"/>
-                <gridItem id="INCLUDE_vTaskPrioritySet" selectedIndex="1"/>
-                <gridItem id="INCLUDE_uxTaskPriorityGet" selectedIndex="1"/>
-                <gridItem id="INCLUDE_vTaskDelete" selectedIndex="1"/>
-                <gridItem id="INCLUDE_vTaskCleanUpResources" selectedIndex="0"/>
-                <gridItem id="INCLUDE_vTaskSuspend" selectedIndex="1"/>
-                <gridItem id="INCLUDE_vTaskDelayUntil" selectedIndex="1"/>
-                <gridItem id="INCLUDE_vTaskDelay" selectedIndex="1"/>
-                <gridItem id="INCLUDE_uxTaskGetStackHighWaterMark" selectedIndex="1"/>
-                <gridItem id="INCLUDE_xTaskGetSchedulerState" selectedIndex="1"/>
-                <gridItem id="INCLUDE_eTaskGetState" selectedIndex="1"/>
-                <gridItem id="INCLUDE_xTimerPendFunctionCall" selectedIndex="1"/>
-                <gridItem id="bktPRIMARY_PRIORITY" selectedIndex="( configMAX_PRIORITIES - 3 )"/>
-                <gridItem id="bktSECONDARY_PRIORITY" selectedIndex="( configMAX_PRIORITIES - 4 )"/>
-                <gridItem id="intqHIGHER_PRIORITY" selectedIndex="( configMAX_PRIORITIES - 3 )"/>
-                <gridItem id="configMAC_ADDR0" selectedIndex="0x01"/>
-                <gridItem id="configMAC_ADDR1" selectedIndex="0x12"/>
-                <gridItem id="configMAC_ADDR2" selectedIndex="0x13"/>
-                <gridItem id="configMAC_ADDR3" selectedIndex="0x10"/>
-                <gridItem id="configMAC_ADDR4" selectedIndex="0x15"/>
-                <gridItem id="configMAC_ADDR5" selectedIndex="0x11"/>
-                <gridItem id="configIP_ADDR0" selectedIndex="192"/>
-                <gridItem id="configIP_ADDR1" selectedIndex="168"/>
-                <gridItem id="configIP_ADDR2" selectedIndex="0"/>
-                <gridItem id="configIP_ADDR3" selectedIndex="200"/>
-                <gridItem id="configNET_MASK0" selectedIndex="8"/>
-                <gridItem id="configNET_MASK1" selectedIndex="8"/>
-                <gridItem id="configNET_MASK2" selectedIndex="8"/>
-                <gridItem id="configNET_MASK3" selectedIndex="0"/>
-                <gridItem id="configUSE_TASK_NOTIFICATIONS" selectedIndex="1"/>
-                <gridItem id="configRECORD_STACK_HIGH_ADDRESS" selectedIndex="0"/>
-                <gridItem id="configNUM_THREAD_LOCAL_STORAGE_POINTERS" selectedIndex="0"/>
-                <gridItem id="configSUPPORT_DYNAMIC_ALLOCATION" selectedIndex="1"/>
-                <gridItem id="configSUPPORT_STATIC_ALLOCATION" selectedIndex="0"/>
-            </component>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
-        <configuration id="4828d260-945f-45b6-8218-4c77a235a22e" inuse="true" name="FreeRTOS_Object">
-            <allocatable id="OBJECT" name="OBJECT">
-                <allocatable id="TASK" name="TASK">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-                <allocatable id="QUEUE" name="QUEUE">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-                <allocatable id="SEMAPHORE" name="SEMAPHORE">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-                <allocatable id="SWTIMER" name="SWTIMER">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-                <allocatable id="EVENTGROUP" name="EVENTGROUP">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-                <allocatable id="STREAMBUFFER" name="STREAMBUFFER">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-                <allocatable id="MESSAGEBUFFER" name="MESSAGEBUFFER">
-                    <option defaultValue="0" id="LinkNum" value=""/>
-                </allocatable>
-            </allocatable>
-            <component description="This component is a part of RTOS Configurator feature that allow user to use the GUI to create and configure new object of FreeRTOS." detailDescription="" display="FreeRTOS_Object" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.freertos.object" version="1.0.100"/>
-            <source description="Code generator for Real-time OS" display="RTOS Configurator" id="com.renesas.smc.tools.swcomponent.rtosconfigurator.source"/>
-        </configuration>
 <configuration inuse="true" name="r_byteq">
 <component description="Dependency : r_bsp version(s) 3.10&#10;This module allocates a queue control block in an Open() call to handle indexing for buffers provided by the user application. Additional functions are provided to put and get data from the buffer queue, inspect the number of bytes available or in use, and to flush the queue. There is no limit to the number of queues supported, and queue control blocks can be allocated statically at build time or dynamically at run time." detailDescription="Byte-based circular buffer library." display="r_byteq" id="r_byteq1.80" version="1.80">
 <gridItem id="BYTEQ_CFG_PARAM_CHECKING_ENABLE" selectedIndex="0"/>
@@ -926,7 +826,7 @@
 <gridItem id="BSP_CFG_FIT_IPL_MAX" selectedIndex="15"/>
 <gridItem id="BSP_CFG_CLKOUT_OUTPUT" selectedIndex="0"/>
 <gridItem id="BSP_CFG_SWINT_UNIT1_ENABLE" selectedIndex="0"/>
-<gridItem id="BSP_CFG_SWINT_UNIT2_ENABLE" selectedIndex="1"/>
+<gridItem id="BSP_CFG_SWINT_UNIT2_ENABLE" selectedIndex="0"/>
 <gridItem id="BSP_CFG_SWINT_TASK_BUFFER_NUMBER" selectedIndex="8"/>
 <gridItem id="BSP_CFG_SWINT_IPR_INITIAL_VALUE" selectedIndex="1"/>
 </component>
