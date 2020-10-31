@@ -23,3 +23,10 @@ RTOSDemo.wsdt
 # Ignore build results and automatically created unnecessary setting files by CS+
 DefaultBuild/
 RTOSDemo.*.mtud
+
+# Ignore PDF documents of FIT API
+r01an1685*.pdf
+r01an1721*.pdf
+r01an1815*.pdf
+r01an1683*.pdf
+r01an1819*.pdf
