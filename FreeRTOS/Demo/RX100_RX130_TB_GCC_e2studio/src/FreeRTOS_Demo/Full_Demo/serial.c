@@ -67,24 +67,27 @@ sci_cb_args_t *pxArgs = (sci_cb_args_t *)pvArgs;
     {
         BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-        configASSERT( xRxQueue );
+        /* Ensure the queue is ready to be received by the application. */
+        if( xRxQueue != NULL )
+        {
+            /* Characters received from the UART are stored in this queue, ready to be
+            received by the application.  ***NOTE*** Using a queue in this way is very
+            convenient, but also very inefficient.  It can be used here because
+            characters will only arrive slowly.  In a higher bandwidth system a circular
+            RAM buffer or DMA should be used in place of this queue. */
+            xQueueSendFromISR( xRxQueue, &pxArgs->byte, &xHigherPriorityTaskWoken );
 
-        /* Characters received from the UART are stored in this queue, ready to be
-        received by the application.  ***NOTE*** Using a queue in this way is very
-        convenient, but also very inefficient.  It can be used here because
-        characters will only arrive slowly.  In a higher bandwidth system a circular
-        RAM buffer or DMA should be used in place of this queue. */
-        xQueueSendFromISR( xRxQueue, &pxArgs->byte, &xHigherPriorityTaskWoken );
-
-        /* See http://www.freertos.org/xQueueOverwriteFromISR.html for information
-        on the semantics of this ISR. */
-        portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+            /* See http://www.freertos.org/xQueueOverwriteFromISR.html for information
+            on the semantics of this ISR. */
+            portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+        }
     }
     /* Renesas API notifies the completion of transmission by SCI_EVT_TEI event. */
     else if( SCI_EVT_TEI == pxArgs->event )
     {
         BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
+        /* Ensure the task is waiting for the notofication. */
         if( xSendingTask != NULL )
         {
             /* A task is waiting for the end of the Tx, unblock it now.
