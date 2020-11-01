@@ -485,11 +485,7 @@ static TlsTransportStatus_t prvConnectToServerWithBackoffRetries( NetworkCredent
     /* Set the credentials for establishing a TLS connection. */
     pxNetworkCredentials->pRootCa = ( const unsigned char * ) democonfigROOT_CA_PEM;
     pxNetworkCredentials->rootCaSize = sizeof( democonfigROOT_CA_PEM );
-
-    /* When using a local Mosquitto server setup, SNI needs to be disabled for
-     * an MQTT broker that only has an IP address but no hostname. However,
-     * SNI should be enabled whenever possible. */
-    pxNetworkCredentials->disableSni = pdTRUE;
+    pxNetworkCredentials->disableSni = democonfigDISABLE_SNI;
     /* Initialize reconnect attempts and interval. */
     RetryUtils_ParamsReset( &xReconnectParams );
     xReconnectParams.maxRetryAttempts = MAX_RETRY_ATTEMPTS;
@@ -659,6 +655,9 @@ static void prvMQTTSubscribeWithBackoffRetries( MQTTContext_t * pxMQTTContext )
         xResult = MQTT_ProcessLoop( pxMQTTContext, mqttexamplePROCESS_LOOP_TIMEOUT_MS );
         configASSERT( xResult == MQTTSuccess );
 
+        /* Reset flag before checking suback responses. */
+        xFailedSubscribeToTopic = false;
+
         /* Check if recent subscription request has been rejected. #xTopicFilterContext is updated
          * in the event callback to reflect the status of the SUBACK sent by the broker. It represents
          * either the QoS level granted by the server upon subscription, or acknowledgement of
@@ -779,7 +778,11 @@ static void prvMQTTProcessResponse( MQTTPacketInfo_t * pxIncomingPacket,
             break;
 
         case MQTT_PACKET_TYPE_PINGRESP:
-            LogInfo( ( "Ping Response successfully received.\r\n" ) );
+
+            /* Nothing to be done from application as library handles
+             * PINGRESP with the use of MQTT_ProcessLoop API function. */
+            LogWarn( ( "PINGRESP should not be handled by the application "
+                       "callback when using MQTT_ProcessLoop.\n" ) );
             break;
 
         case MQTT_PACKET_TYPE_PUBREC:
