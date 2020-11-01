@@ -120,6 +120,7 @@ src/linker_script.ld file by your hand. */
 		/* FreeRTOS CLI Command Console */
 		#define U_SCI_UART_CLI_PINSET()	R_SCI_PinSet_SCI1()
 		#define U_SCI_UART_CLI_SCI_CH	(SCI_CH1)
+		#define U_SCI_UART_CLI_RX_PU	(GPIO_PORT_3_PIN_0)
 		#define U_DTC_UART_CLI_TX_ACT	((dtc_activation_source_t)VECT(SCI1,TXI1))
 		#define U_DTC_UART_CLI_TX_DR	(SCI1.TDR)
 

@@ -123,9 +123,12 @@ void R_FIT_Board_Support_Settings(void)
     R_GPIO_PinDirectionSet(U_GPIO_PIN_LED0, GPIO_DIRECTION_OUTPUT);
 
     /* GPIO for SW */
-    R_GPIO_PinDirectionSet(U_GPIO_PIN_SW1, GPIO_DIRECTION_INPUT );
+    R_GPIO_PinDirectionSet(U_GPIO_PIN_SW1, GPIO_DIRECTION_INPUT);
 
     /* FreeRTOS CLI Command Console */
+#ifdef U_SCI_UART_CLI_RX_PU // for TB boards because there are no on-board pull up registers
+    R_GPIO_PinControl(U_SCI_UART_CLI_RX_PU, GPIO_CMD_IN_PULL_UP_ENABLE);
+#endif
     U_SCI_UART_CLI_PINSET();
     sci_cfg_t xSerialSciConfig;
     xSerialSciConfig.async.baud_rate    = 115200;
