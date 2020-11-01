@@ -1,25 +1,25 @@
 Extracting support files...
-21:39:20 **** Build of configuration HardwareDebug for project RTOSDemo ****
-make -r -k -j2 all
+18:32:23 **** Build of configuration HardwareDebug for project RTOSDemo ****
+make -r -k -j2 all 
 'Scanning and building file: ../src/smc_gen/r_byteq/src/r_byteq.c'
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/BlockQ.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_byteq\src\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_byteq/src/r_byteq.d"  -MT="src/smc_gen/r_byteq/src/r_byteq.obj"  -MT="src/smc_gen/r_byteq/src/r_byteq.d" -listfile="src/smc_gen/r_byteq/src/r_byteq.lst" "../src/smc_gen/r_byteq/src/r_byteq.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/BlockQ.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/BlockQ.c"
 ccrx -subcommand="src\smc_gen\r_byteq\src\cSubCommand.tmp" -listfile="src/smc_gen/r_byteq/src/r_byteq.lst" "../src/smc_gen/r_byteq/src/r_byteq.c"
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/BlockQ.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/BlockQ.c'
-'Finished Scanning and building: ../src/smc_gen/r_byteq/src/r_byteq.c'
-
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/EventGroupsDemo.c'
-'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/GenQTest.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/EventGroupsDemo.c"
+'Finished Scanning and building: ../src/smc_gen/r_byteq/src/r_byteq.c'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/EventGroupsDemo.c"
+
+'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/GenQTest.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/GenQTest.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/EventGroupsDemo.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/GenQTest.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/EventGroupsDemo.c'
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/GenQTest.c'
@@ -28,18 +28,18 @@ ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tm
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntQueue.c'
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntSemTest.c'
 'Invoking: Scanner and Compiler'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntQueue.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntSemTest.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntQueue.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntSemTest.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntQueue.c"
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntSemTest.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntSemTest.c'
 
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntQueue.c'
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/QueueOverwrite.c'
-
 'Invoking: Scanner and Compiler'
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/IntQueue.c'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/QueueOverwrite.c"
+
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotify.c'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/QueueOverwrite.c"
 'Invoking: Scanner and Compiler'
@@ -50,8 +50,8 @@ ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tm
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotifyArray.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotifyArray.c"
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotify.c'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotifyArray.c"
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotify.c'
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TimerDemo.c'
 'Invoking: Scanner and Compiler'
@@ -60,24 +60,24 @@ ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tm
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TimerDemo.c'
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/blocktim.c'
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotifyArray.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/blocktim.c"
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/TaskNotifyArray.c'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/blocktim.c"
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/countsem.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/countsem.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/blocktim.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/countsem.c"
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/countsem.c'
-
-'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/death.c'
-'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/death.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/blocktim.c'
 
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/death.c"
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/countsem.c'
+'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/death.c'
+
+'Invoking: Scanner and Compiler'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/death.c"
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/dynamic.c'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/death.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/dynamic.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/dynamic.c"
@@ -93,18 +93,19 @@ ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/recmutex.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/flop.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/recmutex.c"
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/recmutex.c'
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/flop.c'
 
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/recmutex.c'
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/semtest.c'
 'Scanning and building file: ../src/smc_gen/general/r_cg_hardware_setup.c'
 'Invoking: Scanner and Compiler'
-'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.d"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/semtest.c"
+'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\general\cDepSubCommand.tmp" -output=dep="src/smc_gen/general/r_cg_hardware_setup.d"  -MT="src/smc_gen/general/r_cg_hardware_setup.obj"  -MT="src/smc_gen/general/r_cg_hardware_setup.d" -listfile="src/smc_gen/general/r_cg_hardware_setup.lst" "../src/smc_gen/general/r_cg_hardware_setup.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/semtest.c"
 ccrx -subcommand="src\smc_gen\general\cSubCommand.tmp" -listfile="src/smc_gen/general/r_cg_hardware_setup.lst" "../src/smc_gen/general/r_cg_hardware_setup.c"
+../src/smc_gen/general/r_smc_cgc.h(213):M0523076:Function declarations should have prototype
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\smc_gen\r_pincfg\r_sci_rx_pinset.h(39):M0523076:Function declarations should have prototype
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\smc_gen\r_pincfg\r_sci_rx_pinset.h(40):M0523076:Function declarations should have prototype
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Demo/Common/Minimal/semtest.c'
@@ -118,6 +119,7 @@ ccrx -subcommand="src\smc_gen\general\cSubCommand.tmp" -listfile="src/smc_gen/ge
 'Scanning and building file: ../src/smc_gen/general/r_smc_cgc_user.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\general\cDepSubCommand.tmp" -output=dep="src/smc_gen/general/r_smc_cgc_user.d"  -MT="src/smc_gen/general/r_smc_cgc_user.obj"  -MT="src/smc_gen/general/r_smc_cgc_user.d" -listfile="src/smc_gen/general/r_smc_cgc_user.lst" "../src/smc_gen/general/r_smc_cgc_user.c"
+../src/smc_gen/general/r_smc_cgc.h(213):M0523076:Function declarations should have prototype
 ccrx -subcommand="src\smc_gen\general\cSubCommand.tmp" -listfile="src/smc_gen/general/r_smc_cgc_user.lst" "../src/smc_gen/general/r_smc_cgc_user.c"
 'Finished Scanning and building: ../src/smc_gen/general/r_smc_cgc.c'
 
@@ -146,24 +148,24 @@ ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_
 'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/lowlvl.c'
 
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/all/mcu_locks.c'
+'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/lowsrc.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/all/mcu_locks.d"  -MT="src/smc_gen/r_bsp/mcu/all/mcu_locks.obj"  -MT="src/smc_gen/r_bsp/mcu/all/mcu_locks.d" -listfile="src/smc_gen/r_bsp/mcu/all/mcu_locks.lst" "../src/smc_gen/r_bsp/mcu/all/mcu_locks.c"
-'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/lowsrc.c'
-ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/mcu_locks.lst" "../src/smc_gen/r_bsp/mcu/all/mcu_locks.c"
 
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/all/r_bsp_common.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/all/r_bsp_common.d"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_common.obj"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_common.d" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_common.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_common.c"
+ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/mcu_locks.lst" "../src/smc_gen/r_bsp/mcu/all/mcu_locks.c"
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_common.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_common.c"
-'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/mcu_locks.c'
 ../src/smc_gen/r_bsp/mcu/all/r_bsp_common.c(104):M0520826:Parameter "loop_cnt" was never referenced
+'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/mcu_locks.c'
 
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.d"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.obj"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.d" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.c"
-ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.c"
 'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/r_bsp_common.c'
 
+ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.c"
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.d"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.obj"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.d" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.c"
@@ -185,28 +187,27 @@ ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.d"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.obj"  -MT="src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.d" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c"
+ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c"
 'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.c'
 
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/all/sbrk.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/all/sbrk.d"  -MT="src/smc_gen/r_bsp/mcu/all/sbrk.obj"  -MT="src/smc_gen/r_bsp/mcu/all/sbrk.d" -listfile="src/smc_gen/r_bsp/mcu/all/sbrk.lst" "../src/smc_gen/r_bsp/mcu/all/sbrk.c"
-ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.lst" "../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c"
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\all\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/all/sbrk.lst" "../src/smc_gen/r_bsp/mcu/all/sbrk.c"
-../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c(949):M0520826:Parameter "p_dummy_context" was never referenced
 'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/sbrk.c'
+
+'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c'
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.c'
 'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\FreeRTOS\Source\portable\MemMang\cDepSubCommand.tmp" -output=dep="src/FreeRTOS/Source/portable/MemMang/heap_4.d"  -MT="src/FreeRTOS/Source/portable/MemMang/heap_4.obj"  -MT="src/FreeRTOS/Source/portable/MemMang/heap_4.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.c"
-ccrx -subcommand="src\FreeRTOS\Source\portable\MemMang\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.c"
-'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.c'
-
 'Scanning and building file: ../src/smc_workaround/r_bsp_patch/resetprg.c'
+ccrx -subcommand="src\FreeRTOS\Source\portable\MemMang\cDepSubCommand.tmp" -output=dep="src/FreeRTOS/Source/portable/MemMang/heap_4.d"  -MT="src/FreeRTOS/Source/portable/MemMang/heap_4.obj"  -MT="src/FreeRTOS/Source/portable/MemMang/heap_4.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_workaround\r_bsp_patch\cDepSubCommand.tmp" -output=dep="src/smc_workaround/r_bsp_patch/resetprg.d"  -MT="src/smc_workaround/r_bsp_patch/resetprg.obj"  -MT="src/smc_workaround/r_bsp_patch/resetprg.d" -listfile="src/smc_workaround/r_bsp_patch/resetprg.lst" "../src/smc_workaround/r_bsp_patch/resetprg.c"
+ccrx -subcommand="src\FreeRTOS\Source\portable\MemMang\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.c"
+ccrx -subcommand="src\smc_workaround\r_bsp_patch\cSubCommand.tmp" -listfile="src/smc_workaround/r_bsp_patch/resetprg.lst" "../src/smc_workaround/r_bsp_patch/resetprg.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_4.c'
 
-ccrx -subcommand="src\smc_workaround\r_bsp_patch\cSubCommand.tmp" -listfile="src/smc_workaround/r_bsp_patch/resetprg.lst" "../src/smc_workaround/r_bsp_patch/resetprg.c"
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.d"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.obj"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.d" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.c"
@@ -216,10 +217,10 @@ ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/sm
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_init.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/rx65n/mcu_init.d"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_init.obj"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_init.d" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_init.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_init.c"
+ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_init.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_init.c"
 'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_clocks.c'
 
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.c'
-ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_init.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_init.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.d"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.obj"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.d" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.c"
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.c"
@@ -228,98 +229,98 @@ ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/sm
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.d"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.obj"  -MT="src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.d" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.c"
-'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.c'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.lst" "../src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.c"
+'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_interrupts.c'
 
 'Scanning and building file: ../src/smc_gen/r_bsp/mcu/rx65n/vecttbl.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/mcu/rx65n/vecttbl.d"  -MT="src/smc_gen/r_bsp/mcu/rx65n/vecttbl.obj"  -MT="src/smc_gen/r_bsp/mcu/rx65n/vecttbl.d" -listfile="src/smc_gen/r_bsp/mcu/rx65n/vecttbl.lst" "../src/smc_gen/r_bsp/mcu/rx65n/vecttbl.c"
-ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/rx65n/vecttbl.lst" "../src/smc_gen/r_bsp/mcu/rx65n/vecttbl.c"
 'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/rx65n/mcu_mapped_interrupts.c'
 
+ccrx -subcommand="src\smc_gen\r_bsp\mcu\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/mcu/rx65n/vecttbl.lst" "../src/smc_gen/r_bsp/mcu/rx65n/vecttbl.c"
 'Scanning and building file: ../src/FreeRTOS_Demo/Blinky_Demo/main_blinky.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Blinky_Demo\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Blinky_Demo/main_blinky.d"  -MT="src/FreeRTOS_Demo/Blinky_Demo/main_blinky.obj"  -MT="src/FreeRTOS_Demo/Blinky_Demo/main_blinky.d" -listfile="src/FreeRTOS_Demo/Blinky_Demo/main_blinky.lst" "../src/FreeRTOS_Demo/Blinky_Demo/main_blinky.c"
-'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/rx65n/vecttbl.c'
 ccrx -subcommand="src\FreeRTOS_Demo\Blinky_Demo\cSubCommand.tmp" -listfile="src/FreeRTOS_Demo/Blinky_Demo/main_blinky.lst" "../src/FreeRTOS_Demo/Blinky_Demo/main_blinky.c"
+'Finished Scanning and building: ../src/smc_gen/r_bsp/mcu/rx65n/vecttbl.c'
 
 'Scanning and building file: ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_sci_rx\src\targets\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.d"  -MT="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.obj"  -MT="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.d" -listfile="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.lst" "../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c"
+'Finished Scanning and building: ../src/FreeRTOS_Demo/Blinky_Demo/main_blinky.c'
 ccrx -subcommand="src\smc_gen\r_sci_rx\src\targets\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.lst" "../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c"
+
+'Scanning and building file: ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c'
+'Invoking: Scanner and Compiler'
+ccrx -subcommand="src\smc_gen\r_sci_rx\src\targets\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.d"  -MT="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.obj"  -MT="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.d" -listfile="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.lst" "../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c"
 ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c(1021):M0520826:Parameter "cb_args" was never referenced
 ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c(1065):M0520826:Parameter "cb_args" was never referenced
 ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c(1098):M0520826:Parameter "cb_args" was never referenced
 ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c(1336):M0520826:Parameter "cb_args" was never referenced
 ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c(1380):M0520826:Parameter "cb_args" was never referenced
 ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c(1413):M0520826:Parameter "cb_args" was never referenced
-'Finished Scanning and building: ../src/FreeRTOS_Demo/Blinky_Demo/main_blinky.c'
-
-'Scanning and building file: ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c'
-'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\smc_gen\r_sci_rx\src\targets\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.d"  -MT="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.obj"  -MT="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.d" -listfile="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.lst" "../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c"
 ccrx -subcommand="src\smc_gen\r_sci_rx\src\targets\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.lst" "../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c"
+'Finished Scanning and building: ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c'
 'Finished Scanning and building: ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n.c'
 
-'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c'
-'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.d"  -MT="src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c"
-'Finished Scanning and building: ../src/smc_gen/r_sci_rx/src/targets/rx65n/r_sci_rx65n_data.c'
 
+'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c'
 'Scanning and building file: ../src/smc_gen/r_pincfg/r_sci_rx_pinset.c'
 'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\smc_gen\r_pincfg\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_pincfg/r_sci_rx_pinset.d"  -MT="src/smc_gen/r_pincfg/r_sci_rx_pinset.obj"  -MT="src/smc_gen/r_pincfg/r_sci_rx_pinset.d" -listfile="src/smc_gen/r_pincfg/r_sci_rx_pinset.lst" "../src/smc_gen/r_pincfg/r_sci_rx_pinset.c"
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c'
-
-ccrx -subcommand="src\smc_gen\r_pincfg\cSubCommand.tmp" -listfile="src/smc_gen/r_pincfg/r_sci_rx_pinset.lst" "../src/smc_gen/r_pincfg/r_sci_rx_pinset.c"
-'Scanning and building file: ../src/smc_gen/r_sci_rx/src/r_sci_rx.c'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.d"  -MT="src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c"
 'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\smc_gen\r_sci_rx\src\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_sci_rx/src/r_sci_rx.d"  -MT="src/smc_gen/r_sci_rx/src/r_sci_rx.obj"  -MT="src/smc_gen/r_sci_rx/src/r_sci_rx.d" -listfile="src/smc_gen/r_sci_rx/src/r_sci_rx.lst" "../src/smc_gen/r_sci_rx/src/r_sci_rx.c"
-ccrx -subcommand="src\smc_gen\r_sci_rx\src\cSubCommand.tmp" -listfile="src/smc_gen/r_sci_rx/src/r_sci_rx.lst" "../src/smc_gen/r_sci_rx/src/r_sci_rx.c"
+ccrx -subcommand="src\smc_gen\r_pincfg\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_pincfg/r_sci_rx_pinset.d"  -MT="src/smc_gen/r_pincfg/r_sci_rx_pinset.obj"  -MT="src/smc_gen/r_pincfg/r_sci_rx_pinset.d" -listfile="src/smc_gen/r_pincfg/r_sci_rx_pinset.lst" "../src/smc_gen/r_pincfg/r_sci_rx_pinset.c"
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c"
+ccrx -subcommand="src\smc_gen\r_pincfg\cSubCommand.tmp" -listfile="src/smc_gen/r_pincfg/r_sci_rx_pinset.lst" "../src/smc_gen/r_pincfg/r_sci_rx_pinset.c"
 ../src/smc_gen/r_pincfg/r_sci_rx_pinset.h(39):M0523076:Function declarations should have prototype
 ../src/smc_gen/r_pincfg/r_sci_rx_pinset.h(40):M0523076:Function declarations should have prototype
 ../src/smc_gen/r_pincfg/r_sci_rx_pinset.c(44):M0523076:Function declarations should have prototype
 ../src/smc_gen/r_pincfg/r_sci_rx_pinset.c(65):M0523076:Function declarations should have prototype
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Source/FreeRTOS-Plus-CLI/FreeRTOS_CLI.c'
+
+'Scanning and building file: ../src/smc_gen/r_sci_rx/src/r_sci_rx.c'
+'Invoking: Scanner and Compiler'
+ccrx -subcommand="src\smc_gen\r_sci_rx\src\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_sci_rx/src/r_sci_rx.d"  -MT="src/smc_gen/r_sci_rx/src/r_sci_rx.obj"  -MT="src/smc_gen/r_sci_rx/src/r_sci_rx.d" -listfile="src/smc_gen/r_sci_rx/src/r_sci_rx.lst" "../src/smc_gen/r_sci_rx/src/r_sci_rx.c"
+ccrx -subcommand="src\smc_gen\r_sci_rx\src\cSubCommand.tmp" -listfile="src/smc_gen/r_sci_rx/src/r_sci_rx.lst" "../src/smc_gen/r_sci_rx/src/r_sci_rx.c"
 'Finished Scanning and building: ../src/smc_gen/r_pincfg/r_sci_rx_pinset.c'
 
 'Scanning and building file: ../src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.d"  -MT="src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.d" -listfile="src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.lst" "../src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cSubCommand.tmp" -listfile="src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.lst" "../src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.c"
+'Finished Scanning and building: ../src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.c'
 'Finished Scanning and building: ../src/smc_gen/r_sci_rx/src/r_sci_rx.c'
 
-'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c'
-'Invoking: Scanner and Compiler'
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Sample-CLI-commandscDepSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Sample-CLI-commandscSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c"
-'Finished Scanning and building: ../src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.c'
 
+'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c'
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/UARTCommandConsole.c'
 'Invoking: Scanner and Compiler'
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Sample-CLI-commandscDepSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c"
+'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\UARTCommandConsolecDepSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/UARTCommandConsole.c"
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c'
-
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\Sample-CLI-commandscSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\UARTCommandConsolecSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/UARTCommandConsole.c"
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/Sample-CLI-commands.c'
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/UARTCommandConsole.c'
+
+
 'Scanning and building file: ../src/FreeRTOS_Demo/Full_Demo/main_full.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/main_full.d"  -MT="src/FreeRTOS_Demo/Full_Demo/main_full.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/main_full.d" -listfile="src/FreeRTOS_Demo/Full_Demo/main_full.lst" "../src/FreeRTOS_Demo/Full_Demo/main_full.c"
-ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cSubCommand.tmp" -listfile="src/FreeRTOS_Demo/Full_Demo/main_full.lst" "../src/FreeRTOS_Demo/Full_Demo/main_full.c"
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS-Plus/Demo/Common/FreeRTOS_Plus_CLI_Demos/UARTCommandConsole.c'
-
 'Scanning and building file: ../src/FreeRTOS_Demo/Full_Demo/serial.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cDepSubCommand.tmp" -output=dep="src/FreeRTOS_Demo/Full_Demo/serial.d"  -MT="src/FreeRTOS_Demo/Full_Demo/serial.obj"  -MT="src/FreeRTOS_Demo/Full_Demo/serial.d" -listfile="src/FreeRTOS_Demo/Full_Demo/serial.lst" "../src/FreeRTOS_Demo/Full_Demo/serial.c"
+ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cSubCommand.tmp" -listfile="src/FreeRTOS_Demo/Full_Demo/main_full.lst" "../src/FreeRTOS_Demo/Full_Demo/main_full.c"
 ccrx -subcommand="src\FreeRTOS_Demo\Full_Demo\cSubCommand.tmp" -listfile="src/FreeRTOS_Demo/Full_Demo/serial.lst" "../src/FreeRTOS_Demo/Full_Demo/serial.c"
 'Finished Scanning and building: ../src/FreeRTOS_Demo/Full_Demo/main_full.c'
 
 'Scanning and building file: ../src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_gpio_rx\src\targets\rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.d"  -MT="src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.obj"  -MT="src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.d" -listfile="src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.lst" "../src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.c"
-ccrx -subcommand="src\smc_gen\r_gpio_rx\src\targets\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.lst" "../src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.c"
 'Finished Scanning and building: ../src/FreeRTOS_Demo/Full_Demo/serial.c'
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/Renesas/RX/port.c'
+ccrx -subcommand="src\smc_gen\r_gpio_rx\src\targets\rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.lst" "../src/smc_gen/r_gpio_rx/src/targets/rx65n/r_gpio_rx65n.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS\Source\portable\Renesas\RX\cDepSubCommand.tmp" -output=dep="src/FreeRTOS/Source/portable/Renesas/RX/port.d"  -MT="src/FreeRTOS/Source/portable/Renesas/RX/port.obj"  -MT="src/FreeRTOS/Source/portable/Renesas/RX/port.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/Renesas/RX/port.c"
 ccrx -subcommand="src\FreeRTOS\Source\portable\Renesas\RX\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/Renesas/RX/port.c"
@@ -328,30 +329,30 @@ ccrx -subcommand="src\FreeRTOS\Source\portable\Renesas\RX\cSubCommand.tmp" "C:/R
 'Scanning and building file: ../src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_bsp\board\generic_rx65n\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.d"  -MT="src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.obj"  -MT="src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.d" -listfile="src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.lst" "../src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.c"
-ccrx -subcommand="src\smc_gen\r_bsp\board\generic_rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.lst" "../src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/Renesas/RX/port.c'
 
+ccrx -subcommand="src\smc_gen\r_bsp\board\generic_rx65n\cSubCommand.tmp" -listfile="src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.lst" "../src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.c"
 'Scanning and building file: ../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_workaround\r_dtc_rx_patch\cDepSubCommand.tmp" -output=dep="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.d"  -MT="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.obj"  -MT="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.d" -listfile="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.lst" "../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.c"
 ccrx -subcommand="src\smc_workaround\r_dtc_rx_patch\cSubCommand.tmp" -listfile="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.lst" "../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.c"
-'Finished Scanning and building: ../src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.c'
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\FreeRTOS_Demo\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(217):M0520381:Extra ";" ignored
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\FreeRTOS_Demo\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(394):M0520381:Extra ";" ignored
 ../src/smc_workaround/r_dtc_rx_patch/../../smc_gen/r_dtc_rx/src/r_dtc_rx.c(729):M0520111:Statement is unreachable
 ../src/smc_workaround/r_dtc_rx_patch/../../smc_gen/r_dtc_rx/src/r_dtc_rx.c(879):M0520111:Statement is unreachable
+'Finished Scanning and building: ../src/smc_gen/r_bsp/board/generic_rx65n/hwsetup.c'
 
 'Scanning and building file: ../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_workaround\r_dtc_rx_patch\cDepSubCommand.tmp" -output=dep="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.d"  -MT="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.obj"  -MT="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.d" -listfile="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.lst" "../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.c"
 ccrx -subcommand="src\smc_workaround\r_dtc_rx_patch\cSubCommand.tmp" -listfile="src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.lst" "../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.c"
-C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\FreeRTOS_Demo\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(217):M0520381:Extra ";" ignored
-C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\FreeRTOS_Demo\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(394):M0520381:Extra ";" ignored
 'Finished Scanning and building: ../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.c'
 
 'Scanning and building file: ../src/smc_gen/r_gpio_rx/src/r_gpio_rx.c'
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\smc_gen\r_gpio_rx\src\cDepSubCommand.tmp" -output=dep="src/smc_gen/r_gpio_rx/src/r_gpio_rx.d"  -MT="src/smc_gen/r_gpio_rx/src/r_gpio_rx.obj"  -MT="src/smc_gen/r_gpio_rx/src/r_gpio_rx.d" -listfile="src/smc_gen/r_gpio_rx/src/r_gpio_rx.lst" "../src/smc_gen/r_gpio_rx/src/r_gpio_rx.c"
+C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\FreeRTOS_Demo\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(217):M0520381:Extra ";" ignored
+C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+\src\FreeRTOS_Demo\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(394):M0520381:Extra ";" ignored
 ccrx -subcommand="src\smc_gen\r_gpio_rx\src\cSubCommand.tmp" -listfile="src/smc_gen/r_gpio_rx/src/r_gpio_rx.lst" "../src/smc_gen/r_gpio_rx/src/r_gpio_rx.c"
 'Finished Scanning and building: ../src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.c'
 
@@ -391,15 +392,15 @@ ccrx -subcommand="src\FreeRTOS\Source\cDepSubCommand.tmp" -output=dep="src/FreeR
 ccrx -subcommand="src\FreeRTOS\Source\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/stream_buffer.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/stream_buffer.c'
 
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/queue.c'
-
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/tasks.c'
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/queue.c'
 'Invoking: Scanner and Compiler'
-'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/timers.c'
 ccrx -subcommand="src\FreeRTOS\Source\cDepSubCommand.tmp" -output=dep="src/FreeRTOS/Source/tasks.d"  -MT="src/FreeRTOS/Source/tasks.obj"  -MT="src/FreeRTOS/Source/tasks.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/tasks.c"
+
+'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/timers.c'
+ccrx -subcommand="src\FreeRTOS\Source\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/tasks.c"
 'Invoking: Scanner and Compiler'
 ccrx -subcommand="src\FreeRTOS\Source\cDepSubCommand.tmp" -output=dep="src/FreeRTOS/Source/timers.d"  -MT="src/FreeRTOS/Source/timers.obj"  -MT="src/FreeRTOS/Source/timers.d" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/timers.c"
-ccrx -subcommand="src\FreeRTOS\Source\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/tasks.c"
 ccrx -subcommand="src\FreeRTOS\Source\cSubCommand.tmp" "C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/timers.c"
 'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/timers.c'
 
@@ -411,8 +412,8 @@ ccrx -subcommand="src\frtos_startup\cSubCommand.tmp" -listfile="src/frtos_startu
 
 'Scanning and building file: ../src/frtos_startup/freertos_start.c'
 'Invoking: Scanner and Compiler'
-'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/tasks.c'
 ccrx -subcommand="src\frtos_startup\cDepSubCommand.tmp" -output=dep="src/frtos_startup/freertos_start.d"  -MT="src/frtos_startup/freertos_start.obj"  -MT="src/frtos_startup/freertos_start.d" -listfile="src/frtos_startup/freertos_start.lst" "../src/frtos_startup/freertos_start.c"
+'Finished Scanning and building: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/tasks.c'
 
 'Scanning and building file: C:/Renesas/GitHubDesktop/work/FreeRTOS/FreeRTOS/Source/portable/Renesas/RX/port_asm.src'
 'Invoking: Scanner and Assembler'
@@ -423,42 +424,42 @@ asrx -subcommand="src\FreeRTOS\Source\portable\Renesas\RX\srcSubCommand.tmp" -ou
 
 'Invoking: Library Generator'
 lbgrx -subcommand="LibraryGeneratorRTOSDemo.tmp"
-'Finished Scanning and building: ../src/frtos_startup/freertos_start.c'
-
 Library Generator Completed
 'Finished building:'
+
+'Finished Scanning and building: ../src/frtos_startup/freertos_start.c'
 
 'Invoking: Linker'
 rlink -subcommand="LinkerRTOSDemo.tmp"
 
-RAMDATA SECTION:  0000c1fe Byte(s)
-ROMDATA SECTION:  00001e22 Byte(s)
-PROGRAM SECTION:  0000e936 Byte(s)
+RAMDATA SECTION:  0000c18a Byte(s)
+ROMDATA SECTION:  00001e6a Byte(s)
+PROGRAM SECTION:  0000e65e Byte(s)
 
 Renesas Optimizing Linker Completed
 'Finished building:'
 
-C:\Renesas\e2studio\Utilities\\ccrx\renesas_cc_converter.exe RTOSDemo.abs RTOSDemo.x
+C:\Renesas\e2studio64\SupportFiles\.eclipse\com.renesas.platform_1563726086\Utilities\\ccrx\renesas_cc_converter.exe RTOSDemo.abs RTOSDemo.x
 'Invoking: Converter'
-'Building target:'
-rlink   "RTOSDemo.abs" -subcommand="ConverterRTOSDemo.tmp"
 Loading input file RTOSDemo.abs
 Parsing the ELF input file.....
 32 segments required LMA fixes
 Converting the DWARF information....
 Constructing the output ELF image....
 Saving the ELF output file RTOSDemo.x
+'Building target:'
+rlink "RTOSDemo.abs" -subcommand="ConverterRTOSDemo.tmp"
 
 Renesas Optimizing Linker Completed
 'Finished building target:'
 
+udcollector -subcommand=udSubcommand.tmp -output=RTOSDemo.udm
 'Build complete.'
 
-21:42:06 Build Finished. 0 errors, 22 warnings. (took 2m:46s.664ms)
+18:34:17 Build Finished. 0 errors, 2 warnings. (took 1m:54s.610ms)
 
 Description	Resource	Location	Path	Type
 M0520826: Parameter "loop_cnt" was never referenced	r_bsp_common.c	line 104	/RTOSDemo/src/smc_gen/r_bsp/mcu/all	C/C++ Problem
-M0520826: Parameter "p_dummy_context" was never referenced	r_bsp_software_interrupt.c	line 949	/RTOSDemo/src/smc_gen/r_bsp/mcu/all	C/C++ Problem
 M0520111: Statement is unreachable	r_dtc_rx.c	line 729	/RTOSDemo/src/smc_gen/r_dtc_rx/src	C/C++ Problem
 M0520111: Statement is unreachable	r_dtc_rx.c	line 879	/RTOSDemo/src/smc_gen/r_dtc_rx/src	C/C++ Problem
 M0520381: Extra ";" ignored	r_dtc_rx_private.h	line 217	/RTOSDemo/src/smc_gen/r_dtc_rx/src	C/C++ Problem
@@ -473,3 +474,4 @@ M0523076: Function declarations should have prototype	r_sci_rx_pinset.c	line 44	
 M0523076: Function declarations should have prototype	r_sci_rx_pinset.c	line 65	/RTOSDemo/src/smc_gen/r_pincfg	C/C++ Problem
 M0523076: Function declarations should have prototype	r_sci_rx_pinset.h	line 39	/RTOSDemo/src/smc_gen/r_pincfg	C/C++ Problem
 M0523076: Function declarations should have prototype	r_sci_rx_pinset.h	line 40	/RTOSDemo/src/smc_gen/r_pincfg	C/C++ Problem
+M0523076: Function declarations should have prototype	r_smc_cgc.h	line 213	/RTOSDemo/src/smc_gen/general	C/C++ Problem

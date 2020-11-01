@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V4.14.1.5408 for Renesas RX              15/Oct/2020  21:44:58
+# IAR ELF Linker V4.14.1.5408 for Renesas RX              01/Nov/2020  18:36:46
 # Copyright 2009-2019 IAR Systems AB.
 #
 #    Output file  =  RTOSDemo.out
@@ -177,7 +177,7 @@ No sections matched the following patterns:
     .data24.data     inited         0x194     0x4  FreeRTOS_CLI.o [6]
                                   - 0x198   0x194
 
-"RAM24", part 2 of 2:                      0xb9e8
+"RAM24", part 2 of 2:                      0xb974
   .data24.bss        zero           0x198  0xa000  heap_4.o [3]
   .data24.bss        zero          0xa198   0xdac  FreeRTOS_CLI.o [6]
   .data24.bss        zero          0xaf44   0x1d0  mcu_locks.o [11]
@@ -186,63 +186,57 @@ No sections matched the following patterns:
   .data24.bss        zero          0xb410    0xc8  IntQueue.o [7]
   .data24.bss        zero          0xb4d8    0xc8  IntQueue.o [7]
   .data24.bss        zero          0xb5a0    0x8c  tasks.o [1]
-  .data24.bss        zero          0xb62c    0x6c  r_bsp_software_interrupt.o [11]
-  .data24.bss        zero          0xb698    0x6c  tasks.o [1]
-  .data24.bss        zero          0xb704    0x50  r_sci_rx.o [17]
-  .data24.bss        zero          0xb754    0x50  r_sci_rx.o [17]
-  .data24.bss        zero          0xb7a4    0x50  r_sci_rx.o [17]
-  .data24.bss        zero          0xb7f4    0x50  r_sci_rx.o [17]
-  .data24.bss        zero          0xb844    0x50  r_sci_rx.o [17]
-  .data24.bss        zero          0xb894    0x50  r_sci_rx.o [17]
-  .data24.bss        zero          0xb8e4    0x32  UARTCommandConsole.o [5]
-  .data24.bss        zero          0xb916    0x32  UARTCommandConsole.o [5]
-  .data24.bss        zero          0xb948    0x30  EventGroupsDemo.o [7]
-  .data24.bss        zero          0xb978    0x30  timers.o [1]
-  .data24.bss        zero          0xb9a8    0x2c  IntSemTest.o [7]
-  .data24.bss        zero          0xb9d4    0x24  recmutex.o [7]
-  .data24.bss        zero          0xb9f8    0x1c  GenQTest.o [7]
-  .data24.bss        zero          0xba14    0x18  countsem.o [7]
-  .data24.bss        zero          0xba2c    0x18  dynamic.o [7]
-  .data24.bss        zero          0xba44    0x18  heap_4.o [3]
-  .data24.bss        zero          0xba5c    0x18  IntQueue.o [7]
-  .data24.bss        zero          0xba74    0x18  TimerDemo.o [7]
-  .data24.bss        zero          0xba8c    0x14  blocktim.o [7]
-  .data24.bss        zero          0xbaa0    0x10  dynamic.o [7]
-  .data24.bss        zero          0xbab0    0x10  r_cg_hardware_setup.o [9]
-  .data24.bss        zero          0xbac0     0xc  blocktim.o [7]
-  .data24.bss        zero          0xbacc     0xc  countsem.o [7]
-  .data24.bss        zero          0xbad8     0xc  recmutex.o [7]
-  .data24.bss        zero          0xbae4     0xc  timers.o [1]
-  .data24.bss        zero          0xbaf0     0x8  flop.o [7]
-  .data24.bss        zero          0xbaf8     0x8  GenQTest.o [7]
-  .data24.bss        zero          0xbb00     0x8  heap_4.o [3]
-  .data24.bss        zero          0xbb08     0x8  main_full.o [5]
-  .data24.bss        zero          0xbb10     0x8  r_bsp_cpu.o [11]
-  .data24.bss        zero          0xbb18     0x8  r_dtc_rx.o [21]
-  .data24.bss        zero          0xbb20     0x8  semtest.o [7]
-  .data24.bss        zero          0xbb28     0x8  semtest.o [7]
-  .data24.bss        zero          0xbb30     0x8  serial.o [5]
-  .data24.bss        zero          0xbb38     0x6  BlockQ.o [7]
-  .data24.bss        zero          0xbb3e     0x6  BlockQ.o [7]
-  .data24.bss        zero          0xbb44     0x6  BlockQ.o [7]
-  .data24.bss        zero          0xbb4a     0x6  BlockQ.o [7]
-  .data24.bss        zero          0xbb50     0x6  TimerDemo.o [7]
-  .data24.bss        zero          0xbb56     0x2  semtest.o [7]
-  .data24.bss        zero          0xbb58     0x4  death.o [7]
-  .data24.bss        zero          0xbb5c     0x4  IntSemTest.o [7]
-  .data24.bss        zero          0xbb60     0x4  r_bsp_software_interrupt.o [11]
-  .data24.bss        zero          0xbb64     0x4  r_cg_hardware_setup.o [9]
-  .data24.bss        zero          0xbb68     0x4  Sample-CLI-commands.o [5]
-  .data24.bss        zero          0xbb6c     0x4  Sample-CLI-commands.o [5]
-  .data24.bss        zero          0xbb70     0x4  TimerDemo.o [7]
-  .data24.bss        zero          0xbb74     0x4  UARTCommandConsole.o [5]
-  .data24.bss        zero          0xbb78     0x1  r_bsp_software_interrupt.o [11]
-  .data24.bss        zero          0xbb79     0x1  r_bsp_software_interrupt.o [11]
-  .data24.bss        zero          0xbb7a     0x1  r_bsp_software_interrupt.o [11]
-  .data24.bss        zero          0xbb7b     0x1  r_bsp_software_interrupt.o [11]
-  .data24.bss        zero          0xbb7c     0x1  r_byteq.o [13]
-  .data24.bss        zero          0xbb7d     0x1  r_dtc_rx.o [21]
-                                 - 0xbb7e  0xb9e6
+  .data24.bss        zero          0xb62c    0x6c  tasks.o [1]
+  .data24.bss        zero          0xb698    0x50  r_sci_rx.o [17]
+  .data24.bss        zero          0xb6e8    0x50  r_sci_rx.o [17]
+  .data24.bss        zero          0xb738    0x50  r_sci_rx.o [17]
+  .data24.bss        zero          0xb788    0x50  r_sci_rx.o [17]
+  .data24.bss        zero          0xb7d8    0x50  r_sci_rx.o [17]
+  .data24.bss        zero          0xb828    0x50  r_sci_rx.o [17]
+  .data24.bss        zero          0xb878    0x32  UARTCommandConsole.o [5]
+  .data24.bss        zero          0xb8aa    0x32  UARTCommandConsole.o [5]
+  .data24.bss        zero          0xb8dc    0x30  EventGroupsDemo.o [7]
+  .data24.bss        zero          0xb90c    0x30  timers.o [1]
+  .data24.bss        zero          0xb93c    0x2c  IntSemTest.o [7]
+  .data24.bss        zero          0xb968    0x24  recmutex.o [7]
+  .data24.bss        zero          0xb98c    0x1c  GenQTest.o [7]
+  .data24.bss        zero          0xb9a8    0x18  countsem.o [7]
+  .data24.bss        zero          0xb9c0    0x18  dynamic.o [7]
+  .data24.bss        zero          0xb9d8    0x18  heap_4.o [3]
+  .data24.bss        zero          0xb9f0    0x18  IntQueue.o [7]
+  .data24.bss        zero          0xba08    0x18  TimerDemo.o [7]
+  .data24.bss        zero          0xba20    0x14  blocktim.o [7]
+  .data24.bss        zero          0xba34    0x10  dynamic.o [7]
+  .data24.bss        zero          0xba44    0x10  r_cg_hardware_setup.o [9]
+  .data24.bss        zero          0xba54     0xc  blocktim.o [7]
+  .data24.bss        zero          0xba60     0xc  countsem.o [7]
+  .data24.bss        zero          0xba6c     0xc  recmutex.o [7]
+  .data24.bss        zero          0xba78     0xc  timers.o [1]
+  .data24.bss        zero          0xba84     0x8  flop.o [7]
+  .data24.bss        zero          0xba8c     0x8  GenQTest.o [7]
+  .data24.bss        zero          0xba94     0x8  heap_4.o [3]
+  .data24.bss        zero          0xba9c     0x8  main_full.o [5]
+  .data24.bss        zero          0xbaa4     0x8  r_bsp_cpu.o [11]
+  .data24.bss        zero          0xbaac     0x8  r_dtc_rx.o [21]
+  .data24.bss        zero          0xbab4     0x8  semtest.o [7]
+  .data24.bss        zero          0xbabc     0x8  semtest.o [7]
+  .data24.bss        zero          0xbac4     0x8  serial.o [5]
+  .data24.bss        zero          0xbacc     0x6  BlockQ.o [7]
+  .data24.bss        zero          0xbad2     0x6  BlockQ.o [7]
+  .data24.bss        zero          0xbad8     0x6  BlockQ.o [7]
+  .data24.bss        zero          0xbade     0x6  BlockQ.o [7]
+  .data24.bss        zero          0xbae4     0x6  TimerDemo.o [7]
+  .data24.bss        zero          0xbaea     0x2  semtest.o [7]
+  .data24.bss        zero          0xbaec     0x4  death.o [7]
+  .data24.bss        zero          0xbaf0     0x4  IntSemTest.o [7]
+  .data24.bss        zero          0xbaf4     0x4  r_cg_hardware_setup.o [9]
+  .data24.bss        zero          0xbaf8     0x4  Sample-CLI-commands.o [5]
+  .data24.bss        zero          0xbafc     0x4  Sample-CLI-commands.o [5]
+  .data24.bss        zero          0xbb00     0x4  TimerDemo.o [7]
+  .data24.bss        zero          0xbb04     0x4  UARTCommandConsole.o [5]
+  .data24.bss        zero          0xbb08     0x1  r_byteq.o [13]
+  .data24.bss        zero          0xbb09     0x1  r_dtc_rx.o [21]
+                                 - 0xbb0a  0xb972
 
 "STACKS":                                   0x400
   STACKS                         0x3'fc00   0x400  <Block>
@@ -255,7 +249,7 @@ No sections matched the following patterns:
   .option_mem        const    0xfe7f'5d00    0x74  option_mem.o [25]
                             - 0xfe7f'5d74    0x74
 
-"ROM24", part 1 of 2:                       0xab4
+"ROM24", part 1 of 2:                       0xb13
   .data24.rodata     const    0xffe0'0000    0xc9  r_dtc_rx_target.o [21]
   .data24.rodata     const    0xffe0'00c9    0x61  Sample-CLI-commands.o [5]
   .data24.rodata     const    0xffe0'012a    0x56  Sample-CLI-commands.o [5]
@@ -296,177 +290,181 @@ No sections matched the following patterns:
   .data24.rodata     const    0xffe0'0810    0x1a  main_full.o [5]
   .data24.rodata     const    0xffe0'082a    0x17  Sample-CLI-commands.o [5]
   .data24.rodata     const    0xffe0'0841    0x13  freertos_start.o [8]
-  .data24.rodata     const    0xffe0'0854    0x12  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'0866    0x11  freertos_start.o [8]
-  .data24.rodata     const    0xffe0'0877     0xd  TaskNotify.o [7]
-  .data24.rodata     const    0xffe0'0884    0x10  FreeRTOS_CLI.o [6]
-  .data24.rodata     const    0xffe0'0894    0x10  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'08a4     0xf  tasks.o [1]
-  .data24.rodata     const    0xffe0'08b3     0xe  TimerDemo.o [7]
-  .data24.rodata     const    0xffe0'08c1     0xd  TaskNotifyArray.o [7]
-  .data24.rodata     const    0xffe0'08ce     0xd  TaskNotifyArray.o [7]
-  .data24.rodata     const    0xffe0'08db     0x9  TaskNotify.o [7]
-  .data24.rodata     const    0xffe0'08e4     0xc  mcu_clocks.o [12]
-  .data24.rodata     const    0xffe0'08f0     0xb  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'08fb     0xb  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'0906     0x9  TaskNotify.o [7]
-  .data24.rodata     const    0xffe0'090f     0x9  TaskNotifyArray.o [7]
-  .data24.rodata     const    0xffe0'0918     0x9  TimerDemo.o [7]
-  .data24.rodata     const    0xffe0'0921     0x7  blocktim.o [7]
-  .data24.rodata     const    0xffe0'0928     0x8  BlockQ.o [7]
-  .data24.rodata     const    0xffe0'0930     0x8  BlockQ.o [7]
-  .data24.rodata     const    0xffe0'0938     0x8  BlockQ.o [7]
-  .data24.rodata     const    0xffe0'0940     0x8  BlockQ.o [7]
-  .data24.rodata     const    0xffe0'0948     0x8  BlockQ.o [7]
-  .data24.rodata     const    0xffe0'0950     0x8  BlockQ.o [7]
-  .data24.rodata     const    0xffe0'0958     0x8  death.o [7]
-  .data24.rodata     const    0xffe0'0960     0x8  death.o [7]
-  .data24.rodata     const    0xffe0'0968     0x8  death.o [7]
-  .data24.rodata     const    0xffe0'0970     0x8  dynamic.o [7]
-  .data24.rodata     const    0xffe0'0978     0x8  dynamic.o [7]
-  .data24.rodata     const    0xffe0'0980     0x8  dynamic.o [7]
-  .data24.rodata     const    0xffe0'0988     0x8  dynamic.o [7]
-  .data24.rodata     const    0xffe0'0990     0x8  semtest.o [7]
-  .data24.rodata     const    0xffe0'0998     0x8  semtest.o [7]
-  .data24.rodata     const    0xffe0'09a0     0x8  semtest.o [7]
-  .data24.rodata     const    0xffe0'09a8     0x8  semtest.o [7]
-  .data24.rodata     const    0xffe0'09b0     0x8  TimerDemo.o [7]
-  .data24.rodata     const    0xffe0'09b8     0x8  timers.o [1]
-  .data24.rodata     const    0xffe0'09c0     0x7  blocktim.o [7]
-  .data24.rodata     const    0xffe0'09c7     0x7  dynamic.o [7]
-  .data24.rodata     const    0xffe0'09ce     0x7  GenQTest.o [7]
-  .data24.rodata     const    0xffe0'09d5     0x7  IntSemTest.o [7]
-  .data24.rodata     const    0xffe0'09dc     0x7  IntSemTest.o [7]
-  .data24.rodata     const    0xffe0'09e3     0x7  IntSemTest.o [7]
-  .data24.rodata     const    0xffe0'09ea     0x7  TimerDemo.o [7]
-  .data24.rodata     const    0xffe0'09f1     0x7  TimerDemo.o [7]
-  .data24.rodata     const    0xffe0'09f8     0x6  EventGroupsDemo.o [7]
-  .data24.rodata     const    0xffe0'09fe     0x6  flop.o [7]
-  .data24.rodata     const    0xffe0'0a04     0x6  flop.o [7]
-  .data24.rodata     const    0xffe0'0a0a     0x6  flop.o [7]
-  .data24.rodata     const    0xffe0'0a10     0x6  flop.o [7]
-  .data24.rodata     const    0xffe0'0a16     0x6  GenQTest.o [7]
-  .data24.rodata     const    0xffe0'0a1c     0x6  GenQTest.o [7]
-  .data24.rodata     const    0xffe0'0a22     0x6  IntQueue.o [7]
-  .data24.rodata     const    0xffe0'0a28     0x6  IntQueue.o [7]
-  .data24.rodata     const    0xffe0'0a2e     0x6  IntQueue.o [7]
-  .data24.rodata     const    0xffe0'0a34     0x6  IntQueue.o [7]
-  .data24.rodata     const    0xffe0'0a3a     0x6  IntQueue.o [7]
-  .data24.rodata     const    0xffe0'0a40     0x6  IntQueue.o [7]
-  .data24.rodata     const    0xffe0'0a46     0x6  main_full.o [5]
-  .data24.rodata     const    0xffe0'0a4c     0x6  QueueOverwrite.o [7]
-  .data24.rodata     const    0xffe0'0a52     0x6  r_bsp_cpu.o [11]
-  .data24.rodata     const    0xffe0'0a58     0x5  countsem.o [7]
-  .data24.rodata     const    0xffe0'0a5d     0x5  countsem.o [7]
-  .data24.rodata     const    0xffe0'0a62     0x5  EventGroupsDemo.o [7]
-  .data24.rodata     const    0xffe0'0a67     0x5  EventGroupsDemo.o [7]
-  .data24.rodata     const    0xffe0'0a6c     0x5  FreeRTOS_CLI.o [6]
-  .data24.rodata     const    0xffe0'0a71     0x5  GenQTest.o [7]
-  .data24.rodata     const    0xffe0'0a76     0x5  main_full.o [5]
-  .data24.rodata     const    0xffe0'0a7b     0x5  main_full.o [5]
-  .data24.rodata     const    0xffe0'0a80     0x5  recmutex.o [7]
-  .data24.rodata     const    0xffe0'0a85     0x5  recmutex.o [7]
-  .data24.rodata     const    0xffe0'0a8a     0x5  recmutex.o [7]
-  .data24.rodata     const    0xffe0'0a8f     0x5  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'0a94     0x5  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'0a99     0x5  tasks.o [1]
-  .data24.rodata     const    0xffe0'0a9e     0x2  main_full.o [5]
-  .data24.rodata     const    0xffe0'0aa0     0x4  main_full.o [5]
-  .data24.rodata     const    0xffe0'0aa4     0x4  UARTCommandConsole.o [5]
-  .data24.rodata     const    0xffe0'0aa8     0x3  freertos_start.o [8]
-  .data24.rodata     const    0xffe0'0aab     0x3  main_full.o [5]
-  .data24.rodata     const    0xffe0'0aae     0x3  Sample-CLI-commands.o [5]
-  .data24.rodata     const    0xffe0'0ab1     0x3  UARTCommandConsole.o [5]
-                            - 0xffe0'0ab4   0xab4
+  .data24.rodata     const    0xffe0'0854    0x13  r_gpio_rx65n.o [15]
+  .data24.rodata     const    0xffe0'0867    0x13  r_gpio_rx65n.o [15]
+  .data24.rodata     const    0xffe0'087a    0x13  r_gpio_rx65n.o [15]
+  .data24.rodata     const    0xffe0'088d    0x13  r_gpio_rx65n.o [15]
+  .data24.rodata     const    0xffe0'08a0    0x13  r_gpio_rx65n.o [15]
+  .data24.rodata     const    0xffe0'08b3    0x12  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'08c5    0x11  freertos_start.o [8]
+  .data24.rodata     const    0xffe0'08d6     0xe  TimerDemo.o [7]
+  .data24.rodata     const    0xffe0'08e4    0x10  FreeRTOS_CLI.o [6]
+  .data24.rodata     const    0xffe0'08f4    0x10  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'0904     0xf  tasks.o [1]
+  .data24.rodata     const    0xffe0'0913     0xd  TaskNotify.o [7]
+  .data24.rodata     const    0xffe0'0920     0xd  TaskNotifyArray.o [7]
+  .data24.rodata     const    0xffe0'092d     0xd  TaskNotifyArray.o [7]
+  .data24.rodata     const    0xffe0'093a     0x6  EventGroupsDemo.o [7]
+  .data24.rodata     const    0xffe0'0940     0xc  mcu_clocks.o [12]
+  .data24.rodata     const    0xffe0'094c     0xb  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'0957     0xb  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'0962     0x9  TaskNotify.o [7]
+  .data24.rodata     const    0xffe0'096b     0x9  TaskNotify.o [7]
+  .data24.rodata     const    0xffe0'0974     0x9  TaskNotifyArray.o [7]
+  .data24.rodata     const    0xffe0'097d     0x9  TimerDemo.o [7]
+  .data24.rodata     const    0xffe0'0986     0x6  flop.o [7]
+  .data24.rodata     const    0xffe0'098c     0x8  BlockQ.o [7]
+  .data24.rodata     const    0xffe0'0994     0x8  BlockQ.o [7]
+  .data24.rodata     const    0xffe0'099c     0x8  BlockQ.o [7]
+  .data24.rodata     const    0xffe0'09a4     0x8  BlockQ.o [7]
+  .data24.rodata     const    0xffe0'09ac     0x8  BlockQ.o [7]
+  .data24.rodata     const    0xffe0'09b4     0x8  BlockQ.o [7]
+  .data24.rodata     const    0xffe0'09bc     0x8  death.o [7]
+  .data24.rodata     const    0xffe0'09c4     0x8  death.o [7]
+  .data24.rodata     const    0xffe0'09cc     0x8  death.o [7]
+  .data24.rodata     const    0xffe0'09d4     0x8  dynamic.o [7]
+  .data24.rodata     const    0xffe0'09dc     0x8  dynamic.o [7]
+  .data24.rodata     const    0xffe0'09e4     0x8  dynamic.o [7]
+  .data24.rodata     const    0xffe0'09ec     0x8  dynamic.o [7]
+  .data24.rodata     const    0xffe0'09f4     0x8  semtest.o [7]
+  .data24.rodata     const    0xffe0'09fc     0x8  semtest.o [7]
+  .data24.rodata     const    0xffe0'0a04     0x8  semtest.o [7]
+  .data24.rodata     const    0xffe0'0a0c     0x8  semtest.o [7]
+  .data24.rodata     const    0xffe0'0a14     0x8  TimerDemo.o [7]
+  .data24.rodata     const    0xffe0'0a1c     0x8  timers.o [1]
+  .data24.rodata     const    0xffe0'0a24     0x7  blocktim.o [7]
+  .data24.rodata     const    0xffe0'0a2b     0x7  blocktim.o [7]
+  .data24.rodata     const    0xffe0'0a32     0x7  dynamic.o [7]
+  .data24.rodata     const    0xffe0'0a39     0x7  GenQTest.o [7]
+  .data24.rodata     const    0xffe0'0a40     0x7  IntSemTest.o [7]
+  .data24.rodata     const    0xffe0'0a47     0x7  IntSemTest.o [7]
+  .data24.rodata     const    0xffe0'0a4e     0x7  IntSemTest.o [7]
+  .data24.rodata     const    0xffe0'0a55     0x7  TimerDemo.o [7]
+  .data24.rodata     const    0xffe0'0a5c     0x7  TimerDemo.o [7]
+  .data24.rodata     const    0xffe0'0a63     0x6  flop.o [7]
+  .data24.rodata     const    0xffe0'0a69     0x6  flop.o [7]
+  .data24.rodata     const    0xffe0'0a6f     0x6  flop.o [7]
+  .data24.rodata     const    0xffe0'0a75     0x6  GenQTest.o [7]
+  .data24.rodata     const    0xffe0'0a7b     0x6  GenQTest.o [7]
+  .data24.rodata     const    0xffe0'0a81     0x6  IntQueue.o [7]
+  .data24.rodata     const    0xffe0'0a87     0x6  IntQueue.o [7]
+  .data24.rodata     const    0xffe0'0a8d     0x6  IntQueue.o [7]
+  .data24.rodata     const    0xffe0'0a93     0x6  IntQueue.o [7]
+  .data24.rodata     const    0xffe0'0a99     0x6  IntQueue.o [7]
+  .data24.rodata     const    0xffe0'0a9f     0x6  IntQueue.o [7]
+  .data24.rodata     const    0xffe0'0aa5     0x6  main_full.o [5]
+  .data24.rodata     const    0xffe0'0aab     0x6  QueueOverwrite.o [7]
+  .data24.rodata     const    0xffe0'0ab1     0x5  countsem.o [7]
+  .data24.rodata     const    0xffe0'0ab6     0x6  r_bsp_cpu.o [11]
+  .data24.rodata     const    0xffe0'0abc     0x5  countsem.o [7]
+  .data24.rodata     const    0xffe0'0ac1     0x5  EventGroupsDemo.o [7]
+  .data24.rodata     const    0xffe0'0ac6     0x5  EventGroupsDemo.o [7]
+  .data24.rodata     const    0xffe0'0acb     0x5  FreeRTOS_CLI.o [6]
+  .data24.rodata     const    0xffe0'0ad0     0x5  GenQTest.o [7]
+  .data24.rodata     const    0xffe0'0ad5     0x5  main_full.o [5]
+  .data24.rodata     const    0xffe0'0ada     0x5  main_full.o [5]
+  .data24.rodata     const    0xffe0'0adf     0x5  recmutex.o [7]
+  .data24.rodata     const    0xffe0'0ae4     0x5  recmutex.o [7]
+  .data24.rodata     const    0xffe0'0ae9     0x5  recmutex.o [7]
+  .data24.rodata     const    0xffe0'0aee     0x5  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'0af3     0x5  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'0af8     0x5  tasks.o [1]
+  .data24.rodata     const    0xffe0'0afd     0x3  freertos_start.o [8]
+  .data24.rodata     const    0xffe0'0b00     0x4  main_full.o [5]
+  .data24.rodata     const    0xffe0'0b04     0x4  UARTCommandConsole.o [5]
+  .data24.rodata     const    0xffe0'0b08     0x3  main_full.o [5]
+  .data24.rodata     const    0xffe0'0b0b     0x3  Sample-CLI-commands.o [5]
+  .data24.rodata     const    0xffe0'0b0e     0x3  UARTCommandConsole.o [5]
+  .data24.rodata     const    0xffe0'0b11     0x2  main_full.o [5]
+                            - 0xffe0'0b13   0xb13
 
-"ROM32":                                   0xc38a
-  .text              ro code  0xffe0'0ab8  0x18b9  tasks.o [1]
-  .switch.rodata     const    0xffe0'2374    0x1a  r_bsp_software_interrupt.o [11]
-  .text              ro code  0xffe0'2390   0x23d  heap_4.o [3]
-  .text              ro code  0xffe0'25d0    0xae  list.o [1]
-  .text              ro code  0xffe0'267e   0x151  port.o [2]
-  .text              ro code  0xffe0'27cf   0x154  freertos_start.o [8]
-  .switch.rodata     const    0xffe0'2924    0x12  r_sci_rx65n.o [18]
-  .text              ro code  0xffe0'2938   0x498  timers.o [1]
-  .text              ro code  0xffe0'2dd0     0xe  strlen.o [23]
-  .text              ro code  0xffe0'2de0    0x32  sprintf.o [23]
-  .text              ro code  0xffe0'2e12    0x11  lowlvl.o [20]
-  .text              ro code  0xffe0'2e23   0x49f  main_full.o [5]
-  .switch.rodata     const    0xffe0'32c4     0xa  timers.o [1]
-  .text              ro code  0xffe0'32d0   0xe06  queue.o [1]
-  .text              ro code  0xffe0'40d8   0x14e  xprintftiny.o [23]
-  .text              ro code  0xffe0'4228   0xa0e  IntQueue.o [7]
-  .text              ro code  0xffe0'4c38   0x276  dynamic.o [7]
-  .text              ro code  0xffe0'4eb0   0x241  BlockQ.o [7]
-  .text              ro code  0xffe0'50f4     0xa  xsprout.o [23]
-  .text              ro code  0xffe0'5100   0x43d  blocktim.o [7]
-  .text              ro code  0xffe0'5540   0x194  countsem.o [7]
-  .text              ro code  0xffe0'56d8   0x4be  GenQTest.o [7]
-  .text              ro code  0xffe0'5b98   0x21b  recmutex.o [7]
-  .text              ro code  0xffe0'5db3   0x1c5  semtest.o [7]
-  .text              ro code  0xffe0'5f78   0x2bb  flop.o [7]
-  .text              ro code  0xffe0'6238   0x97f  TimerDemo.o [7]
-  .text              ro code  0xffe0'6bb8   0x172  QueueOverwrite.o [7]
-  .text              ro code  0xffe0'6d30   0x65c  EventGroupsDemo.o [7]
-  .text              ro code  0xffe0'7390   0x7d0  TaskNotify.o [7]
-  .text              ro code  0xffe0'7b60  0x1090  TaskNotifyArray.o [7]
-  .text              ro code  0xffe0'8bf0   0x37b  IntSemTest.o [7]
-  .text              ro code  0xffe0'8f70   0x147  UARTCommandConsole.o [5]
-  .text              ro code  0xffe0'90b7   0x19a  Sample-CLI-commands.o [5]
-  .text              ro code  0xffe0'9258    0xf7  death.o [7]
-  .text              ro code  0xffe0'934f   0x109  IntQueueTimer.o [5]
-  .text              ro code  0xffe0'9458     0x3  fabs32.o [24]
-  .text              ro code  0xffe0'945b   0x2e2  event_groups.o [1]
-  .text              ro code  0xffe0'9740   0x20e  FreeRTOS_CLI.o [6]
-  .text              ro code  0xffe0'994e   0x181  serial.o [5]
-  .text              ro code  0xffe0'9ad0    0x25  strncat.o [23]
-  .text              ro code  0xffe0'9af5    0x26  u_sci_rx_ext.o [19]
-  .text              ro code  0xffe0'9b20   0x496  r_dtc_rx.o [21]
-  .text              ro code  0xffe0'9fb8   0x4f3  r_sci_rx.o [17]
-  .text              ro code  0xffe0'a4ab    0x32  r_bsp_locking.o [11]
-  .text              ro code  0xffe0'a4dd     0x5  FIT_patch.o [19]
-  .text              ro code  0xffe0'a4e2    0x31  r_dtc_rx_target.o [21]
-  .text              ro code  0xffe0'a518   0x571  r_sci_rx65n.o [18]
-  .text              ro code  0xffe0'aa89   0x167  r_bsp_cpu.o [11]
-  .text              ro code  0xffe0'abf0   0x649  r_bsp_interrupts.o [11]
-  .text              ro code  0xffe0'b239   0x13d  r_byteq.o [13]
-  .text              ro code  0xffe0'b376     0x8  r_rx_intrinsic_functions.o [11]
-  .text              ro code  0xffe0'b37e   0x1c1  mcu_mapped_interrupts.o [12]
-  .text              ro code  0xffe0'b53f   0x3e5  r_bsp_software_interrupt.o [11]
-  .text              ro code  0xffe0'b924   0x7fe  mcu_interrupts.o [12]
-  .inttable                   0xffe0'c124   0x400  <Block>
-    .inttable        const    0xffe0'c124   0x400  interrupt_table.o [23]
-  .text              ro code  0xffe0'c524   0x267  mcu_clocks.o [12]
-  .text              ro code  0xffe0'c78b    0xd4  r_bsp_common.o [11]
-  .text              ro code  0xffe0'c85f   0x200  div64u.o [25]
-  .text              ro code  0xffe0'ca5f    0xa7  r_cg_hardware_setup.o [9]
-  .text              ro code  0xffe0'cb06    0x44  r_gpio_rx.o [14]
-  .text              ro code  0xffe0'cb4a    0x1e  r_sci_rx_pinset.o [16]
-  .text              ro code  0xffe0'cb68     0x4  r_smc_cgc.o [9]
-  .text              ro code  0xffe0'cb6c     0x1  r_smc_cgc_user.o [9]
-  .text              ro code  0xffe0'cb6d    0x7b  hwsetup.o [10]
-  .text              ro code  0xffe0'cbe8    0x7b  mcu_init.o [12]
-  .text              ro code  0xffe0'cc64    0x74  packbits_init.o [23]
-  .text              ro code  0xffe0'ccd8     0xf  __dbg_abort.o [22]
-  .text              ro code  0xffe0'cce8     0x1  __dbg_break.o [22]
-  .text              ro code  0xffe0'ccec    0x12  __dbg_xxexit.o [22]
-  .text              ro code  0xffe0'ccfe    0x43  resetprg.o [11]
-  .text              ro code  0xffe0'cd48    0x20  data_init.o [23]
-  .text              ro code  0xffe0'cd68    0x33  cstartup.o [25]
-  .text              ro code  0xffe0'cd9c     0x4  exit.o [23]
-  .text              ro code  0xffe0'cda0     0x8  cexit.o [23]
-  .iar.init_table    const    0xffe0'cda8    0x2c  - Linker created -
-  .switch.rodata     const    0xffe0'cdd4    0x18  r_dtc_rx.o [21]
-  .text              ro code  0xffe0'cdec    0x18  zero_init2.o [23]
-  .switch.rodata     const    0xffe0'ce04    0x10  r_bsp_cpu.o [11]
-  .switch.rodata     const    0xffe0'ce14     0xe  r_bsp_interrupts.o [11]
-  .switch.rodata     const    0xffe0'ce24     0xe  xprintftiny.o [23]
-  .text              ro code  0xffe0'ce34     0xe  interrupt_table.o [23]
-                            - 0xffe0'ce42  0xc38a
+"ROM32":                                   0xc122
+  .text              ro code  0xffe0'0b18  0x18b9  tasks.o [1]
+  .switch.rodata     const    0xffe0'23d4    0x12  r_sci_rx65n.o [18]
+  .text              ro code  0xffe0'23e8   0x23d  heap_4.o [3]
+  .text              ro code  0xffe0'2628    0xae  list.o [1]
+  .text              ro code  0xffe0'26d6   0x151  port.o [2]
+  .text              ro code  0xffe0'2827   0x154  freertos_start.o [8]
+  .switch.rodata     const    0xffe0'297c     0xa  timers.o [1]
+  .text              ro code  0xffe0'2988   0x498  timers.o [1]
+  .text              ro code  0xffe0'2e20     0xe  strlen.o [23]
+  .text              ro code  0xffe0'2e30    0x32  sprintf.o [23]
+  .text              ro code  0xffe0'2e62    0x11  lowlvl.o [20]
+  .text              ro code  0xffe0'2e73   0x49f  main_full.o [5]
+  .text              ro code  0xffe0'3314     0xa  xsprout.o [23]
+  .text              ro code  0xffe0'3320   0xe06  queue.o [1]
+  .text              ro code  0xffe0'4128   0x14e  xprintftiny.o [23]
+  .text              ro code  0xffe0'4278   0xa0e  IntQueue.o [7]
+  .text              ro code  0xffe0'4c88   0x276  dynamic.o [7]
+  .text              ro code  0xffe0'4f00   0x241  BlockQ.o [7]
+  .text              ro code  0xffe0'5148   0x43d  blocktim.o [7]
+  .text              ro code  0xffe0'5588   0x194  countsem.o [7]
+  .text              ro code  0xffe0'5720   0x4be  GenQTest.o [7]
+  .text              ro code  0xffe0'5be0   0x21b  recmutex.o [7]
+  .text              ro code  0xffe0'5dfb   0x1c5  semtest.o [7]
+  .text              ro code  0xffe0'5fc0   0x2bb  flop.o [7]
+  .text              ro code  0xffe0'6280   0x97f  TimerDemo.o [7]
+  .text              ro code  0xffe0'6c00   0x172  QueueOverwrite.o [7]
+  .text              ro code  0xffe0'6d78   0x65c  EventGroupsDemo.o [7]
+  .text              ro code  0xffe0'73d8   0x7d0  TaskNotify.o [7]
+  .text              ro code  0xffe0'7ba8  0x1090  TaskNotifyArray.o [7]
+  .text              ro code  0xffe0'8c38   0x37b  IntSemTest.o [7]
+  .text              ro code  0xffe0'8fb8   0x147  UARTCommandConsole.o [5]
+  .text              ro code  0xffe0'90ff   0x19a  Sample-CLI-commands.o [5]
+  .text              ro code  0xffe0'92a0    0xf7  death.o [7]
+  .text              ro code  0xffe0'9397   0x109  IntQueueTimer.o [5]
+  .text              ro code  0xffe0'94a0     0x3  fabs32.o [24]
+  .text              ro code  0xffe0'94a3   0x2e2  event_groups.o [1]
+  .text              ro code  0xffe0'9788   0x20e  FreeRTOS_CLI.o [6]
+  .text              ro code  0xffe0'9996   0x17b  serial.o [5]
+  .text              ro code  0xffe0'9b14    0x25  strncat.o [23]
+  .text              ro code  0xffe0'9b39    0x26  u_sci_rx_ext.o [19]
+  .text              ro code  0xffe0'9b60   0x496  r_dtc_rx.o [21]
+  .text              ro code  0xffe0'9ff8   0x4f3  r_sci_rx.o [17]
+  .text              ro code  0xffe0'a4eb    0x32  r_bsp_locking.o [11]
+  .text              ro code  0xffe0'a51d     0x5  FIT_patch.o [19]
+  .text              ro code  0xffe0'a522    0x31  r_dtc_rx_target.o [21]
+  .text              ro code  0xffe0'a558   0x571  r_sci_rx65n.o [18]
+  .text              ro code  0xffe0'aac9   0x15e  r_bsp_cpu.o [11]
+  .text              ro code  0xffe0'ac27   0x643  r_bsp_interrupts.o [11]
+  .text              ro code  0xffe0'b26a   0x13d  r_byteq.o [13]
+  .text              ro code  0xffe0'b3a7     0x8  r_rx_intrinsic_functions.o [11]
+  .text              ro code  0xffe0'b3af   0x1c1  mcu_mapped_interrupts.o [12]
+  .text              ro code  0xffe0'b570   0x7fe  mcu_interrupts.o [12]
+  .inttable                   0xffe0'bd70   0x400  <Block>
+    .inttable        const    0xffe0'bd70   0x400  interrupt_table.o [23]
+  .text              ro code  0xffe0'c170   0x267  mcu_clocks.o [12]
+  .text              ro code  0xffe0'c3d7    0xd4  r_bsp_common.o [11]
+  .text              ro code  0xffe0'c4ab   0x200  div64u.o [25]
+  .text              ro code  0xffe0'c6ab   0x1cc  r_gpio_rx.o [14]
+  .text              ro code  0xffe0'c877    0xb1  r_cg_hardware_setup.o [9]
+  .text              ro code  0xffe0'c928    0x1e  r_sci_rx_pinset.o [16]
+  .text              ro code  0xffe0'c946     0x4  r_smc_cgc.o [9]
+  .text              ro code  0xffe0'c94a     0x1  r_smc_cgc_user.o [9]
+  .text              ro code  0xffe0'c94b    0x7b  hwsetup.o [10]
+  .text              ro code  0xffe0'c9c6    0x7b  mcu_init.o [12]
+  .text              ro code  0xffe0'ca44    0x74  packbits_init.o [23]
+  .text              ro code  0xffe0'cab8     0xf  __dbg_abort.o [22]
+  .text              ro code  0xffe0'cac8     0x1  __dbg_break.o [22]
+  .text              ro code  0xffe0'cacc    0x12  __dbg_xxexit.o [22]
+  .text              ro code  0xffe0'cade    0x43  resetprg.o [11]
+  .text              ro code  0xffe0'cb28    0x20  data_init.o [23]
+  .text              ro code  0xffe0'cb48    0x33  cstartup.o [25]
+  .text              ro code  0xffe0'cb7c     0x4  exit.o [23]
+  .text              ro code  0xffe0'cb80     0x8  cexit.o [23]
+  .iar.init_table    const    0xffe0'cb88    0x2c  - Linker created -
+  .switch.rodata     const    0xffe0'cbb4    0x18  r_dtc_rx.o [21]
+  .text              ro code  0xffe0'cbcc    0x18  zero_init2.o [23]
+  .switch.rodata     const    0xffe0'cbe4    0x16  r_gpio_rx.o [14]
+  .switch.rodata     const    0xffe0'cbfc    0x10  r_bsp_cpu.o [11]
+  .switch.rodata     const    0xffe0'cc0c     0xe  r_bsp_interrupts.o [11]
+  .switch.rodata     const    0xffe0'cc1c     0xe  xprintftiny.o [23]
+  .text              ro code  0xffe0'cc2c     0xe  interrupt_table.o [23]
+                            - 0xffe0'cc3a  0xc122
 
 "ROM24", part 2 of 2:                        0x5c
-  Initializer bytes  const    0xffe0'ce42    0x5c  <for RAM24 s0>
-                            - 0xffe0'ce9e    0x5c
+  Initializer bytes  const    0xffe0'cc3a    0x5c  <for RAM24 s0>
+                            - 0xffe0'cc96    0x5c
 
 "A2":                                        0x7c
   .exceptvect                 0xffff'ff80    0x7c  <Block>
@@ -481,10 +479,10 @@ Unused ranges:
 
          From           To       Size
          ----           --       ----
-       0xbb80     0x3'fbff   0x3'4080
+       0xbb0c     0x3'fbff   0x3'40f4
     0x80'0000    0x85'ffff   0x6'0000
-  0xffe0'0ab4  0xffe0'0ab7        0x4
-  0xffe0'ce9e  0xffff'ff7f  0x1f'30e2
+  0xffe0'0b13  0xffe0'0b17        0x5
+  0xffe0'cc96  0xffff'ff7f  0x1f'32ea
 
 
 *******************************************************************************
@@ -494,12 +492,12 @@ Unused ranges:
           Address      Size
           -------      ----
 Zero (___iar_zero_init2)
-    1 destination range, total size 0xb9e6:
-                0x198  0xb9e6
+    1 destination range, total size 0xb972:
+                0x198  0xb972
 
 Copy/packbits (___iar_packbits_init2)
     1 source range, total size 0x5c (22% of destination):
-          0xffe0'ce42    0x5c
+          0xffe0'cc3a    0x5c
     1 destination range, total size 0x194:
                   0x4   0x194
 
@@ -510,13 +508,13 @@ Copy/packbits (___iar_packbits_init2)
 
   Call Graph Root Category  Max Use  Total Use
   ------------------------  -------  ---------
-  interrupt                    252      1'876
+  interrupt                    252      1'820
   Program entry                376        376
-  Uncalled function            348     13'784
+  Uncalled function            348     13'776
 
 
 Program entry
-  "__iar_program_start": 0xffe0'cd68
+  "__iar_program_start": 0xffe0'cb48
 
   Maximum call chain                            *?* 376  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll")
@@ -538,7 +536,7 @@ Program entry
     "_vFullDemoTickHook"                              0
 
 interrupt
-  "___interrupt_146": 0xffe0'9414
+  "___interrupt_146": 0xffe0'945c
 
   Maximum call chain                              168  bytes
 
@@ -553,7 +551,7 @@ interrupt
     "_charput"                                      4
 
 interrupt
-  "___interrupt_152": 0xffe0'9436
+  "___interrupt_152": 0xffe0'947e
 
   Maximum call chain                              168  bytes
 
@@ -568,7 +566,7 @@ interrupt
     "_charput"                                      4
 
 interrupt
-  "___interrupt_106": 0xffe0'c0ca
+  "___interrupt_106": 0xffe0'bd16
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -580,7 +578,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___interrupt_107": 0xffe0'bf0c
+  "___interrupt_107": 0xffe0'bb58
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -592,7 +590,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___interrupt_110": 0xffe0'b996
+  "___interrupt_110": 0xffe0'b5e2
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -604,7 +602,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___interrupt_111": 0xffe0'bc92
+  "___interrupt_111": 0xffe0'b8de
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -616,7 +614,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___interrupt_112": 0xffe0'bf30
+  "___interrupt_112": 0xffe0'bb7c
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -628,7 +626,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___interrupt_113": 0xffe0'c03e
+  "___interrupt_113": 0xffe0'bc8a
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -640,14 +638,14 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "_vSoftwareInterruptISR": 0xffe0'271f
+  "_vSoftwareInterruptISR": 0xffe0'2777
 
   Maximum call chain                                8  bytes
 
     "_vSoftwareInterruptISR"                        8
 
 interrupt
-  "_vTickISR": 0xffe0'27a7
+  "_vTickISR": 0xffe0'27ff
 
   Maximum call chain                            *?* 252  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -658,7 +656,7 @@ interrupt
     "_vFullDemoTickHook"                              0
 
 interrupt
-  "___NMI_handler": 0xffe0'b06b
+  "___NMI_handler": 0xffe0'b09c
 
   Maximum call chain                            *?* 72  bytes
     (** call graph contains indirect calls (example: "___NMI_handler") **)
@@ -670,7 +668,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___excep_access_inst": 0xffe0'b01c
+  "___excep_access_inst": 0xffe0'b04d
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -682,7 +680,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___privileged_handler": 0xffe0'b005
+  "___privileged_handler": 0xffe0'b036
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -694,7 +692,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___undefined_handler": 0xffe0'b033
+  "___undefined_handler": 0xffe0'b064
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -706,7 +704,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "___undefined_interrupt_source_handler": 0xffe0'b1d0
+  "___undefined_interrupt_source_handler": 0xffe0'b201
 
   Maximum call chain                            *?* 40  bytes
     (** call graph contains indirect calls (example: "___undefined_interrupt_source_handler") **)
@@ -714,7 +712,7 @@ interrupt
     "___undefined_interrupt_source_handler"         40
 
 interrupt
-  "__float_placeholder": 0xffe0'b04a
+  "__float_placeholder": 0xffe0'b07b
 
   Maximum call chain                            *?* 68  bytes
     (** call graph contains indirect calls (example: "_R_BSP_InterruptControl") **)
@@ -726,7 +724,7 @@ interrupt
     "_R_BSP_BitClear"                                4
 
 interrupt
-  "_bus_error_isr": 0xffe0'b201
+  "_bus_error_isr": 0xffe0'b232
 
   Maximum call chain                            *?* 40  bytes
     (** call graph contains indirect calls (example: "_bus_error_isr") **)
@@ -734,16 +732,7 @@ interrupt
     "_bus_error_isr"                                40
 
 interrupt
-  "___interrupt_26": 0xffe0'b862
-
-  Maximum call chain                            *?* 56  bytes
-    (** call graph contains indirect calls (example: "___interrupt_26") **)
-
-    "___interrupt_26"                               52
-    "_R_BSP_InterruptsEnable"                        4
-
-interrupt
-  "___interrupt_100": 0xffe0'aa5b
+  "___interrupt_100": 0xffe0'aa9b
 
   Maximum call chain                            *?* 60  bytes
     (** call graph contains indirect calls (example: "_rxi_handler") **)
@@ -753,7 +742,7 @@ interrupt
     "_R_BYTEQ_Put"                                   4
 
 interrupt
-  "___interrupt_101": 0xffe0'aa07
+  "___interrupt_101": 0xffe0'aa47
 
   Maximum call chain                               52  bytes
 
@@ -762,7 +751,7 @@ interrupt
     "_R_BYTEQ_Get"                                  4
 
 interrupt
-  "___interrupt_60": 0xffe0'aa35
+  "___interrupt_60": 0xffe0'aa75
 
   Maximum call chain                            *?* 60  bytes
     (** call graph contains indirect calls (example: "_rxi_handler") **)
@@ -772,7 +761,7 @@ interrupt
     "_R_BYTEQ_Put"                                   4
 
 interrupt
-  "___interrupt_61": 0xffe0'a9e1
+  "___interrupt_61": 0xffe0'aa21
 
   Maximum call chain                               52  bytes
 
@@ -781,7 +770,7 @@ interrupt
     "_R_BYTEQ_Get"                                  4
 
 interrupt
-  "___interrupt_84": 0xffe0'aa48
+  "___interrupt_84": 0xffe0'aa88
 
   Maximum call chain                            *?* 60  bytes
     (** call graph contains indirect calls (example: "_rxi_handler") **)
@@ -791,7 +780,7 @@ interrupt
     "_R_BYTEQ_Put"                                   4
 
 interrupt
-  "___interrupt_85": 0xffe0'a9f4
+  "___interrupt_85": 0xffe0'aa34
 
   Maximum call chain                               52  bytes
 
@@ -800,7 +789,7 @@ interrupt
     "_R_BYTEQ_Get"                                  4
 
 interrupt
-  "_default_handler": 0xffe0'ce34
+  "_default_handler": 0xffe0'cc2c
 
   Maximum call chain                               56  bytes
 
@@ -810,7 +799,7 @@ interrupt
     "___DebugBreak"                                 4
 
 Uncalled function
-  "_vBlockingQueueConsumer" in BlockQ.o [7]: 0xffe0'5038
+  "_vBlockingQueueConsumer" in BlockQ.o [7]: 0xffe0'5088
 
   Maximum call chain                            *?* 292  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -823,7 +812,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vBlockingQueueProducer" in BlockQ.o [7]: 0xffe0'4ff8
+  "_vBlockingQueueProducer" in BlockQ.o [7]: 0xffe0'5048
 
   Maximum call chain                            *?* 244  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -832,7 +821,7 @@ Uncalled function
     "_xQueueGenericSend"                              0
 
 Uncalled function
-  "_vPrimaryBlockTimeTestTask" in blocktim.o [7]: 0xffe0'5158
+  "_vPrimaryBlockTimeTestTask" in blocktim.o [7]: 0xffe0'51a0
 
   Maximum call chain                            *?* 304  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -846,7 +835,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vSecondaryBlockTimeTestTask" in blocktim.o [7]: 0xffe0'5488
+  "_vSecondaryBlockTimeTestTask" in blocktim.o [7]: 0xffe0'54d0
 
   Maximum call chain                            *?* 292  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -860,7 +849,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvCountingSemaphoreTask" in countsem.o [7]: 0xffe0'5618
+  "_prvCountingSemaphoreTask" in countsem.o [7]: 0xffe0'5660
 
   Maximum call chain                            *?* 320  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -876,7 +865,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vCreateTasks" in death.o [7]: 0xffe0'92b0
+  "_vCreateTasks" in death.o [7]: 0xffe0'92f8
 
   Maximum call chain                            *?* 320  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -890,7 +879,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vSuicidalTask" in death.o [7]: 0xffe0'9275
+  "_vSuicidalTask" in death.o [7]: 0xffe0'92bd
 
   Maximum call chain                            *?* 276  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -904,7 +893,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vContinuousIncrementTask" in dynamic.o [7]: 0xffe0'4cf8
+  "_vContinuousIncrementTask" in dynamic.o [7]: 0xffe0'4d48
 
   Maximum call chain                               56  bytes
 
@@ -916,7 +905,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_vCounterControlTask" in dynamic.o [7]: 0xffe0'4d40
+  "_vCounterControlTask" in dynamic.o [7]: 0xffe0'4d90
 
   Maximum call chain                            *?* 272  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -929,7 +918,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vLimitedIncrementTask" in dynamic.o [7]: 0xffe0'4cda
+  "_vLimitedIncrementTask" in dynamic.o [7]: 0xffe0'4d2a
 
   Maximum call chain                               68  bytes
 
@@ -942,7 +931,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_vQueueReceiveWhenSuspendedTask" in dynamic.o [7]: 0xffe0'4e30
+  "_vQueueReceiveWhenSuspendedTask" in dynamic.o [7]: 0xffe0'4e80
 
   Maximum call chain                            *?* 292  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -956,7 +945,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vQueueSendWhenSuspendedTask" in dynamic.o [7]: 0xffe0'4df0
+  "_vQueueSendWhenSuspendedTask" in dynamic.o [7]: 0xffe0'4e40
 
   Maximum call chain                            *?* 260  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -970,7 +959,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vEventGroupClearBitsCallback": 0xffe0'96f3
+  "_vEventGroupClearBitsCallback": 0xffe0'973b
 
   Maximum call chain                               32  bytes
 
@@ -980,7 +969,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_vEventGroupSetBitsCallback": 0xffe0'96f0
+  "_vEventGroupSetBitsCallback": 0xffe0'9738
 
   Maximum call chain                            *?* 252  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -993,7 +982,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvSyncTask" in EventGroupsDemo.o [7]: 0xffe0'7149
+  "_prvSyncTask" in EventGroupsDemo.o [7]: 0xffe0'7191
 
   Maximum call chain                            *?* 292  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1007,7 +996,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvTestMasterTask" in EventGroupsDemo.o [7]: 0xffe0'6dc0
+  "_prvTestMasterTask" in EventGroupsDemo.o [7]: 0xffe0'6e08
 
   Maximum call chain                            *?* 296  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1022,7 +1011,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvTestSlaveTask" in EventGroupsDemo.o [7]: 0xffe0'71e8
+  "_prvTestSlaveTask" in EventGroupsDemo.o [7]: 0xffe0'7230
 
   Maximum call chain                            *?* 288  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1037,7 +1026,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vCompetingMathTask1" in flop.o [7]: 0xffe0'5ff0
+  "_vCompetingMathTask1" in flop.o [7]: 0xffe0'6038
 
   Maximum call chain                               32  bytes
 
@@ -1045,7 +1034,7 @@ Uncalled function
     "___iar_fabs32"                                 4
 
 Uncalled function
-  "_vCompetingMathTask2" in flop.o [7]: 0xffe0'6070
+  "_vCompetingMathTask2" in flop.o [7]: 0xffe0'60b8
 
   Maximum call chain                               32  bytes
 
@@ -1053,7 +1042,7 @@ Uncalled function
     "___iar_fabs32"                                 4
 
 Uncalled function
-  "_vCompetingMathTask3" in flop.o [7]: 0xffe0'60e9
+  "_vCompetingMathTask3" in flop.o [7]: 0xffe0'6131
 
   Maximum call chain                            *?* 280  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1066,7 +1055,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vCompetingMathTask4" in flop.o [7]: 0xffe0'6174
+  "_vCompetingMathTask4" in flop.o [7]: 0xffe0'61bc
 
   Maximum call chain                            *?* 280  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1079,14 +1068,14 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvHelpCommand" in FreeRTOS_CLI.o [6]: 0xffe0'992a
+  "_prvHelpCommand" in FreeRTOS_CLI.o [6]: 0xffe0'9972
 
   Maximum call chain                                4  bytes
 
     "_prvHelpCommand" in FreeRTOS_CLI.o [6]         4
 
 Uncalled function
-  "_prvHighPriorityMutexTask" in GenQTest.o [7]: 0xffe0'5b32
+  "_prvHighPriorityMutexTask" in GenQTest.o [7]: 0xffe0'5b7a
 
   Maximum call chain                            *?* 288  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1100,7 +1089,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvLowPriorityMutexTask" in GenQTest.o [7]: 0xffe0'598c
+  "_prvLowPriorityMutexTask" in GenQTest.o [7]: 0xffe0'59d4
 
   Maximum call chain                            *?* 304  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1115,7 +1104,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvMediumPriorityMutexTask" in GenQTest.o [7]: 0xffe0'5b1d
+  "_prvMediumPriorityMutexTask" in GenQTest.o [7]: 0xffe0'5b65
 
   Maximum call chain                               68  bytes
 
@@ -1129,7 +1118,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvSendFrontAndBackTest" in GenQTest.o [7]: 0xffe0'5768
+  "_prvSendFrontAndBackTest" in GenQTest.o [7]: 0xffe0'57b0
 
   Maximum call chain                            *?* 296  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1143,7 +1132,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prv1stHigherPriorityNormallyFullTask" in IntQueue.o [7]: 0xffe0'44e8
+  "_prv1stHigherPriorityNormallyFullTask" in IntQueue.o [7]: 0xffe0'4538
 
   Maximum call chain                            *?* 268  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1157,7 +1146,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prv2ndHigherPriorityNormallyFullTask" in IntQueue.o [7]: 0xffe0'468d
+  "_prv2ndHigherPriorityNormallyFullTask" in IntQueue.o [7]: 0xffe0'46dd
 
   Maximum call chain                            *?* 244  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1167,7 +1156,7 @@ Uncalled function
     "_xQueueGenericSend"                              0
 
 Uncalled function
-  "_prvHigherPriorityNormallyEmptyTask" in IntQueue.o [7]: 0xffe0'42f0
+  "_prvHigherPriorityNormallyEmptyTask" in IntQueue.o [7]: 0xffe0'4340
 
   Maximum call chain                            *?* 300  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1181,7 +1170,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvLowerPriorityNormallyEmptyTask" in IntQueue.o [7]: 0xffe0'4452
+  "_prvLowerPriorityNormallyEmptyTask" in IntQueue.o [7]: 0xffe0'44a2
 
   Maximum call chain                            *?* 292  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1195,7 +1184,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvLowerPriorityNormallyFullTask" in IntQueue.o [7]: 0xffe0'4780
+  "_prvLowerPriorityNormallyFullTask" in IntQueue.o [7]: 0xffe0'47d0
 
   Maximum call chain                            *?* 292  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1209,7 +1198,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vInterruptCountingSemaphoreTask" in IntSemTest.o [7]: 0xffe0'8e62
+  "_vInterruptCountingSemaphoreTask" in IntSemTest.o [7]: 0xffe0'8eaa
 
   Maximum call chain                            *?* 288  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1223,7 +1212,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vInterruptMutexMasterTask" in IntSemTest.o [7]: 0xffe0'8c80
+  "_vInterruptMutexMasterTask" in IntSemTest.o [7]: 0xffe0'8cc8
 
   Maximum call chain                            *?* 288  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1237,7 +1226,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vInterruptMutexSlaveTask" in IntSemTest.o [7]: 0xffe0'8e30
+  "_vInterruptMutexSlaveTask" in IntSemTest.o [7]: 0xffe0'8e78
 
   Maximum call chain                            *?* 284  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1251,7 +1240,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvCheckTask" in main_full.o [5]: 0xffe0'2ef8
+  "_prvCheckTask" in main_full.o [5]: 0xffe0'2f48
 
   Maximum call chain                            *?* 296  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1264,7 +1253,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvPseudoRandomiser" in main_full.o [5]: 0xffe0'302a
+  "_prvPseudoRandomiser" in main_full.o [5]: 0xffe0'307a
 
   Maximum call chain                            *?* 264  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1277,7 +1266,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvRegTestTaskEntry1" in main_full.o [5]: 0xffe0'318c
+  "_prvRegTestTaskEntry1" in main_full.o [5]: 0xffe0'31dc
 
   Maximum call chain                            *?* 264  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1291,7 +1280,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvRegTestTaskEntry2" in main_full.o [5]: 0xffe0'32b2
+  "_prvRegTestTaskEntry2" in main_full.o [5]: 0xffe0'3302
 
   Maximum call chain                            *?* 264  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1305,7 +1294,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvQueueOverwriteTask" in QueueOverwrite.o [7]: 0xffe0'6bf0
+  "_prvQueueOverwriteTask" in QueueOverwrite.o [7]: 0xffe0'6c38
 
   Maximum call chain                            *?* 296  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1320,22 +1309,14 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_bsp_swint_dummy_task" in r_bsp_software_interrupt.o [11]: 0xffe0'b860
-
-  Maximum call chain                                4  bytes
-
-    "_bsp_swint_dummy_task" in r_bsp_software_interrupt.o [11]
-                                                    4
-
-Uncalled function
-  "_r_undefined_exception": 0xffe0'cb05
+  "_r_undefined_exception": 0xffe0'c927
 
   Maximum call chain                                4  bytes
 
     "_r_undefined_exception"                        4
 
 Uncalled function
-  "_sci1_eri1_isr": 0xffe0'aa6e
+  "_sci1_eri1_isr": 0xffe0'aaae
 
   Maximum call chain                            *?* 16  bytes
     (** call graph contains indirect calls (example: "_eri_handler") **)
@@ -1344,7 +1325,7 @@ Uncalled function
     "_eri_handler"                                  12
 
 Uncalled function
-  "_sci1_tei1_isr": 0xffe0'aa1a
+  "_sci1_tei1_isr": 0xffe0'aa5a
 
   Maximum call chain                            *?* 16  bytes
     (** call graph contains indirect calls (example: "_tei_handler") **)
@@ -1353,7 +1334,7 @@ Uncalled function
     "_tei_handler"                                  12
 
 Uncalled function
-  "_sci5_eri5_isr": 0xffe0'aa77
+  "_sci5_eri5_isr": 0xffe0'aab7
 
   Maximum call chain                            *?* 16  bytes
     (** call graph contains indirect calls (example: "_eri_handler") **)
@@ -1362,7 +1343,7 @@ Uncalled function
     "_eri_handler"                                  12
 
 Uncalled function
-  "_sci5_tei5_isr": 0xffe0'aa23
+  "_sci5_tei5_isr": 0xffe0'aa63
 
   Maximum call chain                            *?* 16  bytes
     (** call graph contains indirect calls (example: "_tei_handler") **)
@@ -1371,7 +1352,7 @@ Uncalled function
     "_tei_handler"                                  12
 
 Uncalled function
-  "_sci8_eri8_isr": 0xffe0'aa80
+  "_sci8_eri8_isr": 0xffe0'aac0
 
   Maximum call chain                            *?* 16  bytes
     (** call graph contains indirect calls (example: "_eri_handler") **)
@@ -1380,7 +1361,7 @@ Uncalled function
     "_eri_handler"                                  12
 
 Uncalled function
-  "_sci8_tei8_isr": 0xffe0'aa2c
+  "_sci8_tei8_isr": 0xffe0'aa6c
 
   Maximum call chain                            *?* 16  bytes
     (** call graph contains indirect calls (example: "_tei_handler") **)
@@ -1389,7 +1370,7 @@ Uncalled function
     "_tei_handler"                                  12
 
 Uncalled function
-  "_prvRecursiveMutexBlockingTask" in recmutex.o [7]: 0xffe0'5c78
+  "_prvRecursiveMutexBlockingTask" in recmutex.o [7]: 0xffe0'5cc0
 
   Maximum call chain                            *?* 300  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1404,7 +1385,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvRecursiveMutexControllingTask" in recmutex.o [7]: 0xffe0'5c08
+  "_prvRecursiveMutexControllingTask" in recmutex.o [7]: 0xffe0'5c50
 
   Maximum call chain                            *?* 304  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1419,7 +1400,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvRecursiveMutexPollingTask" in recmutex.o [7]: 0xffe0'5cd0
+  "_prvRecursiveMutexPollingTask" in recmutex.o [7]: 0xffe0'5d18
 
   Maximum call chain                            *?* 300  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1434,7 +1415,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvParameterEchoCommand" in Sample-CLI-commands.o [5]: 0xffe0'91d5
+  "_prvParameterEchoCommand" in Sample-CLI-commands.o [5]: 0xffe0'921d
 
   Maximum call chain                              116  bytes
 
@@ -1446,7 +1427,7 @@ Uncalled function
     "__SProut"                                      4
 
 Uncalled function
-  "_prvQueryHeapCommand" in Sample-CLI-commands.o [5]: 0xffe0'912a
+  "_prvQueryHeapCommand" in Sample-CLI-commands.o [5]: 0xffe0'9172
 
   Maximum call chain                              108  bytes
 
@@ -1458,7 +1439,7 @@ Uncalled function
     "__SProut"                                      4
 
 Uncalled function
-  "_prvTaskStatsCommand" in Sample-CLI-commands.o [5]: 0xffe0'90db
+  "_prvTaskStatsCommand" in Sample-CLI-commands.o [5]: 0xffe0'9123
 
   Maximum call chain                            *?* 336  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1473,7 +1454,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvThreeParameterEchoCommand" in Sample-CLI-commands.o [5]: 0xffe0'9154
+  "_prvThreeParameterEchoCommand" in Sample-CLI-commands.o [5]: 0xffe0'919c
 
   Maximum call chain                              116  bytes
 
@@ -1485,7 +1466,7 @@ Uncalled function
     "__SProut"                                      4
 
 Uncalled function
-  "_prvSemaphoreTest" in semtest.o [7]: 0xffe0'5e8a
+  "_prvSemaphoreTest" in semtest.o [7]: 0xffe0'5ed2
 
   Maximum call chain                            *?* 300  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1498,11 +1479,11 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_vSerialSciCallback": 0xffe0'994e
+  "_vSerialSciCallback": 0xffe0'9996
 
-  Maximum call chain                              124  bytes
+  Maximum call chain                              120  bytes
 
-    "_vSerialSciCallback"                          16
+    "_vSerialSciCallback"                          12
     "_xQueueGenericSendFromISR"                    32
     "_prvNotifyQueueSetContainer" in queue.o [1]
                                                    40
@@ -1512,7 +1493,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvNotifiedTask" in TaskNotify.o [7]: 0xffe0'7438
+  "_prvNotifiedTask" in TaskNotify.o [7]: 0xffe0'7480
 
   Maximum call chain                            *?* 344  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1529,7 +1510,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvNotifyingTimer" in TaskNotify.o [7]: 0xffe0'740f
+  "_prvNotifyingTimer" in TaskNotify.o [7]: 0xffe0'7457
 
   Maximum call chain                               60  bytes
 
@@ -1540,14 +1521,14 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvRand" in TaskNotify.o [7]: 0xffe0'7b48
+  "_prvRand" in TaskNotify.o [7]: 0xffe0'7b90
 
   Maximum call chain                                4  bytes
 
     "_prvRand" in TaskNotify.o [7]                  4
 
 Uncalled function
-  "_prvSuspendedTaskTimerTestCallback" in TaskNotify.o [7]: 0xffe0'73bf
+  "_prvSuspendedTaskTimerTestCallback" in TaskNotify.o [7]: 0xffe0'7407
 
   Maximum call chain                               72  bytes
 
@@ -1561,7 +1542,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvNotifiedTask" in TaskNotifyArray.o [7]: 0xffe0'7bd8
+  "_prvNotifiedTask" in TaskNotifyArray.o [7]: 0xffe0'7c20
 
   Maximum call chain                            *?* 304  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1571,7 +1552,7 @@ Uncalled function
     "_xQueueGenericSend"                              0
 
 Uncalled function
-  "_prvNotifyingTimerCallback" in TaskNotifyArray.o [7]: 0xffe0'8afb
+  "_prvNotifyingTimerCallback" in TaskNotifyArray.o [7]: 0xffe0'8b43
 
   Maximum call chain                               60  bytes
 
@@ -1583,14 +1564,14 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvRand" in TaskNotifyArray.o [7]: 0xffe0'8bd8
+  "_prvRand" in TaskNotifyArray.o [7]: 0xffe0'8c20
 
   Maximum call chain                                4  bytes
 
     "_prvRand" in TaskNotifyArray.o [7]             4
 
 Uncalled function
-  "_prvSuspendedTaskTimerTestCallback" in TaskNotifyArray.o [7]: 0xffe0'8aa0
+  "_prvSuspendedTaskTimerTestCallback" in TaskNotifyArray.o [7]: 0xffe0'8ae8
 
   Maximum call chain                               72  bytes
 
@@ -1604,7 +1585,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvIdleTask" in tasks.o [1]: 0xffe0'1b78
+  "_prvIdleTask" in tasks.o [1]: 0xffe0'1bd8
 
   Maximum call chain                            *?* 264  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1617,7 +1598,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvAutoReloadTimerCallback" in TimerDemo.o [7]: 0xffe0'6b44
+  "_prvAutoReloadTimerCallback" in TimerDemo.o [7]: 0xffe0'6b8c
 
   Maximum call chain                               32  bytes
 
@@ -1629,7 +1610,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvISRAutoReloadTimerCallback" in TimerDemo.o [7]: 0xffe0'6b9f
+  "_prvISRAutoReloadTimerCallback" in TimerDemo.o [7]: 0xffe0'6be7
 
   Maximum call chain                                4  bytes
 
@@ -1637,7 +1618,7 @@ Uncalled function
                                                     4
 
 Uncalled function
-  "_prvISROneShotTimerCallback" in TimerDemo.o [7]: 0xffe0'6bab
+  "_prvISROneShotTimerCallback" in TimerDemo.o [7]: 0xffe0'6bf3
 
   Maximum call chain                                4  bytes
 
@@ -1645,7 +1626,7 @@ Uncalled function
                                                     4
 
 Uncalled function
-  "_prvOneShotTimerCallback" in TimerDemo.o [7]: 0xffe0'6b6c
+  "_prvOneShotTimerCallback" in TimerDemo.o [7]: 0xffe0'6bb4
 
   Maximum call chain                               48  bytes
 
@@ -1657,7 +1638,7 @@ Uncalled function
     "_charput"                                      4
 
 Uncalled function
-  "_prvTimerTestTask" in TimerDemo.o [7]: 0xffe0'6388
+  "_prvTimerTestTask" in TimerDemo.o [7]: 0xffe0'63d0
 
   Maximum call chain                            *?* 348  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll") **)
@@ -1674,7 +1655,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "_prvTimerTask" in timers.o [1]: 0xffe0'2b50
+  "_prvTimerTask" in timers.o [1]: 0xffe0'2ba0
 
   Maximum call chain                            *?* 332  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll")
@@ -1685,7 +1666,7 @@ Uncalled function
     "_xQueueGenericSend"                              0
 
 Uncalled function
-  "_prvUARTCommandConsoleTask" in UARTCommandConsole.o [5]: 0xffe0'8fa8
+  "_prvUARTCommandConsoleTask" in UARTCommandConsole.o [5]: 0xffe0'8ff0
 
   Maximum call chain                            *?* 324  bytes
     (** call graph contains recursive functions (example: "_xTaskResumeAll")
@@ -1702,7 +1683,7 @@ Uncalled function
     "_vFullDemoTickHook"                              0
 
 Uncalled function
-  "__iar_div64u": 0xffe0'c85f
+  "__iar_div64u": 0xffe0'c4ab
 
   Maximum call chain                               20  bytes
 
@@ -1710,31 +1691,26 @@ Uncalled function
 
 The following functions make up recursion nest 0, which has no maximum recursion depth specified:
 
-  "_vApplicationTickHook": 0xffe0'2877
-  "_vFullDemoTickHook": 0xffe0'306f
-  "_vTimerPeriodicISRTests": 0xffe0'68ea
-  "_xQueueGenericSend": 0xffe0'3970
-  "_xTaskIncrementTick": 0xffe0'17f0
-  "_xTaskResumeAll": 0xffe0'1380
-  "_xTimerGenericCommand": 0xffe0'29f7
-
-The following functions make up recursion nest 1, which has no maximum recursion depth specified:
-
-  "_R_BSP_SoftwareInterruptControl": 0xffe0'b53f
+  "_vApplicationTickHook": 0xffe0'28cf
+  "_vFullDemoTickHook": 0xffe0'30bf
+  "_vTimerPeriodicISRTests": 0xffe0'6932
+  "_xQueueGenericSend": 0xffe0'39c0
+  "_xTaskIncrementTick": 0xffe0'1850
+  "_xTaskResumeAll": 0xffe0'13e0
+  "_xTimerGenericCommand": 0xffe0'2a47
 
 The following functions perform unknown indirect calls:
 
-  "_FreeRTOS_CLIProcessCommand": 0xffe0'977c
-  "_R_BSP_InterruptControl": 0xffe0'ac66
-  "___NMI_handler": 0xffe0'b06b
-  "___interrupt_26": 0xffe0'b862
-  "___undefined_interrupt_source_handler": 0xffe0'b1d0
-  "_bus_error_isr": 0xffe0'b201
-  "_eri_handler": 0xffe0'a330
-  "_prvSampleTimeNow" in timers.o [1]: 0xffe0'2aa8
-  "_prvTimerTask" in timers.o [1]: 0xffe0'2b50
-  "_rxi_handler": 0xffe0'a2e8
-  "_tei_handler": 0xffe0'a2b9
+  "_FreeRTOS_CLIProcessCommand": 0xffe0'97c4
+  "_R_BSP_InterruptControl": 0xffe0'ac97
+  "___NMI_handler": 0xffe0'b09c
+  "___undefined_interrupt_source_handler": 0xffe0'b201
+  "_bus_error_isr": 0xffe0'b232
+  "_eri_handler": 0xffe0'a370
+  "_prvSampleTimeNow" in timers.o [1]: 0xffe0'2af8
+  "_prvTimerTask" in timers.o [1]: 0xffe0'2ba0
+  "_rxi_handler": 0xffe0'a328
+  "_tei_handler": 0xffe0'a2f9
 
 
 *******************************************************************************
@@ -1775,9 +1751,9 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio
     Sample-CLI-commands.o           410      671        8
     UARTCommandConsole.o            327      144      104
     main_full.o                   1'183      645        8
-    serial.o                        385                 8
+    serial.o                        379                 8
     -----------------------------------------------------
-    Total:                        2'570    1'460      128
+    Total:                        2'564    1'460      128
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI: [6]
     FreeRTOS_CLI.o                  526      242    3'520
@@ -1810,11 +1786,11 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio
     Total:                          340       66
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\general: [9]
-    r_cg_hardware_setup.o           167                20
+    r_cg_hardware_setup.o           177                20
     r_smc_cgc.o                       4
     r_smc_cgc_user.o                  1
     -----------------------------------------------------
-    Total:                          172                20
+    Total:                          182                20
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_bsp\board\generic_rx65n: [10]
     hwsetup.o                       123
@@ -1824,14 +1800,13 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_bsp\mcu\all: [11]
     mcu_locks.o                                       464
     r_bsp_common.o                  212
-    r_bsp_cpu.o                     359       22        8
-    r_bsp_interrupts.o            1'609       14      380
+    r_bsp_cpu.o                     350       22        8
+    r_bsp_interrupts.o            1'603       14      380
     r_bsp_locking.o                  50
-    r_bsp_software_interrupt.o      997       26      116
     r_rx_intrinsic_functions.o        8
     resetprg.o                       67
     -----------------------------------------------------
-    Total:                        3'302       62      968
+    Total:                        2'290       36      852
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_bsp\mcu\rx65n: [12]
     mcu_clocks.o                    615       12
@@ -1847,13 +1822,14 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio
     Total:                          317               385
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_gpio_rx\src: [14]
-    r_gpio_rx.o                      68
+    r_gpio_rx.o                     460       22
     -----------------------------------------------------
-    Total:                           68
+    Total:                          460       22
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_gpio_rx\src\targets\rx65n: [15]
+    r_gpio_rx65n.o                            95
     -----------------------------------------------------
-    Total:
+    Total:                                    95
 
 C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX600_RX65N_TB_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_pincfg: [16]
     r_sci_rx_pinset.o                30
@@ -1924,10 +1900,10 @@ rtrx2fll.a: [25]
     -----------------------------------------------------
     Total:                          563      244
 
-    Gaps                             92        8
+    Gaps                             96        8
     Linker created                            44    1'024
 ---------------------------------------------------------
-    Grand Total:                 48'858    4'274   49'018
+    Grand Total:                 48'246    4'365   48'902
 
 
 *******************************************************************************
@@ -1938,82 +1914,77 @@ Entry                       Address    Size  Type      Object
 -----                       -------    ----  ----      ------
 .exceptvect$$Base       0xffff'ff80           --   Gb  - Linker created -
 .exceptvect$$Limit      0xffff'fffc           --   Gb  - Linker created -
-.iar.init_table$$Base   0xffe0'cda8           --   Gb  - Linker created -
-.iar.init_table$$Limit  0xffe0'cdd4           --   Gb  - Linker created -
-.inttable$$Base         0xffe0'c124           --   Gb  - Linker created -
-.inttable$$Limit        0xffe0'c524           --   Gb  - Linker created -
+.iar.init_table$$Base   0xffe0'cb88           --   Gb  - Linker created -
+.iar.init_table$$Limit  0xffe0'cbb4           --   Gb  - Linker created -
+.inttable$$Base         0xffe0'bd70           --   Gb  - Linker created -
+.inttable$$Limit        0xffe0'c170           --   Gb  - Linker created -
 FreeRTOS_CLIProcessCommand::pxCommand
                               0x16c     0x4  Data  Lc  FreeRTOS_CLI.o [6]
 FreeRTOS_CLIRegisterCommand::pxLastCommandInList
                               0x194     0x4  Data  Lc  FreeRTOS_CLI.o [6]
 ISTACK$$Base               0x3'fc00           --   Gb  - Linker created -
 ISTACK$$Limit              0x4'0000           --   Gb  - Linker created -
-R_BYTEQ_Open::qcb_init       0xbb7c     0x1  Data  Lc  r_byteq.o [13]
-Region$$Table$$Base     0xffe0'cda8           --   Gb  - Linker created -
-Region$$Table$$Limit    0xffe0'cdd4           --   Gb  - Linker created -
+R_BYTEQ_Open::qcb_init       0xbb08     0x1  Data  Lc  r_byteq.o [13]
+Region$$Table$$Base     0xffe0'cb88           --   Gb  - Linker created -
+Region$$Table$$Limit    0xffe0'cbb4           --   Gb  - Linker created -
 STACKS$$Base               0x3'fc00           --   Gb  - Linker created -
 STACKS$$Limit              0x4'0000           --   Gb  - Linker created -
 USTACK$$Base               0x3'fc00           --   Gb  - Linker created -
 USTACK$$Limit              0x3'fc00           --   Gb  - Linker created -
 _FreeRTOS_CLIGetOutputBuffer
-                        0xffe0'983e     0x6  Code  Gb  FreeRTOS_CLI.o [6]
+                        0xffe0'9886     0x6  Code  Gb  FreeRTOS_CLI.o [6]
 _FreeRTOS_CLIGetParameter
-                        0xffe0'9848    0xe2  Code  Gb  FreeRTOS_CLI.o [6]
+                        0xffe0'9890    0xe2  Code  Gb  FreeRTOS_CLI.o [6]
 _FreeRTOS_CLIProcessCommand
-                        0xffe0'977c    0xc2  Code  Gb  FreeRTOS_CLI.o [6]
+                        0xffe0'97c4    0xc2  Code  Gb  FreeRTOS_CLI.o [6]
 _FreeRTOS_CLIRegisterCommand
-                        0xffe0'9740    0x3c  Code  Gb  FreeRTOS_CLI.o [6]
+                        0xffe0'9788    0x3c  Code  Gb  FreeRTOS_CLI.o [6]
 _Processing_Before_Start_Kernel
-                        0xffe0'28c9    0x1f  Code  Gb  freertos_start.o [8]
-_R_BSP_BitClear         0xffe0'b37a     0x4  Code  Gb  r_rx_intrinsic_functions.o [11]
-_R_BSP_BitSet           0xffe0'b376     0x4  Code  Gb  r_rx_intrinsic_functions.o [11]
+                        0xffe0'2921    0x1f  Code  Gb  freertos_start.o [8]
+_R_BSP_BitClear         0xffe0'b3ab     0x4  Code  Gb  r_rx_intrinsic_functions.o [11]
+_R_BSP_BitSet           0xffe0'b3a7     0x4  Code  Gb  r_rx_intrinsic_functions.o [11]
 _R_BSP_CpuInterruptLevelRead
-                        0xffe0'aa92     0x8  Code  Gb  r_bsp_cpu.o [11]
+                        0xffe0'aac9     0x8  Code  Gb  r_bsp_cpu.o [11]
 _R_BSP_CpuInterruptLevelWrite
-                        0xffe0'aa9a    0x6e  Code  Gb  r_bsp_cpu.o [11]
-_R_BSP_HardwareLock     0xffe0'a4ab    0x25  Code  Gb  r_bsp_locking.o [11]
-_R_BSP_HardwareUnlock   0xffe0'a4d0     0xd  Code  Gb  r_bsp_locking.o [11]
+                        0xffe0'aad1    0x6e  Code  Gb  r_bsp_cpu.o [11]
+_R_BSP_HardwareLock     0xffe0'a4eb    0x25  Code  Gb  r_bsp_locking.o [11]
+_R_BSP_HardwareUnlock   0xffe0'a510     0xd  Code  Gb  r_bsp_locking.o [11]
 _R_BSP_InterruptControl
-                        0xffe0'ac66   0x39f  Code  Gb  r_bsp_interrupts.o [11]
+                        0xffe0'ac97   0x39f  Code  Gb  r_bsp_interrupts.o [11]
 _R_BSP_InterruptRequestDisable
-                        0xffe0'ac01    0x11  Code  Gb  r_bsp_interrupts.o [11]
+                        0xffe0'ac38    0x11  Code  Gb  r_bsp_interrupts.o [11]
 _R_BSP_InterruptRequestEnable
-                        0xffe0'abf0    0x11  Code  Gb  r_bsp_interrupts.o [11]
-_R_BSP_InterruptWrite   0xffe0'ac41    0x25  Code  Gb  r_bsp_interrupts.o [11]
-_R_BSP_InterruptsEnable
-                        0xffe0'aa89     0x9  Code  Gb  r_bsp_cpu.o [11]
+                        0xffe0'ac27    0x11  Code  Gb  r_bsp_interrupts.o [11]
+_R_BSP_InterruptWrite   0xffe0'ac72    0x25  Code  Gb  r_bsp_interrupts.o [11]
 _R_BSP_RegisterProtectDisable
-                        0xffe0'ab73    0x5e  Code  Gb  r_bsp_cpu.o [11]
+                        0xffe0'abaa    0x5e  Code  Gb  r_bsp_cpu.o [11]
 _R_BSP_RegisterProtectEnable
-                        0xffe0'ab08    0x6b  Code  Gb  r_bsp_cpu.o [11]
-_R_BSP_SoftwareDelay    0xffe0'c794    0xcb  Code  Gb  r_bsp_common.o [11]
-_R_BSP_SoftwareInterruptControl
-                        0xffe0'b53f   0x26b  Code  Gb  r_bsp_software_interrupt.o [11]
-_R_BSP_SoftwareInterruptOpen
-                        0xffe0'b7aa    0xb6  Code  Gb  r_bsp_software_interrupt.o [11]
-_R_BYTEQ_Flush          0xffe0'b33d     0xf  Code  Gb  r_byteq.o [13]
-_R_BYTEQ_Get            0xffe0'b304    0x39  Code  Gb  r_byteq.o [13]
-_R_BYTEQ_Open           0xffe0'b239    0x9a  Code  Gb  r_byteq.o [13]
-_R_BYTEQ_Put            0xffe0'b2d3    0x31  Code  Gb  r_byteq.o [13]
-_R_BYTEQ_Unused         0xffe0'b35f    0x17  Code  Gb  r_byteq.o [13]
-_R_BYTEQ_Used           0xffe0'b34c    0x13  Code  Gb  r_byteq.o [13]
-_R_CGC_Create           0xffe0'cb68     0x4  Code  Gb  r_smc_cgc.o [9]
-_R_CGC_Create_UserInit  0xffe0'cb6c     0x1  Code  Gb  r_smc_cgc_user.o [9]
-_R_CG_Config_Create     0xffe0'cab8    0x47  Code  Gb  r_cg_hardware_setup.o [9]
-_R_DTC_Control          0xffe0'9cc0   0x240  Code  Gb  r_dtc_rx.o [21]
-_R_DTC_Create           0xffe0'9bf0    0xcd  Code  Gb  r_dtc_rx.o [21]
-_R_DTC_Open             0xffe0'9b87    0x69  Code  Gb  r_dtc_rx.o [21]
+                        0xffe0'ab3f    0x6b  Code  Gb  r_bsp_cpu.o [11]
+_R_BSP_SoftwareDelay    0xffe0'c3e0    0xcb  Code  Gb  r_bsp_common.o [11]
+_R_BYTEQ_Flush          0xffe0'b36e     0xf  Code  Gb  r_byteq.o [13]
+_R_BYTEQ_Get            0xffe0'b335    0x39  Code  Gb  r_byteq.o [13]
+_R_BYTEQ_Open           0xffe0'b26a    0x9a  Code  Gb  r_byteq.o [13]
+_R_BYTEQ_Put            0xffe0'b304    0x31  Code  Gb  r_byteq.o [13]
+_R_BYTEQ_Unused         0xffe0'b390    0x17  Code  Gb  r_byteq.o [13]
+_R_BYTEQ_Used           0xffe0'b37d    0x13  Code  Gb  r_byteq.o [13]
+_R_CGC_Create           0xffe0'c946     0x4  Code  Gb  r_smc_cgc.o [9]
+_R_CGC_Create_UserInit  0xffe0'c94a     0x1  Code  Gb  r_smc_cgc_user.o [9]
+_R_CG_Config_Create     0xffe0'c8da    0x47  Code  Gb  r_cg_hardware_setup.o [9]
+_R_DTC_Control          0xffe0'9d00   0x240  Code  Gb  r_dtc_rx.o [21]
+_R_DTC_Create           0xffe0'9c30    0xcd  Code  Gb  r_dtc_rx.o [21]
+_R_DTC_Open             0xffe0'9bc7    0x69  Code  Gb  r_dtc_rx.o [21]
 _R_FIT_Board_Support_Settings
-                        0xffe0'ca5f    0x59  Code  Gb  r_cg_hardware_setup.o [9]
+                        0xffe0'c877    0x63  Code  Gb  r_cg_hardware_setup.o [9]
+_R_GPIO_PinControl      0xffe0'c71d   0x15a  Code  Gb  r_gpio_rx.o [14]
 _R_GPIO_PinDirectionSet
-                        0xffe0'cb28    0x22  Code  Gb  r_gpio_rx.o [14]
-_R_GPIO_PinWrite        0xffe0'cb06    0x22  Code  Gb  r_gpio_rx.o [14]
-_R_SCI_Control          0xffe0'a3a0   0x10b  Code  Gb  r_sci_rx.o [17]
-_R_SCI_Open             0xffe0'9fb8   0x218  Code  Gb  r_sci_rx.o [17]
-_R_SCI_PinSet_SCI1      0xffe0'cb4a    0x1e  Code  Gb  r_sci_rx_pinset.o [16]
-_R_SCI_Send             0xffe0'a1d0    0x9c  Code  Gb  r_sci_rx.o [17]
-_R_Systeminit           0xffe0'caff     0x6  Code  Gb  r_cg_hardware_setup.o [9]
-_U_SCI_Control_EXT      0xffe0'9af5    0x26  Code  Gb  u_sci_rx_ext.o [19]
+                        0xffe0'c6cd    0x22  Code  Gb  r_gpio_rx.o [14]
+_R_GPIO_PinWrite        0xffe0'c6ab    0x22  Code  Gb  r_gpio_rx.o [14]
+_R_SCI_Control          0xffe0'a3e0   0x10b  Code  Gb  r_sci_rx.o [17]
+_R_SCI_Open             0xffe0'9ff8   0x218  Code  Gb  r_sci_rx.o [17]
+_R_SCI_PinSet_SCI1      0xffe0'c928    0x1e  Code  Gb  r_sci_rx_pinset.o [16]
+_R_SCI_Send             0xffe0'a210    0x9c  Code  Gb  r_sci_rx.o [17]
+_R_Systeminit           0xffe0'c921     0x6  Code  Gb  r_cg_hardware_setup.o [9]
+_U_SCI_Control_EXT      0xffe0'9b39    0x26  Code  Gb  u_sci_rx_ext.o [19]
 __BANKSEL {Abs}         0xffff'ffff           --   Gb  vecttbl.o [12]
 __FAW {Abs}             0xffff'ffff           --   Gb  vecttbl.o [12]
 __MDE {Abs}             0xffff'ffff           --   Gb  vecttbl.o [12]
@@ -2023,267 +1994,264 @@ __OSIS_1 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
 __OSIS_2 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
 __OSIS_3 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
 __OSIS_4 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
-__PrintfTiny            0xffe0'40f0   0x136  Code  Gb  xprintftiny.o [23]
+__PrintfTiny            0xffe0'4140   0x136  Code  Gb  xprintftiny.o [23]
 __ROM_CODE {Abs}        0xffff'ffff           --   Gb  vecttbl.o [12]
 __SPCC {Abs}            0xffff'ffff           --   Gb  vecttbl.o [12]
-__SProut                0xffe0'50f4     0xa  Code  Gb  xsprout.o [23]
+__SProut                0xffe0'3314     0xa  Code  Gb  xsprout.o [23]
 __TMEF {Abs}            0xffff'ffff           --   Gb  vecttbl.o [12]
 __TMINF {Abs}           0xffff'ffff           --   Gb  vecttbl.o [12]
-___DebugBreak           0xffe0'cce8     0x1  Code  Gb  __dbg_break.o [22]
-___NMI_handler          0xffe0'b06b   0x165  Code  Gb  r_bsp_interrupts.o [11]
-___excep_access_inst    0xffe0'b01c    0x17  Code  Gb  r_bsp_interrupts.o [11]
-___exit                 0xffe0'ccec    0x12  Code  Gb  __dbg_xxexit.o [22]
-___iar_data_init2       0xffe0'cd48    0x20  Code  Gb  data_init.o [23]
-___iar_fabs32           0xffe0'9458     0x3  Code  Gb  fabs32.o [24]
-___iar_packbits_init2   0xffe0'cc64    0x74  Code  Gb  packbits_init.o [23]
-___iar_zero_init2       0xffe0'cdec    0x18  Code  Gb  zero_init2.o [23]
-___interrupt_100        0xffe0'aa5b          Code  Gb  r_sci_rx65n.o [18]
-___interrupt_101        0xffe0'aa07          Code  Gb  r_sci_rx65n.o [18]
-___interrupt_106        0xffe0'c0ca          Code  Gb  mcu_interrupts.o [12]
-___interrupt_107        0xffe0'bf0c          Code  Gb  mcu_interrupts.o [12]
-___interrupt_110        0xffe0'b996          Code  Gb  mcu_interrupts.o [12]
-___interrupt_111        0xffe0'bc92          Code  Gb  mcu_interrupts.o [12]
-___interrupt_112        0xffe0'bf30          Code  Gb  mcu_interrupts.o [12]
-___interrupt_113        0xffe0'c03e          Code  Gb  mcu_interrupts.o [12]
-___interrupt_146        0xffe0'9414          Code  Gb  IntQueueTimer.o [5]
-___interrupt_152        0xffe0'9436          Code  Gb  IntQueueTimer.o [5]
-___interrupt_16         0xffe0'b201          Code  Gb  r_bsp_interrupts.o [11]
-___interrupt_26         0xffe0'b862          Code  Gb  r_bsp_software_interrupt.o [11]
-___interrupt_27         0xffe0'271f          Code  Gb  port.o [2]
-___interrupt_28         0xffe0'27a7          Code  Gb  port.o [2]
-___interrupt_60         0xffe0'aa35          Code  Gb  r_sci_rx65n.o [18]
-___interrupt_61         0xffe0'a9e1          Code  Gb  r_sci_rx65n.o [18]
-___interrupt_84         0xffe0'aa48          Code  Gb  r_sci_rx65n.o [18]
-___interrupt_85         0xffe0'a9f4          Code  Gb  r_sci_rx65n.o [18]
-___low_level_init       0xffe0'ccfe    0x43  Code  Gb  resetprg.o [11]
-___privileged_handler   0xffe0'b005    0x17  Code  Gb  r_bsp_interrupts.o [11]
-___undefined_handler    0xffe0'b033    0x17  Code  Gb  r_bsp_interrupts.o [11]
+___DebugBreak           0xffe0'cac8     0x1  Code  Gb  __dbg_break.o [22]
+___NMI_handler          0xffe0'b09c   0x165  Code  Gb  r_bsp_interrupts.o [11]
+___excep_access_inst    0xffe0'b04d    0x17  Code  Gb  r_bsp_interrupts.o [11]
+___exit                 0xffe0'cacc    0x12  Code  Gb  __dbg_xxexit.o [22]
+___iar_data_init2       0xffe0'cb28    0x20  Code  Gb  data_init.o [23]
+___iar_fabs32           0xffe0'94a0     0x3  Code  Gb  fabs32.o [24]
+___iar_packbits_init2   0xffe0'ca44    0x74  Code  Gb  packbits_init.o [23]
+___iar_zero_init2       0xffe0'cbcc    0x18  Code  Gb  zero_init2.o [23]
+___interrupt_100        0xffe0'aa9b          Code  Gb  r_sci_rx65n.o [18]
+___interrupt_101        0xffe0'aa47          Code  Gb  r_sci_rx65n.o [18]
+___interrupt_106        0xffe0'bd16          Code  Gb  mcu_interrupts.o [12]
+___interrupt_107        0xffe0'bb58          Code  Gb  mcu_interrupts.o [12]
+___interrupt_110        0xffe0'b5e2          Code  Gb  mcu_interrupts.o [12]
+___interrupt_111        0xffe0'b8de          Code  Gb  mcu_interrupts.o [12]
+___interrupt_112        0xffe0'bb7c          Code  Gb  mcu_interrupts.o [12]
+___interrupt_113        0xffe0'bc8a          Code  Gb  mcu_interrupts.o [12]
+___interrupt_146        0xffe0'945c          Code  Gb  IntQueueTimer.o [5]
+___interrupt_152        0xffe0'947e          Code  Gb  IntQueueTimer.o [5]
+___interrupt_16         0xffe0'b232          Code  Gb  r_bsp_interrupts.o [11]
+___interrupt_27         0xffe0'2777          Code  Gb  port.o [2]
+___interrupt_28         0xffe0'27ff          Code  Gb  port.o [2]
+___interrupt_60         0xffe0'aa75          Code  Gb  r_sci_rx65n.o [18]
+___interrupt_61         0xffe0'aa21          Code  Gb  r_sci_rx65n.o [18]
+___interrupt_84         0xffe0'aa88          Code  Gb  r_sci_rx65n.o [18]
+___interrupt_85         0xffe0'aa34          Code  Gb  r_sci_rx65n.o [18]
+___low_level_init       0xffe0'cade    0x43  Code  Gb  resetprg.o [11]
+___privileged_handler   0xffe0'b036    0x17  Code  Gb  r_bsp_interrupts.o [11]
+___undefined_handler    0xffe0'b064    0x17  Code  Gb  r_bsp_interrupts.o [11]
 ___undefined_interrupt_source_handler
-                        0xffe0'b1d0    0x31  Code  Gb  r_bsp_interrupts.o [11]
+                        0xffe0'b201    0x31  Code  Gb  r_bsp_interrupts.o [11]
 __exceptvect_v2_opt2    0xffff'ff80          Data  Gb  exceptvect.o [25]
-__exit                  0xffe0'cda0          Code  Gb  cexit.o [23]
-__float_placeholder     0xffe0'b04a    0x21  Code  Gb  r_bsp_interrupts.o [11]
+__exit                  0xffe0'cb80          Code  Gb  cexit.o [23]
+__float_placeholder     0xffe0'b07b    0x21  Code  Gb  r_bsp_interrupts.o [11]
 __iar_call_low_level_init
-                        0xffe0'cd84          Code  Gb  cstartup.o [25]
-__iar_cstart_end        0xffe0'cd9b          Code  Gb  cstartup.o [25]
-__iar_div64u            0xffe0'c85f          Code  Gb  div64u.o [25]
-__iar_main_call         0xffe0'cd91          Code  Gb  cstartup.o [25]
-__iar_program_start     0xffe0'cd68          Code  Gb  cstartup.o [25]
+                        0xffe0'cb64          Code  Gb  cstartup.o [25]
+__iar_cstart_end        0xffe0'cb7b          Code  Gb  cstartup.o [25]
+__iar_div64u            0xffe0'c4ab          Code  Gb  div64u.o [25]
+__iar_main_call         0xffe0'cb71          Code  Gb  cstartup.o [25]
+__iar_program_start     0xffe0'cb48          Code  Gb  cstartup.o [25]
 __iar_reset_vector      0xffff'fffc          Data  Gb  resetvect.o [25]
 __link_file_version_4 {Abs}
                                 0x1          Data  Gb  <internal module>
 __option_mem_2          0xfe7f'5d00          Data  Gb  option_mem.o [25]
-_abort                  0xffe0'ccd8     0xf  Code  Gb  __dbg_abort.o [22]
+_abort                  0xffe0'cab8     0xf  Code  Gb  __dbg_abort.o [22]
 _async_baud             0xffe0'04ec    0x36  Data  Gb  r_sci_rx65n_data.o [18]
 _bsp_interrupt_enable_disable
-                        0xffe0'b924    0x72  Code  Gb  mcu_interrupts.o [12]
-_bsp_interrupt_open     0xffe0'ac12    0x2f  Code  Gb  r_bsp_interrupts.o [11]
+                        0xffe0'b570    0x72  Code  Gb  mcu_interrupts.o [12]
+_bsp_interrupt_open     0xffe0'ac49    0x29  Code  Gb  r_bsp_interrupts.o [11]
 _bsp_mapped_interrupt_open
-                        0xffe0'b37e   0x1c1  Code  Gb  mcu_mapped_interrupts.o [12]
+                        0xffe0'b3af   0x1c1  Code  Gb  mcu_mapped_interrupts.o [12]
 _bsp_non_existent_port_init
-                        0xffe0'cbe8    0x7b  Code  Gb  mcu_init.o [12]
-_bsp_ram_initialize     0xffe0'abe3     0xd  Code  Gb  r_bsp_cpu.o [11]
+                        0xffe0'c9c6    0x7b  Code  Gb  mcu_init.o [12]
+_bsp_ram_initialize     0xffe0'ac1a     0xd  Code  Gb  r_bsp_cpu.o [11]
 _bsp_register_protect_open
-                        0xffe0'abd1    0x12  Code  Gb  r_bsp_cpu.o [11]
-_bsp_swint2_isr         0xffe0'b862    0xc2  Code  Lc  r_bsp_software_interrupt.o [11]
-_bsp_swint_dummy_task   0xffe0'b860     0x2  Code  Lc  r_bsp_software_interrupt.o [11]
-_bus_error_isr          0xffe0'b201    0x38  Code  Gb  r_bsp_interrupts.o [11]
+                        0xffe0'ac08    0x12  Code  Gb  r_bsp_cpu.o [11]
+_bus_error_isr          0xffe0'b232    0x38  Code  Gb  r_bsp_interrupts.o [11]
 _cOutputBuffer               0xa198   0xdac  Data  Lc  FreeRTOS_CLI.o [6]
 _ch1_ctrl                     0x10c    0x20  Data  Gb  r_sci_rx65n_data.o [18]
 _ch1_rom                0xffe0'03e0    0x44  Data  Gb  r_sci_rx65n_data.o [18]
-_ch1_rx_buf                  0xb754    0x50  Data  Lc  r_sci_rx.o [17]
-_ch1_tx_buf                  0xb704    0x50  Data  Lc  r_sci_rx.o [17]
+_ch1_rx_buf                  0xb6e8    0x50  Data  Lc  r_sci_rx.o [17]
+_ch1_tx_buf                  0xb698    0x50  Data  Lc  r_sci_rx.o [17]
 _ch5_ctrl                     0x12c    0x20  Data  Gb  r_sci_rx65n_data.o [18]
 _ch5_rom                0xffe0'0424    0x44  Data  Gb  r_sci_rx65n_data.o [18]
-_ch5_rx_buf                  0xb7f4    0x50  Data  Lc  r_sci_rx.o [17]
-_ch5_tx_buf                  0xb7a4    0x50  Data  Lc  r_sci_rx.o [17]
+_ch5_rx_buf                  0xb788    0x50  Data  Lc  r_sci_rx.o [17]
+_ch5_tx_buf                  0xb738    0x50  Data  Lc  r_sci_rx.o [17]
 _ch8_ctrl                     0x14c    0x20  Data  Gb  r_sci_rx65n_data.o [18]
 _ch8_rom                0xffe0'0468    0x44  Data  Gb  r_sci_rx65n_data.o [18]
-_ch8_rx_buf                  0xb894    0x50  Data  Lc  r_sci_rx.o [17]
-_ch8_tx_buf                  0xb844    0x50  Data  Lc  r_sci_rx.o [17]
-_charput                0xffe0'2e12    0x11  Code  Gb  lowlvl.o [20]
-_default_handler        0xffe0'ce34     0xe  Code  Gb  interrupt_table.o [23]
-_delay_wait             0xffe0'c78b     0x9  Code  Lc  r_bsp_common.o [11]
-_eTaskGetState          0xffe0'0e6d    0x6f  Code  Gb  tasks.o [1]
-_eri_handler            0xffe0'a330    0x70  Code  Gb  r_sci_rx.o [17]
-_exit                   0xffe0'cd9c     0x4  Code  Gb  exit.o [23]
-_fabs                   0xffe0'9458     0x3  Code  Gb  fabs32.o [24]
-_fabsf                  0xffe0'9458     0x3  Code  Gb  fabs32.o [24]
-_fabsl                  0xffe0'9458     0x3  Code  Gb  fabs32.o [24]
+_ch8_rx_buf                  0xb828    0x50  Data  Lc  r_sci_rx.o [17]
+_ch8_tx_buf                  0xb7d8    0x50  Data  Lc  r_sci_rx.o [17]
+_charput                0xffe0'2e62    0x11  Code  Gb  lowlvl.o [20]
+_default_handler        0xffe0'cc2c     0xe  Code  Gb  interrupt_table.o [23]
+_delay_wait             0xffe0'c3d7     0x9  Code  Lc  r_bsp_common.o [11]
+_eTaskGetState          0xffe0'0ecd    0x6f  Code  Gb  tasks.o [1]
+_eri_handler            0xffe0'a370    0x70  Code  Gb  r_sci_rx.o [17]
+_exit                   0xffe0'cb7c     0x4  Code  Gb  exit.o [23]
+_fabs                   0xffe0'94a0     0x3  Code  Gb  fabs32.o [24]
+_fabsf                  0xffe0'94a0     0x3  Code  Gb  fabs32.o [24]
+_fabsl                  0xffe0'94a0     0x3  Code  Gb  fabs32.o [24]
 _g_bsp_Locks                 0xaf44   0x1d0  Data  Gb  mcu_locks.o [11]
-_g_bsp_swint_access_ctrl
-                             0xbb60     0x4  Data  Gb  r_bsp_software_interrupt.o [11]
 _g_bsp_vectors               0xb294   0x17c  Data  Lc  r_bsp_interrupts.o [11]
+_g_gpio_dscr2_support   0xffe0'08a0    0x13  Data  Gb  r_gpio_rx65n.o [15]
+_g_gpio_dscr_support    0xffe0'088d    0x13  Data  Gb  r_gpio_rx65n.o [15]
+_g_gpio_open_drain_n_support
+                        0xffe0'0854    0x13  Data  Gb  r_gpio_rx65n.o [15]
+_g_gpio_open_drain_p_support
+                        0xffe0'0867    0x13  Data  Gb  r_gpio_rx65n.o [15]
+_g_gpio_pull_up_support
+                        0xffe0'087a    0x13  Data  Gb  r_gpio_rx65n.o [15]
 _g_handles              0xffe0'0548    0x34  Data  Gb  r_sci_rx65n_data.o [18]
 _g_qcb                       0xb114   0x180  Data  Lc  r_byteq.o [13]
 _g_source_array         0xffe0'0000    0xc9  Data  Gb  r_dtc_rx_target.o [21]
-_get_iclk_freq_hz       0xffe0'c524    0xa2  Code  Gb  mcu_clocks.o [12]
-_gp_dtc_table_work           0xbb18     0x8  Data  Gb  r_dtc_rx.o [21]
-_group_al0_handler_isr  0xffe0'bf30   0x10e  Code  Lc  mcu_interrupts.o [12]
-_group_al1_handler_isr  0xffe0'c03e    0x8c  Code  Lc  mcu_interrupts.o [12]
-_group_be0_handler_isr  0xffe0'c0ca    0x58  Code  Lc  mcu_interrupts.o [12]
-_group_bl0_handler_isr  0xffe0'b996   0x2fc  Code  Lc  mcu_interrupts.o [12]
-_group_bl1_handler_isr  0xffe0'bc92   0x27a  Code  Lc  mcu_interrupts.o [12]
-_group_bl2_handler_isr  0xffe0'bf0c    0x24  Code  Lc  mcu_interrupts.o [12]
-_hardware_setup         0xffe0'cb6d    0x7b  Code  Gb  hwsetup.o [10]
-_main                   0xffe0'a4e1     0x1  Code  Gb  FIT_patch.o [19]
-_main_full              0xffe0'2e23    0xd5  Code  Gb  main_full.o [5]
-_malloc                 0xffe0'a4dd     0x4  Code  Gb  FIT_patch.o [19]
-_mcu_clock_setup        0xffe0'c5c6   0x1c5  Code  Gb  mcu_clocks.o [12]
-_out                    0xffe0'40d8    0x18  Code  Lc  xprintftiny.o [23]
-_pcTimerGetName         0xffe0'2a95     0xf  Code  Gb  timers.o [1]
+_get_iclk_freq_hz       0xffe0'c170    0xa2  Code  Gb  mcu_clocks.o [12]
+_gp_dtc_table_work           0xbaac     0x8  Data  Gb  r_dtc_rx.o [21]
+_gpio_set_output_type   0xffe0'c6ef    0x2e  Code  Gb  r_gpio_rx.o [14]
+_group_al0_handler_isr  0xffe0'bb7c   0x10e  Code  Lc  mcu_interrupts.o [12]
+_group_al1_handler_isr  0xffe0'bc8a    0x8c  Code  Lc  mcu_interrupts.o [12]
+_group_be0_handler_isr  0xffe0'bd16    0x58  Code  Lc  mcu_interrupts.o [12]
+_group_bl0_handler_isr  0xffe0'b5e2   0x2fc  Code  Lc  mcu_interrupts.o [12]
+_group_bl1_handler_isr  0xffe0'b8de   0x27a  Code  Lc  mcu_interrupts.o [12]
+_group_bl2_handler_isr  0xffe0'bb58    0x24  Code  Lc  mcu_interrupts.o [12]
+_hardware_setup         0xffe0'c94b    0x7b  Code  Gb  hwsetup.o [10]
+_main                   0xffe0'a521     0x1  Code  Gb  FIT_patch.o [19]
+_main_full              0xffe0'2e73    0xd5  Code  Gb  main_full.o [5]
+_malloc                 0xffe0'a51d     0x4  Code  Gb  FIT_patch.o [19]
+_mcu_clock_setup        0xffe0'c212   0x1c5  Code  Gb  mcu_clocks.o [12]
+_out                    0xffe0'4128    0x18  Code  Lc  xprintftiny.o [23]
+_pcTimerGetName         0xffe0'2ae5     0xf  Code  Gb  timers.o [1]
 _prv1stHigherPriorityNormallyFullTask
-                        0xffe0'44e8   0x1a5  Code  Lc  IntQueue.o [7]
+                        0xffe0'4538   0x1a5  Code  Lc  IntQueue.o [7]
 _prv2ndHigherPriorityNormallyFullTask
-                        0xffe0'468d    0xec  Code  Lc  IntQueue.o [7]
+                        0xffe0'46dd    0xec  Code  Lc  IntQueue.o [7]
 _prvAutoReloadTimerCallback
-                        0xffe0'6b44    0x28  Code  Lc  TimerDemo.o [7]
+                        0xffe0'6b8c    0x28  Code  Lc  TimerDemo.o [7]
 _prvCheckForValidListAndQueue
-                        0xffe0'2938    0x41  Code  Lc  timers.o [1]
-_prvCheckTask           0xffe0'2ef8   0x132  Code  Lc  main_full.o [5]
-_prvCopyDataFromQueue   0xffe0'3c31    0x22  Code  Lc  queue.o [1]
-_prvCopyDataToQueue     0xffe0'33c8    0x6c  Code  Lc  queue.o [1]
+                        0xffe0'2988    0x41  Code  Lc  timers.o [1]
+_prvCheckTask           0xffe0'2f48   0x132  Code  Lc  main_full.o [5]
+_prvCopyDataFromQueue   0xffe0'3c81    0x22  Code  Lc  queue.o [1]
+_prvCopyDataToQueue     0xffe0'3418    0x6c  Code  Lc  queue.o [1]
 _prvCountingSemaphoreTask
-                        0xffe0'5618    0x8a  Code  Lc  countsem.o [7]
+                        0xffe0'5660    0x8a  Code  Lc  countsem.o [7]
 _prvDecrementSemaphoreCount
-                        0xffe0'55ac    0x68  Code  Lc  countsem.o [7]
-_prvHelpCommand         0xffe0'992a    0x24  Code  Lc  FreeRTOS_CLI.o [6]
+                        0xffe0'55f4    0x68  Code  Lc  countsem.o [7]
+_prvHelpCommand         0xffe0'9972    0x24  Code  Lc  FreeRTOS_CLI.o [6]
 _prvHighPriorityMutexTask
-                        0xffe0'5b32    0x3b  Code  Lc  GenQTest.o [7]
+                        0xffe0'5b7a    0x3b  Code  Lc  GenQTest.o [7]
 _prvHigherPriorityNormallyEmptyTask
-                        0xffe0'42f0   0x162  Code  Lc  IntQueue.o [7]
+                        0xffe0'4340   0x162  Code  Lc  IntQueue.o [7]
 _prvISRAutoReloadTimerCallback
-                        0xffe0'6b9f     0xc  Code  Lc  TimerDemo.o [7]
+                        0xffe0'6be7     0xc  Code  Lc  TimerDemo.o [7]
 _prvISROneShotTimerCallback
-                        0xffe0'6bab     0xc  Code  Lc  TimerDemo.o [7]
-_prvIdleTask            0xffe0'1b78    0xa2  Code  Lc  tasks.o [1]
+                        0xffe0'6bf3     0xc  Code  Lc  TimerDemo.o [7]
+_prvIdleTask            0xffe0'1bd8    0xa2  Code  Lc  tasks.o [1]
 _prvInsertBlockIntoFreeList
-                        0xffe0'2390    0x6c  Code  Lc  heap_4.o [3]
+                        0xffe0'23e8    0x6c  Code  Lc  heap_4.o [3]
 _prvInsertTimerInActiveList
-                        0xffe0'2d21    0x3e  Code  Lc  timers.o [1]
-_prvIntQTimer_0_1_ISR   0xffe0'9414    0x22  Code  Lc  IntQueueTimer.o [5]
-_prvIntQTimer_2_3_ISR   0xffe0'9436    0x22  Code  Lc  IntQueueTimer.o [5]
+                        0xffe0'2d71    0x3e  Code  Lc  timers.o [1]
+_prvIntQTimer_0_1_ISR   0xffe0'945c    0x22  Code  Lc  IntQueueTimer.o [5]
+_prvIntQTimer_2_3_ISR   0xffe0'947e    0x22  Code  Lc  IntQueueTimer.o [5]
 _prvLowPriorityMutexTask
-                        0xffe0'598c   0x191  Code  Lc  GenQTest.o [7]
+                        0xffe0'59d4   0x191  Code  Lc  GenQTest.o [7]
 _prvLowerPriorityNormallyEmptyTask
-                        0xffe0'4452    0x94  Code  Lc  IntQueue.o [7]
+                        0xffe0'44a2    0x94  Code  Lc  IntQueue.o [7]
 _prvLowerPriorityNormallyFullTask
-                        0xffe0'4780    0x8d  Code  Lc  IntQueue.o [7]
+                        0xffe0'47d0    0x8d  Code  Lc  IntQueue.o [7]
 _prvMediumPriorityMutexTask
-                        0xffe0'5b1d    0x15  Code  Lc  GenQTest.o [7]
-_prvNotifiedTask        0xffe0'7438   0x65f  Code  Lc  TaskNotify.o [7]
-_prvNotifiedTask        0xffe0'7bd8   0xec8  Code  Lc  TaskNotifyArray.o [7]
+                        0xffe0'5b65    0x15  Code  Lc  GenQTest.o [7]
+_prvNotifiedTask        0xffe0'7480   0x65f  Code  Lc  TaskNotify.o [7]
+_prvNotifiedTask        0xffe0'7c20   0xec8  Code  Lc  TaskNotifyArray.o [7]
 _prvNotifyQueueSetContainer
-                        0xffe0'403e    0x98  Code  Lc  queue.o [1]
-_prvNotifyingTimer      0xffe0'740f    0x29  Code  Lc  TaskNotify.o [7]
+                        0xffe0'408e    0x98  Code  Lc  queue.o [1]
+_prvNotifyingTimer      0xffe0'7457    0x29  Code  Lc  TaskNotify.o [7]
 _prvNotifyingTimerCallback
-                        0xffe0'8afb    0x27  Code  Lc  TaskNotifyArray.o [7]
+                        0xffe0'8b43    0x27  Code  Lc  TaskNotifyArray.o [7]
 _prvOneShotTimerCallback
-                        0xffe0'6b6c    0x33  Code  Lc  TimerDemo.o [7]
+                        0xffe0'6bb4    0x33  Code  Lc  TimerDemo.o [7]
 _prvParameterEchoCommand
-                        0xffe0'91d5    0x7c  Code  Lc  Sample-CLI-commands.o [5]
-_prvPseudoRandomiser    0xffe0'302a    0x45  Code  Lc  main_full.o [5]
-_prvQueryHeapCommand    0xffe0'912a    0x2a  Code  Lc  Sample-CLI-commands.o [5]
-_prvQueueOverwriteTask  0xffe0'6bf0    0xa9  Code  Lc  QueueOverwrite.o [7]
-_prvRand                0xffe0'7b48    0x18  Code  Lc  TaskNotify.o [7]
-_prvRand                0xffe0'8bd8    0x18  Code  Lc  TaskNotifyArray.o [7]
+                        0xffe0'921d    0x7c  Code  Lc  Sample-CLI-commands.o [5]
+_prvPseudoRandomiser    0xffe0'307a    0x45  Code  Lc  main_full.o [5]
+_prvQueryHeapCommand    0xffe0'9172    0x2a  Code  Lc  Sample-CLI-commands.o [5]
+_prvQueueOverwriteTask  0xffe0'6c38    0xa9  Code  Lc  QueueOverwrite.o [7]
+_prvRand                0xffe0'7b90    0x18  Code  Lc  TaskNotify.o [7]
+_prvRand                0xffe0'8c20    0x18  Code  Lc  TaskNotifyArray.o [7]
 _prvRecursiveMutexBlockingTask
-                        0xffe0'5c78    0x53  Code  Lc  recmutex.o [7]
+                        0xffe0'5cc0    0x53  Code  Lc  recmutex.o [7]
 _prvRecursiveMutexControllingTask
-                        0xffe0'5c08    0x70  Code  Lc  recmutex.o [7]
+                        0xffe0'5c50    0x70  Code  Lc  recmutex.o [7]
 _prvRecursiveMutexPollingTask
-                        0xffe0'5cd0    0xa9  Code  Lc  recmutex.o [7]
+                        0xffe0'5d18    0xa9  Code  Lc  recmutex.o [7]
 _prvRegTest1Implementation
-                        0xffe0'3087   0x105  Code  Lc  main_full.o [5]
+                        0xffe0'30d7   0x105  Code  Lc  main_full.o [5]
 _prvRegTest2Implementation
-                        0xffe0'319c   0x116  Code  Lc  main_full.o [5]
-_prvRegTestTaskEntry1   0xffe0'318c    0x10  Code  Lc  main_full.o [5]
-_prvRegTestTaskEntry2   0xffe0'32b2    0x10  Code  Lc  main_full.o [5]
-_prvSampleTimeNow       0xffe0'2aa8    0xa5  Code  Lc  timers.o [1]
-_prvSemaphoreTest       0xffe0'5e8a    0xa7  Code  Lc  semtest.o [7]
+                        0xffe0'31ec   0x116  Code  Lc  main_full.o [5]
+_prvRegTestTaskEntry1   0xffe0'31dc    0x10  Code  Lc  main_full.o [5]
+_prvRegTestTaskEntry2   0xffe0'3302    0x10  Code  Lc  main_full.o [5]
+_prvSampleTimeNow       0xffe0'2af8    0xa5  Code  Lc  timers.o [1]
+_prvSemaphoreTest       0xffe0'5ed2    0xa7  Code  Lc  semtest.o [7]
 _prvSendFrontAndBackTest
-                        0xffe0'5768   0x224  Code  Lc  GenQTest.o [7]
-_prvStartFirstTask      0xffe0'26b2    0x36  Code  Lc  port.o [2]
+                        0xffe0'57b0   0x224  Code  Lc  GenQTest.o [7]
+_prvStartFirstTask      0xffe0'270a    0x36  Code  Lc  port.o [2]
 _prvSuspendedTaskTimerTestCallback
-                        0xffe0'73bf    0x50  Code  Lc  TaskNotify.o [7]
+                        0xffe0'7407    0x50  Code  Lc  TaskNotify.o [7]
 _prvSuspendedTaskTimerTestCallback
-                        0xffe0'8aa0    0x5b  Code  Lc  TaskNotifyArray.o [7]
-_prvSyncTask            0xffe0'7149    0x9c  Code  Lc  EventGroupsDemo.o [7]
+                        0xffe0'8ae8    0x5b  Code  Lc  TaskNotifyArray.o [7]
+_prvSyncTask            0xffe0'7191    0x9c  Code  Lc  EventGroupsDemo.o [7]
 _prvTaskCheckFreeStackSpace
-                        0xffe0'1470    0x3c  Code  Lc  tasks.o [1]
+                        0xffe0'14d0    0x3c  Code  Lc  tasks.o [1]
 _prvTaskIsTaskSuspended
-                        0xffe0'1109    0x2b  Code  Lc  tasks.o [1]
-_prvTaskStatsCommand    0xffe0'90db    0x4f  Code  Lc  Sample-CLI-commands.o [5]
-_prvTestMasterTask      0xffe0'6dc0   0x389  Code  Lc  EventGroupsDemo.o [7]
-_prvTestSlaveTask       0xffe0'71e8    0xf9  Code  Lc  EventGroupsDemo.o [7]
-_prvTestWaitCondition   0xffe0'971a    0x13  Code  Lc  event_groups.o [1]
+                        0xffe0'1169    0x2b  Code  Lc  tasks.o [1]
+_prvTaskStatsCommand    0xffe0'9123    0x4f  Code  Lc  Sample-CLI-commands.o [5]
+_prvTestMasterTask      0xffe0'6e08   0x389  Code  Lc  EventGroupsDemo.o [7]
+_prvTestSlaveTask       0xffe0'7230    0xf9  Code  Lc  EventGroupsDemo.o [7]
+_prvTestWaitCondition   0xffe0'9762    0x13  Code  Lc  event_groups.o [1]
 _prvThreeParameterEchoCommand
-                        0xffe0'9154    0x81  Code  Lc  Sample-CLI-commands.o [5]
-_prvTimerTask           0xffe0'2b50   0x1d1  Code  Lc  timers.o [1]
-_prvTimerTestTask       0xffe0'6388   0x527  Code  Lc  TimerDemo.o [7]
+                        0xffe0'919c    0x81  Code  Lc  Sample-CLI-commands.o [5]
+_prvTimerTask           0xffe0'2ba0   0x1d1  Code  Lc  timers.o [1]
+_prvTimerTestTask       0xffe0'63d0   0x527  Code  Lc  TimerDemo.o [7]
 _prvUARTCommandConsoleTask
-                        0xffe0'8fa8   0x10f  Code  Lc  UARTCommandConsole.o [5]
-_prvUnlockQueue         0xffe0'3438    0x6e  Code  Lc  queue.o [1]
-_pvPortMalloc           0xffe0'2400   0x166  Code  Gb  heap_4.o [3]
+                        0xffe0'8ff0   0x10f  Code  Lc  UARTCommandConsole.o [5]
+_prvUnlockQueue         0xffe0'3488    0x6e  Code  Lc  queue.o [1]
+_pvPortMalloc           0xffe0'2458   0x166  Code  Gb  heap_4.o [3]
 _pvTaskIncrementMutexHeldCount
-                        0xffe0'1e6c    0x15  Code  Gb  tasks.o [1]
-_pvTimerGetTimerID      0xffe0'2d7d    0x19  Code  Gb  timers.o [1]
+                        0xffe0'1ecc    0x15  Code  Gb  tasks.o [1]
+_pvTimerGetTimerID      0xffe0'2dcd    0x19  Code  Gb  timers.o [1]
 _pxCurrentTCB                  0x80     0x4  Data  Gb  tasks.o [1]
-_pxCurrentTimerList          0xb978     0x4  Data  Lc  timers.o [1]
-_pxDelayedTaskList           0xb6d4     0x4  Data  Lc  tasks.o [1]
-_pxEnd                       0xba44     0x4  Data  Lc  heap_4.o [3]
+_pxCurrentTimerList          0xb90c     0x4  Data  Lc  timers.o [1]
+_pxDelayedTaskList           0xb668     0x4  Data  Lc  tasks.o [1]
+_pxEnd                       0xb9d8     0x4  Data  Lc  heap_4.o [3]
 _pxOverflowDelayedTaskList
-                             0xb6d8     0x4  Data  Lc  tasks.o [1]
-_pxOverflowTimerList         0xb97c     0x4  Data  Lc  timers.o [1]
-_pxPortInitialiseStack  0xffe0'267e    0x34  Code  Gb  port.o [2]
+                             0xb66c     0x4  Data  Lc  tasks.o [1]
+_pxOverflowTimerList         0xb910     0x4  Data  Lc  timers.o [1]
+_pxPortInitialiseStack  0xffe0'26d6    0x34  Code  Gb  port.o [2]
 _pxReadyTasksLists           0xb5a0    0x8c  Data  Lc  tasks.o [1]
 _r_dtc_clear_all_dtce_bits
-                        0xffe0'9b20    0x67  Code  Lc  r_dtc_rx.o [21]
-_r_dtc_module_enable    0xffe0'a4e2    0x31  Code  Gb  r_dtc_rx_target.o [21]
+                        0xffe0'9b60    0x67  Code  Lc  r_dtc_rx.o [21]
+_r_dtc_module_enable    0xffe0'a522    0x31  Code  Gb  r_dtc_rx_target.o [21]
 _r_dtc_set_transfer_data
-                        0xffe0'9f00    0xb6  Code  Lc  r_dtc_rx.o [21]
-_r_undefined_exception  0xffe0'cb05     0x1  Code  Gb  r_cg_hardware_setup.o [9]
-_rxi_handler            0xffe0'a2e8    0x3f  Code  Gb  r_sci_rx.o [17]
+                        0xffe0'9f40    0xb6  Code  Lc  r_dtc_rx.o [21]
+_r_undefined_exception  0xffe0'c927     0x1  Code  Gb  r_cg_hardware_setup.o [9]
+_rxi_handler            0xffe0'a328    0x3f  Code  Gb  r_sci_rx.o [17]
 _sBlockingConsumerCount
-                             0xbb38     0x6  Data  Lc  BlockQ.o [7]
+                             0xbacc     0x6  Data  Lc  BlockQ.o [7]
 _sBlockingProducerCount
-                             0xbb3e     0x6  Data  Lc  BlockQ.o [7]
-_sCheckVariables             0xbb20     0x8  Data  Lc  semtest.o [7]
-_sNextCheckVariable          0xbb56     0x2  Data  Lc  semtest.o [7]
-_s_bsp_swint_buf_bottom
-                             0xbb7a     0x1  Data  Lc  r_bsp_software_interrupt.o [11]
-_s_bsp_swint_buf_top         0xbb79     0x1  Data  Lc  r_bsp_software_interrupt.o [11]
-_s_bsp_swint_buf_used        0xbb78     0x1  Data  Lc  r_bsp_software_interrupt.o [11]
-_s_bsp_swint_nested_int_status
-                             0xbb7b     0x1  Data  Lc  r_bsp_software_interrupt.o [11]
-_s_bsp_swint_task            0xb62c    0x6c  Data  Lc  r_bsp_software_interrupt.o [11]
-_s_is_opened                 0xbb7d     0x1  Data  Lc  r_dtc_rx.o [21]
-_s_prcr_masks           0xffe0'0a52     0x6  Data  Lc  r_bsp_cpu.o [11]
-_s_protect_counters          0xbb10     0x8  Data  Lc  r_bsp_cpu.o [11]
-_sci1_eri1_isr          0xffe0'aa6e     0x9  Code  Gb  r_sci_rx65n.o [18]
-_sci1_rxi1_isr          0xffe0'aa35    0x13  Code  Lc  r_sci_rx65n.o [18]
-_sci1_tei1_isr          0xffe0'aa1a     0x9  Code  Gb  r_sci_rx65n.o [18]
-_sci1_txi1_isr          0xffe0'a9e1    0x13  Code  Lc  r_sci_rx65n.o [18]
-_sci5_eri5_isr          0xffe0'aa77     0x9  Code  Gb  r_sci_rx65n.o [18]
-_sci5_rxi5_isr          0xffe0'aa48    0x13  Code  Lc  r_sci_rx65n.o [18]
-_sci5_tei5_isr          0xffe0'aa23     0x9  Code  Gb  r_sci_rx65n.o [18]
-_sci5_txi5_isr          0xffe0'a9f4    0x13  Code  Lc  r_sci_rx65n.o [18]
-_sci8_eri8_isr          0xffe0'aa80     0x9  Code  Gb  r_sci_rx65n.o [18]
-_sci8_rxi8_isr          0xffe0'aa5b    0x13  Code  Lc  r_sci_rx65n.o [18]
-_sci8_tei8_isr          0xffe0'aa2c     0x9  Code  Gb  r_sci_rx65n.o [18]
-_sci8_txi8_isr          0xffe0'aa07    0x13  Code  Lc  r_sci_rx65n.o [18]
-_sci_async_cmds         0xffe0'a817   0x1ca  Code  Gb  r_sci_rx65n.o [18]
-_sci_init_bit_rate      0xffe0'a5c8   0x17a  Code  Gb  r_sci_rx65n.o [18]
-_sci_init_register      0xffe0'a51e    0xa9  Code  Gb  r_sci_rx65n.o [18]
-_sci_initialize_ints    0xffe0'a742    0xd5  Code  Gb  r_sci_rx65n.o [18]
-_sci_mcu_param_check    0xffe0'a518     0x6  Code  Gb  r_sci_rx65n.o [18]
-_sprintf                0xffe0'2de0    0x32  Code  Gb  sprintf.o [23]
-_strlen                 0xffe0'2dd0     0xe  Code  Gb  strlen.o [23]
-_strncat                0xffe0'9ad0    0x25  Code  Gb  strncat.o [23]
-_tei_handler            0xffe0'a2b9    0x2d  Code  Gb  r_sci_rx.o [17]
-_txi_handler            0xffe0'a26c    0x4d  Code  Gb  r_sci_rx.o [17]
+                             0xbad2     0x6  Data  Lc  BlockQ.o [7]
+_sCheckVariables             0xbab4     0x8  Data  Lc  semtest.o [7]
+_sNextCheckVariable          0xbaea     0x2  Data  Lc  semtest.o [7]
+_s_is_opened                 0xbb09     0x1  Data  Lc  r_dtc_rx.o [21]
+_s_prcr_masks           0xffe0'0ab6     0x6  Data  Lc  r_bsp_cpu.o [11]
+_s_protect_counters          0xbaa4     0x8  Data  Lc  r_bsp_cpu.o [11]
+_sci1_eri1_isr          0xffe0'aaae     0x9  Code  Gb  r_sci_rx65n.o [18]
+_sci1_rxi1_isr          0xffe0'aa75    0x13  Code  Lc  r_sci_rx65n.o [18]
+_sci1_tei1_isr          0xffe0'aa5a     0x9  Code  Gb  r_sci_rx65n.o [18]
+_sci1_txi1_isr          0xffe0'aa21    0x13  Code  Lc  r_sci_rx65n.o [18]
+_sci5_eri5_isr          0xffe0'aab7     0x9  Code  Gb  r_sci_rx65n.o [18]
+_sci5_rxi5_isr          0xffe0'aa88    0x13  Code  Lc  r_sci_rx65n.o [18]
+_sci5_tei5_isr          0xffe0'aa63     0x9  Code  Gb  r_sci_rx65n.o [18]
+_sci5_txi5_isr          0xffe0'aa34    0x13  Code  Lc  r_sci_rx65n.o [18]
+_sci8_eri8_isr          0xffe0'aac0     0x9  Code  Gb  r_sci_rx65n.o [18]
+_sci8_rxi8_isr          0xffe0'aa9b    0x13  Code  Lc  r_sci_rx65n.o [18]
+_sci8_tei8_isr          0xffe0'aa6c     0x9  Code  Gb  r_sci_rx65n.o [18]
+_sci8_txi8_isr          0xffe0'aa47    0x13  Code  Lc  r_sci_rx65n.o [18]
+_sci_async_cmds         0xffe0'a857   0x1ca  Code  Gb  r_sci_rx65n.o [18]
+_sci_init_bit_rate      0xffe0'a608   0x17a  Code  Gb  r_sci_rx65n.o [18]
+_sci_init_register      0xffe0'a55e    0xa9  Code  Gb  r_sci_rx65n.o [18]
+_sci_initialize_ints    0xffe0'a782    0xd5  Code  Gb  r_sci_rx65n.o [18]
+_sci_mcu_param_check    0xffe0'a558     0x6  Code  Gb  r_sci_rx65n.o [18]
+_sprintf                0xffe0'2e30    0x32  Code  Gb  sprintf.o [23]
+_strlen                 0xffe0'2e20     0xe  Code  Gb  strlen.o [23]
+_strncat                0xffe0'9b14    0x25  Code  Gb  strncat.o [23]
+_tei_handler            0xffe0'a2f9    0x2d  Code  Gb  r_sci_rx.o [17]
+_txi_handler            0xffe0'a2ac    0x4d  Code  Gb  r_sci_rx.o [17]
 _ucAutoReloadTimerCounters
-                             0xbb50     0x6  Data  Lc  TimerDemo.o [7]
+                             0xbae4     0x6  Data  Lc  TimerDemo.o [7]
 _ucHeap                       0x198  0xa000  Data  Lc  heap_4.o [3]
 _ucISRAutoReloadTimerCounter
                                0xe1     0x1  Data  Lc  TimerDemo.o [7]
@@ -2294,408 +2262,408 @@ _ucNormallyEmptyReceivedValues
 _ucNormallyFullReceivedValues
                              0xb4d8    0xc8  Data  Lc  IntQueue.o [7]
 _ucOneShotTimerCounter         0xe0     0x1  Data  Lc  TimerDemo.o [7]
-_ulCounter                   0xbaa8     0x4  Data  Lc  dynamic.o [7]
+_ulCounter                   0xba3c     0x4  Data  Lc  dynamic.o [7]
 _ulCountingSemaphoreLoops
-                             0xb9b0     0x4  Data  Lc  IntSemTest.o [7]
+                             0xb944     0x4  Data  Lc  IntSemTest.o [7]
 _ulCourseCycleCounter           0x8     0x4  Data  Lc  TaskNotifyArray.o [7]
-_ulExpectedValue             0xba38     0x4  Data  Lc  dynamic.o [7]
+_ulExpectedValue             0xb9cc     0x4  Data  Lc  dynamic.o [7]
 _ulFineCycleCount               0x4     0x4  Data  Lc  TaskNotifyArray.o [7]
-_ulGuardedVariable           0xba04     0x4  Data  Lc  GenQTest.o [7]
-_ulISRCycles                 0xb950     0x4  Data  Lc  EventGroupsDemo.o [7]
-_ulLoopCounter               0xb9fc     0x4  Data  Lc  GenQTest.o [7]
+_ulGuardedVariable           0xb998     0x4  Data  Lc  GenQTest.o [7]
+_ulISRCycles                 0xb8e4     0x4  Data  Lc  EventGroupsDemo.o [7]
+_ulLoopCounter               0xb990     0x4  Data  Lc  GenQTest.o [7]
 _ulLoopCounter                0x17c     0x4  Data  Lc  QueueOverwrite.o [7]
 _ulLoopCounter                 0xe8     0x4  Data  Lc  TimerDemo.o [7]
-_ulLoopCounter2              0xba00     0x4  Data  Lc  GenQTest.o [7]
-_ulMasterLoops               0xb9ac     0x4  Data  Lc  IntSemTest.o [7]
+_ulLoopCounter2              0xb994     0x4  Data  Lc  GenQTest.o [7]
+_ulMasterLoops               0xb940     0x4  Data  Lc  IntSemTest.o [7]
 _ulNotifyCycleCount            0xb8     0x4  Data  Lc  TaskNotify.o [7]
-_ulRegTest1LoopCounter       0xbb08     0x4  Data  Gb  main_full.o [5]
-_ulRegTest2LoopCounter       0xbb0c     0x4  Data  Gb  main_full.o [5]
+_ulRegTest1LoopCounter       0xba9c     0x4  Data  Gb  main_full.o [5]
+_ulRegTest2LoopCounter       0xbaa0     0x4  Data  Gb  main_full.o [5]
 _ulTaskGenericNotifyTake
-                        0xffe0'1e81    0xc2  Code  Gb  tasks.o [1]
+                        0xffe0'1ee1    0xc2  Code  Gb  tasks.o [1]
 _ulTaskGenericNotifyValueClear
-                        0xffe0'2316    0x5b  Code  Gb  tasks.o [1]
-_ulTestMasterCycles          0xb948     0x4  Data  Lc  EventGroupsDemo.o [7]
-_ulTestSlaveCycles           0xb94c     0x4  Data  Lc  EventGroupsDemo.o [7]
+                        0xffe0'2376    0x5b  Code  Gb  tasks.o [1]
+_ulTestMasterCycles          0xb8dc     0x4  Data  Lc  EventGroupsDemo.o [7]
+_ulTestSlaveCycles           0xb8e0     0x4  Data  Lc  EventGroupsDemo.o [7]
 _ulTimerNotificationsReceived
                                0xc0     0x4  Data  Lc  TaskNotify.o [7]
 _ulTimerNotificationsSent
                                0xc4     0x4  Data  Lc  TaskNotify.o [7]
-_usCheckVariable             0xba2c     0x2  Data  Lc  dynamic.o [7]
+_usCheckVariable             0xb9c0     0x2  Data  Lc  dynamic.o [7]
 _usCreationCount              0x18c     0x2  Data  Lc  death.o [7]
-_usTaskCheck                 0xbaf0     0x8  Data  Lc  flop.o [7]
-_uxBlockingCycles            0xb9e4     0x4  Data  Lc  recmutex.o [7]
-_uxControllingCycles         0xb9e0     0x4  Data  Lc  recmutex.o [7]
+_usTaskCheck                 0xba84     0x8  Data  Lc  flop.o [7]
+_uxBlockingCycles            0xb978     0x4  Data  Lc  recmutex.o [7]
+_uxControllingCycles         0xb974     0x4  Data  Lc  recmutex.o [7]
 _uxCurrentNumberOfTasks
                                0x88     0x4  Data  Lc  tasks.o [1]
 _uxDeletedTasksWaitingCleanUp
                                0x84     0x4  Data  Lc  tasks.o [1]
 _uxHighPriorityLoops1          0x44     0x4  Data  Lc  IntQueue.o [7]
 _uxHighPriorityLoops2          0x48     0x4  Data  Lc  IntQueue.o [7]
-_uxListRemove           0xffe0'265b    0x23  Code  Gb  list.o [1]
+_uxListRemove           0xffe0'26b3    0x23  Code  Gb  list.o [1]
 _uxLowPriorityLoops1           0x4c     0x4  Data  Lc  IntQueue.o [7]
 _uxLowPriorityLoops2           0x50     0x4  Data  Lc  IntQueue.o [7]
 _uxNextRand                    0xcc     0x4  Data  Lc  TaskNotify.o [7]
 _uxNextRand                    0x18     0x4  Data  Lc  TaskNotifyArray.o [7]
-_uxPollingCycles             0xb9e8     0x4  Data  Lc  recmutex.o [7]
+_uxPollingCycles             0xb97c     0x4  Data  Lc  recmutex.o [7]
 _uxQueueMessagesWaiting
-                        0xffe0'3fb4    0x19  Code  Gb  queue.o [1]
+                        0xffe0'4004    0x19  Code  Gb  queue.o [1]
 _uxQueueSpacesAvailable
-                        0xffe0'3fcd    0x1d  Code  Gb  queue.o [1]
+                        0xffe0'401d    0x1d  Code  Gb  queue.o [1]
 _uxSchedulerSuspended          0xb0     0x4  Data  Lc  tasks.o [1]
 _uxTaskGetNumberOfTasks
-                        0xffe0'1466     0x9  Code  Gb  tasks.o [1]
-_uxTaskGetSystemState   0xffe0'14b0   0x33d  Code  Gb  tasks.o [1]
+                        0xffe0'14c6     0x9  Code  Gb  tasks.o [1]
+_uxTaskGetSystemState   0xffe0'1510   0x33d  Code  Gb  tasks.o [1]
 _uxTaskNumber                  0xa4     0x4  Data  Lc  tasks.o [1]
-_uxTaskPriorityGet      0xffe0'0edc    0x4d  Code  Gb  tasks.o [1]
+_uxTaskPriorityGet      0xffe0'0f3c    0x4d  Code  Gb  tasks.o [1]
 _uxTaskResetEventItemValue
-                        0xffe0'1e56    0x16  Code  Gb  tasks.o [1]
+                        0xffe0'1eb6    0x16  Code  Gb  tasks.o [1]
 _uxTasksRunningAtStart        0x190     0x4  Data  Lc  death.o [7]
-_uxTimerGetReloadMode   0xffe0'2a78    0x1d  Code  Gb  timers.o [1]
+_uxTimerGetReloadMode   0xffe0'2ac8    0x1d  Code  Gb  timers.o [1]
 _uxTopReadyPriority            0x90     0x4  Data  Lc  tasks.o [1]
 _uxTopUsedPriority             0xac     0x4  Data  Gb  tasks.o [1]
 _uxValueForNormallyEmptyQueue
                                0x60     0x4  Data  Lc  IntQueue.o [7]
 _uxValueForNormallyFullQueue
                                0x64     0x4  Data  Lc  IntQueue.o [7]
-_vApplicationIdleHook   0xffe0'286b     0xc  Code  Gb  freertos_start.o [8]
+_vApplicationIdleHook   0xffe0'28c3     0xc  Code  Gb  freertos_start.o [8]
 _vApplicationMallocFailedHook
-                        0xffe0'287b    0x27  Code  Gb  freertos_start.o [8]
+                        0xffe0'28d3    0x27  Code  Gb  freertos_start.o [8]
 _vApplicationSetupTimerInterrupt
-                        0xffe0'27cf    0x5a  Code  Gb  freertos_start.o [8]
+                        0xffe0'2827    0x5a  Code  Gb  freertos_start.o [8]
 _vApplicationStackOverflowHook
-                        0xffe0'28a2    0x27  Code  Gb  freertos_start.o [8]
-_vApplicationTickHook   0xffe0'2877     0x4  Code  Gb  freertos_start.o [8]
-_vAssertCalled          0xffe0'2843    0x28  Code  Gb  freertos_start.o [8]
+                        0xffe0'28fa    0x27  Code  Gb  freertos_start.o [8]
+_vApplicationTickHook   0xffe0'28cf     0x4  Code  Gb  freertos_start.o [8]
+_vAssertCalled          0xffe0'289b    0x28  Code  Gb  freertos_start.o [8]
 _vBlockingQueueConsumer
-                        0xffe0'5038    0x41  Code  Lc  BlockQ.o [7]
+                        0xffe0'5088    0x41  Code  Lc  BlockQ.o [7]
 _vBlockingQueueProducer
-                        0xffe0'4ff8    0x3d  Code  Lc  BlockQ.o [7]
-_vCompetingMathTask1    0xffe0'5ff0    0x79  Code  Lc  flop.o [7]
-_vCompetingMathTask2    0xffe0'6070    0x79  Code  Lc  flop.o [7]
-_vCompetingMathTask3    0xffe0'60e9    0x8b  Code  Lc  flop.o [7]
-_vCompetingMathTask4    0xffe0'6174    0x8b  Code  Lc  flop.o [7]
+                        0xffe0'5048    0x3d  Code  Lc  BlockQ.o [7]
+_vCompetingMathTask1    0xffe0'6038    0x79  Code  Lc  flop.o [7]
+_vCompetingMathTask2    0xffe0'60b8    0x79  Code  Lc  flop.o [7]
+_vCompetingMathTask3    0xffe0'6131    0x8b  Code  Lc  flop.o [7]
+_vCompetingMathTask4    0xffe0'61bc    0x8b  Code  Lc  flop.o [7]
 _vContinuousIncrementTask
-                        0xffe0'4cf8    0x43  Code  Lc  dynamic.o [7]
-_vCounterControlTask    0xffe0'4d40    0xaa  Code  Lc  dynamic.o [7]
-_vCreateBlockTimeTasks  0xffe0'5100    0x51  Code  Gb  blocktim.o [7]
-_vCreateSuicidalTasks   0xffe0'9258    0x1d  Code  Gb  death.o [7]
-_vCreateTasks           0xffe0'92b0    0x6f  Code  Lc  death.o [7]
+                        0xffe0'4d48    0x43  Code  Lc  dynamic.o [7]
+_vCounterControlTask    0xffe0'4d90    0xaa  Code  Lc  dynamic.o [7]
+_vCreateBlockTimeTasks  0xffe0'5148    0x51  Code  Gb  blocktim.o [7]
+_vCreateSuicidalTasks   0xffe0'92a0    0x1d  Code  Gb  death.o [7]
+_vCreateTasks           0xffe0'92f8    0x6f  Code  Lc  death.o [7]
 _vEventGroupClearBitsCallback
-                        0xffe0'96f3    0x27  Code  Gb  event_groups.o [1]
-_vEventGroupDelete      0xffe0'96bc    0x34  Code  Gb  event_groups.o [1]
+                        0xffe0'973b    0x27  Code  Gb  event_groups.o [1]
+_vEventGroupDelete      0xffe0'9704    0x34  Code  Gb  event_groups.o [1]
 _vEventGroupSetBitsCallback
-                        0xffe0'96f0     0x3  Code  Gb  event_groups.o [1]
-_vFullDemoTickHook      0xffe0'306f    0x18  Code  Gb  main_full.o [5]
+                        0xffe0'9738     0x3  Code  Gb  event_groups.o [1]
+_vFullDemoTickHook      0xffe0'30bf    0x18  Code  Gb  main_full.o [5]
 _vInitialiseTimerForIntQueueTest
-                        0xffe0'934f    0xc5  Code  Gb  IntQueueTimer.o [5]
+                        0xffe0'9397    0xc5  Code  Gb  IntQueueTimer.o [5]
 _vInterruptCountingSemaphoreTask
-                        0xffe0'8e62    0x87  Code  Lc  IntSemTest.o [7]
+                        0xffe0'8eaa    0x87  Code  Lc  IntSemTest.o [7]
 _vInterruptMutexMasterTask
-                        0xffe0'8c80   0x1ac  Code  Lc  IntSemTest.o [7]
+                        0xffe0'8cc8   0x1ac  Code  Lc  IntSemTest.o [7]
 _vInterruptMutexSlaveTask
-                        0xffe0'8e30    0x32  Code  Lc  IntSemTest.o [7]
+                        0xffe0'8e78    0x32  Code  Lc  IntSemTest.o [7]
 _vInterruptSemaphorePeriodicTest
-                        0xffe0'8ee9    0x54  Code  Gb  IntSemTest.o [7]
-_vLimitedIncrementTask  0xffe0'4cda    0x19  Code  Lc  dynamic.o [7]
-_vListInitialise        0xffe0'25d0    0x14  Code  Gb  list.o [1]
-_vListInitialiseItem    0xffe0'25e4     0x4  Code  Gb  list.o [1]
-_vListInsert            0xffe0'2608    0x53  Code  Gb  list.o [1]
-_vListInsertEnd         0xffe0'25e8    0x19  Code  Gb  list.o [1]
+                        0xffe0'8f31    0x54  Code  Gb  IntSemTest.o [7]
+_vLimitedIncrementTask  0xffe0'4d2a    0x19  Code  Lc  dynamic.o [7]
+_vListInitialise        0xffe0'2628    0x14  Code  Gb  list.o [1]
+_vListInitialiseItem    0xffe0'263c     0x4  Code  Gb  list.o [1]
+_vListInsert            0xffe0'2660    0x53  Code  Gb  list.o [1]
+_vListInsertEnd         0xffe0'2640    0x19  Code  Gb  list.o [1]
 _vPeriodicEventGroupsProcessing
-                        0xffe0'72e1    0x79  Code  Gb  EventGroupsDemo.o [7]
-_vPortFree              0xffe0'2566    0x55  Code  Gb  heap_4.o [3]
+                        0xffe0'7329    0x79  Code  Gb  EventGroupsDemo.o [7]
+_vPortFree              0xffe0'25be    0x55  Code  Gb  heap_4.o [3]
 _vPrimaryBlockTimeTestTask
-                        0xffe0'5158   0x330  Code  Lc  blocktim.o [7]
-_vPrintString           0xffe0'2829    0x1a  Code  Gb  freertos_start.o [8]
+                        0xffe0'51a0   0x330  Code  Lc  blocktim.o [7]
+_vPrintString           0xffe0'2881    0x1a  Code  Gb  freertos_start.o [8]
 _vQueueOverwritePeriodicISRDemo
-                        0xffe0'6cb1    0x79  Code  Gb  QueueOverwrite.o [7]
+                        0xffe0'6cf9    0x79  Code  Gb  QueueOverwrite.o [7]
 _vQueueReceiveWhenSuspendedTask
-                        0xffe0'4e30    0x4c  Code  Lc  dynamic.o [7]
+                        0xffe0'4e80    0x4c  Code  Lc  dynamic.o [7]
 _vQueueSendWhenSuspendedTask
-                        0xffe0'4df0    0x3a  Code  Lc  dynamic.o [7]
+                        0xffe0'4e40    0x3a  Code  Lc  dynamic.o [7]
 _vQueueWaitForMessageRestricted
-                        0xffe0'4000    0x3e  Code  Gb  queue.o [1]
+                        0xffe0'4050    0x3e  Code  Gb  queue.o [1]
 _vRegisterSampleCLICommands
-                        0xffe0'90b7    0x24  Code  Gb  Sample-CLI-commands.o [5]
+                        0xffe0'90ff    0x24  Code  Gb  Sample-CLI-commands.o [5]
 _vSecondaryBlockTimeTestTask
-                        0xffe0'5488    0x89  Code  Lc  blocktim.o [7]
-_vSendString            0xffe0'2909    0x1a  Code  Gb  freertos_start.o [8]
-_vSerialPutString       0xffe0'99ed    0x9b  Code  Gb  serial.o [5]
-_vSerialSciCallback     0xffe0'994e    0x6a  Code  Gb  serial.o [5]
-_vSoftwareInterruptISR  0xffe0'271f    0x88  Code  Gb  port.o [2]
+                        0xffe0'54d0    0x89  Code  Lc  blocktim.o [7]
+_vSendString            0xffe0'2961    0x1a  Code  Gb  freertos_start.o [8]
+_vSerialPutString       0xffe0'9a2f    0x9b  Code  Gb  serial.o [5]
+_vSerialSciCallback     0xffe0'9996    0x64  Code  Gb  serial.o [5]
+_vSoftwareInterruptISR  0xffe0'2777    0x88  Code  Gb  port.o [2]
 _vStartBlockingQueueTasks
-                        0xffe0'4eb0   0x145  Code  Gb  BlockQ.o [7]
+                        0xffe0'4f00   0x145  Code  Gb  BlockQ.o [7]
 _vStartCountingSemaphoreTasks
-                        0xffe0'5540    0x6c  Code  Gb  countsem.o [7]
+                        0xffe0'5588    0x6c  Code  Gb  countsem.o [7]
 _vStartDynamicPriorityTasks
-                        0xffe0'4c38    0xa2  Code  Gb  dynamic.o [7]
-_vStartEventGroupTasks  0xffe0'6d30    0x8f  Code  Gb  EventGroupsDemo.o [7]
+                        0xffe0'4c88    0xa2  Code  Gb  dynamic.o [7]
+_vStartEventGroupTasks  0xffe0'6d78    0x8f  Code  Gb  EventGroupsDemo.o [7]
 _vStartGenericQueueTasks
-                        0xffe0'56d8    0x8e  Code  Gb  GenQTest.o [7]
+                        0xffe0'5720    0x8e  Code  Gb  GenQTest.o [7]
 _vStartInterruptQueueTasks
-                        0xffe0'4228    0xc8  Code  Gb  IntQueue.o [7]
+                        0xffe0'4278    0xc8  Code  Gb  IntQueue.o [7]
 _vStartInterruptSemaphoreTasks
-                        0xffe0'8bf0    0x8c  Code  Gb  IntSemTest.o [7]
-_vStartMathTasks        0xffe0'5f78    0x75  Code  Gb  flop.o [7]
+                        0xffe0'8c38    0x8c  Code  Gb  IntSemTest.o [7]
+_vStartMathTasks        0xffe0'5fc0    0x75  Code  Gb  flop.o [7]
 _vStartQueueOverwriteTask
-                        0xffe0'6bb8    0x34  Code  Gb  QueueOverwrite.o [7]
+                        0xffe0'6c00    0x34  Code  Gb  QueueOverwrite.o [7]
 _vStartRecursiveMutexTasks
-                        0xffe0'5b98    0x6a  Code  Gb  recmutex.o [7]
-_vStartSemaphoreTasks   0xffe0'5db3    0xd7  Code  Gb  semtest.o [7]
+                        0xffe0'5be0    0x6a  Code  Gb  recmutex.o [7]
+_vStartSemaphoreTasks   0xffe0'5dfb    0xd7  Code  Gb  semtest.o [7]
 _vStartTaskNotifyArrayTask
-                        0xffe0'7b60    0x71  Code  Gb  TaskNotifyArray.o [7]
-_vStartTaskNotifyTask   0xffe0'7390    0x2f  Code  Gb  TaskNotify.o [7]
-_vStartTimerDemoTask    0xffe0'6238   0x149  Code  Gb  TimerDemo.o [7]
-_vSuicidalTask          0xffe0'9275    0x3b  Code  Lc  death.o [7]
-_vTaskDelay             0xffe0'0e04    0x69  Code  Gb  tasks.o [1]
-_vTaskDelete            0xffe0'0ccf    0x98  Code  Gb  tasks.o [1]
-_vTaskEnterCritical     0xffe0'0ade    0x24  Code  Gb  tasks.o [1]
-_vTaskExitCritical      0xffe0'0ab8    0x26  Code  Gb  tasks.o [1]
+                        0xffe0'7ba8    0x71  Code  Gb  TaskNotifyArray.o [7]
+_vStartTaskNotifyTask   0xffe0'73d8    0x2f  Code  Gb  TaskNotify.o [7]
+_vStartTimerDemoTask    0xffe0'6280   0x149  Code  Gb  TimerDemo.o [7]
+_vSuicidalTask          0xffe0'92bd    0x3b  Code  Lc  death.o [7]
+_vTaskDelay             0xffe0'0e64    0x69  Code  Gb  tasks.o [1]
+_vTaskDelete            0xffe0'0d2f    0x98  Code  Gb  tasks.o [1]
+_vTaskEnterCritical     0xffe0'0b3e    0x24  Code  Gb  tasks.o [1]
+_vTaskExitCritical      0xffe0'0b18    0x26  Code  Gb  tasks.o [1]
 _vTaskGenericNotifyGiveFromISR
-                        0xffe0'2223    0xbf  Code  Gb  tasks.o [1]
+                        0xffe0'2283    0xbf  Code  Gb  tasks.o [1]
 _vTaskInternalSetTimeOutState
-                        0xffe0'1afb     0xe  Code  Gb  tasks.o [1]
-_vTaskList              0xffe0'1d90    0xc6  Code  Gb  tasks.o [1]
-_vTaskMissedYield       0xffe0'1b67     0xa  Code  Gb  tasks.o [1]
-_vTaskPlaceOnEventList  0xffe0'18e7    0x68  Code  Gb  tasks.o [1]
+                        0xffe0'1b5b     0xe  Code  Gb  tasks.o [1]
+_vTaskList              0xffe0'1df0    0xc6  Code  Gb  tasks.o [1]
+_vTaskMissedYield       0xffe0'1bc7     0xa  Code  Gb  tasks.o [1]
+_vTaskPlaceOnEventList  0xffe0'1947    0x68  Code  Gb  tasks.o [1]
 _vTaskPlaceOnEventListRestricted
-                        0xffe0'19c9    0x77  Code  Gb  tasks.o [1]
+                        0xffe0'1a29    0x77  Code  Gb  tasks.o [1]
 _vTaskPlaceOnUnorderedEventList
-                        0xffe0'194f    0x7a  Code  Gb  tasks.o [1]
+                        0xffe0'19af    0x7a  Code  Gb  tasks.o [1]
 _vTaskPriorityDisinheritAfterTimeout
-                        0xffe0'1d13    0x75  Code  Gb  tasks.o [1]
-_vTaskPrioritySet       0xffe0'0f29    0x9e  Code  Gb  tasks.o [1]
+                        0xffe0'1d73    0x75  Code  Gb  tasks.o [1]
+_vTaskPrioritySet       0xffe0'0f89    0x9e  Code  Gb  tasks.o [1]
 _vTaskRemoveFromUnorderedEventList
-                        0xffe0'1aa1    0x5a  Code  Gb  tasks.o [1]
-_vTaskResume            0xffe0'1134    0x67  Code  Gb  tasks.o [1]
-_vTaskStartScheduler    0xffe0'11a0   0x1d0  Code  Gb  tasks.o [1]
-_vTaskSuspend           0xffe0'105b    0xae  Code  Gb  tasks.o [1]
-_vTaskSuspendAll        0xffe0'1370     0xc  Code  Gb  tasks.o [1]
-_vTaskSwitchContext     0xffe0'0fc7    0x94  Code  Gb  tasks.o [1]
-_vTickISR               0xffe0'27a7    0x28  Code  Gb  port.o [2]
+                        0xffe0'1b01    0x5a  Code  Gb  tasks.o [1]
+_vTaskResume            0xffe0'1194    0x67  Code  Gb  tasks.o [1]
+_vTaskStartScheduler    0xffe0'1200   0x1d0  Code  Gb  tasks.o [1]
+_vTaskSuspend           0xffe0'10bb    0xae  Code  Gb  tasks.o [1]
+_vTaskSuspendAll        0xffe0'13d0     0xc  Code  Gb  tasks.o [1]
+_vTaskSwitchContext     0xffe0'1027    0x94  Code  Gb  tasks.o [1]
+_vTickISR               0xffe0'27ff    0x28  Code  Gb  port.o [2]
 _vTimerPeriodicISRTests
-                        0xffe0'68ea   0x25a  Code  Gb  TimerDemo.o [7]
-_vTimerSetReloadMode    0xffe0'2a5b    0x1d  Code  Gb  timers.o [1]
-_vTimerSetTimerID       0xffe0'2d96    0x19  Code  Gb  timers.o [1]
-_vToggleLED             0xffe0'28e8    0x21  Code  Gb  freertos_start.o [8]
+                        0xffe0'6932   0x25a  Code  Gb  TimerDemo.o [7]
+_vTimerSetReloadMode    0xffe0'2aab    0x1d  Code  Gb  timers.o [1]
+_vTimerSetTimerID       0xffe0'2de6    0x19  Code  Gb  timers.o [1]
+_vToggleLED             0xffe0'2940    0x21  Code  Gb  freertos_start.o [8]
 _vUARTCommandConsoleStart
-                        0xffe0'8f70    0x37  Code  Gb  UARTCommandConsole.o [5]
-_vector_table           0xffe0'c124   0x400  Data  Gb  interrupt_table.o [23]
-_xActiveTimerList1           0xb980    0x14  Data  Lc  timers.o [1]
-_xActiveTimerList2           0xb994    0x14  Data  Lc  timers.o [1]
+                        0xffe0'8fb8    0x37  Code  Gb  UARTCommandConsole.o [5]
+_vector_table           0xffe0'bd70   0x400  Data  Gb  interrupt_table.o [23]
+_xActiveTimerList1           0xb914    0x14  Data  Lc  timers.o [1]
+_xActiveTimerList2           0xb928    0x14  Data  Lc  timers.o [1]
 _xAreBlockTimeTestTasksStillRunning
-                        0xffe0'5511    0x2c  Code  Gb  blocktim.o [7]
+                        0xffe0'5559    0x2c  Code  Gb  blocktim.o [7]
 _xAreBlockingQueuesStillRunning
-                        0xffe0'5079    0x78  Code  Gb  BlockQ.o [7]
+                        0xffe0'50c9    0x78  Code  Gb  BlockQ.o [7]
 _xAreCountingSemaphoreTasksStillRunning
-                        0xffe0'56a2    0x32  Code  Gb  countsem.o [7]
+                        0xffe0'56ea    0x32  Code  Gb  countsem.o [7]
 _xAreDynamicPriorityTasksStillRunning
-                        0xffe0'4e7c    0x32  Code  Gb  dynamic.o [7]
+                        0xffe0'4ecc    0x32  Code  Gb  dynamic.o [7]
 _xAreEventGroupTasksStillRunning
-                        0xffe0'735a    0x32  Code  Gb  EventGroupsDemo.o [7]
+                        0xffe0'73a2    0x32  Code  Gb  EventGroupsDemo.o [7]
 _xAreGenericQueueTasksStillRunning
-                        0xffe0'5b6d    0x29  Code  Gb  GenQTest.o [7]
+                        0xffe0'5bb5    0x29  Code  Gb  GenQTest.o [7]
 _xAreIntQueueTasksStillRunning
-                        0xffe0'4be4    0x52  Code  Gb  IntQueue.o [7]
+                        0xffe0'4c34    0x52  Code  Gb  IntQueue.o [7]
 _xAreInterruptSemaphoreTasksStillRunning
-                        0xffe0'8f3d    0x2e  Code  Gb  IntSemTest.o [7]
+                        0xffe0'8f85    0x2e  Code  Gb  IntSemTest.o [7]
 _xAreMathsTaskStillRunning
-                        0xffe0'61ff    0x34  Code  Gb  flop.o [7]
+                        0xffe0'6247    0x34  Code  Gb  flop.o [7]
 _xAreRecursiveMutexTasksStillRunning
-                        0xffe0'5d79    0x3a  Code  Gb  recmutex.o [7]
+                        0xffe0'5dc1    0x3a  Code  Gb  recmutex.o [7]
 _xAreSemaphoreTasksStillRunning
-                        0xffe0'5f31    0x47  Code  Gb  semtest.o [7]
+                        0xffe0'5f79    0x47  Code  Gb  semtest.o [7]
 _xAreTaskNotificationArrayTasksStillRunning
-                        0xffe0'8ba6    0x32  Code  Gb  TaskNotifyArray.o [7]
+                        0xffe0'8bee    0x32  Code  Gb  TaskNotifyArray.o [7]
 _xAreTaskNotificationTasksStillRunning
-                        0xffe0'7b20    0x28  Code  Gb  TaskNotify.o [7]
+                        0xffe0'7b68    0x28  Code  Gb  TaskNotify.o [7]
 _xAreTimerDemoTasksStillRunning
-                        0xffe0'68af    0x3b  Code  Gb  TimerDemo.o [7]
-_xAutoReloadTimers           0xba74    0x18  Data  Lc  TimerDemo.o [7]
+                        0xffe0'68f7    0x3b  Code  Gb  TimerDemo.o [7]
+_xAutoReloadTimers           0xba08    0x18  Data  Lc  TimerDemo.o [7]
 _xBasePeriod                   0xf8     0x4  Data  Lc  TimerDemo.o [7]
-_xBlockAllocatedBit          0xba58     0x4  Data  Lc  heap_4.o [3]
-_xBlockWasAborted            0xba08     0x4  Data  Lc  GenQTest.o [7]
-_xBlockingIsSuspended        0xb9dc     0x4  Data  Lc  recmutex.o [7]
-_xBlockingTaskHandle         0xbae0     0x4  Data  Lc  recmutex.o [7]
+_xBlockAllocatedBit          0xb9ec     0x4  Data  Lc  heap_4.o [3]
+_xBlockWasAborted            0xb99c     0x4  Data  Lc  GenQTest.o [7]
+_xBlockingIsSuspended        0xb970     0x4  Data  Lc  recmutex.o [7]
+_xBlockingTaskHandle         0xba74     0x4  Data  Lc  recmutex.o [7]
 _xContinuousIncrementHandle
-                             0xbaa0     0x4  Data  Lc  dynamic.o [7]
+                             0xba34     0x4  Data  Lc  dynamic.o [7]
 _xControllingIsSuspended
-                             0xb9d8     0x4  Data  Lc  recmutex.o [7]
+                             0xb96c     0x4  Data  Lc  recmutex.o [7]
 _xControllingTaskHandle
-                             0xbadc     0x4  Data  Lc  recmutex.o [7]
-_xCreatedTask                0xbb58     0x4  Data  Gb  death.o [7]
-_xDelayedTaskList1           0xb6dc    0x14  Data  Lc  tasks.o [1]
-_xDelayedTaskList2           0xb6f0    0x14  Data  Lc  tasks.o [1]
-_xErrorDetected              0xbacc     0x4  Data  Lc  countsem.o [7]
-_xErrorDetected              0xb9f8     0x4  Data  Lc  GenQTest.o [7]
-_xErrorDetected              0xb9a8     0x4  Data  Lc  IntSemTest.o [7]
+                             0xba70     0x4  Data  Lc  recmutex.o [7]
+_xCreatedTask                0xbaec     0x4  Data  Gb  death.o [7]
+_xDelayedTaskList1           0xb670    0x14  Data  Lc  tasks.o [1]
+_xDelayedTaskList2           0xb684    0x14  Data  Lc  tasks.o [1]
+_xErrorDetected              0xba60     0x4  Data  Lc  countsem.o [7]
+_xErrorDetected              0xb98c     0x4  Data  Lc  GenQTest.o [7]
+_xErrorDetected              0xb93c     0x4  Data  Lc  IntSemTest.o [7]
 _xErrorLine                    0x58     0x4  Data  Lc  IntQueue.o [7]
-_xErrorOccurred              0xba94     0x4  Data  Lc  blocktim.o [7]
-_xErrorOccurred              0xb9d4     0x4  Data  Lc  recmutex.o [7]
+_xErrorOccurred              0xba28     0x4  Data  Lc  blocktim.o [7]
+_xErrorOccurred              0xb968     0x4  Data  Lc  recmutex.o [7]
 _xErrorStatus                  0x54     0x4  Data  Lc  IntQueue.o [7]
 _xErrorStatus                  0xb4     0x4  Data  Lc  TaskNotify.o [7]
-_xEventGroup                 0xb954     0x4  Data  Lc  EventGroupsDemo.o [7]
-_xEventGroupClearBits   0xffe0'9658    0x2a  Code  Gb  event_groups.o [1]
+_xEventGroup                 0xb8e8     0x4  Data  Lc  EventGroupsDemo.o [7]
+_xEventGroupClearBits   0xffe0'96a0    0x2a  Code  Gb  event_groups.o [1]
 _xEventGroupClearBitsFromISR
-                        0xffe0'9682    0x10  Code  Gb  event_groups.o [1]
-_xEventGroupCreate      0xffe0'945b    0x1d  Code  Gb  event_groups.o [1]
+                        0xffe0'96ca    0x10  Code  Gb  event_groups.o [1]
+_xEventGroupCreate      0xffe0'94a3    0x1d  Code  Gb  event_groups.o [1]
 _xEventGroupGetBitsFromISR
-                        0xffe0'9692    0x2a  Code  Gb  event_groups.o [1]
-_xEventGroupSetBits     0xffe0'9478    0x6d  Code  Gb  event_groups.o [1]
+                        0xffe0'96da    0x2a  Code  Gb  event_groups.o [1]
+_xEventGroupSetBits     0xffe0'94c0    0x6d  Code  Gb  event_groups.o [1]
 _xEventGroupSetBitsFromISR
-                        0xffe0'972d    0x10  Code  Gb  event_groups.o [1]
-_xEventGroupSync        0xffe0'94e5    0xab  Code  Gb  event_groups.o [1]
-_xEventGroupWaitBits    0xffe0'9590    0xc8  Code  Gb  event_groups.o [1]
-_xFirstTimerHandler     0xffe0'480d   0x191  Code  Gb  IntQueue.o [7]
-_xFreeBytesRemaining         0xba48     0x4  Data  Lc  heap_4.o [3]
-_xHelpCommand           0xffe0'0884    0x10  Data  Lc  FreeRTOS_CLI.o [6]
+                        0xffe0'9775    0x10  Code  Gb  event_groups.o [1]
+_xEventGroupSync        0xffe0'952d    0xab  Code  Gb  event_groups.o [1]
+_xEventGroupWaitBits    0xffe0'95d8    0xc8  Code  Gb  event_groups.o [1]
+_xFirstTimerHandler     0xffe0'485d   0x191  Code  Gb  IntQueue.o [7]
+_xFreeBytesRemaining         0xb9dc     0x4  Data  Lc  heap_4.o [3]
+_xHelpCommand           0xffe0'08e4    0x10  Data  Lc  FreeRTOS_CLI.o [6]
 _xHighPriorityMutexTask
-                             0xbaf8     0x4  Data  Lc  GenQTest.o [7]
+                             0xba8c     0x4  Data  Lc  GenQTest.o [7]
 _xHighPriorityNormallyEmptyTask1
-                             0xba64     0x4  Data  Gb  IntQueue.o [7]
+                             0xb9f8     0x4  Data  Gb  IntQueue.o [7]
 _xHighPriorityNormallyEmptyTask2
-                             0xba68     0x4  Data  Gb  IntQueue.o [7]
+                             0xb9fc     0x4  Data  Gb  IntQueue.o [7]
 _xHighPriorityNormallyFullTask1
-                             0xba6c     0x4  Data  Gb  IntQueue.o [7]
+                             0xba00     0x4  Data  Gb  IntQueue.o [7]
 _xHighPriorityNormallyFullTask2
-                             0xba70     0x4  Data  Gb  IntQueue.o [7]
+                             0xba04     0x4  Data  Gb  IntQueue.o [7]
 _xISRAutoReloadTimer           0xf0     0x4  Data  Lc  TimerDemo.o [7]
-_xISRCountingSemaphore       0xb9b8     0x4  Data  Lc  IntSemTest.o [7]
-_xISREventGroup              0xb958     0x4  Data  Lc  EventGroupsDemo.o [7]
-_xISRMutex                   0xb9b4     0x4  Data  Lc  IntSemTest.o [7]
+_xISRCountingSemaphore       0xb94c     0x4  Data  Lc  IntSemTest.o [7]
+_xISREventGroup              0xb8ec     0x4  Data  Lc  EventGroupsDemo.o [7]
+_xISRMutex                   0xb948     0x4  Data  Lc  IntSemTest.o [7]
 _xISROneShotTimer              0xf4     0x4  Data  Lc  TimerDemo.o [7]
 _xISRQueue                    0x184     0x4  Data  Lc  QueueOverwrite.o [7]
 _xISRTestStatus               0x180     0x4  Data  Lc  QueueOverwrite.o [7]
 _xIncrementingIndexTimer
                                0x10     0x4  Data  Lc  TaskNotifyArray.o [7]
 _xIsCreateTaskStillRunning
-                        0xffe0'931f    0x30  Code  Gb  death.o [7]
+                        0xffe0'9367    0x30  Code  Gb  death.o [7]
 _xIsQueueOverwriteTaskStillRunning
-                        0xffe0'6c99    0x18  Code  Gb  QueueOverwrite.o [7]
+                        0xffe0'6ce1    0x18  Code  Gb  QueueOverwrite.o [7]
 _xLimitedIncrementHandle
-                             0xbaa4     0x4  Data  Lc  dynamic.o [7]
-_xMasterSlaveMutex           0xb9bc     0x4  Data  Lc  IntSemTest.o [7]
+                             0xba38     0x4  Data  Lc  dynamic.o [7]
+_xMasterSlaveMutex           0xb950     0x4  Data  Lc  IntSemTest.o [7]
 _xMediumPriorityMutexTask
-                             0xbafc     0x4  Data  Lc  GenQTest.o [7]
+                             0xba90     0x4  Data  Lc  GenQTest.o [7]
 _xMinimumEverFreeBytesRemaining
-                             0xba4c     0x4  Data  Lc  heap_4.o [3]
-_xMutex                      0xbad8     0x4  Data  Lc  recmutex.o [7]
+                             0xb9e0     0x4  Data  Lc  heap_4.o [3]
+_xMutex                      0xba6c     0x4  Data  Lc  recmutex.o [7]
 _xNextTaskUnblockTime          0xa8     0x4  Data  Lc  tasks.o [1]
-_xNormallyEmptyQueue         0xba5c     0x4  Data  Lc  IntQueue.o [7]
-_xNormallyFullQueue          0xba60     0x4  Data  Lc  IntQueue.o [7]
+_xNormallyEmptyQueue         0xb9f0     0x4  Data  Lc  IntQueue.o [7]
+_xNormallyFullQueue          0xb9f4     0x4  Data  Lc  IntQueue.o [7]
 _xNotifyArrayTaskFromISR
-                        0xffe0'8b22    0x84  Code  Gb  TaskNotifyArray.o [7]
-_xNotifyTaskFromISR     0xffe0'7a97    0x89  Code  Gb  TaskNotify.o [7]
+                        0xffe0'8b6a    0x84  Code  Gb  TaskNotifyArray.o [7]
+_xNotifyTaskFromISR     0xffe0'7adf    0x89  Code  Gb  TaskNotify.o [7]
 _xNotifyWhileSuspendedTimer
                                0x14     0x4  Data  Lc  TaskNotifyArray.o [7]
 _xNumOfOverflows               0xa0     0x4  Data  Lc  tasks.o [1]
 _xNumberOfSuccessfulAllocations
-                             0xba50     0x4  Data  Lc  heap_4.o [3]
+                             0xb9e4     0x4  Data  Lc  heap_4.o [3]
 _xNumberOfSuccessfulFrees
-                             0xba54     0x4  Data  Lc  heap_4.o [3]
+                             0xb9e8     0x4  Data  Lc  heap_4.o [3]
 _xOkToGiveCountingSemaphore
-                             0xb9c4     0x4  Data  Lc  IntSemTest.o [7]
-_xOkToGiveMutex              0xb9c0     0x4  Data  Lc  IntSemTest.o [7]
+                             0xb958     0x4  Data  Lc  IntSemTest.o [7]
+_xOkToGiveMutex              0xb954     0x4  Data  Lc  IntSemTest.o [7]
 _xOneShotTimer                 0xec     0x4  Data  Lc  TimerDemo.o [7]
 _xParameterEcho         0xffe0'04cc    0x10  Data  Lc  Sample-CLI-commands.o [5]
-_xParameters                 0xba14    0x18  Data  Lc  countsem.o [7]
+_xParameters                 0xb9a8    0x18  Data  Lc  countsem.o [7]
 _xPendedTicks                  0x98     0x4  Data  Lc  tasks.o [1]
-_xPendingReadyList           0xb698    0x14  Data  Lc  tasks.o [1]
-_xPortGetFreeHeapSize   0xffe0'25bb     0x9  Code  Gb  heap_4.o [3]
+_xPendingReadyList           0xb62c    0x14  Data  Lc  tasks.o [1]
+_xPortGetFreeHeapSize   0xffe0'2613     0x9  Code  Gb  heap_4.o [3]
 _xPortGetMinimumEverFreeHeapSize
-                        0xffe0'25c4     0x9  Code  Gb  heap_4.o [3]
-_xPortStartScheduler    0xffe0'26e8    0x37  Code  Gb  port.o [2]
-_xPrimaryCycles              0xba8c     0x4  Data  Lc  blocktim.o [7]
+                        0xffe0'261c     0x9  Code  Gb  heap_4.o [3]
+_xPortStartScheduler    0xffe0'2740    0x37  Code  Gb  port.o [2]
+_xPrimaryCycles              0xba20     0x4  Data  Lc  blocktim.o [7]
 _xQueryHeap             0xffe0'04dc    0x10  Data  Lc  Sample-CLI-commands.o [5]
 _xQueueCreateCountingSemaphore
-                        0xffe0'38f1    0x7d  Code  Gb  queue.o [1]
-_xQueueCreateMutex      0xffe0'34a8   0x176  Code  Gb  queue.o [1]
-_xQueueGenericCreate    0xffe0'333f    0x89  Code  Gb  queue.o [1]
-_xQueueGenericReset     0xffe0'32d0    0x6f  Code  Gb  queue.o [1]
-_xQueueGenericSend      0xffe0'3970   0x13d  Code  Gb  queue.o [1]
+                        0xffe0'3941    0x7d  Code  Gb  queue.o [1]
+_xQueueCreateMutex      0xffe0'34f8   0x176  Code  Gb  queue.o [1]
+_xQueueGenericCreate    0xffe0'338f    0x89  Code  Gb  queue.o [1]
+_xQueueGenericReset     0xffe0'3320    0x6f  Code  Gb  queue.o [1]
+_xQueueGenericSend      0xffe0'39c0   0x13d  Code  Gb  queue.o [1]
 _xQueueGenericSendFromISR
-                        0xffe0'3aad    0xce  Code  Gb  queue.o [1]
-_xQueueGiveFromISR      0xffe0'3b7b    0xb6  Code  Gb  queue.o [1]
+                        0xffe0'3afd    0xce  Code  Gb  queue.o [1]
+_xQueueGiveFromISR      0xffe0'3bcb    0xb6  Code  Gb  queue.o [1]
 _xQueueGiveMutexRecursive
-                        0xffe0'361e   0x134  Code  Gb  queue.o [1]
+                        0xffe0'366e   0x134  Code  Gb  queue.o [1]
 _xQueueIsQueueFullFromISR
-                        0xffe0'3fea    0x16  Code  Gb  queue.o [1]
-_xQueuePeek             0xffe0'3d80   0x124  Code  Gb  queue.o [1]
-_xQueuePeekFromISR      0xffe0'3f42    0x72  Code  Gb  queue.o [1]
-_xQueueReceive          0xffe0'3c58   0x124  Code  Gb  queue.o [1]
-_xQueueReceiveFromISR   0xffe0'3ea4    0x9e  Code  Gb  queue.o [1]
-_xQueueSemaphoreTake    0xffe0'3758   0x164  Code  Gb  queue.o [1]
+                        0xffe0'403a    0x16  Code  Gb  queue.o [1]
+_xQueuePeek             0xffe0'3dd0   0x124  Code  Gb  queue.o [1]
+_xQueuePeekFromISR      0xffe0'3f92    0x72  Code  Gb  queue.o [1]
+_xQueueReceive          0xffe0'3ca8   0x124  Code  Gb  queue.o [1]
+_xQueueReceiveFromISR   0xffe0'3ef4    0x9e  Code  Gb  queue.o [1]
+_xQueueSemaphoreTake    0xffe0'37a8   0x164  Code  Gb  queue.o [1]
 _xQueueTakeMutexRecursive
-                        0xffe0'38bc    0x35  Code  Gb  queue.o [1]
+                        0xffe0'390c    0x35  Code  Gb  queue.o [1]
 _xRegisteredCommands          0x174     0x8  Data  Lc  FreeRTOS_CLI.o [6]
-_xRunIndicator               0xbac8     0x4  Data  Lc  blocktim.o [7]
-_xRxQueue                    0xbb30     0x4  Data  Lc  serial.o [5]
+_xRunIndicator               0xba5c     0x4  Data  Lc  blocktim.o [7]
+_xRxQueue                    0xbac4     0x4  Data  Lc  serial.o [5]
 _xSchedulerRunning             0x94     0x4  Data  Lc  tasks.o [1]
-_xSecondTimerHandler    0xffe0'499e   0x246  Code  Gb  IntQueue.o [7]
-_xSecondary                  0xbac4     0x4  Data  Lc  blocktim.o [7]
-_xSecondaryCycles            0xba90     0x4  Data  Lc  blocktim.o [7]
+_xSecondTimerHandler    0xffe0'49ee   0x246  Code  Gb  IntQueue.o [7]
+_xSecondary                  0xba58     0x4  Data  Lc  blocktim.o [7]
+_xSecondaryCycles            0xba24     0x4  Data  Lc  blocktim.o [7]
 _xSendNotificationFromISR
                                0x1c     0x4  Data  Lc  TaskNotifyArray.o [7]
-_xSendingTask                0xbb34     0x4  Data  Lc  serial.o [5]
-_xSerialGetChar         0xffe0'9a88     0xb  Code  Gb  serial.o [5]
+_xSendingTask                0xbac8     0x4  Data  Lc  serial.o [5]
+_xSerialGetChar         0xffe0'9aca     0xb  Code  Gb  serial.o [5]
 _xSerialPortInitMinimal
-                        0xffe0'99b8    0x35  Code  Gb  serial.o [5]
-_xSerialPutChar         0xffe0'9a93    0x3c  Code  Gb  serial.o [5]
-_xSerialSciHandle            0xbb64     0x4  Data  Gb  r_cg_hardware_setup.o [9]
-_xSerialTxDtcInfo            0xbab0    0x10  Data  Gb  r_cg_hardware_setup.o [9]
-_xSlaveHandle                0xbb5c     0x4  Data  Lc  IntSemTest.o [7]
-_xStart                      0xbb00     0x8  Data  Lc  heap_4.o [3]
+                        0xffe0'99fa    0x35  Code  Gb  serial.o [5]
+_xSerialPutChar         0xffe0'9ad5    0x3c  Code  Gb  serial.o [5]
+_xSerialSciHandle            0xbaf4     0x4  Data  Gb  r_cg_hardware_setup.o [9]
+_xSerialTxDtcInfo            0xba44    0x10  Data  Gb  r_cg_hardware_setup.o [9]
+_xSlaveHandle                0xbaf0     0x4  Data  Lc  IntSemTest.o [7]
+_xStart                      0xba94     0x8  Data  Lc  heap_4.o [3]
 _xSuspendedQueueReceiveError
-                             0xba34     0x4  Data  Lc  dynamic.o [7]
+                             0xb9c8     0x4  Data  Lc  dynamic.o [7]
 _xSuspendedQueueSendError
-                             0xba30     0x4  Data  Lc  dynamic.o [7]
-_xSuspendedTaskList          0xb6c0    0x14  Data  Lc  tasks.o [1]
-_xSuspendedTestQueue         0xbaac     0x4  Data  Gb  dynamic.o [7]
-_xSyncTask1                  0xb95c     0x4  Data  Lc  EventGroupsDemo.o [7]
-_xSyncTask2                  0xb960     0x4  Data  Lc  EventGroupsDemo.o [7]
-_xTaskCheckForTimeOut   0xffe0'1b09    0x5e  Code  Gb  tasks.o [1]
-_xTaskCreate            0xffe0'0b02   0x1cd  Code  Gb  tasks.o [1]
-_xTaskDelayUntil        0xffe0'0d67    0x9d  Code  Gb  tasks.o [1]
-_xTaskGenericNotify     0xffe0'2028    0xde  Code  Gb  tasks.o [1]
+                             0xb9c4     0x4  Data  Lc  dynamic.o [7]
+_xSuspendedTaskList          0xb654    0x14  Data  Lc  tasks.o [1]
+_xSuspendedTestQueue         0xba40     0x4  Data  Gb  dynamic.o [7]
+_xSyncTask1                  0xb8f0     0x4  Data  Lc  EventGroupsDemo.o [7]
+_xSyncTask2                  0xb8f4     0x4  Data  Lc  EventGroupsDemo.o [7]
+_xTaskCheckForTimeOut   0xffe0'1b69    0x5e  Code  Gb  tasks.o [1]
+_xTaskCreate            0xffe0'0b62   0x1cd  Code  Gb  tasks.o [1]
+_xTaskDelayUntil        0xffe0'0dc7    0x9d  Code  Gb  tasks.o [1]
+_xTaskGenericNotify     0xffe0'2088    0xde  Code  Gb  tasks.o [1]
 _xTaskGenericNotifyFromISR
-                        0xffe0'2106   0x11d  Code  Gb  tasks.o [1]
+                        0xffe0'2166   0x11d  Code  Gb  tasks.o [1]
 _xTaskGenericNotifyStateClear
-                        0xffe0'22e2    0x34  Code  Gb  tasks.o [1]
+                        0xffe0'2342    0x34  Code  Gb  tasks.o [1]
 _xTaskGenericNotifyWait
-                        0xffe0'1f43    0xe5  Code  Gb  tasks.o [1]
+                        0xffe0'1fa3    0xe5  Code  Gb  tasks.o [1]
 _xTaskGetCurrentTaskHandle
-                        0xffe0'1c1a     0x8  Code  Gb  tasks.o [1]
+                        0xffe0'1c7a     0x8  Code  Gb  tasks.o [1]
 _xTaskGetSchedulerState
-                        0xffe0'1c22    0x18  Code  Gb  tasks.o [1]
-_xTaskGetTickCount      0xffe0'1445     0x9  Code  Gb  tasks.o [1]
+                        0xffe0'1c82    0x18  Code  Gb  tasks.o [1]
+_xTaskGetTickCount      0xffe0'14a5     0x9  Code  Gb  tasks.o [1]
 _xTaskGetTickCountFromISR
-                        0xffe0'144e    0x18  Code  Gb  tasks.o [1]
-_xTaskIncrementTick     0xffe0'17f0    0xf7  Code  Gb  tasks.o [1]
+                        0xffe0'14ae    0x18  Code  Gb  tasks.o [1]
+_xTaskIncrementTick     0xffe0'1850    0xf7  Code  Gb  tasks.o [1]
 _xTaskPriorityDisinherit
-                        0xffe0'1cac    0x67  Code  Gb  tasks.o [1]
-_xTaskPriorityInherit   0xffe0'1c3a    0x72  Code  Gb  tasks.o [1]
+                        0xffe0'1d0c    0x67  Code  Gb  tasks.o [1]
+_xTaskPriorityInherit   0xffe0'1c9a    0x72  Code  Gb  tasks.o [1]
 _xTaskRemoveFromEventList
-                        0xffe0'1a40    0x61  Code  Gb  tasks.o [1]
-_xTaskResumeAll         0xffe0'1380    0xc5  Code  Gb  tasks.o [1]
+                        0xffe0'1aa0    0x61  Code  Gb  tasks.o [1]
+_xTaskResumeAll         0xffe0'13e0    0xc5  Code  Gb  tasks.o [1]
 _xTaskStats             0xffe0'04ac    0x10  Data  Lc  Sample-CLI-commands.o [5]
 _xTaskToNotify                 0xbc     0x4  Data  Lc  TaskNotify.o [7]
 _xTaskToNotify                  0xc     0x4  Data  Lc  TaskNotifyArray.o [7]
 _xTasksWaitingTermination
-                             0xb6ac    0x14  Data  Lc  tasks.o [1]
-_xTestQueue                  0xbac0     0x4  Data  Lc  blocktim.o [7]
+                             0xb640    0x14  Data  Lc  tasks.o [1]
+_xTestQueue                  0xba54     0x4  Data  Lc  blocktim.o [7]
 _xTestStatus                   0xe4     0x4  Data  Lc  TimerDemo.o [7]
 _xThreeParameterEcho    0xffe0'04bc    0x10  Data  Lc  Sample-CLI-commands.o [5]
 _xTickCount                    0x8c     0x4  Data  Lc  tasks.o [1]
 _xTimer                        0xc8     0x4  Data  Lc  TaskNotify.o [7]
-_xTimerCreate           0xffe0'29b4    0x43  Code  Gb  timers.o [1]
-_xTimerCreateTimerTask  0xffe0'2979    0x3b  Code  Gb  timers.o [1]
-_xTimerGenericCommand   0xffe0'29f7    0x64  Code  Gb  timers.o [1]
-_xTimerIsTimerActive    0xffe0'2d5f    0x1e  Code  Gb  timers.o [1]
+_xTimerCreate           0xffe0'2a04    0x43  Code  Gb  timers.o [1]
+_xTimerCreateTimerTask  0xffe0'29c9    0x3b  Code  Gb  timers.o [1]
+_xTimerGenericCommand   0xffe0'2a47    0x64  Code  Gb  timers.o [1]
+_xTimerIsTimerActive    0xffe0'2daf    0x1e  Code  Gb  timers.o [1]
 _xTimerPendFunctionCallFromISR
-                        0xffe0'2daf    0x21  Code  Gb  timers.o [1]
-_xTimerQueue                 0xbae4     0x4  Data  Lc  timers.o [1]
-_xTimerTaskHandle            0xbae8     0x4  Data  Lc  timers.o [1]
-_xTxMutex                    0xbb74     0x4  Data  Lc  UARTCommandConsole.o [5]
+                        0xffe0'2dff    0x21  Code  Gb  timers.o [1]
+_xTimerQueue                 0xba78     0x4  Data  Lc  timers.o [1]
+_xTimerTaskHandle            0xba7c     0x4  Data  Lc  timers.o [1]
+_xTxMutex                    0xbb04     0x4  Data  Lc  UARTCommandConsole.o [5]
 _xWasSuspended                 0x5c     0x4  Data  Lc  IntQueue.o [7]
 _xYieldPending                 0x9c     0x4  Data  Lc  tasks.o [1]
 prvHelpCommand::pxCommand
@@ -2705,9 +2673,9 @@ prvNotifyingTimerCallback::uxIndexToNotify
 prvOneShotTimerCallback::uxCallCount
                               0x108     0x4  Data  Lc  TimerDemo.o [7]
 prvParameterEchoCommand::uxParameterNumber
-                             0xbb6c     0x4  Data  Lc  Sample-CLI-commands.o [5]
+                             0xbafc     0x4  Data  Lc  Sample-CLI-commands.o [5]
 prvSampleTimeNow::xLastTime
-                             0xbaec     0x4  Data  Lc  timers.o [1]
+                             0xba80     0x4  Data  Lc  timers.o [1]
 prvSuspendedTaskTimerTestCallback::ulCallCount
                                0xd0     0x4  Data  Lc  TaskNotify.o [7]
 prvSuspendedTaskTimerTestCallback::ulCallCount
@@ -2715,49 +2683,49 @@ prvSuspendedTaskTimerTestCallback::ulCallCount
 prvSuspendedTaskTimerTestCallback::uxIndexToNotify
                                0x24     0x4  Data  Lc  TaskNotifyArray.o [7]
 prvThreeParameterEchoCommand::uxParameterNumber
-                             0xbb68     0x4  Data  Lc  Sample-CLI-commands.o [5]
+                             0xbaf8     0x4  Data  Lc  Sample-CLI-commands.o [5]
 prvUARTCommandConsoleTask::cInputString
-                             0xb8e4    0x32  Data  Lc  UARTCommandConsole.o [5]
+                             0xb878    0x32  Data  Lc  UARTCommandConsole.o [5]
 prvUARTCommandConsoleTask::cLastInputString
-                             0xb916    0x32  Data  Lc  UARTCommandConsole.o [5]
+                             0xb8aa    0x32  Data  Lc  UARTCommandConsole.o [5]
 vInterruptSemaphorePeriodicTest::xLastGiveTime
-                             0xb9c8     0x4  Data  Lc  IntSemTest.o [7]
+                             0xb95c     0x4  Data  Lc  IntSemTest.o [7]
 vPeriodicEventGroupsProcessing::xCallCount
-                             0xb964     0x4  Data  Lc  EventGroupsDemo.o [7]
+                             0xb8f8     0x4  Data  Lc  EventGroupsDemo.o [7]
 vPeriodicEventGroupsProcessing::xISRTestError
-                             0xb968     0x4  Data  Lc  EventGroupsDemo.o [7]
+                             0xb8fc     0x4  Data  Lc  EventGroupsDemo.o [7]
 vQueueOverwritePeriodicISRDemo::ulCallCount
                               0x188     0x4  Data  Lc  QueueOverwrite.o [7]
 vQueueSendWhenSuspendedTask::ulValueToSend
-                             0xba3c     0x4  Data  Lc  dynamic.o [7]
+                             0xb9d0     0x4  Data  Lc  dynamic.o [7]
 vTimerPeriodicISRTests::uxTick
                               0x104     0x4  Data  Lc  TimerDemo.o [7]
 xAreBlockTimeTestTasksStillRunning::xLastPrimaryCycleCount
-                             0xba98     0x4  Data  Lc  blocktim.o [7]
+                             0xba2c     0x4  Data  Lc  blocktim.o [7]
 xAreBlockTimeTestTasksStillRunning::xLastSecondaryCycleCount
-                             0xba9c     0x4  Data  Lc  blocktim.o [7]
+                             0xba30     0x4  Data  Lc  blocktim.o [7]
 xAreBlockingQueuesStillRunning::sLastBlockingConsumerCount
-                             0xbb44     0x6  Data  Lc  BlockQ.o [7]
+                             0xbad8     0x6  Data  Lc  BlockQ.o [7]
 xAreBlockingQueuesStillRunning::sLastBlockingProducerCount
-                             0xbb4a     0x6  Data  Lc  BlockQ.o [7]
+                             0xbade     0x6  Data  Lc  BlockQ.o [7]
 xAreCountingSemaphoreTasksStillRunning::uxLastCount0
-                             0xbad0     0x4  Data  Lc  countsem.o [7]
+                             0xba64     0x4  Data  Lc  countsem.o [7]
 xAreCountingSemaphoreTasksStillRunning::uxLastCount1
-                             0xbad4     0x4  Data  Lc  countsem.o [7]
+                             0xba68     0x4  Data  Lc  countsem.o [7]
 xAreDynamicPriorityTasksStillRunning::ulLastExpectedValue
-                             0xba40     0x4  Data  Lc  dynamic.o [7]
+                             0xb9d4     0x4  Data  Lc  dynamic.o [7]
 xAreDynamicPriorityTasksStillRunning::usLastTaskCheck
-                             0xba2e     0x2  Data  Lc  dynamic.o [7]
+                             0xb9c2     0x2  Data  Lc  dynamic.o [7]
 xAreEventGroupTasksStillRunning::ulPreviousISRCycles
-                             0xb974     0x4  Data  Lc  EventGroupsDemo.o [7]
+                             0xb908     0x4  Data  Lc  EventGroupsDemo.o [7]
 xAreEventGroupTasksStillRunning::ulPreviousSetBitCycles
-                             0xb970     0x4  Data  Lc  EventGroupsDemo.o [7]
+                             0xb904     0x4  Data  Lc  EventGroupsDemo.o [7]
 xAreEventGroupTasksStillRunning::ulPreviousWaitBitCycles
-                             0xb96c     0x4  Data  Lc  EventGroupsDemo.o [7]
+                             0xb900     0x4  Data  Lc  EventGroupsDemo.o [7]
 xAreGenericQueueTasksStillRunning::ulLastLoopCounter
-                             0xba0c     0x4  Data  Lc  GenQTest.o [7]
+                             0xb9a0     0x4  Data  Lc  GenQTest.o [7]
 xAreGenericQueueTasksStillRunning::ulLastLoopCounter2
-                             0xba10     0x4  Data  Lc  GenQTest.o [7]
+                             0xb9a4     0x4  Data  Lc  GenQTest.o [7]
 xAreIntQueueTasksStillRunning::uxLastHighPriorityLoops1
                                0x70     0x4  Data  Lc  IntQueue.o [7]
 xAreIntQueueTasksStillRunning::uxLastHighPriorityLoops2
@@ -2767,17 +2735,17 @@ xAreIntQueueTasksStillRunning::uxLastLowPriorityLoops1
 xAreIntQueueTasksStillRunning::uxLastLowPriorityLoops2
                                0x7c     0x4  Data  Lc  IntQueue.o [7]
 xAreInterruptSemaphoreTasksStillRunning::ulLastCountingSemaphoreLoops
-                             0xb9d0     0x4  Data  Lc  IntSemTest.o [7]
+                             0xb964     0x4  Data  Lc  IntSemTest.o [7]
 xAreInterruptSemaphoreTasksStillRunning::ulLastMasterLoopCounter
-                             0xb9cc     0x4  Data  Lc  IntSemTest.o [7]
+                             0xb960     0x4  Data  Lc  IntSemTest.o [7]
 xAreRecursiveMutexTasksStillRunning::uxLastBlockingCycles
-                             0xb9f0     0x4  Data  Lc  recmutex.o [7]
+                             0xb984     0x4  Data  Lc  recmutex.o [7]
 xAreRecursiveMutexTasksStillRunning::uxLastControllingCycles
-                             0xb9ec     0x4  Data  Lc  recmutex.o [7]
+                             0xb980     0x4  Data  Lc  recmutex.o [7]
 xAreRecursiveMutexTasksStillRunning::uxLastPollingCycles
-                             0xb9f4     0x4  Data  Lc  recmutex.o [7]
+                             0xb988     0x4  Data  Lc  recmutex.o [7]
 xAreSemaphoreTasksStillRunning::sLastCheckVariables
-                             0xbb28     0x8  Data  Lc  semtest.o [7]
+                             0xbabc     0x8  Data  Lc  semtest.o [7]
 xAreTaskNotificationArrayTasksStillRunning::ulCallCount
                                0x3c     0x4  Data  Lc  TaskNotifyArray.o [7]
 xAreTaskNotificationArrayTasksStillRunning::ulLastCourseCycleCount
@@ -2793,7 +2761,7 @@ xAreTimerDemoTasksStillRunning::ulLastLoopCounter
 xAreTimerDemoTasksStillRunning::xIterationsWithoutCounterIncrement
                               0x100     0x4  Data  Lc  TimerDemo.o [7]
 xAreTimerDemoTasksStillRunning::xLastCycleFrequency
-                             0xbb70     0x4  Data  Lc  TimerDemo.o [7]
+                             0xbb00     0x4  Data  Lc  TimerDemo.o [7]
 xFirstTimerHandler::uxNextOperation
                                0x68     0x4  Data  Lc  IntQueue.o [7]
 xIsCreateTaskStillRunning::usLastCreationCount
@@ -2836,9 +2804,9 @@ xSecondTimerHandler::uxNextOperation
 [24] = mrx2fll1.a
 [25] = rtrx2fll.a
 
-  48'858 bytes of readonly  code memory
-   4'274 bytes of readonly  data memory
-  49'018 bytes of readwrite data memory
+  48'246 bytes of readonly  code memory
+   4'365 bytes of readonly  data memory
+  48'902 bytes of readwrite data memory
 
 Errors: none
 Warnings: 2

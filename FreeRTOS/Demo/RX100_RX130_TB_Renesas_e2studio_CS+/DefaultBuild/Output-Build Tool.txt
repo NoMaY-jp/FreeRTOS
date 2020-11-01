@@ -1,7 +1,7 @@
-﻿========== Start rebuild all(2020年10月15日 22:04:46) ==========
+﻿========== Start rebuild all(2020年11月1日 18:40:01) ==========
 ------ Start build(RTOSDemo, DefaultBuild) ------
->..\..\Source\portable\Renesas\RX\port_asm.src
 >..\..\Source\event_groups.c ..\..\Source\list.c ..\..\Source\portable\MemMang\heap_4.c ..\..\Source\portable\Renesas\RX\port.c ..\..\Source\queue.c ..\..\Source\stream_buffer.c ..\..\Source\tasks.c ..\..\Source\timers.c src\FreeRTOS_Demo\Blinky_Demo\main_blinky.c ..\..\..\FreeRTOS-Plus\Source\FreeRTOS-Plus-CLI\FreeRTOS_CLI.c src\FreeRTOS_Demo\Full_Demo\IntQueueTimer.c ..\..\..\FreeRTOS-Plus\Demo\Common\FreeRTOS_Plus_CLI_Demos\Sample-CLI-commands.c ..\Common\Minimal\BlockQ.c ..\Common\Minimal\EventGroupsDemo.c ..\Common\Minimal\GenQTest.c ..\Common\Minimal\IntQueue.c ..\Common\Minimal\IntSemTest.c ..\Common\Minimal\QueueOverwrite.c ..\Common\Minimal\TaskNotify.c ..\Common\Minimal\TaskNotifyArray.c ..\Common\Minimal\TimerDemo.c ..\Common\Minimal\blocktim.c ..\Common\Minimal\countsem.c ..\Common\Minimal\death.c ..\Common\Minimal\dynamic.c ..\Common\Minimal\flop.c ..\Common\Minimal\recmutex.c ..\Common\Minimal\semtest.c ..\..\..\FreeRTOS-Plus\Demo\Common\FreeRTOS_Plus_CLI_Demos\UARTCommandConsole.c src\FreeRTOS_Demo\Full_Demo\main_full.c src\FreeRTOS_Demo\Full_Demo\serial.c src\frtos_startup\freertos_object_init.c src\frtos_startup\freertos_start.c src\smc_gen\general\r_cg_hardware_setup.c src\smc_gen\general\r_smc_cgc.c src\smc_gen\general\r_smc_cgc_user.c src\smc_gen\general\r_smc_interrupt.c src\smc_gen\r_bsp\board\generic_rx130\hwsetup.c src\smc_gen\r_bsp\mcu\all\dbsct.c src\smc_gen\r_bsp\mcu\all\lowlvl.c src\smc_gen\r_bsp\mcu\all\lowsrc.c src\smc_gen\r_bsp\mcu\all\mcu_locks.c src\smc_gen\r_bsp\mcu\all\r_bsp_common.c src\smc_gen\r_bsp\mcu\all\r_bsp_cpu.c src\smc_gen\r_bsp\mcu\all\r_bsp_interrupts.c src\smc_gen\r_bsp\mcu\all\r_bsp_locking.c src\smc_gen\r_bsp\mcu\all\r_bsp_mcu_startup.c src\smc_gen\r_bsp\mcu\all\r_bsp_software_interrupt.c src\smc_gen\r_bsp\mcu\all\sbrk.c src\smc_gen\r_bsp\mcu\rx130\mcu_clocks.c src\smc_gen\r_bsp\mcu\rx130\mcu_init.c src\smc_gen\r_bsp\mcu\rx130\mcu_interrupts.c src\smc_gen\r_bsp\mcu\rx130\vecttbl.c src\smc_gen\r_byteq\src\r_byteq.c src\smc_gen\r_gpio_rx\src\r_gpio_rx.c src\smc_gen\r_gpio_rx\src\targets\rx130\r_gpio_rx130.c src\smc_gen\r_pincfg\r_sci_rx_pinset.c src\smc_gen\r_sci_rx\src\r_sci_rx.c src\smc_gen\r_sci_rx\src\targets\rx130\r_sci_rx130.c src\smc_gen\r_sci_rx\src\targets\rx130\r_sci_rx130_data.c src\smc_workaround\FIT_patch.c src\smc_workaround\r_bsp_patch\resetprg.c src\smc_workaround\r_dtc_rx_patch\r_dtc_rx.c src\smc_workaround\r_dtc_rx_patch\r_dtc_rx_target.c src\smc_workaround\u_sci_rx_ext.c
+>..\..\Source\portable\Renesas\RX\port_asm.src
 src\smc_gen\r_pincfg\r_sci_rx_pinset.h(39):M0523076:Function declarations should have prototype
 src\smc_gen\r_bsp\mcu\all\r_bsp_common.c(104):M0520826:Parameter "loop_cnt" was never referenced
 src\smc_gen\r_pincfg\r_sci_rx_pinset.h(39):M0523076:Function declarations should have prototype
@@ -19,11 +19,11 @@ src\smc_workaround\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(217):M0520381:Extr
 src\smc_workaround\../smc_gen/r_dtc_rx/src/r_dtc_rx_private.h(394):M0520381:Extra ";" ignored
 >DefaultBuild\RTOSDemo.abs DefaultBuild\RTOSDemo.mot
 RAMDATA SECTION:  0000bdcc Byte(s)
-ROMDATA SECTION:  00001acc Byte(s)
-PROGRAM SECTION:  0000dcfb Byte(s)
+ROMDATA SECTION:  00001b2a Byte(s)
+PROGRAM SECTION:  0000de78 Byte(s)
 Renesas Optimizing Linker Completed
 ------ Build ended(Error:0, Warning:2)(RTOSDemo, DefaultBuild) ------
-========== Ended(Success:1 Projects, Failed:0 Projects)(2020年10月15日 22:06:34) ==========
+========== Ended(Success:1 Projects, Failed:0 Projects)(2020年11月1日 18:41:21) ==========
 
 (I)	M0520826	src\smc_gen\r_bsp\mcu\all\r_bsp_common.c(104):M0520826:Parameter "loop_cnt" was never referenced	r_bsp_common.c	104	RTOSDemo.mtpj
 (I)	M0520826	src\smc_workaround\r_dtc_rx_patch\../../smc_gen/r_dtc_rx/src/r_dtc_rx.c(347):M0520826:Parameter "act_source" was never referenced	r_dtc_rx.c	347	RTOSDemo.mtpj
