@@ -30,10 +30,10 @@
 #include "FreeRTOS_Sockets.h"
 
 /* FreeRTOS Socket wrapper include. */
-#include "freertos_sockets_wrapper.h"
+#include "sockets_wrapper.h"
 
 /* Transport interface include. */
-#include "plaintext_freertos.h"
+#include "using_plaintext.h"
 
 PlaintextTransportStatus_t Plaintext_FreeRTOS_Connect( NetworkContext_t * pNetworkContext,
                                                        const char * pHostName,
