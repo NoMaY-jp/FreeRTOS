@@ -25,3 +25,9 @@
 [submodule "FreeRTOS-Plus/Source/Application-Protocols/corePKCS11"]
 	path = FreeRTOS-Plus/Source/corePKCS11
 	url = https://github.com/FreeRTOS/corePKCS11.git
+[submodule "FreeRTOS-Plus/Source/AWS/jobs"]
+	path = FreeRTOS-Plus/Source/AWS/jobs
+	url = https://github.com/aws/jobs-for-aws-iot-embedded-sdk.git
+[submodule "FreeRTOS-Plus/Source/AWS/device-defender"]
+	path = FreeRTOS-Plus/Source/AWS/device-defender
+	url = https://github.com/aws/device-defender-for-aws-iot-embedded-sdk.git
