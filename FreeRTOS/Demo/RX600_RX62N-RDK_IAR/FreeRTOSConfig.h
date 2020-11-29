@@ -28,6 +28,9 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
+/* Hardware specifics. */
+#include <iorx62n.h>
+
 /* Board specifics. */
 #include "yrdkrx62ndef.h"
 
