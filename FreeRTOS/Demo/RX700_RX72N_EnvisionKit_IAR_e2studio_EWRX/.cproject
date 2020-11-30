@@ -247,7 +247,7 @@
                                 								
                                 <option id="iar.wtdx.rx_v3.toolchain.option.OCCRemarks::dCheck.1513464828" name="Enable remarks" superClass="iar.wtdx.rx_v3.toolchain.option.OCCRemarks::dCheck" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
-                                <option id="iar.wtdx.rx_v3.toolchain.option.OCCDiagSuppress::dEdit.881517045" name="Suppress these diagnostics:" superClass="iar.wtdx.rx_v3.toolchain.option.OCCDiagSuppress::dEdit" useByScannerDiscovery="false" value="Pa091" valueType="string"/>
+                                <option id="iar.wtdx.rx_v3.toolchain.option.OCCDiagSuppress::dEdit.881517045" name="Suppress these diagnostics:" superClass="iar.wtdx.rx_v3.toolchain.option.OCCDiagSuppress::dEdit" useByScannerDiscovery="false" value="Pa091,Pe177" valueType="string"/>
                                 								
                                 <option id="iar.wtdx.rx_v3.toolchain.option.OCCDiagRemark::dEdit.1545700857" name="Treat these as remarks:" superClass="iar.wtdx.rx_v3.toolchain.option.OCCDiagRemark::dEdit" useByScannerDiscovery="false"/>
                                 								
