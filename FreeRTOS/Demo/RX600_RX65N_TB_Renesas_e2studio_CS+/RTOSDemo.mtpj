@@ -5211,7 +5211,7 @@ D_1=R_1
       <GenerateFileFolder>C:\Renesas\FreeRTOS\Demo\RX600_RX65N_TB_Renesas_e2studio_CS+</GenerateFileFolder>
       <SmcExePath>C:\Renesas\SmartConfigurator\RX\eclipse\SmartConfigurator.exe</SmcExePath>
       <CodeGeneratorFilesGuid>3da029ce-f32f-4b28-a2b1-2e15c31ead31</CodeGeneratorFilesGuid>
-      <SCFGFile>RTOSDemo_CCRX.scfg</SCFGFile>
+      <SCFGFile>SmartConfigurator.scfg</SCFGFile>
     </Instance>
   </Class>
   <Class Guid="2a2c2a43-ecdb-4e88-80bd-e75f3e33db90">

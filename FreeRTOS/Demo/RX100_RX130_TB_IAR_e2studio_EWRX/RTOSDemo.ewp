@@ -70,7 +70,7 @@
                 </option>
                 <option>
                     <name>GenRTConfigPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\dlrxflln.h</state>
+                    <state>$TOOLKIT_DIR$\lib\dlrxflln.h</state>
                 </option>
                 <option>
                     <name>GenLibInFormatterDescription</name>
@@ -2761,6 +2761,9 @@
                 </file>
             </group>
         </group>
+        <file>
+            <name>$PROJ_DIR$\SmartConfigurator.ipcf</name>
+        </file>
     </group>
     <group>
         <name>Renesas_AP_tips</name>
@@ -2816,7 +2819,4 @@
             </file>
         </group>
     </group>
-    <file>
-        <name>$PROJ_DIR$\RTOSDemo_ICCRX.ipcf</name>
-    </file>
 </project>
