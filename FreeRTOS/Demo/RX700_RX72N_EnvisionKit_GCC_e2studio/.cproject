@@ -31,7 +31,7 @@
                 				
                 <option id="toolchain.id" value="RENESAS_GCC_RX"/>
                 				
-                <option id="toolchain.version" value="8.3.0.202002"/>
+                <option id="toolchain.version" value="8.3.0.202004"/>
                 				
                 <option id="toolchain.enable" value="true"/>
                 			
@@ -119,7 +119,7 @@
                             							
                             <tool id="com.renesas.cdt.managedbuild.gcc.rx.tool.libgen.1999510944" name="Library Generator" superClass="com.renesas.cdt.managedbuild.gcc.rx.tool.libgen">
                                 								
-                                <option id="com.renesas.cdt.managedbuild.gcc.core.option.libgen.libstd.applicability.1820050119" superClass="com.renesas.cdt.managedbuild.gcc.core.option.libgen.libstd.applicability" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+                                <option id="com.renesas.cdt.managedbuild.gcc.core.option.libgen.libstd.applicability.1820050119" superClass="com.renesas.cdt.managedbuild.gcc.core.option.libgen.libstd.applicability" useByScannerDiscovery="false" value="true" valueType="boolean"/>
                                 								
                                 <option id="com.renesas.cdt.managedbuild.gcc.rx.option.libraryType.1420001111" name="Library type" superClass="com.renesas.cdt.managedbuild.gcc.rx.option.libraryType" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.gcc.core.option.librarygenerator.settings.libraryType.preBuilt" valueType="enumerated"/>
                                 								
