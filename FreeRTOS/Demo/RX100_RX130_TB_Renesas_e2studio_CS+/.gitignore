@@ -1,4 +1,4 @@
-# Ignore build results and automatically created unnecessary setting files by e2 studio
+# Ignore build results and unnecessary setting/working files by/for e2 studio
 HardwareDebug/
 e2studio_project.prefs
 language.settings.xml
@@ -6,27 +6,26 @@ cgprojectDatas.datas
 com.renesas.smc.e2studio.qe.xml
 CoverageSetting.xml
 IORegisterSetting.xml
+*.rcpc
 
-# Ignore build results and automatically created unnecessary setting files by EWRX
+# Ignore build results and unnecessary setting/working files by/for EWRX
 Debug/
-RTOSDemo.custom_argvars
-RTOSDemo.dep
-RTOSDemo.ewt
-RTOSDemo.crun
-RTOSDemo.dbgdt
-RTOSDemo.Debug.cspy.bat
-RTOSDemo.Debug.cspy.ps1
-RTOSDemo.Debug.driver.xcl
-RTOSDemo.Debug.general.xcl
-RTOSDemo.wsdt
+*.custom_argvars
+*.dep
+*.ewt
+*.crun
+*.dbgdt
+*.Debug.cspy.bat
+*.Debug.cspy.ps1
+*.Debug.driver.xcl
+*.Debug.general.xcl
+*.wsdt
 
-# Ignore build results and automatically created unnecessary setting files by CS+
+# Ignore build results and unnecessary setting/working files by/for CS+
 DefaultBuild/
-RTOSDemo.*.mtud
+*.*.mtud
+*.rcpe
+*.mtls
 
-# Ignore PDF documents of FIT API
-r01an1685*.pdf
-r01an1721*.pdf
-r01an1815*.pdf
-r01an1683*.pdf
-r01an1819*.pdf
+# Ignore PDF documents of Renesas API
+r01an*.pdf
