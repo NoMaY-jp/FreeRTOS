@@ -79,12 +79,12 @@
 #ifndef R_BSP_CONFIG_REF_HEADER_FILE
 #define R_BSP_CONFIG_REF_HEADER_FILE
 
+/* Include for various workarounds. */
+#include "smc_workaround.h"
+
 /***********************************************************************************************************************
 Configuration Options
 ***********************************************************************************************************************/
-
-/* Include for various workarounds. */
-#include "smc_workaround.h"
 
 /* NOTE:
  The default settings are the same as when using RSKRX231.
