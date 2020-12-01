@@ -60,4 +60,23 @@ void main( void )
 
 #endif /* defined(__ICCRX__) */
 
+#else
+
+#if BSP_CFG_HEAP_BYTES == 0
+
+#if defined(__CCRX__) || defined(__GNUC__)
+
+int8_t *sbrk( size_t size );
+
+/* Maybe not called but necessary for linking without an undefined error. */
+int8_t *sbrk( size_t size )
+{
+    ( void ) size;
+    return (int8_t *)-1;
+}
+
+#endif /* defined(__CCRX__) || defined(__GNUC__) */
+
+#endif /* BSP_CFG_HEAP_BYTES == 0 */
+
 #endif /* BSP_CFG_RTOS_USED != 0 */
