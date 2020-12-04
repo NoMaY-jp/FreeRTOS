@@ -1,0 +1,28 @@
+# Ignore build results and unnecessary setting/working files by/for EWRX
+Debug/
+YRPBRL78G13/
+YRDKRL78G14/
+RSKRL78G1C/
+RSKRL78L1C/
+RSKRL78L13/
+RL78_G1A_TB
+RL78_G14_FPB/
+*.custom_argvars
+*.dep
+*.ewt
+*.crun
+*.dbgdt
+*.*.cspy.bat
+*.*.cspy.ps1
+*.*.driver.xcl
+*.*.general.xcl
+*.wsdt
+
+# Ignore build results and unnecessary setting/working files by/for e2 studio
+HardwareDebug/
+language.settings.xml
+cgprojectDatas.datas
+com.renesas.smc.e2studio.qe.xml
+CoverageSetting.xml
+IORegisterSetting.xml
+*.rcpc
