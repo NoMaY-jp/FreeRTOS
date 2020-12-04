@@ -49,11 +49,11 @@ asm file.  It is valid in a C file, but not valid in an asm file. */
 
 	#include <intrinsics.h>
 
-	/* Device specific includes. */
-	#include <ior5f100le.h>
-	#include <ior5f100le_ext.h>
-
 #endif /* __IAR_SYSTEMS_ICC__ */
+
+/* Device specific includes. */
+#include <ior5f100le.h>
+#include <ior5f100le_ext.h>
 
 #define configUSE_PREEMPTION			1
 #define configTICK_RATE_HZ				( ( unsigned short ) 1000 )
@@ -89,15 +89,14 @@ to exclude the API function. */
 #define INCLUDE_vTaskDelete					0
 #define INCLUDE_vTaskCleanUpResources		0
 #define INCLUDE_vTaskSuspend				1
-#define INCLUDE_vTaskDelayUntil				0
+#define INCLUDE_vTaskDelayUntil				1
 #define INCLUDE_vTaskDelay					1
 #define INCLUDE_xTaskGetIdleTaskHandle 		0
 #define INCLUDE_xTimerGetTimerDaemonTaskHandle 	0
 
-/* Tick interrupt vector - this must match the INTIT_vect definition contained
-in the ior5fnnnn.h header file included at the top of this file (the value is
-dependent on the hardware being used. */
-#define configTICK_VECTOR	56
+#if (configUSE_16_BIT_TICKS == 1)
+#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
+#endif
 
 /******************************************************************************
  * PORT SPECIFIC CONFIGURATION OPTIONS

@@ -1,0 +1,5 @@
+
+Error: Accidentally one of project settings is turned off. Please do the following steps.
+
+Open 'Properties of project --> C/C++ build --> Settings --> Tool Settings --> Library Configuration'
+Turn on 'Disable Hardware Multiplier/Divider Unit'

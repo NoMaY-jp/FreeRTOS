@@ -45,7 +45,7 @@ included.  Alternatively, just manually include the correct files here. */
 		#include "ior5f104pj.h"
 		#include "ior5f104pj_ext.h"
 		#define LED_BIT			( P4_bit.no1 )
-		#define LED_INIT() 		LED_BIT = 0
+		#define LED_INIT() 		P4 &= 0xFD; PM4 &= 0xFD
 	#endif /* YRDKRL78G14 */
 
 	#ifdef RSKRL78G1C
@@ -75,6 +75,13 @@ included.  Alternatively, just manually include the correct files here. */
 		#define LED_BIT			( P6_bit.no2 )
 		#define LED_INIT() 		P6 &= 0xFB; PM6 &= 0xFB
 	#endif /* RL78_G1A_TB */
+
+	#ifdef RL78_G14_FPB
+		#include "ior5f104ml.h"
+		#include "ior5f104ml_ext.h"
+		#define LED_BIT			( P4_bit.no3 )
+		#define LED_INIT()		P4 &= 0xF7; PM4 &= 0xF7; P4 |= 0x10; PM4 &= 0xEF
+	#endif /* RL78_G14_FPB */
 
 	#ifndef LED_BIT
 		#error The hardware platform is not defined

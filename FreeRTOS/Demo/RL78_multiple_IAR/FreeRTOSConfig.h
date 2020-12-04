@@ -92,10 +92,9 @@ to exclude the API function. */
 #define INCLUDE_xTaskGetIdleTaskHandle 		0
 #define INCLUDE_xTimerGetTimerDaemonTaskHandle 	0
 
-/* Tick interrupt vector - this must match the INTIT_vect definition contained
-in the ior5fnnnn.h header file included at the top of this file (the value is
-dependent on the hardware being used. */
-#define configTICK_VECTOR	INTIT_vect
+#if (configUSE_16_BIT_TICKS == 1)
+#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
+#endif
 
 #define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
 
