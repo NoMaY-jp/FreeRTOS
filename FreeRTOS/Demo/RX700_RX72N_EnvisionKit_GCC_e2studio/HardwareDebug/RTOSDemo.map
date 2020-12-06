@@ -1,43 +1,43 @@
 Archive member included because of file (symbol)
 
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
                               ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o (sprintf)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
                               ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o (strlen)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
                               ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o (strncat)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
                               ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o (strncpy)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o) (_impure_ptr)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o) (_svfprintf_r)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_printf_i)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (memchr)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (memcpy)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (memmove)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_free_r)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_malloc_r)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_realloc_r)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o) (_sbrk_r)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o) (__malloc_lock)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o) (errno)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o) (_impure_ptr)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o) (_svfprintf_r)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_printf_i)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (memchr)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (memcpy)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (memmove)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_free_r)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_malloc_r)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o) (_realloc_r)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o) (_sbrk_r)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o) (__malloc_lock)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o) (errno)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
                               ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o (__udivdi3)
-c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_clz.o)
-                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_udivdi3.o) (__clz_tab)
+c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
+                              c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o) (__clz_tab)
 
 Allocating common symbols
 Common symbol       size              file
@@ -598,72 +598,72 @@ Discarded input sections
                 0x00000000        0x3 ./src/FreeRTOS/Source/timers.o
  .text.vTimerSetTimerNumber
                 0x00000000        0x3 ./src/FreeRTOS/Source/timers.o
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
  .text._sprintf_r
-                0x00000000       0x30 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+                0x00000000       0x30 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
  .rodata._global_impure_ptr
-                0x00000000        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00000000        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
  .text.__ssprint_r
-                0x00000000       0xf1 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+                0x00000000       0xf1 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
  .text.cleanup_glue
-                0x00000000       0x19 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+                0x00000000       0x19 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
  .text._reclaim_reent
-                0x00000000       0xe7 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
- P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_clz.o)
- D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_clz.o)
- B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_clz.o)
+                0x00000000       0xe7 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
+ P              0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
+ D_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
+ B_1            0x00000000        0x0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
 
 Memory Configuration
 
@@ -745,17 +745,17 @@ LOAD ./src/FreeRTOS/Source/stream_buffer.o
 LOAD ./src/FreeRTOS/Source/tasks.o
 LOAD ./src/FreeRTOS/Source/timers.o
 START GROUP
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libm.a
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libm.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a
 END GROUP
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libg_nano.a
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libg_nano.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a
 START GROUP
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a
-LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a
+LOAD c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a
 END GROUP
 
 .exvectors      0xffffff80       0x7c
@@ -776,17 +776,17 @@ END GROUP
                 0xffc00000                PowerON_Reset_PC
                 0xffc00000                PowerON_Reset
                 0xffc00012                _INITSCT
- .text          0xffc00043        0xd c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
+ .text          0xffc00043        0xd c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strlen.o)
                 0xffc00043                strlen
- .text          0xffc00050       0x1d c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
+ .text          0xffc00050       0x1d c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncat.o)
                 0xffc00050                strncat
- .text          0xffc0006d        0xb c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
+ .text          0xffc0006d        0xb c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-strncpy.o)
                 0xffc0006d                strncpy
- .text          0xffc00078        0xb c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
+ .text          0xffc00078        0xb c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memchr.o)
                 0xffc00078                memchr
- .text          0xffc00083        0x7 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
+ .text          0xffc00083        0x7 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memcpy.o)
                 0xffc00083                memcpy
- .text          0xffc0008a       0x18 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
+ .text          0xffc0008a       0x18 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-memmove.o)
                 0xffc0008a                memmove
  *(.text.*ISR)
  *fill*         0xffc000a2        0x6 
@@ -1745,44 +1745,44 @@ END GROUP
  .text.vTimerSetTimerID
                 0xffc0e5d3       0x28 ./src/FreeRTOS/Source/timers.o
                 0xffc0e5d3                vTimerSetTimerID
- .text.sprintf  0xffc0e5fb       0x38 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+ .text.sprintf  0xffc0e5fb       0x38 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
                 0xffc0e5fb                siprintf
                 0xffc0e5fb                sprintf
  .text.__ssputs_r
-                0xffc0e633       0xb2 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+                0xffc0e633       0xb2 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
                 0xffc0e633                __ssputs_r
  .text._svfprintf_r
-                0xffc0e6e5      0x1ff c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+                0xffc0e6e5      0x1ff c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
                 0xffc0e6e5                _svfprintf_r
                 0xffc0e6e5                _svfiprintf_r
  .text._printf_common
-                0xffc0e8e4       0xcf c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0xffc0e8e4       0xcf c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
                 0xffc0e8e4                _printf_common
  .text._printf_i
-                0xffc0e9b3      0x226 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0xffc0e9b3      0x226 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
                 0xffc0e9b3                _printf_i
- .text._free_r  0xffc0ebd9       0x9f c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
+ .text._free_r  0xffc0ebd9       0x9f c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
                 0xffc0ebd9                _free_r
  .text._malloc_r
-                0xffc0ec78       0xbf c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+                0xffc0ec78       0xbf c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
                 0xffc0ec78                _malloc_r
  .text._realloc_r
-                0xffc0ed37       0x4a c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
+                0xffc0ed37       0x4a c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
                 0xffc0ed37                _realloc_r
- .text._sbrk_r  0xffc0ed81       0x21 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
+ .text._sbrk_r  0xffc0ed81       0x21 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
                 0xffc0ed81                _sbrk_r
  .text.__malloc_lock
-                0xffc0eda2        0x1 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+                0xffc0eda2        0x1 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
                 0xffc0eda2                __malloc_lock
  .text.__malloc_unlock
-                0xffc0eda3        0x1 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+                0xffc0eda3        0x1 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
                 0xffc0eda3                __malloc_unlock
  .text._malloc_usable_size_r
-                0xffc0eda4       0x12 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
+                0xffc0eda4       0x12 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
                 0xffc0eda4                _malloc_usable_size_r
  *(P)
  *fill*         0xffc0edb6        0x2 
- P              0xffc0edb8      0x3d0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
+ P              0xffc0edb8      0x3d0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
                 0xffc0edb8                _COM_DIV64u
                 0xffc0edb8                __udivdi3
                 0xffc0f188                etext = .
@@ -2179,14 +2179,14 @@ END GROUP
  .rodata.xTimerCreateTimerTask.str1.1
                 0xffc10267        0x8 ./src/FreeRTOS/Source/timers.o
  .rodata._svfprintf_r.str1.1
-                0xffc1026f       0x11 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+                0xffc1026f       0x11 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0xffc10280       0x22 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0xffc10280       0x22 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(C_1)
  *(C_2)
  *(C)
  *fill*         0xffc102a2        0x2 
- C              0xffc102a4      0x100 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_clz.o)
+ C              0xffc102a4      0x100 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
                 0xffc102a4                __clz_tab
                 0xffc103a4                _erodata = .
 
@@ -2247,10 +2247,10 @@ END GROUP
                 0x0000006c        0x4 ./src/FreeRTOS/Source/tasks.o
                 0x0000006c                uxTopUsedPriority
  .data._impure_ptr
-                0x00000070        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+                0x00000070        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
                 0x00000070                _impure_ptr
  .data.impure_data
-                0x00000074       0xf0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+                0x00000074       0xf0 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
  *(D)
  *(D_1)
  *(D_2)
@@ -2659,12 +2659,12 @@ END GROUP
  .bss.xActiveTimerList1
                 0x0000d178       0x14 ./src/FreeRTOS/Source/timers.o
  .bss.__malloc_free_list
-                0x0000d18c        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000d18c        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
                 0x0000d18c                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x0000d190        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000d190        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
                 0x0000d190                __malloc_sbrk_start
- .bss.errno     0x0000d194        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+ .bss.errno     0x0000d194        0x4 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
                 0x0000d194                errno
  *(COMMON)
  COMMON         0x0000d198        0x8 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
@@ -3329,7 +3329,7 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_str     0x00010934      0x464 ./src/FreeRTOS/Source/timers.o
                                 0xdb8 (size before relaxing)
 
-.comment        0x00000000       0x6c
+.comment        0x00000000       0x36
  .comment       0x00000000       0x36 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx.o
                                  0x37 (size before relaxing)
  .comment       0x00000000       0x37 ./src/smc_workaround/r_dtc_rx_patch/r_dtc_rx_target.o
@@ -3389,17 +3389,16 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .comment       0x00000000       0x37 ./src/FreeRTOS/Source/stream_buffer.o
  .comment       0x00000000       0x37 ./src/FreeRTOS/Source/tasks.o
  .comment       0x00000000       0x37 ./src/FreeRTOS/Source/timers.o
- .comment       0x00000036       0x36 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
-                                 0x37 (size before relaxing)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
- .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202002/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202002-GNURX/64-bit-double\libgcc.a(_clz.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sprintf.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-impure.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-svfprintf.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-freer.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-mallocr.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-reallocr.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-sbrkr.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-mlock.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-nano-msizer.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
+ .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
