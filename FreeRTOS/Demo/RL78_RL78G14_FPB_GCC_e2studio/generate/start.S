@@ -1,17 +1,6 @@
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-
 /************************************************************************/
-/*    File Version: V1.04                                               */
-/*    Date Generated: 06/05/2015                                        */
+/*    File Version: V1.05                                               */
+/*    Date Generated: 09/05/2019                                        */
 /************************************************************************/
 
     /*reset_program.asm*/
@@ -24,7 +13,11 @@
 #ifdef CPPAPP    
 ___dso_handle:
     .global ___dso_handle
-#endif    
+#endif
+	
+	.global __rl78_fini
+		__rl78_fini:
+		br $__rl78_fini
 
 
     .extern _HardwareSetup /*! external Sub-routine to initialise Hardware*/
@@ -143,6 +136,25 @@ _PowerON_Reset:
     sel     rb0             /* bank 0 */
 #endif
     
+/* Initialize global constructors in case of CPP app */
+#ifdef CPPAPP
+	movw    de, #___ctors
+1:
+	movw	ax, #___ctors_end
+	cmpw	ax, de
+	bnh	$2f
+	mov	es, #0
+	movw	ax, es:[de]
+	push	de
+	call	ax
+	pop	de
+	incw	de
+	incw	de
+	br	$1b
+2:
+#endif
+
+
 /* call the hardware initialiser */
     call    !!_HardwareSetup
     nop
@@ -155,6 +167,23 @@ _PowerON_Reset:
     push    ax      /* argc */
     call    !!_main
 
+/* Initialize global destructors in case of CPP app */
+#ifdef CPPAPP
+	movw    de, #___dtors
+1:
+	movw	ax, #___dtors_end
+	cmpw	ax, de
+	bnh		$2f
+	mov		es, #0
+	movw	ax, es:[de]
+	push	de
+	call	ax
+	pop		de
+	incw	de
+	incw	de
+	br		$1b
+2:
+#endif
 
 /* call to exit*/
 _exit:

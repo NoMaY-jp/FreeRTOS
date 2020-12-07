@@ -88,13 +88,18 @@ the queue empty. */
 #define mainQUEUE_LENGTH					( 1 )
 
 /* Used to check the task parameter passing in both supported memory models. */
-#if __DATA_MODEL__ == __DATA_MODEL_FAR__
-	#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x12345678UL )
-	#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x11223344UL )
-#else
+#if !defined(__CCRL__) && !defined(__GNUC__)
+	#if __DATA_MODEL__ == __DATA_MODEL_FAR__
+		#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x12345678UL )
+		#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x11223344UL )
+	#else
+		#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x1234U )
+		#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x1122U )
+	#endif
+#else /* !defined(__CCRL__) && !defined(__GNUC__) */
 	#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x1234U )
 	#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x1122U )
-#endif
+#endif /* !defined(__CCRL__) && !defined(__GNUC__) */
 /*-----------------------------------------------------------*/
 
 /*

@@ -3,7 +3,7 @@
 * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products.
 * No other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
 * applicable laws, including copyright laws. 
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIESREGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
+* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
 * OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 * NON-INFRINGEMENT.  ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY
 * LAW, NEITHER RENESAS ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE FOR ANY DIRECT,
@@ -14,16 +14,16 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2011, 2017 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2011, 2019 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name    : r_cg_port.c
-* Version      : CodeGenerator for RL78/G13 V2.05.00.06 [10 Nov 2017]
-* Device(s)    : R5F100LG
+* Version      : CodeGenerator for RL78/G14 V2.05.04.02 [20 Nov 2019]
+* Device(s)    : R5F104ML
 * Tool-Chain   : GCCRL78
 * Description  : This file implements device driver for PORT module.
-* Creation Date: 2018/02/04
+* Creation Date: 
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -49,9 +49,9 @@ Global variables and functions
 ***********************************************************************************************************************/
 void R_PORT_Create(void)
 {
-    P5 = _00_Pn0_OUTPUT_0;
-    PM5 = _00_PMn0_MODE_OUTPUT | _02_PMn1_NOT_USE | _04_PMn2_NOT_USE | _08_PMn3_NOT_USE | _10_PMn4_NOT_USE |
-          _20_PMn5_NOT_USE | _C0_PM5_DEFAULT;
+    P4 = _08_Pn3_OUTPUT_1;
+    PM4 = _01_PMn0_NOT_USE | _02_PMn1_NOT_USE | _04_PMn2_NOT_USE | _00_PMn3_MODE_OUTPUT | _10_PMn4_NOT_USE |
+          _20_PMn5_NOT_USE | _C0_PM4_DEFAULT;
 }
 
 /* Start user code for adding. Do not edit comment generated here */

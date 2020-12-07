@@ -1,20 +1,10 @@
-//3.5.3.24714                                                                      
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
 /************************************************************************/
 /* Header file generated from device file:                              */
-/*    DR5F100LG.DVF                                                     */
-/*    V1.14 (2012/01/10)                                                */
-/*    Copyright(C) 2012 Renesas                                         */
-/* Tool Version: 3.5.3                                                  */
-/* Date Generated: 2016/02/17                                           */
+/*    DR5F104ML.DVF                                                     */
+/*    V2.30 (2018/04/03)                                                */
+/*    Copyright(C) 2018 Renesas                                         */
+/* Tool Version: 4.0.0                                                  */
+/* Date Generated: 2020/01/17                                           */
 /************************************************************************/
 #include "interrupt_handlers.h"
 
@@ -58,12 +48,12 @@ const void *Vectors[] VECT_SECT = {
 	INT_ST2,
 	//INT_CSI21/INT_IIC21/INT_SR2 (0x16)
 	INT_SR2,
-	//INT_SRE2 (0x18)
-	INT_SRE2,
-	//INT_DMA0 (0x1A)
-	INT_DMA0,
-	//INT_DMA1 (0x1C)
-	INT_DMA1,
+	//INT_SRE2/INT_TM11H (0x18)
+	INT_TM11H,
+	// Padding
+	(void*)0xFFFF,
+	// Padding
+	(void*)0xFFFF,
 	//INT_CSI00/INT_IIC00/INT_ST0 (0x1E)
 	INT_ST0,
 	//INT_CSI01/INT_IIC01/INT_SR0 (0x20)
@@ -94,20 +84,20 @@ const void *Vectors[] VECT_SECT = {
 	INT_IT,
 	//INT_KR (0x3A)
 	INT_KR,
-	// Padding
-	(void*)0xFFFF,
-	// Padding
-	(void*)0xFFFF,
-	// Padding
-	(void*)0xFFFF,
-	//INT_TM04 (0x42)
-	INT_TM04,
-	//INT_TM05 (0x44)
-	INT_TM05,
-	//INT_TM06 (0x46)
-	INT_TM06,
-	//INT_TM07 (0x48)
-	INT_TM07,
+	//INT_CSI30/INT_IIC30/INT_ST3 (0x3C)
+	INT_ST3,
+	//INT_CSI31/INT_IIC31/INT_SR3 (0x3E)
+	INT_SR3,
+	//INT_TRJ0 (0x40)
+	INT_TRJ0,
+	//INT_TM10 (0x42)
+	INT_TM10,
+	//INT_TM11 (0x44)
+	INT_TM11,
+	//INT_TM12 (0x46)
+	INT_TM12,
+	//INT_TM13 (0x48)
+	INT_TM13,
 	//INT_P6 (0x4A)
 	INT_P6,
 	//INT_P7 (0x4C)
@@ -116,22 +106,22 @@ const void *Vectors[] VECT_SECT = {
 	INT_P8,
 	//INT_P9 (0x50)
 	INT_P9,
-	//INT_P10 (0x52)
+	//INT_CMP0/INT_P10 (0x52)
 	INT_P10,
-	//INT_P11 (0x54)
+	//INT_CMP1/INT_P11 (0x54)
 	INT_P11,
+	//INT_TRD0 (0x56)
+	INT_TRD0,
+	//INT_TRD1 (0x58)
+	INT_TRD1,
+	//INT_TRG (0x5A)
+	INT_TRG,
+	//INT_SRE3/INT_TM13H (0x5C)
+	INT_TM13H,
 	// Padding
 	(void*)0xFFFF,
-	// Padding
-	(void*)0xFFFF,
-	// Padding
-	(void*)0xFFFF,
-	// Padding
-	(void*)0xFFFF,
-	//INT_MD (0x5E)
-	INT_MD,
-	// Padding
-	(void*)0xFFFF,
+	//INT_IICA1 (0x60)
+	INT_IICA1,
 	//INT_FL (0x62)
 	INT_FL,
 	// Padding

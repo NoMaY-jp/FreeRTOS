@@ -1,20 +1,10 @@
-//3.5.3.24714                                                                      
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
 /************************************************************************/
 /* Header file generated from device file:                              */
-/*    DR5F100LG.DVF                                                     */
-/*    V1.14 (2012/01/10)                                                */
-/*    Copyright(C) 2012 Renesas                                         */
-/* Tool Version: 3.5.3                                                  */
-/* Date Generated: 2016/02/17                                           */
+/*    DR5F104ML.DVF                                                     */
+/*    V2.30 (2018/04/03)                                                */
+/*    Copyright(C) 2018 Renesas                                         */
+/* Tool Version: 4.0.0                                                  */
+/* Date Generated: 2020/01/17                                           */
 /************************************************************************/
 
 #ifndef __INTRINSIC_FUNCTIONS
@@ -100,6 +90,14 @@ union un_p7 {
 	unsigned char p7;
 	__BITS8 BIT;
 };
+union un_p10 {
+	unsigned char p10;
+	__BITS8 BIT;
+};
+union un_p11 {
+	unsigned char p11;
+	__BITS8 BIT;
+};
 union un_p12 {
 	unsigned char p12;
 	__BITS8 BIT;
@@ -110,6 +108,10 @@ union un_p13 {
 };
 union un_p14 {
 	unsigned char p14;
+	__BITS8 BIT;
+};
+union un_p15 {
+	unsigned char p15;
 	__BITS8 BIT;
 };
 union un_pm0 {
@@ -144,12 +146,24 @@ union un_pm7 {
 	unsigned char pm7;
 	__BITS8 BIT;
 };
+union un_pm10 {
+	unsigned char pm10;
+	__BITS8 BIT;
+};
+union un_pm11 {
+	unsigned char pm11;
+	__BITS8 BIT;
+};
 union un_pm12 {
 	unsigned char pm12;
 	__BITS8 BIT;
 };
 union un_pm14 {
 	unsigned char pm14;
+	__BITS8 BIT;
+};
+union un_pm15 {
+	unsigned char pm15;
 	__BITS8 BIT;
 };
 union un_adm0 {
@@ -162,6 +176,10 @@ union un_ads {
 };
 union un_adm1 {
 	unsigned char adm1;
+	__BITS8 BIT;
+};
+union un_dam {
+	unsigned char dam;
 	__BITS8 BIT;
 };
 union un_krm {
@@ -190,6 +208,14 @@ union un_iics0 {
 };
 union un_iicf0 {
 	unsigned char iicf0;
+	__BITS8 BIT;
+};
+union un_iics1 {
+	unsigned char iics1;
+	__BITS8 BIT;
+};
+union un_iicf1 {
+	unsigned char iicf1;
 	__BITS8 BIT;
 };
 union un_rtcc0 {
@@ -226,22 +252,6 @@ union un_lvim {
 };
 union un_lvis {
 	unsigned char lvis;
-	__BITS8 BIT;
-};
-union un_dmc0 {
-	unsigned char dmc0;
-	__BITS8 BIT;
-};
-union un_dmc1 {
-	unsigned char dmc1;
-	__BITS8 BIT;
-};
-union un_drc0 {
-	unsigned char drc0;
-	__BITS8 BIT;
-};
-union un_drc1 {
-	unsigned char drc1;
 	__BITS8 BIT;
 };
 union un_if2 {
@@ -409,18 +419,30 @@ union un_pmc {
 #define P6_bit (*(volatile union un_p6 *)0xFFF06).BIT
 #define P7 (*(volatile union un_p7 *)0xFFF07).p7
 #define P7_bit (*(volatile union un_p7 *)0xFFF07).BIT
+#define P10 (*(volatile union un_p10 *)0xFFF0A).p10
+#define P10_bit (*(volatile union un_p10 *)0xFFF0A).BIT
+#define P11 (*(volatile union un_p11 *)0xFFF0B).p11
+#define P11_bit (*(volatile union un_p11 *)0xFFF0B).BIT
 #define P12 (*(volatile union un_p12 *)0xFFF0C).p12
 #define P12_bit (*(volatile union un_p12 *)0xFFF0C).BIT
 #define P13 (*(volatile union un_p13 *)0xFFF0D).p13
 #define P13_bit (*(volatile union un_p13 *)0xFFF0D).BIT
 #define P14 (*(volatile union un_p14 *)0xFFF0E).p14
 #define P14_bit (*(volatile union un_p14 *)0xFFF0E).BIT
+#define P15 (*(volatile union un_p15 *)0xFFF0F).p15
+#define P15_bit (*(volatile union un_p15 *)0xFFF0F).BIT
 #define SDR00 (*(volatile unsigned short *)0xFFF10)
 #define SIO00 (*(volatile unsigned char *)0xFFF10)
 #define TXD0 (*(volatile unsigned char *)0xFFF10)
 #define SDR01 (*(volatile unsigned short *)0xFFF12)
 #define RXD0 (*(volatile unsigned char *)0xFFF12)
 #define SIO01 (*(volatile unsigned char *)0xFFF12)
+#define SDR12 (*(volatile unsigned short *)0xFFF14)
+#define SIO30 (*(volatile unsigned char *)0xFFF14)
+#define TXD3 (*(volatile unsigned char *)0xFFF14)
+#define SDR13 (*(volatile unsigned short *)0xFFF16)
+#define RXD3 (*(volatile unsigned char *)0xFFF16)
+#define SIO31 (*(volatile unsigned char *)0xFFF16)
 #define TDR00 (*(volatile unsigned short *)0xFFF18)
 #define TDR01 (*(volatile unsigned short *)0xFFF1A)
 #define TDR01L (*(volatile unsigned char *)0xFFF1A)
@@ -443,16 +465,26 @@ union un_pmc {
 #define PM6_bit (*(volatile union un_pm6 *)0xFFF26).BIT
 #define PM7 (*(volatile union un_pm7 *)0xFFF27).pm7
 #define PM7_bit (*(volatile union un_pm7 *)0xFFF27).BIT
+#define PM10 (*(volatile union un_pm10 *)0xFFF2A).pm10
+#define PM10_bit (*(volatile union un_pm10 *)0xFFF2A).BIT
+#define PM11 (*(volatile union un_pm11 *)0xFFF2B).pm11
+#define PM11_bit (*(volatile union un_pm11 *)0xFFF2B).BIT
 #define PM12 (*(volatile union un_pm12 *)0xFFF2C).pm12
 #define PM12_bit (*(volatile union un_pm12 *)0xFFF2C).BIT
 #define PM14 (*(volatile union un_pm14 *)0xFFF2E).pm14
 #define PM14_bit (*(volatile union un_pm14 *)0xFFF2E).BIT
+#define PM15 (*(volatile union un_pm15 *)0xFFF2F).pm15
+#define PM15_bit (*(volatile union un_pm15 *)0xFFF2F).BIT
 #define ADM0 (*(volatile union un_adm0 *)0xFFF30).adm0
 #define ADM0_bit (*(volatile union un_adm0 *)0xFFF30).BIT
 #define ADS (*(volatile union un_ads *)0xFFF31).ads
 #define ADS_bit (*(volatile union un_ads *)0xFFF31).BIT
 #define ADM1 (*(volatile union un_adm1 *)0xFFF32).adm1
 #define ADM1_bit (*(volatile union un_adm1 *)0xFFF32).BIT
+#define DACS0 (*(volatile unsigned char *)0xFFF34)
+#define DACS1 (*(volatile unsigned char *)0xFFF35)
+#define DAM (*(volatile union un_dam *)0xFFF36).dam
+#define DAM_bit (*(volatile union un_dam *)0xFFF36).BIT
 #define KRM (*(volatile union un_krm *)0xFFF37).krm
 #define KRM_bit (*(volatile union un_krm *)0xFFF37).BIT
 #define EGP0 (*(volatile union un_egp0 *)0xFFF38).egp0
@@ -480,14 +512,29 @@ union un_pmc {
 #define IICS0_bit (*(volatile union un_iics0 *)0xFFF51).BIT
 #define IICF0 (*(volatile union un_iicf0 *)0xFFF52).iicf0
 #define IICF0_bit (*(volatile union un_iicf0 *)0xFFF52).BIT
+#define IICA1 (*(volatile unsigned char *)0xFFF54)
+#define IICS1 (*(volatile union un_iics1 *)0xFFF55).iics1
+#define IICS1_bit (*(volatile union un_iics1 *)0xFFF55).BIT
+#define IICF1 (*(volatile union un_iicf1 *)0xFFF56).iicf1
+#define IICF1_bit (*(volatile union un_iicf1 *)0xFFF56).BIT
+#define TRDGRC0 (*(volatile unsigned short *)0xFFF58)
+#define TRDGRD0 (*(volatile unsigned short *)0xFFF5A)
+#define TRDGRC1 (*(volatile unsigned short *)0xFFF5C)
+#define TRDGRD1 (*(volatile unsigned short *)0xFFF5E)
+#define TRGGRC (*(volatile unsigned short *)0xFFF60)
+#define TRGGRD (*(volatile unsigned short *)0xFFF62)
 #define TDR02 (*(volatile unsigned short *)0xFFF64)
 #define TDR03 (*(volatile unsigned short *)0xFFF66)
 #define TDR03L (*(volatile unsigned char *)0xFFF66)
 #define TDR03H (*(volatile unsigned char *)0xFFF67)
-#define TDR04 (*(volatile unsigned short *)0xFFF68)
-#define TDR05 (*(volatile unsigned short *)0xFFF6A)
-#define TDR06 (*(volatile unsigned short *)0xFFF6C)
-#define TDR07 (*(volatile unsigned short *)0xFFF6E)
+#define TDR10 (*(volatile unsigned short *)0xFFF70)
+#define TDR11 (*(volatile unsigned short *)0xFFF72)
+#define TDR11L (*(volatile unsigned char *)0xFFF72)
+#define TDR11H (*(volatile unsigned char *)0xFFF73)
+#define TDR12 (*(volatile unsigned short *)0xFFF74)
+#define TDR13 (*(volatile unsigned short *)0xFFF76)
+#define TDR13L (*(volatile unsigned char *)0xFFF76)
+#define TDR13H (*(volatile unsigned char *)0xFFF77)
 #define ITMC (*(volatile unsigned short *)0xFFF90)
 #define SEC (*(volatile unsigned char *)0xFFF92)
 #define MIN (*(volatile unsigned char *)0xFFF93)
@@ -523,28 +570,6 @@ union un_pmc {
 #define LVIS_bit (*(volatile union un_lvis *)0xFFFAA).BIT
 #define WDTE (*(volatile unsigned char *)0xFFFAB)
 #define CRCIN (*(volatile unsigned char *)0xFFFAC)
-#define DSA0 (*(volatile unsigned char *)0xFFFB0)
-#define DSA1 (*(volatile unsigned char *)0xFFFB1)
-#define DRA0 (*(volatile unsigned short *)0xFFFB2)
-#define DRA0L (*(volatile unsigned char *)0xFFFB2)
-#define DRA0H (*(volatile unsigned char *)0xFFFB3)
-#define DRA1 (*(volatile unsigned short *)0xFFFB4)
-#define DRA1L (*(volatile unsigned char *)0xFFFB4)
-#define DRA1H (*(volatile unsigned char *)0xFFFB5)
-#define DBC0 (*(volatile unsigned short *)0xFFFB6)
-#define DBC0L (*(volatile unsigned char *)0xFFFB6)
-#define DBC0H (*(volatile unsigned char *)0xFFFB7)
-#define DBC1 (*(volatile unsigned short *)0xFFFB8)
-#define DBC1L (*(volatile unsigned char *)0xFFFB8)
-#define DBC1H (*(volatile unsigned char *)0xFFFB9)
-#define DMC0 (*(volatile union un_dmc0 *)0xFFFBA).dmc0
-#define DMC0_bit (*(volatile union un_dmc0 *)0xFFFBA).BIT
-#define DMC1 (*(volatile union un_dmc1 *)0xFFFBB).dmc1
-#define DMC1_bit (*(volatile union un_dmc1 *)0xFFFBB).BIT
-#define DRC0 (*(volatile union un_drc0 *)0xFFFBC).drc0
-#define DRC0_bit (*(volatile union un_drc0 *)0xFFFBC).BIT
-#define DRC1 (*(volatile union un_drc1 *)0xFFFBD).drc1
-#define DRC1_bit (*(volatile union un_drc1 *)0xFFFBD).BIT
 #define IF2 (*(volatile union un_if2 *)0xFFFD0).if2
 #define IF2_bit (*(volatile union un_if2 *)0xFFFD0).BIT
 #define IF2L (*(volatile union un_if2l *)0xFFFD0).if2l
@@ -617,14 +642,8 @@ union un_pmc {
 #define PR11L_bit (*(volatile union un_pr11l *)0xFFFEE).BIT
 #define PR11H (*(volatile union un_pr11h *)0xFFFEF).pr11h
 #define PR11H_bit (*(volatile union un_pr11h *)0xFFFEF).BIT
-#define MDAL (*(volatile unsigned short *)0xFFFF0)
-#define MULA (*(volatile unsigned short *)0xFFFF0)
-#define MDAH (*(volatile unsigned short *)0xFFFF2)
-#define MULB (*(volatile unsigned short *)0xFFFF2)
-#define MDBH (*(volatile unsigned short *)0xFFFF4)
-#define MULOH (*(volatile unsigned short *)0xFFFF4)
-#define MDBL (*(volatile unsigned short *)0xFFFF6)
-#define MULOL (*(volatile unsigned short *)0xFFFF6)
+#define MACRL (*(volatile unsigned short *)0xFFFF0)
+#define MACRH (*(volatile unsigned short *)0xFFFF2)
 #define PMC (*(volatile union un_pmc *)0xFFFFE).pmc
 #define PMC_bit (*(volatile union un_pmc *)0xFFFFE).BIT
 
@@ -633,6 +652,8 @@ union un_pmc {
  */
 #define ADCE ADM0_bit.no0
 #define ADCS ADM0_bit.no7
+#define DACE0 DAM_bit.no4
+#define DACE1 DAM_bit.no5
 #define SPD0 IICS0_bit.no0
 #define STD0 IICS0_bit.no1
 #define ACKD0 IICS0_bit.no2
@@ -645,6 +666,18 @@ union un_pmc {
 #define STCEN0 IICF0_bit.no1
 #define IICBSY0 IICF0_bit.no6
 #define STCF0 IICF0_bit.no7
+#define SPD1 IICS1_bit.no0
+#define STD1 IICS1_bit.no1
+#define ACKD1 IICS1_bit.no2
+#define TRC1 IICS1_bit.no3
+#define COI1 IICS1_bit.no4
+#define EXC1 IICS1_bit.no5
+#define ALD1 IICS1_bit.no6
+#define MSTS1 IICS1_bit.no7
+#define IICRSV1 IICF1_bit.no0
+#define STCEN1 IICF1_bit.no1
+#define IICBSY1 IICF1_bit.no6
+#define STCF1 IICF1_bit.no7
 #define RCLOE1 RTCC0_bit.no5
 #define RTCE RTCC0_bit.no7
 #define RWAIT RTCC1_bit.no0
@@ -656,7 +689,6 @@ union un_pmc {
 #define HIOSTOP CSC_bit.no0
 #define XTSTOP CSC_bit.no6
 #define MSTOP CSC_bit.no7
-#define SDIV CKC_bit.no3
 #define MCM0 CKC_bit.no4
 #define MCS CKC_bit.no5
 #define CSS CKC_bit.no6
@@ -668,61 +700,77 @@ union un_pmc {
 #define LVISEN LVIM_bit.no7
 #define LVILV LVIS_bit.no0
 #define LVIMD LVIS_bit.no7
-#define DWAIT0 DMC0_bit.no4
-#define DS0 DMC0_bit.no5
-#define DRS0 DMC0_bit.no6
-#define STG0 DMC0_bit.no7
-#define DWAIT1 DMC1_bit.no4
-#define DS1 DMC1_bit.no5
-#define DRS1 DMC1_bit.no6
-#define STG1 DMC1_bit.no7
-#define DST0 DRC0_bit.no0
-#define DEN0 DRC0_bit.no7
-#define DST1 DRC1_bit.no0
-#define DEN1 DRC1_bit.no7
-#define TMIF05 IF2_bit.no0
-#define TMIF06 IF2_bit.no1
-#define TMIF07 IF2_bit.no2
+#define TMIF11 IF2_bit.no0
+#define TMIF12 IF2_bit.no1
+#define TMIF13 IF2_bit.no2
 #define PIF6 IF2_bit.no3
 #define PIF7 IF2_bit.no4
 #define PIF8 IF2_bit.no5
 #define PIF9 IF2_bit.no6
+#define CMPIF0 IF2_bit.no7
 #define PIF10 IF2_bit.no7
+#define CMPIF1 IF2H_bit.no0
 #define PIF11 IF2H_bit.no0
-#define MDIF IF2H_bit.no5
+#define TRDIF0 IF2H_bit.no1
+#define TRDIF1 IF2H_bit.no2
+#define TRGIF IF2H_bit.no3
+#define SREIF3 IF2H_bit.no4
+#define TMIF13H IF2H_bit.no4
+#define IICAIF1 IF2H_bit.no6
 #define FLIF IF2H_bit.no7
-#define TMMK05 MK2_bit.no0
-#define TMMK06 MK2_bit.no1
-#define TMMK07 MK2_bit.no2
+#define TMMK11 MK2_bit.no0
+#define TMMK12 MK2_bit.no1
+#define TMMK13 MK2_bit.no2
 #define PMK6 MK2_bit.no3
 #define PMK7 MK2_bit.no4
 #define PMK8 MK2_bit.no5
 #define PMK9 MK2_bit.no6
+#define CMPMK0 MK2_bit.no7
 #define PMK10 MK2_bit.no7
+#define CMPMK1 MK2H_bit.no0
 #define PMK11 MK2H_bit.no0
-#define MDMK MK2H_bit.no5
+#define TRDMK0 MK2H_bit.no1
+#define TRDMK1 MK2H_bit.no2
+#define TRGMK MK2H_bit.no3
+#define SREMK3 MK2H_bit.no4
+#define TMMK13H MK2H_bit.no4
+#define IICAMK1 MK2H_bit.no6
 #define FLMK MK2H_bit.no7
-#define TMPR005 PR02_bit.no0
-#define TMPR006 PR02_bit.no1
-#define TMPR007 PR02_bit.no2
+#define TMPR011 PR02_bit.no0
+#define TMPR012 PR02_bit.no1
+#define TMPR013 PR02_bit.no2
 #define PPR06 PR02_bit.no3
 #define PPR07 PR02_bit.no4
 #define PPR08 PR02_bit.no5
 #define PPR09 PR02_bit.no6
+#define CMPPR00 PR02_bit.no7
 #define PPR010 PR02_bit.no7
+#define CMPPR01 PR02H_bit.no0
 #define PPR011 PR02H_bit.no0
-#define MDPR0 PR02H_bit.no5
+#define TRDPR00 PR02H_bit.no1
+#define TRDPR01 PR02H_bit.no2
+#define TRGPR0 PR02H_bit.no3
+#define SREPR03 PR02H_bit.no4
+#define TMPR013H PR02H_bit.no4
+#define IICAPR01 PR02H_bit.no6
 #define FLPR0 PR02H_bit.no7
-#define TMPR105 PR12_bit.no0
-#define TMPR106 PR12_bit.no1
-#define TMPR107 PR12_bit.no2
+#define TMPR111 PR12_bit.no0
+#define TMPR112 PR12_bit.no1
+#define TMPR113 PR12_bit.no2
 #define PPR16 PR12_bit.no3
 #define PPR17 PR12_bit.no4
 #define PPR18 PR12_bit.no5
 #define PPR19 PR12_bit.no6
+#define CMPPR10 PR12_bit.no7
 #define PPR110 PR12_bit.no7
+#define CMPPR11 PR12H_bit.no0
 #define PPR111 PR12H_bit.no0
-#define MDPR1 PR12H_bit.no5
+#define TRDPR10 PR12H_bit.no1
+#define TRDPR11 PR12H_bit.no2
+#define TRGPR1 PR12H_bit.no3
+#define SREPR13 PR12H_bit.no4
+#define TMPR113H PR12H_bit.no4
+#define IICAPR11 PR12H_bit.no6
 #define FLPR1 PR12H_bit.no7
 #define WDTIIF IF0_bit.no0
 #define LVIIF IF0_bit.no1
@@ -739,8 +787,7 @@ union un_pmc {
 #define IICIF21 IF0H_bit.no1
 #define SRIF2 IF0H_bit.no1
 #define SREIF2 IF0H_bit.no2
-#define DMAIF0 IF0H_bit.no3
-#define DMAIF1 IF0H_bit.no4
+#define TMIF11H IF0H_bit.no2
 #define CSIIF00 IF0H_bit.no5
 #define IICIF00 IF0H_bit.no5
 #define STIF0 IF0H_bit.no5
@@ -766,7 +813,14 @@ union un_pmc {
 #define RTCIF IF1H_bit.no1
 #define ITIF IF1H_bit.no2
 #define KRIF IF1H_bit.no3
-#define TMIF04 IF1H_bit.no7
+#define CSIIF30 IF1H_bit.no4
+#define IICIF30 IF1H_bit.no4
+#define STIF3 IF1H_bit.no4
+#define CSIIF31 IF1H_bit.no5
+#define IICIF31 IF1H_bit.no5
+#define SRIF3 IF1H_bit.no5
+#define TRJIF0 IF1H_bit.no6
+#define TMIF10 IF1H_bit.no7
 #define WDTIMK MK0_bit.no0
 #define LVIMK MK0_bit.no1
 #define PMK0 MK0_bit.no2
@@ -782,8 +836,7 @@ union un_pmc {
 #define IICMK21 MK0H_bit.no1
 #define SRMK2 MK0H_bit.no1
 #define SREMK2 MK0H_bit.no2
-#define DMAMK0 MK0H_bit.no3
-#define DMAMK1 MK0H_bit.no4
+#define TMMK11H MK0H_bit.no2
 #define CSIMK00 MK0H_bit.no5
 #define IICMK00 MK0H_bit.no5
 #define STMK0 MK0H_bit.no5
@@ -809,7 +862,14 @@ union un_pmc {
 #define RTCMK MK1H_bit.no1
 #define ITMK MK1H_bit.no2
 #define KRMK MK1H_bit.no3
-#define TMMK04 MK1H_bit.no7
+#define CSIMK30 MK1H_bit.no4
+#define IICMK30 MK1H_bit.no4
+#define STMK3 MK1H_bit.no4
+#define CSIMK31 MK1H_bit.no5
+#define IICMK31 MK1H_bit.no5
+#define SRMK3 MK1H_bit.no5
+#define TRJMK0 MK1H_bit.no6
+#define TMMK10 MK1H_bit.no7
 #define WDTIPR0 PR00_bit.no0
 #define LVIPR0 PR00_bit.no1
 #define PPR00 PR00_bit.no2
@@ -825,8 +885,7 @@ union un_pmc {
 #define IICPR021 PR00H_bit.no1
 #define SRPR02 PR00H_bit.no1
 #define SREPR02 PR00H_bit.no2
-#define DMAPR00 PR00H_bit.no3
-#define DMAPR01 PR00H_bit.no4
+#define TMPR011H PR00H_bit.no2
 #define CSIPR000 PR00H_bit.no5
 #define IICPR000 PR00H_bit.no5
 #define STPR00 PR00H_bit.no5
@@ -852,7 +911,14 @@ union un_pmc {
 #define RTCPR0 PR01H_bit.no1
 #define ITPR0 PR01H_bit.no2
 #define KRPR0 PR01H_bit.no3
-#define TMPR004 PR01H_bit.no7
+#define CSIPR030 PR01H_bit.no4
+#define IICPR030 PR01H_bit.no4
+#define STPR03 PR01H_bit.no4
+#define CSIPR031 PR01H_bit.no5
+#define IICPR031 PR01H_bit.no5
+#define SRPR03 PR01H_bit.no5
+#define TRJPR00 PR01H_bit.no6
+#define TMPR010 PR01H_bit.no7
 #define WDTIPR1 PR10_bit.no0
 #define LVIPR1 PR10_bit.no1
 #define PPR10 PR10_bit.no2
@@ -868,8 +934,7 @@ union un_pmc {
 #define IICPR121 PR10H_bit.no1
 #define SRPR12 PR10H_bit.no1
 #define SREPR12 PR10H_bit.no2
-#define DMAPR10 PR10H_bit.no3
-#define DMAPR11 PR10H_bit.no4
+#define TMPR111H PR10H_bit.no2
 #define CSIPR100 PR10H_bit.no5
 #define IICPR100 PR10H_bit.no5
 #define STPR10 PR10H_bit.no5
@@ -895,7 +960,14 @@ union un_pmc {
 #define RTCPR1 PR11H_bit.no1
 #define ITPR1 PR11H_bit.no2
 #define KRPR1 PR11H_bit.no3
-#define TMPR104 PR11H_bit.no7
+#define CSIPR130 PR11H_bit.no4
+#define IICPR130 PR11H_bit.no4
+#define STPR13 PR11H_bit.no4
+#define CSIPR131 PR11H_bit.no5
+#define IICPR131 PR11H_bit.no5
+#define SRPR13 PR11H_bit.no5
+#define TRJPR10 PR11H_bit.no6
+#define TMPR110 PR11H_bit.no7
 #define MAA PMC_bit.no0
 
 /*
@@ -918,8 +990,7 @@ union un_pmc {
 #define INTIIC21_vect (0x16)
 #define INTSR2_vect (0x16)
 #define INTSRE2_vect (0x18)
-#define INTDMA0_vect (0x1A)
-#define INTDMA1_vect (0x1C)
+#define INTTM11H_vect (0x18)
 #define INTCSI00_vect (0x1E)
 #define INTIIC00_vect (0x1E)
 #define INTST0_vect (0x1E)
@@ -945,17 +1016,31 @@ union un_pmc {
 #define INTRTC_vect (0x36)
 #define INTIT_vect (0x38)
 #define INTKR_vect (0x3A)
-#define INTTM04_vect (0x42)
-#define INTTM05_vect (0x44)
-#define INTTM06_vect (0x46)
-#define INTTM07_vect (0x48)
+#define INTCSI30_vect (0x3C)
+#define INTIIC30_vect (0x3C)
+#define INTST3_vect (0x3C)
+#define INTCSI31_vect (0x3E)
+#define INTIIC31_vect (0x3E)
+#define INTSR3_vect (0x3E)
+#define INTTRJ0_vect (0x40)
+#define INTTM10_vect (0x42)
+#define INTTM11_vect (0x44)
+#define INTTM12_vect (0x46)
+#define INTTM13_vect (0x48)
 #define INTP6_vect (0x4A)
 #define INTP7_vect (0x4C)
 #define INTP8_vect (0x4E)
 #define INTP9_vect (0x50)
+#define INTCMP0_vect (0x52)
 #define INTP10_vect (0x52)
+#define INTCMP1_vect (0x54)
 #define INTP11_vect (0x54)
-#define INTMD_vect (0x5E)
+#define INTTRD0_vect (0x56)
+#define INTTRD1_vect (0x58)
+#define INTTRG_vect (0x5A)
+#define INTSRE3_vect (0x5C)
+#define INTTM13H_vect (0x5C)
+#define INTIICA1_vect (0x60)
 #define INTFL_vect (0x62)
 #define BRK_I_vect (0x7E)
 #endif

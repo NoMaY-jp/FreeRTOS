@@ -1,20 +1,10 @@
-//3.5.3.24714                                                                      
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
-                                                                                   
 /************************************************************************/
 /* Header file generated from device file:                              */
-/*    DR5F100LG.DVF                                                     */
-/*    V1.14 (2012/01/10)                                                */
-/*    Copyright(C) 2012 Renesas                                         */
-/* Tool Version: 3.5.3                                                  */
-/* Date Generated: 2016/02/17                                           */
+/*    DR5F104ML.DVF                                                     */
+/*    V2.30 (2018/04/03)                                                */
+/*    Copyright(C) 2018 Renesas                                         */
+/* Tool Version: 4.0.0                                                  */
+/* Date Generated: 2020/01/17                                           */
 /************************************************************************/
 #ifndef INTERRUPT_HANDLERS_H
 #define INTERRUPT_HANDLERS_H
@@ -74,19 +64,10 @@ void INT_SR2(void) __attribute__ ((interrupt));
 //void INT_IIC21(void) __attribute__ ((interrupt));
 
 /*
- * INT_SRE2 (0x18)
+ * INT_SRE2/INT_TM11H (0x18)
  */
-void INT_SRE2(void) __attribute__ ((interrupt));
-
-/*
- * INT_DMA0 (0x1A)
- */
-void INT_DMA0(void) __attribute__ ((interrupt));
-
-/*
- * INT_DMA1 (0x1C)
- */
-void INT_DMA1(void) __attribute__ ((interrupt));
+void INT_TM11H(void) __attribute__ ((interrupt));
+//void INT_SRE2(void) __attribute__ ((interrupt));
 
 /*
  * INT_CSI00/INT_IIC00/INT_ST0 (0x1E)
@@ -174,24 +155,43 @@ void INT_IT(void) __attribute__ ((interrupt));
 void INT_KR(void) __attribute__ ((interrupt));
 
 /*
- * INT_TM04 (0x42)
+ * INT_CSI30/INT_IIC30/INT_ST3 (0x3C)
  */
-void INT_TM04(void) __attribute__ ((interrupt));
+void INT_ST3(void) __attribute__ ((interrupt));
+//void INT_CSI30(void) __attribute__ ((interrupt));
+//void INT_IIC30(void) __attribute__ ((interrupt));
 
 /*
- * INT_TM05 (0x44)
+ * INT_CSI31/INT_IIC31/INT_SR3 (0x3E)
  */
-void INT_TM05(void) __attribute__ ((interrupt));
+void INT_SR3(void) __attribute__ ((interrupt));
+//void INT_CSI31(void) __attribute__ ((interrupt));
+//void INT_IIC31(void) __attribute__ ((interrupt));
 
 /*
- * INT_TM06 (0x46)
+ * INT_TRJ0 (0x40)
  */
-void INT_TM06(void) __attribute__ ((interrupt));
+void INT_TRJ0(void) __attribute__ ((interrupt));
 
 /*
- * INT_TM07 (0x48)
+ * INT_TM10 (0x42)
  */
-void INT_TM07(void) __attribute__ ((interrupt));
+void INT_TM10(void) __attribute__ ((interrupt));
+
+/*
+ * INT_TM11 (0x44)
+ */
+void INT_TM11(void) __attribute__ ((interrupt));
+
+/*
+ * INT_TM12 (0x46)
+ */
+void INT_TM12(void) __attribute__ ((interrupt));
+
+/*
+ * INT_TM13 (0x48)
+ */
+void INT_TM13(void) __attribute__ ((interrupt));
 
 /*
  * INT_P6 (0x4A)
@@ -214,19 +214,42 @@ void INT_P8(void) __attribute__ ((interrupt));
 void INT_P9(void) __attribute__ ((interrupt));
 
 /*
- * INT_P10 (0x52)
+ * INT_CMP0/INT_P10 (0x52)
  */
 void INT_P10(void) __attribute__ ((interrupt));
+//void INT_CMP0(void) __attribute__ ((interrupt));
 
 /*
- * INT_P11 (0x54)
+ * INT_CMP1/INT_P11 (0x54)
  */
 void INT_P11(void) __attribute__ ((interrupt));
+//void INT_CMP1(void) __attribute__ ((interrupt));
 
 /*
- * INT_MD (0x5E)
+ * INT_TRD0 (0x56)
  */
-void INT_MD(void) __attribute__ ((interrupt));
+void INT_TRD0(void) __attribute__ ((interrupt));
+
+/*
+ * INT_TRD1 (0x58)
+ */
+void INT_TRD1(void) __attribute__ ((interrupt));
+
+/*
+ * INT_TRG (0x5A)
+ */
+void INT_TRG(void) __attribute__ ((interrupt));
+
+/*
+ * INT_SRE3/INT_TM13H (0x5C)
+ */
+void INT_TM13H(void) __attribute__ ((interrupt));
+//void INT_SRE3(void) __attribute__ ((interrupt));
+
+/*
+ * INT_IICA1 (0x60)
+ */
+void INT_IICA1(void) __attribute__ ((interrupt));
 
 /*
  * INT_FL (0x62)

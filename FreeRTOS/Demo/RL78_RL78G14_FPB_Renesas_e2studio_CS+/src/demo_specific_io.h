@@ -44,16 +44,6 @@ included.  Alternatively, just manually include the correct files here. */
 			#endif /* defined(__GNUC__) */
 		#endif /* defined(__CCRL__) || defined(__GNUC__) */
 
-		#ifdef AE_R5F100LGAFB
-			#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
-				#include "ior5f100lg.h"
-				#include "ior5f100lg_ext.h"
-			#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
-			/* P5.0 is compatible with LED_BUILTIN of GR-KURUMI and GR-COTTON */
-			#define LED_BIT			( P5_bit.no0 )
-			#define LED_INIT()		P5 &= 0xFE; PM5 &= 0xFE
-		#endif /* AER5F100LGAFB */
-
 		#ifdef YRPBRL78G13
 			#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
 				#include "ior5f100le.h"
@@ -107,6 +97,25 @@ included.  Alternatively, just manually include the correct files here. */
 			#define LED_BIT			( P6_bit.no2 )
 			#define LED_INIT() 		P6 &= 0xFB; PM6 &= 0xFB
 		#endif /* RL78_G1A_TB */
+
+		#ifdef RL78_G14_FPB
+			#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
+				#include "ior5f104ml.h"
+				#include "ior5f104ml_ext.h"
+			#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
+			#define LED_BIT			( P4_bit.no3 )
+			#define LED_INIT()		P4 &= 0xF7; PM4 &= 0xF7; P4 |= 0x10; PM4 &= 0xEF
+		#endif /* RL78_G14_FPB */
+
+		#ifdef AE_R5F100LGAFB
+			#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
+				#include "ior5f100lg.h"
+				#include "ior5f100lg_ext.h"
+			#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
+			/* P5.0 is compatible with LED_BUILTIN of GR-KURUMI and GR-COTTON */
+			#define LED_BIT			( P5_bit.no0 )
+			#define LED_INIT()		P5 &= 0xFE; PM5 &= 0xFE
+		#endif /* AER5F100LGAFB */
 
 		#ifndef LED_BIT
 			#error The hardware platform is not defined

@@ -4,7 +4,7 @@
 //* This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products.
 //* No other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
 //* applicable laws, including copyright laws. 
-//* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIESREGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
+//* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
 //* OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 //* NON-INFRINGEMENT.  ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY
 //* LAW, NEITHER RENESAS ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE FOR ANY DIRECT,
@@ -15,17 +15,17 @@
 //* following link:
 //* http://www.renesas.com/disclaimer
 //*
-//* Copyright (C) 2011, 2017 Renesas Electronics Corporation. All rights reserved.
+//* Copyright (C) 2011, 2019 Renesas Electronics Corporation. All rights reserved.
 //*********************************************************************************************************************/
 
 ///*
 //**********************************************************************************************************************
 //* File Name    : r_reset_program.asm
-//* Version      : CodeGenerator for RL78/G13 V2.05.00.06 [10 Nov 2017]
-//* Device(s)    : R5F100LG
+//* Version      : CodeGenerator for RL78/G14 V2.05.04.02 [20 Nov 2019]
+//* Device(s)    : R5F104ML
 //* Tool-Chain   : gccrl78
 //* Description  : This is start up file for RL78.
-//* Creation Date: 2018/02/04
+//* Creation Date: 
 //**********************************************************************************************************************
 //*/
 
@@ -35,6 +35,15 @@
 
 	.global _PowerON_Reset  /*! global Start routine */
 	.short _PowerON_Reset
+
+#ifdef CPPAPP    
+___dso_handle:
+    .global ___dso_handle
+#endif
+	
+	.global __rl78_fini
+		__rl78_fini:
+		br $__rl78_fini
 
 	.extern _HardwareSetup /*! external Sub-routine to initialise Hardware*/
 	.extern _data
@@ -66,12 +75,17 @@ _PowerON_Reset:
         ;; we're copying from 00:[_romdatastart] to 0F:[_datastart]
         ;; and our data is not in the mirrored area.
     mov     es, #0
+#ifndef __RL78_G10__
     sel     rb0         /*  ;;bank 0 */
+#endif
+
     movw    de, #_mdata	/* src ROM address of data section in de */
     movw    hl, #_data 	/* dest start RAM address of data section in hl */
-		
+
+#ifndef __RL78_G10__		
     sel     rb1              /* bank 1 */
     movw    hl, #_data 	/* dest start RAM address of data section in hl */
+#endif
     movw    ax, #_edata   /*    ;; size of romdata section in ax */
     subw    ax,hl  		/* store data size */
     shrw	ax,1
@@ -79,38 +93,73 @@ _PowerON_Reset:
     cmpw    ax, #0		   /* check if end of data */
     bz      $1f
     decw    ax
+#ifdef __RL78_G10__
+    movw    bc, ax          /* save ax value in bc */
+#endif
+
+#ifndef __RL78_G10__
     sel     rb0             /* bank 0 */
+#endif
     movw    ax, es:[de]
     movw    [hl], ax
     incw    de
     incw	de
     incw    hl
 	incw	hl
+#ifndef __RL78_G10__
     sel     rb1         /* bank 1  -  compare and decrement*/
+#endif
+
+#ifdef __RL78_G10__
+    movw     ax, bc     /* restore ax value */
+#endif
     br      $1b
 1:
 
 	
 /* bss initialisation : zero out bss */
+#ifndef __RL78_G10__
     sel     rb0         /* bank 0 */
-    movw    hl, #_bss  	/* store the start address of bss in hl */
     movw    ax, #0		/* load AX reg with zero */
     sel     rb1         /* bank 1 */
     movw    ax, #_ebss  /* store the end address (size of) bss section in ax */
+	movw    hl, #_bss  	/* store the start address of bss in hl */
     subw    ax,hl ;; store data size
     shrw    ax,1
+#endif
+
+#ifdef __RL78_G10__
+    movw    hl, #_bss   /* store the start address of bss in hl */
+    movw    ax, #_ebss  /* store the end address (size of) bss section in ax */
+    subw    ax,hl ;; store data size
+    shrw    ax,1
+#endif
+
 1:
     cmpw    ax, #0
     bz      $1f
     decw    ax
+#ifdef __RL78_G10__
+    movw     bc, ax        /* save ax value in bc */
+    movw    ax, #0
+#endif
+#ifndef __RL78_G10__
     sel     rb0         /* bank 0 */
+#endif
     movw    [hl], ax
     incw    hl
     incw	hl
+#ifdef __RL78_G10__
+    movw    ax, bc        /* restore ax value */
+#endif
+#ifndef __RL78_G10__
     sel     rb1
+#endif
     br      $1b
 1:
+#ifndef __RL78_G10__
     sel     rb0             /* bank 0 */
+#endif
 
 /* call the hardware initialiser */
 	call	!!_HardwareSetup

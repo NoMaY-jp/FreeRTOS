@@ -183,8 +183,8 @@ int __low_level_init(void)
 
 	return pdTRUE;
 }
-/*-----------------------------------------------------------*/
 #endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
+/*-----------------------------------------------------------*/
 
 void vApplicationMallocFailedHook( void )
 {

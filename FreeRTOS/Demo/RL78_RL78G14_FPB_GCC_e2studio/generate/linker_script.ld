@@ -5,10 +5,10 @@ MEMORY
 	OPT : ORIGIN = 0xC0, LENGTH = 4
 	SEC_ID : ORIGIN = 0xC4, LENGTH = 10
 	OCDSTAD : ORIGIN = 0xCE, LENGTH = 10
-	OCDROM : ORIGIN = 0x1FE00, LENGTH = 512
-	ROM : ORIGIN = 0xD8, LENGTH = 130344
-	MIRROR : ORIGIN = 0xF3000, LENGTH = 40703
-	RAM : ORIGIN = 0xFCF00, LENGTH = 12287
+	OCDROM : ORIGIN = 0x7ff00, LENGTH = 0x100
+	ROM : ORIGIN = 0xD8, LENGTH = 523560
+	MIRROR : ORIGIN = 0xF3000, LENGTH = 3840
+	RAM : ORIGIN = 0xF3F00, LENGTH = 49152
 }
 SECTIONS
 {
@@ -39,24 +39,30 @@ SECTIONS
 		__CTOR_LIST__ = .;
 		. = ALIGN(2);
 		___ctors = .;
-		*(.ctors)
+		KEEP(*(.ctors))
 		___ctors_end = .;
 		__CTOR_END__ = .;
 		__DTOR_LIST__ = .;
 		___dtors = .;
-		*(.dtors)
+		KEEP(*(.dtors))
 		___dtors_end = .;
 		__DTOR_END__ = .;
 		. = ALIGN(2);
-		_mdata = .;
 	} > ROM
-	.text (. + __romdatacopysize): 
+	.mdata (NOLOAD) :
+	{
+		_mdata = .;
+		. += __romdatacopysize;
+	} > ROM
+/*
+	.text :
 	{
 		*(.text)
 		*(.text.*)
 		etext = .;
 		. = ALIGN(2);
 	} > ROM
+*/
 	PROVIDE(__rl78_abs__ = 0);
 	.init :
 	{
@@ -78,8 +84,19 @@ SECTIONS
 		*(.rodata.*)
 		_erodata = .;
 	} > ROM
+	.text :
+	{
+		*(.text)
+		*(.text.*)
+		etext = .;
+		. = ALIGN(2);
+	} > ROM
 	.frodata :
 	{
+		. = ALIGN(2);
+		*(.frodata)
+		*(.frodata.*)
+		_efrodata = .;
 	} > ROM
 	.eh_frame_hdr :
 	{
@@ -94,7 +111,7 @@ SECTIONS
 		*(.jcr)
 		. = ALIGN(2);
 	} > ROM
-	.data 0xFCF00: AT(_mdata)
+	.data 0xF3F00: AT(_mdata)
 	{
 		. = ALIGN(2);
 		_data = .;

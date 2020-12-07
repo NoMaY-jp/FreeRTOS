@@ -70,11 +70,13 @@ or 0 to run the more comprehensive test and demo application. */
 extern void main_blinky( void );
 extern void main_full( void );
 
+#if !defined(__CCRL__) && !defined(__GNUC__)
 /*
  * This function is called from the C startup routine to setup the processor -
  * in particular the clock source.
  */
 int __low_level_init(void);
+#endif /* !defined(__CCRL__) && !defined(__GNUC__) */
 
 /* Prototypes for the standard FreeRTOS callback/hook functions implemented
 within this file. */

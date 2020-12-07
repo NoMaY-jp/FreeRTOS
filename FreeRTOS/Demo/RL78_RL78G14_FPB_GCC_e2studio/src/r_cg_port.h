@@ -3,7 +3,7 @@
 * This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products.
 * No other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
 * applicable laws, including copyright laws. 
-* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIESREGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
+* THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING THIS SOFTWARE, WHETHER EXPRESS, IMPLIED
 * OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 * NON-INFRINGEMENT.  ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED.TO THE MAXIMUM EXTENT PERMITTED NOT PROHIBITED BY
 * LAW, NEITHER RENESAS ELECTRONICS CORPORATION NOR ANY OF ITS AFFILIATED COMPANIES SHALL BE LIABLE FOR ANY DIRECT,
@@ -14,16 +14,16 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2011, 2017 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2011, 2019 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name    : r_cg_port.h
-* Version      : CodeGenerator for RL78/G13 V2.05.00.06 [10 Nov 2017]
-* Device(s)    : R5F100LG
+* Version      : CodeGenerator for RL78/G14 V2.05.04.02 [20 Nov 2019]
+* Device(s)    : R5F104ML
 * Tool-Chain   : GCCRL78
 * Description  : This file implements device driver for PORT module.
-* Creation Date: 2018/02/04
+* Creation Date: 
 ***********************************************************************************************************************/
 
 #ifndef PORT_H
@@ -170,27 +170,34 @@ Macro definitions (Register bit)
     AD port configuration register (ADPC)
 */
 /* Analog input/digital input switching (ADPC3 - ADPC0) */
-#define _00_ADPC_DI_OFF         (0x00U) /* use P20 - P27 as analog input */
-#define _08_ADPC_DI_ON          (0x08U) /* use P27 as digital input */
-#define _07_ADPC_DI_ON          (0x07U) /* use P26 - P27 as digital input */
-#define _06_ADPC_DI_ON          (0x06U) /* use P25 - P27 as digital input */
-#define _05_ADPC_DI_ON          (0x05U) /* use P24 - P27 as digital input */
-#define _04_ADPC_DI_ON          (0x04U) /* use P23 - P27 as digital input */
-#define _03_ADPC_DI_ON          (0x03U) /* use P22 - P27 as digital input */
-#define _02_ADPC_DI_ON          (0x02U) /* use P21 - P27 as digital input */
-#define _01_ADPC_DI_ON          (0x01U) /* use P20 - P27 as digital input */
+#define _00_ADPC_DI_OFF         (0x00U) /* use P20 - P27 and P150 - P153 as analog input */
+#define _0C_ADPC_DI_ON          (0x0CU) /* use P153 as digital input */
+#define _0B_ADPC_DI_ON          (0x0BU) /* use P152 - P153 as digital input */
+#define _0A_ADPC_DI_ON          (0x0AU) /* use P151 - P153 as digital input */
+#define _09_ADPC_DI_ON          (0x09U) /* use P150 - P153 as digital input */
+#define _08_ADPC_DI_ON          (0x08U) /* use P27 and P150 - P153 as digital input */
+#define _07_ADPC_DI_ON          (0x07U) /* use P26 - P27 and P150 - P153 as digital input */
+#define _06_ADPC_DI_ON          (0x06U) /* use P25 - P27 and P150 - P153 as digital input */
+#define _05_ADPC_DI_ON          (0x05U) /* use P24 - P27 and P150 - P153 as digital input */
+#define _04_ADPC_DI_ON          (0x04U) /* use P23 - P27 and P150 - P153 as digital input */
+#define _03_ADPC_DI_ON          (0x03U) /* use P22 - P27 and P150 - P153 as digital input */
+#define _02_ADPC_DI_ON          (0x02U) /* use P21 - P27 and P150 - P153 as digital input */
+#define _01_ADPC_DI_ON          (0x01U) /* use P20 - P27 and P150 - P153 as digital input */
 
 /***********************************************************************************************************************
 Macro definitions
 ***********************************************************************************************************************/
 #define _80_PM0_DEFAULT         (0x80U) /* PM0 default value */
 #define _FC_PM3_DEFAULT         (0xFCU) /* PM3 default value */
-#define _F0_PM4_DEFAULT         (0xF0U) /* PM4 default value */
+#define _C0_PM4_DEFAULT         (0xC0U) /* PM4 default value */
 #define _C0_PM5_DEFAULT         (0xC0U) /* PM5 default value */
-#define _F0_PM6_DEFAULT         (0xF0U) /* PM6 default value */
+#define _FE_PM10_DEFAULT        (0xFEU) /* PM10 default value */
+#define _FC_PM11_DEFAULT        (0xFCU) /* PM11 default value */
 #define _FE_PM12_DEFAULT        (0xFEU) /* PM12 default value */
-#define _3C_PM14_DEFAULT        (0x3CU) /* PM14 default value */
+#define _20_PM14_DEFAULT        (0x20U) /* PM14 default value */
+#define _F0_PM15_DEFAULT        (0xF0U) /* PM15 default value */
 #define _F3_PMC0_DEFAULT        (0xF3U) /* PMC0 default value */
+#define _FE_PMC10_DEFAULT       (0xFEU) /* PMC10 default value */
 #define _FE_PMC12_DEFAULT       (0xFEU) /* PMC12 default value */
 #define _7F_PMC14_DEFAULT       (0x7FU) /* PMC14 default value */
 

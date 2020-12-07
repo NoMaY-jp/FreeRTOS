@@ -1,18 +1,4 @@
-                                                                        
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                           
-                                                                          
-; Copyright (C) 2014 Renesas Electronics Corporation
+; Copyright (C) 2014, 2018 Renesas Electronics Corporation
 ; RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
 ; This program must be used solely for the purpose for which
 ; it was furnished by Renesas Electronics Corporation. No part of this
@@ -81,12 +67,12 @@ $ENDIF
 	;--------------------------------------------------
 	; initializing stack area
 	;--------------------------------------------------
-;$IF (__RENESAS_VERSION__ >= 0x01010000)
-;	MOVW	AX,#LOWW(__STACK_ADDR_END)
-;$ELSE	; for CC-RL V1.00
-;	MOVW	AX,#LOWW(_stackend)
-;$ENDIF
-;	CALL	!!_stkinit
+$IF (__RENESAS_VERSION__ >= 0x01010000)
+	MOVW	AX,#LOWW(__STACK_ADDR_END)
+$ELSE	; for CC-RL V1.00
+	MOVW	AX,#LOWW(_stackend)
+$ENDIF
+	CALL	!!_stkinit
 
 	;--------------------------------------------------
 	; hardware initialization
