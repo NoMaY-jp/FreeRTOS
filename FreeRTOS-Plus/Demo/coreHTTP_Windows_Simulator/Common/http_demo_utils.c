@@ -56,8 +56,13 @@
 
 /*-----------------------------------------------------------*/
 
-/* Each compilation unit must define the NetworkContext struct.
- * void * is used as this utility can be used by both plaintext and TLS demos. */
+/** 
+ * @brief Each compilation unit that consumes the NetworkContext must define it. 
+ * It should contain a single pointer to the type of your desired transport.
+ * This utility is used by both TLS and plaintext HTTP demos, so define this pointer as void *.
+ *
+ * @note Transport stacks are defined in FreeRTOS-Plus/Source/Application-Protocols/network_transport.
+ */
 struct NetworkContext
 {
     void * pParams;
@@ -96,18 +101,21 @@ BaseType_t connectToServerWithBackoffRetries( TransportConnect_t connectFunction
 
         if( xReturn != pdPASS )
         {
-            LogWarn( ( "Connection to the HTTP server failed. "
-                       "Retrying connection with backoff and jitter." ) );
-            LogInfo( ( "Retry attempt %lu out of maximum retry attempts %lu.",
-                       ( xReconnectParams.attemptsDone + 1 ),
-                       RETRY_MAX_ATTEMPTS ) );
-
             /* Generate a random number and calculate backoff value (in milliseconds) for
              * the next connection retry.
              * Note: It is recommended to seed the random number generator with a device-specific
              * entropy source so that possibility of multiple devices retrying failed network operations
              * at similar intervals can be avoided. */
             xBackoffAlgStatus = BackoffAlgorithm_GetNextBackoff( &xReconnectParams, uxRand(), &usNextBackoff );
+
+            if( xBackoffAlgStatus == BackoffAlgorithmSuccess )
+            {
+                LogWarn( ( "Connection to the HTTP server failed. "
+                           "Retrying connection with backoff and jitter." ) );
+                LogInfo( ( "Retry attempt %lu out of maximum retry attempts %lu.",
+                           xReconnectParams.attemptsDone,
+                           RETRY_MAX_ATTEMPTS ) );
+            }
         }
     } while( ( xReturn == pdFAIL ) && ( xBackoffAlgStatus == BackoffAlgorithmSuccess ) );
 
