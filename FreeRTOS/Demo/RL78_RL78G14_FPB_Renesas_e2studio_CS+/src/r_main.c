@@ -33,6 +33,7 @@ Includes
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
 /* Start user code for include. Do not edit comment generated here */
+#include "freertos_start.h"
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -46,7 +47,6 @@ Pragma directive
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
-void demo_main(void);
 /* End user code. Do not edit comment generated here */
 void R_MAIN_UserInit(void);
 
@@ -60,7 +60,14 @@ void main(void)
 {
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
-    demo_main();
+
+    /* Prepare the necessary tasks, FreeRTOS's resources... required to be executed at the beginning
+     * after vTaskStarScheduler() is called. Other tasks can also be created after starting scheduler at any time */
+    Processing_Before_Start_Kernel();
+
+    /* Call the kernel startup (should not return) */
+    vTaskStartScheduler();
+
     while (1U)
     {
         ;
@@ -77,7 +84,6 @@ void main(void)
 void R_MAIN_UserInit(void)
 {
     /* Start user code. Do not edit comment generated here */
-    EI();
     /* End user code. Do not edit comment generated here */
 }
 

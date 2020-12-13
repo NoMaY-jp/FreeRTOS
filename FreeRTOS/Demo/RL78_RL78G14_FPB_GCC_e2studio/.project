@@ -25,25 +25,30 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>src/FreeRTOS_Source</name>
+			<name>src/FreeRTOS</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/FreeRTOS/Source</name>
 			<type>2</type>
 			<locationURI>FREERTOS_ROOT/FreeRTOS/Source</locationURI>
 		</link>
 		<link>
-			<name>src/Full_Demo/Standard_Demo_Tasks</name>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>2</type>
 			<locationURI>FREERTOS_ROOT/FreeRTOS/Demo/Common/Minimal</locationURI>
 		</link>
 		<link>
-			<name>src/Full_Demo/Standard_Demo_Tasks/include</name>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/include</name>
 			<type>2</type>
 			<locationURI>FREERTOS_ROOT/FreeRTOS/Demo/Common/include</locationURI>
 		</link>
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1517107529077</id>
-			<name>src/FreeRTOS_Source</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source</name>
 			<type>6</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -51,8 +56,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517107529308</id>
-			<name>src/FreeRTOS_Source</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source</name>
 			<type>6</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -60,8 +65,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517107529718</id>
-			<name>src/FreeRTOS_Source</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source</name>
 			<type>6</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -69,8 +74,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517724384984</id>
-			<name>src/FreeRTOS_Source/portable</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source/portable</name>
 			<type>9</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -78,8 +83,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517724385044</id>
-			<name>src/FreeRTOS_Source/portable</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source/portable</name>
 			<type>9</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -87,8 +92,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517107276434</id>
-			<name>src/Full_Demo/Standard_Demo_Tasks</name>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -96,8 +101,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517107276614</id>
-			<name>src/Full_Demo/Standard_Demo_Tasks</name>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -105,8 +110,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517107276734</id>
-			<name>src/Full_Demo/Standard_Demo_Tasks</name>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -114,8 +119,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517724438091</id>
-			<name>src/FreeRTOS_Source/portable/GCC</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source/portable/GCC</name>
 			<type>9</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
@@ -123,8 +128,8 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1517074504805</id>
-			<name>src/FreeRTOS_Source/portable/MemMang</name>
+			<id>0</id>
+			<name>src/FreeRTOS/Source/portable/MemMang</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>

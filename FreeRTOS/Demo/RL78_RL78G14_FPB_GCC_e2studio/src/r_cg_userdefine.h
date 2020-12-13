@@ -34,25 +34,5 @@ User definitions
 ***********************************************************************************************************************/
 
 /* Start user code for function. Do not edit comment generated here */
-
-#include "FreeRTOS.h"
-
-#if INTIT_vect == 0x38
-/*
- * INT_IT (0x38)
- */
-void vPortTickISR(void) __attribute__ ((interrupt)); /* Note this vector table definition is used with lots of RL78 chips, some of which have the INTIT vector here. */
-#endif
-#if INTIT_vect == 0x3C
-/*
- * INT_IT (0x3C)
- */
-void vPortTickISR(void) __attribute__ ((interrupt)); /* Note this vector table definition is used with lots of RL78 chips, some of which have the INTIT vector here. */
-#endif
-/*
- * INT_BRK_I (0x7E)
- */
-void vPortYield(void) __attribute__ ((interrupt));
-
 /* End user code. Do not edit comment generated here */
 #endif

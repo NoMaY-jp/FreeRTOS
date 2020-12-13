@@ -31,6 +31,7 @@ Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
 #include "r_cg_userdefine.h"
+#include "r_cg_vector_table.h"
 
 /***********************************************************************************************************************
 Global variables and functions
@@ -56,129 +57,129 @@ const void *HardwareVectors[] VEC  = {
 #define VECT_SECT          __attribute__ ((section (".vects")))
 const void *Vectors[] VECT_SECT  = {
 	// Address 0x4
-	R_Dummy,
+	R_Vector_0x4,
 	// Address 0x6
-	R_Dummy,
+	R_Vector_0x6,
 	// Address 0x8
-	R_Dummy,
+	R_Vector_0x8,
 	// Address 0xA
-	R_Dummy,
+	R_Vector_0xA,
 	// Address 0xC
-	R_Dummy,
+	R_Vector_0xC,
 	// Address 0xE
-	R_Dummy,
+	R_Vector_0xE,
 	// Address 0x10
-	R_Dummy,
+	R_Vector_0x10,
 	// Address 0x12
-	R_Dummy,
+	R_Vector_0x12,
 	// Address 0x14
-	R_Dummy,
+	R_Vector_0x14,
 	// Address 0x16
-	R_Dummy,
+	R_Vector_0x16,
 	// Address 0x18
-	R_Dummy,
+	R_Vector_0x18,
 	// Address 0x1A
-	R_Dummy,
+	R_Vector_0x1A,
 	// Address 0x1C
-	R_Dummy,
+	R_Vector_0x1C,
 	// Address 0x1E
-	R_Dummy,
+	R_Vector_0x1E,
 	// Address 0x20
-	R_Dummy,
+	R_Vector_0x20,
 	// Address 0x22
-	R_Dummy,
+	R_Vector_0x22,
 	// Address 0x24
-	R_Dummy,
+	R_Vector_0x24,
 	// Address 0x26
-	R_Dummy,
+	R_Vector_0x26,
 	// Address 0x28
-	R_Dummy,
+	R_Vector_0x28,
 	// Address 0x2A
-	R_Dummy,
+	R_Vector_0x2A,
 	// Address 0x2C
-	R_Dummy,
+	R_Vector_0x2C,
 	// Address 0x2E
-	R_Dummy,
+	R_Vector_0x2E,
 	// Address 0x30
-	R_Dummy,
+	R_Vector_0x30,
 	// Address 0x32
-	R_Dummy,
+	R_Vector_0x32,
 	// Address 0x34
-	R_Dummy,
+	R_Vector_0x34,
 	// Address 0x36
-	R_Dummy,
+	R_Vector_0x36,
 	// Address 0x38
-	vPortTickISR,
+	R_Vector_0x38,
 	// Address 0x3A
-	R_Dummy,
+	R_Vector_0x3A,
 	// Address 0x3C
-	R_Dummy,
+	R_Vector_0x3C,
 	// Address 0x3E
-	R_Dummy,
+	R_Vector_0x3E,
 	// Address 0x40
-	R_Dummy,
+	R_Vector_0x40,
 	// Address 0x42
-	R_Dummy,
+	R_Vector_0x42,
 	// Address 0x44
-	R_Dummy,
+	R_Vector_0x44,
 	// Address 0x46
-	R_Dummy,
+	R_Vector_0x46,
 	// Address 0x48
-	R_Dummy,
+	R_Vector_0x48,
 	// Address 0x4A
-	R_Dummy,
+	R_Vector_0x4A,
 	// Address 0x4C
-	R_Dummy,
+	R_Vector_0x4C,
 	// Address 0x4E
-	R_Dummy,
+	R_Vector_0x4E,
 	// Address 0x50
-	R_Dummy,
+	R_Vector_0x50,
 	// Address 0x52
-	R_Dummy,
+	R_Vector_0x52,
 	// Address 0x54
-	R_Dummy,
+	R_Vector_0x54,
 	// Address 0x56
-	R_Dummy,
+	R_Vector_0x56,
 	// Address 0x58
-	R_Dummy,
+	R_Vector_0x58,
 	// Address 0x5A
-	R_Dummy,
+	R_Vector_0x5A,
 	// Address 0x5C
-	R_Dummy,
+	R_Vector_0x5C,
 	// Address 0x5E
-	R_Dummy,
+	R_Vector_0x5E,
 	// Address 0x60
-	R_Dummy,
+	R_Vector_0x60,
 	// Address 0x62
-	R_Dummy,
+	R_Vector_0x62,
 	// Address 0x64
-	R_Dummy,
+	R_Vector_0x64,
 	// Address 0x66
-	R_Dummy,
+	R_Vector_0x66,
 	// Address 0x68
-	R_Dummy,
+	R_Vector_0x68,
 	// Address 0x6A
-	R_Dummy,
+	R_Vector_0x6A,
 	// Address 0x6C
-	R_Dummy,
+	R_Vector_0x6C,
 	// Address 0x6E
-	R_Dummy,
+	R_Vector_0x6E,
 	// Address 0x70
-	R_Dummy,
+	R_Vector_0x70,
 	// Address 0x72
-	R_Dummy,
+	R_Vector_0x72,
 	// Address 0x74
-	R_Dummy,
+	R_Vector_0x74,
 	// Address 0x76
-	R_Dummy,
+	R_Vector_0x76,
 	// Address 0x78
-	R_Dummy,
+	R_Vector_0x78,
 	// Address 0x7A
-	R_Dummy,
+	R_Vector_0x7A,
 	// Address 0x7C
-	R_Dummy,
+	R_Vector_0x7C,
 	// Address 0x7E
-	vPortYield,
+	R_Vector_0x7E,
 };
 /***********************************************************************************************************************
 * Function Name: R_Dummy
@@ -193,4 +194,9 @@ void R_Dummy(void)
 }
 
 /* Start user code for adding. Do not edit comment generated here */
+
+#ifndef VECTOR_TABLE_H
+#error The r_cg_vector_table.c has not been modified by the r_cg_vector_table.js yet.
+#endif
+
 /* End user code. Do not edit comment generated here */
