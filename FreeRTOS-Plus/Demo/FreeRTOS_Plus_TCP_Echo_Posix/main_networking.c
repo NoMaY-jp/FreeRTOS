@@ -1,5 +1,5 @@
 /*
- * FreeRTOS V202011.00
+ * FreeRTOS V202012.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -36,7 +36,6 @@
 #include <time.h>
 #include <unistd.h>
 
-
 /* FreeRTOS includes. */
 #include <FreeRTOS.h>
 #include "task.h"
@@ -46,6 +45,7 @@
 #include "FreeRTOS_Sockets.h"
 /*#include "SimpleUDPClientAndServer.h" */
 /*#include "SimpleTCPEchoServer.h" */
+/*#include "TCPEchoClient_SingleTasks.h" */
 /*#include "logging.h" */
 #include "TCPEchoClient_SingleTasks.h"
 
@@ -63,7 +63,7 @@
 
 /* Define a name that will be used for LLMNR and NBNS searches. */
 #define mainHOST_NAME                                 "RTOSDemo"
-#define mainDEVICE_NICK_NAME                          "qemu_demo"
+#define mainDEVICE_NICK_NAME                          "linux_demo"
 
 /* Set the following constants to 1 or 0 to define which tasks to include and
  * exclude:
@@ -76,7 +76,7 @@
  * FreeRTOSConfig.h.
  *
  */
-
+#define mainCREATE_TCP_ECHO_TASKS_SINGLE              1
 /*-----------------------------------------------------------*/
 
 /*
@@ -94,33 +94,10 @@ static void prvMiscInitialisation( void );
  * defined here will be used if ipconfigUSE_DHCP is 0, or if ipconfigUSE_DHCP is
  * 1 but a DHCP server could not be contacted.  See the online documentation for
  * more information. */
-static const uint8_t ucIPAddress[ 4 ] = { configIP_ADDR0,
-                                          configIP_ADDR1,
-                                          configIP_ADDR2,
-                                          configIP_ADDR3
-                                        };
-static const uint8_t ucNetMask[ 4 ] = { configNET_MASK0,
-                                        configNET_MASK1,
-                                        configNET_MASK2,
-                                        configNET_MASK3
-                                      };
-static const uint8_t ucGatewayAddress[ 4 ] = { configGATEWAY_ADDR0,
-                                               configGATEWAY_ADDR1,
-                                               configGATEWAY_ADDR2,
-                                               configGATEWAY_ADDR3
-                                             };
-static const uint8_t ucDNSServerAddress[ 4 ] = { configDNS_SERVER_ADDR0,
-                                                 configDNS_SERVER_ADDR1,
-                                                 configDNS_SERVER_ADDR2,
-                                                 configDNS_SERVER_ADDR3
-                                               };
-const uint8_t ucMACAddress[ 6 ] = { configMAC_ADDR0,
-                                    configMAC_ADDR1,
-                                    configMAC_ADDR2,
-                                    configMAC_ADDR3,
-                                    configMAC_ADDR4,
-                                    configMAC_ADDR5
-                                  };
+static const uint8_t ucIPAddress[ 4 ] = { configIP_ADDR0, configIP_ADDR1, configIP_ADDR2, configIP_ADDR3 };
+static const uint8_t ucNetMask[ 4 ] = { configNET_MASK0, configNET_MASK1, configNET_MASK2, configNET_MASK3 };
+static const uint8_t ucGatewayAddress[ 4 ] = { configGATEWAY_ADDR0, configGATEWAY_ADDR1, configGATEWAY_ADDR2, configGATEWAY_ADDR3 };
+static const uint8_t ucDNSServerAddress[ 4 ] = { configDNS_SERVER_ADDR0, configDNS_SERVER_ADDR1, configDNS_SERVER_ADDR2, configDNS_SERVER_ADDR3 };
 
 /* Set the following constant to pdTRUE to log using the method indicated by the
  * name of the constant, or pdFALSE to not log using the method indicated by the
@@ -129,8 +106,14 @@ const uint8_t ucMACAddress[ 6 ] = { configMAC_ADDR0,
  * then UDP messages are sent to the IP address configured as the echo server
  * address (see the configECHO_SERVER_ADDR0 definitions in FreeRTOSConfig.h) and
  * the port number set by configPRINT_PORT in FreeRTOSConfig.h. */
-//const BaseType_t xLogToStdout = pdTRUE, xLogToFile = pdFALSE, xLogToUDP = pdFALSE;
+const BaseType_t xLogToStdout = pdTRUE, xLogToFile = pdFALSE, xLogToUDP = pdFALSE;
 
+/* Default MAC address configuration.  The demo creates a virtual network
+ * connection that uses this MAC address by accessing the raw Ethernet data
+ * to and from a real network connection on the host PC.  See the
+ * configNETWORK_INTERFACE_TO_USE definition for information on how to configure
+ * the real network connection to use. */
+const uint8_t ucMACAddress[ 6 ] = { configMAC_ADDR0, configMAC_ADDR1, configMAC_ADDR2, configMAC_ADDR3, configMAC_ADDR4, configMAC_ADDR5 };
 
 /* Use by the pseudo random number generator. */
 static UBaseType_t ulNextRand;
@@ -156,7 +139,7 @@ void main_tcp_echo_client_tasks( void )
      * when the network is connected and ready for use (see the definition of
      * vApplicationIPNetworkEventHook() below).  The address values passed in here
      * are used if ipconfigUSE_DHCP is set to 0, or if ipconfigUSE_DHCP is set to 1
-     * but a DHCP server cannot be contacted. */
+     * but a DHCP server cannot be	contacted. */
     FreeRTOS_debug_printf( ( "FreeRTOS_IPInit\n" ) );
     FreeRTOS_IPInit( ucIPAddress,
                      ucNetMask,
@@ -172,7 +155,7 @@ void main_tcp_echo_client_tasks( void )
     /* If all is well, the scheduler will now be running, and the following
      * line will never be reached.  If the following line does execute, then
      * there was insufficient FreeRTOS heap memory available for the idle and/or
-     * timer tasks to be created.  See the memory management section on the
+     * timer tasks	to be created.  See the memory management section on the
      * FreeRTOS web site for more details (this is standard text that is not not
      * really applicable to the Linux simulator port). */
     for( ; ; )
@@ -182,16 +165,13 @@ void main_tcp_echo_client_tasks( void )
 }
 /*-----------------------------------------------------------*/
 
-    BaseType_t xTasksAlreadyCreated = pdFALSE;
 /* Called by FreeRTOS+TCP when the network connects or disconnects.  Disconnect
  * events are only received if implemented in the MAC driver. */
 void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
 {
-    uint32_t ulIPAddress;
-    uint32_t ulNetMask;
-    uint32_t ulGatewayAddress;
-    uint32_t ulDNSServerAddress;
+    uint32_t ulIPAddress, ulNetMask, ulGatewayAddress, ulDNSServerAddress;
     char cBuffer[ 16 ];
+    static BaseType_t xTasksAlreadyCreated = pdFALSE;
 
     /* If the network has just come up...*/
     if( eNetworkEvent == eNetworkUp )
@@ -206,8 +186,7 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
 
             #if ( mainCREATE_TCP_ECHO_TASKS_SINGLE == 1 )
                 {
-                    vStartTCPEchoClientTasks_SingleTasks( mainECHO_CLIENT_TASK_STACK_SIZE,
-                                                          mainECHO_CLIENT_TASK_PRIORITY );
+                    vStartTCPEchoClientTasks_SingleTasks( mainECHO_CLIENT_TASK_STACK_SIZE, mainECHO_CLIENT_TASK_PRIORITY );
                 }
             #endif /* mainCREATE_TCP_ECHO_TASKS_SINGLE */
 
@@ -231,7 +210,7 @@ void vApplicationIPNetworkEventHook( eIPCallbackEvent_t eNetworkEvent )
     }
     else
     {
-        FreeRTOS_printf( ("Application idle hook network down\n") );
+        FreeRTOS_printf( "Application idle hook network down\n" );
     }
 }
 /*-----------------------------------------------------------*/

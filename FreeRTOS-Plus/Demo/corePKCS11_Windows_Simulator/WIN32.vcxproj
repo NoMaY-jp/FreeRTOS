@@ -354,6 +354,7 @@
     <ClInclude Include="..\..\Source\corePKCS11\source\include\core_pkcs11.h" />
     <ClInclude Include="..\..\Source\corePKCS11\source\include\core_pkcs11_pal.h" />
     <ClInclude Include="..\..\Source\corePKCS11\source\include\core_pki_utils.h" />
+    <ClInclude Include="core_pkcs11_config.h" />
     <ClInclude Include="threading_alt.h" />
     <ClInclude Include="aws_mbedtls_config.h" />
     <ClInclude Include="examples\demo_helpers.h" />
@@ -365,4 +366,3 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
-

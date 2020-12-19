@@ -1,5 +1,5 @@
 /*
- * FreeRTOS V202011.00
+ * FreeRTOS V202012.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -65,7 +65,7 @@ protocol port. */
 
 /* The size of the buffers is a multiple of the MSS - the length of the data
 sent is a pseudo random size between 20 and echoBUFFER_SIZES. */
-	#define echoBUFFER_SIZE_MULTIPLIER	  ( 1 )
+	#define echoBUFFER_SIZE_MULTIPLIER	  ( 3 )
 	#define echoBUFFER_SIZES			  ( ipconfigTCP_MSS * echoBUFFER_SIZE_MULTIPLIER )
 
 /* The number of instances of the echo client task to create. */
@@ -193,23 +193,18 @@ missing data. */
 					sprintf( pcTransmittedString, "TxRx message number %u", ulTxCount );
 					ulTxCount++;
 
-					printf( "sending data to the echo server size %d original %d\n",
-					        lStringLength,
-					        echoBUFFER_SIZES);
+					printf( "sending data to the echo server \n" );
 					/* Send the string to the socket. */
 					lTransmitted = FreeRTOS_send( xSocket,                        /* The socket being sent to. */
 												  ( void * ) pcTransmittedString, /* The data being sent. */
 												  lStringLength,                  /* The length of the data being sent. */
 												  0 );                            /* No flags. */
-					printf("FreeRTOS_send returned...transmitted %d\n",
-					        lTransmitted);
 
 					if( lTransmitted < 0 )
 					{
 						/* Error? */
 						break;
 					}
-					printf("data send receiving data... \n");
 
 					/* Clear the buffer into which the echoed string will be
 					placed. */

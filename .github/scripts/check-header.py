@@ -362,11 +362,14 @@ FREERTOS_IGNORED_PATTERNS = [
     r'.*CMSIS.*',
     r'.*/makefile',
     r'.*/Makefile',
+    r'.*/trcConfig\.h.*',
+    r'.*/trcConfig\.c.*',
+    r'.*/trcSnapshotConfig\.h.*',
 ]
 
 FREERTOS_HEADER = [
     '/*\n',
-    ' * FreeRTOS V202011.00\n',
+    ' * FreeRTOS V202012.00\n',
     ' * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.\n',
     ' *\n',
     ' * Permission is hereby granted, free of charge, to any person obtaining a copy of\n',

@@ -1,5 +1,5 @@
 /*
- * FreeRTOS V202011.00
+ * FreeRTOS V202012.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,16 +24,44 @@
  *
  */
 
-#ifndef SINGLE_TASK_TCP_ECHO_CLIENTS_H
-#define SINGLE_TASK_TCP_ECHO_CLIENTS_H
-
 /*
- * Create the TCP echo client tasks.  This is the version where an echo request
- * is made from the same task that listens for the echo reply.
- */
-void vStartTCPEchoClientTasks_SingleTasks( uint16_t usTaskStackSize, UBaseType_t uxTaskPriority );
-BaseType_t xAreSingleTaskTCPEchoClientsStillRunning( void );
+ * Utility functions required to gather run time statistics.  See:
+ * http://www.freertos.org/rtos-run-time-stats.html
+ *
+ * Note that this is a simulated port, where simulated time is a lot slower than
+ * real time, therefore the run time counter values have no real meaningful
+ * units.
+ *
+ * Also note that it is assumed this demo is going to be used for short periods
+ * of time only, and therefore timer overflows are not handled.
+*/
 
-#endif /* SINGLE_TASK_TCP_ECHO_CLIENTS_H */
+#include <time.h>
 
+/* FreeRTOS includes. */
+#include <FreeRTOS.h>
 
+/* Time at start of day (in ns). */
+static unsigned long ulStartTimeNs;
+
+/*-----------------------------------------------------------*/
+
+void vConfigureTimerForRunTimeStats( void )
+{
+struct timespec xNow;
+
+	clock_gettime(CLOCK_MONOTONIC, &xNow);
+	ulStartTimeNs = xNow.tv_sec * 1000000000ul + xNow.tv_nsec;
+}
+/*-----------------------------------------------------------*/
+
+unsigned long ulGetRunTimeCounterValue( void )
+{
+struct timespec xNow;
+
+	/* Time at start. */
+	clock_gettime(CLOCK_MONOTONIC, &xNow);
+
+	return xNow.tv_sec * 1000000000ul + xNow.tv_nsec - ulStartTimeNs;
+}
+/*-----------------------------------------------------------*/
