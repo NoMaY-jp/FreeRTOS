@@ -1,4 +1,4 @@
-# Ignore build results and unnecessary setting/working files by/for EWRX
+# Ignore build results and unnecessary setting/working files by/for EWB
 Debug/
 YRPBRL78G13/
 YRDKRL78G14/
@@ -20,6 +20,7 @@ RL78_G14_FPB/
 
 # Ignore build results and unnecessary setting/working files by/for e2 studio
 HardwareDebug/
+### e2studio_project.prefs
 language.settings.xml
 cgprojectDatas.datas
 com.renesas.smc.e2studio.qe.xml
