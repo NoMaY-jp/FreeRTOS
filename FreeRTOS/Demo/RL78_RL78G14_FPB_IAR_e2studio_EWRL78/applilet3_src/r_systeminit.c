@@ -32,6 +32,9 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
+#include "r_cg_intc.h"
+#include "r_cg_serial.h"
+#include "r_cg_dtc.h"
 /* Start user code for include. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
@@ -57,9 +60,11 @@ void R_Systeminit(void)
 {
     PIOR0 = 0x04U;
     PIOR1 = 0x00U;
-    R_CGC_Get_ResetSource();
     R_CGC_Create();
     R_PORT_Create();
+    R_SAU1_Create();
+    R_INTC_Create();
+    R_DTC_Create();
     IAWCTL = 0x00U;
 }
 

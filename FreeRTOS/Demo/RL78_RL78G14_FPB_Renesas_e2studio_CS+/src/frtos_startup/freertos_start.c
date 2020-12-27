@@ -34,6 +34,7 @@
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
 #include "freertos_start.h"
+#include "platform.h"
 #include "demo_main.h"
 #include "demo_specific_io.h"
 
@@ -60,7 +61,9 @@ Exported global functions (to be accessed by other files)
 ******************************************************************************/
 
 /* FreeRTOS's system timer. */
+#ifndef configSETUP_TICK_INTERRUPT
 void vApplicationSetupTimerInterrupt(void);
+#endif /* configSETUP_TICK_INTERRUPT */
 
 /* Hook functions used by FreeRTOS. */
 void vAssertCalled(void);
@@ -68,6 +71,8 @@ void vApplicationIdleHook(void);
 void vApplicationTickHook(void);
 void vApplicationMallocFailedHook(void);
 void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName);
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize );
 
 /* FreeRTOS's processing before start the kernel. */
 void Processing_Before_Start_Kernel(void);
@@ -76,11 +81,75 @@ void Processing_Before_Start_Kernel(void);
 extern void main_task(void *pvParameters);
 
 /******************************************************************************
+* Function Name: vApplicationSetupTimerInterrupt
+* Description  : Initialize system timer for FreeRTOS with tick interrupt 1ms.
+* Arguments    : None.
+* Return Value : None.
+******************************************************************************/
+#ifndef configSETUP_TICK_INTERRUPT
+void vApplicationSetupTimerInterrupt(void)
+{
+    const uint16_t usClockHz = 15000UL; /* Internal clock. */
+    const uint16_t usCompareMatch = ( usClockHz / configTICK_RATE_HZ ) - 1UL;
+
+    /* Use the internal 15K clock. */
+    OSMC = ( uint8_t ) 0x16;
+
+    #if defined(RTCEN)
+    {
+        /* Supply the interval timer clock. */
+        RTCEN = ( uint8_t ) 1U;
+
+        /* Disable INTIT interrupt. */
+        ITMK = ( uint8_t ) 1;
+
+        /* Disable ITMC operation. */
+        ITMC = ( uint8_t ) 0x0000;
+
+        /* Clear INIT interrupt. */
+        ITIF = ( uint8_t ) 0;
+
+        /* Set interval and enable interrupt operation. */
+        ITMC = usCompareMatch | 0x8000U;
+
+        /* Enable INTIT interrupt. */
+        ITMK = ( uint8_t ) 0;
+    }
+    #elif defined(TMKAEN)
+    {
+        /* Supply the interval timer clock. */
+        TMKAEN = ( uint8_t ) 1U;
+
+        /* Disable INTIT interrupt. */
+        TMKAMK = ( uint8_t ) 1;
+
+        /* Disable ITMC operation. */
+        ITMC = ( uint8_t ) 0x0000;
+
+        /* Clear INIT interrupt. */
+        TMKAIF = ( uint8_t ) 0;
+
+        /* Set interval and enable interrupt operation. */
+        ITMC = usCompareMatch | 0x8000U;
+
+        /* Enable INTIT interrupt. */
+        TMKAMK = ( uint8_t ) 0;
+    }
+    #else
+
+        #error Neither RTC nor TMKA is available for the tick interrupt.
+
+    #endif
+}
+#endif /* !configSETUP_TICK_INTERRUPT */
+
+/******************************************************************************
 * Function Name: vAssertCalled
 * Description  : This function is used to validate the input parameters.
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configASSERT_DEFINED == 1 )
 void vAssertCalled(void)
 {
     volatile unsigned long ul = 0;
@@ -100,6 +169,7 @@ void vAssertCalled(void)
     taskEXIT_CRITICAL();
 
 } /* End of function vAssertCalled() */
+#endif /* configASSERT_DEFINED == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationIdleHook
@@ -109,11 +179,13 @@ void vAssertCalled(void)
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configUSE_IDLE_HOOK == 1 )
 void vApplicationIdleHook(void)
 {
     /* Implement user-code for user own purpose. */
 
 } /* End of function vApplicationIdleHook() */
+#endif /* configUSE_IDLE_HOOK == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationTickHook
@@ -125,11 +197,13 @@ void vApplicationIdleHook(void)
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configUSE_TICK_HOOK == 1 )
 void vApplicationTickHook(void)
 {
     /* Implement user-code for user own purpose. */
 
 } /* End of function vApplicationTickHook() */
+#endif /* configUSE_TICK_HOOK == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationMallocFailedHook
@@ -138,6 +212,7 @@ void vApplicationTickHook(void)
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configUSE_MALLOC_FAILED_HOOK == 1 )
 void vApplicationMallocFailedHook(void)
 {
     /* Called if a call to pvPortMalloc() fails because there is insufficient
@@ -162,6 +237,7 @@ void vApplicationMallocFailedHook(void)
 #endif
 
 } /* End of function vApplicationMallocFailedHook() */
+#endif /* configUSE_MALLOC_FAILED_HOOK == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationStackOverflowHook
@@ -173,6 +249,7 @@ void vApplicationMallocFailedHook(void)
 *                    Pointer of where to store the task's name
 * Return Value : None.
 ******************************************************************************/
+#if( configCHECK_FOR_STACK_OVERFLOW != 0 )
 void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
 {
     ( void ) pcTaskName;
@@ -198,6 +275,57 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
 #endif
 
 } /* End of function vApplicationStackOverflowHook() */
+#endif /* configCHECK_FOR_STACK_OVERFLOW != 0 */
+
+/******************************************************************************
+* Function Name: vApplicationGetIdleTaskMemory
+* Description  : This function will be called when the idle task will be created
+*                using user provided RAM.
+* Arguments    : ppxIdleTaskTCBBuffer -
+*                    Pointer of where to store the Idle Task's TCB Buffer address
+*                ppxIdleTaskStackBuffer -
+*                    Pointer of where to store the Idle Task's Stack Buffer address
+*                pulIdleTaskStackSize -
+*                    Pointer of where to store the Idle Task's Stack Buffer size
+* Return Value : None.
+******************************************************************************/
+#if( configSUPPORT_STATIC_ALLOCATION == 1 )
+void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
+{
+    static StaticTask_t xIdleTaskTCBBuffer;
+    static StackType_t  xIdleTaskStackBuffer[IdleTask_STACK_BUFF_DEPTH];
+
+    *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+    *ppxIdleTaskStackBuffer = xIdleTaskStackBuffer;
+    *pulIdleTaskStackSize = IdleTask_STACK_BUFF_DEPTH;
+
+} /* End of vApplicationGetIdleTaskMemory() */
+#endif /* configSUPPORT_STATIC_ALLOCATION == 1 */
+
+/******************************************************************************
+* Function Name: vApplicationGetTimerTaskMemory
+* Description  : This function will be called when the scheduler is started if ÅöÅöÅöÅö ï∂èÕämîF ÅöÅöÅöÅö
+*                configSUPPORT_STATIC_ALLOCATION and configUSE_TIMERS are set to 1.
+* Arguments    : ppxTimerTaskTCBBuffer -
+*                    Pointer of where to store the Timer Task's TCB Buffer address
+*                ppxTimerTaskStackBuffer -
+*                    Pointer of where to store the Timer Task's Stack Buffer address
+*                pulTimerTaskStackSize -
+*                    Pointer of where to store the Timer Task's Stack Buffer size
+* Return Value : None.
+******************************************************************************/
+#if( configSUPPORT_STATIC_ALLOCATION == 1 && configUSE_TIMERS == 1 )
+void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize )
+{
+    static StaticTask_t xTimerTaskTCBBuffer;
+    static StackType_t  xTimerTaskStackBuffer[configTIMER_TASK_STACK_DEPTH];
+
+    *ppxTimerTaskTCBBuffer = &xTimerTaskTCBBuffer;
+    *ppxTimerTaskStackBuffer = xTimerTaskStackBuffer;
+    *pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
+
+} /* End of vApplicationGetTimerTaskMemory() */
+#endif /* configSUPPORT_STATIC_ALLOCATION == 1 && configUSE_TIMERS == 1 */
 
 /******************************************************************************
 * Function Name: vPrintString
@@ -214,11 +342,7 @@ void vPrintString(const char *pcMessage)
 
     taskENTER_CRITICAL();
     {
-#if 1
-		( void ) pcMessage;
-#else
         sim_debugger_console( pcMessage );
-#endif
     }
     taskEXIT_CRITICAL();
 
@@ -233,9 +357,11 @@ void vPrintString(const char *pcMessage)
 ******************************************************************************/
 void Processing_Before_Start_Kernel(void)
 {
-#if 0
+#if (mainCREATE_NON_STANDARD_RTOS_DEMO == 1)
 
+#if 0
     BaseType_t ret;
+#endif /* #if 0 */
 
     /************** semaphore creation ***********************/
 
@@ -258,6 +384,7 @@ void Processing_Before_Start_Kernel(void)
 
     Kernel_Object_init();
 
+#if 0
     /************** task creation ****************************/
     /* Main task. */
     ret = xTaskCreate(main_task, "MAIN_TASK", 512, NULL, 3, NULL);
@@ -268,12 +395,13 @@ void Processing_Before_Start_Kernel(void)
             /* Failed! Task can not be created. */
         }
     }
+#endif /* #if 0 */
 
-#else /* Run FreeRTOS Demo */
+#else /* mainCREATE_NON_STANDARD_RTOS_DEMO == 1 */
 
     demo_main();
 
-#endif
+#endif /* mainCREATE_NON_STANDARD_RTOS_DEMO == 1 */
 
 } /* End of function Processing_Before_Start_Kernel() */
 
@@ -353,3 +481,83 @@ void vSendString( const char * const pcString )
     #endif
 }
 /*-----------------------------------------------------------*/
+
+/******************************************************************************
+* Function Name: vTaskNotifyGiveFromISR_R_Helper
+* Description  : Helper function for vTaskNotifyGiveFromISR().
+* Arguments    : pxTask -
+*                    Pointer to task handler
+* Return value : None.
+******************************************************************************/
+void vTaskNotifyGiveFromISR_R_Helper(TaskHandle_t *pxTask)
+{
+    if (NULL != *pxTask)
+    {
+        BaseType_t sHigherPriorityTaskWoken = pdFALSE;
+
+        /* Notify the task that the interrupt/callback is complete. */
+        vTaskNotifyGiveFromISR( *pxTask, &sHigherPriorityTaskWoken );
+
+        /* There are no interrupt/callback in progress, so no tasks to notify. */
+        *pxTask = NULL;
+
+        portYIELD_FROM_ISR( sHigherPriorityTaskWoken );
+    }
+
+} /* End of function vTaskNotifyGiveFromISR_R_Helper() */
+
+/******************************************************************************
+* Function Name: xTaskNotifyFromISR_R_Helper
+* Description  : Helper function for xTaskNotifyFromISR().
+* Arguments    : pxTask -
+*                    Pointer to task handler
+*                ulValue -
+*                    Notification value
+* Return value : None. (This is not the same as xTaskNotifyFromISR().)
+******************************************************************************/
+void xTaskNotifyFromISR_R_Helper(TaskHandle_t *pxTask, uint32_t ulValue)
+{
+    if (NULL != *pxTask)
+    {
+        BaseType_t sHigherPriorityTaskWoken = pdFALSE;
+
+        /* Notify the task that the interrupt/callback is complete. */
+        xTaskNotifyFromISR( *pxTask, ulValue, eSetValueWithOverwrite, &sHigherPriorityTaskWoken );
+
+        /* There are no interrupt/callback in progress, so no tasks to notify. */
+        *pxTask = NULL;
+
+        portYIELD_FROM_ISR( sHigherPriorityTaskWoken );
+    }
+
+} /* End of function xTaskNotifyFromISR_R_Helper() */
+
+/******************************************************************************
+* Function Name: ulTaskNotifyTake_R_Helper
+* Description  : Helper function for ulTaskNotifyTake().
+* Arguments    : xTicksToWait -
+*                    Ticks to wait
+* Return value : The same return value from ulTaskNotifyTake().
+******************************************************************************/
+uint32_t ulTaskNotifyTake_R_Helper(TickType_t xTicksToWait)
+{
+    /* Wait to be notified that the interrupt/callback is complete. */
+    return ulTaskNotifyTake( pdTRUE, xTicksToWait );
+
+} /* End of function ulTaskNotifyTake_R_Helper() */
+
+/******************************************************************************
+* Function Name: xTaskGetCurrentTaskHandle_R_Helper
+* Description  : Helper function for xTaskGetCurrentTaskHandle().
+* Arguments    : None.
+* Return value : The same return value from xTaskGetCurrentTaskHandle().
+******************************************************************************/
+TaskHandle_t xTaskGetCurrentTaskHandle_R_Helper(void)
+{
+    /* Ensure the calling task does not already have a notification pending. */
+    ulTaskNotifyTake( pdTRUE, 0 );
+
+    /* Return the handle of the calling task. */
+    return xTaskGetCurrentTaskHandle();
+
+} /* End of function xTaskGetCurrentTaskHandle_R_Helper() */

@@ -29,7 +29,9 @@
 /***********************************************************************************************************************
  * Includes   <System Includes> , "Project Includes"
  **********************************************************************************************************************/
+#include "task_function.h"
 #include "freertos_start.h"
+
 /***********************************************************************************************************************
  * Macro definitions
  **********************************************************************************************************************/
@@ -43,6 +45,7 @@
  **********************************************************************************************************************/
 void Kernel_Object_init (void);
 void Object_init_manual (void);
+BaseType_t ret;
 /***********************************************************************************************************************
  * Function Name: Kernel_Object_init
  * Description  : This function initializes FreeRTOS objects.
@@ -52,6 +55,14 @@ void Object_init_manual (void);
 void Kernel_Object_init (void)
 {
     /************** task creation ****************************/
+
+    xTaskCreateStatic_R_Helper( main_task, "MAIN_TASK", main_task_STACK_BUFF_DEPTH, NULL, 1, NULL );
+
+    xTaskCreateStatic_R_Helper( task_LED0, "task_LED0", task_LED0_STACK_BUFF_DEPTH, NULL, 2, NULL );
+
+    xTaskCreateStatic_R_Helper( task_LED1, "task_LED1", task_LED1_STACK_BUFF_DEPTH, NULL, 2, NULL );
+
+    xTaskCreateStatic_R_Helper( task_CONIO, "task_CONIO", task_CONIO_STACK_BUFF_DEPTH, NULL, 3, NULL);
 
     /************** semaphore creation ***********************/
 

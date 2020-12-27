@@ -66,17 +66,7 @@ _vRegTest1Task:
 	MOVW	DE, #0x5566
 	MOVW	HL, #0x7788
 	MOV		CS, #0x01
-
-;;$if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
-;;	; ES is not saved or restored when using the near memory model so only
-;;	; test it when using the far model.
-	; Port layer for Renesas's CC-RL compiler (and also recent port layer
-	; for IAR's ICCRL78 compiler) always save and restore the ES register
-	; so always test it. (by NoMaY)
 	MOV		ES, #0x02
-
-;;$endif
 
 loop1:
 
@@ -110,25 +100,17 @@ loop1:
 	CMP		A, #0x01
 	SKZ
 	BR		!!_vRegTestError
-
-;;$if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
-;;	; ES is not saved or restored when using the near memory model so only
-;;	; test it when using the far model.
-	; Port layer for Renesas's CC-RL compiler (and also recent port layer
-	; for IAR's ICCRL78 compiler) always save and restore the ES register
-	; so always test it. (by NoMaY)
 	MOV		A, ES
 	CMP		A, #0x02
 	SKZ
 	BR		!!_vRegTestError
 
-;;$endif
+	; Set AX back to its initial value.
+	MOVW	AX, #0x1122
 
 	; Indicate that this task is still cycling.
 	INCW	!_usRegTest1LoopCounter
 
-	MOVW	AX, #0x1122
 	BR 		$loop1
 
 
@@ -152,12 +134,7 @@ _vRegTest2Task:
 	MOVW	DE, #0xddee
 	MOVW	HL, #0xff12
 	MOV		CS, #0x03
-
-;;$if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
 	MOV		ES, #0x04
-
-;;$endif
 
 loop2:
 	CMPW	AX, #0x99aa
@@ -179,20 +156,17 @@ loop2:
 	CMP		A, #0x03
 	SKZ
 	BR		!!_vRegTestError
-
-;;$if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
 	MOV		A, ES
 	CMP		A, #0x04
 	SKZ
 	BR		!!_vRegTestError
 
-;;$endif
+	; Set AX back to its initial value.
+	MOVW	AX, #0x99aa
 
 	; Indicate that this task is still cycling.
 	INCW	!_usRegTest2LoopCounter
 
-	MOVW	AX, #0x99aa
 	BR 		$loop2
 
 

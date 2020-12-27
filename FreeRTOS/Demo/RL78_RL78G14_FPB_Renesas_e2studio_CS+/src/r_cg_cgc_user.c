@@ -47,18 +47,5 @@ Global variables and functions
 /* Start user code for global. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */
 
-/***********************************************************************************************************************
-* Function Name: R_CGC_Get_ResetSource
-* Description  : This function process of Reset.
-* Arguments    : None
-* Return Value : None
-***********************************************************************************************************************/
-void R_CGC_Get_ResetSource(void)
-{
-    uint8_t reset_flag = RESF;
-    /* Start user code. Do not edit comment generated here */
-    /* End user code. Do not edit comment generated here */
-}
-
 /* Start user code for adding. Do not edit comment generated here */
 /* End user code. Do not edit comment generated here */

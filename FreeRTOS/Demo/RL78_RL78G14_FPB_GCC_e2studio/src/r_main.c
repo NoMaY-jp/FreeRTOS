@@ -32,6 +32,9 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "r_cg_cgc.h"
 #include "r_cg_port.h"
+#include "r_cg_intc.h"
+#include "r_cg_serial.h"
+#include "r_cg_dtc.h"
 /* Start user code for include. Do not edit comment generated here */
 #include "freertos_start.h"
 /* End user code. Do not edit comment generated here */
@@ -54,6 +57,10 @@ void main(void)
 {
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
+#if defined(RENESAS_SIMULATOR_DEBUGGING)
+    /* Prevent the variable from being optimized away for the debugger stratup command or script */
+    (void) *(volatile unsigned short *)&renesas_simulator_debugging_key;
+#endif
 
     /* Prepare the necessary tasks, FreeRTOS's resources... required to be executed at the beginning
      * after vTaskStarScheduler() is called. Other tasks can also be created after starting scheduler at any time */

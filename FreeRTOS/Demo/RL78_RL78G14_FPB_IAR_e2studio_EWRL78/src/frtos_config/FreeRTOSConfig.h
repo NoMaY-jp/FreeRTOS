@@ -37,17 +37,17 @@
  * THESE PARAMETERS ARE DESCRIBED WITHIN THE 'CONFIGURATION' SECTION OF THE
  * FreeRTOS API DOCUMENTATION AVAILABLE ON THE FreeRTOS.org WEB SITE.
  *
- * See http://www.freertos.org/a00110.html
+ * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
 
 /* This #ifdef prevents the enclosed code being included from within an
 asm file.  It is valid in a C file, but not valid in an asm file. */
-#ifdef __IAR_SYSTEMS_ICC__
+#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
 
 	#pragma system_include
 	#include <intrinsics.h>
 
-#endif /* __IAR_SYSTEMS_ICC__ */
+#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
 
 /* Include hardware dependent header files to allow this demo to run on
 multiple evaluation boards. */
@@ -59,7 +59,7 @@ multiple evaluation boards. */
 #define configMINIMAL_STACK_SIZE		( ( unsigned short ) 75 )
 #define configMAX_TASK_NAME_LEN			( 10 )
 #define configUSE_TRACE_FACILITY		0
-#define configUSE_16_BIT_TICKS			1
+#define configUSE_16_BIT_TICKS			0
 #define configIDLE_SHOULD_YIELD			1
 #define configTOTAL_HEAP_SIZE			( (size_t ) ( 3420 ) )
 #define configCHECK_FOR_STACK_OVERFLOW	2
@@ -80,6 +80,10 @@ multiple evaluation boards. */
 #define configUSE_CO_ROUTINES 			0
 #define configMAX_CO_ROUTINE_PRIORITIES	( 2 )
 
+/* Memory allocation definitions. */
+#define configSUPPORT_DYNAMIC_ALLOCATION	1
+#define configSUPPORT_STATIC_ALLOCATION		1
+
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet			1
@@ -89,14 +93,31 @@ to exclude the API function. */
 #define INCLUDE_vTaskSuspend				1
 #define INCLUDE_vTaskDelayUntil				1
 #define INCLUDE_vTaskDelay					1
+#define INCLUDE_xTaskGetCurrentTaskHandle	1
 #define INCLUDE_xTaskGetIdleTaskHandle 		0
 #define INCLUDE_xTimerGetTimerDaemonTaskHandle 	0
 
-#if (configUSE_16_BIT_TICKS == 1)
+#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
+/* Tick interrupt vector - this must match the INTIT_vect definition contained
+in the ior5fnnnn.h header file included at the top of this file (the value is
+dependent on the hardware being used. */
+#define configTICK_VECTOR	INTIT_vect
+#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
+
+#if (configUSE_16_BIT_TICKS == 1) && (defined(__CCRL__) || defined(__GNUC__))
 #define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
+#endif /* defined(__CCRL__) || defined(__GNUC__) */
+
+#if defined(configASSERT_DEFINED) && (configASSERT_DEFINED == 1)
+void vAssertCalled( void );
+#define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled()
 #endif
 
-#define configASSERT( x ) if( ( x ) == 0 ) { taskDISABLE_INTERRUPTS(); for( ;; ); }
+#define pdBYTES_TO_STACK_DEPTH( ulBytes ) ( ( ( uint32_t ) ( ulBytes ) + ( sizeof( StackType_t ) - 1 ) ) / sizeof( StackType_t ) )
+
+/* Definitions to allow backward compatibility with FreeRTOS versions prior to
+V8 if desired. */
+#define configENABLE_BACKWARD_COMPATIBILITY	0
 
 #endif /* FREERTOS_CONFIG_H */
 

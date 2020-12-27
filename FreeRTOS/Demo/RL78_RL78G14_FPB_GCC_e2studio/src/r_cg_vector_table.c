@@ -61,7 +61,7 @@ const void *Vectors[] VECT_SECT  = {
 	// Address 0x6
 	R_Vector_0x6,
 	// Address 0x8
-	R_Vector_0x8,
+	r_intc0_interrupt,
 	// Address 0xA
 	R_Vector_0xA,
 	// Address 0xC
@@ -113,9 +113,9 @@ const void *Vectors[] VECT_SECT  = {
 	// Address 0x3A
 	R_Vector_0x3A,
 	// Address 0x3C
-	R_Vector_0x3C,
+	r_uart3_interrupt_send,
 	// Address 0x3E
-	R_Vector_0x3E,
+	r_uart3_interrupt_receive,
 	// Address 0x40
 	R_Vector_0x40,
 	// Address 0x42

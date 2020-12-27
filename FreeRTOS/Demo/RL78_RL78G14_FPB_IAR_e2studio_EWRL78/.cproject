@@ -16,12 +16,12 @@
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeHwSupport::hwSupport.1645285072" name="Disable Hardware Multiplier/Divider Unit" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeHwSupport::hwSupport" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenDevice::deviceSelect.1405470760" name="Device" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenDevice::deviceSelect" useByScannerDiscovery="false" value="R5F104ML&#9;RL78 - R5F104ML" valueType="string"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.General.wtdxToolVersion.750484128" name="wtd version" superClass="iar.wtdx.rl78_v3.toolchain.option.General.wtdxToolVersion" useByScannerDiscovery="false"/>
-							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.1629971180" name="Code model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.OGenCodeModel::kFar" valueType="enumerated"/>
+							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.1629971180" name="Code model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.OGenCodeModel::kNear" valueType="enumerated"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::farfar.883245230" name="Use far runtime library calls" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::farfar" useByScannerDiscovery="false"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::configPath.719352125" name="Configuration file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::configPath" useByScannerDiscovery="false" value="$TOOLKIT_DIR$\LIB\DLib_Config_Normal.h" valueType="string"/>
-							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath.241831809" name="Library file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath" useByScannerDiscovery="false" value="$TOOLKIT_DIR$\LIB\dlrl78fff23n.a" valueType="string"/>
+							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath.241831809" name="Library file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath" useByScannerDiscovery="false" value="$TOOLKIT_DIR$\LIB\dlrl78nnf23n.a" valueType="string"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::list.1083510595" name="Library:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::list" useByScannerDiscovery="false"/>
-							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list.422013009" name="Data model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list.OGenDataModel::kFar" valueType="enumerated"/>
+							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list.422013009" name="Data model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list.OGenDataModel::kNear" valueType="enumerated"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCallingConvention::list.171366783" name="Calling convention" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCallingConvention::list" useByScannerDiscovery="false"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenDoubleSize::alternatives.1471946034" name="Size of type 'double':" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenDoubleSize::alternatives" useByScannerDiscovery="false"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenLibHugeHeapSize::descriptor.328884700" name="Huge:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenLibHugeHeapSize::descriptor" useByScannerDiscovery="false" value="0" valueType="string"/>
@@ -77,12 +77,12 @@
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::alternatives.1884103862" name="C dialect" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::alternatives" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::inlineSemantics.943643022" name="C++ inline semantics" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::inlineSemantics" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::VLA.1667852158" name="Allow VLA" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::VLA" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::reqPrototypes.354394215" name="Require prototypes" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::reqPrototypes" useByScannerDiscovery="false"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::reqPrototypes.354394215" name="Require prototypes" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCDialect::reqPrototypes" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccLangConformance::alternatives.428209092" name="Language conformance" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccLangConformance::alternatives" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCppDialect::staticDestr.152688215" name="Destroy static objects" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCppDialect::staticDestr" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccSignedChar::alternatives.1328668026" name="Plain 'char' is" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccSignedChar::alternatives" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccFloatingPointSemantics::alternatives.1736150212" name="Floating-point semantics" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccFloatingPointSemantics::alternatives" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dList.499539482" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dList" useByScannerDiscovery="false"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dList.499539482" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dList" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dList.OIccOptimization::kSize" valueType="enumerated"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dCheck.1531762813" name="No size constraints" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dCheck" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dRadioSlave.257598304" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dRadioSlave" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OIccOptimization::dRadioSlave.OIccOptimization::kHigh" valueType="enumerated"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccTargetWorkSeg::dWrksegEnable.594573999" name="Enable work area" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccTargetWorkSeg::dWrksegEnable" useByScannerDiscovery="false"/>
@@ -90,9 +90,9 @@
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccTargetCode::dCheckDivModInstr.782823687" name="Disable DIV/MOD instructions" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccTargetCode::dCheckDivModInstr" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCodeSegmentName::override.558866549" name="Code section:" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCodeSegmentName::override" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCodeSegmentName::segmentName.514432400" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCodeSegmentName::segmentName" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckFile.1450666992" name="Output list file" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckFile" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckAss.1364154490" name="Assembler mnemonics" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckAss" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckMsgs.918475260" name="Diagnostics" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckMsgs" useByScannerDiscovery="false"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckFile.1450666992" name="Output list file" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckFile" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckAss.1364154490" name="Assembler mnemonics" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckAss" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckMsgs.918475260" name="Diagnostics" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCCList::dCheckMsgs" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCAssList::dCheckFile.772704804" name="Output assembler file" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCAssList::dCheckFile" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCAssList::dCheckSource.689323101" name="Include source" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCAssList::dCheckSource" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCAssList::dCompilerRuntimeInfo.1830825265" name="Include call frame information" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCAssList::dCompilerRuntimeInfo" useByScannerDiscovery="false"/>
@@ -112,10 +112,10 @@
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckFile.1258825930" name="Preprocessor output to file" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckFile" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckComments.473430590" name="Preserve comments" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckComments" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckLine.349821653" name="Generate #line directives" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckLine" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCRemarks::dCheck.933309146" name="Enable remarks" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCRemarks::dCheck" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit.877463667" name="Suppress these diagnostics:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit" useByScannerDiscovery="false" value="Pa082" valueType="string"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCRemarks::dCheck.933309146" name="Enable remarks" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCRemarks::dCheck" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit.877463667" name="Suppress these diagnostics:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit" useByScannerDiscovery="false" value="Pa091,Pe177,Pe082,Ta026,Pa082" valueType="string"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagRemark::dEdit.1454877968" name="Treat these as remarks:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagRemark::dEdit" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarning::dEdit.745344569" name="Treat these as warnings:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarning::dEdit" useByScannerDiscovery="false"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarning::dEdit.745344569" name="Treat these as warnings:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarning::dEdit" useByScannerDiscovery="false" value="Pa045" valueType="string"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagError::dEdit.1902831688" name="Treat these as errors:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagError::dEdit" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarningsAreErrors::dCheck.1175927906" name="Treat all warnings as errors" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarningsAreErrors::dCheck" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCSourceEncoding::radioSelect.503689879" name="Default source file encoding" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCSourceEncoding::radioSelect" useByScannerDiscovery="false"/>
@@ -123,7 +123,7 @@
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCTextOutputEncoding::radioSelect.272403689" name="Text output file encoding" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCTextOutputEncoding::radioSelect" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCTextOutputEncoding::useBom.1525425180" name="with BOM" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCTextOutputEncoding::useBom" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccExtraOptions::enable.1850160602" name="Use command line options" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccExtraOptions::enable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccExtraOptions::cmdLineParts.1069342146" name="Command line options:  (one per line)" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccExtraOptions::cmdLineParts" useByScannerDiscovery="false" value="-DRL78_G14_FPB" valueType="string"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccExtraOptions::cmdLineParts.1069342146" name="Command line options:  (one per line)" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccExtraOptions::cmdLineParts" useByScannerDiscovery="false" value="-DRL78_G14_FPB&#13;&#10;-DRENESAS_SIMULATOR_DEBUGGING" valueType="string"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccCore::core.83025855" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccCore::core" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccDoubleSize::descriptor.307489116" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccDoubleSize::descriptor" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OIccOutputFile::filename.1218713516" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OIccOutputFile::filename" useByScannerDiscovery="false" value="$FILE_BNAME$.o" valueType="string"/>
@@ -133,12 +133,11 @@
 								<option defaultValue="true" id="iar.wtdx.rl78_v3.toolchain.option.OAsmDebugInfo::enable.1312281930" name="Generate debug information" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDebugInfo::enable" useByScannerDiscovery="false" valueType="boolean"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmCodeModel::codemodel.783990636" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmCodeModel::codemodel" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="iar.wtdx.rl78_v3.toolchain.option.OAsmDefines::symbols.936781286" name="Defined symbols: (one per line)" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDefines::symbols" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="__FAR_DATA_MODEL__"/>
-									<listOptionValue builtIn="false" value="__USE_FAR_RT_CALLS__"/>
 									<listOptionValue builtIn="false" value="__I_WILL_USE_EXTRA_OPTION_DUE_TO_STRANGE_BEHAVIOR_HERE__"/>
+									<listOptionValue builtIn="false" value="__NEAR_DATA_MODEL__"/>
 								</option>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDataModel::datamodel.1050725549" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDataModel::datamodel" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmListing::listFile.1339024776" name="Output list file" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmListing::listFile" useByScannerDiscovery="false"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmListing::listFile.1339024776" name="Output list file" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmListing::listFile" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmPreprocOutput::outputToFile.2145221514" name="Preprocessor output to file" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmPreprocOutput::outputToFile" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmPreprocOutput::preserveComment.572661576" name="Preserve comments" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmPreprocOutput::preserveComment" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmPreprocOutput::lineDirective.1210178124" name="Generate #line directives" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmPreprocOutput::lineDirective" useByScannerDiscovery="false"/>
@@ -162,7 +161,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/FreeRTOS/Source/portable/IAR/RL78}&quot;"/>
 								</option>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmPreInclude::dEditB.1705964582" name="Preinclude file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmPreInclude::dEditB" useByScannerDiscovery="false"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemarks::enable.1648904364" name="Enable remarks" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemarks::enable" useByScannerDiscovery="false"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemarks::enable.1648904364" name="Enable remarks" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemarks::enable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagSuppress::idList.1624261874" name="Suppress these diagnostics:" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagSuppress::idList" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemark::idList.800238974" name="Treat these as remarks:" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemark::idList" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagWarning::idList.704919166" name="Treat these as warnings:" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagWarning::idList" useByScannerDiscovery="false"/>
@@ -284,4 +283,13 @@
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.core.language.mapping">
+		<project-mappings>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.asmSource" language="com.iar.cdt.rl78.v3.toolchain.ui.asm"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cHeader" language="com.iar.cdt.rl78.v3.toolchain.IARc"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cSource" language="com.iar.cdt.rl78.v3.toolchain.IARc"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxHeader" language="com.iar.cdt.rl78.v3.toolchain.IARcpp"/>
+			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxSource" language="com.iar.cdt.rl78.v3.toolchain.IARcpp"/>
+		</project-mappings>
+	</storageModule>
 </cproject>

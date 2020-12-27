@@ -17,6 +17,11 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>com.renesas.cdt.stackanalysis.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.cdt.core.cnature</nature>
@@ -120,20 +125,20 @@
 		</filter>
 		<filter>
 			<id>0</id>
-			<name>src/FreeRTOS/Source/portable/Renesas</name>
-			<type>9</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-RL78</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
 			<name>src/FreeRTOS/Source/portable/MemMang</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-heap_1.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS/Source/portable/Renesas</name>
+			<type>9</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-RL78</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

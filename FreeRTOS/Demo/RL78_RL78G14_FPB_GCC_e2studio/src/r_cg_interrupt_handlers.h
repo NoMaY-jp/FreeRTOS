@@ -44,6 +44,12 @@ Typedef definitions
 /***********************************************************************************************************************
 Global functions
 ***********************************************************************************************************************/
+//0x8
+void r_intc0_interrupt(void) __attribute__ ((interrupt));
+//0x3C
+void r_uart3_interrupt_send(void) __attribute__ ((interrupt));
+//0x3E
+void r_uart3_interrupt_receive(void) __attribute__ ((interrupt));
 //Hardware Vectors
 //0x0
 void PowerON_Reset(void) __attribute__ ((interrupt));

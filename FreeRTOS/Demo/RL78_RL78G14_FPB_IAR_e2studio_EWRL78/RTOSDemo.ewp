@@ -21,12 +21,12 @@
                 <option>
                     <name>GenCodeModel</name>
                     <version>0</version>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>GenDataModel</name>
                     <version>0</version>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>GenCallingConvention</name>
@@ -86,7 +86,7 @@
                 </option>
                 <option>
                     <name>GenRTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\dlrlfff23n.a</state>
+                    <state>$TOOLKIT_DIR$\LIB\dlrlnnf23n.a</state>
                 </option>
                 <option>
                     <name>GenLibInFormatterDescription</name>
@@ -248,7 +248,7 @@
                 </option>
                 <option>
                     <name>IccRequirePrototypes</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IccLanguageConformance</name>
@@ -265,7 +265,7 @@
                 <option>
                     <name>IccOptStrategy</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IccOptLevelSlave</name>
@@ -311,6 +311,7 @@
                 <option>
                     <name>CCDefines</name>
                     <state>RL78_G14_FPB</state>
+                    <state>RENESAS_SIMULATOR_DEBUGGING</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -326,15 +327,15 @@
                 </option>
                 <option>
                     <name>CCListCFile</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCListCMnemonics</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCListCMessages</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCListAssFile</name>
@@ -346,11 +347,11 @@
                 </option>
                 <option>
                     <name>CCEnableRemarks</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCDiagSuppress</name>
-                    <state>Pa082</state>
+                    <state>Pa091,Pe177,Pe082,Ta026,Pa082</state>
                 </option>
                 <option>
                     <name>CCDiagRemark</name>
@@ -358,7 +359,7 @@
                 </option>
                 <option>
                     <name>CCDiagWarning</name>
-                    <state></state>
+                    <state>Pa045</state>
                 </option>
                 <option>
                     <name>CCDiagError</name>
@@ -498,7 +499,7 @@
                 </option>
                 <option>
                     <name>AsmListFile</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>AsmListNoDiagnostics</name>
@@ -536,8 +537,8 @@
                 </option>
                 <option>
                     <name>AsmDefines</name>
-                    <state>__FAR_MODEL__</state>
-                    <state>__FAR_DATA_MODEL__</state>
+                    <state>__NEAR_MODEL__</state>
+                    <state>__NEAR_DATA_MODEL__</state>
                     <state>RL78_G14_FPB</state>
                 </option>
                 <option>
@@ -554,7 +555,7 @@
                 </option>
                 <option>
                     <name>AsmEnableRemarks</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>AsmDiagnosticsSuppress</name>
@@ -2199,11 +2200,26 @@
     <group>
         <name>frtos_skeleton</name>
         <file>
+            <name>$PROJ_DIR$\src\frtos_skeleton\main_task.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\frtos_skeleton\task_CONIO.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\frtos_skeleton\task_function.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\frtos_skeleton\task_LED0.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\frtos_skeleton\task_LED1.c</name>
         </file>
     </group>
     <group>
         <name>frtos_startup</name>
+        <file>
+            <name>$PROJ_DIR$\src\frtos_startup\freertos_isr.h</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\src\frtos_startup\freertos_object_init.c</name>
         </file>
@@ -2225,10 +2241,28 @@
                 <name>$PROJ_DIR$\applilet3_src\r_cg_cgc_user.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\applilet3_src\r_cg_dtc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\applilet3_src\r_cg_dtc_user.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\applilet3_src\r_cg_intc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\applilet3_src\r_cg_intc_user.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\applilet3_src\r_cg_port.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\applilet3_src\r_cg_port_user.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\applilet3_src\r_cg_serial.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\applilet3_src\r_cg_serial_user.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\applilet3_src\r_main.c</name>
@@ -2237,6 +2271,36 @@
                 <name>$PROJ_DIR$\applilet3_src\r_systeminit.c</name>
             </file>
         </group>
+    </group>
+    <group>
+        <name>RenesasSimDebug</name>
+        <file>
+            <name>$PROJ_DIR$\src\RenesasSimDebug\sim_debug_mode_hook.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RenesasSimDebug\sim_debug_mode_hook.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\RenesasSimDebug\sim_debugger_console.c</name>
+        </file>
+    </group>
+    <group>
+        <name>Src</name>
+        <file>
+            <name>$PROJ_DIR$\src\ExampleISR.s</name>
+            <excluded>
+                <configuration>Debug</configuration>
+            </excluded>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\platform.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\rl78g14_fpb_main.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\rl78g14fpbdef.h</name>
+        </file>
     </group>
     <file>
         <name>$PROJ_DIR$\Applilet3.ipcf</name>

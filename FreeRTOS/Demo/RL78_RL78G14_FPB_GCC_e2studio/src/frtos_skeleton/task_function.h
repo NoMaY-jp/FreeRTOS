@@ -19,5 +19,9 @@
 
 #ifndef TASK_FUNCTION_H_
 #define TASK_FUNCTION_H_
+void main_task(void * pvParameters);
+void task_LED0(void * pvParameters);
+void task_LED1(void * pvParameters);
+void task_CONIO(void * pvParameters);
 
 #endif /* TASK_FUNCTION_H_ */

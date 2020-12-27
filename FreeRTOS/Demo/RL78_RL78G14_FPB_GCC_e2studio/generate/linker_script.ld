@@ -28,13 +28,19 @@ SECTIONS
 	{
 		KEEP(*(.security_id))
 	} > SEC_ID
+	.ocdstad 0xCE : AT(0xCE)
+	{
+		LONG( 0xFFFFFFFF );
+		LONG( 0xFFFFFFFF );
+		SHORT( 0xFFFF );
+	} > OCDSTAD
 	.lowtext 0xD8: AT(0xD8)
 	{
 		*(.plt)
 		*(.lowtext)
 		. = ALIGN(2);
 	} > ROM
-	.tors :
+	.tors : /* TODO: Does this section work? Should below items be in the .rodata section? */
 	{
 		__CTOR_LIST__ = .;
 		. = ALIGN(2);
@@ -63,26 +69,35 @@ SECTIONS
 		. = ALIGN(2);
 	} > ROM
 */
-	PROVIDE(__rl78_abs__ = 0);
-	.init :
+	PROVIDE(__rl78_abs__ = 0); /* TODO: What is this? */
+	.init : /* TODO: Is there any restriction to locate this section? */
 	{
 		*(.init)
 	} > ROM
-	.fini :
+	.fini : /* TODO: Is there any restriction to locate this section? */
 	{
 		KEEP(*(.fini))
 	} > ROM
-	.got :
+	.got : /* TODO: Is there any restriction to locate this section? */
 	{
 		*(.got)
 		*(.got.plt)
 	} > ROM
-	.rodata MAX(., 0x3000): 
+	PROVIDE(__mirror = 0x3000);
+	PROVIDE(__mirror_end = __mirror + 3840);
+	PROVIDE(__rodata = ADDR(.rodata));
+	.rodata MAX(., __mirror): 
 	{
 		. = ALIGN(2);
 		*(.rodata)
 		*(.rodata.*)
 		_erodata = .;
+		ASSERT(!(SIZEOF(.rodata) > (__mirror_end - __mirror)), "Error: Too much const data - the size exceeds the mirror area");
+		ASSERT(!(SIZEOF(.rodata) > (__mirror_end - __mirror)), "Please change some of them from 'const' to 'const __far'");
+		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(__rodata) >= __mirror_end)), "Error: No room left for const data - the start address exceeds the mirror area");
+		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(__rodata) < __mirror_end) && (ABSOLUTE(.) > __mirror_end)), "Error: No room left for const data - the end address exceeds the mirror area");
+		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(.) > __mirror_end) && (ADDR(.text) < __rodata)), "Please move the .text section from lower address to higher address");
+		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(.) > __mirror_end) && (__rodata < ADDR(.text))), "Please check the map file");
 	} > ROM
 	.text :
 	{
@@ -139,4 +154,12 @@ SECTIONS
 		_stack = .;
 		ASSERT((_stack > (_end + stack_size)), "Error: Too much data - no room left for the stack");
 	} > RAM
+.dtc_vectortable 0xffd00 : AT(0xffd00)
+	{
+		KEEP(*(.dtc_vectortable))
+	} >RAM
+.dtc_controldata_0 0xffd40 : AT(0xffd40)
+	{
+		KEEP(*(.dtc_controldata_0))
+	} >RAM
 }

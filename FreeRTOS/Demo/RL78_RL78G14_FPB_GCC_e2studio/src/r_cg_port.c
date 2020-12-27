@@ -39,6 +39,18 @@ Includes
 Global variables and functions
 ***********************************************************************************************************************/
 /* Start user code for global. Do not edit comment generated here */
+#if defined(RENESAS_SIMULATOR_DEBUGGING)
+/* Workaround for a problem that the Renesas RL78 simulator does not work expectedly
+ * for a wiring such as "N-ch Open Drain Output Port <--> LED <--> R <--> VDD" */
+void R_PORT_Create_org(void);
+void R_PORT_Create_simulator_patch(void);
+void R_PORT_Create(void)
+{
+    R_PORT_Create_org();
+    R_PORT_Create_simulator_patch();
+}
+#define R_PORT_Create R_PORT_Create_org
+#endif
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -49,10 +61,22 @@ Global variables and functions
 ***********************************************************************************************************************/
 void R_PORT_Create(void)
 {
-    P4 = _08_Pn3_OUTPUT_1;
-    PM4 = _01_PMn0_NOT_USE | _02_PMn1_NOT_USE | _04_PMn2_NOT_USE | _00_PMn3_MODE_OUTPUT | _10_PMn4_NOT_USE |
+    P4 = _08_Pn3_OUTPUT_1 | _10_Pn4_OUTPUT_1;
+    POM4 = _08_POMn3_NCH_ON | _10_POMn4_NCH_ON;
+    PM4 = _01_PMn0_NOT_USE | _02_PMn1_NOT_USE | _04_PMn2_NOT_USE | _00_PMn3_MODE_OUTPUT | _00_PMn4_MODE_OUTPUT |
           _20_PMn5_NOT_USE | _C0_PM4_DEFAULT;
 }
 
 /* Start user code for adding. Do not edit comment generated here */
+#if defined(RENESAS_SIMULATOR_DEBUGGING)
+/* Workaround for a problem that the Renesas RL78 simulator does not work expectedly
+ * for a wiring such as "N-ch Open Drain Output Port <--> LED <--> R <--> VDD" */
+void R_PORT_Create_simulator_patch(void)
+{
+    if (IsRenesasSimDebugMode())
+    {
+        POM4 &= ~(_08_POMn3_NCH_ON | _10_POMn4_NCH_ON);
+    }
+}
+#endif
 /* End user code. Do not edit comment generated here */

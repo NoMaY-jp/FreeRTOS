@@ -52,6 +52,8 @@ _vRegTest1Task:
 	MOVW	BC, #0x3344
 	MOVW	DE, #0x5566
 	MOVW	HL, #0x7788
+	MOV		CS, #0x01
+	MOV		ES, #0x02
 	SEL		RB1
 	MOVW	AX, #0x1111
 	MOVW	BC, #0x2222
@@ -94,6 +96,14 @@ _loop1:
 	MOVW	AX, HL
 	CMPW	AX, #0x7788
 	BZ		$.+5
+	BR		!!_vRegTestError
+	MOV		A, CS
+	CMP		A, #0x01
+	SKZ
+	BR		!!_vRegTestError
+	MOV		A, ES
+	CMP		A, #0x02
+	SKZ
 	BR		!!_vRegTestError
 
 	/* Set AX back to its initial value. */
@@ -160,6 +170,8 @@ _vRegTest2Task:
 	MOVW	BC, #0xbbcc
 	MOVW	DE, #0xddee
 	MOVW	HL, #0xff12
+	MOV		CS, #0x03
+	MOV		ES, #0x04
 	SEL		RB1
 	MOVW	AX, #0x0110
 	MOVW	BC, #0x0220
@@ -191,6 +203,16 @@ _loop2:
 	CMPW	AX, #0xff12
 	BZ		$.+5
 	BR		!!_vRegTestError
+	MOV		A, CS
+	CMP		A, #0x03
+	SKZ
+	BR		!!_vRegTestError
+	MOV		A, ES
+	CMP		A, #0x04
+	SKZ
+	BR		!!_vRegTestError
+
+	/* Set AX back to its initial value. */
 	MOVW	AX, #0x99aa
 
 	SEL		RB1
