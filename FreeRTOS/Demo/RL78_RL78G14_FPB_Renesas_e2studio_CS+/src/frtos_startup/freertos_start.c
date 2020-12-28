@@ -86,7 +86,7 @@ extern void main_task(void *pvParameters);
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
-#ifndef configSETUP_TICK_INTERRUPT
+#ifdef configSETUP_TICK_INTERRUPT
 void vApplicationSetupTimerInterrupt(void)
 {
     const uint16_t usClockHz = 15000UL; /* Internal clock. */
@@ -95,7 +95,7 @@ void vApplicationSetupTimerInterrupt(void)
     /* Use the internal 15K clock. */
     OSMC = ( uint8_t ) 0x16;
 
-    #if defined(RTCEN)
+    #if ( defined( INTIT_vect ) && INTIT_vect == 0x38 ) || ( defined( INTIT ) && INTIT == 0x38 )
     {
         /* Supply the interval timer clock. */
         RTCEN = ( uint8_t ) 1U;
@@ -115,7 +115,7 @@ void vApplicationSetupTimerInterrupt(void)
         /* Enable INTIT interrupt. */
         ITMK = ( uint8_t ) 0;
     }
-    #elif defined(TMKAEN)
+    #elif ( defined( INTIT_vect ) && INTIT_vect == 0x3C ) || ( defined( INTIT ) && INTIT == 0x3C )
     {
         /* Supply the interval timer clock. */
         TMKAEN = ( uint8_t ) 1U;
@@ -141,7 +141,7 @@ void vApplicationSetupTimerInterrupt(void)
 
     #endif
 }
-#endif /* !configSETUP_TICK_INTERRUPT */
+#endif /* ifdef configSETUP_TICK_INTERRUPT */
 
 /******************************************************************************
 * Function Name: vAssertCalled
@@ -304,7 +304,7 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 
 /******************************************************************************
 * Function Name: vApplicationGetTimerTaskMemory
-* Description  : This function will be called when the scheduler is started if ÅöÅöÅöÅö ï∂èÕämîF ÅöÅöÅöÅö
+* Description  : This function will be called when the scheduler is started if
 *                configSUPPORT_STATIC_ALLOCATION and configUSE_TIMERS are set to 1.
 * Arguments    : ppxTimerTaskTCBBuffer -
 *                    Pointer of where to store the Timer Task's TCB Buffer address

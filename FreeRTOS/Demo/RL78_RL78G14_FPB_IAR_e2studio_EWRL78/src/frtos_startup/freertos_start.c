@@ -86,7 +86,7 @@ extern void main_task(void *pvParameters);
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
-#ifndef configSETUP_TICK_INTERRUPT
+#ifdef configSETUP_TICK_INTERRUPT
 void vApplicationSetupTimerInterrupt(void)
 {
     const uint16_t usClockHz = 15000UL; /* Internal clock. */
@@ -95,7 +95,7 @@ void vApplicationSetupTimerInterrupt(void)
     /* Use the internal 15K clock. */
     OSMC = ( uint8_t ) 0x16;
 
-#if INTIT_vect == 0x38
+    #if ( defined( INTIT_vect ) && INTIT_vect == 0x38 ) || ( defined( INTIT ) && INTIT == 0x38 )
     {
         /* Supply the interval timer clock. */
         RTCEN = ( uint8_t ) 1U;
@@ -115,8 +115,8 @@ void vApplicationSetupTimerInterrupt(void)
         /* Enable INTIT interrupt. */
         ITMK = ( uint8_t ) 0;
     }
-    #elif INTIT_vect == 0x3C
-	    {
+    #elif ( defined( INTIT_vect ) && INTIT_vect == 0x3C ) || ( defined( INTIT ) && INTIT == 0x3C )
+    {
         /* Supply the interval timer clock. */
         TMKAEN = ( uint8_t ) 1U;
 
@@ -141,7 +141,7 @@ void vApplicationSetupTimerInterrupt(void)
 
     #endif
 }
-#endif /* !configSETUP_TICK_INTERRUPT */
+#endif /* ifdef configSETUP_TICK_INTERRUPT */
 
 /******************************************************************************
 * Function Name: vAssertCalled

@@ -97,12 +97,10 @@ to exclude the API function. */
 #define INCLUDE_xTaskGetIdleTaskHandle 		0
 #define INCLUDE_xTimerGetTimerDaemonTaskHandle 	0
 
-#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
-/* Tick interrupt vector - this must match the INTIT_vect definition contained
-in the ior5fnnnn.h header file included at the top of this file (the value is
-dependent on the hardware being used. */
-#define configTICK_VECTOR	INTIT_vect
-#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
+#if !defined(__IAR_SYSTEMS_ASM__) && !(defined(__GNUC__) && defined(__ASSEMBLER__))
+void vApplicationSetupTimerInterrupt( void );
+#define configSETUP_TICK_INTERRUPT() vApplicationSetupTimerInterrupt()
+#endif /* defined(__CCRL__) || defined(__GNUC__) || defined(__ICCRL78__) */
 
 #if (configUSE_16_BIT_TICKS == 1) && (defined(__CCRL__) || defined(__GNUC__))
 #define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
