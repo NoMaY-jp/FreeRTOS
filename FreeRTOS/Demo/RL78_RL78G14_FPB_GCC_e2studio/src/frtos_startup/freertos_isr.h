@@ -60,7 +60,7 @@ extern void vPortFreeRTOSInterruptCommonHandler_C(void);
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
 
 #define vPortFreeRTOSInterruptCommonHandler_C_Helper(function) \
-    asm \
+    __asm \
     ( \
         /* The following ICCRL78 interrupt code doesn't work with Renesas RL78 simulator. \
          * "movw ax, 0xffffc          \n" \
@@ -78,7 +78,7 @@ extern void vPortFreeRTOSInterruptCommonHandler_C(void);
 #else
 
 #define vPortFreeRTOSInterruptCommonHandler_C_Helper(function) \
-    asm \
+    __asm \
     ( \
         /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
         "movw bc, #__" #function " \n" \

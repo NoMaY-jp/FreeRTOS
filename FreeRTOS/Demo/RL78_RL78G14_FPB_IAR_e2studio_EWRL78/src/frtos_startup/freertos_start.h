@@ -37,31 +37,17 @@
 extern "C" {
 #endif
 
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#if defined(__CCRL__) && !defined(_STDINT_H)
-#define _STDINT_H
-#endif
-#if defined(__ICCRL78__) && !defined(_STDINT)
-#define _STDINT
-#endif
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
-#include "queue.h"
-#include "croutine.h"
-#include "timers.h"
-#include "event_groups.h"
+#include "platform.h"
 
 /******************************************************************************
 Macro definitions
 ******************************************************************************/
 
-#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  10, 86, 32 ) )
-#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   6, 86, 32 ) )
-#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  66, 86, 32 ) )
-#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  76, 86, 32 ) )
-#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 150, 86, 32 ) )
+#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH(  256 )
+#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( 1024 )
+#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( 1024 )
+#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( 1024 )
+#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( 1024 )
 
 /******************************************************************************
 Typedef definitions

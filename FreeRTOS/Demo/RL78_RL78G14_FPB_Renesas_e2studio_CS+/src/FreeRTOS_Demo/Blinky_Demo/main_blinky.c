@@ -26,16 +26,15 @@
  */
 
 /******************************************************************************
- * NOTE 1:  This project provides two demo applications.  A simple blinky style
- * project, and a more comprehensive test and demo application.  The
+ * NOTE 1:  This project provides two demo applications.  A simple blinky
+ * style project, and a more comprehensive test and demo application.  The
  * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY setting in main.c is used to select
  * between the two.  See the notes on using mainCREATE_SIMPLE_BLINKY_DEMO_ONLY
  * in main.c.  This file implements the simply blinky style version.
  *
  * NOTE 2:  This file only contains the source code that is specific to the
  * basic demo.  Generic functions, such FreeRTOS hook functions, and functions
- * required to configure the hardware, along with an example interrupt service
- * routine, are defined in main.c.
+ * required to configure the hardware are defined in main.c.
  ******************************************************************************
  *
  * main_blinky() creates one queue, and two tasks.  It then starts the
@@ -44,75 +43,72 @@
  * The Queue Send Task:
  * The queue send task is implemented by the prvQueueSendTask() function in
  * this file.  prvQueueSendTask() sits in a loop that causes it to repeatedly
- * block for 200 milliseconds, before sending the value 100 to the queue that
+ * block for 1000 milliseconds, before sending the value 100 to the queue that
  * was created within main_blinky().  Once the value is sent, the task loops
- * back around to block for another 200 milliseconds.
+ * back around to block for another 1000 milliseconds...and so on.
  *
  * The Queue Receive Task:
  * The queue receive task is implemented by the prvQueueReceiveTask() function
  * in this file.  prvQueueReceiveTask() sits in a loop where it repeatedly
  * blocks on attempts to read data from the queue that was created within
  * main_blinky().  When data is received, the task checks the value of the
- * data, and if the value equals the expected 100, toggles the LED.  The 'block
- * time' parameter passed to the queue receive function specifies that the
- * task should be held in the Blocked state indefinitely to wait for data to
+ * data, and if the value equals the expected 100, writes 'Blink' to the UART
+ * and/or something like a dedicated debug console (these are used in place of
+ * the LED to allow easy execution in simulator such as QEMU or debugger).  The
+ * 'block time' parameter passed to the queue receive function specifies that
+ * the task should be held in the Blocked state indefinitely to wait for data to
  * be available on the queue.  The queue receive task will only leave the
  * Blocked state when the queue send task writes to the queue.  As the queue
- * send task writes to the queue every 200 milliseconds, the queue receive
- * task leaves the Blocked state every 200 milliseconds, and therefore toggles
- * the LED every 200 milliseconds.
+ * send task writes to the queue every 1000 milliseconds, the queue receive
+ * task leaves the Blocked state every 1000 milliseconds, and therefore toggles
+ * the LED every 1000 milliseconds.
  */
 
 /* Standard includes. */
 #include <stdio.h>
+#include <string.h>
 
 /* Kernel includes. */
 #include "FreeRTOS.h"
 #include "task.h"
-#include "semphr.h"
+#include "queue.h"
+
+/* Renesas includes. */
+#include "platform.h"
 
 /* Eval board specific definitions. */
+#include "demo_main.h"
 #include "demo_specific_io.h"
 
-/* Priorities at which the tasks are created. */
+/* Priorities used by the tasks. */
 #define mainQUEUE_RECEIVE_TASK_PRIORITY		( tskIDLE_PRIORITY + 2 )
 #define	mainQUEUE_SEND_TASK_PRIORITY		( tskIDLE_PRIORITY + 1 )
 
-/* The rate at which data is sent to the queue.  The 200ms value is converted
-to ticks using the portTICK_PERIOD_MS constant. */
-#define mainQUEUE_SEND_FREQUENCY_MS			( 200 / portTICK_PERIOD_MS )
+/* The rate at which data is sent to the queue.  The 1000ms value is converted
+to ticks using the pdMS_TO_TICKS() macro. */
+#define mainQUEUE_SEND_FREQUENCY_MS			pdMS_TO_TICKS( 1000 )
 
-/* The number of items the queue can hold.  This is 1 as the receive task
-will remove items as they are added, meaning the send task should always find
-the queue empty. */
+/* The maximum number items the queue can hold.  The priority of the receiving
+task is above the priority of the sending task, so the receiving task will
+preempt the sending task and remove the queue items each time the sending task
+writes to the queue.  Therefore the queue will never have more than one item in
+it at any time, and even with a queue length of 1, the sending task will never
+find the queue full. */
 #define mainQUEUE_LENGTH					( 1 )
 
-/* Used to check the task parameter passing in both supported memory models. */
-#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
-	#if __DATA_MODEL__ == __DATA_MODEL_FAR__
-		#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x12345678UL )
-		#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x11223344UL )
-	#else
-		#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x1234U )
-		#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x1122U )
-	#endif
-#else /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
-	#define mainQUEUE_SEND_PARAMETER	( ( void * ) 0x1234U )
-	#define mainQUEUE_RECEIVE_PARAMETER	( ( void * ) 0x1122U )
-#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
 /*-----------------------------------------------------------*/
+
+/*
+ * Called by main when mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 1 in
+ * main.c.
+ */
+void main_blinky( void );
 
 /*
  * The tasks as described in the comments at the top of this file.
  */
 static void prvQueueReceiveTask( void *pvParameters );
 static void prvQueueSendTask( void *pvParameters );
-
-/*
- * Called by main() to create the simply blinky style application if
- * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 1.
- */
-void main_blinky( void );
 
 /*-----------------------------------------------------------*/
 
@@ -124,20 +120,20 @@ static QueueHandle_t xQueue = NULL;
 void main_blinky( void )
 {
 	/* Create the queue. */
-	xQueue = xQueueCreate( mainQUEUE_LENGTH, sizeof( unsigned long ) );
+	xQueue = xQueueCreate( mainQUEUE_LENGTH, sizeof( uint32_t ) );
 
 	if( xQueue != NULL )
 	{
 		/* Start the two tasks as described in the comments at the top of this
 		file. */
-		xTaskCreate( prvQueueReceiveTask,			/* The function that implements the task. */
-					"Rx", 							/* The text name assigned to the task - for debug only as it is not used by the kernel. */
-					configMINIMAL_STACK_SIZE, 		/* The size of the stack to allocate to the task. */
-					mainQUEUE_RECEIVE_PARAMETER,	/* The parameter passed to the task - just used to check the port in this case. */
-					mainQUEUE_RECEIVE_TASK_PRIORITY,/* The priority assigned to the task. */
-					NULL );							/* The task handle is not required, so NULL is passed. */
+		xTaskCreate( prvQueueReceiveTask,				/* The function that implements the task. */
+					"Rx", 								/* The text name assigned to the task - for debug only as it is not used by the kernel. */
+					configMINIMAL_STACK_SIZE, 			/* The size of the stack to allocate to the task. */
+					NULL, 								/* The parameter passed to the task - not used in this case. */
+					mainQUEUE_RECEIVE_TASK_PRIORITY, 	/* The priority assigned to the task. */
+					NULL );								/* The task handle is not required, so NULL is passed. */
 
-		xTaskCreate( prvQueueSendTask, "TX", configMINIMAL_STACK_SIZE, mainQUEUE_SEND_PARAMETER, mainQUEUE_SEND_TASK_PRIORITY, NULL );
+		xTaskCreate( prvQueueSendTask, "TX", configMINIMAL_STACK_SIZE, NULL, mainQUEUE_SEND_TASK_PRIORITY, NULL );
 
 		/* Start the tasks and timer running. */
 		vTaskStartScheduler();
@@ -145,9 +141,10 @@ void main_blinky( void )
 
 	/* If all is well, the scheduler will now be running, and the following
 	line will never be reached.  If the following line does execute, then
-	there was insufficient FreeRTOS heap memory available for the idle and/or
-	timer tasks	to be created.  See the memory management section on the
-	FreeRTOS web site for more details.  http://www.freertos.org/a00111.html. */
+	there was insufficient FreeRTOS heap memory available for the Idle and/or
+	timer tasks to be created.  See the memory management section on the
+	FreeRTOS web site for more details on the FreeRTOS heap
+	http://www.freertos.org/a00111.html. */
 	for( ;; );
 }
 /*-----------------------------------------------------------*/
@@ -156,9 +153,10 @@ static void prvQueueSendTask( void *pvParameters )
 {
 TickType_t xNextWakeTime;
 const unsigned long ulValueToSend = 100UL;
+BaseType_t xReturned;
 
-	/* Check the parameter was passed in correctly. */
-	configASSERT( pvParameters == mainQUEUE_SEND_PARAMETER )
+	/* Remove compiler warning about unused parameter. */
+	( void ) pvParameters;
 
 	/* Initialise xNextWakeTime - this only needs to be done once. */
 	xNextWakeTime = xTaskGetTickCount();
@@ -172,7 +170,8 @@ const unsigned long ulValueToSend = 100UL;
 		toggle the LED.  0 is used as the block time so the sending operation
 		will not block - it shouldn't need to block as the queue should always
 		be empty at this point in the code. */
-		xQueueSend( xQueue, &ulValueToSend, 0U );
+		xReturned = xQueueSend( xQueue, &ulValueToSend, 0U );
+		configASSERT( xReturned == pdPASS );
 	}
 }
 /*-----------------------------------------------------------*/
@@ -181,9 +180,13 @@ static void prvQueueReceiveTask( void *pvParameters )
 {
 unsigned long ulReceivedValue;
 const unsigned long ulExpectedValue = 100UL;
+const char * const pcPassMessage = "Blink\r\n";
+const char * const pcFailMessage = "Unexpected value received\r\n";
+extern void vSendString( const char * const pcString );
+extern void vToggleLED( void );
 
-	/* Check the parameter was passed in correctly. */
-	configASSERT( pvParameters == mainQUEUE_RECEIVE_PARAMETER )
+	/* Remove compiler warning about unused parameter. */
+	( void ) pvParameters;
 
 	for( ;; )
 	{
@@ -193,11 +196,18 @@ const unsigned long ulExpectedValue = 100UL;
 		xQueueReceive( xQueue, &ulReceivedValue, portMAX_DELAY );
 
 		/*  To get here something must have been received from the queue, but
-		is it the expected value?  If it is, toggle the LED. */
+		is it the expected value?  If it is, toggle the LED and write the pass
+		message to the UART and/or something like a dedicated debug console.
+		If it isn't, don't toggle the LED and write the fail message to them. */
 		if( ulReceivedValue == ulExpectedValue )
 		{
-			LED_BIT = !LED_BIT;
+			vSendString( pcPassMessage );
+			vToggleLED();
 			ulReceivedValue = 0U;
+		}
+		else
+		{
+			vSendString( pcFailMessage );
 		}
 	}
 }

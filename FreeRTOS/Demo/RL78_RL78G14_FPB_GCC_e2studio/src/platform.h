@@ -17,14 +17,32 @@ extern "C" {
 #endif
 #endif
 
+#if (defined(__CCRL__) && defined(_STDINT_H)) || (defined(__ICCRL78__) && defined(_STDINT))
+#define int8_t   INT8_T_DUPLICATED_TYPEDEF
+#define uint8_t  UINT8_T_DUPLICATED_TYPEDEF
+#define int16_t  INT16_T_DUPLICATED_TYPEDEF
+#define uint16_t UINT16_T_DUPLICATED_TYPEDEF
+#define int32_t  INT32_T_DUPLICATED_TYPEDEF
+#define uint32_t UINT32_T_DUPLICATED_TYPEDEF
+#endif
 #include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
+#if (defined(__CCRL__) && defined(_STDINT_H)) || (defined(__ICCRL78__) && defined(_STDINT))
+#undef INT8_T_DUPLICATED_TYPEDEF
+#undef UINT8_T_DUPLICATED_TYPEDEF
+#undef INT16_T_DUPLICATED_TYPEDEF
+#undef UINT16_T_DUPLICATED_TYPEDEF
+#undef INT32_T_DUPLICATED_TYPEDEF
+#undef UINT32_T_DUPLICATED_TYPEDEF
+#endif
 #if defined(__CCRL__) && !defined(_STDINT_H)
 #define _STDINT_H
 #endif
 #if defined(__ICCRL78__) && !defined(_STDINT)
 #define _STDINT
 #endif
+
+#include "r_cg_userdefine.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
 #include "semphr.h"
@@ -47,6 +65,10 @@ extern "C" {
 
 #if defined(__GNUC__)
 #define BRK()     asm("brk")
+#endif
+
+#if defined(__ICCRL78__)
+#define BRK       __break
 #endif
 
 #define di()      DI()

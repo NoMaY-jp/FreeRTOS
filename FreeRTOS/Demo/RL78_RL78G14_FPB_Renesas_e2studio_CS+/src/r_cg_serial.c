@@ -62,10 +62,12 @@ void U_UART3_Send_Stop(void);                  /* for internal use */
 static void U_UART3_Receive(volatile uint8_t * rx_buf, uint16_t rx_num);
 static void U_UART3_Send(uint8_t * tx_buf, uint16_t tx_num);
 
+//#define R_UART3_Start R_UART3_Start_INERNAL_USE_ONLY
+//void R_UART3_Start(void);
 #define R_UART3_Receive R_UART3_Receive_INERNAL_USE_ONLY
 MD_STATUS R_UART3_Receive(uint8_t * const rx_buf, uint16_t rx_num);
-#define R_UART3_Send R_UART3_Send_INERNAL_USE_ONLY
-MD_STATUS R_UART3_Send(uint8_t * const tx_buf, uint16_t tx_num);
+//#define R_UART3_Send R_UART3_Send_INERNAL_USE_ONLY
+//MD_STATUS R_UART3_Send(uint8_t * const tx_buf, uint16_t tx_num);
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

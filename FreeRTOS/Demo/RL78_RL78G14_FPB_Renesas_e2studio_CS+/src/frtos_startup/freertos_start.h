@@ -37,18 +37,7 @@
 extern "C" {
 #endif
 
-#include "r_cg_macrodriver.h"
-#include "r_cg_userdefine.h"
-#if defined(__CCRL__) && !defined(_STDINT_H)
-#define _STDINT_H
-#endif
-#include "FreeRTOS.h"
-#include "task.h"
-#include "semphr.h"
-#include "queue.h"
-#include "croutine.h"
-#include "timers.h"
-#include "event_groups.h"
+#include "platform.h"
 
 /******************************************************************************
 Macro definitions

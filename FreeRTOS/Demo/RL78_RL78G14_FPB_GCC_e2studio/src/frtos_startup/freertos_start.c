@@ -34,9 +34,13 @@
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
 #include "freertos_start.h"
-#include "platform.h"
 #include "demo_main.h"
 #include "demo_specific_io.h"
+#if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
+#if 1
+#include "r_cg_serial.h"
+#endif
+#endif
 
 /******************************************************************************
 Macro definitions
@@ -452,6 +456,17 @@ static void prvSetupHardware( void )
     src/smc_gen/general/r_hardware_setup.c.) */
     vToggleLED();
 
+    /* Start the UART. It is done in case of the simple blinky demo only but
+    it isn't done in case of the full demo because the UART is used for other
+    purpos "FreeRTOS+CLI command console" by the full demo. */
+    #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
+    {
+#if 1
+        R_UART3_Start();
+#endif
+    }
+    #endif
+
     /* Write "\r\n" to the UART and/or the Debug Console. */
     vSendString( "\r\n" );
 }
@@ -474,8 +489,8 @@ void vSendString( const char * const pcString )
     other purpos "FreeRTOS+CLI command console" by the full demo. */
     #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
     {
-#if 0
-        R_SCI_Send( xSerialSciHandle, ( uint8_t * )pcString, strlen(pcString) );
+#if 1
+        R_UART3_Send( ( uint8_t * )pcString, strlen(pcString) );
 #endif
     }
     #endif
