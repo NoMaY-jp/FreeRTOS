@@ -43,11 +43,27 @@ extern "C" {
 Macro definitions
 ******************************************************************************/
 
+#if defined(__CCRL__)
+
+/* The stack usage analysis tool 'Call Walker' provides detail stack usage information. */
+
+#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  10, 86, 32 ) )
+#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   6, 86, 32 ) )
+#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  66, 86, 32 ) )
+#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  76, 86, 32 ) )
+#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 150, 86, 32 ) )
+
+#elif defined(__GNUC__) ||  defined(__ICCRL78__)
+
+/* There are no detail stack usage information. */
+
 #define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH(  256 )
 #define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( 1024 )
 #define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( 1024 )
 #define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( 1024 )
 #define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( 1024 )
+
+#endif
 
 /******************************************************************************
 Typedef definitions

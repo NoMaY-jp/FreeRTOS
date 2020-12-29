@@ -40,15 +40,6 @@
  * See http://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
 
-/* This #ifdef prevents the enclosed code being included from within an
-asm file.  It is valid in a C file, but not valid in an asm file. */
-#if defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__)
-
-	#pragma system_include
-	#include <intrinsics.h>
-
-#endif /* defined(__IAR_SYSTEMS_ICC__) && !defined(__CCRL__) && !defined(__CNV_IAR__) */
-
 /* Include hardware dependent header files to allow this demo to run on
 multiple evaluation boards. */
 #include "demo_specific_io.h"
@@ -61,8 +52,9 @@ multiple evaluation boards. */
 #define configUSE_TRACE_FACILITY		0
 #define configUSE_16_BIT_TICKS			0
 #define configIDLE_SHOULD_YIELD			1
-#define configTOTAL_HEAP_SIZE			( (size_t ) ( 3420 ) )
+#define configTOTAL_HEAP_SIZE			( ( size_t ) 3420 )
 #define configCHECK_FOR_STACK_OVERFLOW	2
+#define configASSERT_DEFINED			1
 #define configUSE_MUTEXES				1
 
 /* Hook function definitions. */
@@ -97,25 +89,23 @@ to exclude the API function. */
 #define INCLUDE_xTaskGetIdleTaskHandle 		0
 #define INCLUDE_xTimerGetTimerDaemonTaskHandle 	0
 
-#if !defined(__IAR_SYSTEMS_ASM__) && !(defined(__GNUC__) && defined(__ASSEMBLER__))
+#if defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__)
+
 void vApplicationSetupTimerInterrupt( void );
 #define configSETUP_TICK_INTERRUPT() vApplicationSetupTimerInterrupt()
-#endif /* defined(__CCRL__) || defined(__GNUC__) || defined(__ICCRL78__) */
 
-#if (configUSE_16_BIT_TICKS == 1) && (defined(__CCRL__) || defined(__GNUC__))
-#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
-#endif /* defined(__CCRL__) || defined(__GNUC__) */
-
-#if defined(configASSERT_DEFINED) && (configASSERT_DEFINED == 1)
+#if (configASSERT_DEFINED == 1)
 void vAssertCalled( void );
 #define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled()
 #endif
 
-#define pdBYTES_TO_STACK_DEPTH( ulBytes ) ( ( ( uint32_t ) ( ulBytes ) + ( sizeof( StackType_t ) - 1 ) ) / sizeof( StackType_t ) )
+#endif /* defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__) */
 
-/* Definitions to allow backward compatibility with FreeRTOS versions prior to
-V8 if desired. */
-#define configENABLE_BACKWARD_COMPATIBILITY	0
+#if (configUSE_16_BIT_TICKS == 1)
+#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
+#endif
+
+#define pdBYTES_TO_STACK_DEPTH( ulBytes ) ( ( ( uint32_t ) ( ulBytes ) + ( sizeof( StackType_t ) - 1 ) ) / sizeof( StackType_t ) )
 
 #endif /* FREERTOS_CONFIG_H */
 
