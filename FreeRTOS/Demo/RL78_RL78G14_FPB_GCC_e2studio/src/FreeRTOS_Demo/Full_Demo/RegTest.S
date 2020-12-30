@@ -42,7 +42,9 @@
 /*
  * Fill all the registers with known values, then check that the registers
  * contain the expected value.  An incorrect value being indicative of an
- * error in the context switch mechanism.
+ * error in the context switch mechanism. NOTE: Since GNURL78 assumes that
+ * CS = 0, so that CS has to be set to 0 at the start of all ISRs if CS is
+ * set to valuesother than 0.
  */
 _vRegTest1Task:
 
@@ -161,7 +163,9 @@ _loop1:
 /*
  * Fill all the registers with known values, then check that the registers
  * contain the expected value.  An incorrect value being indicative of an
- * error in the context switch mechanism.
+ * error in the context switch mechanism. NOTE: Since GNURL78 assumes that
+ * CS = 0, so that CS has to be set to 0 at the start of all ISRs if CS is
+ * set to other than 0.
  */
 _vRegTest2Task:
 
