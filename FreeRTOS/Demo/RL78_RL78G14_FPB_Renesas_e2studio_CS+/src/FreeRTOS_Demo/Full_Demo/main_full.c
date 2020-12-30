@@ -88,9 +88,24 @@
 #include "dynamic.h"
 #include "PollQ.h"
 #include "blocktim.h"
+#include "countsem.h"
+#include "GenQTest.h"
+#include "recmutex.h"
+#include "QueueOverwrite.h"
+#include "EventGroupsDemo.h"
+#include "TaskNotify.h"
+#include "TaskNotifyArray.h"
+#include "IntSemTest.h"
 
-/* Hardware includes. */
+/* Renesas includes. */
+#include "platform.h"
+
+/* Eval board specific definitions. */
+#include "demo_main.h"
 #include "demo_specific_io.h"
+
+/* Priorities for the demo application tasks. */
+#define mainQUEUE_OVERWRITE_PRIORITY		( tskIDLE_PRIORITY )
 
 /* The period at which the check timer will expire, in ms, provided no errors
 have been reported by any of the standard demo tasks.  ms are converted to the
@@ -154,6 +169,12 @@ void vRegTestError( void );
  */
 void main_full( void );
 
+/*
+ * Tick hook used by the full demo, which includes code that interacts with
+ * some of the tests.
+ */
+void vFullDemoTickHook( void );
+
 /*-----------------------------------------------------------*/
 
 /* Variables that are incremented on each cycle of the two reg tests to allow
@@ -182,6 +203,14 @@ void main_full( void )
 	vStartDynamicPriorityTasks();
 	vStartPolledQueueTasks( tskIDLE_PRIORITY );
 	vCreateBlockTimeTasks();
+	vStartCountingSemaphoreTasks();
+	vStartGenericQueueTasks( tskIDLE_PRIORITY );
+	vStartRecursiveMutexTasks();
+	vStartQueueOverwriteTask( mainQUEUE_OVERWRITE_PRIORITY );
+	vStartEventGroupTasks();
+	vStartTaskNotifyTask();
+	vStartTaskNotifyArrayTask();
+	vStartInterruptSemaphoreTasks();
 
 	/* Create the RegTest tasks as described at the top of this file. */
 	xTaskCreate( prvRegTest1Entry,				/* The function that implements the task. */
@@ -242,47 +271,83 @@ static void prvDemoTimerCallback( TimerHandle_t xTimer )
 
 static void prvCheckTimerCallback( TimerHandle_t xTimer )
 {
-static portBASE_TYPE xChangedTimerPeriodAlready = pdFALSE, xErrorStatus = pdPASS;
+static portBASE_TYPE xChangedTimerPeriodAlready = pdFALSE;
 static unsigned short usLastRegTest1Counter = 0, usLastRegTest2Counter = 0;
+char * const pcPassMessage = ".";
+char * pcStatusMessage = pcPassMessage;
 
 	/* Remove compiler warning about unused parameter. */
 	( void ) xTimer;
 
 	/* Inspect the status of the standard demo tasks. */
-	if( xAreDynamicPriorityTasksStillRunning() != pdTRUE )
+	if( xAreDynamicPriorityTasksStillRunning() == pdFALSE )
 	{
-		xErrorStatus = pdFAIL;
+		pcStatusMessage = "ERROR: Dynamic priority demo/tests.\r\n";
 	}
 
-	if( xArePollingQueuesStillRunning() != pdTRUE )
+	if( xArePollingQueuesStillRunning() == pdFALSE )
 	{
-		xErrorStatus = pdFAIL;
+		pcStatusMessage = "ERROR: Polling queue demo/tests.\r\n";
 	}
 
-	if( xAreBlockTimeTestTasksStillRunning() != pdTRUE )
+	if( xAreBlockTimeTestTasksStillRunning() == pdFAIL )
 	{
-		xErrorStatus = pdFAIL;
+		pcStatusMessage = "ERROR: Block time demo/tests.\r\n";
 	}
 
-	/* Indicate an error if either of the reg test loop counters have not
-	incremented since the last time this function was called. */
+	if ( xAreGenericQueueTasksStillRunning() == pdFALSE )
+	{
+		pcStatusMessage = "ERROR: Generic queue demo/tests.\r\n";
+	}
+
+	if ( xAreRecursiveMutexTasksStillRunning() == pdFAIL )
+	{
+		pcStatusMessage = "ERROR: Recursive mutex demo/tests.\r\n";
+	}
+
+	if( xAreCountingSemaphoreTasksStillRunning() == pdFAIL )
+	{
+		pcStatusMessage = "ERROR: Counting semaphore demo/tests.\r\n";
+	}
+
+	if( xIsQueueOverwriteTaskStillRunning() == pdFAIL )
+	{
+		pcStatusMessage = "ERROR: Queue overwrite demo/tests.\r\n";
+	}
+
+	if( xAreEventGroupTasksStillRunning() == pdFAIL )
+	{
+		pcStatusMessage = "ERROR: Event group demo/tests.\r\n";
+	}
+
+	if( xAreTaskNotificationTasksStillRunning() == pdFAIL )
+	{
+		pcStatusMessage = "ERROR: Task notification demo/tests.\r\n";
+	}
+
+	if( xAreTaskNotificationArrayTasksStillRunning() == pdFAIL )
+	{
+		pcStatusMessage = "ERROR: Task notification array demo/tests.\r\n";
+	}
+
+	if( xAreInterruptSemaphoreTasksStillRunning() == pdFALSE )
+	{
+		pcStatusMessage = "ERROR: Interrupt semaphore demo/tests.\r\n";
+	}
+
+	/* Check that the register test 1 task is still running. */
 	if( usLastRegTest1Counter == usRegTest1LoopCounter )
 	{
-		xErrorStatus = pdFAIL;
+			pcStatusMessage = "ERROR: Register test 1.\r\n";
 	}
-	else
-	{
-		usLastRegTest1Counter = usRegTest1LoopCounter;
-	}
+	usLastRegTest1Counter = usRegTest1LoopCounter;
 
+	/* Check that the register test 2 task is still running. */
 	if( usLastRegTest2Counter == usRegTest2LoopCounter )
 	{
-		xErrorStatus = pdFAIL;
+		pcStatusMessage = "ERROR: Register test 2.\r\n";
 	}
-	else
-	{
-		usLastRegTest2Counter = usRegTest2LoopCounter;
-	}
+	usLastRegTest2Counter = usRegTest2LoopCounter;
 
 	/* Ensure that the demo software timer has expired
 	mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT times in between
@@ -294,30 +359,70 @@ static unsigned short usLastRegTest1Counter = 0, usLastRegTest2Counter = 0;
 	    ( ulDemoSoftwareTimerCounter > ( mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT + 1 ) )
 	  )
 	{
-		xErrorStatus = pdFAIL;
+		pcStatusMessage = "ERROR: Software timer test 2.\r\n";
+	}
+	ulDemoSoftwareTimerCounter = 0UL;
+
+	/* Write the status message to the UART and toggle the LED to show the
+	system status if the UART is not connected. */
+	if( pcStatusMessage == pcPassMessage )
+	{
+		/* Write the pass message to a dedicated debug console. */
+		vSendString( pcPassMessage );
 	}
 	else
 	{
-		ulDemoSoftwareTimerCounter = 0UL;
+		if( xChangedTimerPeriodAlready == pdFALSE )
+		{
+			/* Write the fail status message to a dedicated debug console. */
+			vSendString( "\r\n" );
+			vSendString( pcStatusMessage );
+		}
 	}
+	vToggleLED();
 
-	if( ( xErrorStatus == pdFAIL ) && ( xChangedTimerPeriodAlready == pdFALSE ) )
+	/* If an error has been found then increase the LED toggle rate by
+	increasing the cycle frequency. */
+	if( pcStatusMessage != pcPassMessage )
 	{
-		/* An error has occurred, but the timer's period has not yet been changed,
-		change it now, and remember that it has been changed.  Shortening the
-		timer's period means the LED will toggle at a faster rate, giving a
-		visible indication that something has gone wrong. */
-		xChangedTimerPeriodAlready = pdTRUE;
-
-		/* This call to xTimerChangePeriod() uses a zero block time.  Functions
-		called from inside of a timer callback function must *never* attempt to
-		block. */
-		xTimerChangePeriod( xCheckTimer, ( mainERROR_CHECK_TIMER_PERIOD_MS ), mainDONT_BLOCK );
+		/* An error has been detected in one of the tasks - flash the LED
+		at a higher frequency to give visible feedback that something has
+		gone wrong (it might just be that the loop back connector required
+		by the comtest tasks has not been fitted). */
+		if( xChangedTimerPeriodAlready == pdFALSE )
+		{
+			/* An error has occurred, but the timer's period has not yet been changed,
+			change it now, and remember that it has been changed.  Shortening the
+			timer's period means the LED will toggle at a faster rate, giving a
+			visible indication that something has gone wrong. */
+			xChangedTimerPeriodAlready = pdTRUE;
+	
+			/* This call to xTimerChangePeriod() uses a zero block time.  Functions
+			called from inside of a timer callback function must *never* attempt to
+			block. */
+			xTimerChangePeriod( xCheckTimer, ( mainERROR_CHECK_TIMER_PERIOD_MS ), mainDONT_BLOCK );
+		}
 	}
+}
+/*-----------------------------------------------------------*/
 
-	/* Toggle the LED.  The toggle rate will depend on whether or not an error
-	has been found in any tasks. */
-	LED_BIT = !LED_BIT;
+void vFullDemoTickHook( void )
+{
+	/* Called from vApplicationTickHook() when the project is configured to
+	build the full test/demo applications. */
+
+	/* Call the periodic queue overwrite from ISR demo. */
+	vQueueOverwritePeriodicISRDemo();
+
+	/* Call the periodic event group from ISR demo. */
+	vPeriodicEventGroupsProcessing();
+
+	/* Use task notifications from an interrupt. */
+	xNotifyTaskFromISR();
+	xNotifyArrayTaskFromISR();
+
+	/* Use mutexes from interrupts. */
+	vInterruptSemaphorePeriodicTest();
 }
 /*-----------------------------------------------------------*/
 

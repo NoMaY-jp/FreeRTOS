@@ -204,7 +204,14 @@ void vApplicationIdleHook(void)
 #if( configUSE_TICK_HOOK == 1 )
 void vApplicationTickHook(void)
 {
-    /* Implement user-code for user own purpose. */
+    /* The tick hook is not used by the blinky demo, but is by the full demo. */
+    #if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 0
+    {
+        extern void vFullDemoTickHook( void );
+
+        vFullDemoTickHook();
+    }
+    #endif
 
 } /* End of function vApplicationTickHook() */
 #endif /* configUSE_TICK_HOOK == 1 */

@@ -138,7 +138,7 @@ static TimerHandle_t xIncrementingIndexTimer = NULL;
 static TimerHandle_t xNotifyWhileSuspendedTimer = NULL;
 
 /* Used by the pseudo random number generating function. */
-static size_t uxNextRand = 0;
+static uint32_t uxNextRand = 0;
 
 /* Used to communicate when to send a task notification to the tick hook tests. */
 static volatile BaseType_t xSendNotificationFromISR = pdFALSE;
@@ -1229,7 +1229,7 @@ static BaseType_t xErrorStatus = pdPASS;
 
 static UBaseType_t prvRand( void )
 {
-const size_t uxMultiplier = ( size_t ) 0x015a4e35, uxIncrement = ( size_t ) 1;
+const uint32_t uxMultiplier = ( uint32_t ) 0x015a4e35, uxIncrement = ( uint32_t ) 1;
 
 	/* Utility function to generate a pseudo random number. */
 	uxNextRand = ( uxMultiplier * uxNextRand ) + uxIncrement;

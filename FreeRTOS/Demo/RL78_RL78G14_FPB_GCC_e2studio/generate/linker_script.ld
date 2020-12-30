@@ -149,7 +149,7 @@ SECTIONS
 		_end = .;
 	} > RAM
 	PROVIDE(stack_size = 0x64);
-	.stack 0xFFEDC (NOLOAD) : AT(0xFFEDC)
+	.stack 0xFFCFE (NOLOAD) : AT(0xFFCFE)
 	{
 		_stack = .;
 		ASSERT((_stack > (_end + stack_size)), "Error: Too much data - no room left for the stack");

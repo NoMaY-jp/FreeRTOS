@@ -62,24 +62,6 @@
 		</filter>
 		<filter>
 			<id>0</id>
-			<name>src/FreeRTOS/Source</name>
-			<type>6</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-event_groups.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
-			<name>src/FreeRTOS/Source</name>
-			<type>6</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-stream_buffer.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>0</id>
 			<name>src/FreeRTOS/Source/portable</name>
 			<type>9</type>
 			<matcher>
@@ -102,7 +84,25 @@
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-PollQ.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-blocktim.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-countsem.c</arguments>
 			</matcher>
 		</filter>
 		<filter>
@@ -120,16 +120,61 @@
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-PollQ.c</arguments>
+				<arguments>1.0-name-matches-false-false-EventGroupsDemo.c</arguments>
 			</matcher>
 		</filter>
 		<filter>
 			<id>0</id>
-			<name>src/FreeRTOS/Source/portable/MemMang</name>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-heap_1.c</arguments>
+				<arguments>1.0-name-matches-false-false-GenQTest.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-IntSemTest.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-QueueOverwrite.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-recmutex.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-TaskNotify.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
+			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-TaskNotifyArray.c</arguments>
 			</matcher>
 		</filter>
 		<filter>
