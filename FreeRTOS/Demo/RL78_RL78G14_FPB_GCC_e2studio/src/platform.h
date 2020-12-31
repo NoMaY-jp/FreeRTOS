@@ -17,6 +17,9 @@ extern "C" {
 #endif
 #endif
 
+#if defined(__GNUC__)
+#define asm(str) __asm volatile (str)
+#endif
 #if (defined(__CCRL__) && defined(_STDINT_H)) || (defined(__ICCRL78__) && defined(_STDINT))
 #define int8_t   INT8_T_DUPLICATED_TYPEDEF
 #define uint8_t  UINT8_T_DUPLICATED_TYPEDEF
@@ -39,6 +42,9 @@ extern "C" {
 #endif
 #if defined(__ICCRL78__) && !defined(_STDINT)
 #define _STDINT
+#endif
+#if defined(__GNUC__)
+#undef asm
 #endif
 
 #include "r_cg_userdefine.h"
@@ -64,7 +70,7 @@ extern "C" {
 #include <string.h>
 
 #if defined(__GNUC__)
-#define BRK()     asm("brk")
+#define BRK()     __asm volatile ("brk")
 #endif
 
 #if defined(__ICCRL78__)

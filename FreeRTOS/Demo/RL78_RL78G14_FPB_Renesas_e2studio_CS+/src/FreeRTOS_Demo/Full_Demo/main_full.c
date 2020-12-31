@@ -91,6 +91,7 @@
 #include "countsem.h"
 #include "GenQTest.h"
 #include "recmutex.h"
+#include "serial.h"
 #include "QueueOverwrite.h"
 #include "EventGroupsDemo.h"
 #include "TaskNotify.h"
@@ -105,7 +106,11 @@
 #include "demo_specific_io.h"
 
 /* Priorities for the demo application tasks. */
+#define mainUART_COMMAND_CONSOLE_STACK_SIZE	( configMINIMAL_STACK_SIZE * 3UL )
 #define mainQUEUE_OVERWRITE_PRIORITY		( tskIDLE_PRIORITY )
+
+/* The priority used by the UART command console task. */
+#define mainUART_COMMAND_CONSOLE_TASK_PRIORITY	( tskIDLE_PRIORITY + 1 )
 
 /* The period at which the check timer will expire, in ms, provided no errors
 have been reported by any of the standard demo tasks.  ms are converted to the
@@ -175,6 +180,17 @@ void main_full( void );
  */
 void vFullDemoTickHook( void );
 
+/*
+ * Register commands that can be used with FreeRTOS+CLI.  The commands are
+ * defined in CLI-Commands.c and File-Related-CLI-Command.c respectively.
+ */
+extern void vRegisterSampleCLICommands( void );
+
+/*
+ * The task that manages the FreeRTOS+CLI input and output.
+ */
+extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriority );
+
 /*-----------------------------------------------------------*/
 
 /* Variables that are incremented on each cycle of the two reg tests to allow
@@ -221,6 +237,13 @@ void main_full( void )
 				 NULL );						/* Used to pass the handle of the created task out to the function caller - not used in this case. */
 
 	xTaskCreate( prvRegTest2Entry, "Reg2", configMINIMAL_STACK_SIZE, mainREG_TEST_2_PARAMETER, tskIDLE_PRIORITY, NULL );
+
+	/* Start the tasks that implements the command console on the UART, as
+	described above. */
+	vUARTCommandConsoleStart( mainUART_COMMAND_CONSOLE_STACK_SIZE, mainUART_COMMAND_CONSOLE_TASK_PRIORITY );
+
+	/* Register the standard CLI commands. */
+	vRegisterSampleCLICommands();
 
 	/* Create the software timer that performs the 'check' functionality,
 	as described at the top of this file. */
