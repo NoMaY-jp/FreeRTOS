@@ -45,9 +45,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/FreeRTOS_Demo}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/FreeRTOS/Source/portable/Renesas/RL78}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/FreeRTOS/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_skeleton}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_startup}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_config}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_skeleton}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/generate}&quot;"/>
 								</option>
@@ -137,9 +137,13 @@
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\recmutex.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\TaskNotify.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\TaskNotifyArray.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI\FreeRTOS_CLI.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\Sample-CLI-commands.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\UARTCommandConsole.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Blinky_Demo\main_blinky.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\main_full.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\RegTest.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\serial.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_main.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_systeminit.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src\r_cg_cgc.obj&quot;"/>

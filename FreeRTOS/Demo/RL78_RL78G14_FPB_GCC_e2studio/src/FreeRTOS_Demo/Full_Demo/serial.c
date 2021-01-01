@@ -66,9 +66,9 @@ unsigned short usTxStringCount;
 
     for( usTxStringIndex = 0; usTxStringIndex < usStringLength; usTxStringIndex += usTxStringCount )
     {
-        if( usStringLength - usTxStringIndex > 4 )
+        if( usStringLength - usTxStringIndex > 256 )
         {
-            usTxStringCount = 4;
+            usTxStringCount = 256;
         }
         else
         {
