@@ -126,17 +126,21 @@
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS/Source\stream_buffer.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS/Source/tasks.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS/Source/timers.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\BlockQ.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\blocktim.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\countsem.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\death.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\dynamic.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\EventGroupsDemo.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\flop.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\GenQTest.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\IntSemTest.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\PollQ.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\QueueOverwrite.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\recmutex.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\semtest.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\TaskNotify.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\TaskNotifyArray.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks\TimerDemo.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI\FreeRTOS_CLI.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\Sample-CLI-commands.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo\UARTCommandConsole.obj&quot;"/>
@@ -192,7 +196,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="generate"/>
-						<entry excluding="ExampleISR.asm|frtos_skeleton/main_task.c|FreeRTOS/Source/portable/MemMang/heap_5.c|FreeRTOS/Source/portable/MemMang/heap_3.c|FreeRTOS/Source/portable/MemMang/heap_2.c|FreeRTOS/Source/portable/MemMang/heap_1.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry excluding="FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.c|ExampleISR.asm|frtos_skeleton/main_task.c|FreeRTOS/Source/portable/MemMang/heap_5.c|FreeRTOS/Source/portable/MemMang/heap_3.c|FreeRTOS/Source/portable/MemMang/heap_2.c|FreeRTOS/Source/portable/MemMang/heap_1.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

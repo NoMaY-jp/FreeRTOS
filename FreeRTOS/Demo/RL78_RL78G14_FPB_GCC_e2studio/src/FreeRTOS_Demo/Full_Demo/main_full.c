@@ -34,65 +34,68 @@
  *
  * NOTE 2:  This file only contains the source code that is specific to the
  * full demo.  Generic functions, such FreeRTOS hook functions, and functions
- * required to configure the hardware, along with an example of how to write an
- * interrupt service routine, are defined in main.c.
+ * required to configure the hardware, are defined in main.c.
+ *
  ******************************************************************************
  *
- * main_full() creates all the demo application tasks and two software timers,
- * then starts the scheduler.  The web documentation provides more details of
- * the standard demo application tasks, which provide no particular
- * functionality, but do provide a good example of how to use the FreeRTOS API.
+ * main_full() creates all the demo application tasks and software timers, then
+ * starts the scheduler.  The web documentation provides more details of the
+ * standard demo application tasks, which provide no particular functionality,
+ * but do provide a good example of how to use the FreeRTOS API.
  *
- * In addition to the standard demo tasks, the following tasks, tests and
- * timers are created within this file:
+ * In addition to the standard demo tasks, the following tasks and tests are
+ * defined and/or created within this file:
  *
- * "Reg test" tasks - These fill the registers with known values, then check
- * that each register still contains its expected value.  Each task uses a
- * different set of values.  The reg test tasks execute with a very low priority,
- * so get preempted very frequently.  A register containing an unexpected value
- * is indicative of an error in the context switching mechanism.
+ * "Reg test" tasks - These fill both the core and floating point registers with
+ * known values, then check that each register maintains its expected value for
+ * the lifetime of the task.  Each task uses a different set of values.  The reg
+ * test tasks execute with a very low priority, so get preempted very
+ * frequently.  A register containing an unexpected value is indicative of an
+ * error in the context switching mechanism.
  *
- * The "Demo" Timer and Callback Function:
- * The demo timer callback function does nothing more than increment a variable.
- * The period of the demo timer is set relative to the period of the check timer
- * (described below).  This allows the check timer to know how many times the
- * demo timer callback function should execute between each execution of the
- * check timer callback function.  The variable incremented in the demo timer
- * callback function is used to determine how many times the callback function
- * has executed.
+ * "Check" task - The check executes every three seconds.  It checks that all
+ * the standard demo tasks, and the register check tasks, are not only still
+ * executing, but are executing without reporting any errors.  The check task
+ * toggles the LED every three seconds if all the standard demo tasks are
+ * executing as expected, or every 500ms if a potential error is discovered in
+ * any task.  And the check task writes the pass message or the fail status
+ * message to the UART and/or something like a dedicated debug console (thease
+ * are used in place of the LED to allow easy execution in simulator such as
+ * QEMU or debugger).
  *
- * The "Check" Timer and Callback Function:
- * The check timer period is initially set to three seconds.  The check timer
- * callback function checks that all the standard demo tasks, the reg test
- * tasks, and the demo timer are not only still executing, but are executing
- * without reporting any errors.  If the check timer discovers that a task or
- * timer has stalled, or reported an error, then it changes its own period from
- * the initial three seconds, to just 200ms.  The check timer callback function
- * also toggles an LED each time it is called.  This provides a visual
- * indication of the system status:  If the LED toggles every three seconds,
- * then no issues have been discovered.  If the LED toggles every 200ms, then
- * an issue has been discovered with at least one task.
- *
- * ENSURE TO READ THE DOCUMENTATION PAGE FOR THIS PORT AND DEMO APPLICATION ON
- * THE http://www.FreeRTOS.org WEB SITE FOR FULL INFORMATION ON USING THIS DEMO
- * APPLICATION, AND ITS ASSOCIATE FreeRTOS ARCHITECTURE PORT!
- *
+ * "FreeRTOS+CLI command console" -  The command console uses SCIx for its
+ * input and output.  The baud rate is set to 115200.  Type "help" to see a list
+ * of registered commands.  The FreeRTOS+CLI license is different to the
+ * FreeRTOS license, see http://www.FreeRTOS.org/cli for license and usage
+ * details.
  */
 
-/* Scheduler include files. */
+/* Standard includes. */
+#include <stdio.h>
+#include <string.h>
+
+/* Kernel includes. */
 #include "FreeRTOS.h"
 #include "task.h"
 #include "timers.h"
+#include "semphr.h"
 
-/* Standard demo includes. */
+/* Standard demo application includes. */
+#include "flop.h"
+#include "semtest.h"
 #include "dynamic.h"
-#include "PollQ.h"
+#include "BlockQ.h"
 #include "blocktim.h"
 #include "countsem.h"
 #include "GenQTest.h"
 #include "recmutex.h"
+#include "death.h"
+#include "partest.h"
+#include "comtest2.h"
 #include "serial.h"
+#include "TimerDemo.h"
 #include "QueueOverwrite.h"
+#include "IntQueue.h"
 #include "EventGroupsDemo.h"
 #include "TaskNotify.h"
 #include "TaskNotifyArray.h"
@@ -106,79 +109,85 @@
 #include "demo_specific_io.h"
 
 /* Priorities for the demo application tasks. */
+#define mainSEM_TEST_PRIORITY				( tskIDLE_PRIORITY + 1UL )
+#define mainBLOCK_Q_PRIORITY				( tskIDLE_PRIORITY + 2UL )
+#define mainCREATOR_TASK_PRIORITY			( tskIDLE_PRIORITY + 3UL )
+#define mainFLOP_TASK_PRIORITY				( tskIDLE_PRIORITY )
 #define mainUART_COMMAND_CONSOLE_STACK_SIZE	( configMINIMAL_STACK_SIZE * 3UL )
+#define mainCHECK_TASK_PRIORITY				( configMAX_PRIORITIES - 1 )
 #define mainQUEUE_OVERWRITE_PRIORITY		( tskIDLE_PRIORITY )
 
 /* The priority used by the UART command console task. */
-#define mainUART_COMMAND_CONSOLE_TASK_PRIORITY	( tskIDLE_PRIORITY + 1 )
+#define mainUART_COMMAND_CONSOLE_TASK_PRIORITY	( configMAX_PRIORITIES - 2 )
 
-/* The period at which the check timer will expire, in ms, provided no errors
-have been reported by any of the standard demo tasks.  ms are converted to the
-equivalent in ticks using the portTICK_PERIOD_MS constant. */
-#define mainCHECK_TIMER_PERIOD_MS			( 3000UL / portTICK_PERIOD_MS )
+/* The period of the check task, in ms, converted to ticks using the
+pdMS_TO_TICKS() macro.  mainNO_ERROR_CHECK_TASK_PERIOD is used if no errors have
+been found, mainERROR_CHECK_TASK_PERIOD is used if an error has been found. */
+#define mainNO_ERROR_CHECK_TASK_PERIOD		pdMS_TO_TICKS( 3000UL )
+#define mainERROR_CHECK_TASK_PERIOD 		pdMS_TO_TICKS( 500UL )
 
-/* The period at which the check timer will expire, in ms, if an error has been
-reported in one of the standard demo tasks, the check tasks, or the demo timer.
-ms are converted to the equivalent in ticks using the portTICK_PERIOD_MS
-constant. */
-#define mainERROR_CHECK_TIMER_PERIOD_MS 	( 200UL / portTICK_PERIOD_MS )
+/* Parameters that are passed into the register check tasks solely for the
+purpose of ensuring parameters are passed into tasks correctly. */
+#if defined(__ICCRL78__)
+	#if __DATA_MODEL__ == __DATA_MODEL_FAR__
+		#define mainREG_TEST_TASK_1_PARAMETER		( ( void * ) 0x12345678 )
+		#define mainREG_TEST_TASK_2_PARAMETER		( ( void * ) 0x87654321 )
+	#else
+		#define mainREG_TEST_TASK_1_PARAMETER		( ( void * ) 0x1234 )
+		#define mainREG_TEST_TASK_2_PARAMETER		( ( void * ) 0x5678 )
+	#endif
+#else /*  defined(__ICCRL78__) */
+	#define mainREG_TEST_TASK_1_PARAMETER		( ( void * ) 0x1234 )
+	#define mainREG_TEST_TASK_2_PARAMETER		( ( void * ) 0x5678 )
+#endif /*  defined(__ICCRL78__) */
 
-/* These two definitions are used to set the period of the demo timer.  The demo
-timer period is always relative to the check timer period, so the check timer
-can determine if the demo timer has expired the expected number of times between
-its own executions. */
-#define mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT	( 100UL )
-#define mainDEMO_TIMER_PERIOD_MS			( mainCHECK_TIMER_PERIOD_MS / mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT )
+/* The base period used by the timer test tasks. */
+#define mainTIMER_TEST_PERIOD				( 50 )
 
-/* A block time of zero simply means "don't block". */
-#define mainDONT_BLOCK						( 0U )
+/* The size of the stack allocated to the check task (as described in the
+comments at the top of this file. */
+#define mainCHECK_TASK_STACK_SIZE_WORDS 100
 
-/* Values that are passed as parameters into the reg test tasks (purely to
-ensure task parameters are passed correctly). */
-#define mainREG_TEST_1_PARAMETER			( ( void * ) 0x1234 )
-#define mainREG_TEST_2_PARAMETER			( ( void * ) 0x5678 )
+/* Size of the stacks to allocated for the register check tasks. */
+#define mainREG_TEST_STACK_SIZE_WORDS 80
 
 /*-----------------------------------------------------------*/
 
 /*
- * The 'check' timer callback function, as described at the top of this file.
+ * Called by demo_main() to run the full demo (as opposed to the blinky demo)
+ * when mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 0.
  */
-static void prvCheckTimerCallback( TimerHandle_t xTimer );
+void main_full( void );
 
 /*
- * The 'demo' timer callback function, as described at the top of this file.
+ * The check task, as described at the top of this file.
  */
-static void prvDemoTimerCallback( TimerHandle_t xTimer );
+static void prvCheckTask( void *pvParameters );
 
 /*
- * Functions that define the RegTest tasks, as described at the top of this
- * file.  The RegTest tasks are written (necessarily) in assembler.  Their
- * entry points are written in C to allow for easy checking of the task
- * parameter values.
+ * Register check tasks as described at the top of this file.  The nature of
+ * these files necessitates that they are written in an assembly file, but the
+ * entry points are kept in the C file for the convenience of checking the task
+ * parameter.
  */
 extern void vRegTest1Task( void );
 extern void vRegTest2Task( void );
-static void prvRegTest1Entry( void *pvParameters );
-static void prvRegTest2Entry( void *pvParameters );
-
-/*
- * Called if a RegTest task discovers an error as a mechanism to stop the
- * tasks loop counter incrementing (so the check task can detect that an
- * error exists).
- */
+static void prvRegTestTaskEntry1( void *pvParameters );
+static void prvRegTestTaskEntry2( void *pvParameters );
 void vRegTestError( void );
-
-/*
- * Called by main() to create the more comprehensive application if
- * mainCREATE_SIMPLE_BLINKY_DEMO_ONLY is set to 0.
- */
-void main_full( void );
 
 /*
  * Tick hook used by the full demo, which includes code that interacts with
  * some of the tests.
  */
 void vFullDemoTickHook( void );
+
+/*
+ * A high priority task that does nothing other than execute at a pseudo random
+ * time to ensure the other test tasks don't just execute in a repeating
+ * pattern.
+ */
+static void prvPseudoRandomiser( void *pvParameters );
 
 /*
  * Register commands that can be used with FreeRTOS+CLI.  The commands are
@@ -193,50 +202,48 @@ extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriori
 
 /*-----------------------------------------------------------*/
 
-/* Variables that are incremented on each cycle of the two reg tests to allow
-the check timer to know that they are still executing. */
+/* The following two variables are used to communicate the status of the
+register check tasks to the check task.  If the variables keep incrementing,
+then the register check tasks have not discovered any errors.  If a variable
+stops incrementing, then an error has been found. */
 unsigned short usRegTest1LoopCounter = 0, usRegTest2LoopCounter;
-
-/* The check timer.  This uses prvCheckTimerCallback() as its callback
-function. */
-static TimerHandle_t xCheckTimer = NULL;
-
-/* The demo timer.  This uses prvDemoTimerCallback() as its callback function. */
-static TimerHandle_t xDemoTimer = NULL;
-
-/* This variable is incremented each time the demo timer expires. */
-static volatile unsigned long ulDemoSoftwareTimerCounter = 0UL;
 
 /*-----------------------------------------------------------*/
 
 void main_full( void )
 {
-	/* Creates all the tasks and timers, then starts the scheduler. */
-
-	/* First create the 'standard demo' tasks.  These are used to demonstrate
-	API functions being used and also to test the kernel port.  More information
-	is provided on the FreeRTOS.org WEB site. */
+	/* Start all the other standard demo/test tasks.  They have no particular
+	functionality, but do demonstrate how to use the FreeRTOS API and test the
+	kernel port. */
+//	vStartInterruptQueueTasks();
 	vStartDynamicPriorityTasks();
-	vStartPolledQueueTasks( tskIDLE_PRIORITY );
+	vStartBlockingQueueTasks( mainBLOCK_Q_PRIORITY );
 	vCreateBlockTimeTasks();
 	vStartCountingSemaphoreTasks();
 	vStartGenericQueueTasks( tskIDLE_PRIORITY );
 	vStartRecursiveMutexTasks();
+//	vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
+//	vStartMathTasks( mainFLOP_TASK_PRIORITY );
+	vStartTimerDemoTask( mainTIMER_TEST_PERIOD );
 	vStartQueueOverwriteTask( mainQUEUE_OVERWRITE_PRIORITY );
 	vStartEventGroupTasks();
 	vStartTaskNotifyTask();
 	vStartTaskNotifyArrayTask();
 	vStartInterruptSemaphoreTasks();
 
-	/* Create the RegTest tasks as described at the top of this file. */
-	xTaskCreate( prvRegTest1Entry,				/* The function that implements the task. */
-				 "Reg1",						/* Text name for the task - to assist debugging only, not used by the kernel. */
-				 configMINIMAL_STACK_SIZE, 		/* The size of the stack allocated to the task (in words, not bytes). */
-				 mainREG_TEST_1_PARAMETER,  	/* The parameter passed into the task. */
-				 tskIDLE_PRIORITY, 				/* The priority at which the task will execute. */
-				 NULL );						/* Used to pass the handle of the created task out to the function caller - not used in this case. */
+	/* Create the register check tasks, as described at the top of this	file.
+	Use xTaskCreateStatic() to create a task using only statically allocated
+	memory. */
+	xTaskCreate( prvRegTestTaskEntry1, 			/* The function that implements the task. */
+				 "Reg1", 						/* The name of the task. */
+				 mainREG_TEST_STACK_SIZE_WORDS, /* Size of stack to allocate for the task - in words not bytes!. */
+				 mainREG_TEST_TASK_1_PARAMETER, /* Parameter passed into the task. */
+				 tskIDLE_PRIORITY, 				/* Priority of the task. */
+				 NULL );						/* Can be used to pass out a handle to the created task. */
+	xTaskCreate( prvRegTestTaskEntry2, "Reg2", mainREG_TEST_STACK_SIZE_WORDS, mainREG_TEST_TASK_2_PARAMETER, tskIDLE_PRIORITY, NULL );
 
-	xTaskCreate( prvRegTest2Entry, "Reg2", configMINIMAL_STACK_SIZE, mainREG_TEST_2_PARAMETER, tskIDLE_PRIORITY, NULL );
+	/* Create the task that just adds a little random behaviour. */
+	xTaskCreate( prvPseudoRandomiser, "Rnd", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, NULL );
 
 	/* Start the tasks that implements the command console on the UART, as
 	described above. */
@@ -245,185 +252,214 @@ void main_full( void )
 	/* Register the standard CLI commands. */
 	vRegisterSampleCLICommands();
 
-	/* Create the software timer that performs the 'check' functionality,
-	as described at the top of this file. */
-	xCheckTimer = xTimerCreate( "CheckTimer",					/* A text name, purely to help debugging. */
-								( mainCHECK_TIMER_PERIOD_MS ),	/* The timer period, in this case 3000ms (3s). */
-								pdTRUE,							/* This is an auto-reload timer, so xAutoReload is set to pdTRUE. */
-								( void * ) 0,					/* The ID is not used, so can be set to anything. */
-								prvCheckTimerCallback			/* The callback function that inspects the status of all the other tasks. */
-							  );
+	/* Create the task that performs the 'check' functionality,	as described at
+	the top of this file. */
+	xTaskCreate( prvCheckTask, "Check", mainCHECK_TASK_STACK_SIZE_WORDS, NULL, mainCHECK_TASK_PRIORITY, NULL );
 
-	/* Create the software timer that just increments a variable for demo
-	purposes. */
-	xDemoTimer = xTimerCreate(  "DemoTimer",/* A text name, purely to help debugging. */
-								( mainDEMO_TIMER_PERIOD_MS ),		/* The timer period, in this case it is always calculated relative to the check timer period (see the definition of mainDEMO_TIMER_PERIOD_MS). */
-								pdTRUE,								/* This is an auto-reload timer, so xAutoReload is set to pdTRUE. */
-								( void * ) 0,						/* The ID is not used, so can be set to anything. */
-								prvDemoTimerCallback				/* The callback function that inspects the status of all the other tasks. */
-							  );
+	/* The set of tasks created by the following function call have to be
+	created last as they keep account of the number of tasks they expect to see
+	running. */
+	vCreateSuicidalTasks( mainCREATOR_TASK_PRIORITY );
 
-	/* Start both the check timer and the demo timer.  The timers won't actually
-	start until the scheduler is started. */
-	xTimerStart( xCheckTimer, mainDONT_BLOCK );
-	xTimerStart( xDemoTimer, mainDONT_BLOCK );
-
-	/* Finally start the scheduler running. */
+	/* Start the scheduler. */
 	vTaskStartScheduler();
 
-	/* If all is well execution will never reach here as the scheduler will be
-	running.  If this null loop is reached then it is likely there was
-	insufficient FreeRTOS heap available for the idle task and/or timer task to
-	be created.  See http://www.freertos.org/a00111.html. */
+	/* If all is well, the scheduler will now be running, and the following
+	line will never be reached.  If the following line does execute, then
+	there was insufficient FreeRTOS heap memory available for the Idle and/or
+	timer tasks to be created.  See the memory management section on the
+	FreeRTOS web site for more details on the FreeRTOS heap
+	http://www.freertos.org/a00111.html. */
 	for( ;; );
 }
 /*-----------------------------------------------------------*/
 
-static void prvDemoTimerCallback( TimerHandle_t xTimer )
+static void prvCheckTask( void *pvParameters )
 {
-	/* Remove compiler warning about unused parameter. */
-	( void ) xTimer;
-
-	/* The demo timer has expired.  All it does is increment a variable.  The
-	period of the demo timer is relative to that of the check timer, so the
-	check timer knows how many times this variable should have been incremented
-	between each execution of the check timer's own callback. */
-	ulDemoSoftwareTimerCounter++;
-}
-/*-----------------------------------------------------------*/
-
-static void prvCheckTimerCallback( TimerHandle_t xTimer )
-{
-static portBASE_TYPE xChangedTimerPeriodAlready = pdFALSE;
-static unsigned short usLastRegTest1Counter = 0, usLastRegTest2Counter = 0;
+TickType_t xDelayPeriod = mainNO_ERROR_CHECK_TASK_PERIOD;
+TickType_t xLastExecutionTime;
+uint32_t usLastRegTest1Counter = 0, usLastRegTest2Counter = 0;
 char * const pcPassMessage = ".";
 char * pcStatusMessage = pcPassMessage;
 
-	/* Remove compiler warning about unused parameter. */
-	( void ) xTimer;
+	/* Just to stop compiler warnings. */
+	( void ) pvParameters;
 
-	/* Inspect the status of the standard demo tasks. */
-	if( xAreDynamicPriorityTasksStillRunning() == pdFALSE )
-	{
-		pcStatusMessage = "ERROR: Dynamic priority demo/tests.\r\n";
-	}
+	/* Initialise xLastExecutionTime so the first call to vTaskDelayUntil()
+	works correctly. */
+	xLastExecutionTime = xTaskGetTickCount();
 
-	if( xArePollingQueuesStillRunning() == pdFALSE )
+	/* Cycle for ever, delaying then checking all the other tasks are still
+	operating without error.  The onboard LED is toggled on each iteration.
+	If an error is detected then the delay period is decreased from
+	mainNO_ERROR_CHECK_TASK_PERIOD to mainERROR_CHECK_TASK_PERIOD.  This has the
+	effect of increasing the rate at which the onboard LED toggles, and in so
+	doing gives visual feedback of the system status. */
+	for( ;; )
 	{
-		pcStatusMessage = "ERROR: Polling queue demo/tests.\r\n";
-	}
+		/* Delay until it is time to execute again. */
+		vTaskDelayUntil( &xLastExecutionTime, xDelayPeriod );
 
-	if( xAreBlockTimeTestTasksStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Block time demo/tests.\r\n";
-	}
+		/* Check all the demo tasks (other than the flash tasks) to ensure
+		that they are all still running, and that none have detected an error. */
+//		if( xAreIntQueueTasksStillRunning() == pdFAIL )
+//		{
+//			pcStatusMessage = "ERROR: Queue interrupt demo/tests.\r\n";
+//		}
 
-	if ( xAreGenericQueueTasksStillRunning() == pdFALSE )
-	{
-		pcStatusMessage = "ERROR: Generic queue demo/tests.\r\n";
-	}
+//		if( xAreMathsTaskStillRunning() == pdFAIL )
+//		{
+//			pcStatusMessage = "ERROR: Flop demo/tests.\r\n";
+//		}
 
-	if ( xAreRecursiveMutexTasksStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Recursive mutex demo/tests.\r\n";
-	}
-
-	if( xAreCountingSemaphoreTasksStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Counting semaphore demo/tests.\r\n";
-	}
-
-	if( xIsQueueOverwriteTaskStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Queue overwrite demo/tests.\r\n";
-	}
-
-	if( xAreEventGroupTasksStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Event group demo/tests.\r\n";
-	}
-
-	if( xAreTaskNotificationTasksStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Task notification demo/tests.\r\n";
-	}
-
-	if( xAreTaskNotificationArrayTasksStillRunning() == pdFAIL )
-	{
-		pcStatusMessage = "ERROR: Task notification array demo/tests.\r\n";
-	}
-
-	if( xAreInterruptSemaphoreTasksStillRunning() == pdFALSE )
-	{
-		pcStatusMessage = "ERROR: Interrupt semaphore demo/tests.\r\n";
-	}
-
-	/* Check that the register test 1 task is still running. */
-	if( usLastRegTest1Counter == usRegTest1LoopCounter )
-	{
-			pcStatusMessage = "ERROR: Register test 1.\r\n";
-	}
-	usLastRegTest1Counter = usRegTest1LoopCounter;
-
-	/* Check that the register test 2 task is still running. */
-	if( usLastRegTest2Counter == usRegTest2LoopCounter )
-	{
-		pcStatusMessage = "ERROR: Register test 2.\r\n";
-	}
-	usLastRegTest2Counter = usRegTest2LoopCounter;
-
-	/* Ensure that the demo software timer has expired
-	mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT times in between
-	each call of this function.  A critical section is not required to access
-	ulDemoSoftwareTimerCounter as the variable is only accessed from another
-	software timer callback, and only one software timer callback can be
-	executing at any time. */
-	if( ( ulDemoSoftwareTimerCounter < ( mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT - 1 ) ) ||
-	    ( ulDemoSoftwareTimerCounter > ( mainDEMO_TIMER_INCREMENTS_PER_CHECK_TIMER_TIMEOUT + 1 ) )
-	  )
-	{
-		pcStatusMessage = "ERROR: Software timer test 2.\r\n";
-	}
-	ulDemoSoftwareTimerCounter = 0UL;
-
-	/* Write the status message to the UART and toggle the LED to show the
-	system status if the UART is not connected. */
-	if( pcStatusMessage == pcPassMessage )
-	{
-		/* Write the pass message to a dedicated debug console. */
-		vSendString( pcPassMessage );
-	}
-	else
-	{
-		if( xChangedTimerPeriodAlready == pdFALSE )
+		if( xAreDynamicPriorityTasksStillRunning() == pdFALSE )
 		{
-			/* Write the fail status message to a dedicated debug console. */
-			vSendString( "\r\n" );
-			vSendString( pcStatusMessage );
+			pcStatusMessage = "ERROR: Dynamic priority demo/tests.\r\n";
+		}
+
+		if( xAreBlockingQueuesStillRunning() == pdFALSE )
+		{
+			pcStatusMessage = "ERROR: Blocking queue demo/tests.\r\n";
+		}
+
+		if( xAreBlockTimeTestTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Block time demo/tests.\r\n";
+		}
+
+		if ( xAreGenericQueueTasksStillRunning() == pdFALSE )
+		{
+			pcStatusMessage = "ERROR: Generic queue demo/tests.\r\n";
+		}
+
+		if ( xAreRecursiveMutexTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Recursive mutex demo/tests.\r\n";
+		}
+
+		if( xIsCreateTaskStillRunning() == pdFALSE )
+		{
+			pcStatusMessage = "ERROR: Suicide task demo/tests.\r\n";
+		}
+
+//		if( xAreSemaphoreTasksStillRunning() == pdFALSE )
+//		{
+//			pcStatusMessage = "ERROR: Semaphore demo/tests.\r\n";
+//		}
+
+		if( xAreTimerDemoTasksStillRunning( ( TickType_t ) xDelayPeriod ) == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Timer demo/tests.\r\n";
+		}
+
+		if( xAreCountingSemaphoreTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Counting semaphore demo/tests.\r\n";
+		}
+
+		if( xIsQueueOverwriteTaskStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Queue overwrite demo/tests.\r\n";
+		}
+
+		if( xAreEventGroupTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Event group demo/tests.\r\n";
+		}
+
+		if( xAreTaskNotificationTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Task notification demo/tests.\r\n";
+		}
+
+		if( xAreTaskNotificationArrayTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Task notification array demo/tests.\r\n";
+		}
+
+		if( xAreInterruptSemaphoreTasksStillRunning() == pdFALSE )
+		{
+			pcStatusMessage = "ERROR: Interrupt semaphore demo/tests.\r\n";
+		}
+
+		/* Check that the register test 1 task is still running. */
+		if( usLastRegTest1Counter == usRegTest1LoopCounter )
+		{
+			pcStatusMessage = "ERROR: Register test 1.\r\n";
+		}
+		usLastRegTest1Counter = usRegTest1LoopCounter;
+
+		/* Check that the register test 2 task is still running. */
+		if( usLastRegTest2Counter == usRegTest2LoopCounter )
+		{
+			pcStatusMessage = "ERROR: Register test 2.\r\n";
+		}
+		usLastRegTest2Counter = usRegTest2LoopCounter;
+
+		/* Write the status message to the UART and toggle the LED to show the
+		system status if the UART is not connected. */
+		if( pcStatusMessage == pcPassMessage )
+		{
+			/* Write the pass message to a dedicated debug console. */
+			vSendString( pcPassMessage );
+		}
+		else
+		{
+			if( xDelayPeriod == mainNO_ERROR_CHECK_TASK_PERIOD )
+			{
+				/* Write the fail status message to a dedicated debug console. */
+				vSendString( "\r\n" );
+				vSendString( pcStatusMessage );
+			}
+		}
+		vToggleLED();
+
+		/* If an error has been found then increase the LED toggle rate by
+		increasing the cycle frequency. */
+		if( pcStatusMessage != pcPassMessage )
+		{
+			/* An error has been detected in one of the tasks - flash the LED
+			at a higher frequency to give visible feedback that something has
+			gone wrong (it might just be that the loop back connector required
+			by the comtest tasks has not been fitted). */
+			xDelayPeriod = mainERROR_CHECK_TASK_PERIOD;
 		}
 	}
-	vToggleLED();
+}
+/*-----------------------------------------------------------*/
 
-	/* If an error has been found then increase the LED toggle rate by
-	increasing the cycle frequency. */
-	if( pcStatusMessage != pcPassMessage )
+static void prvPseudoRandomiser( void *pvParameters )
+{
+const uint32_t ulMultiplier = 0x015a4e35UL, ulIncrement = 1UL, ulMinDelay = pdMS_TO_TICKS( 35 );
+volatile uint32_t ulNextRand = ( uint32_t ) (size_t) &pvParameters, ulValue;
+
+	/* This task does nothing other than ensure there is a little bit of
+	disruption in the scheduling pattern of the other tasks.  Normally this is
+	done by generating interrupts at pseudo random times. */
+	for( ;; )
 	{
-		/* An error has been detected in one of the tasks - flash the LED
-		at a higher frequency to give visible feedback that something has
-		gone wrong (it might just be that the loop back connector required
-		by the comtest tasks has not been fitted). */
-		if( xChangedTimerPeriodAlready == pdFALSE )
+		ulNextRand = ( ulMultiplier * ulNextRand ) + ulIncrement;
+		ulValue = ( ulNextRand >> 16UL ) & 0xffUL;
+
+		if( ulValue < ulMinDelay )
 		{
-			/* An error has occurred, but the timer's period has not yet been changed,
-			change it now, and remember that it has been changed.  Shortening the
-			timer's period means the LED will toggle at a faster rate, giving a
-			visible indication that something has gone wrong. */
-			xChangedTimerPeriodAlready = pdTRUE;
-	
-			/* This call to xTimerChangePeriod() uses a zero block time.  Functions
-			called from inside of a timer callback function must *never* attempt to
-			block. */
-			xTimerChangePeriod( xCheckTimer, ( mainERROR_CHECK_TIMER_PERIOD_MS ), mainDONT_BLOCK );
+			ulValue = ulMinDelay;
+		}
+
+		vTaskDelay( ulValue );
+
+		while( ulValue > 0 )
+		{
+			nop();
+			nop();
+			nop();
+			nop();
+			nop();
+			nop();
+			nop();
+			nop();
+
+			ulValue--;
 		}
 	}
 }
@@ -433,6 +469,10 @@ void vFullDemoTickHook( void )
 {
 	/* Called from vApplicationTickHook() when the project is configured to
 	build the full test/demo applications. */
+
+	/* The full demo includes a software timer demo/test that requires
+	prodding periodically from the tick interrupt. */
+	vTimerPeriodicISRTests();
 
 	/* Call the periodic queue overwrite from ISR demo. */
 	vQueueOverwritePeriodicISRDemo();
@@ -449,50 +489,48 @@ void vFullDemoTickHook( void )
 }
 /*-----------------------------------------------------------*/
 
+static void prvRegTestTaskEntry1( void *pvParameters )
+{
+	/* Although the regtest task is written in assembler, its entry point is
+	written in C for convenience of checking the task parameter is being passed
+	in correctly. */
+	if( pvParameters == mainREG_TEST_TASK_1_PARAMETER )
+	{
+		/* Start the part of the test that is written in assembler. */
+		vRegTest1Task();
+	}
+
+	/* The following line will only execute if the task parameter is found to
+	be incorrect.  The check task will detect that the regtest loop counter is
+	not being incremented and flag an error. */
+	vTaskDelete( NULL );
+}
+/*-----------------------------------------------------------*/
+
+static void prvRegTestTaskEntry2( void *pvParameters )
+{
+	/* Although the regtest task is written in assembler, its entry point is
+	written in C for convenience of checking the task parameter is being passed
+	in correctly. */
+	if( pvParameters == mainREG_TEST_TASK_2_PARAMETER )
+	{
+		/* Start the part of the test that is written in assembler. */
+		vRegTest2Task();
+	}
+
+	/* The following line will only execute if the task parameter is found to
+	be incorrect.  The check task will detect that the regtest loop counter is
+	not being incremented and flag an error. */
+	vTaskDelete( NULL );
+}
+/*-----------------------------------------------------------*/
+
 void vRegTestError( void )
 {
 	/* Called by both reg test tasks if an error is found.  There is no way out
 	of this function so the loop counter of the calling task will stop
 	incrementing, which will result in the check timer signaling an error. */
 	for( ;; );
-}
-/*-----------------------------------------------------------*/
-
-static void prvRegTest1Entry( void *pvParameters )
-{
-	/* If the parameter has its expected value then start the first reg test
-	task (this is only done to test that the RTOS port is correctly handling
-	task parameters. */
-	if( pvParameters == mainREG_TEST_1_PARAMETER )
-	{
-		vRegTest1Task();
-	}
-	else
-	{
-		vRegTestError();
-	}
-
-	/* It is not possible to get here as neither of the two functions called
-	above will ever return. */
-}
-/*-----------------------------------------------------------*/
-
-static void prvRegTest2Entry( void *pvParameters )
-{
-	/* If the parameter has its expected value then start the first reg test
-	task (this is only done to test that the RTOS port is correctly handling
-	task parameters. */
-	if( pvParameters == mainREG_TEST_2_PARAMETER )
-	{
-		vRegTest2Task();
-	}
-	else
-	{
-		vRegTestError();
-	}
-
-	/* It is not possible to get here as neither of the two functions called
-	above will ever return. */
 }
 /*-----------------------------------------------------------*/
 

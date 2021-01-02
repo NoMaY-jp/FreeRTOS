@@ -52,7 +52,7 @@ multiple evaluation boards. */
 #define configUSE_TRACE_FACILITY		1
 #define configUSE_16_BIT_TICKS			1
 #define configIDLE_SHOULD_YIELD			1
-#define configTOTAL_HEAP_SIZE			( ( size_t ) 14000 )
+#define configTOTAL_HEAP_SIZE			( ( size_t ) 20000 )
 #define configCHECK_FOR_STACK_OVERFLOW	2
 #define configASSERT_DEFINED			1
 #define configUSE_MUTEXES				1
@@ -90,7 +90,7 @@ FreeRTOS/Source/tasks.c for limitations. */
 to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet			1
 #define INCLUDE_uxTaskPriorityGet			1
-#define INCLUDE_vTaskDelete					0
+#define INCLUDE_vTaskDelete					1
 #define INCLUDE_vTaskCleanUpResources		0
 #define INCLUDE_vTaskSuspend				1
 #define INCLUDE_vTaskDelayUntil				1
