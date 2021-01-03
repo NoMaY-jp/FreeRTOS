@@ -37,7 +37,7 @@
  * THESE PARAMETERS ARE DESCRIBED WITHIN THE 'CONFIGURATION' SECTION OF THE
  * FreeRTOS API DOCUMENTATION AVAILABLE ON THE FreeRTOS.org WEB SITE.
  *
- * See http://www.freertos.org/a00110.html.
+ * See http://www.freertos.org/a00110.html
  *----------------------------------------------------------*/
 
 /* Include hardware dependent header files to allow this demo to run on
@@ -45,26 +45,36 @@ multiple evaluation boards. */
 #include "demo_specific_io.h"
 
 #define configUSE_PREEMPTION			1
-#define configTICK_RATE_HZ				( ( unsigned short ) 1000 )
-#define configMAX_PRIORITIES			( 4 )
-#define configMINIMAL_STACK_SIZE		( ( unsigned short ) 150 )
-#define configMAX_TASK_NAME_LEN			( 12 )
+#define configUSE_IDLE_HOOK				1
+#define configUSE_TICK_HOOK				1
+#define configTICK_RATE_HZ				(( TickType_t ) 1000)
+#define configMINIMAL_STACK_SIZE		(( unsigned short ) 130)
+#define configTOTAL_HEAP_SIZE			( ( size_t ) 18000 )
+#define configMAX_TASK_NAME_LEN			(12)
 #define configUSE_TRACE_FACILITY		1
 #define configUSE_16_BIT_TICKS			1
 #define configIDLE_SHOULD_YIELD			1
-#define configTOTAL_HEAP_SIZE			( ( size_t ) 20000 )
+#define configUSE_CO_ROUTINES 			0
+#define configUSE_MUTEXES				1
+#define configGENERATE_RUN_TIME_STATS	0
 #define configCHECK_FOR_STACK_OVERFLOW	2
 #define configASSERT_DEFINED			1
-#define configUSE_MUTEXES				1
 #define configUSE_RECURSIVE_MUTEXES		1
+#define configQUEUE_REGISTRY_SIZE		0
+#define configUSE_MALLOC_FAILED_HOOK	1
+#define configUSE_APPLICATION_TASK_TAG	0
+#define configUSE_QUEUE_SETS			1
 #define configUSE_COUNTING_SEMAPHORES	1
+#define configMAX_PRIORITIES			(7)
+#define configMAX_CO_ROUTINE_PRIORITIES (2)
 #define configUSE_TASK_NOTIFICATIONS     1
 #define configTASK_NOTIFICATION_ARRAY_ENTRIES   3
+#define configRECORD_STACK_HIGH_ADDRESS  0
+#define configNUM_THREAD_LOCAL_STORAGE_POINTERS 0
 
-/* Hook function definitions. */
-#define configUSE_IDLE_HOOK				0
-#define configUSE_TICK_HOOK				1
-#define configUSE_MALLOC_FAILED_HOOK	1
+/* Dynamic allocation and static allocation. */
+#define configSUPPORT_DYNAMIC_ALLOCATION        1
+#define configSUPPORT_STATIC_ALLOCATION         1
 
 /* This demo makes use of one or more example stats formatting functions.  These
 format the raw data provided by the uxTaskGetSystemState() function in to human
@@ -74,17 +84,9 @@ FreeRTOS/Source/tasks.c for limitations. */
 
 /* Software timer definitions. */
 #define configUSE_TIMERS				1
-#define configTIMER_TASK_PRIORITY		( 2 )
-#define configTIMER_QUEUE_LENGTH		10
-#define configTIMER_TASK_STACK_DEPTH	( configMINIMAL_STACK_SIZE )
-
-/* Co-routine definitions. */
-#define configUSE_CO_ROUTINES 			0
-#define configMAX_CO_ROUTINE_PRIORITIES	( 2 )
-
-/* Memory allocation definitions. */
-#define configSUPPORT_DYNAMIC_ALLOCATION	1
-#define configSUPPORT_STATIC_ALLOCATION		1
+#define configTIMER_TASK_PRIORITY		(6)
+#define configTIMER_QUEUE_LENGTH		5
+#define configTIMER_TASK_STACK_DEPTH	(configMINIMAL_STACK_SIZE)
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
@@ -93,13 +95,18 @@ to exclude the API function. */
 #define INCLUDE_vTaskDelete					1
 #define INCLUDE_vTaskCleanUpResources		0
 #define INCLUDE_vTaskSuspend				1
-#define INCLUDE_vTaskDelayUntil				1
+#define INCLUDE_xTaskDelayUntil				1
 #define INCLUDE_vTaskDelay					1
+#define INCLUDE_uxTaskGetStackHighWaterMark	1
+#define INCLUDE_xTaskGetSchedulerState		1
 #define INCLUDE_eTaskGetState				1
 #define INCLUDE_xTimerPendFunctionCall		1
-#define INCLUDE_xTaskGetCurrentTaskHandle	1
-#define INCLUDE_xTaskGetIdleTaskHandle 		0
-#define INCLUDE_xTimerGetTimerDaemonTaskHandle 	0
+
+#if (configUSE_16_BIT_TICKS == 1)
+#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
+#endif
+
+#define pdBYTES_TO_STACK_DEPTH( ulBytes ) ( ( ( uint32_t ) ( ulBytes ) + ( sizeof( StackType_t ) - 1 ) ) / sizeof( StackType_t ) )
 
 #if defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__)
 
@@ -111,13 +118,14 @@ void vAssertCalled( void );
 #define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled()
 #endif
 
+/* Run time stats gathering definitions. */
+unsigned long ulGetRunTimeCounterValue( void );
+void vConfigureTimerForRunTimeStats( void );
+#define configGENERATE_RUN_TIME_STATS    0
+//#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()    vConfigureTimerForRunTimeStats()
+//#define portGET_RUN_TIME_COUNTER_VALUE()            ulGetRunTimeCounterValue()
+
 #endif /* defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__) */
-
-#if (configUSE_16_BIT_TICKS == 1)
-#define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
-#endif
-
-#define pdBYTES_TO_STACK_DEPTH( ulBytes ) ( ( ( uint32_t ) ( ulBytes ) + ( sizeof( StackType_t ) - 1 ) ) / sizeof( StackType_t ) )
 
 /* The buffer into which output generated by FreeRTOS+CLI is placed.  This must
 be at least big enough to contain the output of the task-stats command, as the
@@ -125,5 +133,15 @@ example implementation does not include buffer overlow checking. */
 #define configCOMMAND_INT_MAX_OUTPUT_SIZE	3500
 #define configINCLUDE_QUERY_HEAP_COMMAND	1
 
-#endif /* FREERTOS_CONFIG_H */
+/* Override some of the priorities set in the common demo tasks.  This is
+required to ensure flase positive timing errors are not reported. */
+#define bktPRIMARY_PRIORITY		(( configMAX_PRIORITIES - 3 ))
+#define bktSECONDARY_PRIORITY	(( configMAX_PRIORITIES - 4 ))
+#define intqHIGHER_PRIORITY		(( configMAX_PRIORITIES - 3 ))
 
+/* Override some of the stack sizes set in the common demo tasks.  Almost these
+tasks are created using configMINIMAL_STACK_SIZE (in this FreeRTOSConfig.h, it is
+130) for the stack size setting as default but some of then need more stack. */
+#define ebEVENT_GROUP_SET_BITS_TEST_TASK_STACK_SIZE		(( unsigned short ) 150)
+
+#endif /* FREERTOS_CONFIG_H */

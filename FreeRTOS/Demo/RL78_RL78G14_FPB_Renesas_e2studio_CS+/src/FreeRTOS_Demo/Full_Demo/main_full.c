@@ -170,10 +170,10 @@ static void prvCheckTask( void *pvParameters );
  * entry points are kept in the C file for the convenience of checking the task
  * parameter.
  */
-extern void vRegTest1Task( void );
-extern void vRegTest2Task( void );
 static void prvRegTestTaskEntry1( void *pvParameters );
+extern void vRegTest1Task( void );
 static void prvRegTestTaskEntry2( void *pvParameters );
+extern void vRegTest2Task( void );
 void vRegTestError( void );
 
 /*
@@ -206,7 +206,7 @@ extern void vUARTCommandConsoleStart( uint16_t usStackSize, UBaseType_t uxPriori
 register check tasks to the check task.  If the variables keep incrementing,
 then the register check tasks have not discovered any errors.  If a variable
 stops incrementing, then an error has been found. */
-unsigned short usRegTest1LoopCounter = 0, usRegTest2LoopCounter;
+volatile uint16_t usRegTest1LoopCounter = 0U, usRegTest2LoopCounter = 0U;
 
 /*-----------------------------------------------------------*/
 
@@ -215,21 +215,27 @@ void main_full( void )
 	/* Start all the other standard demo/test tasks.  They have no particular
 	functionality, but do demonstrate how to use the FreeRTOS API and test the
 	kernel port. */
-//	vStartInterruptQueueTasks();
+#if 0 /* This demo is not yet implemented. */
+	vStartInterruptQueueTasks();
+#endif
 	vStartDynamicPriorityTasks();
 	vStartBlockingQueueTasks( mainBLOCK_Q_PRIORITY );
 	vCreateBlockTimeTasks();
+#if !defined( EWRL78_16K_KICKSTART_EDITION )
 	vStartCountingSemaphoreTasks();
 	vStartGenericQueueTasks( tskIDLE_PRIORITY );
 	vStartRecursiveMutexTasks();
-//	vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
-//	vStartMathTasks( mainFLOP_TASK_PRIORITY );
+	vStartSemaphoreTasks( mainSEM_TEST_PRIORITY );
+#if 0 /* This demo is too heavy for RL78. */
+	vStartMathTasks( mainFLOP_TASK_PRIORITY );
+#endif
 	vStartTimerDemoTask( mainTIMER_TEST_PERIOD );
 	vStartQueueOverwriteTask( mainQUEUE_OVERWRITE_PRIORITY );
 	vStartEventGroupTasks();
 	vStartTaskNotifyTask();
 	vStartTaskNotifyArrayTask();
 	vStartInterruptSemaphoreTasks();
+#endif /* !defined( EWRL78_16K_KICKSTART_EDITION ) */
 
 	/* Create the register check tasks, as described at the top of this	file.
 	Use xTaskCreateStatic() to create a task using only statically allocated
@@ -278,7 +284,7 @@ static void prvCheckTask( void *pvParameters )
 {
 TickType_t xDelayPeriod = mainNO_ERROR_CHECK_TASK_PERIOD;
 TickType_t xLastExecutionTime;
-uint32_t usLastRegTest1Counter = 0, usLastRegTest2Counter = 0;
+uint16_t usLastRegTest1Value = 0, usLastRegTest2Value = 0;
 char * const pcPassMessage = ".";
 char * pcStatusMessage = pcPassMessage;
 
@@ -302,15 +308,19 @@ char * pcStatusMessage = pcPassMessage;
 
 		/* Check all the demo tasks (other than the flash tasks) to ensure
 		that they are all still running, and that none have detected an error. */
-//		if( xAreIntQueueTasksStillRunning() == pdFAIL )
-//		{
-//			pcStatusMessage = "ERROR: Queue interrupt demo/tests.\r\n";
-//		}
+#if 0 /* This demo is not yet implemented. */
+		if( xAreIntQueueTasksStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Queue interrupt demo/tests.\r\n";
+		}
+#endif
 
-//		if( xAreMathsTaskStillRunning() == pdFAIL )
-//		{
-//			pcStatusMessage = "ERROR: Flop demo/tests.\r\n";
-//		}
+#if 0 /* This demo is too heavy for RL78. */
+		if( xAreMathsTaskStillRunning() == pdFAIL )
+		{
+			pcStatusMessage = "ERROR: Flop demo/tests.\r\n";
+		}
+#endif
 
 		if( xAreDynamicPriorityTasksStillRunning() == pdFALSE )
 		{
@@ -327,6 +337,8 @@ char * pcStatusMessage = pcPassMessage;
 			pcStatusMessage = "ERROR: Block time demo/tests.\r\n";
 		}
 
+#if !defined( EWRL78_16K_KICKSTART_EDITION )
+
 		if ( xAreGenericQueueTasksStillRunning() == pdFALSE )
 		{
 			pcStatusMessage = "ERROR: Generic queue demo/tests.\r\n";
@@ -342,10 +354,10 @@ char * pcStatusMessage = pcPassMessage;
 			pcStatusMessage = "ERROR: Suicide task demo/tests.\r\n";
 		}
 
-//		if( xAreSemaphoreTasksStillRunning() == pdFALSE )
-//		{
-//			pcStatusMessage = "ERROR: Semaphore demo/tests.\r\n";
-//		}
+		if( xAreSemaphoreTasksStillRunning() == pdFALSE )
+		{
+			pcStatusMessage = "ERROR: Semaphore demo/tests.\r\n";
+		}
 
 		if( xAreTimerDemoTasksStillRunning( ( TickType_t ) xDelayPeriod ) == pdFAIL )
 		{
@@ -382,19 +394,21 @@ char * pcStatusMessage = pcPassMessage;
 			pcStatusMessage = "ERROR: Interrupt semaphore demo/tests.\r\n";
 		}
 
+#endif /* !defined( EWRL78_16K_KICKSTART_EDITION ) */
+
 		/* Check that the register test 1 task is still running. */
-		if( usLastRegTest1Counter == usRegTest1LoopCounter )
+		if( usLastRegTest1Value == usRegTest1LoopCounter )
 		{
 			pcStatusMessage = "ERROR: Register test 1.\r\n";
 		}
-		usLastRegTest1Counter = usRegTest1LoopCounter;
+		usLastRegTest1Value = usRegTest1LoopCounter;
 
 		/* Check that the register test 2 task is still running. */
-		if( usLastRegTest2Counter == usRegTest2LoopCounter )
+		if( usLastRegTest2Value == usRegTest2LoopCounter )
 		{
 			pcStatusMessage = "ERROR: Register test 2.\r\n";
 		}
-		usLastRegTest2Counter = usRegTest2LoopCounter;
+		usLastRegTest2Value = usRegTest2LoopCounter;
 
 		/* Write the status message to the UART and toggle the LED to show the
 		system status if the UART is not connected. */
@@ -470,6 +484,8 @@ void vFullDemoTickHook( void )
 	/* Called from vApplicationTickHook() when the project is configured to
 	build the full test/demo applications. */
 
+#if !defined( EWRL78_16K_KICKSTART_EDITION )
+
 	/* The full demo includes a software timer demo/test that requires
 	prodding periodically from the tick interrupt. */
 	vTimerPeriodicISRTests();
@@ -486,6 +502,8 @@ void vFullDemoTickHook( void )
 
 	/* Use mutexes from interrupts. */
 	vInterruptSemaphorePeriodicTest();
+
+#endif /* !defined( EWRL78_16K_KICKSTART_EDITION ) */
 }
 /*-----------------------------------------------------------*/
 

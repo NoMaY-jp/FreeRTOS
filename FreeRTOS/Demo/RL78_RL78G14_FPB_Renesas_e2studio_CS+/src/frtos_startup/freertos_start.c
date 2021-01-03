@@ -202,12 +202,14 @@ void vApplicationIdleHook(void)
 void vApplicationTickHook(void)
 {
     /* The tick hook is not used by the blinky demo, but is by the full demo. */
-    #if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 0
+    #if( mainCREATE_NON_STANDARD_RTOS_DEMO == 0 )
+    #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 0 )
     {
         extern void vFullDemoTickHook( void );
 
         vFullDemoTickHook();
     }
+    #endif
     #endif
 
 } /* End of function vApplicationTickHook() */
