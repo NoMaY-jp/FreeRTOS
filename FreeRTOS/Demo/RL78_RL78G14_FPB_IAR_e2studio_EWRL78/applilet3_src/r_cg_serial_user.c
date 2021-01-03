@@ -128,12 +128,16 @@ static void r_uart3_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
 
-    if (false == g_uart3_rx_error_flag)
+    if (false != g_uart3_rx_error_flag)
     {
-        U_UART3_Receive_Stop();
-
-        xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, 0x10000 | MD_OK );
+        /* The task had been already notified with error information.
+         */
+        return;
     }
+
+    U_UART3_Receive_Stop();
+
+    xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, 0x10000 | MD_OK );
 
     /* End user code. Do not edit comment generated here */
 }
@@ -163,6 +167,18 @@ static void r_uart3_callback_softwareoverrun(uint16_t rx_data)
 static void r_uart3_callback_sendend(void)
 {
     /* Start user code. Do not edit comment generated here */
+
+    if (0 != (SSR12 & _0040_SAU_UNDER_EXECUTE))
+    {
+        /* DTC has finished data transfer operation. (i.e. The last data has been
+         * written to UART's SDR register.) But the data stay in either UART's SDR
+         * register or UART's transmission shift register. One more interrupt will
+         * occur when UART will have finished data transmission operation. (i.e.
+         * The last data including parity bit and stop bit(s) will have been sent
+         * out from transmission shift register.)
+         */
+        return;
+    }
 
     U_UART3_Send_Stop();
 

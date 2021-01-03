@@ -34,13 +34,10 @@
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
 #include "freertos_start.h"
+#include "r_cg_serial.h"
 #include "demo_main.h"
 #include "demo_specific_io.h"
-#if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
-#if 1
-#include "r_cg_serial.h"
-#endif
-#endif
+#include <stdlib.h>
 
 /******************************************************************************
 Macro definitions
@@ -204,7 +201,14 @@ void vApplicationIdleHook(void)
 #if( configUSE_TICK_HOOK == 1 )
 void vApplicationTickHook(void)
 {
-    /* Implement user-code for user own purpose. */
+    /* The tick hook is not used by the blinky demo, but is by the full demo. */
+    #if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 0
+    {
+        extern void vFullDemoTickHook( void );
+
+        vFullDemoTickHook();
+    }
+    #endif
 
 } /* End of function vApplicationTickHook() */
 #endif /* configUSE_TICK_HOOK == 1 */
@@ -461,9 +465,7 @@ static void prvSetupHardware( void )
     purpos "FreeRTOS+CLI command console" by the full demo. */
     #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
     {
-#if 1
         R_UART3_Start();
-#endif
     }
     #endif
 
@@ -489,12 +491,36 @@ void vSendString( const char * const pcString )
     other purpos "FreeRTOS+CLI command console" by the full demo. */
     #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
     {
-#if 1
         R_UART3_Send( ( uint8_t * )pcString, strlen(pcString) );
-#endif
     }
     #endif
 }
+/*-----------------------------------------------------------*/
+
+/* Replacement to be thread-safe (in case of other than using heap_3.c). */
+void *malloc( size_t xWantedSize )
+{
+    return pvPortMalloc( xWantedSize );
+}
+
+/* Replacement to be thread-safe (in case of other than using heap_3.c). */
+void free( void *pv )
+{
+    vPortFree( pv );
+}
+
+#if defined(__GNUC__)
+
+int8_t *sbrk( size_t size );
+
+/* Maybe not called but necessary for linking without an undefined error. */
+int8_t *sbrk( size_t size )
+{
+    ( void ) size;
+    return (int8_t *)-1;
+}
+
+#endif /* defined(__GNUC__) */
 /*-----------------------------------------------------------*/
 
 /******************************************************************************
