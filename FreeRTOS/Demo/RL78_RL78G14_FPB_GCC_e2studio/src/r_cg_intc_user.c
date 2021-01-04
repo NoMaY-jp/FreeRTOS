@@ -43,7 +43,7 @@ Global variables and functions
 /* Start user code for global. Do not edit comment generated here */
 extern TaskHandle_t g_intc0_task;      /* intc0 event notify task */
 
-#define r_intc0_interrupt R_CG_FREERTOS_INTERRUPT(r_intc0_interrupt)
+#define r_intc0_interrupt R_CG_FREERTOS_INTERRUPT_EI(r_intc0_interrupt)
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

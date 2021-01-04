@@ -35,6 +35,8 @@ Includes
 #include "r_cg_dtc.h"
 #include "freertos_start.h"
 #include "freertos_isr.h"
+#include "r_cg_userdefine.h"
+#if 0
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -44,6 +46,7 @@ Pragma directive
 #pragma interrupt r_uart3_interrupt_send(vect=INTST3)
 #pragma interrupt r_uart3_interrupt_receive(vect=INTSR3)
 /* Start user code for pragma. Do not edit comment generated here */
+#endif /* #if 0 */
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -62,8 +65,8 @@ extern volatile bool      g_uart3_rx_error_flag;       /* uart3 receive error fl
 extern void U_UART3_Receive_Stop(void);                /* for internal use */
 extern void U_UART3_Send_Stop(void);                   /* for internal use */
 
-#define r_uart3_interrupt_receive R_CG_FREERTOS_INTERRUPT(r_uart3_interrupt_receive)
-#define r_uart3_interrupt_send R_CG_FREERTOS_INTERRUPT(r_uart3_interrupt_send)
+#define r_uart3_interrupt_receive R_CG_FREERTOS_INTERRUPT_EI(r_uart3_interrupt_receive, INTST3)
+#define r_uart3_interrupt_send R_CG_FREERTOS_INTERRUPT_EI(r_uart3_interrupt_send, INTSR3)
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

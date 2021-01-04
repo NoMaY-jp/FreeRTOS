@@ -38,6 +38,7 @@ SECTIONS
 	{
 		*(.plt)
 		*(.lowtext)
+		*(.lowtext.*)
 		. = ALIGN(2);
 	} > ROM
 	.tors : /* TODO: Does this section work? Should below items be in the .rodata section? */

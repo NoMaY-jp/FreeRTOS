@@ -99,9 +99,9 @@ void R_UART3_Create(void)
     /* Set INTST3 low priority */
     STPR13 = 1U;
     STPR03 = 1U;
-    /* Set INTSR3 level2 priority */
+    /* Set INTSR3 low priority */
     SRPR13 = 1U;
-    SRPR03 = 0U;
+    SRPR03 = 1U;
     SMR12 = _0020_SAU_SMRMN_INITIALVALUE | _0000_SAU_CLOCK_SELECT_CK00 | _0000_SAU_TRIGGER_SOFTWARE |
             _0002_SAU_MODE_UART | _0000_SAU_TRANSFER_END;
     SCR12 = _8000_SAU_TRANSMISSION | _0000_SAU_INTSRE_MASK | _0000_SAU_PARITY_NONE | _0080_SAU_LSB | _0010_SAU_STOP_1 |

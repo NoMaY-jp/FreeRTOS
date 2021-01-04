@@ -175,6 +175,8 @@
     </TRDCLKUSE1>
     <TRDCLKTag Name="TRDCLKTag" Value="-1" />
     <TRDCLKUSE0 Name="TRDCLKUSE0" Value="0" />
+    <dtc_vectortable Name="dtc_vectortable" Value="1047808" />
+    <dtc_controldata_0 Name="dtc_controldata_0" Value="1047872" />
     <CodePath Name="CodePath" Text=".\" />
     <ReportType Name="ReportType" Text="Html" />
     <CreationDateType Name="CreationDateType" Text="NoDate" />
@@ -210,8 +212,6 @@
     <TRDIOD1_PWM Name="TRDIOD1_PWM" Text="false" />
     <INPT0USE1 Name="INPT0USE1" Text="false" />
     <TRDINTP0LINK1 Name="TRDINTP0LINK1" Text="false" />
-    <dtc_vectortable Name="dtc_vectortable" Value="1047808" />
-    <dtc_controldata_0 Name="dtc_controldata_0" Value="1047872" />
     <NO_CHAIN_0 Name="NO_CHAIN_0" Text="NO_CHAIN" />
     <CHAIN_HEAD_0 Name="CHAIN_HEAD_0" Text="" />
     <NO_CHAIN_1 Name="NO_CHAIN_1" Text="" />
@@ -1745,29 +1745,29 @@
     </FUNC>
     <TAG>
       <GlobleUserTag>
-        <cg_security9 Name="cg_security9" Value="00" />
-        <cg_security7 Name="cg_security7" Value="00" />
-        <pior1_value Name="pior1_value" Value="00" />
-        <cg_security5 Name="cg_security5" Value="00" />
-        <cg_crc_area Name="cg_crc_area" Value="00" />
-        <ocdstart Name="ocdstart" Value="7FF00" />
-        <cg_security3 Name="cg_security3" Value="00" />
         <cg_security0 Name="cg_security0" Value="00" />
         <cg_security1 Name="cg_security1" Value="00" />
-        <cg_ocd_ram_size Name="cg_ocd_ram_size" Value="256" />
-        <clock_option Name="clock_option" Value="F8" />
-        <pior_value Name="pior_value" Value="04" />
-        <cg_option Name="cg_option" Value="85" />
-        <cg_security8 Name="cg_security8" Value="00" />
-        <cg_security6 Name="cg_security6" Value="00" />
-        <cg_security4 Name="cg_security4" Value="00" />
-        <cg_pms_value Name="cg_pms_value" Value="00" />
-        <cg_onchip Name="cg_onchip" Value="" />
         <cg_security2 Name="cg_security2" Value="00" />
-        <cg_iawctl_value Name="cg_iawctl_value" Value="00" />
-        <lvi_option Name="lvi_option" Value="FF" />
+        <cg_security3 Name="cg_security3" Value="00" />
+        <cg_security4 Name="cg_security4" Value="00" />
+        <cg_security5 Name="cg_security5" Value="00" />
+        <cg_security6 Name="cg_security6" Value="00" />
+        <cg_security7 Name="cg_security7" Value="00" />
+        <cg_security8 Name="cg_security8" Value="00" />
+        <cg_security9 Name="cg_security9" Value="00" />
+        <cg_option Name="cg_option" Value="85" />
         <wdt_option Name="wdt_option" Value="EF" />
+        <lvi_option Name="lvi_option" Value="FF" />
+        <clock_option Name="clock_option" Value="F8" />
+        <cg_crc_area Name="cg_crc_area" Value="00" />
+        <cg_onchip Name="cg_onchip" Value="" />
+        <cg_iawctl_value Name="cg_iawctl_value" Value="00" />
+        <cg_ocd_ram_size Name="cg_ocd_ram_size" Value="256" />
+        <pior_value Name="pior_value" Value="04" />
+        <pior1_value Name="pior1_value" Value="00" />
+        <ocdstart Name="ocdstart" Value="7FF00" />
         <rrm Name="rrm" Value="7FF00" />
+        <cg_pms_value Name="cg_pms_value" Value="00" />
       </GlobleUserTag>
     </TAG>
   </DIR>
@@ -2705,7 +2705,7 @@
           <setting name="Transmit_end_callback_function" value="generated" />
           <setting name="Transmit_end_interrupt_priority" value="3" />
           <setting name="Receive_error_interrupt_priority" value="3" />
-          <setting name="Receive_end_interrupt_priority" value="2" />
+          <setting name="Receive_end_interrupt_priority" value="3" />
           <setting name="Reveive_Data_Level" value="Normal" />
           <setting name="Receive_error_interrupt" value="not used" />
         </Both_UART3>

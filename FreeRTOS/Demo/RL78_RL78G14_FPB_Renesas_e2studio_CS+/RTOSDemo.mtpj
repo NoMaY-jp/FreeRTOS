@@ -4397,7 +4397,6 @@ src\frtos_config
     &lt;/TRDCLKUSE1&gt;
     &lt;dtc_vectortable Name="dtc_vectortable" Value="1047808" /&gt;
     &lt;dtc_controldata_0 Name="dtc_controldata_0" Value="1047872" /&gt;
-    &lt;dtc_controldata_1 Name="dtc_controldata_1" Value="0" /&gt;
     &lt;CodePath Name="CodePath" Text="src\" /&gt;
     &lt;ReportType Name="ReportType" Text="Html" /&gt;
     &lt;CreationDateType Name="CreationDateType" Text="NoDate" /&gt;
@@ -6821,7 +6820,7 @@ src\frtos_config
           &lt;setting name="Transmit_end_callback_function" value="generated" /&gt;
           &lt;setting name="Transmit_end_interrupt_priority" value="3" /&gt;
           &lt;setting name="Receive_error_interrupt_priority" value="3" /&gt;
-          &lt;setting name="Receive_end_interrupt_priority" value="2" /&gt;
+          &lt;setting name="Receive_end_interrupt_priority" value="3" /&gt;
           &lt;setting name="Reveive_Data_Level" value="Normal" /&gt;
           &lt;setting name="Receive_error_interrupt" value="not used" /&gt;
         &lt;/Both_UART3&gt;
