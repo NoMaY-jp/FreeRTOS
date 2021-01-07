@@ -33,7 +33,10 @@ Includes
 #include "r_cg_serial.h"
 /* Start user code for include. Do not edit comment generated here */
 #include "r_cg_dtc.h"
+#include "UART3.h"
 #include "freertos_start.h"
+#include "r_cg_userdefine.h"
+#if 0
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -46,9 +49,16 @@ uint8_t * gp_uart3_rx_address;         /* uart3 receive buffer address */
 uint16_t  g_uart3_rx_count;            /* uart3 receive data number */
 uint16_t  g_uart3_rx_length;           /* uart3 receive data length */
 /* Start user code for global. Do not edit comment generated here */
+#endif /* #if 0 */
+volatile uint8_t * gp_uart3_tx_address;        /* uart3 transmit buffer address */
+volatile uint16_t  g_uart3_tx_count;           /* uart3 transmit data number */
+volatile uint8_t * gp_uart3_rx_address;        /* uart3 receive buffer address */
+volatile uint16_t  g_uart3_rx_count;           /* uart3 receive data number */
+volatile uint16_t  g_uart3_rx_length;          /* uart3 receive data length */
 TaskHandle_t       g_uart3_tx_task;            /* uart3 send task */
 TaskHandle_t       g_uart3_rx_task;            /* uart3 receive task */
-volatile bool      g_uart3_rx_error_flag;      /* uart3 receive error flag */
+volatile uint8_t   g_uart3_rx_error_type;      /* uart3 receive error flags */
+volatile uint8_t   g_uart3_rx_abort_type;      /* uart3 receive abort flags including timeout error */
 
 void U_UART3_Receive_Stop(void);               /* for internal use */
 void U_UART3_Send_Stop(void);                  /* for internal use */
@@ -222,7 +232,7 @@ MD_STATUS R_UART3_Send(uint8_t * const tx_buf, uint16_t tx_num)
 
 /******************************************************************************
 * Function Name: U_UART3_Start
-* Description  : This function starts the UART3 module.
+* Description  : This function starts the UART3 module using reception Ring Buffer.
 * Arguments    : None
 * Return Value : None
 ******************************************************************************/
@@ -235,7 +245,7 @@ void U_UART3_Start(void)
 
 /******************************************************************************
 * Function Name: U_UART3_Receive_Wait
-* Description  : This function receives UART3 data.
+* Description  : This function receives UART3 data using Ring Buffer.
 * Arguments    : rx_buf -
 *                    receive buffer pointer
 *                rx_num -
@@ -252,39 +262,82 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
     MD_STATUS status = MD_OK;
     uint32_t value;
 
-    if (rx_num < 1U)
+    if (rx_num < 1U || UART3_RX_BUFF_SIZE < rx_num)
     {
         status = MD_ARGERROR;
     }
     else
     {
+        /* I don't think it is good to call this in a critical section. */
         g_uart3_rx_task = xTaskGetCurrentTaskHandle_R_Helper();
-        U_UART3_Receive( rx_buf, rx_num );
 
-        /* Wait for a notification from the interrupt/callback */
-        value = ulTaskNotifyTake_R_Helper( rx_wait );
+        taskENTER_CRITICAL();
 
-        if (0U == value)
+        if (rx_num <= (u_uart3_chk_status() & UART3_RX_BUFF_SIZE_BITS))
         {
-            /* Timeout */
-            U_UART3_Receive_Stop();
+            /* Requested data can be obtained immediately. */
+
+            taskEXIT_CRITICAL();
+
             g_uart3_rx_task = NULL;
 
-            /* Check an unhandled notification from timeout till stop */
-            value = ulTaskNotifyTake_R_Helper( 0 );
+            g_uart3_rx_length = 0U; /* This should be done before get_blk() here. */
+            u_uart3_get_blk( (uint8_t *)rx_buf, rx_num );
+            *p_err_type = 0U;
+            status = MD_OK;
         }
-
-        if (0U != value)
+        else if (0 != g_uart3_rx_error_type)
         {
-            /* Normal receive end or receive error */
-            *p_err_type = (value >> 8) & 0xFFU;
-            status = value & 0xFFU;
+            /* Requested data cannot be obtained never. */
+
+            taskEXIT_CRITICAL();
+
+            g_uart3_rx_task = NULL;
+
+            g_uart3_rx_abort_type = g_uart3_rx_error_type;
+            *p_err_type = g_uart3_rx_error_type;
+            status = MD_RECV_ERROR;
         }
         else
         {
-            /* Timeout */
-            *p_err_type = SCI_EVT_RXWAIT_TMOT;
-            status = MD_RECV_TIMEOUT;
+            /* Requested data cannot be obtained now but it will be obtained later. */
+            U_UART3_Receive( rx_buf, rx_num );
+
+            taskEXIT_CRITICAL();
+
+            /* Wait for a notification from the interrupt/callback */
+            value = ulTaskNotifyTake_R_Helper( rx_wait );
+
+            if (0U == value)
+            {
+                /* Timeout */
+                U_UART3_Receive_Stop();
+                g_uart3_rx_task = NULL;
+
+                /* Check an unhandled notification from timeout till stop */
+                value = ulTaskNotifyTake_R_Helper( 0 );
+            }
+
+            if (0U != value)
+            {
+                /* Normal receive end or receive error */
+                g_uart3_rx_abort_type = (value >> 8) & 0xFFU;
+                *p_err_type = (value >> 8) & 0xFFU;
+                status = value & 0xFFU;
+
+                if (MD_OK == status)
+                {
+                    u_uart3_get_blk( (uint8_t *)gp_uart3_rx_address, g_uart3_rx_length );
+                    g_uart3_rx_length = 0U; /* This can be done after get_blk() here. */
+                }
+            }
+            else
+            {
+                /* Timeout */
+                g_uart3_rx_abort_type = SCI_EVT_RXWAIT_TMOT;
+                *p_err_type = SCI_EVT_RXWAIT_TMOT;
+                status = MD_RECV_TIMEOUT;
+            }
         }
     }
 
@@ -293,14 +346,15 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
 
 static void U_UART3_Receive(volatile uint8_t * rx_buf, uint16_t rx_num)
 {
-    /* This function should be called in SRMK3==1 */
-    R_UART3_Receive( (uint8_t *)rx_buf, rx_num );
-    SRMK3 = 0U;        /* enable INTSR3 interrupt */
+    /* This function should be called in either SRMK3==1 or DI */
+    g_uart3_rx_count = 0xFFFFU;
+    g_uart3_rx_length = rx_num;
+    gp_uart3_rx_address = rx_buf;
 }
 
 /******************************************************************************
 * Function Name: U_UART3_Receive_Stop
-* Description  : This function stops the UART3 data reception.
+* Description  : This function stops the UART3 data reception using Ring Buffer.
 * Arguments    : None
 * Return Value : None
 * Note         : This is called from others internally.
@@ -312,16 +366,19 @@ void U_UART3_Receive_Stop(void)
 
 /******************************************************************************
 * Function Name: U_UART3_Receive_ClearError
-* Description  : This function clears errors.
+* Description  : This function clears errors and re-initializes Ring Buffer.
 * Arguments    : None
 * Return Value : None
 ******************************************************************************/
 void U_UART3_Receive_ClearError(void)
 {
-    g_uart3_rx_error_flag = false;
+    g_uart3_rx_abort_type = 0U;
+    g_uart3_rx_error_type = 0U;
     (void) RXD3;       /* dummy read */
     SIR13 = 0x0007U;   /* clear UART3 error flags */
     SRIF3 = 0U;        /* clear INTSR3 interrupt flag */
+    g_uart3_rx_length = 0U;
+    u_uart3_init_bf();
 }
 
 /******************************************************************************

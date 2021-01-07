@@ -88,6 +88,10 @@ void task_CONIO(void * pvParameters)
             }
             else if (MD_RECV_ERROR == status)
             {
+                if (SCI_EVT_RXBUF_OVFL & err_type)
+                {
+                    vPrintString( "Ring Buffer Overflow Error\n" );
+                }
                 if (SCI_EVT_FRAMING_ERR & err_type)
                 {
                     vPrintString( "Framing Error\n" );

@@ -403,7 +403,7 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
 void U_UART3_Receive_ClearError(void);
 MD_STATUS U_UART3_Send_Receive_Wait(uint8_t * tx_buf, uint16_t tx_num, volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_type, TickType_t txrx_wait);
 
-/*#define SCI_EVT_RXBUF_OVFL  0x80U*/
+#define SCI_EVT_RXBUF_OVFL  0x80U
 /*#define SCI_EVT_RXDTC_SWOR  0x80U*/
 #define SCI_EVT_RXWAIT_TMOT 0x40U
 #define SCI_EVT_OVFL_ERR    _0001_SAU_OVERRUN_ERROR /* 0x0001U */

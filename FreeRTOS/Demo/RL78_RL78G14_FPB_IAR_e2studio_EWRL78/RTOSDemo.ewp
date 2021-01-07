@@ -2385,6 +2385,15 @@
         <file>
             <name>$PROJ_DIR$\src\rl78g14fpbdef.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\src\UART3.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\UART3.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\UART3.txt</name>
+        </file>
     </group>
     <file>
         <name>$PROJ_DIR$\Applilet3.ipcf</name>

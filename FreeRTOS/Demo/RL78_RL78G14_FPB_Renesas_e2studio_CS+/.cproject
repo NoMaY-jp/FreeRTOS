@@ -164,6 +164,7 @@
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_CONIO.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED0.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED1.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/UART3.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Renesas\CS+\CC\CC-RL\V1.09.00\lib\rl78em4r.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Renesas\CS+\CC\CC-RL\V1.09.00\lib\rl78em4s99.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Renesas\CS+\CC\CC-RL\V1.09.00\lib\malloc_n.lib&quot;"/>

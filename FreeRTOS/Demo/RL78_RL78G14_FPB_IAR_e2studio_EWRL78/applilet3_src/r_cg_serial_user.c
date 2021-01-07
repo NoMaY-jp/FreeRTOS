@@ -33,8 +33,11 @@ Includes
 #include "r_cg_serial.h"
 /* Start user code for include. Do not edit comment generated here */
 #include "r_cg_dtc.h"
+#include "UART3.h"
 #include "freertos_start.h"
 #include "freertos_isr.h"
+#include "r_cg_userdefine.h"
+#if 0
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -47,9 +50,16 @@ extern uint8_t * gp_uart3_rx_address;         /* uart3 receive buffer address */
 extern uint16_t  g_uart3_rx_count;            /* uart3 receive data number */
 extern uint16_t  g_uart3_rx_length;           /* uart3 receive data length */
 /* Start user code for global. Do not edit comment generated here */
+#endif /* #if 0 */
+extern volatile uint8_t * gp_uart3_tx_address;         /* uart3 send buffer address */
+extern volatile uint16_t  g_uart3_tx_count;            /* uart3 send data number */
+extern volatile uint8_t * gp_uart3_rx_address;         /* uart3 receive buffer address */
+extern volatile uint16_t  g_uart3_rx_count;            /* uart3 receive data number */
+extern volatile uint16_t  g_uart3_rx_length;           /* uart3 receive data length */
 extern TaskHandle_t       g_uart3_tx_task;             /* uart3 send task */
 extern TaskHandle_t       g_uart3_rx_task;             /* uart3 receive task */
-extern volatile bool      g_uart3_rx_error_flag;       /* uart3 receive error flag */
+extern volatile uint8_t   g_uart3_rx_error_type;       /* uart3 receive error flags */
+extern volatile uint8_t   g_uart3_rx_abort_type;       /* uart3 receive abort flags including timeout error */
 
 extern void U_UART3_Receive_Stop(void);                /* for internal use */
 extern void U_UART3_Send_Stop(void);                   /* for internal use */
@@ -128,15 +138,11 @@ static void r_uart3_callback_receiveend(void)
 {
     /* Start user code. Do not edit comment generated here */
 
-    if (false != g_uart3_rx_error_flag)
-    {
-        /* The task had been already notified with error information.
-         */
-        return;
-    }
+    /* U_UART3_Receive_Stop(); Don't stop because reception ring buffer is used. */
 
-    U_UART3_Receive_Stop();
-
+    /* If the task had been already notified or isn't waiting for any notification,
+     * i.e, when g_uart3_rx_task == NULL, actually the task will not be notified.
+     */
     xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, 0x10000 | MD_OK );
 
     /* End user code. Do not edit comment generated here */
@@ -153,7 +159,19 @@ static void r_uart3_callback_softwareoverrun(uint16_t rx_data)
 {
     /* Start user code. Do not edit comment generated here */
 
-    INTERNAL_NOT_USED( rx_data );
+    if (0U == g_uart3_rx_error_type && 0U == g_uart3_rx_abort_type)
+    {
+        u_uart3_callback_receivedata( rx_data );
+
+        if (0U != g_uart3_rx_status)
+        {
+            r_uart3_callback_error( SCI_EVT_RXBUF_OVFL );
+        }
+        else if (g_uart3_rx_length == g_uart3_rx_dtno)
+        {
+            r_uart3_callback_receiveend();
+        }
+    }
 
     /* End user code. Do not edit comment generated here */
 }
@@ -198,10 +216,13 @@ static void r_uart3_callback_error(uint8_t err_type)
 {
     /* Start user code. Do not edit comment generated here */
 
-    g_uart3_rx_error_flag = true;
+    g_uart3_rx_error_type = err_type;
 
     U_UART3_Receive_Stop();
 
+    /* If the task had been already notified or isn't waiting for any notification,
+     * i.e, when g_uart3_rx_task == NULL, actually the task will not be notified.
+     */
     xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, 0x10000 | (err_type << 8) | MD_RECV_ERROR );
 
     /* End user code. Do not edit comment generated here */
