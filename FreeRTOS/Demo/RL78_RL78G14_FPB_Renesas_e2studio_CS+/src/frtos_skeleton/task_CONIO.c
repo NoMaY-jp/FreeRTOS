@@ -124,6 +124,10 @@ void task_CONIO(void * pvParameters)
         status = U_UART3_Send_Wait( (uint8_t *)recv_buff, CON_RECV_DEMO_SIZE );
 
         nop();  /* for breakpoint, check timing chart on Simulator GUI */
+        if (4 == cnt)
+        {
+            nop();  /* for breakpoint, check timing chart on Simulator GUI */
+        }
     }
 
 /* End user code. Do not edit comment generated here */

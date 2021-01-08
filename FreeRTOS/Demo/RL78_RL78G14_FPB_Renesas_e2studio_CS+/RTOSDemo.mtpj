@@ -1269,7 +1269,7 @@
       <SourceItemType2>AsmSource</SourceItemType2>
       <SourceItemGuid3>504775f8-bd52-4f90-a882-2be5600cf7b8</SourceItemGuid3>
       <SourceItemType3>CSource</SourceItemType3>
-      <SourceItemGuid4>b1ca838e-3446-4230-9d10-a74bb37f2c13</SourceItemGuid4>
+      <SourceItemGuid4>0275eafe-4357-445c-89a4-3aaf3afcb181</SourceItemGuid4>
       <SourceItemType4>CSource</SourceItemType4>
       <SourceItemGuid5>b13c8a96-ddad-41b6-865e-9662d63945a8</SourceItemGuid5>
       <SourceItemType5>CSource</SourceItemType5>
@@ -3254,6 +3254,14 @@ src\frtos_config
       <ItemAddTime>637456523376611121</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="0275eafe-4357-445c-89a4-3aaf3afcb181">
+      <ItemAddTime>637456788143193030</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="20d22117-ff68-4821-ab5a-b68b3344b51d">
+      <ItemAddTime>637456788143349742</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="0b7e78c3-aadd-45ee-9f9d-ffac6141eeb2">
       <TimeTagModified-SourceItem0--0>-8586844800100723312</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -3281,7 +3289,7 @@ src\frtos_config
       <SourceItem3-IsLockedByUser>False</SourceItem3-IsLockedByUser>
       <SourceItem3-BuildingTarget-0>True</SourceItem3-BuildingTarget-0>
       <SourceItem3-IndividualCompileOption-0>False</SourceItem3-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem4--0>-8585916188087653555</TimeTagModified-SourceItem4--0>
+      <TimeTagModified-SourceItem4--0>-8585915572711426066</TimeTagModified-SourceItem4--0>
       <SourceItem4-IsLockedByUser>False</SourceItem4-IsLockedByUser>
       <SourceItem4-BuildingTarget-0>True</SourceItem4-BuildingTarget-0>
       <SourceItem4-IndividualCompileOption-0>False</SourceItem4-IndividualCompileOption-0>
@@ -3881,8 +3889,8 @@ src\frtos_config
       <Simulator-Panel-WindowCount>1</Simulator-Panel-WindowCount>
       <Simulator-Panel-DocumentName-0>UgBUAE8AUwBEAGUAbQBvADAALgBwAG4AbAA=</Simulator-Panel-DocumentName-0>
       <Simulator-Panel-Contents-0>FlBhbmVsIGZpbGUgb2YgU00gcGx1cy7///8AAAADAP//AAAJAENQYXJ0c0xlZJb+//8cAgAA2P7//+ABAAABAAEABgAAAAEAAAABAAAAAAAAAAYAAAABAAAAAQAAAAAAAAABAAEAAAAAAMDAwAAAAAAAAAAAAAAA/wAAAAAA9P///wAAAAAAAAAAAAAAAAAAAAAAAAABBwAAMQxNUyBVSSBHb3RoaWMJAAAAAQAETEVEMCUAAAAkPEJhc2ljIEJpdG1hcCBQYXRoPjpcbGVkX2JsdWVfb24uYm1wJTxCYXNpYyBCaXRtYXAgUGF0aD46XGxlZF9ibHVlX29mZi5ibXABAAAAD1A0My9TQ0swMS9TQ0wwMf//AQAMAENQYXJ0c0J1dHRvboj///8cAgAAAAAAAN0BAAABAAEABgAAAAEAAAABAAAAAAAAAAYAAAABAAAAAQAAAAAAAAABAAEAAAAAAMDAwAAAAAAAAAAAAAAA/wAAAAAA9P///wAAAAAAAAAAAAAAAAAAAAAAAAABBwAAMQxNUyBVSSBHb3RoaWMJAAAAAQAGU1dfVVNSJQAAACk8QmFzaWMgQml0bWFwIFBhdGg+OlxidXR0b25fYnVsZV9kb3duLmJtcCc8QmFzaWMgQml0bWFwIFBhdGg+OlxidXR0b25fYnVsZV91cC5ibXAAAAEAIE4AAApQMTM3L0lOVFAwAAAAIE4AAAEAAYAQ////HAIAAFL////gAQAAAQABAAYAAAABAAAAAQAAAAAAAAAGAAAAAQAAAAEAAAAAAAAAAQABAAAAAADAwMAAAAAAAAAAAAAAAP8AAAAAAPT///8AAAAAAAAAAAAAAAAAAAAAAAAAAQcAADEMTVMgVUkgR290aGljCQAAAAEABExFRDElAAAAJDxCYXNpYyBCaXRtYXAgUGF0aD46XGxlZF9ibHVlX29uLmJtcCU8QmFzaWMgQml0bWFwIFBhdGg+OlxsZWRfYmx1ZV9vZmYuYm1wAQAAAA5QNDQvU0kwMS9TREEwMQ==</Simulator-Panel-Contents-0>
-      <Simulator-PrmFile-Contents>AQAAACIAAABzdGRpbwAAAAEAAADAU1MI4LvLAKU98XXAU1MI6NyvAHc98XXgU1MIQj3xdeZ014v03a8AxFNTCAEAAADAU1MIwFNTCAEAAAC03K8AVN2vADDdrwDg+/R1LnqG/v7///883a8AA1IWXQEAAADAU1MIAE08sQgAAABQURZdL1MWXRP28XXwau91+GrvdQYAAACQcdkkfN2vAFgYAHZFyZhnaN2vAPTdrwBAUxZdCAAAAFDdrwB7/Dp2TN2vAAJz8nXgU1MIdN2vAE5TFl3AU1MIgSuXZ5YDOQQAAAAAqN2vAITdrwDF/Jln/////5DdrwDMK5dncgM5BPDdrwDA3a8AJwAAAAEAAQABAAAAECcAAAAAAAAA6////wgAAAAwMDAwMDAwMAIAAAAuXHNlcmlhbAAAAQAAAMBTUwjgu8sApT3xdcBTUwjo3K8Adz3xdeBTUwhCPfF15nTXi/TdrwDEU1MIAQAAAMBTUwjAU1MIAQAAALTcrwBU3a8AMN2vAOD79HUueob+/v///zzdrwADUhZdAQAAAMBTUwgATTyxCAAAAFBRFl0vUxZdE/bxdfBq73X4au91BgAAAJBx2SR83a8AWBgAdkXJmGdo3a8A9N2vAEBTFl0IAAAAUN2vAHv8OnZM3a8AAnPydeBTUwh03a8ATlMWXcBTUwiBK5dnlgM5BAAAAACo3a8AhN2vAMX8mWf/////kN2vAMwrl2dyAzkE8N2vAMDdrwDAAAAAAQAAAAgAAAAwMDAwMDAwMAYAAABVQVJUXzMAAIA/BgAAAFVBUlRfMwAAAAAAAAAAAAAAAAEAAAAIAAAAIMUBAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAEgAAAAAAAAAaQAAAAAAAAAhAAAAAH0AADEAAAAAAAAAMgAAAAAAAAAzAAAAAH0AAGEAAAAAAAAAYgAAAAAAAABjAAAAAH0AAFgAAAAAAAAAWQAAAAAAAABaAAAA</Simulator-PrmFile-Contents>
-      <Simulator-PrsFile-Contents>W0Jyb3dzZVdhdmVdDQpXaW5kb3dbMF0gTGVmdD0wDQpXaW5kb3dbMF0gVG9wPTANCldpbmRvd1swXSBSaWdodD05OTQNCldpbmRvd1swXSBCb3R0b209MjA5DQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gWm9vbT0tNA0KV2luZG93WzBdIFBpbiBDb3VudD01DQpXaW5kb3dbMF0gUGluWzBdTmFtZT1QNDMvU0NLMDEvU0NMMDENCldpbmRvd1swXSBQaW5bMF1GdW5jTmFtZT1MRUQwDQpXaW5kb3dbMF0gUGluWzBdSXNBbmFsb2c9MA0KV2luZG93WzBdIFBpblsxXU5hbWU9UDQ0L1NJMDEvU0RBMDENCldpbmRvd1swXSBQaW5bMV1GdW5jTmFtZT1MRUQxDQpXaW5kb3dbMF0gUGluWzFdSXNBbmFsb2c9MA0KV2luZG93WzBdIFBpblsyXU5hbWU9UDEzNy9JTlRQMA0KV2luZG93WzBdIFBpblsyXUZ1bmNOYW1lPVNXX1VTUg0KV2luZG93WzBdIFBpblsyXUlzQW5hbG9nPTANCldpbmRvd1swXSBQaW5bM11OYW1lPVAxNDMvU0kzMC9SeEQzL1NEQTMwDQpXaW5kb3dbMF0gUGluWzNdRnVuY05hbWU9UnhEMw0KV2luZG93WzBdIFBpblszXUlzQW5hbG9nPTANCldpbmRvd1swXSBQaW5bNF1OYW1lPVAxNDQvU08zMC9UeEQzDQpXaW5kb3dbMF0gUGluWzRdRnVuY05hbWU9VHhEMw0KV2luZG93WzBdIFBpbls0XUlzQW5hbG9nPTANCldpbmRvdyBDb3VudD0xDQpbUGFuZWxdDQpQdWxsVXAgUGlucz1QNDMvU0NLMDEvU0NMMDEsUDQ0L1NJMDEvU0RBMDEsDQpQdWxsRG93biBQaW5zPQ0KV2luZG93WzBdIExlZnQ9MA0KV2luZG93WzBdIFRvcD0yMDkNCldpbmRvd1swXSBSaWdodD01MDANCldpbmRvd1swXSBCb3R0b209MzQ1DQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gRG9jdW1lbnQgTmFtZT1SVE9TRGVtbzAucG5sDQpXaW5kb3cgQ291bnQ9MQ0KW1NlcmlhbF0NCldpbmRvd1swXSBJRk5hbWU9MDAwMDAwMDANCldpbmRvd1swXSBMZWZ0PTUwMA0KV2luZG93WzBdIFRvcD0yMDkNCldpbmRvd1swXSBSaWdodD04NDANCldpbmRvd1swXSBCb3R0b209NTE2DQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gTmFtZT1VQVJUXzMNCldpbmRvd1swXSBEbGdMZWZ0PTQyOTQ5NjcyNzYNCldpbmRvd1swXSBEbGdUb3A9NDI5NDk2NzI5MA0KV2luZG93WzBdIERsZ1JpZ2h0PTMwOA0KV2luZG93WzBdIERsZ0JvdHRvbT01MzMNCldpbmRvd1swXSBEbGdWaXNpYmxlPTENCldpbmRvd1swXSBEbGdGbG9hdGluZz0wDQpXaW5kb3dbMF0gRGxnWFBvcz03MDINCldpbmRvd1swXSBEbGdZUG9zPTQ1OQ0KV2luZG93WzBdIFN0eWxlPTU5NDIyDQpXaW5kb3cgQ291bnQ9MQ0KW01haW5dDQpGbGFnPTANClNob3dTdHlsZT0xDQpNaW5Qb3NpdGlvbi1YPS0xDQpNaW5Qb3NpdGlvbi1ZPS0xDQpNYXhQb3NpdGlvbi1YPS0xDQpNYXhQb3NpdGlvbi1ZPS0xDQpOb3JtYWxQb3NpdGlvbi1MZWZ0PTE4Ng0KTm9ybWFsUG9zaXRpb24tVG9wPTANCk5vcm1hbFBvc2l0aW9uLVJpZ2h0PTEyMDANCk5vcm1hbFBvc2l0aW9uLUJvdHRvbT03MjQNCg==</Simulator-PrsFile-Contents>
+      <Simulator-PrmFile-Contents>AQAAACIAAABzdGRpbwAAAAEAAACo0O0dWML7AKU98XWo0O0dnNzTAHc98XXI0O0dQj3xdblVrLmo3dMArNDtHQEAAACo0O0dqNDtHQEAAABo3NMACN3TAOTc0wDg+/R1BVuBzP7////w3NMAA1JmWwEAAACo0O0drmNyDQgAAABQUWZbL1NmWxP28XXwau91+GrvdQYAAACw4usmMN3TAFgYAHZFyW9mHN3TAKjd0wBAU2ZbCAAAAATd0wB7/Dp2AN3TAAJz8nXI0O0dKN3TAE5TZluo0O0dgStuZvNHrTYAAAAAXN3TADjd0wDF/HBm/////0Td0wDMK25mn0etNqTd0wB03dMAJwAAAAEAAQABAAAAECcAAAAAAAAA6////wgAAAAwMDAwMDAwMAIAAAAuXHNlcmlhbAAAAQAAAKjQ7R1YwvsApT3xdajQ7R2c3NMAdz3xdcjQ7R1CPfF1uVWsuajd0wCs0O0dAQAAAKjQ7R2o0O0dAQAAAGjc0wAI3dMA5NzTAOD79HUFW4HM/v////Dc0wADUmZbAQAAAKjQ7R2uY3INCAAAAFBRZlsvU2ZbE/bxdfBq73X4au91BgAAALDi6yYw3dMAWBgAdkXJb2Yc3dMAqN3TAEBTZlsIAAAABN3TAHv8OnYA3dMAAnPydcjQ7R0o3dMATlNmW6jQ7R2BK25m80etNgAAAABc3dMAON3TAMX8cGb/////RN3TAMwrbmafR602pN3TAHTd0wDAAAAAAQAAAAgAAAAwMDAwMDAwMAYAAABVQVJUXzMAAIA/BgAAAFVBUlRfMwAAAAAAAAAAAAAAAAEAAAAIAAAAgIQeAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAEgAAAAAAAAAaQAAAAAAAAAhAAAAAAAAADEAAAAAAAAAMgAAAAAAAAAzAAAAAAAAAGEAAAAAAAAAYgAAAAAAAABjAAAAAAAAAFgAAAAAAAAAWQAAAAAAAABaAAAA</Simulator-PrmFile-Contents>
+      <Simulator-PrsFile-Contents>W0Jyb3dzZVdhdmVdDQpXaW5kb3dbMF0gTGVmdD0wDQpXaW5kb3dbMF0gVG9wPTANCldpbmRvd1swXSBSaWdodD05OTQNCldpbmRvd1swXSBCb3R0b209MjA5DQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gWm9vbT0wDQpXaW5kb3dbMF0gUGluIENvdW50PTUNCldpbmRvd1swXSBQaW5bMF1OYW1lPVA0My9TQ0swMS9TQ0wwMQ0KV2luZG93WzBdIFBpblswXUZ1bmNOYW1lPUxFRDANCldpbmRvd1swXSBQaW5bMF1Jc0FuYWxvZz0wDQpXaW5kb3dbMF0gUGluWzFdTmFtZT1QNDQvU0kwMS9TREEwMQ0KV2luZG93WzBdIFBpblsxXUZ1bmNOYW1lPUxFRDENCldpbmRvd1swXSBQaW5bMV1Jc0FuYWxvZz0wDQpXaW5kb3dbMF0gUGluWzJdTmFtZT1QMTM3L0lOVFAwDQpXaW5kb3dbMF0gUGluWzJdRnVuY05hbWU9U1dfVVNSDQpXaW5kb3dbMF0gUGluWzJdSXNBbmFsb2c9MA0KV2luZG93WzBdIFBpblszXU5hbWU9UDE0My9TSTMwL1J4RDMvU0RBMzANCldpbmRvd1swXSBQaW5bM11GdW5jTmFtZT1SeEQzDQpXaW5kb3dbMF0gUGluWzNdSXNBbmFsb2c9MA0KV2luZG93WzBdIFBpbls0XU5hbWU9UDE0NC9TTzMwL1R4RDMNCldpbmRvd1swXSBQaW5bNF1GdW5jTmFtZT1UeEQzDQpXaW5kb3dbMF0gUGluWzRdSXNBbmFsb2c9MA0KV2luZG93IENvdW50PTENCltQYW5lbF0NClB1bGxVcCBQaW5zPVA0My9TQ0swMS9TQ0wwMSxQNDQvU0kwMS9TREEwMSwNClB1bGxEb3duIFBpbnM9DQpXaW5kb3dbMF0gTGVmdD0wDQpXaW5kb3dbMF0gVG9wPTIwOQ0KV2luZG93WzBdIFJpZ2h0PTUwMA0KV2luZG93WzBdIEJvdHRvbT0zNDUNCldpbmRvd1swXSBTaG93PTENCldpbmRvd1swXSBEb2N1bWVudCBOYW1lPVJUT1NEZW1vMC5wbmwNCldpbmRvdyBDb3VudD0xDQpbU2VyaWFsXQ0KV2luZG93WzBdIElGTmFtZT0wMDAwMDAwMA0KV2luZG93WzBdIExlZnQ9NTAwDQpXaW5kb3dbMF0gVG9wPTIwOQ0KV2luZG93WzBdIFJpZ2h0PTg0MA0KV2luZG93WzBdIEJvdHRvbT01MTYNCldpbmRvd1swXSBTaG93PTENCldpbmRvd1swXSBOYW1lPVVBUlRfMw0KV2luZG93WzBdIERsZ0xlZnQ9NDI5NDk2NzI3Ng0KV2luZG93WzBdIERsZ1RvcD00Mjk0OTY3MjkwDQpXaW5kb3dbMF0gRGxnUmlnaHQ9MzA4DQpXaW5kb3dbMF0gRGxnQm90dG9tPTUzMw0KV2luZG93WzBdIERsZ1Zpc2libGU9MQ0KV2luZG93WzBdIERsZ0Zsb2F0aW5nPTANCldpbmRvd1swXSBEbGdYUG9zPTcwMg0KV2luZG93WzBdIERsZ1lQb3M9NDU4DQpXaW5kb3dbMF0gU3R5bGU9NTk0MjINCldpbmRvdyBDb3VudD0xDQpbTWFpbl0NCkZsYWc9MA0KU2hvd1N0eWxlPTENCk1pblBvc2l0aW9uLVg9LTENCk1pblBvc2l0aW9uLVk9LTENCk1heFBvc2l0aW9uLVg9LTENCk1heFBvc2l0aW9uLVk9LTENCk5vcm1hbFBvc2l0aW9uLUxlZnQ9MTg2DQpOb3JtYWxQb3NpdGlvbi1Ub3A9LTENCk5vcm1hbFBvc2l0aW9uLVJpZ2h0PTEyMDANCk5vcm1hbFBvc2l0aW9uLUJvdHRvbT03MjMNCg==</Simulator-PrsFile-Contents>
     </Instance>
     <Instance Guid="754eca4d-0f70-4c47-97d1-5dfcddd4123d">
       <DeviceChangedCounter>0</DeviceChangedCounter>
@@ -6846,7 +6854,7 @@ src\frtos_config
           &lt;setting name="Receive_data_direction" value="LSB" /&gt;
           &lt;setting name="Receive_data_length" value="8 bits" /&gt;
           &lt;setting name="Receive_parity" value="none" /&gt;
-          &lt;setting name="RecBaudrate" value="115200" /&gt;
+          &lt;setting name="RecBaudrate" value="2000000" /&gt;
           &lt;setting name="Receive_end_callback_function" value="generated" /&gt;
           &lt;setting name="Receive_error_callback_function" value="generated" /&gt;
           &lt;setting name="Transfer_mode" value="single" /&gt;
@@ -6855,11 +6863,11 @@ src\frtos_config
           &lt;setting name="Transmit_data_length" value="8 bits" /&gt;
           &lt;setting name="Transmit_parity" value="none" /&gt;
           &lt;setting name="Transmit_stop_length" value="1 bit" /&gt;
-          &lt;setting name="TranBaudrate" value="115200" /&gt;
+          &lt;setting name="TranBaudrate" value="2000000" /&gt;
           &lt;setting name="Transmit_end_callback_function" value="generated" /&gt;
           &lt;setting name="Transmit_end_interrupt_priority" value="3" /&gt;
           &lt;setting name="Receive_error_interrupt_priority" value="3" /&gt;
-          &lt;setting name="Receive_end_interrupt_priority" value="3" /&gt;
+          &lt;setting name="Receive_end_interrupt_priority" value="2" /&gt;
           &lt;setting name="Reveive_Data_Level" value="Normal" /&gt;
           &lt;setting name="Receive_error_interrupt" value="not used" /&gt;
         &lt;/Both_UART3&gt;

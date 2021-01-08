@@ -2527,7 +2527,7 @@
           <setting name="Receive_data_direction" value="LSB" />
           <setting name="Receive_data_length" value="8 bits" />
           <setting name="Receive_parity" value="none" />
-          <setting name="RecBaudrate" value="115200" />
+          <setting name="RecBaudrate" value="2000000" />
           <setting name="Receive_end_callback_function" value="generated" />
           <setting name="Receive_error_callback_function" value="generated" />
           <setting name="Transfer_mode" value="single" />
@@ -2536,11 +2536,11 @@
           <setting name="Transmit_data_length" value="8 bits" />
           <setting name="Transmit_parity" value="none" />
           <setting name="Transmit_stop_length" value="1 bit" />
-          <setting name="TranBaudrate" value="115200" />
+          <setting name="TranBaudrate" value="2000000" />
           <setting name="Transmit_end_callback_function" value="generated" />
           <setting name="Transmit_end_interrupt_priority" value="3" />
           <setting name="Receive_error_interrupt_priority" value="3" />
-          <setting name="Receive_end_interrupt_priority" value="3" />
+          <setting name="Receive_end_interrupt_priority" value="2" />
           <setting name="Reveive_Data_Level" value="Normal" />
           <setting name="Receive_error_interrupt" value="not used" />
         </Both_UART3>

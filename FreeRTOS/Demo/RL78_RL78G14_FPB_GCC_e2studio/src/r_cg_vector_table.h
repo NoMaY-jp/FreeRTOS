@@ -28,6 +28,13 @@
 void vPortTickISR(void) __attribute__ ((interrupt));
 void vPortYield(void) __attribute__ ((interrupt));
 
+/*
+ * INT_WDTI (0x04)
+ */
+#define R_Vector_0x4 r_wdt_interrupt
+
+void r_wdt_interrupt(void) __attribute__ ((interrupt));
+
 /* Defines for default */
 
 #ifndef R_Vector_0x4

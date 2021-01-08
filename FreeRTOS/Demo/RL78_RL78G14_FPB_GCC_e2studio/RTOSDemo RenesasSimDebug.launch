@@ -53,7 +53,7 @@
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadImage" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadSymbols" value="true"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.pcRegister" value=""/>
-<stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;set renesas_simulator_debugging_key=0x0001"/>
+<stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="info break&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;set renesas_simulator_debugging_key=0x0001"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setPcRegister" value="false"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setResume" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>

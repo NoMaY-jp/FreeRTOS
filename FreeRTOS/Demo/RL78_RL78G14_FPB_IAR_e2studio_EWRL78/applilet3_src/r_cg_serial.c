@@ -87,7 +87,7 @@ void R_SAU1_Create(void)
     NOP();
     NOP();
     NOP();
-    SPS1 = _0001_SAU_CK00_FCLK_1 | _0010_SAU_CK01_FCLK_1;
+    SPS1 = _0000_SAU_CK00_FCLK_0 | _0000_SAU_CK01_FCLK_0;
     R_UART3_Create();
 }
 
@@ -109,21 +109,21 @@ void R_UART3_Create(void)
     /* Set INTST3 low priority */
     STPR13 = 1U;
     STPR03 = 1U;
-    /* Set INTSR3 low priority */
+    /* Set INTSR3 level2 priority */
     SRPR13 = 1U;
-    SRPR03 = 1U;
+    SRPR03 = 0U;
     SMR12 = _0020_SAU_SMRMN_INITIALVALUE | _0000_SAU_CLOCK_SELECT_CK00 | _0000_SAU_TRIGGER_SOFTWARE |
             _0002_SAU_MODE_UART | _0000_SAU_TRANSFER_END;
     SCR12 = _8000_SAU_TRANSMISSION | _0000_SAU_INTSRE_MASK | _0000_SAU_PARITY_NONE | _0080_SAU_LSB | _0010_SAU_STOP_1 |
             _0007_SAU_LENGTH_8;
-    SDR12 = _8800_UART3_TRANSMIT_DIVISOR;
+    SDR12 = _0E00_UART3_TRANSMIT_DIVISOR;
     NFEN0 |= _40_SAU_RXD3_FILTER_ON;
     SIR13 = _0004_SAU_SIRMN_FECTMN | _0002_SAU_SIRMN_PECTMN | _0001_SAU_SIRMN_OVCTMN;    /* clear error flag */
     SMR13 = _0020_SAU_SMRMN_INITIALVALUE | _0000_SAU_CLOCK_SELECT_CK00 | _0100_SAU_TRIGGER_RXD | _0000_SAU_EDGE_FALL |
             _0002_SAU_MODE_UART | _0000_SAU_TRANSFER_END;
     SCR13 = _4000_SAU_RECEPTION | _0000_SAU_INTSRE_MASK | _0000_SAU_PARITY_NONE | _0080_SAU_LSB | _0010_SAU_STOP_1 |
             _0007_SAU_LENGTH_8;
-    SDR13 = _8800_UART3_RECEIVE_DIVISOR;
+    SDR13 = _0E00_UART3_RECEIVE_DIVISOR;
     SO1 |= _0004_SAU_CH2_DATA_OUTPUT_1;
     SOL1 |= _0000_SAU_CHANNEL2_NORMAL;    /* output level normal */
     SOE1 |= _0004_SAU_CH2_OUTPUT_ENABLE;    /* enable UART3 output */
@@ -362,6 +362,7 @@ static void U_UART3_Receive(volatile uint8_t * rx_buf, uint16_t rx_num)
 void U_UART3_Receive_Stop(void)
 {
     SRMK3 = 1U;        /* disable INTSR3 interrupt */
+    WDTIMK = 1U;       /* disable INTWDTI interrupt (as a software interrupt) */
 }
 
 /******************************************************************************
@@ -377,6 +378,8 @@ void U_UART3_Receive_ClearError(void)
     (void) RXD3;       /* dummy read */
     SIR13 = 0x0007U;   /* clear UART3 error flags */
     SRIF3 = 0U;        /* clear INTSR3 interrupt flag */
+    WDTIIF = 0U;       /* clear INTWDTI interrupt flag (as a software interrupt) */
+    WDTIMK = 0U;       /* enable INTWDTI interrupt (as a software interrupt) */
     g_uart3_rx_length = 0U;
     u_uart3_init_bf();
 }
