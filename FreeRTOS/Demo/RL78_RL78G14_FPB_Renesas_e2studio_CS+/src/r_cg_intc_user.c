@@ -34,8 +34,6 @@ Includes
 /* Start user code for include. Do not edit comment generated here */
 #include "freertos_start.h"
 #include "freertos_isr.h"
-#include "r_cg_userdefine.h"
-#if 0
 /* End user code. Do not edit comment generated here */
 #include "r_cg_userdefine.h"
 
@@ -44,7 +42,6 @@ Pragma directive
 ***********************************************************************************************************************/
 #pragma interrupt r_intc0_interrupt(vect=INTP0)
 /* Start user code for pragma. Do not edit comment generated here */
-#endif /* #if 0 */
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -53,7 +50,7 @@ Global variables and functions
 /* Start user code for global. Do not edit comment generated here */
 extern TaskHandle_t g_intc0_task;      /* intc0 event notify task */
 
-#define r_intc0_interrupt R_CG_FREERTOS_INTERRUPT_EI(r_intc0_interrup, INTP0)
+#define r_intc0_interrupt R_CG_FREERTOS_INTERRUPT_EI(r_intc0_interrupt)
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************

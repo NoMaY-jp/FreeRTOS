@@ -31,9 +31,9 @@ void vPortYield(void) __attribute__ ((interrupt));
 /*
  * INT_WDTI (0x04)
  */
-#define R_Vector_0x4 r_wdt_interrupt
+#define R_Vector_0x4 u_wdt_interrupt
 
-void r_wdt_interrupt(void) __attribute__ ((interrupt));
+void u_wdt_interrupt(void) __attribute__ ((interrupt));
 
 /* Defines for default */
 

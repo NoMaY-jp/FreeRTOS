@@ -28,9 +28,9 @@
 #ifndef DEMO_MAIN_H
 #define DEMO_MAIN_H
 
-/* ATTENTION : 2M baud UART is used by also the command console demo of the full
+/* ATTENTION : 2Mbps UART is used by also the command console demo of the full
 demo, the comprehensive test and demo which is one of the two standard RTOS Demos,
-for the RL78/G14 Fast Prototyping Board, in stead of 115.2K baud UART used by the
+for the RL78/G14 Fast Prototyping Board, instead of 115.2Kbps UART used by the
 same demo for the RX72N Envision Kit. */
 
 /* Set mainCREATE_NON_STANDARD_RTOS_DEMO to one to run the following non standard
@@ -41,11 +41,11 @@ The non standard RTOS Demo:
 
 (1)   Toggle LED0 every 500ms.
 (2)   Toggle LED1 when SW_USER is pushed.
-(3-1) Echo every three charcters through the UART3 using the following sockets.
+(3-1) Echo every three characters through the UART3 using the following sockets.
         RxD3 : J7-D0
         TxD3 : J7-D1
         GND  : J8-G
-        Baud rate : 2M baud
+        Baud rate : 2Mbps
 (3-2) Blink LED1 faster if parity error, framing error, overrun error or timeout
 occurs. The error state is cleared when SW_USER is pushed. */
 #define mainCREATE_NON_STANDARD_RTOS_DEMO	0

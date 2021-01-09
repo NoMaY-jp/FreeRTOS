@@ -56,8 +56,11 @@ extern volatile uint8_t   g_uart3_rx_abort_type;       /* uart3 receive abort fl
 extern void U_UART3_Receive_Stop(void);                /* for internal use */
 extern void U_UART3_Send_Stop(void);                   /* for internal use */
 
+static void u_wdt_request_interrupt(void);             /* wdt interrupt request */
+
+#define r_uart3_interrupt_receive R_CG_INTERRUPT_EI(r_uart3_interrupt_receive)
 #define r_uart3_interrupt_send R_CG_FREERTOS_INTERRUPT_EI(r_uart3_interrupt_send)
-#define r_wdt_interrupt R_CG_FREERTOS_INTERRUPT_EI(r_wdt_interrupt)
+#define u_wdt_interrupt R_CG_FREERTOS_INTERRUPT_EI(u_wdt_interrupt)
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -130,12 +133,12 @@ static void r_uart3_callback_receiveend(void)
 
     /* U_UART3_Receive_Stop(); Don't stop because reception ring buffer is used. */
 
-    /* Generate INTWDTI interrupt manually as a software intetrrupt.  The interrupt
+    /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
      * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
      * But the interrupt priority of INTWDTI is configured as the same priority of
      * the SYSCALL/kernel interrupt.
      */
-    WDTIIF = 1U;
+    u_wdt_request_interrupt();
 
     /* End user code. Do not edit comment generated here */
 }
@@ -212,12 +215,12 @@ static void r_uart3_callback_error(uint8_t err_type)
 
     U_UART3_Receive_Stop();
 
-    /* Generate INTWDTI interrupt manually as a software intetrrupt.  The interrupt
+    /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
      * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
      * But the interrupt priority of INTWDTI is configured as the same priority of
      * the SYSCALL/kernel interrupt.
      */
-    WDTIIF = 1U;
+    u_wdt_request_interrupt();
 
     /* End user code. Do not edit comment generated here */
 }
@@ -225,12 +228,23 @@ static void r_uart3_callback_error(uint8_t err_type)
 /* Start user code for adding. Do not edit comment generated here */
 
 /***********************************************************************************************************************
-* Function Name: r_intc5_interrupt
+* Function Name: u_wdt_request_interrupt
+* Description  : This function requests INTWDT interrupt (as a software intetrrupt).
+* Arguments    : None
+* Return Value : None
+***********************************************************************************************************************/
+static void u_wdt_request_interrupt(void)
+{
+    WDTIIF = 1U;       /* set INTWDTI interrupt flag (as a software interrupt) */
+}
+
+/***********************************************************************************************************************
+* Function Name: u_wdt_interrupt
 * Description  : This function is INTWDT interrupt (as a software intetrrupt) service routine.
 * Arguments    : None
 * Return Value : None
 ***********************************************************************************************************************/
-void r_wdt_interrupt(void)
+void u_wdt_interrupt(void)
 {
     if (0U == g_uart3_rx_error_type)
     {
