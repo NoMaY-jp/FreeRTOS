@@ -43,11 +43,14 @@ extern "C" {
 Macro definitions
 ******************************************************************************/
 
+#define STACK_BUFF_BYTES(task, interruptstub, mergin) ((task)+(interruptstub)+(mergin))
+
 #if defined(__CCRL__)
 
 /* The stack usage analysis tool 'Call Walker' provides detail stack usage information.
- * The following table is based on the result of analysis 10-Jan-2021 12:09:59.
- * stack space for interrupt stub is calcurated as follows:
+ * The following table is based on the result of analysis 10-Jan-2021 12:09:59, 21:14:06.
+ *
+ * The stack space for interrupt stub is calculated as follows:
  *
  * interrupt stub size = space for task context + space for nested interrupt
  *                     = (PC + PSW + REGS + usCriticalNesting) + (PC + PSW + REGS)
@@ -55,11 +58,27 @@ Macro definitions
  *                     = 30
  */
 
-#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 52, 30, 32 ) )
-#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 52, 30, 32 ) )
-#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 72, 30, 32 ) )
-#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  4, 30, 32 ) )
-#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 64, 30, 32 ) )
+#if 1
+
+/* The following table is for the case of using compile optimization of CC-RL. */
+
+#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  52, 30, 32 ) )
+#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  52, 30, 32 ) )
+#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  72, 30, 32 ) )
+#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   4, 30, 32 ) )
+#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  64, 30, 32 ) )
+
+#else
+
+/* The following table is for the case of NOT using compile optimization of CC-RL. */
+
+#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  78, 30, 32 ) )
+#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  78, 30, 32 ) )
+#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 110, 30, 32 ) )
+#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   6, 30, 32 ) )
+#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  90, 30, 32 ) )
+
+#endif
 
 #elif defined(__GNUC__) ||  defined(__ICCRL78__)
 
@@ -124,8 +143,6 @@ do{ \
         *(TaskHandle_t *)pxCreatedTask = xCreatedTask; \
     } \
 }while (0)
-
-#define STACK_BUFF_BYTES(task, interruptstub, mergin) ((task)+(interruptstub)+(mergin))
 
 #ifdef __cplusplus
 }
