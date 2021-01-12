@@ -144,6 +144,53 @@ do{ \
     } \
 }while (0)
 
+#define vTaskNotifyGiveFromISR_R_Helper(pxTask) \
+do{ \
+    if (NULL != *pxTask) \
+    { \
+        BaseType_t sHigherPriorityTaskWoken = pdFALSE; \
+\
+        /* Notify the task that the interrupt/callback is complete. */ \
+        vTaskNotifyGiveFromISR( *pxTask, &sHigherPriorityTaskWoken ); \
+\
+        /* There are no interrupt/callback in progress, so no tasks to notify. */ \
+        *pxTask = NULL; \
+\
+        portYIELD_FROM_ISR( sHigherPriorityTaskWoken ); \
+    } \
+}while (0)
+
+#define xTaskNotifyFromISR_R_Helper(pxTask, ulValue) \
+do{ \
+    if (NULL != *pxTask) \
+    { \
+        BaseType_t sHigherPriorityTaskWoken = pdFALSE; \
+\
+        /* Notify the task that the interrupt/callback is complete. */ \
+        xTaskNotifyFromISR( *pxTask, ulValue, eSetValueWithOverwrite, &sHigherPriorityTaskWoken ); \
+\
+        /* There are no interrupt/callback in progress, so no tasks to notify. */ \
+        *pxTask = NULL; \
+\
+        portYIELD_FROM_ISR( sHigherPriorityTaskWoken ); \
+    } \
+}while (0)
+
+#define ulTaskNotifyTake_R_Helper(xTicksToWait) \
+( \
+    /* Wait to be notified that the interrupt/callback is complete. */\
+    ulTaskNotifyTake( pdTRUE, xTicksToWait ) \
+)
+
+#define xTaskGetCurrentTaskHandle_R_Helper() \
+( \
+    /* Ensure the calling task does not already have a notification pending. */ \
+    ulTaskNotifyTake( pdTRUE, 0 ), \
+\
+    /* Return the handle of the calling task. */ \
+    xTaskGetCurrentTaskHandle() \
+)
+
 #ifdef __cplusplus
 }
 #endif

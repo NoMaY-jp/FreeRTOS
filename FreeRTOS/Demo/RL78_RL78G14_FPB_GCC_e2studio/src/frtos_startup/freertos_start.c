@@ -43,6 +43,8 @@ Includes   <System Includes> , "Project Includes"
 Macro definitions
 ******************************************************************************/
 
+#define NL "\n"
+
 /******************************************************************************
 Typedef definitions
 ******************************************************************************/
@@ -153,15 +155,15 @@ void vApplicationSetupTimerInterrupt(void)
 #if( configASSERT_DEFINED == 1 )
 void vAssertCalled(void)
 {
-    volatile unsigned long ul = 0;
+    static volatile unsigned long ul;
 
     taskENTER_CRITICAL();
     {
-        vPrintString( "\r\n" );
-        vPrintString( "Assertion failed!\n" );
+        vPrintString( NL "Assertion failed!" NL );
 
         /* Use the debugger to set ul to a non-zero value in order to step out
         of this function to determine why it was called. */
+        ul = 0;
         while( 0 == ul )
         {
             portNOP();
@@ -232,19 +234,16 @@ void vApplicationMallocFailedHook(void)
     configTOTAL_HEAP_SIZE configuration constant in FreeRTOSConfig.h. */
 
     taskENTER_CRITICAL();
-    vPrintString( "\r\n" );
-    vPrintString( "Insufficient heap memory!\n" );
+
+    vPrintString( NL "Insufficient heap memory!" NL );
 
     /* Force an assert. */
     configASSERT( ( volatile void * ) NULL );
 
-#if 0
-    taskDISABLE_INTERRUPTS();
     for( ; ; )
     {
         /* Loop here */
     };
-#endif
 
 } /* End of function vApplicationMallocFailedHook() */
 #endif /* configUSE_MALLOC_FAILED_HOOK == 1 */
@@ -270,19 +269,16 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
     function is called if a stack overflow is detected. */
 
     taskENTER_CRITICAL();
-    vPrintString( "\r\n" );
-    vPrintString( "Stack Overflow!\n" );
+
+    vPrintString( NL "Stack Overflow!" NL );
 
     /* Force an assert. */
     configASSERT( ( volatile void * ) NULL );
 
-#if 0
-    taskDISABLE_INTERRUPTS();
     for( ; ; )
     {
         /* Loop here */
     };
-#endif
 
 } /* End of function vApplicationStackOverflowHook() */
 #endif /* configCHECK_FOR_STACK_OVERFLOW != 0 */
@@ -350,11 +346,7 @@ void vPrintString(const char *pcMessage)
 
     extern void sim_debugger_console( const char *message );
 
-    taskENTER_CRITICAL();
-    {
-        sim_debugger_console( pcMessage );
-    }
-    taskEXIT_CRITICAL();
+    sim_debugger_console( pcMessage );
 
 } /* End of function vPrintString() */
 
@@ -471,8 +463,8 @@ static void prvSetupHardware( void )
     }
     #endif
 
-    /* Write "\r\n" to the UART and/or the Debug Console. */
-    vSendString( "\r\n" );
+    /* Write new line to the UART and/or the Debug Console. */
+    vSendString( NL );
 }
 /*-----------------------------------------------------------*/
 
@@ -525,82 +517,3 @@ int8_t *sbrk( size_t size )
 #endif /* defined(__GNUC__) */
 /*-----------------------------------------------------------*/
 
-/******************************************************************************
-* Function Name: vTaskNotifyGiveFromISR_R_Helper
-* Description  : Helper function for vTaskNotifyGiveFromISR().
-* Arguments    : pxTask -
-*                    Pointer to task handler
-* Return value : None.
-******************************************************************************/
-void vTaskNotifyGiveFromISR_R_Helper(TaskHandle_t *pxTask)
-{
-    if (NULL != *pxTask)
-    {
-        BaseType_t sHigherPriorityTaskWoken = pdFALSE;
-
-        /* Notify the task that the interrupt/callback is complete. */
-        vTaskNotifyGiveFromISR( *pxTask, &sHigherPriorityTaskWoken );
-
-        /* There are no interrupt/callback in progress, so no tasks to notify. */
-        *pxTask = NULL;
-
-        portYIELD_FROM_ISR( sHigherPriorityTaskWoken );
-    }
-
-} /* End of function vTaskNotifyGiveFromISR_R_Helper() */
-
-/******************************************************************************
-* Function Name: xTaskNotifyFromISR_R_Helper
-* Description  : Helper function for xTaskNotifyFromISR().
-* Arguments    : pxTask -
-*                    Pointer to task handler
-*                ulValue -
-*                    Notification value
-* Return value : None. (This is not the same as xTaskNotifyFromISR().)
-******************************************************************************/
-void xTaskNotifyFromISR_R_Helper(TaskHandle_t *pxTask, uint32_t ulValue)
-{
-    if (NULL != *pxTask)
-    {
-        BaseType_t sHigherPriorityTaskWoken = pdFALSE;
-
-        /* Notify the task that the interrupt/callback is complete. */
-        xTaskNotifyFromISR( *pxTask, ulValue, eSetValueWithOverwrite, &sHigherPriorityTaskWoken );
-
-        /* There are no interrupt/callback in progress, so no tasks to notify. */
-        *pxTask = NULL;
-
-        portYIELD_FROM_ISR( sHigherPriorityTaskWoken );
-    }
-
-} /* End of function xTaskNotifyFromISR_R_Helper() */
-
-/******************************************************************************
-* Function Name: ulTaskNotifyTake_R_Helper
-* Description  : Helper function for ulTaskNotifyTake().
-* Arguments    : xTicksToWait -
-*                    Ticks to wait
-* Return value : The same return value from ulTaskNotifyTake().
-******************************************************************************/
-uint32_t ulTaskNotifyTake_R_Helper(TickType_t xTicksToWait)
-{
-    /* Wait to be notified that the interrupt/callback is complete. */
-    return ulTaskNotifyTake( pdTRUE, xTicksToWait );
-
-} /* End of function ulTaskNotifyTake_R_Helper() */
-
-/******************************************************************************
-* Function Name: xTaskGetCurrentTaskHandle_R_Helper
-* Description  : Helper function for xTaskGetCurrentTaskHandle().
-* Arguments    : None.
-* Return value : The same return value from xTaskGetCurrentTaskHandle().
-******************************************************************************/
-TaskHandle_t xTaskGetCurrentTaskHandle_R_Helper(void)
-{
-    /* Ensure the calling task does not already have a notification pending. */
-    ulTaskNotifyTake( pdTRUE, 0 );
-
-    /* Return the handle of the calling task. */
-    return xTaskGetCurrentTaskHandle();
-
-} /* End of function xTaskGetCurrentTaskHandle_R_Helper() */
