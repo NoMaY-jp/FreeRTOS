@@ -5,6 +5,7 @@ language.settings.xml
 cgprojectDatas.datas
 cgproject.cgp
 com.renesas.smc.e2studio.qe.xml
+DebugVirtualConsoleSetting.xml
 CoverageSetting.xml
 IORegisterSetting.xml
 *.rcpc
@@ -30,3 +31,7 @@ DefaultBuild/
 
 # Ignore PDF documents of Renesas API
 r01an*.pdf
+
+# Ignore unnecessary automatic generated file by Windows
+
+Thumbs.db

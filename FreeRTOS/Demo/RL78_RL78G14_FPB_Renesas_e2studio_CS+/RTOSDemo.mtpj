@@ -1000,6 +1000,13 @@
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>a364b29f-a3e0-4280-9edb-9e22cfb19acd</ParentItem>
     </Instance>
+    <Instance Guid="1461a7d2-6cee-4ba6-8457-6241388f4427">
+      <Name>freertos_isr.h</Name>
+      <Type>File</Type>
+      <RelativePath>src\frtos_startup\freertos_isr.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>fca860ba-2a98-4f3a-a2a6-2aba8deeaee5</ParentItem>
+    </Instance>
     <Instance Guid="4e6fb9a2-20a2-467b-9cb3-9074f04499a1">
       <Name>freertos_object_init.c</Name>
       <Type>File</Type>
@@ -1587,7 +1594,8 @@ generate
       <COptionPreinclude-0 />
       <COptionSignedBitfield-0>None</COptionSignedBitfield-0>
       <COptionStrictStd-0>False</COptionStrictStd-0>
-      <COptionD-0>RL78_G14_FPB
+      <COptionD-0>__PRINTF_TINY__
+RL78_G14_FPB
 RENESAS_SIMULATOR_DEBUGGING=1
 </COptionD-0>
       <COptionMisra2004RuleNumberApply-0 />
@@ -3262,6 +3270,14 @@ src\frtos_config
       <ItemAddTime>637456788143349742</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="2a7a1f06-be61-4b5a-81b7-72782ee23281">
+      <ItemAddTime>637460707645850193</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="1461a7d2-6cee-4ba6-8457-6241388f4427">
+      <ItemAddTime>637460712513347882</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="0b7e78c3-aadd-45ee-9f9d-ffac6141eeb2">
       <TimeTagModified-SourceItem0--0>-8586844800100723312</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -3389,9 +3405,9 @@ src\frtos_config
       <SourceItem30-IsLockedByUser>False</SourceItem30-IsLockedByUser>
       <SourceItem30-BuildingTarget-0>True</SourceItem30-BuildingTarget-0>
       <SourceItem30-IndividualCompileOption-0>False</SourceItem30-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem31--0>-8585920354556000077</TimeTagModified-SourceItem31--0>
+      <TimeTagModified-SourceItem31--0>-8585911899556213472</TimeTagModified-SourceItem31--0>
       <SourceItem31-IsLockedByUser>False</SourceItem31-IsLockedByUser>
-      <SourceItem31-BuildingTarget-0>True</SourceItem31-BuildingTarget-0>
+      <SourceItem31-BuildingTarget-0>False</SourceItem31-BuildingTarget-0>
       <SourceItem31-IndividualCompileOption-0>False</SourceItem31-IndividualCompileOption-0>
       <TimeTagModified-SourceItem32--0>-8585922772464724522</TimeTagModified-SourceItem32--0>
       <SourceItem32-IsLockedByUser>False</SourceItem32-IsLockedByUser>

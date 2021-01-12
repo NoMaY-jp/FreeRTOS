@@ -90,7 +90,7 @@
 <intAttribute key="com.renesas.hardwaredebug.rx.jlink.work_ram_start" value="4096"/>
 <booleanAttribute key="com.renesas.hardwaredebug.timemeasurement" value="true"/>
 <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
-<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="false"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RL78_RL78G14_FPB_Renesas_e2studio_CS+\HardwareDebug\RTOSDemo.x"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value="0"/>

@@ -45,7 +45,7 @@
 <booleanAttribute key="com.renesas.hardwaredebug.rl78.sim.RL78SimDebugToolSettings.resetAfterReload" value="true"/>
 <booleanAttribute key="com.renesas.hardwaredebug.timemeasurement" value="true"/>
 <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
-<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="false"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RL78_RL78G14_FPB_GCC_e2studio\HardwareDebug\RTOSDemo.elf"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value=""/>
@@ -53,7 +53,7 @@
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadImage" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadSymbols" value="true"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.pcRegister" value=""/>
-<stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="info break&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;set renesas_simulator_debugging_key=0x0001"/>
+<stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;set renesas_simulator_debugging_key=0x0001"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setPcRegister" value="false"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setResume" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>

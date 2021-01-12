@@ -57,7 +57,7 @@
 <stringAttribute key="com.renesas.hardwaredebug.rl78.e2.hook_start_func" value="0x0"/>
 <booleanAttribute key="com.renesas.hardwaredebug.timemeasurement" value="true"/>
 <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
-<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="false"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RL78_RL78G14_FPB_IAR_e2studio_EWRL78\HardwareDebug\RTOSDemo.out"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value="0"/>
