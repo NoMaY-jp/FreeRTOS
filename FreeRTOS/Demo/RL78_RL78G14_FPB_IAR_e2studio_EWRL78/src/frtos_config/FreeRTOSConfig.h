@@ -74,7 +74,7 @@ multiple evaluation boards. */
 
 /* Dynamic allocation and static allocation. */
 #define configSUPPORT_DYNAMIC_ALLOCATION        1
-#define configSUPPORT_STATIC_ALLOCATION         1
+#define configSUPPORT_STATIC_ALLOCATION         0
 
 /* This demo makes use of one or more example stats formatting functions.  These
 format the raw data provided by the uxTaskGetSystemState() function in to human
@@ -143,5 +143,60 @@ required to ensure flase positive timing errors are not reported. */
 tasks are created using configMINIMAL_STACK_SIZE (in this FreeRTOSConfig.h, it is
 130) for the stack size setting as default but some of then need more stack. */
 #define ebEVENT_GROUP_SET_BITS_TEST_TASK_STACK_SIZE		(( unsigned short ) 150)
+
+#if defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__)
+
+#include "demo_main.h"
+
+#if (mainCREATE_NON_STANDARD_RTOS_DEMO == 1)
+
+/* Override settings to explicitly exclude features which aren't used but linked.
+Many features are automatically excluded. (i.e. they aren't linked if they aren't
+used.) But some features need to be explicity excluded. */
+
+#undef configUSE_IDLE_HOOK
+#undef configUSE_TICK_HOOK
+#undef configMINIMAL_STACK_SIZE
+#undef configTOTAL_HEAP_SIZE
+#undef configCHECK_FOR_STACK_OVERFLOW
+#undef configASSERT_DEFINED
+#undef configUSE_MALLOC_FAILED_HOOK
+
+#undef configSUPPORT_STATIC_ALLOCATION
+
+#undef configASSERT
+
+#undef configUSE_TIMERS
+#undef configTIMER_TASK_PRIORITY
+#undef configTIMER_QUEUE_LENGTH
+#undef configTIMER_TASK_STACK_DEPTH
+
+#undef INCLUDE_xTimerPendFunctionCall
+
+#define configUSE_IDLE_HOOK				0
+#define configUSE_TICK_HOOK				0
+#define configMINIMAL_STACK_SIZE		(( unsigned short ) 0)
+#define configTOTAL_HEAP_SIZE			( ( size_t ) 2 )
+#define configCHECK_FOR_STACK_OVERFLOW	0
+#define configASSERT_DEFINED			0
+#define configUSE_MALLOC_FAILED_HOOK	0
+
+#define configUSE_TIMERS				0
+#define configTIMER_TASK_PRIORITY		(1)
+#define configTIMER_QUEUE_LENGTH		(1)
+#define configTIMER_TASK_STACK_DEPTH	(0)
+
+#define INCLUDE_xTimerPendFunctionCall	0
+
+#define configSUPPORT_STATIC_ALLOCATION         1
+
+/* Don't define configASSERT() even if it is as followings. This definition makes
+FreeRTOS kernel source code confused.
+#define configASSERT()
+*/
+
+#endif /* mainCREATE_NON_STANDARD_RTOS_DEMO == 1 */
+
+#endif /* defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__) */
 
 #endif /* FREERTOS_CONFIG_H */

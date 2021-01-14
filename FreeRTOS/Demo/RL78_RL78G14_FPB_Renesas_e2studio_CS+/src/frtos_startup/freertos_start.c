@@ -356,6 +356,11 @@ void vPrintString(const char *pcMessage)
 *                 semaphore, mutex...) if required.
 * Arguments     : None.
 * Return value  : None.
+* Note          : Be aware that auto variables created on the stack in this
+*                 function will be discarded after returning from this function.
+*                 Therefore don't pass the address of auto variables to tasks.
+*                 (Moreover, the stack used before starting scheduler will be
+*                 re-used as interrupt dedicated stack after scheduler started.)
 ******************************************************************************/
 void Processing_Before_Start_Kernel(void)
 {
@@ -517,3 +522,97 @@ int8_t *sbrk( size_t size )
 #endif /* defined(__GNUC__) */
 /*-----------------------------------------------------------*/
 
+#if (mainCREATE_NON_STANDARD_RTOS_DEMO == 1)
+
+/* Override or add empty functions which are actually unused but necessary to link
+non standard demo successfully. */
+
+#if defined(__CCRL__)
+int __far sprintf( char __far * restrict s, const char __far * restrict format, ...)
+#elif defined(__GNUC__) || defined(__ICCRL78__)
+int sprintf (char *__restrict s, const char *__restrict format, ...)
+#endif
+{
+    INTERNAL_NOT_USED( s );
+    INTERNAL_NOT_USED( format );
+
+    return -1;
+}
+
+TimerHandle_t xTimerCreate( const char * const pcTimerName,
+                            const TickType_t xTimerPeriodInTicks,
+                            const UBaseType_t uxAutoReload,
+                            void * const pvTimerID,
+                            TimerCallbackFunction_t pxCallbackFunction )
+{
+    INTERNAL_NOT_USED( pcTimerName );
+    INTERNAL_NOT_USED( xTimerPeriodInTicks );
+    INTERNAL_NOT_USED( uxAutoReload );
+    INTERNAL_NOT_USED( pvTimerID );
+    INTERNAL_NOT_USED( pxCallbackFunction );
+
+    return NULL;
+}
+
+BaseType_t xTimerGenericCommand( TimerHandle_t xTimer,
+                                 const BaseType_t xCommandID,
+                                 const TickType_t xOptionalValue,
+                                 BaseType_t * const pxHigherPriorityTaskWoken,
+                                 const TickType_t xTicksToWait )
+{
+    INTERNAL_NOT_USED( xTimer );
+    INTERNAL_NOT_USED( xCommandID );
+    INTERNAL_NOT_USED( xOptionalValue );
+    INTERNAL_NOT_USED( pxHigherPriorityTaskWoken );
+    INTERNAL_NOT_USED( xTicksToWait );
+
+    return pdFAIL;
+}
+
+void vTimerSetTimerID( TimerHandle_t xTimer, void * pvNewID )
+{
+    INTERNAL_NOT_USED( xTimer );
+    INTERNAL_NOT_USED( pvNewID );
+}
+
+void * pvTimerGetTimerID( const TimerHandle_t xTimer )
+{
+    INTERNAL_NOT_USED( xTimer );
+
+    return NULL;
+}
+void vTimerSetReloadMode( TimerHandle_t xTimer, const UBaseType_t uxAutoReload )
+{
+    INTERNAL_NOT_USED( xTimer );
+    INTERNAL_NOT_USED( uxAutoReload );
+}
+
+BaseType_t xTimerIsTimerActive( TimerHandle_t xTimer )
+{
+    INTERNAL_NOT_USED( xTimer );
+
+    return pdFALSE;
+}
+
+BaseType_t xEventGroupClearBitsFromISR( EventGroupHandle_t xEventGroup,
+                                        const EventBits_t uxBitsToClear )
+{
+    INTERNAL_NOT_USED( xEventGroup );
+    INTERNAL_NOT_USED( uxBitsToClear );
+
+    return pdFAIL;
+}
+
+BaseType_t xEventGroupSetBitsFromISR( EventGroupHandle_t xEventGroup,
+                                      const EventBits_t uxBitsToSet,
+                                      BaseType_t * pxHigherPriorityTaskWoken )
+{
+    INTERNAL_NOT_USED( xEventGroup );
+    INTERNAL_NOT_USED( uxBitsToSet );
+    INTERNAL_NOT_USED( pxHigherPriorityTaskWoken );
+
+    return pdFAIL;
+}
+
+#endif /* mainCREATE_NON_STANDARD_RTOS_DEMO == 1 */
+/*-----------------------------------------------------------*/
