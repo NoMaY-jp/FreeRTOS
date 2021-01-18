@@ -3,15 +3,36 @@
 
 #if defined(__CCRL__)
 
+#ifndef __CDT_PARSER__
+#define R_CG_ASM(...) __VA_ARGS__
+#else
+#define R_CG_ASM(...)
+#endif
+
 extern __near void vPortFreeRTOSInterruptCommonHandler_C(void);
 extern __near void vPortInterruptCommonHandler_C(void);
 
-#pragma inline_asm vPortFreeRTOSInterruptCommonHandler_C_Helper
-static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper(void (__near *func)(void))
+#pragma inline_asm vPortFreeRTOSInterruptCommonHandler_C_Helper1
+static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper1(void)
+{
+    /* Always ucInterruptNesting is zero here, so interrupt stack isn't in use here. */
+    R_CG_ASM( oneb !_ucInterruptStackNesting );
+    R_CG_ASM( movw de, sp );
+    R_CG_ASM( movw sp, #loww(__STACK_ADDR_START) );
+    /* Don't enable nested interrupts from the beginning of interrupt until
+    the completion of switching the stack from task stacks to interrupt
+    stack.  If it is enabled before switching the stack to interrupt
+    stack, each task stack need additional space for nested interrupt.
+    Moreover ucInterruptStackNesting has to be modified under DI state
+    so that the stack isn't switched correctly. */
+}
+
+#pragma inline_asm vPortFreeRTOSInterruptCommonHandler_C_Helper2
+static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper2(void (__near *func)(void))
 {
     /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */
-    movw bc, ax
-    br !_vPortFreeRTOSInterruptCommonHandler_C
+    R_CG_ASM( movw bc, ax );
+    R_CG_ASM( br !_vPortFreeRTOSInterruptCommonHandler_C );
 }
 
 #define R_CG_FREERTOS_INTERRUPT(function) \
@@ -20,7 +41,8 @@ static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper(void (__near *fu
     static void __near function(void) \
     { \
         /* vPortFreeRTOSInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortFreeRTOSInterruptCommonHandler_C_Helper( (void (__near *)(void))_##function ); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper1(); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper2( (void (__near *)(void))_##function ); \
         /* The following is intended to remove the epilogue code. */ \
         while (1) {} \
     } \
@@ -31,21 +53,40 @@ static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper(void (__near *fu
     static void __near _##function(void); \
     static void __near function(void) \
     { \
-        __EI(); \
         /* vPortFreeRTOSInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortFreeRTOSInterruptCommonHandler_C_Helper( (void (__near *)(void))_##function ); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper1(); \
+        __EI(); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper2( (void (__near *)(void))_##function ); \
         /* The following is intended to remove the epilogue code. */ \
         while (1) {} \
     } \
     static void __near _##function
 
+#pragma inline_asm vPortInterruptCommonHandler_C_Helper1
+static void __near vPortInterruptCommonHandler_C_Helper1(void)
+{
+    R_CG_ASM( .local .skip_switching_sp );
+    /* If ucInterruptNesting isn't zero, interrupt stack is in use. */
+    R_CG_ASM( cmp0 !_ucInterruptStackNesting );
+    R_CG_ASM( bnz $.skip_switching_sp );
+    R_CG_ASM( movw de, sp );
+    R_CG_ASM( movw sp, #loww(__STACK_ADDR_START) );
+    R_CG_ASM( .skip_switching_sp: );
+    R_CG_ASM( inc !_ucInterruptStackNesting );
+    /* Don't enable nested interrupts from the beginning of interrupt until
+    the completion of switching the stack from task stacks to interrupt
+    stack.  If it is enabled before switching the stack to interrupt
+    stack, each task stack need additional space for nested interrupt.
+    Moreover ucInterruptStackNesting has to be modified under DI state
+    so that the stack isn't switched correctly. */
+}
 
-#pragma inline_asm vPortInterruptCommonHandler_C_Helper
-static void __near vPortInterruptCommonHandler_C_Helper(void (__near *func)(void))
+#pragma inline_asm vPortInterruptCommonHandler_C_Helper2
+static void __near vPortInterruptCommonHandler_C_Helper2(void (__near *func)(void))
 {
     /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */
-    movw bc, ax
-    br !_vPortInterruptCommonHandler_C
+    R_CG_ASM( movw bc, ax );
+    R_CG_ASM( br !_vPortInterruptCommonHandler_C );
 }
 
 #define R_CG_INTERRUPT(function) \
@@ -54,7 +95,8 @@ static void __near vPortInterruptCommonHandler_C_Helper(void (__near *func)(void
     static void __near function(void) \
     { \
         /* vPortInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortInterruptCommonHandler_C_Helper( (void (__near *)(void))_##function ); \
+        vPortInterruptCommonHandler_C_Helper1(); \
+        vPortInterruptCommonHandler_C_Helper2( (void (__near *)(void))_##function ); \
         /* The following is intended to remove the epilogue code. */ \
         while (1) {} \
     } \
@@ -65,9 +107,10 @@ static void __near vPortInterruptCommonHandler_C_Helper(void (__near *func)(void
     static void __near _##function(void); \
     static void __near function(void) \
     { \
-        __EI(); \
         /* vPorInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortInterruptCommonHandler_C_Helper( (void (__near *)(void))_##function ); \
+        vPortInterruptCommonHandler_C_Helper1(); \
+        __EI(); \
+        vPortInterruptCommonHandler_C_Helper2( (void (__near *)(void))_##function ); \
         /* The following is intended to remove the epilogue code. */ \
         while (1) {} \
     } \

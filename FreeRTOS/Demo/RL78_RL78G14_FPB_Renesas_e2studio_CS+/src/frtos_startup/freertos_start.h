@@ -52,31 +52,32 @@ Macro definitions
  *
  * The stack space for interrupt stub is calculated as follows:
  *
- * interrupt stub size = space for task context + space for nested interrupt
- *                     = (PC + PSW + REGS + usCriticalNesting) + (PC + PSW + REGS)
- *                     = (3 + 1 + 10 + 2) + (3 + 1 + 10)
- *                     = 30
+ * interrupt stub size = MAX( space for task context, space for nested interrupt )
+ *                     = MAX( (PC + PSW + REGS + usCriticalNesting), (PC + PSW + REGS) )
+ *                     = MAX( (3 + 1 + 10 + 2), (3 + 1 + 10) )
+ *                     = MAX( 16, 14 )
+ *                     = 16
  */
 
 #if 1
 
 /* The following table is for the case of using compile optimization of CC-RL. */
 
-#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  52, 30, 32 ) )
-#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  52, 30, 32 ) )
-#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  72, 30, 32 ) )
-#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   4, 30, 32 ) )
-#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  64, 30, 32 ) )
+#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  52, 16, 32 ) )
+#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  52, 16, 32 ) )
+#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  72, 16, 32 ) )
+#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   4, 16, 32 ) )
+#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  64, 16, 32 ) )
 
 #else
 
 /* The following table is for the case of NOT using compile optimization of CC-RL. */
 
-#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  78, 30, 32 ) )
-#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  78, 30, 32 ) )
-#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 110, 30, 32 ) )
-#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   6, 30, 32 ) )
-#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  90, 30, 32 ) )
+#define task_LED0_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  78, 16, 32 ) )
+#define task_LED1_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  78, 16, 32 ) )
+#define task_CONIO_STACK_BUFF_DEPTH pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES( 110, 16, 32 ) )
+#define main_task_STACK_BUFF_DEPTH  pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(   6, 16, 32 ) )
+#define IdleTask_STACK_BUFF_DEPTH   pdBYTES_TO_STACK_DEPTH( STACK_BUFF_BYTES(  90, 16, 32 ) )
 
 #endif
 
