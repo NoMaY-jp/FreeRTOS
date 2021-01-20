@@ -15,10 +15,12 @@ extern __near void vPortInterruptCommonHandler_C(void);
 #pragma inline_asm vPortFreeRTOSInterruptCommonHandler_C_Helper1
 static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper1(void)
 {
-    /* Always ucInterruptNesting is zero here, so interrupt stack isn't in use here. */
-    R_CG_ASM( oneb !_ucInterruptStackNesting );
-    R_CG_ASM( movw de, sp );
-    R_CG_ASM( movw sp, #loww(__STACK_ADDR_START) );
+    /* Switch stack pointers.  Interrupts which call FreeRTOS API functions
+    ending with FromISR cannot be nested.  On the other hand, high priority
+    interrupts which don't call any FreeRTOS API functions can be nested. */
+    R_CG_ASM(  MOVW DE, SP  );
+    R_CG_ASM(  MOVW SP, #LOWW(__STACK_ADDR_START)  );
+    R_CG_ASM(  ONEB !_ucInterruptStackNesting  ); /* change: 0 --> 1 */
     /* Don't enable nested interrupts from the beginning of interrupt until
     the completion of switching the stack from task stacks to interrupt
     stack.  If it is enabled before switching the stack to interrupt
@@ -31,8 +33,8 @@ static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper1(void)
 static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper2(void (__near *func)(void))
 {
     /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */
-    R_CG_ASM( movw bc, ax );
-    R_CG_ASM( br !_vPortFreeRTOSInterruptCommonHandler_C );
+    R_CG_ASM(  MOVW BC, AX  );
+    R_CG_ASM(  BR !_vPortFreeRTOSInterruptCommonHandler_C  );
 }
 
 #define R_CG_FREERTOS_INTERRUPT(function) \
@@ -65,14 +67,14 @@ static void __near vPortFreeRTOSInterruptCommonHandler_C_Helper2(void (__near *f
 #pragma inline_asm vPortInterruptCommonHandler_C_Helper1
 static void __near vPortInterruptCommonHandler_C_Helper1(void)
 {
-    R_CG_ASM( .local .skip_switching_sp );
-    /* If ucInterruptNesting isn't zero, interrupt stack is in use. */
-    R_CG_ASM( cmp0 !_ucInterruptStackNesting );
-    R_CG_ASM( bnz $.skip_switching_sp );
-    R_CG_ASM( movw de, sp );
-    R_CG_ASM( movw sp, #loww(__STACK_ADDR_START) );
-    R_CG_ASM( .skip_switching_sp: );
-    R_CG_ASM( inc !_ucInterruptStackNesting );
+    /* Switch stack pointers.  Interrupts which call FreeRTOS API functions
+    ending with FromISR cannot be nested.  On the other hand, high priority
+    interrupts which don't call any FreeRTOS API functions can be nested. */
+    R_CG_ASM(  MOVW DE, SP  );
+    R_CG_ASM(  CMP0 !_ucInterruptStackNesting  );
+    R_CG_ASM(  SKNZ  );
+    R_CG_ASM(  MOVW SP, #LOWW(__STACK_ADDR_START)  );
+    R_CG_ASM(  INC !_ucInterruptStackNesting  ); /* change: 0~3 --> 1~4 */
     /* Don't enable nested interrupts from the beginning of interrupt until
     the completion of switching the stack from task stacks to interrupt
     stack.  If it is enabled before switching the stack to interrupt
@@ -85,8 +87,8 @@ static void __near vPortInterruptCommonHandler_C_Helper1(void)
 static void __near vPortInterruptCommonHandler_C_Helper2(void (__near *func)(void))
 {
     /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */
-    R_CG_ASM( movw bc, ax );
-    R_CG_ASM( br !_vPortInterruptCommonHandler_C );
+    R_CG_ASM(  MOVW BC, AX  );
+    R_CG_ASM(  BR !_vPortInterruptCommonHandler_C  );
 }
 
 #define R_CG_INTERRUPT(function) \
@@ -193,38 +195,55 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
 
 #elif defined(__ICCRL78__)
 
+#define R_CG_ASM(...) __VA_ARGS__ "\n"
+
+extern volatile __near uint8_t ucInterruptStackNesting;
 extern __near_func void vPortFreeRTOSInterruptCommonHandler_C(void);
 extern __near_func void vPortInterruptCommonHandler_C(void);
 
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
 
-#define vPortFreeRTOSInterruptCommonHandler_C_Helper(_function) \
-    __asm \
-    ( \
-        /* The following ICCRL78 interrupt code doesn't work with Renesas RL78 simulator. \
-         * "movw ax, 0xffffc          \n" \
-         * "push ax                   \n" \
-         * So the following code is added. */ \
-        "mov  a, cs                \n" \
-        "mov  x, a                 \n" \
-        "mov  a, es                \n" \
-        "movw [sp], ax             \n" \
-        /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
-        "movw bc, #_" #_function " \n" \
-        "br   _vPortFreeRTOSInterruptCommonHandler_C \n" \
-    )
+#define vPortFreeRTOSInterruptCommonHandler_C_Helper0() \
+__asm \
+( \
+    /* The following ICCRL78 interrupt code doesn't work with Renesas RL78 simulator. \
+    R_CG_ASM("  MOVW AX, 0xFFFFC  ") \
+    R_CG_ASM("  PUSH AX  ") \
+    So the following code is added. */ \
+    R_CG_ASM("  MOV  A, ES  ") \
+    R_CG_ASM("  MOV [SP+1], A  ") \
+)
 
 #else
 
-#define vPortFreeRTOSInterruptCommonHandler_C_Helper(_function) \
-    __asm \
-    ( \
-        /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
-        "movw bc, #_" #_function " \n" \
-        "br   _vPortFreeRTOSInterruptCommonHandler_C \n" \
-    )
+#define vPortFreeRTOSInterruptCommonHandler_C_Helper0()
 
 #endif
+
+#define vPortFreeRTOSInterruptCommonHandler_C_Helper1() \
+__asm \
+( \
+    /* Switch stack pointers.  Interrupts which call FreeRTOS API functions \
+    ending with FromISR cannot be nested.  On the other hand, high priority \
+    interrupts which don't call any FreeRTOS API functions can be nested. */ \
+    R_CG_ASM("  MOVW DE, SP  ") \
+    R_CG_ASM("  MOVW SP, #LWRD(SFE(CSTACK))  ") \
+    R_CG_ASM("  ONEB _ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
+    /* Don't enable nested interrupts from the beginning of interrupt until \
+    the completion of switching the stack from task stacks to interrupt \
+    stack.  If it is enabled before switching the stack to interrupt \
+    stack, each task stack need additional space for nested interrupt. \
+    Moreover ucInterruptStackNesting has to be modified under DI state \
+    so that the stack isn't switched correctly. */ \
+)
+
+#define vPortFreeRTOSInterruptCommonHandler_C_Helper2(_function) \
+__asm \
+( \
+    /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
+    R_CG_ASM("  MOVW BC, # " "_" #_function ) \
+    R_CG_ASM("  BR _vPortFreeRTOSInterruptCommonHandler_C  ") \
+)
 
 #define R_CG_FREERTOS_INTERRUPT(function) \
     function(void); \
@@ -232,8 +251,11 @@ extern __near_func void vPortInterruptCommonHandler_C(void);
     static __interrupt void function(void) \
     { \
         /* vPortFreeRTOSInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortFreeRTOSInterruptCommonHandler_C_Helper(_##function); \
-        /* The following line is just to prevent the symbol getting optimised away. */ \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper0(); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper1(); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper2(_##function); \
+        /* The following lines are just to prevent the symbol getting optimised away. */ \
+        ucInterruptStackNesting = 1; \
         vPortFreeRTOSInterruptCommonHandler_C(); \
         /* The following is intended to remove the epilogue code. */ \
         while (1) {} \
@@ -245,45 +267,47 @@ extern __near_func void vPortInterruptCommonHandler_C(void);
     __near_func void _##function(void); \
     static __interrupt void function(void) \
     { \
-        __enable_interrupt(); \
         /* vPortFreeRTOSInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortFreeRTOSInterruptCommonHandler_C_Helper(_##function); \
-        /* The following line is just to prevent the symbol getting optimised away. */ \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper0(); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper1(); \
+        __enable_interrupt(); \
+        vPortFreeRTOSInterruptCommonHandler_C_Helper2(_##function); \
+        /* The following lines are just to prevent the symbol getting optimised away. */ \
+        ucInterruptStackNesting = 1; \
         vPortFreeRTOSInterruptCommonHandler_C(); \
         /* The following is intended to remove the epilogue code. */ \
         while (1) {} \
     } \
     __near_func void _##function
 
-#if defined(RENESAS_SIMULATOR_DEBUGGING)
+#define vPortInterruptCommonHandler_C_Helper0() vPortFreeRTOSInterruptCommonHandler_C_Helper0()
 
-#define vPortInterruptCommonHandler_C_Helper(_function) \
-    __asm \
-    ( \
-        /* The following ICCRL78 interrupt code doesn't work with Renesas RL78 simulator. \
-         * "movw ax, 0xffffc          \n" \
-         * "push ax                   \n" \
-         * So the following code is added. */ \
-        "mov  a, cs                \n" \
-        "mov  x, a                 \n" \
-        "mov  a, es                \n" \
-        "movw [sp], ax             \n" \
-        /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
-        "movw bc, #_" #_function " \n" \
-        "br   _vPortInterruptCommonHandler_C \n" \
-    )
+#define vPortInterruptCommonHandler_C_Helper1() \
+__asm \
+( \
+    /* Switch stack pointers.  Interrupts which call FreeRTOS API functions \
+    ending with FromISR cannot be nested.  On the other hand, high priority \
+    interrupts which don't call any FreeRTOS API functions can be nested. */ \
+    R_CG_ASM("  MOVW DE, SP  ") \
+    R_CG_ASM("  CMP0 _ucInterruptStackNesting  ") \
+    R_CG_ASM("  SKNZ  ") \
+    R_CG_ASM("  MOVW SP, #LWRD(SFE(CSTACK))  ") \
+    R_CG_ASM("  INC  _ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
+    /* Don't enable nested interrupts from the beginning of interrupt until \
+    the completion of switching the stack from task stacks to interrupt \
+    stack.  If it is enabled before switching the stack to interrupt \
+    stack, each task stack need additional space for nested interrupt. \
+    Moreover ucInterruptStackNesting has to be modified in the same DI \
+    period so that the next switching of the stack is perfomed correctly. */ \
+)
 
-#else
-
-#define vPortInterruptCommonHandler_C_Helper(_function) \
-    __asm \
-    ( \
-        /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
-        "movw bc, #_" #_function " \n" \
-        "br   _vPortInterruptCommonHandler_C \n" \
-    )
-
-#endif
+#define vPortInterruptCommonHandler_C_Helper2(_function) \
+__asm \
+( \
+    /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
+    R_CG_ASM("  MOVW BC, # " "_" #_function ) \
+    R_CG_ASM("  BR _vPortInterruptCommonHandler_C  ") \
+)
 
 #define R_CG_INTERRUPT(function) \
     function(void); \
@@ -291,7 +315,9 @@ extern __near_func void vPortInterruptCommonHandler_C(void);
     static __interrupt void function(void) \
     { \
         /* vPortFreeRTOSInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortInterruptCommonHandler_C_Helper(_##function); \
+        vPortInterruptCommonHandler_C_Helper0(); \
+        vPortInterruptCommonHandler_C_Helper1(); \
+        vPortInterruptCommonHandler_C_Helper2(_##function); \
         /* The following line is just to prevent the symbol getting optimised away. */ \
         vPortInterruptCommonHandler_C(); \
         /* The following is intended to remove the epilogue code. */ \
@@ -304,9 +330,11 @@ extern __near_func void vPortInterruptCommonHandler_C(void);
     __near_func void _##function(void); \
     static __interrupt void function(void) \
     { \
-        __enable_interrupt(); \
         /* vPortFreeRTOSInterruptCommonHandler_C_Helper() doesn't return here. */ \
-        vPortInterruptCommonHandler_C_Helper(_##function); \
+        vPortInterruptCommonHandler_C_Helper0(); \
+        vPortInterruptCommonHandler_C_Helper1(); \
+        __enable_interrupt(); \
+        vPortInterruptCommonHandler_C_Helper2(_##function); \
         /* The following line is just to prevent the symbol getting optimised away. */ \
         vPortInterruptCommonHandler_C(); \
         /* The following is intended to remove the epilogue code. */ \
