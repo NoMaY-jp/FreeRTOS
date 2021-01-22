@@ -120,6 +120,10 @@ static void __near vPortInterruptCommonHandler_C_Helper2(void (__near *func)(voi
 
 #elif defined(__GNUC__)
 
+#define R_CG_ASM(...) __VA_ARGS__ "\n"
+
+extern volatile void * stack;
+extern volatile uint8_t ucInterruptStackNesting;
 extern void vPortFreeRTOSInterruptCommonHandler_C(void) __attribute__((section(".lowtext")));
 extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext")));
 
@@ -135,14 +139,22 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
     _##function(void) __attribute__((section(".lowtext." "_" #function))); \
     __asm \
     ( \
-        ".section .lowtext." #function ",\"ax\",@progbits \n" \
-        ".global _" #function " \n" \
-        "_" #function ": \n" \
-        "sel rb0 \n" \
-        "push ax \n" \
-        "push bc \n" \
-        "movw bc, #__" #function " \n" \
-        "br !_vPortFreeRTOSInterruptCommonHandler_C \n" \
+        R_CG_ASM("  .SECTION .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .GLOBAL _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  SEL RB0  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW AX, SP  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  ONEB !_ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
+        \
+        R_CG_ASM("  SUBW AX, #(28 - 2)  ") \
+        R_CG_ASM("  XCHW AX, DE  ") \
+        R_CG_ASM("  MOVW [DE+22], AX  ") \
+        R_CG_ASM("  MOVW AX, BC  ") \
+        R_CG_ASM("  MOVW [DE+24], AX  ") \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  BR !_vPortFreeRTOSInterruptCommonHandler_C  ") \
     ); \
     void _##function
 
@@ -150,15 +162,24 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
     _##function(void) __attribute__((section(".lowtext." "_" #function))); \
     __asm \
     ( \
-        ".section .lowtext." #function ",\"ax\",@progbits \n" \
-        ".global _" #function " \n" \
-        "_" #function ": \n" \
-        "ei \n" \
-        "sel rb0 \n" \
-        "push ax \n" \
-        "push bc \n" \
-        "movw bc, #__" #function " \n" \
-        "br !_vPortFreeRTOSInterruptCommonHandler_C \n" \
+        R_CG_ASM("  .SECTION .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .GLOBAL _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  SEL RB0  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW AX, SP  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  ONEB !_ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
+        \
+        R_CG_ASM("  EI  ") \
+        \
+        R_CG_ASM("  SUBW AX, #(28 - 2)  ") \
+        R_CG_ASM("  XCHW AX, DE  ") \
+        R_CG_ASM("  MOVW [DE+22], AX  ") \
+        R_CG_ASM("  MOVW AX, BC  ") \
+        R_CG_ASM("  MOVW [DE+24], AX  ") \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  BR !_vPortFreeRTOSInterruptCommonHandler_C  ") \
     ); \
     void _##function
 
@@ -166,14 +187,22 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
     _##function(void) __attribute__((section(".lowtext." "_" #function))); \
     __asm \
     ( \
-        ".section .lowtext." #function ",\"ax\",@progbits \n" \
-        ".global _" #function " \n" \
-        "_" #function ": \n" \
-        "sel rb0 \n" \
-        "push ax \n" \
-        "push bc \n" \
-        "movw bc, #__" #function " \n" \
-        "br !_vPortInterruptCommonHandler_C \n" \
+        R_CG_ASM("  .SECTION .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .GLOBAL _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  SEL RB0  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW AX, SP  ") \
+        R_CG_ASM("  CMP0 !_ucInterruptStackNesting  ") \
+        R_CG_ASM("  SKNZ  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  INC !_ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
+        \
+        R_CG_ASM("  PUSH BC  ") \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  PUSH DE  ") \
+        R_CG_ASM("  MOVW DE, AX  ") \
+        R_CG_ASM("  BR !_vPortInterruptCommonHandler_C  ") \
     ); \
     void _##function
 
@@ -181,15 +210,24 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
     _##function(void) __attribute__((section(".lowtext." "_" #function))); \
     __asm \
     ( \
-        ".section .lowtext." #function ",\"ax\",@progbits \n" \
-        ".global _" #function " \n" \
-        "_" #function ": \n" \
-        "ei \n" \
-        "sel rb0 \n" \
-        "push ax \n" \
-        "push bc \n" \
-        "movw bc, #__" #function " \n" \
-        "br !_vPortInterruptCommonHandler_C \n" \
+        R_CG_ASM("  .SECTION .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .GLOBAL _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  SEL RB0  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW AX, SP  ") \
+        R_CG_ASM("  CMP0 !_ucInterruptStackNesting  ") \
+        R_CG_ASM("  SKNZ  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  INC !_ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
+        \
+        R_CG_ASM("  EI  ") \
+        \
+        R_CG_ASM("  PUSH BC  ") \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  PUSH DE  ") \
+        R_CG_ASM("  MOVW DE, AX  ") \
+        R_CG_ASM("  BR !_vPortInterruptCommonHandler_C  ") \
     ); \
     void _##function
 
@@ -241,7 +279,7 @@ __asm \
 __asm \
 ( \
     /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
-    R_CG_ASM("  MOVW BC, # " "_" #_function ) \
+    R_CG_ASM("  MOVW BC, #" "_" #_function  ) \
     R_CG_ASM("  BR _vPortFreeRTOSInterruptCommonHandler_C  ") \
 )
 
@@ -292,7 +330,7 @@ __asm \
     R_CG_ASM("  CMP0 _ucInterruptStackNesting  ") \
     R_CG_ASM("  SKNZ  ") \
     R_CG_ASM("  MOVW SP, #LWRD(SFE(CSTACK))  ") \
-    R_CG_ASM("  INC  _ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
+    R_CG_ASM("  INC _ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
     /* Don't enable nested interrupts from the beginning of interrupt until \
     the completion of switching the stack from task stacks to interrupt \
     stack.  If it is enabled before switching the stack to interrupt \
@@ -305,7 +343,7 @@ __asm \
 __asm \
 ( \
     /* vPortFreeRTOSInterruptCommonHandler_C() doesn't return here. */ \
-    R_CG_ASM("  MOVW BC, # " "_" #_function ) \
+    R_CG_ASM("  MOVW BC, #" "_" #_function  ) \
     R_CG_ASM("  BR _vPortInterruptCommonHandler_C  ") \
 )
 
