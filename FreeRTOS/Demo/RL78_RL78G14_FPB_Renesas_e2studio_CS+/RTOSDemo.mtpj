@@ -1,9 +1,9 @@
 ﻿<CubeSuiteProject>
-  <ProductVersion>9.04.00.00</ProductVersion>
+  <ProductVersion>9.05.00.00</ProductVersion>
   <Class Guid="68f4a651-b9cd-473b-a595-b00447132ffa">
     <Instance Guid="00000000-0000-0000-0000-000000000000">
       <FormatVersion>2.0</FormatVersion>
-      <FileVersion>9.4</FileVersion>
+      <FileVersion>9.5</FileVersion>
       <ProjectGuid>e4273b99-1a26-4344-a4c9-23e0249a53c2</ProjectGuid>
       <ProjectItemGuid>4383b424-c21b-4ce9-b8e1-16a5757c589c</ProjectItemGuid>
       <FileCategoryGuid>fd4185a5-5fcd-4bc6-8caf-a515c94051dd</FileCategoryGuid>
@@ -23,9 +23,10 @@
       <Property>2bd4ae88-0603-4a5e-a2af-287d19123a6e</Property>
     </Instance>
     <Instance Guid="3da029ce-f32f-4b28-a2b1-2e15c31ead31">
-      <Name>コード生成</Name>
+      <Name>Code Generator</Name>
       <Type>Category</Type>
       <ParentItem>fd4185a5-5fcd-4bc6-8caf-a515c94051dd</ParentItem>
+      <Property>a2eeb886-853a-4c34-b007-feafe183e3f2</Property>
     </Instance>
     <Instance Guid="b6e9fef0-f2fb-438a-ace6-98a05e091ebc">
       <Name>cstart.asm</Name>
@@ -1196,6 +1197,9 @@
     <Instance Guid="2bd4ae88-0603-4a5e-a2af-287d19123a6e">
       <MemoCount>0</MemoCount>
     </Instance>
+    <Instance Guid="a2eeb886-853a-4c34-b007-feafe183e3f2">
+      <MemoCount>0</MemoCount>
+    </Instance>
     <Instance Guid="878ec973-1dbf-4543-9e68-6cd94217e9ed">
       <MemoCount>0</MemoCount>
     </Instance>
@@ -1473,7 +1477,7 @@
       <GeneralOptionObjPath-0>%BuildModeName%</GeneralOptionObjPath-0>
       <TemporaryFolder-0 />
       <GeneralOptionOtherAdditionalOptions-0 />
-      <LastCompilerVersion-0>V1.09.00</LastCompilerVersion-0>
+      <LastCompilerVersion-0>V1.10.00</LastCompilerVersion-0>
     </Instance>
     <Instance Guid="86bebc9e-2f6f-4e72-83c8-8883e6cf6d33">
       <COptionAsmPath-DefaultValue>False</COptionAsmPath-DefaultValue>
@@ -1536,16 +1540,21 @@
       <COptionMergeString-DefaultValue>False</COptionMergeString-DefaultValue>
       <COptionMisra2012RuleFile-DefaultValue />
       <COptionOaliasAnsi-DefaultValue>False</COptionOaliasAnsi-DefaultValue>
-      <COptionInsertNopWithLabel-DefaultValue>False</COptionInsertNopWithLabel-DefaultValue>
       <COptionMisra2012RuleNumberApply-DefaultValue />
       <COptionOsameCode-DefaultValue>False</COptionOsameCode-DefaultValue>
-      <COptionInsertNopWithLabelParameters-DefaultValue />
+      <COptionStuffBSS-DefaultValue>False</COptionStuffBSS-DefaultValue>
       <COptionMisra2012RuleNumberIgnore-DefaultValue />
       <COptionOsameCode2-DefaultValue>None</COptionOsameCode2-DefaultValue>
-      <COptionGoptimize-DefaultValue>False</COptionGoptimize-DefaultValue>
+      <COptionStuffData-DefaultValue>False</COptionStuffData-DefaultValue>
       <COptionMisra2012RuleNumberRequiredAdd-DefaultValue />
+      <COptionObranchChaining-DefaultValue>None</COptionObranchChaining-DefaultValue>
+      <COptionStuffConst-DefaultValue>False</COptionStuffConst-DefaultValue>
+      <COptionInsertNopWithLabel-DefaultValue>False</COptionInsertNopWithLabel-DefaultValue>
       <COptionMisra2012RuleNumberRequiredRemove-DefaultValue />
+      <COptionOalign-DefaultValue>None</COptionOalign-DefaultValue>
+      <COptionGoptimize-DefaultValue>False</COptionGoptimize-DefaultValue>
       <COptionIgnoreFilesMisra-DefaultValue />
+      <COptionInsertNopWithLabelParameters-DefaultValue />
       <COptionCheckLanguageExtension-DefaultValue>False</COptionCheckLanguageExtension-DefaultValue>
       <COptionMisraIntermodule-DefaultValue>False</COptionMisraIntermodule-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
@@ -1624,16 +1633,21 @@ RENESAS_SIMULATOR_DEBUGGING=1
       <COptionMergeString-0>False</COptionMergeString-0>
       <COptionMisra2012RuleFile-0 />
       <COptionOaliasAnsi-0>False</COptionOaliasAnsi-0>
-      <COptionInsertNopWithLabel-0>False</COptionInsertNopWithLabel-0>
       <COptionMisra2012RuleNumberApply-0 />
       <COptionOsameCode-0>False</COptionOsameCode-0>
-      <COptionInsertNopWithLabelParameters-0 />
+      <COptionStuffBSS-0>False</COptionStuffBSS-0>
       <COptionMisra2012RuleNumberIgnore-0 />
       <COptionOsameCode2-0>None</COptionOsameCode2-0>
-      <COptionGoptimize-0>True</COptionGoptimize-0>
+      <COptionStuffData-0>False</COptionStuffData-0>
       <COptionMisra2012RuleNumberRequiredAdd-0 />
+      <COptionObranchChaining-0>None</COptionObranchChaining-0>
+      <COptionStuffConst-0>False</COptionStuffConst-0>
+      <COptionInsertNopWithLabel-0>False</COptionInsertNopWithLabel-0>
       <COptionMisra2012RuleNumberRequiredRemove-0 />
+      <COptionOalign-0>None</COptionOalign-0>
+      <COptionGoptimize-0>True</COptionGoptimize-0>
       <COptionIgnoreFilesMisra-0 />
+      <COptionInsertNopWithLabelParameters-0 />
       <COptionCheckLanguageExtension-0>False</COptionCheckLanguageExtension-0>
       <COptionMisraIntermodule-0>False</COptionMisraIntermodule-0>
     </Instance>
@@ -1674,6 +1688,26 @@ src\frtos_config
       <AsmOptionPostAssembleCommands-0 />
       <AsmOptionOtherAdditionalOptions-0 />
       <AsmOptionUndefine-0 />
+    </Instance>
+    <Instance Guid="f9345ca1-8ed4-4d53-b89b-d7ee9698cd54">
+      <SMSAsmOptionCharacterSet-DefaultValue>None</SMSAsmOptionCharacterSet-DefaultValue>
+      <SMSAsmOptionI-DefaultValue />
+      <SMSAsmOptionNoWarning-DefaultValue />
+      <SMSAsmOptionPreSMSAssembleCommands-DefaultValue />
+      <SMSAsmOptionD-DefaultValue />
+      <SMSAsmOptionPostSMSAssembleCommands-DefaultValue />
+      <SMSAsmOptionOtherAdditionalOptions-DefaultValue />
+      <SMSAsmOptionU-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8585893671049925082</TimeTagModified--0>
+      <SMSAsmOptionCharacterSet-0>None</SMSAsmOptionCharacterSet-0>
+      <SMSAsmOptionI-0 />
+      <SMSAsmOptionNoWarning-0 />
+      <SMSAsmOptionPreSMSAssembleCommands-0 />
+      <SMSAsmOptionD-0 />
+      <SMSAsmOptionPostSMSAssembleCommands-0 />
+      <SMSAsmOptionOtherAdditionalOptions-0 />
+      <SMSAsmOptionU-0 />
     </Instance>
     <Instance Guid="7ec2f657-357c-4418-bb9b-bbb98af0d62c">
       <LinkOptionAutoSectionLayout-DefaultValue>True</LinkOptionAutoSectionLayout-DefaultValue>
@@ -1782,7 +1816,7 @@ src\frtos_config
       <LinkOptionLibrarySystem-0 />
       <LinkOptionMapFileName-0>%ProjectName%.map</LinkOptionMapFileName-0>
       <LinkOptionMemory-0>False</LinkOptionMemory-0>
-      <LinkOptionNoMessageErrorNumber-0 />
+      <LinkOptionNoMessageErrorNumber-0>1321,1110,0101,0004</LinkOptionNoMessageErrorNumber-0>
       <LinkOptionOcdbgValue-0>85</LinkOptionOcdbgValue-0>
       <LinkOptionOptimizeSymbolDelete-0>False</LinkOptionOptimizeSymbolDelete-0>
       <LinkOptionOutputFileName-0>%ProjectName%.abs</LinkOptionOutputFileName-0>
@@ -1828,7 +1862,7 @@ src\frtos_config
       <LinkOptionSymbolForbid-0 />
       <LinkOptionUserOptByteValue-0>EFFFF8</LinkOptionUserOptByteValue-0>
       <LinkOptionCFIAddFunc-0 />
-      <LinkOptionChangeMessageWarningNumber-0>2300</LinkOptionChangeMessageWarningNumber-0>
+      <LinkOptionChangeMessageWarningNumber-0>2300,2142</LinkOptionChangeMessageWarningNumber-0>
       <LinkOptionOtherAdditionalOptions-0 />
       <LinkOptionSameCodeForbid-0 />
       <LinkOptionSelf-0>None</LinkOptionSelf-0>
@@ -1877,6 +1911,7 @@ src\frtos_config
       <HexOptionFixRecordLengthAndAlignValue-DefaultValue>1</HexOptionFixRecordLengthAndAlignValue-DefaultValue>
       <HexOptionByteCount-DefaultValue>False</HexOptionByteCount-DefaultValue>
       <HexOptionChangeMessageError-DefaultValue>None</HexOptionChangeMessageError-DefaultValue>
+      <HexOptionVerboseCrc-DefaultValue>False</HexOptionVerboseCrc-DefaultValue>
       <HexOptionByteCountValue-DefaultValue>FF</HexOptionByteCountValue-DefaultValue>
       <HexOptionChangeMessageErrorNumber-DefaultValue />
       <HexOptionEndRecord-DefaultValue>None</HexOptionEndRecord-DefaultValue>
@@ -1912,6 +1947,7 @@ src\frtos_config
       <HexOptionFixRecordLengthAndAlignValue-0>1</HexOptionFixRecordLengthAndAlignValue-0>
       <HexOptionByteCount-0>False</HexOptionByteCount-0>
       <HexOptionChangeMessageError-0>None</HexOptionChangeMessageError-0>
+      <HexOptionVerboseCrc-0>False</HexOptionVerboseCrc-0>
       <HexOptionByteCountValue-0>FF</HexOptionByteCountValue-0>
       <HexOptionChangeMessageErrorNumber-0 />
       <HexOptionEndRecord-0>None</HexOptionEndRecord-0>

@@ -1,9 +1,9 @@
 ﻿<CubeSuiteProject>
-  <ProductVersion>9.04.00.00</ProductVersion>
+  <ProductVersion>9.05.00.00</ProductVersion>
   <Class Guid="68f4a651-b9cd-473b-a595-b00447132ffa">
     <Instance Guid="00000000-0000-0000-0000-000000000000">
       <FormatVersion>2.0</FormatVersion>
-      <FileVersion>9.4</FileVersion>
+      <FileVersion>9.5</FileVersion>
       <ProjectGuid>e4273b99-1a26-4344-a4c9-23e0249a53c2</ProjectGuid>
       <ProjectItemGuid>4383b424-c21b-4ce9-b8e1-16a5757c589c</ProjectItemGuid>
       <FileCategoryGuid>fd4185a5-5fcd-4bc6-8caf-a515c94051dd</FileCategoryGuid>

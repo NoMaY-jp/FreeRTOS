@@ -14,12 +14,12 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2011, 2019 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2011, 2020 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name    : r_cg_userdefine.h
-* Version      : CodeGenerator for RL78/G14 V2.05.04.02 [20 Nov 2019]
+* Version      : CodeGenerator for RL78/G14 V2.05.05.01 [25 Nov 2020]
 * Device(s)    : R5F104ML
 * Tool-Chain   : CCRL
 * Description  : This file includes user definition.

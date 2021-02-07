@@ -2,8 +2,8 @@
 HardwareDebug/
 e2studio_project.prefs
 language.settings.xml
-cgprojectDatas.datas
-cgproject.cgp
+### cgprojectDatas.datas
+### cgproject.cgp
 com.renesas.smc.e2studio.qe.xml
 DebugVirtualConsoleSetting.xml
 CoverageSetting.xml

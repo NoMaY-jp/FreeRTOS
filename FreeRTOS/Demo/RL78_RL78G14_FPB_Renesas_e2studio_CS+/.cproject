@@ -14,11 +14,11 @@
 			</storageModule>
 			<storageModule moduleId="com.renesas.cdt.managedbuild.core.toolchainInfo">
 				<option id="toolchain.id" value="Renesas_CCRL"/>
-				<option id="toolchain.version" value="v1.09.00"/>
+				<option id="toolchain.version" value="v1.10.00"/>
 				<option id="toolchain.enable" value="true"/>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="mot" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration.1270332327" name="HardwareDebug" parent="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration">
+				<configuration artifactExtension="mot" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;com.renesas.cdt.managedbuild.renesas.core.RenesasCompilerAssemblerErrorParser;com.renesas.cdt.managedbuild.core.buildRunnerErrorParser" id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration.1270332327" name="HardwareDebug" parent="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration">
 					<folderInfo id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.configuration.1270332327." name="/" resourcePath="">
 						<toolChain id="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.toolChain.916802566" name="Renesas CCRL Toolchain" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.hardwaredebug.toolChain">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.PE" id="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform.218755352" isAbstract="false" name="targetPlatform" osList="win32" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.targetPlatform"/>
@@ -70,8 +70,9 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.goptimize.1954125909" name="Outputs additional information for inter-module optimization (-goptimize)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.goptimize" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.characterSet.811748846" name="Character encoding (-character_set)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.characterSet" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.characterSet.auto" valueType="enumerated"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.optimization.379743064" name="Level of optimization (-O)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.optimization" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.optimization.default" valueType="enumerated"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC.2061722989" name="Standard of C language (-lang)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC.c99" valueType="enumerated"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC.2061722989" name="Language standard of C language (-lang)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.compiler.option.langFileC.c99" valueType="enumerated"/>
 								<inputType id="Base.Compiler.ccrl.C.inputType.2026534201" name="Compiler InputType" superClass="Base.Compiler.ccrl.C.inputType"/>
+								<inputType id="Base.Compiler.ccrl.Cpp.inputType.2111596862" name="Compiler Input CPP" superClass="Base.Compiler.ccrl.Cpp.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.assembler.201128896" name="Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.assembler">
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.assembler.option.g.922083297" name="Add debug information (-g)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.assembler.option.g" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -171,10 +172,11 @@
 								</option>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeLinkOrder.1746958749" name="Change link order" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeLinkOrder" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.entry.1119288746" name="Specify execution start address (-entry)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.entry" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noMessage.2028493277" name="Suppress number of message (-nomessage=&lt;number&gt;)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noMessage" useByScannerDiscovery="false" value="1321,1110,0101,0004" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgInfo.1402626315" name="Change warning message to information message (-change_message=information)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgInfo" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgInfoValue.72556829" name="Message number (all if empty) (-change_message=information=&lt;number&gt;)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgInfoValue" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgWarn.209725071" name="Change error message to warning message (-change_message=warning)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgWarn" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgWarnValue.471383782" name="Message number (all if empty) (-change_message=warning=&lt;number&gt;)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgWarnValue" useByScannerDiscovery="false" value="2300" valueType="string"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgWarnValue.471383782" name="Message number (all if empty) (-change_message=warning=&lt;number&gt;)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.changeMsgWarnValue" useByScannerDiscovery="false" value="2300,2142" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.totalSize.474334066" name="Displays the total sizes of sections (-total_size)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.totalSize" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.nologo.612622811" name="Suppress copyright notice output (-logo/-nologo)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.nologo" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.autoSectionLayout.1331647217" name="Layout sections automatically (-auto_section_layout)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.autoSectionLayout" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -193,6 +195,7 @@
 									<listOptionValue builtIn="false" value=""/>
 								</option>
 							</tool>
+							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.smsasm.1265243995" name="SMS Assembler" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.smsasm"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
@@ -202,6 +205,7 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="com.renesas.cdt.managedbuild.core.boardInfo"/>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">

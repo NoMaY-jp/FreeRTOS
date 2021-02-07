@@ -14,12 +14,12 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2011, 2018 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2011, 2020 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
 * File Name    : r_cg_intc_user.c
-* Version      : Applilet3 for RL78/G14 V2.05.03.02 [06 Nov 2018]
+* Version      : Applilet3 for RL78/G14 V2.05.05.01 [25 Nov 2020]
 * Device(s)    : R5F104ML
 * Tool-Chain   : IAR Systems iccrl78
 * Description  : This file implements device driver for INTC module.
