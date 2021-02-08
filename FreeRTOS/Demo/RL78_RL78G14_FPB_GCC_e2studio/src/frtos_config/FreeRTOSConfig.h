@@ -88,6 +88,20 @@ FreeRTOS/Source/tasks.c for limitations. */
 #define configTIMER_QUEUE_LENGTH		5
 #define configTIMER_TASK_STACK_DEPTH	(configMINIMAL_STACK_SIZE)
 
+/* The interrupt priority used by the kernel itself for the tick interrupt and
+the yield interrupt (in case of Renesas RL78, the BRK software interrupt).  This
+would normally be the lowest priority.  In case of Renesas RL78 port, the value
+is limited to the lowest priority '3' only. */
+#define configKERNEL_INTERRUPT_PRIORITY         3
+
+/* The highest interrupt priority from which interrupt safe FreeRTOS API calls
+can be made.  Interrupts that use a priority above this (in case of Renesas RL78,
+lower numeric values) will not be effected by anything the kernel is doing.  In
+case of Renesas RL78 port, the value is limited to the lowest priority '3' only.
+DO NOT CALL INTERRUPT SAFE FREERTOS API FROM ANY INTERRUPT THAT USE A PRIORITY
+ABOVE THIS! (higher priorities are lower numeric values.) */
+#define configMAX_SYSCALL_INTERRUPT_PRIORITY    3
+
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet			1
