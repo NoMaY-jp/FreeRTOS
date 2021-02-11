@@ -58,6 +58,7 @@ extern volatile uint16_t  g_uart3_rx_count;            /* uart3 receive data num
 extern volatile uint16_t  g_uart3_rx_length;           /* uart3 receive data length */
 extern TaskHandle_t       g_uart3_tx_task;             /* uart3 send task */
 extern TaskHandle_t       g_uart3_rx_task;             /* uart3 receive task */
+extern volatile uint32_t  g_uart3_rx_notification;     /* uart3 receive notification */
 extern volatile uint8_t   g_uart3_rx_error_type;       /* uart3 receive error flags */
 extern volatile uint8_t   g_uart3_rx_abort_type;       /* uart3 receive abort flags including timeout error */
 
@@ -143,12 +144,21 @@ static void r_uart3_callback_receiveend(void)
 
     /* U_UART3_Receive_Stop(); Don't stop because reception ring buffer is used. */
 
-    /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
-     * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
-     * But the interrupt priority of INTWDTI is configured as the same priority of
-     * the SYSCALL/kernel interrupt.
+    /* If there are no tasks waiting for a notification or a notification was already
+     * sent (or is going to be sent), i.e. 
+     * when g_uart3_rx_task == NULL || g_uart3_rx_notification != 0U,
+     * a notification isn't sent or is skipped.
      */
-    u_wdt_request_interrupt();
+    if (NULL != g_uart3_rx_task && 0U == g_uart3_rx_notification)
+    {
+        /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
+         * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
+         * But the interrupt priority of INTWDTI is configured as the same priority of
+         * the SYSCALL/kernel interrupt.
+         */
+        g_uart3_rx_notification = 0x10000 | MD_OK;
+        u_wdt_request_interrupt();
+    }
 
     /* End user code. Do not edit comment generated here */
 }
@@ -221,17 +231,25 @@ static void r_uart3_callback_error(uint8_t err_type)
 {
     /* Start user code. Do not edit comment generated here */
 
-    g_uart3_rx_error_type = err_type;
-
     U_UART3_Receive_Stop();
 
-    /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
-     * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
-     * But the interrupt priority of INTWDTI is configured as the same priority of
-     * the SYSCALL/kernel interrupt.
-     */
-    u_wdt_request_interrupt();
+    g_uart3_rx_error_type = err_type;
 
+    /* If there are no tasks waiting for a notification or a notification was already
+     * sent (or is going to be sent), i.e. 
+     * when g_uart3_rx_task == NULL || g_uart3_rx_notification != 0U,
+     * a notification isn't sent or is skipped.
+     */
+    if (NULL != g_uart3_rx_task && 0U == g_uart3_rx_notification)
+    {
+        /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
+         * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
+         * But the interrupt priority of INTWDTI is configured as the same priority of
+         * the SYSCALL/kernel interrupt.
+         */
+        g_uart3_rx_notification = 0x10000 | (g_uart3_rx_error_type << 8) | MD_RECV_ERROR;
+        u_wdt_request_interrupt();
+    }
     /* End user code. Do not edit comment generated here */
 }
 
@@ -257,20 +275,10 @@ static void u_wdt_request_interrupt(void)
 #pragma vector = INTWDTI_vect
 __interrupt static void u_wdt_interrupt(void)
 {
-    if (0U == g_uart3_rx_error_type)
-    {
-        /* If the task had been already notified or isn't waiting for any notification,
-         * i.e, when g_uart3_rx_task == NULL, actually the task will not be notified.
-         */
-        xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, 0x10000 | MD_OK );
-    }
-    else
-    {
-        /* If the task had been already notified or isn't waiting for any notification,
-         * i.e, when g_uart3_rx_task == NULL, actually the task will not be notified.
-         */
-        xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, 0x10000 | (g_uart3_rx_error_type << 8) | MD_RECV_ERROR );
-    }
+    /* If the task had been already notified or isn't waiting for any notification,
+     * i.e. when g_uart3_rx_task == NULL, actually the task will not be notified.
+     */
+    vTaskNotifyGiveFromISR_R_Helper( &g_uart3_rx_task );
 }
 
 /* End user code. Do not edit comment generated here */

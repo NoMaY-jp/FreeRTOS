@@ -44,15 +44,24 @@ Includes
 #define RX_BUFF_SIZE UART3_RX_BUFF_SIZE
 #define RX_DTPT_MASK (UART3_RX_BUFF_SIZE - 1)
 
+/* Don't use '(uint8_t *)(maskptr) != (uint8_t *)NULL' because it causes compiler warnings in case of ICCRL78. */
+#define SRMKx_SET(maskptr)   do{ if (0U != (uint8_t *)(maskptr) - (uint8_t *)NULL) { *(uint8_t *)(maskptr) = SRMK3; } SRMK3 = 1U; }while (0)
+#define SRMKx_CLEAR(maskptr) do{ if (0U != (uint8_t *)(maskptr) - (uint8_t *)NULL) { *(uint8_t *)(maskptr) = SRMK3; } SRMK3 = 0U; }while (0)
+/* Don't use 'SRMK3 = mask' because it generates non bit operation code. */
+#define SRMKx_RESTORE(mask)  do{ if (0U == mask) { SRMK3 = 0U; }else{ SRMK3 = 1U; } }while (0)
+
 #if 0    /* Non-OS */
-#define SRMKx(mask) do{ SRMK3 = mask; }while (0)
-#define SRENx()     do{ SRMK3 = 0; }while (0)
+#define ENTER_CRITICAL() do{ }while (0)
+#define EXIT_CRITICAL()  do{ }while (0)
 #elif 1    /* FreeRTOS */
-#define SRMKx(mask) do{ if (mask != 0) { taskENTER_CRITICAL(); } else { taskEXIT_CRITICAL(); } }while (0)
-#define SRENx()     do{ SRMK3 = 0; }while (0)
+#define ENTER_CRITICAL() taskENTER_CRITICAL()
+#define EXIT_CRITICAL()  taskEXIT_CRITICAL()
 #elif 0    /* SEGGER embOS */
+/* Currently the specified RTOS is not supported. Please add the code here. */
 #elif 0    /* Micrium MicroC/OS */
-#elif 0    /* Renesas RI600V4 & RI600PX */
+/* Currently the specified RTOS is not supported. Please add the code here. */
+#elif 0    /* Renesas RI78V4 */
+/* Currently the specified RTOS is not supported. Please add the code here. */
 #endif
 
 /*******************************************************************************
@@ -76,12 +85,13 @@ volatile uint8_t g_rx_status;                   /* 受信ステータスフラグ
 void init_bf(void)
 {
 
-    SRMKx(1);                                   /* INTSRxとの排他制御       */
+    ENTER_CRITICAL();                           /* タスク切り替え禁止       */
+    SRMKx_SET(NULL);                            /* INTSRxとの排他制御       */
     g_rx_rdpt = 0x00;                           /* 読み出しポインタ初期化   */
     g_rx_dtno = 0x00;                           /* データ数をクリア         */
     g_rx_status = 0x00;                         /* ステータスをクリア       */
-    SRENx();                                    /* INTSRxの最初の許可       */
-    SRMKx(0);                                   /* 排他制御完了             */
+    SRMKx_CLEAR(NULL);                          /* 排他制御完了             */
+    EXIT_CRITICAL();                            /* タスク切り替え許可       */
 
 }
 
@@ -97,12 +107,15 @@ void init_bf(void)
 uint8_t chk_status(void)
 {
     uint8_t work;
+    uint8_t mask;                               /* INTSRxのマスク状態の保存 */
 
-    SRMKx(1);                                   /* INTSRxとの排他制御       */
+    ENTER_CRITICAL();                           /* タスク切り替え禁止       */
+    SRMKx_SET(&mask);                           /* INTSRxとの排他制御       */
     work = g_rx_status;                         /* ステータス読み出し       */
     g_rx_status = 0x00;                         /* ステータスをクリア       */
     work |= g_rx_dtno;                          /* データ数読み出し         */
-    SRMKx(0);                                   /* 排他制御完了             */
+    SRMKx_RESTORE(mask);                        /* 排他制御完了             */
+    EXIT_CRITICAL();                            /* タスク切り替え許可       */
     return ( work );
 
 }
@@ -116,6 +129,7 @@ uint8_t chk_status(void)
 uint8_t get_data(void)
 {
     uint8_t work;
+    uint8_t mask;                               /* INTSRxのマスク状態の保存 */
 
     if ( 0 == g_rx_dtno )
     {
@@ -125,11 +139,13 @@ uint8_t get_data(void)
     {
         work = g_rx_buff[g_rx_rdpt];            /* データの読み出し         */
 
-        SRMKx(1);                               /* INTSRxとの排他制御       */
+        ENTER_CRITICAL();                       /* タスク切り替え禁止       */
+        SRMKx_SET(&mask);                       /* INTSRxとの排他制御       */
         g_rx_dtno--;
         g_rx_rdpt++;                            /* ポインタ更新             */
         g_rx_rdpt &= RX_DTPT_MASK;
-        SRMKx(0);                               /* 排他制御完了             */
+        SRMKx_RESTORE(mask);                    /* 排他制御完了             */
+        EXIT_CRITICAL();                        /* タスク切り替え許可       */
     }
 
     return ( work );
@@ -146,6 +162,7 @@ uint8_t get_blk(uint8_t * const buff, uint8_t number)
 {
 
     uint8_t work;
+    uint8_t mask;                               /* INTSRxのマスク状態の保存 */
     uint8_t dtno;                               /* リングバッファ内データ量 */
     uint8_t cnt;                                /* 転送用カウンタ           */
     uint8_t * gp_buff;                          /* 転送用ポインタ           */
@@ -184,11 +201,13 @@ uint8_t get_blk(uint8_t * const buff, uint8_t number)
         for (  ; cnt > 0 ; cnt-- )
         {
             *gp_buff = g_rx_buff[g_rx_rdpt];    /* リングバッファから転送   */
-            SRMKx(1);                           /* INTSRxとの排他制御       */
+            ENTER_CRITICAL();                   /* タスク切り替え禁止       */
+            SRMKx_SET(&mask);                   /* INTSRxとの排他制御       */
             g_rx_rdpt++;                        /* 読み出しポインタを更新   */
             g_rx_rdpt &= RX_DTPT_MASK;
             g_rx_dtno--;                        /* データ数を－1            */
-            SRMKx(0);                           /* INTSRxとの排他制御終了   */
+            SRMKx_RESTORE(mask);                /* 排他制御完了             */
+            EXIT_CRITICAL();                    /* タスク切り替え許可       */
             gp_buff++;                          /* 転送ポインタを更新       */
 
         }
