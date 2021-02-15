@@ -50,21 +50,13 @@ volatile uint16_t  g_uart3_rx_length;          /* uart3 receive data length */
 TaskHandle_t       g_uart3_tx_task;            /* uart3 send task */
 TaskHandle_t       g_uart3_rx_task;            /* uart3 receive task */
 volatile uint32_t  g_uart3_rx_notification;    /* uart3 receive notification */
-volatile uint8_t   g_uart3_rx_error_type;      /* uart3 receive error flags */
-volatile uint8_t   g_uart3_rx_abort_type;      /* uart3 receive abort flags including timeout error */
+volatile uint8_t   g_uart3_rx_abort_events;    /* uart3 receive error flags (not including timeout error) */
 
 void U_UART3_Receive_Stop(void);               /* for internal use */
 void U_UART3_Send_Stop(void);                  /* for internal use */
 
 static void U_UART3_Receive(volatile uint8_t * rx_buf, uint16_t rx_num);
 static void U_UART3_Send(uint8_t * tx_buf, uint16_t tx_num);
-
-//#define R_UART3_Start R_UART3_Start_INERNAL_USE_ONLY
-//void R_UART3_Start(void);
-#define R_UART3_Receive R_UART3_Receive_INERNAL_USE_ONLY
-MD_STATUS R_UART3_Receive(uint8_t * const rx_buf, uint16_t rx_num);
-//#define R_UART3_Send R_UART3_Send_INERNAL_USE_ONLY
-//MD_STATUS R_UART3_Send(uint8_t * const tx_buf, uint16_t tx_num);
 /* End user code. Do not edit comment generated here */
 
 /***********************************************************************************************************************
@@ -243,17 +235,17 @@ void U_UART3_Start(void)
 *                    receive buffer pointer
 *                rx_num -
 *                    buffer size
-*                p_err_type -
+*                p_err_events -
 *                    error type variable pointer
 *                rx_wait -
 *                    FreeRTOS's ticks to wait
 * Return Value : status -
 *                    MD_OK or MD_ARGERROR or MD_RECV_ERROR or MD_RECV_TIMEOUT
 ******************************************************************************/
-MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_type, TickType_t rx_wait)
+MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_events, TickType_t rx_wait)
 {
     MD_STATUS status = MD_OK;
-    uint8_t mask;
+    uint8_t err_events = 0U;
     uint32_t value;
 
     if (rx_num < 1U || UART3_RX_BUFF_SIZE < rx_num)
@@ -262,58 +254,47 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
     }
     else
     {
-        /* Forbid task switching before INTSR3 interrupt is disabled, unless other higher
+        /* Forbid task switching before disabling INTSR3 interrupt, otherwise other higher
         or same priority tasks may run keeping INTSR3 interrupt disabled for a long time. */
         taskENTER_CRITICAL();
-        mask = SRMK3;
-        if (0U == mask)
-        {
-            SRMK3 = 1U; /* disable INTSR3 interrupt */
-        }
+        SRMK3 = 1U; /* disable INTSR3 interrupt */
 
-        if (rx_num <= (u_uart3_chk_status() & UART3_RX_BUFF_SIZE_BITS))
+        if (rx_num <= g_uart3_rx_dtno)
         {
             /* Requested data can be obtained immediately. */
 
-            /* Permit task switching after INTSR3 interrupt is enabled if it was enabled at first. */
-            if (0U == mask)
+            /* Permit task switching after enabling INTSR3 interrupt when reception
+            isn't aborted. */
+            if (0U == g_uart3_rx_abort_events)
             {
                 SRMK3 = 0U; /* enable INTSR3 interrupt */
             }
             taskEXIT_CRITICAL();
 
-            g_uart3_rx_length = 0U; /* This should be done before get_blk() here. */
-            u_uart3_get_blk( (uint8_t *)rx_buf, rx_num );
-            *p_err_type = 0U;
-            status = MD_OK;
+            /* Both status and err_events don't need to be changed from initial value. */
         }
-        else if (0 != g_uart3_rx_error_type)
+        else if (0U != g_uart3_rx_abort_events)
         {
             /* Requested data cannot be obtained never. */
 
-            /* Permit task switching after INTSR3 interrupt is enabled if it was enabled at first. */
-            if (0U == mask)
-            {
-                SRMK3 = 0U; /* enable INTSR3 interrupt */
-            }
+            /* Permit task switching. Don't enable INTSR3 interrupt because reception
+            is aborted. */
             taskEXIT_CRITICAL();
 
-            g_uart3_rx_abort_type = g_uart3_rx_error_type;
-            *p_err_type = g_uart3_rx_error_type;
             status = MD_RECV_ERROR;
+            err_events = g_uart3_rx_abort_events;
         }
         else
         {
             /* Requested data cannot be obtained now but it will be obtained later. */
 
             g_uart3_rx_task = xTaskGetCurrentTaskHandle_R_Helper();
+            g_uart3_rx_notification = 0U;
             U_UART3_Receive( rx_buf, rx_num );
 
-            /* Permit task switching after INTSR3 interrupt is enabled if it was enabled at first. */
-            if (0U == mask)
-            {
-                SRMK3 = 0U; /* enable INTSR3 interrupt */
-            }
+            /* Permit task switching after enabling INTSR3 interrupt because reception
+            isn't aborted. */
+            SRMK3 = 0U; /* enable INTSR3 interrupt */
             taskEXIT_CRITICAL();
 
             /* Wait for a notification from the interrupt/callback */
@@ -325,33 +306,32 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
 
                 /* Get a notification value from the interrupt/callback */
                 value = g_uart3_rx_notification;
-                g_uart3_rx_notification = 0U;
 
-                g_uart3_rx_abort_type = (value >> 8) & 0xFFU;
-                *p_err_type = (value >> 8) & 0xFFU;
                 status = value & 0xFFU;
-
-                if (MD_OK == status)
-                {
-                    u_uart3_get_blk( (uint8_t *)gp_uart3_rx_address, g_uart3_rx_length );
-                    g_uart3_rx_length = 0U; /* This can be done after get_blk() here. */
-                }
+                err_events = (value >> 8) & 0xFFU;
             }
             else
             {
                 /* Timeout */
 
-                /* Stop reception and clear an unhandled notification from timeout till stop */
+                /* Abort reception */
                 U_UART3_Receive_Stop();
                 g_uart3_rx_task = NULL;
-                g_uart3_rx_notification = 0U;
-                ulTaskNotifyTake_R_Helper( 0 );
 
-                g_uart3_rx_abort_type = SCI_EVT_RXWAIT_TMOT;
-                *p_err_type = SCI_EVT_RXWAIT_TMOT;
+                /* Clear an unhandled notification from timeout till stop */
+                ulTaskNotifyTake_R_Helper( 0 );
+                g_uart3_rx_notification = 0U;
+
                 status = MD_RECV_TIMEOUT;
+                err_events = SCI_EVT_RXWAIT_TMOT;
             }
         }
+
+        if (MD_OK == status)
+        {
+            u_uart3_get_blk( (uint8_t *)rx_buf, rx_num );
+        }
+        *p_err_events = err_events;
     }
 
     return status;
@@ -359,10 +339,9 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
 
 static void U_UART3_Receive(volatile uint8_t * rx_buf, uint16_t rx_num)
 {
-    /* This function should be called in either SRMK3==1 or DI */
+    gp_uart3_rx_address = rx_buf;
     g_uart3_rx_count = 0xFFFFU;
     g_uart3_rx_length = rx_num;
-    gp_uart3_rx_address = rx_buf;
 }
 
 /******************************************************************************
@@ -385,14 +364,13 @@ void U_UART3_Receive_Stop(void)
 ******************************************************************************/
 void U_UART3_Receive_ClearError(void)
 {
-    g_uart3_rx_abort_type = 0U;
-    g_uart3_rx_error_type = 0U;
+    g_uart3_rx_length = 0U;
     (void) RXD3;       /* dummy read */
     SIR13 = 0x0007U;   /* clear UART3 error flags */
-    SRIF3 = 0U;        /* clear INTSR3 interrupt flag */
+    g_uart3_rx_abort_events = 0U;
     WDTIIF = 0U;       /* clear INTWDTI interrupt flag (as a software interrupt) */
     WDTIMK = 0U;       /* enable INTWDTI interrupt (as a software interrupt) */
-    g_uart3_rx_length = 0U;
+    SRIF3 = 0U;        /* clear INTSR3 interrupt flag */
     u_uart3_init_bf(); /* also enable INTSR3 interrupt */
 }
 

@@ -49,7 +49,7 @@ void task_CONIO(void * pvParameters)
 /* Start user code for function. Do not edit comment generated here */
 
     volatile uint8_t recv_buff[CON_RECV_DEMO_SIZE + 1];
-    volatile uint8_t err_type;
+    volatile uint8_t err_events;
     MD_STATUS status;
     uint32_t cnt;
 
@@ -68,7 +68,7 @@ void task_CONIO(void * pvParameters)
         }
         cnt++;
 
-        status = U_UART3_Receive_Wait( recv_buff, CON_RECV_DEMO_SIZE, &err_type, CON_RECV_TIMEOUT_MS );
+        status = U_UART3_Receive_Wait( recv_buff, CON_RECV_DEMO_SIZE, &err_events, CON_RECV_TIMEOUT_MS );
 
         nop();  /* for breakpoint, check timing chart on Simulator GUI */
 
@@ -88,19 +88,19 @@ void task_CONIO(void * pvParameters)
             }
             else if (MD_RECV_ERROR == status)
             {
-                if (SCI_EVT_RXBUF_OVFL & err_type)
+                if (SCI_EVT_RXBUF_OVFL & err_events)
                 {
                     vPrintString( "Ring Buffer Overflow Error\n" );
                 }
-                if (SCI_EVT_FRAMING_ERR & err_type)
+                if (SCI_EVT_FRAMING_ERR & err_events)
                 {
                     vPrintString( "Framing Error\n" );
                 }
-                if (SCI_EVT_PARITY_ERR & err_type)
+                if (SCI_EVT_PARITY_ERR & err_events)
                 {
                     vPrintString( "Parity Error\n" );
                 }
-                if (SCI_EVT_OVFL_ERR & err_type)
+                if (SCI_EVT_OVFL_ERR & err_events)
                 {
                     vPrintString( "Overrun Error\n" );
                 }

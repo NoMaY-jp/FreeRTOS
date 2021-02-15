@@ -51,8 +51,7 @@ extern volatile uint16_t  g_uart3_rx_length;           /* uart3 receive data len
 extern TaskHandle_t       g_uart3_tx_task;             /* uart3 send task */
 extern TaskHandle_t       g_uart3_rx_task;             /* uart3 receive task */
 extern volatile uint32_t  g_uart3_rx_notification;     /* uart3 receive notification */
-extern volatile uint8_t   g_uart3_rx_error_type;       /* uart3 receive error flags */
-extern volatile uint8_t   g_uart3_rx_abort_type;       /* uart3 receive abort flags including timeout error */
+extern volatile uint8_t   g_uart3_rx_abort_events;     /* uart3 receive error flags (not including timeout error) */
 
 extern void U_UART3_Receive_Stop(void);                /* for internal use */
 extern void U_UART3_Send_Stop(void);                   /* for internal use */
@@ -134,6 +133,8 @@ static void r_uart3_callback_receiveend(void)
 
     /* U_UART3_Receive_Stop(); Don't stop because reception ring buffer is used. */
 
+    g_uart3_rx_length = 0U;
+
     /* If there are no tasks waiting for a notification or a notification was already
      * sent (or is going to be sent), i.e. 
      * when g_uart3_rx_task == NULL || g_uart3_rx_notification != 0U,
@@ -164,7 +165,7 @@ static void r_uart3_callback_softwareoverrun(uint16_t rx_data)
 {
     /* Start user code. Do not edit comment generated here */
 
-    if (0U == g_uart3_rx_error_type && 0U == g_uart3_rx_abort_type)
+    if (0U == g_uart3_rx_abort_events)
     {
         u_uart3_callback_receivedata( rx_data );
 
@@ -191,7 +192,7 @@ static void r_uart3_callback_sendend(void)
 {
     /* Start user code. Do not edit comment generated here */
 
-    if (0 != (SSR12 & _0040_SAU_UNDER_EXECUTE))
+    if (0U != (SSR12 & _0040_SAU_UNDER_EXECUTE))
     {
         /* DTC has finished data transfer operation. (i.e. The last data has been
          * written to UART's SDR register.) But the data stay in either UART's SDR
@@ -223,7 +224,7 @@ static void r_uart3_callback_error(uint8_t err_type)
 
     U_UART3_Receive_Stop();
 
-    g_uart3_rx_error_type = err_type;
+    g_uart3_rx_abort_events = err_type;
 
     /* If there are no tasks waiting for a notification or a notification was already
      * sent (or is going to be sent), i.e. 
@@ -237,7 +238,7 @@ static void r_uart3_callback_error(uint8_t err_type)
          * But the interrupt priority of INTWDTI is configured as the same priority of
          * the SYSCALL/kernel interrupt.
          */
-        g_uart3_rx_notification = 0x10000 | (g_uart3_rx_error_type << 8) | MD_RECV_ERROR;
+        g_uart3_rx_notification = 0x10000 | (err_type << 8) | MD_RECV_ERROR;
         u_wdt_request_interrupt();
     }
     /* End user code. Do not edit comment generated here */

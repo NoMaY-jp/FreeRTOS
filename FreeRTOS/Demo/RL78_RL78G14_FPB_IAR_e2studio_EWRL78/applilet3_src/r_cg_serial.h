@@ -401,7 +401,7 @@ void U_UART3_Start(void);
 MD_STATUS U_UART3_Send_Wait(uint8_t * tx_buf, uint16_t tx_num);
 MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_type, TickType_t rx_wait);
 void U_UART3_Receive_ClearError(void);
-MD_STATUS U_UART3_Send_Receive_Wait(uint8_t * tx_buf, uint16_t tx_num, volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_type, TickType_t txrx_wait);
+MD_STATUS U_UART3_Send_Receive_Wait(uint8_t * tx_buf, uint16_t tx_num, volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_events, TickType_t txrx_wait);
 
 #define SCI_EVT_RXBUF_OVFL  0x80U
 /*#define SCI_EVT_RXDTC_SWOR  0x80U*/
