@@ -56,7 +56,8 @@ extern volatile uint8_t   g_uart3_rx_abort_events;     /* uart3 receive error fl
 extern void U_UART3_Receive_Stop(void);                /* for internal use */
 extern void U_UART3_Send_Stop(void);                   /* for internal use */
 
-static void u_wdt_request_interrupt(void);             /* wdt interrupt request */
+static void u_uart3_rx_callback_common(uint16_t stat); /* uart3 receive common callback */
+static void u_wdt_request_interrupt(void);             /* wdt interrupt (as a software intetrrupt) request */
 
 #define r_uart3_interrupt_receive R_CG_INTERRUPT_EI(r_uart3_interrupt_receive)
 #define r_uart3_interrupt_send R_CG_FREERTOS_INTERRUPT_EI(r_uart3_interrupt_send)
@@ -135,21 +136,7 @@ static void r_uart3_callback_receiveend(void)
 
     g_uart3_rx_length = 0U;
 
-    /* If there are no tasks waiting for a notification or a notification was already
-     * sent (or is going to be sent), i.e. 
-     * when g_uart3_rx_task == NULL || g_uart3_rx_notification != 0U,
-     * a notification isn't sent or is skipped.
-     */
-    if (NULL != g_uart3_rx_task && 0U == g_uart3_rx_notification)
-    {
-        /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
-         * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
-         * But the interrupt priority of INTWDTI is configured as the same priority of
-         * the SYSCALL/kernel interrupt.
-         */
-        g_uart3_rx_notification = 0x10000 | MD_OK;
-        u_wdt_request_interrupt();
-    }
+    u_uart3_rx_callback_common( MD_OK );
 
     /* End user code. Do not edit comment generated here */
 }
@@ -226,6 +213,22 @@ static void r_uart3_callback_error(uint8_t err_type)
 
     g_uart3_rx_abort_events = err_type;
 
+    u_uart3_rx_callback_common( (err_type << 8) | MD_RECV_ERROR );
+
+    /* End user code. Do not edit comment generated here */
+}
+
+/* Start user code for adding. Do not edit comment generated here */
+
+/***********************************************************************************************************************
+* Function Name: u_uart3_rx_callback_common
+* Description  : This function is a callback function when UART3 finishes transmission or UART3 reception error occurs.
+* Arguments    : stat -
+*                    status value (lower 8bits) with error type value (upper 8bits)
+* Return Value : None
+***********************************************************************************************************************/
+static void u_uart3_rx_callback_common(uint16_t stat)
+{
     /* If there are no tasks waiting for a notification or a notification was already
      * sent (or is going to be sent), i.e. 
      * when g_uart3_rx_task == NULL || g_uart3_rx_notification != 0U,
@@ -238,13 +241,10 @@ static void r_uart3_callback_error(uint8_t err_type)
          * But the interrupt priority of INTWDTI is configured as the same priority of
          * the SYSCALL/kernel interrupt.
          */
-        g_uart3_rx_notification = 0x10000 | (err_type << 8) | MD_RECV_ERROR;
+        g_uart3_rx_notification = 0x10000 | stat;
         u_wdt_request_interrupt();
     }
-    /* End user code. Do not edit comment generated here */
 }
-
-/* Start user code for adding. Do not edit comment generated here */
 
 /***********************************************************************************************************************
 * Function Name: u_wdt_request_interrupt
