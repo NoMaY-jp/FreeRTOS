@@ -49,7 +49,6 @@ volatile uint16_t  g_uart3_rx_length;          /* uart3 receive data length */
 /* Start user code for global. Do not edit comment generated here */
 TaskHandle_t       g_uart3_tx_task;            /* uart3 send task */
 TaskHandle_t       g_uart3_rx_task;            /* uart3 receive task */
-volatile uint32_t  g_uart3_rx_notification;    /* uart3 receive notification */
 volatile uint8_t   g_uart3_rx_abort_events;    /* uart3 receive error flags (not including timeout error) */
 
 void U_UART3_Receive_Stop(void);               /* for internal use */
@@ -288,8 +287,8 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
         {
             /* Requested data cannot be obtained now but it will be obtained later. */
 
+            /* Set up the interrupt/callback ready to post a notification */
             g_uart3_rx_task = xTaskGetCurrentTaskHandle_R_Helper();
-            g_uart3_rx_notification = 0U;
             U_UART3_Receive( rx_buf, rx_num );
 
             /* Permit task switching after enabling INTSR3 interrupt because reception
@@ -304,9 +303,6 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
             {
                 /* Normal receive end or receive error */
 
-                /* Get a notification value from the interrupt/callback */
-                value = g_uart3_rx_notification;
-
                 status = value & 0xFFU;
                 err_events = (value >> 8) & 0xFFU;
             }
@@ -320,7 +316,6 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
 
                 /* Clear an unhandled notification from timeout till stop */
                 ulTaskNotifyTake_R_Helper( 0 );
-                g_uart3_rx_notification = 0U;
 
                 status = MD_RECV_TIMEOUT;
                 err_events = SCI_EVT_RXWAIT_TMOT;

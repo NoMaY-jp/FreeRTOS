@@ -58,8 +58,9 @@ extern volatile uint16_t  g_uart3_rx_count;            /* uart3 receive data num
 extern volatile uint16_t  g_uart3_rx_length;           /* uart3 receive data length */
 extern TaskHandle_t       g_uart3_tx_task;             /* uart3 send task */
 extern TaskHandle_t       g_uart3_rx_task;             /* uart3 receive task */
-extern volatile uint32_t  g_uart3_rx_notification;     /* uart3 receive notification */
 extern volatile uint8_t   g_uart3_rx_abort_events;     /* uart3 receive error flags (not including timeout error) */
+
+static volatile uint32_t  g_uart3_rx_notification;     /* uart3 receive notification */
 
 extern void U_UART3_Receive_Stop(void);                /* for internal use */
 extern void U_UART3_Send_Stop(void);                   /* for internal use */
@@ -278,8 +279,11 @@ __interrupt static void u_wdt_interrupt(void)
 {
     /* If the task had been already notified or isn't waiting for any notification,
      * i.e. when g_uart3_rx_task == NULL, actually the task will not be notified.
+     * And g_uart3_rx_task is automatically set to NULL after posting a notification.
+     * But g_uart3_rx_notification isn't automatically set to 0, so is manually set to 0.
      */
-    vTaskNotifyGiveFromISR_R_Helper( &g_uart3_rx_task );
+    xTaskNotifyFromISR_R_Helper( &g_uart3_rx_task, g_uart3_rx_notification );
+    g_uart3_rx_notification = 0U;
 }
 
 /* End user code. Do not edit comment generated here */
