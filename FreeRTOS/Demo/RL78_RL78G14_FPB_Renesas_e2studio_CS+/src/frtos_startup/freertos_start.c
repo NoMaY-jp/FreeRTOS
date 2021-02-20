@@ -324,11 +324,11 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize )
 {
     static StaticTask_t xTimerTaskTCBBuffer;
-    static StackType_t  xTimerTaskStackBuffer[configTIMER_TASK_STACK_DEPTH];
+    static StackType_t  xTimerTaskStackBuffer[TimerTask_STACK_BUFF_DEPTH];
 
     *ppxTimerTaskTCBBuffer = &xTimerTaskTCBBuffer;
     *ppxTimerTaskStackBuffer = xTimerTaskStackBuffer;
-    *pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
+    *pulTimerTaskStackSize = TimerTask_STACK_BUFF_DEPTH;
 
 } /* End of vApplicationGetTimerTaskMemory() */
 #endif /* configSUPPORT_STATIC_ALLOCATION == 1 && configUSE_TIMERS == 1 */

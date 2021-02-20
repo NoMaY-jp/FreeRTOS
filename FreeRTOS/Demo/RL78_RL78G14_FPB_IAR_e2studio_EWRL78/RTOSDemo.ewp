@@ -352,7 +352,7 @@
                 </option>
                 <option>
                     <name>CCDiagSuppress</name>
-                    <state>Pa091,Pe177,Pe082,Ta026,Pa082</state>
+                    <state>Pa091,Pe177,Pe082,Ta026</state>
                 </option>
                 <option>
                     <name>CCDiagRemark</name>
@@ -2373,12 +2373,6 @@
     </group>
     <group>
         <name>Src</name>
-        <file>
-            <name>$PROJ_DIR$\src\ExampleISR.s</name>
-            <excluded>
-                <configuration>Debug</configuration>
-            </excluded>
-        </file>
         <file>
             <name>$PROJ_DIR$\src\platform.h</name>
         </file>

@@ -49,6 +49,7 @@ extern volatile uint16_t  g_uart3_rx_count;            /* uart3 receive data num
 extern volatile uint16_t  g_uart3_rx_length;           /* uart3 receive data length */
 /* Start user code for global. Do not edit comment generated here */
 extern TaskHandle_t       g_uart3_tx_task;             /* uart3 send task */
+extern volatile bool      g_uart3_tx_ready_flag;       /* uart3 send end flag */
 extern TaskHandle_t       g_uart3_rx_task;             /* uart3 receive task */
 extern volatile uint8_t   g_uart3_rx_abort_events;     /* uart3 receive error flags (not including timeout error) */
 
@@ -194,6 +195,8 @@ static void r_uart3_callback_sendend(void)
 
     U_UART3_Send_Stop();
 
+    g_uart3_tx_ready_flag = true;
+
     vTaskNotifyGiveFromISR_R_Helper( &g_uart3_tx_task );
 
     /* End user code. Do not edit comment generated here */
@@ -238,9 +241,9 @@ static void u_uart3_rx_callback_common(uint16_t stat)
     if (NULL != g_uart3_rx_task && 0U == g_uart3_rx_notification)
     {
         /* Generate INTWDTI interrupt manually as a software intetrrupt. The interrupt
-         * priority of INTSR3 is configured higher than the SYSCALL/kernel interrupt.
-         * But the interrupt priority of INTWDTI is configured as the same priority of
-         * the SYSCALL/kernel interrupt.
+         * priority of INTSR3 is configured higher than the SYSCALL interrupt priority.
+         * On the other hand, the interrupt priority of INTWDTI is configured within
+         * the SYSCALL interrupt priority.
          */
         g_uart3_rx_notification = 0x10000 | stat;
         u_wdt_request_interrupt();

@@ -20,12 +20,13 @@
 
 #endif
 
+void vPortTickISR(void) __attribute__ ((interrupt));
+
 /*
  * INT_BRK_I (0x7E)
  */
 #define R_Vector_0x7E vPortYield
 
-void vPortTickISR(void) __attribute__ ((interrupt));
 void vPortYield(void) __attribute__ ((interrupt));
 
 /*

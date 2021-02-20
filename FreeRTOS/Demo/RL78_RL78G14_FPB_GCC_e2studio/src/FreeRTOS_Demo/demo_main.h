@@ -39,7 +39,7 @@ the more comprehensive test and demo application.
 
 The non standard RTOS Demo:
 
-(1)   Toggle LED0 every 500ms.
+(1)   Toggle LED0 every 1000ms.
 (2)   Toggle LED1 when SW_USER is pushed.
 (3-1) Echo every three characters through the UART3 using the following sockets.
         RxD3 : J7-D0

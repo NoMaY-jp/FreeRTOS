@@ -29,17 +29,18 @@ Includes   <System Includes> , "Project Includes"
 volatile bool g_task_CONIO_error = false;
 
 #define CON_START_MESSAGE  "\r\nEnter characters\r\n"
+#define CON_TIMEOUTT_MESSAGE  "\r\nTimeout! Please push SW_USR\r\n"
 #define CON_RECV_DEMO_SIZE 3
 
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
 /* Hardware or Renesas RL78 Simulator */
-#define LED1_ERROR_BLINK_FREQUENCY_MS pdMS_TO_TICKS( !IsRenesasSimDebugMode() ? 200 : 20 )
+#define LED1_ERROR_BLINK_FREQUENCY_MS pdMS_TO_TICKS( !IsRenesasSimDebugMode() ? 250 : 25 )
 #define CON_RECV_TIMEOUT_MS pdMS_TO_TICKS( !IsRenesasSimDebugMode() ? 60 * 1000UL : 6 * 1000UL )
 //#define CON_RECV_TIMEOUT_MS (!IsRenesasSimDebugMode() ? pdMS_TO_TICKS( 60 * 1000UL ) : portMAX_DELAY ) /* for debug */
 //#define CON_RECV_TIMEOUT_MS (!IsRenesasSimDebugMode() ? pdMS_TO_TICKS( 60 * 1000UL ) : 0 ) /* for debug */
 #else
 /* Hardware only */
-#define LED1_ERROR_BLINK_FREQUENCY_MS pdMS_TO_TICKS( 200 )
+#define LED1_ERROR_BLINK_FREQUENCY_MS pdMS_TO_TICKS( 500 )
 #define CON_RECV_TIMEOUT_MS pdMS_TO_TICKS( 60 * 1000UL )
 #endif
 /* End user code. Do not edit comment generated here */
@@ -50,6 +51,7 @@ void task_CONIO(void * pvParameters)
 
     volatile uint8_t recv_buff[CON_RECV_DEMO_SIZE + 1];
     volatile uint8_t err_events;
+    uint8_t send_buff[CON_RECV_DEMO_SIZE + 1];
     MD_STATUS status;
     uint32_t cnt;
 
@@ -60,17 +62,15 @@ void task_CONIO(void * pvParameters)
     cnt = 0;
     for (;;)
     {
-        memset( (char *)recv_buff, 0, CON_RECV_DEMO_SIZE + 1 );
-
         if (0 == cnt)
         {
             status = U_UART3_Send_Wait( (uint8_t *)CON_START_MESSAGE, sizeof(CON_START_MESSAGE) - 1 );
         }
         cnt++;
 
-        status = U_UART3_Receive_Wait( recv_buff, CON_RECV_DEMO_SIZE, &err_events, CON_RECV_TIMEOUT_MS );
+        memset( (char *)recv_buff, 0, CON_RECV_DEMO_SIZE + 1 );
 
-        nop();  /* for breakpoint, check timing chart on Simulator GUI */
+        status = U_UART3_Receive_Wait( recv_buff, CON_RECV_DEMO_SIZE, &err_events, CON_RECV_TIMEOUT_MS );
 
         if (MD_OK == status)
         {
@@ -121,7 +121,9 @@ void task_CONIO(void * pvParameters)
             continue;
         }
 
-        status = U_UART3_Send_Wait( (uint8_t *)recv_buff, CON_RECV_DEMO_SIZE );
+        memcpy( send_buff, (void *)recv_buff, CON_RECV_DEMO_SIZE );
+
+        status = U_UART3_Send_Start( (uint8_t *)send_buff, CON_RECV_DEMO_SIZE );
 
         nop();  /* for breakpoint, check timing chart on Simulator GUI */
         if (4 == cnt)

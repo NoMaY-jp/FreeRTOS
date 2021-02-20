@@ -27,10 +27,10 @@ Includes   <System Includes> , "Project Includes"
 
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
 /* Hardware or Renesas RL78 Simulator */
-#define LED0_BLINK_FREQUENCY_MS pdMS_TO_TICKS( !IsRenesasSimDebugMode() ? 500 : 50 )
+#define LED0_BLINK_FREQUENCY_MS pdMS_TO_TICKS( !IsRenesasSimDebugMode() ? 1000 : 100 )
 #else
 /* Hardware only */
-#define LED0_BLINK_FREQUENCY_MS pdMS_TO_TICKS( 500 )
+#define LED0_BLINK_FREQUENCY_MS pdMS_TO_TICKS( 1000 )
 #endif
 /* End user code. Do not edit comment generated here */
 

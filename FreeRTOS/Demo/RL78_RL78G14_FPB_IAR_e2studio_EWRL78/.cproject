@@ -108,14 +108,13 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_startup}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_config}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/applilet3_src}&quot;"/>
 								</option>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreInclude::dEditB.231353197" name="Preinclude file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreInclude::dEditB" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckFile.1258825930" name="Preprocessor output to file" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckFile" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckComments.473430590" name="Preserve comments" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckComments" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckLine.349821653" name="Generate #line directives" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCPreprocFile::dCheckLine" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCRemarks::dCheck.933309146" name="Enable remarks" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCRemarks::dCheck" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit.877463667" name="Suppress these diagnostics:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit" useByScannerDiscovery="false" value="Pa091,Pe177,Pe082,Ta026,Pa082" valueType="string"/>
+								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit.877463667" name="Suppress these diagnostics:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagSuppress::dEdit" useByScannerDiscovery="false" value="Pa091,Pe177,Pe082,Ta026" valueType="string"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagRemark::dEdit.1454877968" name="Treat these as remarks:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagRemark::dEdit" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarning::dEdit.745344569" name="Treat these as warnings:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagWarning::dEdit" useByScannerDiscovery="false" value="Pa045" valueType="string"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OCCDiagError::dEdit.1902831688" name="Treat these as errors:" superClass="iar.wtdx.rl78_v3.toolchain.option.OCCDiagError::dEdit" useByScannerDiscovery="false"/>
@@ -267,7 +266,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="_hw_mul_div_replacement|applilet3_src|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry excluding="FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.c|FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.c|ExampleISR.s|frtos_skeleton/main_task.c|FreeRTOS/Source/portable/MemMang/heap_5.c|FreeRTOS/Source/portable/MemMang/heap_3.c|FreeRTOS/Source/portable/MemMang/heap_2.c|FreeRTOS/Source/portable/MemMang/heap_1.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry excluding="FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.c|FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.c|frtos_skeleton/main_task.c|FreeRTOS/Source/portable/MemMang/heap_5.c|FreeRTOS/Source/portable/MemMang/heap_3.c|FreeRTOS/Source/portable/MemMang/heap_2.c|FreeRTOS/Source/portable/MemMang/heap_1.c" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

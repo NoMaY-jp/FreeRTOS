@@ -48,6 +48,7 @@ volatile uint16_t  g_uart3_rx_count;           /* uart3 receive data number */
 volatile uint16_t  g_uart3_rx_length;          /* uart3 receive data length */
 /* Start user code for global. Do not edit comment generated here */
 TaskHandle_t       g_uart3_tx_task;            /* uart3 send task */
+volatile bool      g_uart3_tx_ready_flag;      /* uart3 send end flag */
 TaskHandle_t       g_uart3_rx_task;            /* uart3 receive task */
 volatile uint8_t   g_uart3_rx_abort_events;    /* uart3 receive error flags (not including timeout error) */
 
@@ -55,6 +56,7 @@ void U_UART3_Receive_Stop(void);               /* for internal use */
 void U_UART3_Send_Stop(void);                  /* for internal use */
 
 static void U_UART3_Receive(volatile uint8_t * rx_buf, uint16_t rx_num);
+static void U_UART3_Send_WaitForReady(void);
 static void U_UART3_Send(uint8_t * tx_buf, uint16_t tx_num);
 /* End user code. Do not edit comment generated here */
 
@@ -225,6 +227,7 @@ void U_UART3_Start(void)
     R_UART3_Start();
     U_UART3_Receive_Stop();
     U_UART3_Receive_ClearError();
+    g_uart3_tx_ready_flag = true;
 }
 
 /******************************************************************************
@@ -254,7 +257,12 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
     else
     {
         /* Forbid task switching before disabling INTSR3 interrupt, otherwise other higher
-        or same priority tasks may run keeping INTSR3 interrupt disabled for a long time. */
+         * or same priority tasks may run keeping INTSR3 interrupt disabled for a long time.
+         * Since the interrupt priority of INTSR3 is configured higher than the SYSCALL
+         * interrupt priority, a critical section cannot disable INTSR3 interrupt. In this
+         * case, when exclusive operation between task side and interrupt service routine
+         * side is necessary, using interrupt mask register is necessary for the operation.
+         */
         taskENTER_CRITICAL();
         SRMK3 = 1U; /* disable INTSR3 interrupt */
 
@@ -263,7 +271,8 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
             /* Requested data can be obtained immediately. */
 
             /* Permit task switching after enabling INTSR3 interrupt when reception
-            isn't aborted. */
+             * isn't aborted.
+             */
             if (0U == g_uart3_rx_abort_events)
             {
                 SRMK3 = 0U; /* enable INTSR3 interrupt */
@@ -277,7 +286,8 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
             /* Requested data cannot be obtained never. */
 
             /* Permit task switching. Don't enable INTSR3 interrupt because reception
-            is aborted. */
+             * is aborted.
+             */
             taskEXIT_CRITICAL();
 
             status = MD_RECV_ERROR;
@@ -292,7 +302,8 @@ MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volat
             U_UART3_Receive( rx_buf, rx_num );
 
             /* Permit task switching after enabling INTSR3 interrupt because reception
-            isn't aborted. */
+             * isn't aborted.
+             */
             SRMK3 = 0U; /* enable INTSR3 interrupt */
             taskEXIT_CRITICAL();
 
@@ -389,6 +400,9 @@ MD_STATUS U_UART3_Send_Wait(uint8_t * tx_buf, uint16_t tx_num)
     }
     else
     {
+        U_UART3_Send_WaitForReady();
+
+       /* Set up the interrupt/callback ready to post a notification */
         g_uart3_tx_task = xTaskGetCurrentTaskHandle_R_Helper();
         U_UART3_Send( tx_buf, tx_num );
 
@@ -399,8 +413,53 @@ MD_STATUS U_UART3_Send_Wait(uint8_t * tx_buf, uint16_t tx_num)
     return status;
 }
 
+MD_STATUS U_UART3_Send_Start(uint8_t * tx_buf, uint16_t tx_num)
+{
+    MD_STATUS status = MD_OK;
+
+    if (tx_num < 1U || 256U < tx_num)
+    {
+        status = MD_ARGERROR;
+    }
+    else
+    {
+        U_UART3_Send_WaitForReady();
+        U_UART3_Send( tx_buf, tx_num );
+    }
+
+    return status;
+}
+
+static void U_UART3_Send_WaitForReady(void)
+{
+    /* Since the interrupt priority of INTST3 is configured within the SYSCALL
+     * interrupt priority, a critical section can disable INTST3 interrupt.
+     */
+    taskENTER_CRITICAL();
+
+    if (false == g_uart3_tx_ready_flag)
+    {
+        /* Transmission hasn't finished, so wait for the finish. */
+
+       /* Set up the interrupt/callback ready to post a notification */
+        g_uart3_tx_task = xTaskGetCurrentTaskHandle_R_Helper();
+
+        taskEXIT_CRITICAL();
+
+        /* Wait for a notification from the interrupt/callback */
+        ulTaskNotifyTake_R_Helper( portMAX_DELAY );
+    }
+    else
+    {
+        /* Transmission has finished, so do nothing. */
+
+        taskEXIT_CRITICAL();
+    }
+}
+
 static void U_UART3_Send(uint8_t * tx_buf, uint16_t tx_num)
 {
+    g_uart3_tx_ready_flag = false;
     STIF3 = 0U;        /* clear INTST3 interrupt flag */
     if (1 < tx_num)
     {

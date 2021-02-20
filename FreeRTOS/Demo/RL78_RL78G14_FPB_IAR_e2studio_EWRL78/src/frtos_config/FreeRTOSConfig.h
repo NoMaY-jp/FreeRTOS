@@ -114,6 +114,7 @@ to exclude the API function. */
 #define INCLUDE_uxTaskGetStackHighWaterMark	1
 #define INCLUDE_xTaskGetSchedulerState		1
 #define INCLUDE_eTaskGetState				1
+#define INCLUDE_xTaskGetCurrentTaskHandle	1
 #define INCLUDE_xTimerPendFunctionCall		1
 
 #if (configUSE_16_BIT_TICKS == 1)
