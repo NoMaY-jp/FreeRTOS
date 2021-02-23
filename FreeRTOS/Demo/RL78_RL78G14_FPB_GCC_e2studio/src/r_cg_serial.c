@@ -218,7 +218,7 @@ MD_STATUS R_UART3_Send(uint8_t * const tx_buf, uint16_t tx_num)
 
 /******************************************************************************
 * Function Name: U_UART3_Start
-* Description  : This function starts the UART3 module using reception Ring Buffer.
+* Description  : This function starts the UART3 module using reception Ring Buffer and transmission DTC.
 * Arguments    : None
 * Return Value : None
 ******************************************************************************/
@@ -382,7 +382,7 @@ void U_UART3_Receive_ClearError(void)
 
 /******************************************************************************
 * Function Name: U_UART3_Send_Wait
-* Description  : This function sends UART3 data using DTCD0.
+* Description  : This function sends UART3 data using DTC.
 * Arguments    : tx_buf -
 *                    transfer buffer pointer
 *                tx_num -
@@ -471,7 +471,7 @@ static void U_UART3_Send(uint8_t * tx_buf, uint16_t tx_num)
 
 /******************************************************************************
 * Function Name: U_UART3_Send_Stop
-* Description  : This function stops the UART3 data transmission.
+* Description  : This function stops the UART3 data transmission using DTC.
 * Arguments    : None
 * Return Value : None
 * Note         : This is called from others internally.

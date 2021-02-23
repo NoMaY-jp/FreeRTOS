@@ -29,7 +29,6 @@ Includes   <System Includes> , "Project Includes"
 volatile bool g_task_CONIO_error = false;
 
 #define CON_START_MESSAGE  "\r\nEnter characters\r\n"
-#define CON_TIMEOUTT_MESSAGE  "\r\nTimeout! Please push SW_USR\r\n"
 #define CON_RECV_DEMO_SIZE 3
 
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
@@ -40,7 +39,7 @@ volatile bool g_task_CONIO_error = false;
 //#define CON_RECV_TIMEOUT_MS (!IsRenesasSimDebugMode() ? pdMS_TO_TICKS( 60 * 1000UL ) : 0 ) /* for debug */
 #else
 /* Hardware only */
-#define LED1_ERROR_BLINK_FREQUENCY_MS pdMS_TO_TICKS( 500 )
+#define LED1_ERROR_BLINK_FREQUENCY_MS pdMS_TO_TICKS( 250 )
 #define CON_RECV_TIMEOUT_MS pdMS_TO_TICKS( 60 * 1000UL )
 #endif
 /* End user code. Do not edit comment generated here */

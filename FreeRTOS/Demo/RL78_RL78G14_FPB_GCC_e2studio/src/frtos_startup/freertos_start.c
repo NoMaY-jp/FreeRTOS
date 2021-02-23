@@ -499,13 +499,29 @@ void vSendString( const char * const pcString )
 /* Replacement to be thread-safe (in case of other than using heap_3.c). */
 void *malloc( size_t xWantedSize )
 {
+#if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
     return pvPortMalloc( xWantedSize );
+#else
+    INTERNAL_NOT_USED( xWantedSize );
+
+    /* Force an assert. */
+    configASSERT( ( volatile void * ) NULL );
+
+    return NULL;
+#endif
 }
 
 /* Replacement to be thread-safe (in case of other than using heap_3.c). */
 void free( void *pv )
 {
+#if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
     vPortFree( pv );
+#else
+    INTERNAL_NOT_USED( pv );
+
+    /* Force an assert. */
+    configASSERT( ( volatile void * ) NULL );
+#endif
 }
 
 #if defined(__GNUC__)
@@ -515,7 +531,11 @@ int8_t *sbrk( size_t size );
 /* Maybe not called but necessary for linking without an undefined error. */
 int8_t *sbrk( size_t size )
 {
-    ( void ) size;
+    INTERNAL_NOT_USED( size );
+
+    /* Force an assert. */
+    configASSERT( ( volatile void * ) NULL );
+
     return (int8_t *)-1;
 }
 
