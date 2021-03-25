@@ -395,12 +395,13 @@ static void r_uart3_callback_sendend(void);
 static void r_uart3_callback_softwareoverrun(uint16_t rx_data);
 
 /* Start user code for function. Do not edit comment generated here */
+
 #include "platform.h" /* for the TickType_t type in this header file */
 
 void U_UART3_Start(void);
 MD_STATUS U_UART3_Send_Wait(uint8_t * tx_buf, uint16_t tx_num);
 MD_STATUS U_UART3_Send_Start(uint8_t * tx_buf, uint16_t tx_num);
-MD_STATUS U_UART3_Receive_Wait(volatile uint8_t * rx_buf, uint16_t rx_num, volatile uint8_t * p_err_events, TickType_t rx_wait);
+MD_STATUS U_UART3_Receive_Wait(uint8_t * rx_buf, uint16_t rx_num, uint8_t * p_err_events, TickType_t rx_wait);
 void U_UART3_Receive_ClearError(void);
 
 #define SCI_EVT_RXBUF_OVFL  0x80U
@@ -415,5 +416,6 @@ void U_UART3_Receive_ClearError(void);
 /*#define MD_SEND_ERROR       MD_ERROR3*/
 /*#define MD_SEND_TIMEOUT     MD_ERROR4*/
 /*#define MD_SEND_BUSY        MD_ERROR5*/
+
 /* End user code. Do not edit comment generated here */
 #endif

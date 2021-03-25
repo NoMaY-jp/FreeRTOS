@@ -21,10 +21,10 @@ Includes   <System Includes> , "Project Includes"
 ***********************************************************************************************************************/
 #include "task_function.h"
 /* Start user code for import. Do not edit comment generated here */
-#include "freertos_start.h"
+
 #include "platform.h"
-#include "r_cg_intc.h"
 #include "rl78g14fpbdef.h"
+#include "r_cg_intc.h"
 
 extern volatile bool g_task_CONIO_error;
 
@@ -35,6 +35,7 @@ extern volatile bool g_task_CONIO_error;
 /* Hardware only */
 #define SW1_REMOVE_CHATTERING_PERIOD_MS pdMS_TO_TICKS( 10 )
 #endif
+
 /* End user code. Do not edit comment generated here */
 
 void task_LED1(void * pvParameters)
@@ -42,8 +43,6 @@ void task_LED1(void * pvParameters)
 /* Start user code for function. Do not edit comment generated here */
 
     INTERNAL_NOT_USED( pvParameters );
-
-    R_INTC0_Start();
 
     LED1 = LED_OFF;
     for (;;)

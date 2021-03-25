@@ -45,6 +45,7 @@ multiple evaluation boards. */
 #include "demo_specific_io.h"
 
 #define configUSE_PREEMPTION			1
+#define configUSE_TIME_SLICING			1
 #define configUSE_IDLE_HOOK				1
 #define configUSE_TICK_HOOK				1
 #define configTICK_RATE_HZ				(( TickType_t ) 1000)
@@ -120,8 +121,6 @@ to exclude the API function. */
 #if (configUSE_16_BIT_TICKS == 1)
 #define pdMS_TO_TICKS( xTimeInMs ) ( ( TickType_t ) ( ( ( uint32_t ) ( xTimeInMs ) * ( uint32_t ) configTICK_RATE_HZ ) / ( uint32_t ) 1000 ) )
 #endif
-
-#define pdBYTES_TO_STACK_DEPTH( ulBytes ) ( ( ( uint32_t ) ( ulBytes ) + ( sizeof( StackType_t ) - 1 ) ) / sizeof( StackType_t ) )
 
 #if defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__)
 
@@ -209,6 +208,31 @@ used.) But some features need to be explicity excluded. */
 FreeRTOS kernel source code confused.
 #define configASSERT()
 */
+
+#define NDEBUG  /* Defined: Release build, Not defined: Debug build */
+
+#if !defined(NDEBUG)
+
+#if defined(configSUPPORT_DYNAMIC_ALLOCATION)
+#undef configUSE_MALLOC_FAILED_HOOK
+#endif
+#undef configCHECK_FOR_STACK_OVERFLOW
+#undef configASSERT_DEFINED
+
+#if defined(configSUPPORT_DYNAMIC_ALLOCATION)
+#define configUSE_MALLOC_FAILED_HOOK	1
+#endif
+#define configCHECK_FOR_STACK_OVERFLOW	2
+#define configASSERT_DEFINED			1
+
+#if defined(__CCRL__) || (defined(__GNUC__) && !defined(__ASSEMBLER__)) || defined(__ICCRL78__)
+#if !defined(configASSERT)
+void vAssertCalled( void );
+#define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled()
+#endif
+#endif
+
+#endif /*  !defined(NDEBUG) */
 
 #endif /* mainCREATE_NON_STANDARD_RTOS_DEMO == 1 */
 

@@ -34,6 +34,7 @@
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
 #include "freertos_start.h"
+#include "freertos_stack.h"
 #include "r_cg_serial.h"
 #include "demo_main.h"
 #include "demo_specific_io.h"
@@ -496,52 +497,6 @@ void vSendString( const char * const pcString )
 }
 /*-----------------------------------------------------------*/
 
-/* Replacement to be thread-safe (in case of other than using heap_3.c). */
-void *malloc( size_t xWantedSize )
-{
-#if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
-    return pvPortMalloc( xWantedSize );
-#else
-    INTERNAL_NOT_USED( xWantedSize );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-
-    return NULL;
-#endif
-}
-
-/* Replacement to be thread-safe (in case of other than using heap_3.c). */
-void free( void *pv )
-{
-#if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
-    vPortFree( pv );
-#else
-    INTERNAL_NOT_USED( pv );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-#endif
-}
-
-#if defined(__GNUC__)
-
-int8_t *sbrk( size_t size );
-
-/* Maybe not called but necessary for linking without an undefined error. */
-int8_t *sbrk( size_t size )
-{
-    INTERNAL_NOT_USED( size );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-
-    return (int8_t *)-1;
-}
-
-#endif /* defined(__GNUC__) */
-/*-----------------------------------------------------------*/
-
 #if (mainCREATE_NON_STANDARD_RTOS_DEMO == 1)
 
 /* Override or add empty functions which are actually unused but necessary to link
@@ -607,11 +562,25 @@ void vTimerSetReloadMode( TimerHandle_t xTimer, const UBaseType_t uxAutoReload )
     INTERNAL_NOT_USED( uxAutoReload );
 }
 
+UBaseType_t uxTimerGetReloadMode( TimerHandle_t xTimer )
+{
+    INTERNAL_NOT_USED( xTimer );
+
+    return pdFALSE;
+}
+
 BaseType_t xTimerIsTimerActive( TimerHandle_t xTimer )
 {
     INTERNAL_NOT_USED( xTimer );
 
     return pdFALSE;
+}
+
+const char * pcTimerGetName( TimerHandle_t xTimer )
+{
+    INTERNAL_NOT_USED( xTimer );
+
+    return "";
 }
 
 BaseType_t xEventGroupClearBitsFromISR( EventGroupHandle_t xEventGroup,

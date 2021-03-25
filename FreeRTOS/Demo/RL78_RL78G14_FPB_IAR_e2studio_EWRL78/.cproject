@@ -160,6 +160,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/FreeRTOS_Demo}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/FreeRTOS/Source/portable/IAR/RL78}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/frtos_config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
 								</option>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmPreInclude::dEditB.1705964582" name="Preinclude file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmPreInclude::dEditB" useByScannerDiscovery="false"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemarks::enable.1648904364" name="Enable remarks" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDiagRemarks::enable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
