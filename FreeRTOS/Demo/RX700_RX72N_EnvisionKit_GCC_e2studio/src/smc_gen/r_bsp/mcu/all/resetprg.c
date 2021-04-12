@@ -35,6 +35,7 @@
 *                                - BSP_PRV_DPSW_INIT
 *         : 26.07.2019 3.01      Added vbatt_voltage_stability_wait function.
 *         : 08.10.2019 3.10      Changed for added support of Renesas RTOS (RI600V4 or RI600PX).
+*         : 20.11.2020 3.11      Changed vbatt_voltage_stability_wait function.
 ***********************************************************************************************************************/
 
 /***********************************************************************************************************************
@@ -235,7 +236,7 @@ R_BSP_POR_FUNCTION(R_BSP_STARTUP_FUNCTION)
 #endif /* defined(__CCRX__), defined(__GNUC__) */
 
     /* Wait for power voltage stabilization of VBATT function. */
-#if (defined(BSP_CFG_VBATT_ENABLE) && (BSP_CFG_VBATT_ENABLE == 0))
+#if defined(BSP_CFG_VBATT_ENABLE)
     vbatt_voltage_stability_wait();
 #endif
 

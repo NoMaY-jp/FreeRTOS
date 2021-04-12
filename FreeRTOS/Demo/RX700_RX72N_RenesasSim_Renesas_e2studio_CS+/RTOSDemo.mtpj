@@ -1,9 +1,9 @@
 ﻿<CubeSuiteProject>
-  <ProductVersion>9.04.00.00</ProductVersion>
+  <ProductVersion>9.05.00.00</ProductVersion>
   <Class Guid="68f4a651-b9cd-473b-a595-b00447132ffa">
     <Instance Guid="00000000-0000-0000-0000-000000000000">
       <FormatVersion>2.0</FormatVersion>
-      <FileVersion>9.4</FileVersion>
+      <FileVersion>9.5</FileVersion>
       <ProjectGuid>e4273b99-1a26-4344-a4c9-23e0249a53c2</ProjectGuid>
       <ProjectItemGuid>4383b424-c21b-4ce9-b8e1-16a5757c589c</ProjectItemGuid>
       <FileCategoryGuid>fd4185a5-5fcd-4bc6-8caf-a515c94051dd</FileCategoryGuid>
@@ -114,12 +114,6 @@
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>9abf74df-121e-492c-aef7-750eb4355685</ParentItem>
     </Instance>
-    <Instance Guid="3d16dbd2-22cf-4f02-a180-6e28606cfa82">
-      <Name>CONTRIBUTING.md</Name>
-      <Type>File</Type>
-      <RelativePath>..\..\Source\CONTRIBUTING.md</RelativePath>
-      <ParentItem>9abf74df-121e-492c-aef7-750eb4355685</ParentItem>
-    </Instance>
     <Instance Guid="f7e69ba9-b0ba-4429-b660-308e8d43d145">
       <Name>GitHub-FreeRTOS-Kernel-Home.url</Name>
       <Type>File</Type>
@@ -150,12 +144,6 @@
       <Type>File</Type>
       <RelativePath>..\..\Source\README.md</RelativePath>
       <TreeImageGuid>0c88f8d6-0d0b-411f-a135-781f4df9bffa</TreeImageGuid>
-      <ParentItem>9abf74df-121e-492c-aef7-750eb4355685</ParentItem>
-    </Instance>
-    <Instance Guid="f24678d9-78aa-45b5-954a-fdfa4ea5031c">
-      <Name>SECURITY.md</Name>
-      <Type>File</Type>
-      <RelativePath>..\..\Source\SECURITY.md</RelativePath>
       <ParentItem>9abf74df-121e-492c-aef7-750eb4355685</ParentItem>
     </Instance>
     <Instance Guid="80fc7672-f90e-41a5-a11b-1b031839cd26">
@@ -960,13 +948,6 @@
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
-    <Instance Guid="c2a04470-ed52-4627-b7b4-e1de2b822e6e">
-      <Name>FIT_patch2.h</Name>
-      <Type>File</Type>
-      <RelativePath>src\smc_workaround\FIT_patch2.h</RelativePath>
-      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
-      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
-    </Instance>
     <Instance Guid="d901f9f7-51f6-4a3a-a4d3-777b37eb03f2">
       <Name>IDE_helper.c</Name>
       <Type>File</Type>
@@ -1022,13 +1003,6 @@
       <RelativePath>src\smc_workaround\u_bsp_lowlvl_ext.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
-    </Instance>
-    <Instance Guid="e5efeb7d-d0af-40ee-ad96-13d1fde3253e">
-      <Name>platform.h</Name>
-      <Type>File</Type>
-      <RelativePath>src\smc_workaround\r_bsp_patch\platform.h</RelativePath>
-      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
-      <ParentItem>3e49a941-4f19-4932-b0a9-59a722f4456e</ParentItem>
     </Instance>
     <Instance Guid="d94115bb-5db0-4c22-9f42-7cc7a78ed5e5">
       <Name>resetprg.c</Name>
@@ -1217,15 +1191,15 @@
       <ParentItem>a29b4abd-ec28-48db-8bb9-d91b5875b512</ParentItem>
     </Instance>
     <Instance Guid="cfe7aeb6-166b-4703-a00e-456ca0d9b3fe">
-      <Name>r01an1685ej0561-rx-bsp.pdf</Name>
+      <Name>r01an1685ej0563-rx-bsp.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_bsp\doc\en\r01an1685ej0563-rx-bsp.pdf</RelativePath>
       <ParentItem>0faa0af5-bd0b-485a-8911-82c95a53738a</ParentItem>
     </Instance>
     <Instance Guid="1f765635-8148-46b6-8a82-98a78ebdebc2">
-      <Name>r01an1685jj0561-rx-bsp.pdf</Name>
+      <Name>r01an1685jj0563-rx-bsp.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_bsp\doc\ja\r01an1685jj0563-rx-bsp.pdf</RelativePath>
       <ParentItem>76a80a75-8b18-40ee-9a51-4a491488c016</ParentItem>
     </Instance>
     <Instance Guid="93c1bd5f-6490-4550-ae3e-a15be16e1119">
@@ -1596,15 +1570,15 @@
       <ParentItem>6789a76d-e318-42ff-bd3a-c8295c845dab</ParentItem>
     </Instance>
     <Instance Guid="9315b649-74c1-4183-b1bd-929ce7966c56">
-      <Name>r01an1721ej0350-rx-gpio.pdf</Name>
+      <Name>r01an1721ej0360-rx-gpio.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0350-rx-gpio.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</RelativePath>
       <ParentItem>c164934d-70c8-4a6a-bfa7-ea82233f64ed</ParentItem>
     </Instance>
     <Instance Guid="d1bff9dc-4820-431c-9c3f-36750c04ed4b">
-      <Name>r01an1721jj0350-rx-gpio.pdf</Name>
+      <Name>r01an1721jj0360-rx-gpio.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0350-rx-gpio.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</RelativePath>
       <ParentItem>ef33e21b-5380-4afe-a3d8-3f4b4fa0f2a5</ParentItem>
     </Instance>
     <Instance Guid="47cf245e-e1b8-4a54-bf09-284d72e21471">
@@ -2003,7 +1977,7 @@
       <GeneralOptionBaseAddressRegister-0>None</GeneralOptionBaseAddressRegister-0>
       <GeneralOptionPatch-0>None</GeneralOptionPatch-0>
       <GeneralOptionSaveAcc-0>False</GeneralOptionSaveAcc-0>
-      <LastCompilerVersion-0>V3.02.00</LastCompilerVersion-0>
+      <LastCompilerVersion-0>V3.03.00</LastCompilerVersion-0>
     </Instance>
     <Instance Guid="95a63257-4aa7-40c0-a74a-7991543b099b">
       <COptionLangC-DefaultValue>C</COptionLangC-DefaultValue>
@@ -2108,6 +2082,7 @@
       <COptionCheck-DefaultValue>No</COptionCheck-DefaultValue>
       <COptionFloatOrder-DefaultValue>False</COptionFloatOrder-DefaultValue>
       <COptionIncode-DefaultValue>Sjis</COptionIncode-DefaultValue>
+      <COptionBranchChaining-DefaultValue>None</COptionBranchChaining-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8586075486978517108</TimeTagModified--0>
       <COptionLangC-0>C99</COptionLangC-0>
@@ -2141,7 +2116,6 @@ src\smc_gen\r_bsp\board\generic_rx72n
 src\smc_gen\r_bsp
 src\smc_gen\general
 src\smc_workaround
-src\smc_workaround\r_bsp_patch
 ..\..\Source\include
 ..\..\Source\portable\Renesas\RX_RenesasSim
 src\frtos_startup
@@ -2233,6 +2207,7 @@ src\FreeRTOS_Demo
       <COptionCheck-0>No</COptionCheck-0>
       <COptionFloatOrder-0>False</COptionFloatOrder-0>
       <COptionIncode-0>Utf8</COptionIncode-0>
+      <COptionBranchChaining-0>None</COptionBranchChaining-0>
     </Instance>
     <Instance Guid="5ad1746c-d03e-4610-a91f-aaa4fb37bc10">
       <AsmOptionChkpm-DefaultValue>False</AsmOptionChkpm-DefaultValue>
@@ -2494,6 +2469,7 @@ D_1=R_1
       <HexOptionCrcType-DefaultValue>Ccitt</HexOptionCrcType-DefaultValue>
       <HexOptionCrcInitialValue-DefaultValue />
       <HexOptionCrcEndian-DefaultValue>None</HexOptionCrcEndian-DefaultValue>
+      <HexOptionVerboseCrc-DefaultValue>False</HexOptionVerboseCrc-DefaultValue>
       <HexOptionEndRecord-DefaultValue>None</HexOptionEndRecord-DefaultValue>
       <LinkOptionS9-DefaultValue>False</LinkOptionS9-DefaultValue>
       <HexOptionCreateUnfilledArea-DefaultValue>False</HexOptionCreateUnfilledArea-DefaultValue>
@@ -2531,6 +2507,7 @@ D_1=R_1
       <HexOptionCrcType-0>Ccitt</HexOptionCrcType-0>
       <HexOptionCrcInitialValue-0 />
       <HexOptionCrcEndian-0>None</HexOptionCrcEndian-0>
+      <HexOptionVerboseCrc-0>False</HexOptionVerboseCrc-0>
       <HexOptionEndRecord-0>None</HexOptionEndRecord-0>
       <LinkOptionS9-0>False</LinkOptionS9-0>
       <HexOptionCreateUnfilledArea-0>False</HexOptionCreateUnfilledArea-0>
@@ -2669,6 +2646,7 @@ D_1=R_1
       <LbgOptionSimpleFloatConv-DefaultValue>False</LbgOptionSimpleFloatConv-DefaultValue>
       <LbgOptionFpu-DefaultValue>Fpu</LbgOptionFpu-DefaultValue>
       <LbgOptionFloatOrder-DefaultValue>False</LbgOptionFloatOrder-DefaultValue>
+      <LbgOptionBranchChaining-DefaultValue>None</LbgOptionBranchChaining-DefaultValue>
       <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8586002171725471385</TimeTagModified--0>
       <LbgOptionLanguage-0>C99</LbgOptionLanguage-0>
@@ -2735,6 +2713,7 @@ D_1=R_1
       <LbgOptionSimpleFloatConv-0>False</LbgOptionSimpleFloatConv-0>
       <LbgOptionFpu-0>Fpu</LbgOptionFpu-0>
       <LbgOptionFloatOrder-0>False</LbgOptionFloatOrder-0>
+      <LbgOptionBranchChaining-0>None</LbgOptionBranchChaining-0>
     </Instance>
     <Instance Guid="981806ad-5d7a-404e-84c8-ae18cbb37112">
       <LinkOrder-0>0</LinkOrder-0>
@@ -3106,10 +3085,6 @@ D_1=R_1
       <ItemAddTime>637293001085032624</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="d1bff9dc-4820-431c-9c3f-36750c04ed4b">
-      <ItemAddTime>637293001085342714</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
     <Instance Guid="774b3190-c075-4658-85d5-4646f1d7a6df">
       <ItemAddTime>637293001088452597</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
@@ -3270,10 +3245,6 @@ D_1=R_1
       <ItemAddTime>637083927784747600</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="9315b649-74c1-4183-b1bd-929ce7966c56">
-      <ItemAddTime>637293001085212664</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
     <Instance Guid="47cf245e-e1b8-4a54-bf09-284d72e21471">
       <ItemAddTime>637293001086312581</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
@@ -3305,10 +3276,6 @@ D_1=R_1
     <Instance Guid="4efcee05-27ff-4039-b856-597175901bf0">
       <ItemAddTime>637292557239592235</ItemAddTime>
       <ItemAddTimeCount>5</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="e5efeb7d-d0af-40ee-ad96-13d1fde3253e">
-      <ItemAddTime>637292563324914890</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="86e8ee1f-299a-458f-96d3-95131d52afe9">
       <ItemAddTime>637097010424447264</ItemAddTime>
@@ -3754,8 +3721,8 @@ D_1=R_1
       <ItemAddTime>637292575152424716</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="3d16dbd2-22cf-4f02-a180-6e28606cfa82">
-      <ItemAddTime>637292575666957243</ItemAddTime>
+    <Instance Guid="c45cf8b8-22cb-41f8-a060-f2a6dc15fd17">
+      <ItemAddTime>637535198363039438</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="f7e69ba9-b0ba-4429-b660-308e8d43d145">
@@ -3774,9 +3741,9 @@ D_1=R_1
       <ItemAddTime>637292575666957243</ItemAddTime>
       <ItemAddTimeCount>4</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="f24678d9-78aa-45b5-954a-fdfa4ea5031c">
-      <ItemAddTime>637292575666957243</ItemAddTime>
-      <ItemAddTimeCount>6</ItemAddTimeCount>
+    <Instance Guid="9f8dbacb-d974-48f8-9d21-3168a5104a16">
+      <ItemAddTime>637535198362883147</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="8987e37e-d659-4181-847d-5811fb49865b">
       <ItemAddTime>637293001073892606</ItemAddTime>
@@ -3793,14 +3760,6 @@ D_1=R_1
     <Instance Guid="620806e5-7ae0-48b9-ab4f-8f85ac96e227">
       <ItemAddTime>637293001073892606</ItemAddTime>
       <ItemAddTimeCount>2</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="1f765635-8148-46b6-8a82-98a78ebdebc2">
-      <ItemAddTime>637293001072625339</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="cfe7aeb6-166b-4703-a00e-456ca0d9b3fe">
-      <ItemAddTime>637293001072445295</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="6fa476cc-18f2-4052-b344-aa03f7561d44">
       <ItemAddTime>637293001072215239</ItemAddTime>
@@ -3850,10 +3809,6 @@ D_1=R_1
       <ItemAddTime>637293001069075225</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="c2a04470-ed52-4627-b7b4-e1de2b822e6e">
-      <ItemAddTime>637296040271524923</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
     <Instance Guid="7daf8967-7028-4274-8dfd-80de310963d4">
       <ItemAddTime>637296040271524923</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
@@ -3869,6 +3824,30 @@ D_1=R_1
     <Instance Guid="356ababa-b02e-4f3b-85cf-64cf5d68fc96">
       <ItemAddTime>637401249347597086</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="a387bba8-3c75-4432-819d-2d8b3f2d15e3">
+      <ItemAddTime>637535198363664467</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="78943336-8e7b-45eb-8ff2-280ce38088a7">
+      <ItemAddTime>637535198363976901</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="cfe7aeb6-166b-4703-a00e-456ca0d9b3fe">
+      <ItemAddTime>637538235611709180</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="1f765635-8148-46b6-8a82-98a78ebdebc2">
+      <ItemAddTime>637538235611709180</ItemAddTime>
+      <ItemAddTimeCount>1</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="9315b649-74c1-4183-b1bd-929ce7966c56">
+      <ItemAddTime>637538235612024033</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="d1bff9dc-4820-431c-9c3f-36750c04ed4b">
+      <ItemAddTime>637538235612024033</ItemAddTime>
+      <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
     <Instance Guid="a7be515f-f007-45ed-9059-4e1500c0f74d">
       <TimeTagModified-SourceItem0--0>-8586275301238494160</TimeTagModified-SourceItem0--0>

@@ -27,6 +27,11 @@
 * History : DD.MM.YYYY Version  Description
 *         : 08.10.2019 1.00     First Release.
 *         : 31.07.2020 1.01     Modified comment.
+*         : 29.01.2021 1.02     Added the following macro definition.
+*                                - BSP_CFG_SCI_UART_TERMINAL_ENABLE
+*                                - BSP_CFG_SCI_UART_TERMINAL_CHANNEL
+*                                - BSP_CFG_SCI_UART_TERMINAL_BITRATE
+*                                - BSP_CFG_SCI_UART_TERMINAL_INTERRUPT_PRIORITY
 ***********************************************************************************************************************/
 #ifndef R_BSP_CONFIG_REF_HEADER_FILE
 #define R_BSP_CONFIG_REF_HEADER_FILE
@@ -773,6 +778,24 @@ NOTE: The RAM areas are not contiguous.It is separated by 512 KB each.
 */
 #define BSP_CFG_SWINT_IPR_INITIAL_VALUE     (0x1)
 
+/* This macro is used for serial terminal on the board selected by smart configurator.
+   0 = SCI UART Terminal is disabled.
+   1 = SCI UART Terminal is enabled.
+*/
+#define BSP_CFG_SCI_UART_TERMINAL_ENABLE         (0)
+
+/* This macro is channel number for serial terminal.
+*/
+#define BSP_CFG_SCI_UART_TERMINAL_CHANNEL        (9)
+
+/* This macro is bit-rate for serial terminal.
+*/
+#define BSP_CFG_SCI_UART_TERMINAL_BITRATE        (115200)
+
+/* This macro is interrupt priority for serial terminal.
+   0(low) - 15(high)
+*/
+#define BSP_CFG_SCI_UART_TERMINAL_INTERRUPT_PRIORITY   (15)
 
 /* Check whether this code is generated correctly or not. */
 #if (BSP_CFG_PLL_SRC != 1) || (BSP_CFG_CLOCK_SOURCE != 4)

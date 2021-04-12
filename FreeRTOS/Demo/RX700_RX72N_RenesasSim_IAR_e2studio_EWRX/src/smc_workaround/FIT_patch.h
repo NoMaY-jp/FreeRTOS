@@ -28,15 +28,9 @@ void R_SCI_PinSet_SCI12(void);
 
 #if defined(__ICCRX__)
 
-/* Workaround to reduce the following remark messages caused in the r_rx_compiler.h.
- *
- *   #define R_BSP_ASM(...)            _R_BSP_ASM(__VA_ARGS__\n)
- *                                                           ^
- * "XXX\r_rx_compiler.h",NNN  Remark[Pe007]: unrecognized token
- *
- * Turn off the remark messages temporarily.
+/* Workaround for warning messages caused by file end without newline
  */
-#pragma diag_suppress = Pe007
+#pragma diag_suppress = Pe001
 
 #endif /* defined(__ICCRX__) */
 

@@ -5,8 +5,8 @@ r_dtc_rx
 
 Document Number 
 ---------------
-R01AN1819EJ0350
-R01AN1819JJ0350
+R01AN1819EJ0360
+R01AN1819JJ0360
 
 Version
 -------

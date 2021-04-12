@@ -49,6 +49,7 @@
 *                              Removed support for Generation 1 devices.
 *         : 30.12.2019 3.40    Added support RX72N, RX66N
 *         : 31.03.2020 3.50    Added support for RX23E-A
+*         : 30.06.2020 3.60    Changed revision to reflect demo upgrade.
 ***********************************************************************************************************************/
 
 #ifndef GPIO_RX_INTERFACE_HEADER_FILE
@@ -117,7 +118,7 @@ Macro definitions
 
 /* Version Number of API. */
 #define GPIO_RX_VERSION_MAJOR           (3)
-#define GPIO_RX_VERSION_MINOR           (50)
+#define GPIO_RX_VERSION_MINOR           (60)
 
 /***********************************************************************************************************************
 Typedef definitions

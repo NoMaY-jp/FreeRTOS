@@ -113,7 +113,7 @@
         <group name ="r_bsp">
             <group name ="doc">
                 <group name ="en">
-                    <path>.\src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</path>
+                    <path>.\src\smc_gen\r_bsp\doc\en\r01an1685ej0563-rx-bsp.pdf</path>
                 </group>
             </group>
         </group>
@@ -122,7 +122,16 @@
         <group name ="r_bsp">
             <group name ="doc">
                 <group name ="ja">
-                    <path>.\src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</path>
+                    <path>.\src\smc_gen\r_bsp\doc\ja\r01an1685jj0563-rx-bsp.pdf</path>
+                </group>
+            </group>
+        </group>
+    </group>
+    <group name ="">
+        <group name ="r_bsp">
+            <group name ="mcu">
+                <group name ="all">
+                    <path>.\src\smc_gen\r_bsp\mcu\all\lowlvl.c</path>
                 </group>
             </group>
         </group>
@@ -132,6 +141,15 @@
             <group name ="mcu">
                 <group name ="all">
                     <path>.\src\smc_gen\r_bsp\mcu\all\lowlvl.h</path>
+                </group>
+            </group>
+        </group>
+    </group>
+    <group name ="">
+        <group name ="r_bsp">
+            <group name ="mcu">
+                <group name ="all">
+                    <path>.\src\smc_gen\r_bsp\mcu\all\lowsrc.c</path>
                 </group>
             </group>
         </group>
@@ -480,7 +498,7 @@
         <group name ="r_gpio_rx">
             <group name ="doc">
                 <group name ="en">
-                    <path>.\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0350-rx-gpio.pdf</path>
+                    <path>.\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</path>
                 </group>
             </group>
         </group>
@@ -489,7 +507,7 @@
         <group name ="r_gpio_rx">
             <group name ="doc">
                 <group name ="ja">
-                    <path>.\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0350-rx-gpio.pdf</path>
+                    <path>.\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</path>
                 </group>
             </group>
         </group>

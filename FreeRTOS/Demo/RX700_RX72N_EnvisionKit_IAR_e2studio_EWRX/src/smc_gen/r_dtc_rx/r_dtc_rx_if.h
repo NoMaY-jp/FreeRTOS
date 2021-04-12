@@ -53,6 +53,7 @@
 *         : 25.11.2019 3.30    Added support for RX13T.
 *         : 30.12.2019 3.40    Added support for RX66N, RX72N.
 *         : 31.03.2020 3.50    Added support for RX23E-A.
+*         : 30.06.2020 3.60    Changed revision to reflect demo upgrade.
 *******************************************************************************/
 #ifndef DTC_RX_IF_H
 #define DTC_RX_IF_H
@@ -75,7 +76,7 @@ Macro definitions
 
 /* Version Number of API. */
 #define DTC_VERSION_MAJOR  (3)
-#define DTC_VERSION_MINOR  (50)
+#define DTC_VERSION_MINOR  (60)
 
 /*******************************************************************************
 Typedef definitions

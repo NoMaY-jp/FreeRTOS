@@ -19,7 +19,7 @@
 
 /***********************************************************************************************************************
 * File Name    : r_smc_interrupt.h
-* Version      : 1.2.0
+* Version      : 1.2.1
 * Device(s)    : R5F572NNHxFB
 * Description  : This file implements interrupt setting.
 ***********************************************************************************************************************/
@@ -62,8 +62,8 @@ Macro definitions
 #define ICU_RAM_RAMERR_PRIORITY                    (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_FCU_FIFERR_PRIORITY                    (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_FCU_FRDYI_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
-#define ICU_ICU_SWINT2_PRIORITY                    (_01_ICU_PRIORITY_LEVEL1)
-#define ICU_ICU_SWINT_PRIORITY                     (_01_ICU_PRIORITY_LEVEL1)
+#define ICU_ICU_SWINT2_PRIORITY                    (_0F_ICU_PRIORITY_LEVEL15)
+#define ICU_ICU_SWINT_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_CMT0_CMI0_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_CMT1_CMI1_PRIORITY                     (_0F_ICU_PRIORITY_LEVEL15)
 #define ICU_CMTW0_CMWI0_PRIORITY                   (_0F_ICU_PRIORITY_LEVEL15)
@@ -290,4 +290,6 @@ Typedef definitions
 Global functions
 ***********************************************************************************************************************/
 void R_Interrupt_Create(void);
+/* Start user code for function. Do not edit comment generated here */
+/* End user code. Do not edit comment generated here */
 #endif

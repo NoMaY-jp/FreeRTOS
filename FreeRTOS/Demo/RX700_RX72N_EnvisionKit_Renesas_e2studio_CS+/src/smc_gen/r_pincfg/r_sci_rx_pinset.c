@@ -14,7 +14,7 @@
 * following link:
 * http://www.renesas.com/disclaimer
 *
-* Copyright (C) 2020 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2021 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 * File Name    : r_sci_rx_pinset.c
@@ -45,11 +45,11 @@ void R_SCI_PinSet_SCI2()
 {
     R_BSP_RegisterProtectDisable(BSP_REG_PROTECT_MPC);
 
-    /* Set RXD2/SMISO2 pin */
+    /* Set RXD2/SMISO2/SSCL2 pin */
     MPC.P12PFS.BYTE = 0x0AU;
     PORT1.PMR.BIT.B2 = 1U;
 
-    /* Set TXD2/SMOSI2 pin */
+    /* Set TXD2/SMOSI2/SSDA2 pin */
     MPC.P13PFS.BYTE = 0x0AU;
     PORT1.PMR.BIT.B3 = 1U;
 

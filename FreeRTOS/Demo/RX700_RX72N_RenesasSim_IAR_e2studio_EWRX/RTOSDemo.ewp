@@ -345,7 +345,6 @@
                     <state>$PROJ_DIR$\src\FreeRTOS_Demo</state>
                     <state>$PROJ_DIR$\src</state>
                     <state>$PROJ_DIR$\src\smc_workaround</state>
-                    <state>$PROJ_DIR$\src\smc_workaround\r_bsp_patch</state>
                     <state>$PROJ_DIR$\..\..\Source\include</state>
                     <state>$PROJ_DIR$\..\..\Source\portable\IAR\RX_RenesasSim</state>
                     <state>$PROJ_DIR$\src\frtos_startup</state>
@@ -2374,13 +2373,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\en\r01an1685ej0563-rx-bsp.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\ja\r01an1685jj0563-rx-bsp.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2389,7 +2388,13 @@
                     <group>
                         <name>all</name>
                         <file>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowlvl.c</name>
+                        </file>
+                        <file>
                             <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowlvl.h</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowsrc.c</name>
                         </file>
                         <file>
                             <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowsrc.h</name>
@@ -2542,13 +2547,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0350-rx-gpio.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0350-rx-gpio.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2599,23 +2604,11 @@
                 </file>
             </group>
         </group>
-        <file>
-            <name>$PROJ_DIR$\SmartConfigurator.ipcf</name>
-        </file>
     </group>
     <group>
         <name>Renesas_AP_tips</name>
         <group>
             <name>smc_workaround</name>
-            <group>
-                <name>r_bsp_patch</name>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\lowlvl.c</name>
-                </file>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\platform.h</name>
-                </file>
-            </group>
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\CC_patch.h</name>
             </file>
@@ -2627,9 +2620,6 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\FIT_patch.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\src\smc_workaround\FIT_patch2.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\IDE_helper.c</name>
@@ -2657,4 +2647,7 @@
             </file>
         </group>
     </group>
+    <file>
+        <name>$PROJ_DIR$\SmartConfigurator.ipcf</name>
+    </file>
 </project>

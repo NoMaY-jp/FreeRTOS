@@ -62,21 +62,21 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1593736401112</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-RTOSDemo_ICCRX.scfg</arguments>
+				<arguments>1.0-name-matches-false-false-SmartConfigurator.ipcf</arguments>
 			</matcher>
 		</filter>
 		<filter>
-			<id>1593736401170</id>
+			<id>0</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-RTOSDemo_ICCRX.ipcf</arguments>
+				<arguments>1.0-name-matches-false-false-SmartConfigurator.scfg</arguments>
 			</matcher>
 		</filter>
 		<filter>
@@ -107,7 +107,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470090</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -116,7 +116,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470090</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -125,7 +125,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470100</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -134,7 +134,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470100</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -143,7 +143,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470110</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -152,7 +152,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470110</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -161,7 +161,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470120</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -170,7 +170,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470120</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -179,7 +179,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470130</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -188,7 +188,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470130</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -197,7 +197,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470140</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -206,7 +206,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470140</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -215,7 +215,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470150</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -224,7 +224,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470150</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -233,7 +233,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470150</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>
@@ -242,7 +242,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1442773470160</id>
+			<id>0</id>
 			<name>src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks</name>
 			<type>5</type>
 			<matcher>

@@ -344,22 +344,21 @@
                     <state>$PROJ_DIR$\src\FreeRTOS_Demo</state>
                     <state>$PROJ_DIR$\src</state>
                     <state>$PROJ_DIR$\src\smc_workaround</state>
-                    <state>$PROJ_DIR$\src\smc_workaround\r_bsp_patch</state>
                     <state>$PROJ_DIR$\..\..\Source\include</state>
                     <state>$PROJ_DIR$\..\..\Source\portable\IAR\RX</state>
                     <state>$PROJ_DIR$\src\frtos_startup</state>
                     <state>$PROJ_DIR$\src\frtos_config</state>
                     <state>$PROJ_DIR$\src\frtos_skeleton</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_bsp</state>
-                    <state>$PROJ_DIR$\src\smc_gen\r_config</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_byteq</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_byteq\src</state>
+                    <state>$PROJ_DIR$\src\smc_gen\r_config</state>
+                    <state>$PROJ_DIR$\src\smc_gen\r_dtc_rx</state>
+                    <state>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_gpio_rx</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_gpio_rx\src</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_sci_rx</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_sci_rx\src</state>
-                    <state>$PROJ_DIR$\src\smc_gen\r_dtc_rx</state>
-                    <state>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src</state>
                     <state>$PROJ_DIR$\src\smc_gen\general</state>
                     <state>$PROJ_DIR$\src\smc_gen\r_pincfg</state>
                 </option>
@@ -2385,13 +2384,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\en\r01an1685ej0561-rx-bsp.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\en\r01an1685ej0563-rx-bsp.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\ja\r01an1685jj0561-rx-bsp.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\doc\ja\r01an1685jj0563-rx-bsp.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2400,7 +2399,13 @@
                     <group>
                         <name>all</name>
                         <file>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowlvl.c</name>
+                        </file>
+                        <file>
                             <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowlvl.h</name>
+                        </file>
+                        <file>
+                            <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowsrc.c</name>
                         </file>
                         <file>
                             <name>$PROJ_DIR$\src\smc_gen\r_bsp\mcu\all\lowsrc.h</name>
@@ -2529,13 +2534,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_byteq\doc\en\r01an1683ej0180-rx-apl.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_byteq\doc\en\r01an1683ej0181-rx-apl.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_byteq\doc\ja\r01an1683jj0180-rx-apl.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_byteq\doc\ja\r01an1683jj0181-rx-apl.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2592,13 +2597,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\doc\en\r01an1819ej0350-rx-dtc-dmac2.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\doc\en\r01an1819ej0360-rx-dtc-dmac2.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\doc\ja\r01an1819jj0350-rx-dtc-dmac2.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\doc\ja\r01an1819jj0360-rx-dtc-dmac2.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2616,9 +2621,6 @@
                             <name>rx72n</name>
                             <file>
                                 <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\targets\rx72n\r_dtc_rx_target.c</name>
-                                <excluded>
-                                    <configuration>Debug</configuration>
-                                </excluded>
                             </file>
                             <file>
                                 <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\targets\rx72n\r_dtc_rx_target.h</name>
@@ -2630,9 +2632,6 @@
                     </group>
                     <file>
                         <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\r_dtc_rx.c</name>
-                        <excluded>
-                            <configuration>Debug</configuration>
-                        </excluded>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\src\smc_gen\r_dtc_rx\src\r_dtc_rx_private.h</name>
@@ -2652,13 +2651,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0350-rx-gpio.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0350-rx-gpio.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2724,13 +2723,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\doc\en\r01an1815ej0350-rx-serial.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\doc\en\r01an1815ej0370-rx-serial.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\doc\ja\r01an1815jj0350-rx-serial.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\doc\ja\r01an1815jj0370-rx-serial.pdf</name>
                         </file>
                     </group>
                 </group>
@@ -2761,6 +2760,18 @@
                         <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\src\r_sci_rx.c</name>
                     </file>
                     <file>
+                        <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\src\r_sci_rx_dmaca.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\src\r_sci_rx_dmaca.h</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\src\r_sci_rx_dtc.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\src\r_sci_rx_dtc.h</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\src\smc_gen\r_sci_rx\src\r_sci_rx_platform.h</name>
                     </file>
                     <file>
@@ -2775,35 +2786,11 @@
                 </file>
             </group>
         </group>
-        <file>
-            <name>$PROJ_DIR$\SmartConfigurator.ipcf</name>
-        </file>
     </group>
     <group>
         <name>Renesas_AP_tips</name>
         <group>
             <name>smc_workaround</name>
-            <group>
-                <name>r_bsp_patch</name>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\lowlvl.c</name>
-                </file>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_bsp_patch\platform.h</name>
-                </file>
-            </group>
-            <group>
-                <name>r_dtc_rx_patch</name>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_dtc_rx_patch\r_dtc_rx.c</name>
-                </file>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_dtc_rx_patch\r_dtc_rx_private.h</name>
-                </file>
-                <file>
-                    <name>$PROJ_DIR$\src\smc_workaround\r_dtc_rx_patch\r_dtc_rx_target.c</name>
-                </file>
-            </group>
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\CC_patch.h</name>
             </file>
@@ -2815,9 +2802,6 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\FIT_patch.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\src\smc_workaround\FIT_patch2.h</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\src\smc_workaround\IDE_patch.h</name>
@@ -2833,4 +2817,7 @@
             </file>
         </group>
     </group>
+    <file>
+        <name>$PROJ_DIR$\SmartConfigurator.ipcf</name>
+    </file>
 </project>
