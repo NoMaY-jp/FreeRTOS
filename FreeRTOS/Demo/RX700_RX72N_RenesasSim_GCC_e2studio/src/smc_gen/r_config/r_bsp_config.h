@@ -32,6 +32,7 @@
 *                                - BSP_CFG_SCI_UART_TERMINAL_CHANNEL
 *                                - BSP_CFG_SCI_UART_TERMINAL_BITRATE
 *                                - BSP_CFG_SCI_UART_TERMINAL_INTERRUPT_PRIORITY
+*         : 26.02.2021 1.03     Added a comment for Azure RTOS to BSP_CFG_RTOS_USED.
 ***********************************************************************************************************************/
 #ifndef R_BSP_CONFIG_REF_HEADER_FILE
 #define R_BSP_CONFIG_REF_HEADER_FILE
@@ -619,6 +620,7 @@ NOTE: The RAM areas are not contiguous.It is separated by 512 KB each.
    2 = embOS is used.(This is not available.)
    3 = MicroC_OS is used.(This is not available.)
    4 = Renesas ITRON OS (RI600V4 or RI600PX) is used.
+   5 = Azure RTOS is used.(This is not available.)
 */
 #if !defined(BSP_CFG_RTOS_USED) || (BSP_CFG_RTOS_USED == 0)
 #if defined(BSP_CFG_RTOS_USED)
