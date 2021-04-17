@@ -25,12 +25,12 @@ typedef struct
 /* If user has indicated they want to provide their own charget function then here is the prototype. */
 #endif
 
-bool is_charput_ready (void)
+bool is_charput_busy (void)
 {
 #if BSP_CFG_USER_CHARPUT_ENABLED == 1
     /* If user has provided their own charput() function, then call it here. */
 #else
-    return (0 == (BSP_PRV_E1_DBG_PORT.dbgstat & BSP_PRV_TXFL0EN));
+    return (0 != (BSP_PRV_E1_DBG_PORT.dbgstat & BSP_PRV_TXFL0EN));
 #endif
 }
 

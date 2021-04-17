@@ -3,9 +3,9 @@
 
 #include "mcu/all/lowlvl.h"
 
-/* Check ready flag to output one character to standard output
+/* Check busy flag to output one character to standard output
  * (the E1 Virtual Console or a serial port via user own charput function) */
-bool is_charput_ready (void);
+bool is_charput_busy (void);
 
 /* Check ready flag to input one character from standard input
  * (the E1 Virtual Console or a serial port via user own charget function) */

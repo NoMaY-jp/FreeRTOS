@@ -94,7 +94,7 @@ void vSerialPortTickHook( uint16_t *pusTicksCmdConsoleInUse )
     }
 
     /* Check output to the Debug Console. */
-    while( is_charput_ready() && 0U < usStringLengthToSend )
+    while( !is_charput_busy() && 0U < usStringLengthToSend )
     {
         charput( *pcStringToSend );
         pcStringToSend++;
