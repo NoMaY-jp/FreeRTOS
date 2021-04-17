@@ -1,11 +1,12 @@
 # Ignore build results and unnecessary setting/working files by/for e2 studio
 HardwareDebug/
-e2studio_project.prefs
-language.settings.xml
 ### cgprojectDatas.datas
 ### cgproject.cgp
+e2studio_project.prefs
+language.settings.xml
 com.renesas.smc.e2studio.qe.xml
 DebugVirtualConsoleSetting.xml
+PerfAnalysisSettings.xml
 CoverageSetting.xml
 IORegisterSetting.xml
 *.rcpc
@@ -33,5 +34,4 @@ DefaultBuild/
 r01an*.pdf
 
 # Ignore unnecessary automatic generated file by Windows
-
 Thumbs.db
