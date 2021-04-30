@@ -14,7 +14,7 @@
 * following link:
 * http://www.renesas.com/disclaimer 
 *
-* Copyright (C) 2013-2020 Renesas Electronics Corporation. All rights reserved.
+* Copyright (C) 2013-2021 Renesas Electronics Corporation. All rights reserved.
 ***********************************************************************************************************************/
 /***********************************************************************************************************************
 * File Name    : r_gpio_rx_if.h
@@ -50,6 +50,7 @@
 *         : 30.12.2019 3.40    Added support RX72N, RX66N
 *         : 31.03.2020 3.50    Added support for RX23E-A
 *         : 30.06.2020 3.60    Changed revision to reflect demo upgrade.
+*         : 15.01.2021 3.70    Removed PH7 for RX111, RX113.
 ***********************************************************************************************************************/
 
 #ifndef GPIO_RX_INTERFACE_HEADER_FILE
@@ -118,7 +119,7 @@ Macro definitions
 
 /* Version Number of API. */
 #define GPIO_RX_VERSION_MAJOR           (3)
-#define GPIO_RX_VERSION_MINOR           (60)
+#define GPIO_RX_VERSION_MINOR           (70)
 
 /***********************************************************************************************************************
 Typedef definitions

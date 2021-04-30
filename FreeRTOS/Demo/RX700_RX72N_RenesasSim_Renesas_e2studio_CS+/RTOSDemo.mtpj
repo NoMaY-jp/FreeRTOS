@@ -1570,15 +1570,15 @@
       <ParentItem>6789a76d-e318-42ff-bd3a-c8295c845dab</ParentItem>
     </Instance>
     <Instance Guid="9315b649-74c1-4183-b1bd-929ce7966c56">
-      <Name>r01an1721ej0360-rx-gpio.pdf</Name>
+      <Name>r01an1721ej0370-rx-gpio.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0370-rx-gpio.pdf</RelativePath>
       <ParentItem>c164934d-70c8-4a6a-bfa7-ea82233f64ed</ParentItem>
     </Instance>
     <Instance Guid="d1bff9dc-4820-431c-9c3f-36750c04ed4b">
-      <Name>r01an1721jj0360-rx-gpio.pdf</Name>
+      <Name>r01an1721jj0370-rx-gpio.pdf</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</RelativePath>
+      <RelativePath>src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0370-rx-gpio.pdf</RelativePath>
       <ParentItem>ef33e21b-5380-4afe-a3d8-3f4b4fa0f2a5</ParentItem>
     </Instance>
     <Instance Guid="47cf245e-e1b8-4a54-bf09-284d72e21471">
@@ -3833,14 +3833,6 @@ D_1=R_1
       <ItemAddTime>637535198363976901</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="9315b649-74c1-4183-b1bd-929ce7966c56">
-      <ItemAddTime>637538235612024033</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="d1bff9dc-4820-431c-9c3f-36750c04ed4b">
-      <ItemAddTime>637538235612024033</ItemAddTime>
-      <ItemAddTimeCount>1</ItemAddTimeCount>
-    </Instance>
     <Instance Guid="e7ccafe5-9b06-46ba-b2be-95ea3a79952a">
       <ItemAddTime>637540014087951296</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
@@ -3855,6 +3847,22 @@ D_1=R_1
     </Instance>
     <Instance Guid="1f765635-8148-46b6-8a82-98a78ebdebc2">
       <ItemAddTime>637540996986942969</ItemAddTime>
+      <ItemAddTimeCount>1</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="478e094c-2027-4e46-b110-24a398e0f5e2">
+      <ItemAddTime>637553757963521827</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="3b3f3d60-5878-451d-866b-5d49f4845597">
+      <ItemAddTime>637553757963678087</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="9315b649-74c1-4183-b1bd-929ce7966c56">
+      <ItemAddTime>637553772518432550</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="d1bff9dc-4820-431c-9c3f-36750c04ed4b">
+      <ItemAddTime>637553772518432550</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
     <Instance Guid="a7be515f-f007-45ed-9059-4e1500c0f74d">

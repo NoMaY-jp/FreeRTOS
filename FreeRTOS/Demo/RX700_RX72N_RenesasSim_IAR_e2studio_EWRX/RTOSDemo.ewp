@@ -2547,13 +2547,13 @@
                     <group>
                         <name>en</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0370-rx-gpio.pdf</name>
                         </file>
                     </group>
                     <group>
                         <name>ja</name>
                         <file>
-                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</name>
+                            <name>$PROJ_DIR$\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0370-rx-gpio.pdf</name>
                         </file>
                     </group>
                 </group>

@@ -484,7 +484,7 @@
         <group name ="r_byteq">
             <group name ="doc">
                 <group name ="en">
-                    <path>.\src\smc_gen\r_byteq\doc\en\r01an1683ej0181-rx-apl.pdf</path>
+                    <path>.\src\smc_gen\r_byteq\doc\en\r01an1683ej0182-rx-apl.pdf</path>
                 </group>
             </group>
         </group>
@@ -493,7 +493,7 @@
         <group name ="r_byteq">
             <group name ="doc">
                 <group name ="ja">
-                    <path>.\src\smc_gen\r_byteq\doc\ja\r01an1683jj0181-rx-apl.pdf</path>
+                    <path>.\src\smc_gen\r_byteq\doc\ja\r01an1683jj0182-rx-apl.pdf</path>
                 </group>
             </group>
         </group>
@@ -650,7 +650,7 @@
         <group name ="r_gpio_rx">
             <group name ="doc">
                 <group name ="en">
-                    <path>.\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0360-rx-gpio.pdf</path>
+                    <path>.\src\smc_gen\r_gpio_rx\doc\en\r01an1721ej0370-rx-gpio.pdf</path>
                 </group>
             </group>
         </group>
@@ -659,7 +659,7 @@
         <group name ="r_gpio_rx">
             <group name ="doc">
                 <group name ="ja">
-                    <path>.\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0360-rx-gpio.pdf</path>
+                    <path>.\src\smc_gen\r_gpio_rx\doc\ja\r01an1721jj0370-rx-gpio.pdf</path>
                 </group>
             </group>
         </group>
