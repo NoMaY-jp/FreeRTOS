@@ -199,7 +199,7 @@ def filter_coverage_file(covfile_handle, cov_functions):
         cur_file["functions"] = cur_functions
         cur_lines = list()
         for line in targetfile["lines"]:
-            if line["function_name"] in cov_functions:
+            if "function_name" in line and line["function_name"] in cov_functions:
                 cur_lines.append(line)
         cur_file["lines"] = cur_lines
         covdata_out["files"].append(cur_file)
@@ -308,7 +308,7 @@ def convert_to_lcov_info(args, covdata, outfile):
             # Handle branch data
             for target_branch in target_line["branches"]:
                 branch_count = "-"
-                if target_line["unexecuted_block"] or target_line["count"] == 0:
+                if target_line["unexecuted_block"] and target_line["count"] == 0:
                     branch_count = "-"
                 elif "count" in target_branch:
                     branch_count = target_branch["count"]
