@@ -135,6 +135,7 @@
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmCodeModel::codemodel.783990636" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmCodeModel::codemodel" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="iar.wtdx.rl78_v3.toolchain.option.OAsmDefines::symbols.936781286" name="Defined symbols: (one per line)" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDefines::symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__I_WILL_USE_EXTRA_OPTION_DUE_TO_STRANGE_BEHAVIOR_HERE__"/>
+									<listOptionValue builtIn="false" value="__NEAR_MODEL__"/>
 									<listOptionValue builtIn="false" value="__NEAR_DATA_MODEL__"/>
 								</option>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDataModel::datamodel.1050725549" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDataModel::datamodel" useByScannerDiscovery="false"/>

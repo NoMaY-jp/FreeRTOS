@@ -4483,7 +4483,7 @@ D_1=R_1
       <DebuggerProperty-OptionalProperty-Memory-MemoryMappings-MemoryMapItem23-FieldInformation>None</DebuggerProperty-OptionalProperty-Memory-MemoryMappings-MemoryMapItem23-FieldInformation>
       <DebuggerProperty-OptionalProperty-Memory-MemoryMappings-MemoryMapItem23-Endian>Little</DebuggerProperty-OptionalProperty-Memory-MemoryMappings-MemoryMapItem23-Endian>
       <DebuggerProperty-OptionalProperty-Memory-MemoryMappings-MemoryMapItem23-EndianMCUSetting>Same</DebuggerProperty-OptionalProperty-Memory-MemoryMappings-MemoryMapItem23-EndianMCUSetting>
-      <DebuggerProperty-OptionalProperty-Memory-VerifyCheck>No</DebuggerProperty-OptionalProperty-Memory-VerifyCheck>
+      <DebuggerProperty-OptionalProperty-Memory-VerifyCheck>Yes</DebuggerProperty-OptionalProperty-Memory-VerifyCheck>
       <DebuggerProperty-OptionalProperty-MemoryAccess-PermitToStopAndRead>No</DebuggerProperty-OptionalProperty-MemoryAccess-PermitToStopAndRead>
       <DebuggerProperty-OptionalProperty-AccessMemory-UpdateDisplayInExecution>No</DebuggerProperty-OptionalProperty-AccessMemory-UpdateDisplayInExecution>
       <DebuggerProperty-OptionalProperty-AccessMemory-UpdateInterval>500</DebuggerProperty-OptionalProperty-AccessMemory-UpdateInterval>

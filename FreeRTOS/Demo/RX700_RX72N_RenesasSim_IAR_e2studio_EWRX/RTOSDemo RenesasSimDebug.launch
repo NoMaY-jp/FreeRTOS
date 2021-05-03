@@ -4,7 +4,6 @@
     <stringAttribute key="com.renesas.cdt.core.additionalServerArgs" value=""/>
     <stringAttribute key="com.renesas.cdt.core.initCommands" value=""/>
     <stringAttribute key="com.renesas.cdt.core.ipAddress" value="localhost"/>
-    <stringAttribute key="com.renesas.cdt.core.jtagDevice" value="RX Simulator"/>
     <stringAttribute key="com.renesas.cdt.core.jtagDeviceId" value="com.renesas.hardwaredebug.simulator.rx"/>
     <listAttribute key="com.renesas.cdt.core.listGDBExe">
         <listEntry value="rx-elf-gdb -rx-force-isa=v3 -rx-force-double-fpu"/>
@@ -15,6 +14,7 @@
     <listAttribute key="com.renesas.cdt.core.listGDBPort">
         <listEntry value="61234"/>
     </listAttribute>
+    <booleanAttribute key="com.renesas.cdt.core.loadImage" value="true"/>
     <stringAttribute key="com.renesas.cdt.core.optionInitCommands" value=""/>
     <intAttribute key="com.renesas.cdt.core.portNumber" value="61234"/>
     <stringAttribute key="com.renesas.cdt.core.runCommands" value=""/>
@@ -22,15 +22,16 @@
     <booleanAttribute key="com.renesas.cdt.core.secondGDBSupport" value="false"/>
     <intAttribute key="com.renesas.cdt.core.secondGdbPortNumber" value="61237"/>
     <stringAttribute key="com.renesas.cdt.core.serverParam" value="-g SIMULATOR  -t R5F572NN  -uPeripheralClkRatio= 4 -uCpuClkFreq= 240 -uRegisterSetting= 0 -uModePin= 0 -uCacheDecode= 1 -uIOModule= IodllForCMT.dll -uIOModule= IodllForICU_dpfpu.dll -n 0 -uWorkRamAddress= 0 -uEmStopInt= 0 -uEmStopInterrupt= 0 -uEmStopFPexp= 0"/>
+    <booleanAttribute key="com.renesas.cdt.core.setResume" value="true"/>
+    <booleanAttribute key="com.renesas.cdt.core.setStopAt" value="true"/>
     <booleanAttribute key="com.renesas.cdt.core.startServer" value="true"/>
+    <stringAttribute key="com.renesas.cdt.core.stopAt" value="Processing_Before_Start_Kernel"/>
     <stringAttribute key="com.renesas.cdt.core.targetDevice" value="R5F572NN"/>
     <booleanAttribute key="com.renesas.cdt.core.useRemoteTarget" value="true"/>
-    <booleanAttribute key="com.renesas.cdt.core.verboseMode" value="false"/>
-    <stringAttribute key="com.renesas.cdt.debug.ioview.dsf.registerSelection" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;selectedRegisterList ioFilePath=&quot;C:\Renesas\e2_studio_v740_rl78rxrza\DebugComp\RX\Iofiles\RX65N.sfrx&quot;/&gt;&#13;&#10;"/>
     <stringAttribute key="com.renesas.cdt.launch.dsf.IO_MAP" value="${support_area_loc}"/>
     <booleanAttribute key="com.renesas.cdt.launch.dsf.USE_DEFAULT_IO_MAP" value="true"/>
     <listAttribute key="com.renesas.cdt.launch.dsf.downloadImages">
-        <listEntry value="|true|true|true|0|true|No core"/>
+        <listEntry value="|true|true|true||true|No core"/>
     </listAttribute>
     <booleanAttribute key="com.renesas.cdt.launch.dsf.downloadImagesUpgradedV30" value="true"/>
     <stringAttribute key="com.renesas.cdt.launch.dsf.launchSeqType" value="com.renesas.cdt.launch.dsf.launchSequence.e2GdbServer"/>
@@ -46,13 +47,12 @@
     <booleanAttribute key="com.renesas.hardwaredebug.simulator.rx.stop_fp_except" value="false"/>
     <booleanAttribute key="com.renesas.hardwaredebug.simulator.rx.stop_int" value="false"/>
     <booleanAttribute key="com.renesas.hardwaredebug.simulator.rx.stop_interrupt" value="false"/>
-    <booleanAttribute key="com.renesas.hardwaredebug.simulator.rx.traceCapture" value="false"/>
     <intAttribute key="com.renesas.hardwaredebug.simulator.rx.work_ram_start" value="0"/>
-    <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
+    <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="0"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="false"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\RTOSDemo.out"/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value="0"/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value=""/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.initCommands" value=""/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadImage" value="true"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadSymbols" value="true"/>
@@ -63,7 +63,7 @@
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.stopAt" value="Processing_Before_Start_Kernel"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsFileName" value="C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\RTOSDemo.out"/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsOffset" value="0"/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsOffset" value=""/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.useFileForImage" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.useFileForSymbols" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.useProjBinaryForImage" value="true"/>
@@ -71,7 +71,6 @@
     <stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="rx-elf-gdb -rx-force-isa=v3 -rx-force-double-fpu"/>
     <booleanAttribute key="org.eclipse.cdt.dsf.gdb.NON_STOP" value="true"/>
     <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
-    <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
     <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
     <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="Processing_Before_Start_Kernel"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="HardwareDebug/RTOSDemo.out"/>
@@ -84,6 +83,7 @@
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="4"/>
     </listAttribute>
+    <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
     <stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&lt;memoryBlockExpressionList context=&quot;reserved-for-future-use&quot;/&gt;"/>
     <stringAttribute key="process_factory_id" value="org.eclipse.cdt.dsf.gdb.GdbProcessFactory"/>
 </launchConfiguration>

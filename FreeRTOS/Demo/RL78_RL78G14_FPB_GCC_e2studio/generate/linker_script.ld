@@ -56,20 +56,6 @@ SECTIONS
 		__DTOR_END__ = .;
 		. = ALIGN(2);
 	} > ROM
-	.mdata (NOLOAD) :
-	{
-		_mdata = .;
-		. += __romdatacopysize;
-	} > ROM
-/*
-	.text :
-	{
-		*(.text)
-		*(.text.*)
-		etext = .;
-		. = ALIGN(2);
-	} > ROM
-*/
 	PROVIDE(__rl78_abs__ = 0); /* TODO: What is this? */
 	.init : /* TODO: Is there any restriction to locate this section? */
 	{
@@ -84,6 +70,17 @@ SECTIONS
 		*(.got)
 		*(.got.plt)
 	} > ROM
+	_mdata = .;
+	. = _mdata + __romdatacopysize;
+/*
+	.text . :
+	{
+		*(.text)
+		*(.text.*)
+		etext = .;
+		. = ALIGN(2);
+	} > ROM
+*/
 	PROVIDE(__mirror = 0x3000);
 	PROVIDE(__mirror_end = __mirror + 3840);
 	PROVIDE(__rodata = ADDR(.rodata));
@@ -100,7 +97,7 @@ SECTIONS
 		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(.) > __mirror_end) && (ADDR(.text) < __rodata)), "Please move the .text section from lower address to higher address");
 		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(.) > __mirror_end) && (__rodata < ADDR(.text))), "Please check the map file");
 	} > ROM
-	.text :
+	.text . :
 	{
 		*(.text)
 		*(.text.*)

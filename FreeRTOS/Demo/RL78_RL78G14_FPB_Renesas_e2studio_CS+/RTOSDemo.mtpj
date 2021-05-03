@@ -1468,7 +1468,7 @@
       <GeneralOptionCpu-0>S3</GeneralOptionCpu-0>
       <GeneralOptionErrorFile-0>False</GeneralOptionErrorFile-0>
       <GeneralOptionMirrorArea-0>Maa0</GeneralOptionMirrorArea-0>
-      <GeneralOptionNoWarningNum-0>11180</GeneralOptionNoWarningNum-0>
+      <GeneralOptionNoWarningNum-0 />
       <GeneralOptionOutput-0>LoadModuleFile</GeneralOptionOutput-0>
       <GeneralOptionSimultaneousBuild-0>True</GeneralOptionSimultaneousBuild-0>
       <CompilerVersion-0>
@@ -1692,8 +1692,7 @@ src
       <AsmOptionISystem-0 />
       <AsmOptionPreAssembleCommands-0 />
       <AsmOptionPrnPathValue-0>%BuildModeName%</AsmOptionPrnPathValue-0>
-      <AsmOptionDefine-0>RL78_G14_FPB
-</AsmOptionDefine-0>
+      <AsmOptionDefine-0 />
       <AsmOptionPostAssembleCommands-0 />
       <AsmOptionOtherAdditionalOptions-0 />
       <AsmOptionUndefine-0 />
