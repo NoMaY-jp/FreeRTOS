@@ -1,5 +1,5 @@
-#ifndef SMC_WORKAROUND_H
-#define SMC_WORKAROUND_H
+#ifndef SMC_INTEGRATION_H
+#define SMC_INTEGRATION_H
 
 #include "CC_patch.h"
 #include "IDE_patch.h"
@@ -30,4 +30,4 @@
  */
 #include <string.h>
 
-#endif /* SMC_WORKAROUND_H */
+#endif /* SMC_INTEGRATION_H */

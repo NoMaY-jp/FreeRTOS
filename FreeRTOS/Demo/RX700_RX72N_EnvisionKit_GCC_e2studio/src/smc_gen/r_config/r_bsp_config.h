@@ -37,8 +37,8 @@
 #ifndef R_BSP_CONFIG_REF_HEADER_FILE
 #define R_BSP_CONFIG_REF_HEADER_FILE
 
-/* Include for various workarounds. */
-#include "smc_workaround.h"
+/* Include for various integrations. */
+#include "smc_integration.h"
 
 /* Include for selecting eval board. */
 #include "demo_specific_io.h"

@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W3.03.00 )             02-May-2021 21:48:15
+Renesas Optimizing Linker (W3.03.00 )             09-May-2021 17:08:47
 
 *** Options ***
 
@@ -71,9 +71,9 @@ Renesas Optimizing Linker (W3.03.00 )             02-May-2021 21:48:15
 -input=".\src/smc_gen/r_sci_rx/src\r_sci_rx_dtc.obj"
 -input=".\src/smc_gen/r_sci_rx/src/targets/rx72n\r_sci_rx72n.obj"
 -input=".\src/smc_gen/r_sci_rx/src/targets/rx72n\r_sci_rx72n_data.obj"
--input=".\src/smc_workaround\FIT_patch.obj"
--input=".\src/smc_workaround/r_bsp_patch\resetprg.obj"
--input=".\src/smc_workaround\u_sci_rx_ext.obj"
+-input=".\src/smc_integration\FIT_patch.obj"
+-input=".\src/smc_integration/r_bsp_patch\resetprg.obj"
+-input=".\src/smc_integration\u_sci_rx_ext.obj"
 -library=".\RTOSDemo.lib"
 -start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,PResetPRG,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
 -output="RTOSDemo.abs"
@@ -801,7 +801,7 @@ FILE=xvalues
                                   0000d550         8   data ,g         0
 
 SECTION=SI
-FILE=.\src\smc_workaround\r_bsp_patch\resetprg.obj
+FILE=.\src\smc_integration\r_bsp_patch\resetprg.obj
                                   0000d558  0000d957       400
 
 SECTION=$ADDR_C_FE7F5D00
@@ -863,7 +863,7 @@ FILE=.\src\smc_gen\r_bsp\mcu\rx72n\vecttbl.obj
                                   fe7f5d70         4   data ,g         0
 
 SECTION=PResetPRG
-FILE=.\src\smc_workaround\r_bsp_patch\resetprg.obj
+FILE=.\src\smc_integration\r_bsp_patch\resetprg.obj
                                   ffc00000  ffc00079        7a
   _PowerON_Reset_PC
                                   ffc00000        7a   entry,g         1  ch
@@ -981,7 +981,7 @@ FILE=.\src\smc_gen\r_bsp\mcu\all\dbsct.obj
                                   ffc008d0        20   data ,g         0
 
 SECTION=C$VECT
-FILE=.\src\smc_workaround\r_bsp_patch\resetprg.obj
+FILE=.\src\smc_integration\r_bsp_patch\resetprg.obj
                                   ffc008f0  ffc00cef       400
 
 SECTION=D_1
@@ -1873,13 +1873,13 @@ FILE=.\src\smc_gen\r_sci_rx\src\targets\rx72n\r_sci_rx72n.obj
                                   ffc0e9c6         8   func ,g         1  ch
   _sci9_eri9_isr
                                   ffc0e9ce         8   func ,g         1  ch
-FILE=.\src\smc_workaround\FIT_patch.obj
+FILE=.\src\smc_integration\FIT_patch.obj
                                   ffc0e9d6  ffc0e9dd         8
   _malloc
                                   ffc0e9d6         4   func ,g         2
   _free
                                   ffc0e9da         4   func ,g         3
-FILE=.\src\smc_workaround\u_sci_rx_ext.obj
+FILE=.\src\smc_integration\u_sci_rx_ext.obj
                                   ffc0e9de  ffc0ea04        27
   _U_SCI_Control_EXT
                                   ffc0e9de        27   func ,g         1  ch

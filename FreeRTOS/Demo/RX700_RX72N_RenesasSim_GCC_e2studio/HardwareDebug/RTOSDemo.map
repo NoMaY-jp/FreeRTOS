@@ -57,20 +57,20 @@ xHighPriorityNormallyEmptyTask1
 
 Discarded input sections
 
- P              0x00000000        0x0 ./src/smc_workaround/FIT_patch.o
- D_1            0x00000000        0x0 ./src/smc_workaround/FIT_patch.o
- B_1            0x00000000        0x0 ./src/smc_workaround/FIT_patch.o
- .text.malloc   0x00000000        0x4 ./src/smc_workaround/FIT_patch.o
- .text.free     0x00000000        0x4 ./src/smc_workaround/FIT_patch.o
- P              0x00000000        0x0 ./src/smc_workaround/IDE_helper.o
- D_1            0x00000000        0x0 ./src/smc_workaround/IDE_helper.o
- B_1            0x00000000        0x0 ./src/smc_workaround/IDE_helper.o
- P              0x00000000        0x0 ./src/smc_workaround/sim_debug_mode_hook.o
- D_1            0x00000000        0x0 ./src/smc_workaround/sim_debug_mode_hook.o
- B_1            0x00000000        0x0 ./src/smc_workaround/sim_debug_mode_hook.o
- P              0x00000000        0x0 ./src/smc_workaround/u_bsp_lowlvl_ext.o
- D_1            0x00000000        0x0 ./src/smc_workaround/u_bsp_lowlvl_ext.o
- B_1            0x00000000        0x0 ./src/smc_workaround/u_bsp_lowlvl_ext.o
+ P              0x00000000        0x0 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+ D_1            0x00000000        0x0 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+ B_1            0x00000000        0x0 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+ P              0x00000000        0x0 ./src/smc_integration/FIT_patch.o
+ D_1            0x00000000        0x0 ./src/smc_integration/FIT_patch.o
+ B_1            0x00000000        0x0 ./src/smc_integration/FIT_patch.o
+ .text.malloc   0x00000000        0x4 ./src/smc_integration/FIT_patch.o
+ .text.free     0x00000000        0x4 ./src/smc_integration/FIT_patch.o
+ P              0x00000000        0x0 ./src/smc_integration/IDE_helper.o
+ D_1            0x00000000        0x0 ./src/smc_integration/IDE_helper.o
+ B_1            0x00000000        0x0 ./src/smc_integration/IDE_helper.o
+ P              0x00000000        0x0 ./src/smc_integration/u_bsp_lowlvl_ext.o
+ D_1            0x00000000        0x0 ./src/smc_integration/u_bsp_lowlvl_ext.o
+ B_1            0x00000000        0x0 ./src/smc_integration/u_bsp_lowlvl_ext.o
  P              0x00000000        0x0 ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
  D_1            0x00000000        0x0 ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
  B_1            0x00000000        0x0 ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
@@ -88,7 +88,7 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x1c9 ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
  .debug_aranges
                 0x00000000       0x18 ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
- .debug_line    0x00000000      0x33c ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
+ .debug_line    0x00000000      0x34d ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
  .debug_str     0x00000000      0x6be ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
  P              0x00000000        0x0 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
@@ -154,7 +154,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x30 ./src/smc_gen/r_bsp/mcu/all/lowsrc.o
  .debug_ranges  0x00000000       0x20 ./src/smc_gen/r_bsp/mcu/all/lowsrc.o
- .debug_line    0x00000000      0x2b1 ./src/smc_gen/r_bsp/mcu/all/lowsrc.o
+ .debug_line    0x00000000      0x2c2 ./src/smc_gen/r_bsp/mcu/all/lowsrc.o
  .debug_str     0x00000000      0x614 ./src/smc_gen/r_bsp/mcu/all/lowsrc.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_bsp/mcu/all/lowsrc.o
  P              0x00000000        0x0 ./src/smc_gen/r_bsp/mcu/all/mcu_locks.o
@@ -203,7 +203,7 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x1b6 ./src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.o
  .debug_aranges
                 0x00000000       0x18 ./src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.o
- .debug_line    0x00000000      0x2ff ./src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.o
+ .debug_line    0x00000000      0x310 ./src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.o
  .debug_str     0x00000000      0x62b ./src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_bsp/mcu/all/r_bsp_mcu_startup.o
  P              0x00000000        0x0 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
@@ -213,7 +213,7 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x1b6 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
  .debug_aranges
                 0x00000000       0x18 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
- .debug_line    0x00000000      0x2ff ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
+ .debug_line    0x00000000      0x310 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
  .debug_str     0x00000000      0x632 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_bsp/mcu/all/r_bsp_software_interrupt.o
  P              0x00000000        0x0 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
@@ -312,7 +312,7 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x1b1 ./src/smc_gen/r_bsp/mcu/all/sbrk.o
  .debug_aranges
                 0x00000000       0x18 ./src/smc_gen/r_bsp/mcu/all/sbrk.o
- .debug_line    0x00000000      0x1f5 ./src/smc_gen/r_bsp/mcu/all/sbrk.o
+ .debug_line    0x00000000      0x206 ./src/smc_gen/r_bsp/mcu/all/sbrk.o
  .debug_str     0x00000000      0x5d1 ./src/smc_gen/r_bsp/mcu/all/sbrk.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_bsp/mcu/all/sbrk.o
  P              0x00000000        0x0 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
@@ -342,7 +342,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 ./src/smc_gen/general/r_smc_interrupt.o
  .debug_ranges  0x00000000       0x10 ./src/smc_gen/general/r_smc_interrupt.o
- .debug_line    0x00000000      0x33d ./src/smc_gen/general/r_smc_interrupt.o
+ .debug_line    0x00000000      0x34e ./src/smc_gen/general/r_smc_interrupt.o
  .debug_str     0x00000000      0x636 ./src/smc_gen/general/r_smc_interrupt.o
  .comment       0x00000000       0x37 ./src/smc_gen/general/r_smc_interrupt.o
  P              0x00000000        0x0 ./src/frtos_startup/freertos_object_init.o
@@ -496,7 +496,7 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x30 ./src/FreeRTOS_Demo/Blinky_Demo/main_blinky.o
  .debug_ranges  0x00000000       0x20 ./src/FreeRTOS_Demo/Blinky_Demo/main_blinky.o
- .debug_line    0x00000000      0x597 ./src/FreeRTOS_Demo/Blinky_Demo/main_blinky.o
+ .debug_line    0x00000000      0x5a8 ./src/FreeRTOS_Demo/Blinky_Demo/main_blinky.o
  .debug_str     0x00000000      0x7bd ./src/FreeRTOS_Demo/Blinky_Demo/main_blinky.o
  .comment       0x00000000       0x37 ./src/FreeRTOS_Demo/Blinky_Demo/main_blinky.o
  P              0x00000000        0x0 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
@@ -681,10 +681,10 @@ OFS              0xfe7f5d00         0x00000080
 
 Linker script and memory map
 
-LOAD ./src/smc_workaround/FIT_patch.o
-LOAD ./src/smc_workaround/IDE_helper.o
-LOAD ./src/smc_workaround/sim_debug_mode_hook.o
-LOAD ./src/smc_workaround/u_bsp_lowlvl_ext.o
+LOAD ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+LOAD ./src/smc_integration/FIT_patch.o
+LOAD ./src/smc_integration/IDE_helper.o
+LOAD ./src/smc_integration/u_bsp_lowlvl_ext.o
 LOAD ./src/smc_gen/r_gpio_rx/src/targets/rx72n/r_gpio_rx72n.o
 LOAD ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
 LOAD ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
@@ -925,16 +925,16 @@ END GROUP
                 0xffc02108                bus_error_isr
  *(.text.*_interrupt)
  *(.text.*)
- .text.sbrk     0xffc02138        0x4 ./src/smc_workaround/FIT_patch.o
+ .text.sbrk     0xffc02138        0x4 ./src/smc_integration/FIT_patch.o
                 0xffc02138                sbrk
  .text.e2_studio_visual_expression_view_helper
-                0xffc0213c       0xcc ./src/smc_workaround/IDE_helper.o
+                0xffc0213c       0xcc ./src/smc_integration/IDE_helper.o
                 0xffc0213c                e2_studio_visual_expression_view_helper
  .text.is_charput_busy
-                0xffc02208        0xc ./src/smc_workaround/u_bsp_lowlvl_ext.o
+                0xffc02208        0xc ./src/smc_integration/u_bsp_lowlvl_ext.o
                 0xffc02208                is_charput_busy
  .text.is_charget_ready
-                0xffc02214        0xc ./src/smc_workaround/u_bsp_lowlvl_ext.o
+                0xffc02214        0xc ./src/smc_integration/u_bsp_lowlvl_ext.o
                 0xffc02214                is_charget_ready
  .text.R_GPIO_PinWrite
                 0xffc02220       0x23 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
@@ -1950,45 +1950,45 @@ END GROUP
 .rodata         0xffc0e2b8      0x9f8
  *(.rodata)
  *(.rodata.*)
- .rodata.PORTJ  0xffc0e2b8        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2b8                PORTJ
- .rodata.PORTG  0xffc0e2bc        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2bc                PORTG
- .rodata.PORTF  0xffc0e2c0        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2c0                PORTF
- .rodata.PORTE  0xffc0e2c4        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2c4                PORTE
- .rodata.PORTD  0xffc0e2c8        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2c8                PORTD
- .rodata.PORTC  0xffc0e2cc        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2cc                PORTC
- .rodata.PORTB  0xffc0e2d0        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2d0                PORTB
- .rodata.PORTA  0xffc0e2d4        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2d4                PORTA
- .rodata.PORT9  0xffc0e2d8        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2d8                PORT9
- .rodata.PORT8  0xffc0e2dc        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2dc                PORT8
- .rodata.PORT7  0xffc0e2e0        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2e0                PORT7
- .rodata.PORT6  0xffc0e2e4        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2e4                PORT6
- .rodata.PORT5  0xffc0e2e8        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2e8                PORT5
- .rodata.PORT4  0xffc0e2ec        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2ec                PORT4
- .rodata.PORT3  0xffc0e2f0        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2f0                PORT3
- .rodata.PORT2  0xffc0e2f4        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2f4                PORT2
- .rodata.PORT1  0xffc0e2f8        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2f8                PORT1
- .rodata.PORT0  0xffc0e2fc        0x4 ./src/smc_workaround/IDE_helper.o
-                0xffc0e2fc                PORT0
  .rodata.renesas_simulator_debugging_key
-                0xffc0e300        0x4 ./src/smc_workaround/sim_debug_mode_hook.o
-                0xffc0e300                renesas_simulator_debugging_key
+                0xffc0e2b8        0x4 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+                0xffc0e2b8                renesas_simulator_debugging_key
+ .rodata.PORTJ  0xffc0e2bc        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2bc                PORTJ
+ .rodata.PORTG  0xffc0e2c0        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2c0                PORTG
+ .rodata.PORTF  0xffc0e2c4        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2c4                PORTF
+ .rodata.PORTE  0xffc0e2c8        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2c8                PORTE
+ .rodata.PORTD  0xffc0e2cc        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2cc                PORTD
+ .rodata.PORTC  0xffc0e2d0        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2d0                PORTC
+ .rodata.PORTB  0xffc0e2d4        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2d4                PORTB
+ .rodata.PORTA  0xffc0e2d8        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2d8                PORTA
+ .rodata.PORT9  0xffc0e2dc        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2dc                PORT9
+ .rodata.PORT8  0xffc0e2e0        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2e0                PORT8
+ .rodata.PORT7  0xffc0e2e4        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2e4                PORT7
+ .rodata.PORT6  0xffc0e2e8        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2e8                PORT6
+ .rodata.PORT5  0xffc0e2ec        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2ec                PORT5
+ .rodata.PORT4  0xffc0e2f0        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2f0                PORT4
+ .rodata.PORT3  0xffc0e2f4        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2f4                PORT3
+ .rodata.PORT2  0xffc0e2f8        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2f8                PORT2
+ .rodata.PORT1  0xffc0e2fc        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e2fc                PORT1
+ .rodata.PORT0  0xffc0e300        0x4 ./src/smc_integration/IDE_helper.o
+                0xffc0e300                PORT0
  .rodata.R_BSP_CpuInterruptLevelWrite
                 0xffc0e304       0x40 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
  .rodata.vAssertCalled.str1.1
@@ -2613,63 +2613,11 @@ END GROUP
                 0x0000d59c                _ustack = .
 OUTPUT(RTOSDemo.elf elf32-rx-le)
 
-.debug_frame    0x00000000     0x3208
- .debug_frame   0x00000000       0x44 ./src/smc_workaround/FIT_patch.o
- .debug_frame   0x00000044       0x2c ./src/smc_workaround/IDE_helper.o
- .debug_frame   0x00000070       0x34 ./src/smc_workaround/u_bsp_lowlvl_ext.o
- .debug_frame   0x000000a4       0xc4 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
- .debug_frame   0x00000168       0x4c ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
- .debug_frame   0x000001b4       0x44 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
- .debug_frame   0x000001f8      0x158 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
- .debug_frame   0x00000350       0x24 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
- .debug_frame   0x00000374       0x34 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
- .debug_frame   0x000003a8       0x6c ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
- .debug_frame   0x00000414       0xc4 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
- .debug_frame   0x000004d8      0x228 ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
- .debug_frame   0x00000700       0x70 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
- .debug_frame   0x00000770      0x370 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
- .debug_frame   0x00000ae0       0x24 ./src/smc_gen/r_bsp/mcu/all/resetprg.o
- .debug_frame   0x00000b04       0x24 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
- .debug_frame   0x00000b28       0x74 ./src/smc_gen/general/r_cg_hardware_setup.o
- .debug_frame   0x00000b9c       0x24 ./src/smc_gen/general/r_smc_cgc.o
- .debug_frame   0x00000bc0       0x24 ./src/smc_gen/general/r_smc_cgc_user.o
- .debug_frame   0x00000be4      0x10c ./src/frtos_startup/freertos_start.o
- .debug_frame   0x00000cf0       0xb8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .debug_frame   0x00000da8       0xec ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .debug_frame   0x00000e94       0xdc ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .debug_frame   0x00000f70      0x178 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .debug_frame   0x000010e8       0xd8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .debug_frame   0x000011c0       0x98 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
- .debug_frame   0x00001258       0xe4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .debug_frame   0x0000133c       0xfc ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
- .debug_frame   0x00001438      0x12c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .debug_frame   0x00001564       0x98 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .debug_frame   0x000015fc       0x90 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
- .debug_frame   0x0000168c       0xa0 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
- .debug_frame   0x0000172c       0xf8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
- .debug_frame   0x00001824      0x184 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
- .debug_frame   0x000019a8       0xb4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .debug_frame   0x00001a5c       0x8c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
- .debug_frame   0x00001ae8       0x9c ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .debug_frame   0x00001b84       0x7c ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
- .debug_frame   0x00001c00       0xc0 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .debug_frame   0x00001cc0       0x8c ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .debug_frame   0x00001d4c       0xcc ./src/FreeRTOS_Demo/Full_Demo/main_full.o
- .debug_frame   0x00001e18       0xa4 ./src/FreeRTOS_Demo/Full_Demo/serial.o
- .debug_frame   0x00001ebc       0xd0 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_frame   0x00001f8c       0xc0 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
- .debug_frame   0x0000204c      0x188 ./src/FreeRTOS/Source/event_groups.o
- .debug_frame   0x000021d4       0x64 ./src/FreeRTOS/Source/list.o
- .debug_frame   0x00002238      0x430 ./src/FreeRTOS/Source/queue.o
- .debug_frame   0x00002668      0x24c ./src/FreeRTOS/Source/stream_buffer.o
- .debug_frame   0x000028b4      0x714 ./src/FreeRTOS/Source/tasks.o
- .debug_frame   0x00002fc8      0x240 ./src/FreeRTOS/Source/timers.o
-
 .debug_info     0x00000000    0x95f24
- .debug_info    0x00000000      0xa99 ./src/smc_workaround/FIT_patch.o
- .debug_info    0x00000a99     0x7b56 ./src/smc_workaround/IDE_helper.o
- .debug_info    0x000085ef       0x93 ./src/smc_workaround/sim_debug_mode_hook.o
- .debug_info    0x00008682      0xa57 ./src/smc_workaround/u_bsp_lowlvl_ext.o
+ .debug_info    0x00000000       0x93 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+ .debug_info    0x00000093      0xa99 ./src/smc_integration/FIT_patch.o
+ .debug_info    0x00000b2c     0x7b56 ./src/smc_integration/IDE_helper.o
+ .debug_info    0x00008682      0xa57 ./src/smc_integration/u_bsp_lowlvl_ext.o
  .debug_info    0x000090d9     0x1cae ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
  .debug_info    0x0000ad87     0x486f ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
  .debug_info    0x0000f5f6     0x9ebb ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
@@ -2722,10 +2670,10 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_info    0x00094089     0x1e9b ./src/FreeRTOS/Source/timers.o
 
 .debug_abbrev   0x00000000     0x985a
- .debug_abbrev  0x00000000      0x243 ./src/smc_workaround/FIT_patch.o
- .debug_abbrev  0x00000243      0x236 ./src/smc_workaround/IDE_helper.o
- .debug_abbrev  0x00000479       0x4f ./src/smc_workaround/sim_debug_mode_hook.o
- .debug_abbrev  0x000004c8      0x1d6 ./src/smc_workaround/u_bsp_lowlvl_ext.o
+ .debug_abbrev  0x00000000       0x4f ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+ .debug_abbrev  0x0000004f      0x243 ./src/smc_integration/FIT_patch.o
+ .debug_abbrev  0x00000292      0x236 ./src/smc_integration/IDE_helper.o
+ .debug_abbrev  0x000004c8      0x1d6 ./src/smc_integration/u_bsp_lowlvl_ext.o
  .debug_abbrev  0x0000069e      0x44c ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
  .debug_abbrev  0x00000aea      0x350 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
  .debug_abbrev  0x00000e3a      0x20b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
@@ -2777,57 +2725,15 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_abbrev  0x00008eef      0x53a ./src/FreeRTOS/Source/tasks.o
  .debug_abbrev  0x00009429      0x431 ./src/FreeRTOS/Source/timers.o
 
-.debug_loc      0x00000000    0x11d6a
- .debug_loc     0x00000000       0x63 ./src/smc_workaround/FIT_patch.o
- .debug_loc     0x00000063      0xed4 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
- .debug_loc     0x00000f37      0x17e ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
- .debug_loc     0x000010b5      0x13b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
- .debug_loc     0x000011f0       0xa0 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
- .debug_loc     0x00001290      0x2d8 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
- .debug_loc     0x00001568     0x19ce ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
- .debug_loc     0x00002f36      0x11d ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
- .debug_loc     0x00003053      0x5c8 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
- .debug_loc     0x0000361b       0x18 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
- .debug_loc     0x00003633      0x1c9 ./src/frtos_startup/freertos_start.o
- .debug_loc     0x000037fc      0x263 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .debug_loc     0x00003a5f      0x3af ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .debug_loc     0x00003e0e      0x1a2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .debug_loc     0x00003fb0      0x7dd ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .debug_loc     0x0000478d       0xc1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .debug_loc     0x0000484e       0x88 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
- .debug_loc     0x000048d6      0x382 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .debug_loc     0x00004c58      0xca3 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
- .debug_loc     0x000058fb      0x704 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .debug_loc     0x00005fff      0x27b ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .debug_loc     0x0000627a      0x190 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
- .debug_loc     0x0000640a       0xd1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
- .debug_loc     0x000064db      0x1ae ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
- .debug_loc     0x00006689      0x42a ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
- .debug_loc     0x00006ab3       0x8f ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .debug_loc     0x00006b42      0x16d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
- .debug_loc     0x00006caf      0x426 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .debug_loc     0x000070d5      0x313 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .debug_loc     0x000073e8      0x11c ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .debug_loc     0x00007504      0x135 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
- .debug_loc     0x00007639      0x251 ./src/FreeRTOS_Demo/Full_Demo/serial.o
- .debug_loc     0x0000788a      0x57f ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_loc     0x00007e09       0xed ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
- .debug_loc     0x00007ef6      0xff6 ./src/FreeRTOS/Source/event_groups.o
- .debug_loc     0x00008eec       0x58 ./src/FreeRTOS/Source/list.o
- .debug_loc     0x00008f44     0x2530 ./src/FreeRTOS/Source/queue.o
- .debug_loc     0x0000b474     0x236a ./src/FreeRTOS/Source/stream_buffer.o
- .debug_loc     0x0000d7de     0x3688 ./src/FreeRTOS/Source/tasks.o
- .debug_loc     0x00010e66      0xf04 ./src/FreeRTOS/Source/timers.o
-
 .debug_aranges  0x00000000     0x11a0
  .debug_aranges
-                0x00000000       0x30 ./src/smc_workaround/FIT_patch.o
+                0x00000000       0x18 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
  .debug_aranges
-                0x00000030       0x20 ./src/smc_workaround/IDE_helper.o
+                0x00000018       0x30 ./src/smc_integration/FIT_patch.o
  .debug_aranges
-                0x00000050       0x18 ./src/smc_workaround/sim_debug_mode_hook.o
+                0x00000048       0x20 ./src/smc_integration/IDE_helper.o
  .debug_aranges
-                0x00000068       0x28 ./src/smc_workaround/u_bsp_lowlvl_ext.o
+                0x00000068       0x28 ./src/smc_integration/u_bsp_lowlvl_ext.o
  .debug_aranges
                 0x00000090       0x70 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
  .debug_aranges
@@ -2929,228 +2835,176 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .debug_aranges
                 0x000010f8       0xa8 ./src/FreeRTOS/Source/timers.o
 
-.debug_ranges   0x00000000     0x28b0
- .debug_ranges  0x00000000       0x20 ./src/smc_workaround/FIT_patch.o
- .debug_ranges  0x00000020       0x10 ./src/smc_workaround/IDE_helper.o
- .debug_ranges  0x00000030       0x18 ./src/smc_workaround/u_bsp_lowlvl_ext.o
- .debug_ranges  0x00000048      0x1f0 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
- .debug_ranges  0x00000238       0x48 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
- .debug_ranges  0x00000280       0x10 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
- .debug_ranges  0x00000290       0x48 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
- .debug_ranges  0x000002d8       0x10 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
- .debug_ranges  0x000002e8       0x18 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
- .debug_ranges  0x00000300       0x40 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
- .debug_ranges  0x00000340       0x50 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
- .debug_ranges  0x00000390      0x2b8 ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
- .debug_ranges  0x00000648       0x40 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
- .debug_ranges  0x00000688      0x160 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
- .debug_ranges  0x000007e8       0x10 ./src/smc_gen/r_bsp/mcu/all/resetprg.o
- .debug_ranges  0x000007f8       0x40 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
- .debug_ranges  0x00000838       0x40 ./src/smc_gen/general/r_cg_hardware_setup.o
- .debug_ranges  0x00000878       0x10 ./src/smc_gen/general/r_smc_cgc.o
- .debug_ranges  0x00000888       0x10 ./src/smc_gen/general/r_smc_cgc_user.o
- .debug_ranges  0x00000898       0xe8 ./src/frtos_startup/freertos_start.o
- .debug_ranges  0x00000980       0x28 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .debug_ranges  0x000009a8       0xa8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .debug_ranges  0x00000a50       0x70 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .debug_ranges  0x00000ac0       0xc0 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .debug_ranges  0x00000b80       0x50 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .debug_ranges  0x00000bd0       0x28 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
- .debug_ranges  0x00000bf8       0xb0 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .debug_ranges  0x00000ca8      0x100 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
- .debug_ranges  0x00000da8      0x150 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .debug_ranges  0x00000ef8       0x40 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .debug_ranges  0x00000f38       0x48 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
- .debug_ranges  0x00000f80       0x28 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
- .debug_ranges  0x00000fa8       0x40 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
- .debug_ranges  0x00000fe8       0x38 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
- .debug_ranges  0x00001020       0x30 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .debug_ranges  0x00001050       0x20 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
- .debug_ranges  0x00001070       0x48 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .debug_ranges  0x000010b8       0x20 ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
- .debug_ranges  0x000010d8       0x30 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .debug_ranges  0x00001108       0x20 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .debug_ranges  0x00001128       0x48 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
- .debug_ranges  0x00001170       0x68 ./src/FreeRTOS_Demo/Full_Demo/serial.o
- .debug_ranges  0x000011d8       0x80 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_ranges  0x00001258       0x50 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
- .debug_ranges  0x000012a8       0xf0 ./src/FreeRTOS/Source/event_groups.o
- .debug_ranges  0x00001398       0x30 ./src/FreeRTOS/Source/list.o
- .debug_ranges  0x000013c8      0x5a0 ./src/FreeRTOS/Source/queue.o
- .debug_ranges  0x00001968      0x2d0 ./src/FreeRTOS/Source/stream_buffer.o
- .debug_ranges  0x00001c38      0xa38 ./src/FreeRTOS/Source/tasks.o
- .debug_ranges  0x00002670      0x240 ./src/FreeRTOS/Source/timers.o
+.debug_line     0x00000000    0x1cc7b
+ .debug_line    0x00000000      0x11e ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+ .debug_line    0x0000011e      0x41c ./src/smc_integration/FIT_patch.o
+ .debug_line    0x0000053a      0x508 ./src/smc_integration/IDE_helper.o
+ .debug_line    0x00000a42      0x379 ./src/smc_integration/u_bsp_lowlvl_ext.o
+ .debug_line    0x00000dbb      0xb7e ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
+ .debug_line    0x00001939      0x76c ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
+ .debug_line    0x000020a5      0x4e8 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
+ .debug_line    0x0000258d      0xd5a ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
+ .debug_line    0x000032e7      0x7d2 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
+ .debug_line    0x00003ab9      0x349 ./src/smc_gen/r_bsp/mcu/rx72n/vecttbl.o
+ .debug_line    0x00003e02      0x3a0 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
+ .debug_line    0x000041a2      0x33c ./src/smc_gen/r_bsp/mcu/all/mcu_locks.o
+ .debug_line    0x000044de      0x4cf ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
+ .debug_line    0x000049ad      0x7c1 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
+ .debug_line    0x0000516e      0xe9c ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
+ .debug_line    0x0000600a      0x421 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
+ .debug_line    0x0000642b      0x89e ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
+ .debug_line    0x00006cc9       0x70 ./src/smc_gen/r_bsp/mcu/all/reset_program.o
+ .debug_line    0x00006d39      0x4ec ./src/smc_gen/r_bsp/mcu/all/resetprg.o
+ .debug_line    0x00007225      0x548 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
+ .debug_line    0x0000776d      0x68d ./src/smc_gen/general/r_cg_hardware_setup.o
+ .debug_line    0x00007dfa      0x359 ./src/smc_gen/general/r_smc_cgc.o
+ .debug_line    0x00008153      0x34d ./src/smc_gen/general/r_smc_cgc_user.o
+ .debug_line    0x000084a0      0x80f ./src/frtos_startup/freertos_start.o
+ .debug_line    0x00008caf      0x560 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
+ .debug_line    0x0000920f      0x9a7 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
+ .debug_line    0x00009bb6      0xa3e ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
+ .debug_line    0x0000a5f4      0xe40 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
+ .debug_line    0x0000b434      0x83f ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
+ .debug_line    0x0000bc73      0x42c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
+ .debug_line    0x0000c09f      0x831 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
+ .debug_line    0x0000c8d0      0xd68 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
+ .debug_line    0x0000d638      0xe80 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
+ .debug_line    0x0000e4b8      0x771 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
+ .debug_line    0x0000ec29      0x529 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
+ .debug_line    0x0000f152      0x423 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
+ .debug_line    0x0000f575      0x660 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
+ .debug_line    0x0000fbd5      0x85d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
+ .debug_line    0x00010432      0x567 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
+ .debug_line    0x00010999      0x524 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
+ .debug_line    0x00010ebd      0x628 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
+ .debug_line    0x000114e5      0x5d4 ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
+ .debug_line    0x00011ab9      0x5bc ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
+ .debug_line    0x00012075      0x5d5 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
+ .debug_line    0x0001264a      0x830 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
+ .debug_line    0x00012e7a      0x740 ./src/FreeRTOS_Demo/Full_Demo/serial.o
+ .debug_line    0x000135ba      0x807 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x00013dc1      0x741 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
+ .debug_line    0x00014502      0xa57 ./src/FreeRTOS/Source/event_groups.o
+ .debug_line    0x00014f59      0x496 ./src/FreeRTOS/Source/list.o
+ .debug_line    0x000153ef     0x1eb6 ./src/FreeRTOS/Source/queue.o
+ .debug_line    0x000172a5     0x1441 ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_line    0x000186e6     0x37eb ./src/FreeRTOS/Source/tasks.o
+ .debug_line    0x0001bed1      0xdaa ./src/FreeRTOS/Source/timers.o
 
-.debug_line     0x00000000    0x1c9d3
- .debug_line    0x00000000      0x40a ./src/smc_workaround/FIT_patch.o
- .debug_line    0x0000040a      0x4f6 ./src/smc_workaround/IDE_helper.o
- .debug_line    0x00000900      0x10d ./src/smc_workaround/sim_debug_mode_hook.o
- .debug_line    0x00000a0d      0x367 ./src/smc_workaround/u_bsp_lowlvl_ext.o
- .debug_line    0x00000d74      0xb6d ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
- .debug_line    0x000018e1      0x75b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
- .debug_line    0x0000203c      0x4d7 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
- .debug_line    0x00002513      0xd49 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
- .debug_line    0x0000325c      0x7c1 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
- .debug_line    0x00003a1d      0x338 ./src/smc_gen/r_bsp/mcu/rx72n/vecttbl.o
- .debug_line    0x00003d55      0x38f ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
- .debug_line    0x000040e4      0x32b ./src/smc_gen/r_bsp/mcu/all/mcu_locks.o
- .debug_line    0x0000440f      0x4be ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
- .debug_line    0x000048cd      0x7b0 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
- .debug_line    0x0000507d      0xe8b ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
- .debug_line    0x00005f08      0x410 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
- .debug_line    0x00006318      0x88d ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
- .debug_line    0x00006ba5       0x70 ./src/smc_gen/r_bsp/mcu/all/reset_program.o
- .debug_line    0x00006c15      0x4db ./src/smc_gen/r_bsp/mcu/all/resetprg.o
- .debug_line    0x000070f0      0x537 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
- .debug_line    0x00007627      0x60f ./src/smc_gen/general/r_cg_hardware_setup.o
- .debug_line    0x00007c36      0x348 ./src/smc_gen/general/r_smc_cgc.o
- .debug_line    0x00007f7e      0x33c ./src/smc_gen/general/r_smc_cgc_user.o
- .debug_line    0x000082ba      0x7fe ./src/frtos_startup/freertos_start.o
- .debug_line    0x00008ab8      0x560 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
- .debug_line    0x00009018      0x9a7 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
- .debug_line    0x000099bf      0xa3e ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
- .debug_line    0x0000a3fd      0xe40 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
- .debug_line    0x0000b23d      0x83f ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
- .debug_line    0x0000ba7c      0x42c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
- .debug_line    0x0000bea8      0x831 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
- .debug_line    0x0000c6d9      0xd68 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
- .debug_line    0x0000d441      0xe80 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
- .debug_line    0x0000e2c1      0x771 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
- .debug_line    0x0000ea32      0x529 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
- .debug_line    0x0000ef5b      0x423 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
- .debug_line    0x0000f37e      0x660 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
- .debug_line    0x0000f9de      0x85d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
- .debug_line    0x0001023b      0x567 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
- .debug_line    0x000107a2      0x524 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
- .debug_line    0x00010cc6      0x628 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
- .debug_line    0x000112ee      0x5c3 ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
- .debug_line    0x000118b1      0x5bc ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
- .debug_line    0x00011e6d      0x5d5 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
- .debug_line    0x00012442      0x81f ./src/FreeRTOS_Demo/Full_Demo/main_full.o
- .debug_line    0x00012c61      0x6c2 ./src/FreeRTOS_Demo/Full_Demo/serial.o
- .debug_line    0x00013323      0x807 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x00013b2a      0x730 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
- .debug_line    0x0001425a      0xa57 ./src/FreeRTOS/Source/event_groups.o
- .debug_line    0x00014cb1      0x496 ./src/FreeRTOS/Source/list.o
- .debug_line    0x00015147     0x1eb6 ./src/FreeRTOS/Source/queue.o
- .debug_line    0x00016ffd     0x1441 ./src/FreeRTOS/Source/stream_buffer.o
- .debug_line    0x0001843e     0x37eb ./src/FreeRTOS/Source/tasks.o
- .debug_line    0x0001bc29      0xdaa ./src/FreeRTOS/Source/timers.o
-
-.debug_str      0x00000000     0xe7d9
- .debug_str     0x00000000      0x5ed ./src/smc_workaround/FIT_patch.o
-                                0x676 (size before relaxing)
- .debug_str     0x000005ed      0x243 ./src/smc_workaround/IDE_helper.o
-                                0x83d (size before relaxing)
- .debug_str     0x00000830       0x2c ./src/smc_workaround/sim_debug_mode_hook.o
-                                0x1f5 (size before relaxing)
- .debug_str     0x0000085c       0x71 ./src/smc_workaround/u_bsp_lowlvl_ext.o
-                                0x66b (size before relaxing)
- .debug_str     0x000008cd      0xcce ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
+.debug_str      0x00000000     0xe7ed
+ .debug_str     0x00000000      0x1c9 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
+                                0x206 (size before relaxing)
+ .debug_str     0x000001c9      0x462 ./src/smc_integration/FIT_patch.o
+                                0x677 (size before relaxing)
+ .debug_str     0x0000062b      0x244 ./src/smc_integration/IDE_helper.o
+                                0x83e (size before relaxing)
+ .debug_str     0x0000086f       0x72 ./src/smc_integration/u_bsp_lowlvl_ext.o
+                                0x66c (size before relaxing)
+ .debug_str     0x000008e1      0xcce ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
                                0x1322 (size before relaxing)
- .debug_str     0x0000159b      0xce8 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
+ .debug_str     0x000015af      0xce8 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
                                0x1365 (size before relaxing)
- .debug_str     0x00002283       0x7b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
+ .debug_str     0x00002297       0x7b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
                                 0x73b (size before relaxing)
- .debug_str     0x000022fe     0x3846 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
+ .debug_str     0x00002312     0x3846 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
                                0x3f45 (size before relaxing)
- .debug_str     0x00005b44       0x51 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
+ .debug_str     0x00005b58       0x51 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
                                0x10fd (size before relaxing)
- .debug_str     0x00005b95      0x138 ./src/smc_gen/r_bsp/mcu/rx72n/vecttbl.o
+ .debug_str     0x00005ba9      0x138 ./src/smc_gen/r_bsp/mcu/rx72n/vecttbl.o
                                 0x732 (size before relaxing)
- .debug_str     0x00005ccd       0x42 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
+ .debug_str     0x00005ce1       0x42 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
                                 0x65d (size before relaxing)
- .debug_str     0x00005d0f      0x7b3 ./src/smc_gen/r_bsp/mcu/all/mcu_locks.o
+ .debug_str     0x00005d23      0x7b3 ./src/smc_gen/r_bsp/mcu/all/mcu_locks.o
                                 0xdad (size before relaxing)
- .debug_str     0x000064c2       0xc1 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
+ .debug_str     0x000064d6       0xc1 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
                                 0x726 (size before relaxing)
- .debug_str     0x00006583      0x83e ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
+ .debug_str     0x00006597      0x83e ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
                                0x2b1a (size before relaxing)
- .debug_str     0x00006dc1      0x2bd ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
+ .debug_str     0x00006dd5      0x2bd ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
                                0x41e3 (size before relaxing)
- .debug_str     0x0000707e       0xa1 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
+ .debug_str     0x00007092       0xa1 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
                                 0xe2b (size before relaxing)
- .debug_str     0x0000711f      0x36a ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
+ .debug_str     0x00007133      0x36a ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
                                 0x9bb (size before relaxing)
- .debug_str     0x00007489       0x94 ./src/smc_gen/r_bsp/mcu/all/resetprg.o
+ .debug_str     0x0000749d       0x94 ./src/smc_gen/r_bsp/mcu/all/resetprg.o
                                0x1ae9 (size before relaxing)
- .debug_str     0x0000751d      0xbe3 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
+ .debug_str     0x00007531      0xbe3 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
                                0x1e90 (size before relaxing)
- .debug_str     0x00008100      0x337 ./src/smc_gen/general/r_cg_hardware_setup.o
+ .debug_str     0x00008114      0x337 ./src/smc_gen/general/r_cg_hardware_setup.o
                                0x2c6b (size before relaxing)
- .debug_str     0x00008437       0x39 ./src/smc_gen/general/r_smc_cgc.o
+ .debug_str     0x0000844b       0x39 ./src/smc_gen/general/r_smc_cgc.o
                                 0x640 (size before relaxing)
- .debug_str     0x00008470       0x28 ./src/smc_gen/general/r_smc_cgc_user.o
+ .debug_str     0x00008484       0x28 ./src/smc_gen/general/r_smc_cgc_user.o
                                 0x638 (size before relaxing)
- .debug_str     0x00008498     0x10a5 ./src/frtos_startup/freertos_start.o
+ .debug_str     0x000084ac     0x10a5 ./src/frtos_startup/freertos_start.o
                                0x4774 (size before relaxing)
- .debug_str     0x0000953d      0x2af ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
+ .debug_str     0x00009551      0x2af ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
                                 0x8b8 (size before relaxing)
- .debug_str     0x000097ec      0x41c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
+ .debug_str     0x00009800      0x41c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
                                 0x64a (size before relaxing)
- .debug_str     0x00009c08      0x279 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
+ .debug_str     0x00009c1c      0x279 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
                                 0x965 (size before relaxing)
- .debug_str     0x00009e81      0x4bd ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
+ .debug_str     0x00009e95      0x4bd ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
                                 0xbc3 (size before relaxing)
- .debug_str     0x0000a33e      0x2b3 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
+ .debug_str     0x0000a352      0x2b3 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
                                 0x9ff (size before relaxing)
- .debug_str     0x0000a5f1      0x14d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
+ .debug_str     0x0000a605      0x14d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
                                 0x42f (size before relaxing)
- .debug_str     0x0000a73e      0x414 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
+ .debug_str     0x0000a752      0x414 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
                                 0x737 (size before relaxing)
- .debug_str     0x0000ab52      0x2ba ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
+ .debug_str     0x0000ab66      0x2ba ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
                                 0x875 (size before relaxing)
- .debug_str     0x0000ae0c      0x52c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
+ .debug_str     0x0000ae20      0x52c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
                                 0xc15 (size before relaxing)
- .debug_str     0x0000b338      0x1f8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
+ .debug_str     0x0000b34c      0x1f8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
                                 0x4c9 (size before relaxing)
- .debug_str     0x0000b530      0x158 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
+ .debug_str     0x0000b544      0x158 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
                                 0x40b (size before relaxing)
- .debug_str     0x0000b688      0x130 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
+ .debug_str     0x0000b69c      0x130 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
                                 0x77b (size before relaxing)
- .debug_str     0x0000b7b8      0x228 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
+ .debug_str     0x0000b7cc      0x228 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
                                 0x983 (size before relaxing)
- .debug_str     0x0000b9e0      0x197 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
+ .debug_str     0x0000b9f4      0x197 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
                                 0x79d (size before relaxing)
- .debug_str     0x0000bb77      0x1e9 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
+ .debug_str     0x0000bb8b      0x1e9 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
                                 0x4ed (size before relaxing)
- .debug_str     0x0000bd60      0x15e ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
+ .debug_str     0x0000bd74      0x15e ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
                                 0x85a (size before relaxing)
- .debug_str     0x0000bebe      0x317 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
+ .debug_str     0x0000bed2      0x317 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
                                 0x90d (size before relaxing)
- .debug_str     0x0000c1d5       0xb4 ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
+ .debug_str     0x0000c1e9       0xb4 ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
                                0x4613 (size before relaxing)
- .debug_str     0x0000c289      0x1a0 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
+ .debug_str     0x0000c29d      0x1a0 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
                                 0x88a (size before relaxing)
- .debug_str     0x0000c429      0x183 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
+ .debug_str     0x0000c43d      0x183 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
                                 0x854 (size before relaxing)
- .debug_str     0x0000c5ac      0x16b ./src/FreeRTOS_Demo/Full_Demo/main_full.o
+ .debug_str     0x0000c5c0      0x16b ./src/FreeRTOS_Demo/Full_Demo/main_full.o
                                 0xc73 (size before relaxing)
- .debug_str     0x0000c717       0xcd ./src/FreeRTOS_Demo/Full_Demo/serial.o
+ .debug_str     0x0000c72b       0xcd ./src/FreeRTOS_Demo/Full_Demo/serial.o
                                 0x8cd (size before relaxing)
- .debug_str     0x0000c7e4      0x2a1 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x0000c7f8      0x2a1 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
                                 0x92e (size before relaxing)
- .debug_str     0x0000ca85      0x138 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
+ .debug_str     0x0000ca99      0x138 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
                                0x46d9 (size before relaxing)
- .debug_str     0x0000cbbd      0x349 ./src/FreeRTOS/Source/event_groups.o
+ .debug_str     0x0000cbd1      0x349 ./src/FreeRTOS/Source/event_groups.o
                                 0xae7 (size before relaxing)
- .debug_str     0x0000cf06       0xa2 ./src/FreeRTOS/Source/list.o
+ .debug_str     0x0000cf1a       0xa2 ./src/FreeRTOS/Source/list.o
                                 0x714 (size before relaxing)
- .debug_str     0x0000cfa8      0x5e6 ./src/FreeRTOS/Source/queue.o
+ .debug_str     0x0000cfbc      0x5e6 ./src/FreeRTOS/Source/queue.o
                                 0xf89 (size before relaxing)
- .debug_str     0x0000d58e      0x4e2 ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_str     0x0000d5a2      0x4e2 ./src/FreeRTOS/Source/stream_buffer.o
                                 0xccb (size before relaxing)
- .debug_str     0x0000da70      0x905 ./src/FreeRTOS/Source/tasks.o
+ .debug_str     0x0000da84      0x905 ./src/FreeRTOS/Source/tasks.o
                                0x1674 (size before relaxing)
- .debug_str     0x0000e375      0x464 ./src/FreeRTOS/Source/timers.o
+ .debug_str     0x0000e389      0x464 ./src/FreeRTOS/Source/timers.o
                                 0xdb7 (size before relaxing)
 
 .comment        0x00000000       0x36
- .comment       0x00000000       0x36 ./src/smc_workaround/FIT_patch.o
+ .comment       0x00000000       0x36 ./src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.o
                                  0x37 (size before relaxing)
- .comment       0x00000000       0x37 ./src/smc_workaround/IDE_helper.o
- .comment       0x00000000       0x37 ./src/smc_workaround/sim_debug_mode_hook.o
- .comment       0x00000000       0x37 ./src/smc_workaround/u_bsp_lowlvl_ext.o
+ .comment       0x00000000       0x37 ./src/smc_integration/FIT_patch.o
+ .comment       0x00000000       0x37 ./src/smc_integration/IDE_helper.o
+ .comment       0x00000000       0x37 ./src/smc_integration/u_bsp_lowlvl_ext.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
  .comment       0x00000000       0x37 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
@@ -3213,3 +3067,149 @@ OUTPUT(RTOSDemo.elf elf32-rx-le)
  .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/../../../../rx-elf/lib/64-bit-double\libc_nano.a(lib_a-reent.o)
  .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_udivdi3.o)
  .comment       0x00000000       0x37 c:/renesas/gcc/redhat/gnurx-elf/8.3.0.202004/rx-elf/rx-elf/bin/../lib/gcc/rx-elf/8.3.0.202004-GNURX/64-bit-double\libgcc.a(_clz.o)
+
+.debug_frame    0x00000000     0x3208
+ .debug_frame   0x00000000       0x44 ./src/smc_integration/FIT_patch.o
+ .debug_frame   0x00000044       0x2c ./src/smc_integration/IDE_helper.o
+ .debug_frame   0x00000070       0x34 ./src/smc_integration/u_bsp_lowlvl_ext.o
+ .debug_frame   0x000000a4       0xc4 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
+ .debug_frame   0x00000168       0x4c ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
+ .debug_frame   0x000001b4       0x44 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
+ .debug_frame   0x000001f8      0x158 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
+ .debug_frame   0x00000350       0x24 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
+ .debug_frame   0x00000374       0x34 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
+ .debug_frame   0x000003a8       0x6c ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
+ .debug_frame   0x00000414       0xc4 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
+ .debug_frame   0x000004d8      0x228 ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
+ .debug_frame   0x00000700       0x70 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
+ .debug_frame   0x00000770      0x370 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
+ .debug_frame   0x00000ae0       0x24 ./src/smc_gen/r_bsp/mcu/all/resetprg.o
+ .debug_frame   0x00000b04       0x24 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
+ .debug_frame   0x00000b28       0x74 ./src/smc_gen/general/r_cg_hardware_setup.o
+ .debug_frame   0x00000b9c       0x24 ./src/smc_gen/general/r_smc_cgc.o
+ .debug_frame   0x00000bc0       0x24 ./src/smc_gen/general/r_smc_cgc_user.o
+ .debug_frame   0x00000be4      0x10c ./src/frtos_startup/freertos_start.o
+ .debug_frame   0x00000cf0       0xb8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
+ .debug_frame   0x00000da8       0xec ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
+ .debug_frame   0x00000e94       0xdc ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
+ .debug_frame   0x00000f70      0x178 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
+ .debug_frame   0x000010e8       0xd8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
+ .debug_frame   0x000011c0       0x98 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
+ .debug_frame   0x00001258       0xe4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
+ .debug_frame   0x0000133c       0xfc ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
+ .debug_frame   0x00001438      0x12c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
+ .debug_frame   0x00001564       0x98 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
+ .debug_frame   0x000015fc       0x90 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
+ .debug_frame   0x0000168c       0xa0 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
+ .debug_frame   0x0000172c       0xf8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
+ .debug_frame   0x00001824      0x184 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
+ .debug_frame   0x000019a8       0xb4 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
+ .debug_frame   0x00001a5c       0x8c ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
+ .debug_frame   0x00001ae8       0x9c ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
+ .debug_frame   0x00001b84       0x7c ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
+ .debug_frame   0x00001c00       0xc0 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
+ .debug_frame   0x00001cc0       0x8c ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
+ .debug_frame   0x00001d4c       0xcc ./src/FreeRTOS_Demo/Full_Demo/main_full.o
+ .debug_frame   0x00001e18       0xa4 ./src/FreeRTOS_Demo/Full_Demo/serial.o
+ .debug_frame   0x00001ebc       0xd0 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_frame   0x00001f8c       0xc0 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
+ .debug_frame   0x0000204c      0x188 ./src/FreeRTOS/Source/event_groups.o
+ .debug_frame   0x000021d4       0x64 ./src/FreeRTOS/Source/list.o
+ .debug_frame   0x00002238      0x430 ./src/FreeRTOS/Source/queue.o
+ .debug_frame   0x00002668      0x24c ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_frame   0x000028b4      0x714 ./src/FreeRTOS/Source/tasks.o
+ .debug_frame   0x00002fc8      0x240 ./src/FreeRTOS/Source/timers.o
+
+.debug_loc      0x00000000    0x11d6a
+ .debug_loc     0x00000000       0x63 ./src/smc_integration/FIT_patch.o
+ .debug_loc     0x00000063      0xed4 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
+ .debug_loc     0x00000f37      0x17e ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
+ .debug_loc     0x000010b5      0x13b ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
+ .debug_loc     0x000011f0       0xa0 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
+ .debug_loc     0x00001290      0x2d8 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
+ .debug_loc     0x00001568     0x19ce ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
+ .debug_loc     0x00002f36      0x11d ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
+ .debug_loc     0x00003053      0x5c8 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
+ .debug_loc     0x0000361b       0x18 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
+ .debug_loc     0x00003633      0x1c9 ./src/frtos_startup/freertos_start.o
+ .debug_loc     0x000037fc      0x263 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
+ .debug_loc     0x00003a5f      0x3af ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
+ .debug_loc     0x00003e0e      0x1a2 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
+ .debug_loc     0x00003fb0      0x7dd ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
+ .debug_loc     0x0000478d       0xc1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
+ .debug_loc     0x0000484e       0x88 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
+ .debug_loc     0x000048d6      0x382 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
+ .debug_loc     0x00004c58      0xca3 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
+ .debug_loc     0x000058fb      0x704 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
+ .debug_loc     0x00005fff      0x27b ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
+ .debug_loc     0x0000627a      0x190 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
+ .debug_loc     0x0000640a       0xd1 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
+ .debug_loc     0x000064db      0x1ae ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
+ .debug_loc     0x00006689      0x42a ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
+ .debug_loc     0x00006ab3       0x8f ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
+ .debug_loc     0x00006b42      0x16d ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
+ .debug_loc     0x00006caf      0x426 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
+ .debug_loc     0x000070d5      0x313 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
+ .debug_loc     0x000073e8      0x11c ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
+ .debug_loc     0x00007504      0x135 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
+ .debug_loc     0x00007639      0x251 ./src/FreeRTOS_Demo/Full_Demo/serial.o
+ .debug_loc     0x0000788a      0x57f ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_loc     0x00007e09       0xed ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
+ .debug_loc     0x00007ef6      0xff6 ./src/FreeRTOS/Source/event_groups.o
+ .debug_loc     0x00008eec       0x58 ./src/FreeRTOS/Source/list.o
+ .debug_loc     0x00008f44     0x2530 ./src/FreeRTOS/Source/queue.o
+ .debug_loc     0x0000b474     0x236a ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_loc     0x0000d7de     0x3688 ./src/FreeRTOS/Source/tasks.o
+ .debug_loc     0x00010e66      0xf04 ./src/FreeRTOS/Source/timers.o
+
+.debug_ranges   0x00000000     0x28b0
+ .debug_ranges  0x00000000       0x20 ./src/smc_integration/FIT_patch.o
+ .debug_ranges  0x00000020       0x10 ./src/smc_integration/IDE_helper.o
+ .debug_ranges  0x00000030       0x18 ./src/smc_integration/u_bsp_lowlvl_ext.o
+ .debug_ranges  0x00000048      0x1f0 ./src/smc_gen/r_gpio_rx/src/r_gpio_rx.o
+ .debug_ranges  0x00000238       0x48 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_clocks.o
+ .debug_ranges  0x00000280       0x10 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_init.o
+ .debug_ranges  0x00000290       0x48 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_interrupts.o
+ .debug_ranges  0x000002d8       0x10 ./src/smc_gen/r_bsp/mcu/rx72n/mcu_mapped_interrupts.o
+ .debug_ranges  0x000002e8       0x18 ./src/smc_gen/r_bsp/mcu/all/lowlvl.o
+ .debug_ranges  0x00000300       0x40 ./src/smc_gen/r_bsp/mcu/all/r_bsp_common.o
+ .debug_ranges  0x00000340       0x50 ./src/smc_gen/r_bsp/mcu/all/r_bsp_cpu.o
+ .debug_ranges  0x00000390      0x2b8 ./src/smc_gen/r_bsp/mcu/all/r_bsp_interrupts.o
+ .debug_ranges  0x00000648       0x40 ./src/smc_gen/r_bsp/mcu/all/r_bsp_locking.o
+ .debug_ranges  0x00000688      0x160 ./src/smc_gen/r_bsp/mcu/all/r_rx_intrinsic_functions.o
+ .debug_ranges  0x000007e8       0x10 ./src/smc_gen/r_bsp/mcu/all/resetprg.o
+ .debug_ranges  0x000007f8       0x40 ./src/smc_gen/r_bsp/board/generic_rx72n/hwsetup.o
+ .debug_ranges  0x00000838       0x40 ./src/smc_gen/general/r_cg_hardware_setup.o
+ .debug_ranges  0x00000878       0x10 ./src/smc_gen/general/r_smc_cgc.o
+ .debug_ranges  0x00000888       0x10 ./src/smc_gen/general/r_smc_cgc_user.o
+ .debug_ranges  0x00000898       0xe8 ./src/frtos_startup/freertos_start.o
+ .debug_ranges  0x00000980       0x28 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/BlockQ.o
+ .debug_ranges  0x000009a8       0xa8 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/EventGroupsDemo.o
+ .debug_ranges  0x00000a50       0x70 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/GenQTest.o
+ .debug_ranges  0x00000ac0       0xc0 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntQueue.o
+ .debug_ranges  0x00000b80       0x50 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/IntSemTest.o
+ .debug_ranges  0x00000bd0       0x28 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/QueueOverwrite.o
+ .debug_ranges  0x00000bf8       0xb0 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotify.o
+ .debug_ranges  0x00000ca8      0x100 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TaskNotifyArray.o
+ .debug_ranges  0x00000da8      0x150 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/TimerDemo.o
+ .debug_ranges  0x00000ef8       0x40 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/blocktim.o
+ .debug_ranges  0x00000f38       0x48 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/countsem.o
+ .debug_ranges  0x00000f80       0x28 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/death.o
+ .debug_ranges  0x00000fa8       0x40 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/dynamic.o
+ .debug_ranges  0x00000fe8       0x38 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/flop.o
+ .debug_ranges  0x00001020       0x30 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/recmutex.o
+ .debug_ranges  0x00001050       0x20 ./src/FreeRTOS_Demo/Full_Demo/Standard_Demo_Tasks/semtest.o
+ .debug_ranges  0x00001070       0x48 ./src/FreeRTOS_Demo/Full_Demo/FreeRTOS-Plus-CLI/FreeRTOS_CLI.o
+ .debug_ranges  0x000010b8       0x20 ./src/FreeRTOS_Demo/Full_Demo/IntQueueTimer.o
+ .debug_ranges  0x000010d8       0x30 ./src/FreeRTOS_Demo/Full_Demo/Sample-CLI-commands.o
+ .debug_ranges  0x00001108       0x20 ./src/FreeRTOS_Demo/Full_Demo/UARTCommandConsole.o
+ .debug_ranges  0x00001128       0x48 ./src/FreeRTOS_Demo/Full_Demo/main_full.o
+ .debug_ranges  0x00001170       0x68 ./src/FreeRTOS_Demo/Full_Demo/serial.o
+ .debug_ranges  0x000011d8       0x80 ./src/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_ranges  0x00001258       0x50 ./src/FreeRTOS/Source/portable/GCC/RX_RenesasSim/port.o
+ .debug_ranges  0x000012a8       0xf0 ./src/FreeRTOS/Source/event_groups.o
+ .debug_ranges  0x00001398       0x30 ./src/FreeRTOS/Source/list.o
+ .debug_ranges  0x000013c8      0x5a0 ./src/FreeRTOS/Source/queue.o
+ .debug_ranges  0x00001968      0x2d0 ./src/FreeRTOS/Source/stream_buffer.o
+ .debug_ranges  0x00001c38      0xa38 ./src/FreeRTOS/Source/tasks.o
+ .debug_ranges  0x00002670      0x240 ./src/FreeRTOS/Source/timers.o

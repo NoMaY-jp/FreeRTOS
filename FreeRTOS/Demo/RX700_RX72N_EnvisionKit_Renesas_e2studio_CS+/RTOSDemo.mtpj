@@ -917,63 +917,63 @@
     <Instance Guid="883f5fbd-562b-4eec-81dc-07dce99e0e7a">
       <Name>CC_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\CC_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\CC_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="8f7d56ca-6870-46ca-b87a-bc9500172e57">
       <Name>CG_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\CG_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\CG_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="8b908192-7ee2-4010-b7a7-41d64597a57a">
       <Name>FIT_patch.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\FIT_patch.c</RelativePath>
+      <RelativePath>src\smc_integration\FIT_patch.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="370fc6dc-6db9-4804-9654-77e203b92b69">
       <Name>FIT_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\FIT_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\FIT_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="7daf8967-7028-4274-8dfd-80de310963d4">
       <Name>IDE_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\IDE_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\IDE_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="834603cf-677b-4c06-84f1-a81aa9fc0f05">
-      <Name>smc_workaround.h</Name>
+      <Name>smc_integration.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\smc_workaround.h</RelativePath>
+      <RelativePath>src\smc_integration\smc_integration.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="00846749-d54e-4492-97c5-b57a9b2e2fd8">
       <Name>u_sci_rx_ext.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\u_sci_rx_ext.c</RelativePath>
+      <RelativePath>src\smc_integration\u_sci_rx_ext.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="a496b00f-5c13-436d-8a91-e8abaa655509">
       <Name>u_sci_rx_ext_if.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\u_sci_rx_ext_if.h</RelativePath>
+      <RelativePath>src\smc_integration\u_sci_rx_ext_if.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="d94115bb-5db0-4c22-9f42-7cc7a78ed5e5">
       <Name>resetprg.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\r_bsp_patch\resetprg.c</RelativePath>
+      <RelativePath>src\smc_integration\r_bsp_patch\resetprg.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>3e49a941-4f19-4932-b0a9-59a722f4456e</ParentItem>
     </Instance>
@@ -2476,7 +2476,7 @@ src\smc_gen\r_bsp\board\user
 src\smc_gen\r_bsp\board\generic_rx72n
 src\smc_gen\r_bsp
 src\smc_gen\general
-src\smc_workaround
+src\smc_integration
 ..\..\Source\include
 ..\..\Source\portable\Renesas\RX
 src\frtos_startup
@@ -2501,7 +2501,7 @@ src\FreeRTOS_Demo
       <COptionLoopValue-0>2</COptionLoopValue-0>
       <COptionMisra2004RuleNumberIgnore-0 />
       <COptionOtherAdditionalOptions-0 />
-      <COptionPreinclude-0>src\smc_workaround\CC_patch.h
+      <COptionPreinclude-0>src\smc_integration\CC_patch.h
 </COptionPreinclude-0>
       <COptionSectionP-0>P</COptionSectionP-0>
       <COptionShowExpansions-0>False</COptionShowExpansions-0>

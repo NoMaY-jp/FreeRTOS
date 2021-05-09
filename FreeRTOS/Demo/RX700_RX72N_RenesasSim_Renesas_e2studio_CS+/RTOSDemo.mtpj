@@ -920,96 +920,102 @@
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
       <Property>3fba3dcc-863a-452d-92b8-eeade6ea1449</Property>
     </Instance>
+    <Instance Guid="7a82bb02-e7a0-45fc-8c13-38b2bdf42196">
+      <Name>RenesasSimDebug</Name>
+      <Type>Category</Type>
+      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
+      <Property>d99b971a-739d-4fd8-a1ab-23005f88b848</Property>
+    </Instance>
     <Instance Guid="883f5fbd-562b-4eec-81dc-07dce99e0e7a">
       <Name>CC_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\CC_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\CC_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="8f7d56ca-6870-46ca-b87a-bc9500172e57">
       <Name>CG_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\CG_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\CG_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="8b908192-7ee2-4010-b7a7-41d64597a57a">
       <Name>FIT_patch.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\FIT_patch.c</RelativePath>
+      <RelativePath>src\smc_integration\FIT_patch.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="370fc6dc-6db9-4804-9654-77e203b92b69">
       <Name>FIT_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\FIT_patch.h</RelativePath>
+      <RelativePath>src\smc_integration\FIT_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="d901f9f7-51f6-4a3a-a4d3-777b37eb03f2">
       <Name>IDE_helper.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\IDE_helper.c</RelativePath>
+      <RelativePath>src\smc_integration\IDE_helper.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="d761f425-2da6-4669-929e-2fee2c0ef20d">
       <Name>IDE_helper.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\IDE_helper.h</RelativePath>
+      <RelativePath>src\smc_integration\IDE_helper.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="7daf8967-7028-4274-8dfd-80de310963d4">
       <Name>IDE_patch.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\IDE_patch.h</RelativePath>
-      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
-      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
-    </Instance>
-    <Instance Guid="f4a69749-7ae7-4b79-9ee7-d18fed1ea233">
-      <Name>sim_debug_mode_hook.c</Name>
-      <Type>File</Type>
-      <RelativePath>src\smc_workaround\sim_debug_mode_hook.c</RelativePath>
-      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
-      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
-    </Instance>
-    <Instance Guid="c10d2075-2b5d-4744-8e2d-5e815d7ff71d">
-      <Name>sim_debug_mode_hook.h</Name>
-      <Type>File</Type>
-      <RelativePath>src\smc_workaround\sim_debug_mode_hook.h</RelativePath>
+      <RelativePath>src\smc_integration\IDE_patch.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="834603cf-677b-4c06-84f1-a81aa9fc0f05">
-      <Name>smc_workaround.h</Name>
+      <Name>smc_integration.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\smc_workaround.h</RelativePath>
+      <RelativePath>src\smc_integration\smc_integration.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="359805a6-1548-4390-b12d-9cdbcfc88745">
       <Name>u_bsp_lowlvl_ext.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\u_bsp_lowlvl_ext.c</RelativePath>
+      <RelativePath>src\smc_integration\u_bsp_lowlvl_ext.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="8d8ec097-c25a-4a0a-97be-a8966d0b33d9">
       <Name>u_bsp_lowlvl_ext.h</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\u_bsp_lowlvl_ext.h</RelativePath>
+      <RelativePath>src\smc_integration\u_bsp_lowlvl_ext.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
     <Instance Guid="d94115bb-5db0-4c22-9f42-7cc7a78ed5e5">
       <Name>resetprg.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_workaround\r_bsp_patch\resetprg.c</RelativePath>
+      <RelativePath>src\smc_integration\r_bsp_patch\resetprg.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>3e49a941-4f19-4932-b0a9-59a722f4456e</ParentItem>
+    </Instance>
+    <Instance Guid="f4a69749-7ae7-4b79-9ee7-d18fed1ea233">
+      <Name>sim_debug_mode_hook.c</Name>
+      <Type>File</Type>
+      <RelativePath>src\smc_integration\RenesasSimDebug\sim_debug_mode_hook.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>7a82bb02-e7a0-45fc-8c13-38b2bdf42196</ParentItem>
+    </Instance>
+    <Instance Guid="c10d2075-2b5d-4744-8e2d-5e815d7ff71d">
+      <Name>sim_debug_mode_hook.h</Name>
+      <Type>File</Type>
+      <RelativePath>src\smc_integration\RenesasSimDebug\sim_debug_mode_hook.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>7a82bb02-e7a0-45fc-8c13-38b2bdf42196</ParentItem>
     </Instance>
     <Instance Guid="ec4fb1ee-72e7-4aca-8aea-af09b104d2a7">
       <Name>general</Name>
@@ -1656,6 +1662,9 @@
     <Instance Guid="3fba3dcc-863a-452d-92b8-eeade6ea1449">
       <MemoCount>0</MemoCount>
     </Instance>
+    <Instance Guid="d99b971a-739d-4fd8-a1ab-23005f88b848">
+      <MemoCount>0</MemoCount>
+    </Instance>
   </Class>
   <Class Guid="8fb9c1f6-d351-4d10-8d99-bf5b3015b84c">
     <Instance Guid="00000000-0000-0000-0000-000000000000">
@@ -2115,7 +2124,7 @@ src\smc_gen\r_bsp\board\user
 src\smc_gen\r_bsp\board\generic_rx72n
 src\smc_gen\r_bsp
 src\smc_gen\general
-src\smc_workaround
+src\smc_integration
 ..\..\Source\include
 ..\..\Source\portable\Renesas\RX_RenesasSim
 src\frtos_startup
@@ -2140,7 +2149,7 @@ src\FreeRTOS_Demo
       <COptionLoopValue-0>2</COptionLoopValue-0>
       <COptionMisra2004RuleNumberIgnore-0 />
       <COptionOtherAdditionalOptions-0 />
-      <COptionPreinclude-0>src\smc_workaround\CC_patch.h
+      <COptionPreinclude-0>src\smc_integration\CC_patch.h
 </COptionPreinclude-0>
       <COptionSectionP-0>P</COptionSectionP-0>
       <COptionShowExpansions-0>False</COptionShowExpansions-0>

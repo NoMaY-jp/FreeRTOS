@@ -344,7 +344,7 @@
                     <state>$PROJ_DIR$\src\FreeRTOS_Demo\Full_Demo</state>
                     <state>$PROJ_DIR$\src\FreeRTOS_Demo</state>
                     <state>$PROJ_DIR$\src</state>
-                    <state>$PROJ_DIR$\src\smc_workaround</state>
+                    <state>$PROJ_DIR$\src\smc_integration</state>
                     <state>$PROJ_DIR$\..\..\Source\include</state>
                     <state>$PROJ_DIR$\..\..\Source\portable\IAR\RX_RenesasSim</state>
                     <state>$PROJ_DIR$\src\frtos_startup</state>
@@ -1568,42 +1568,45 @@
     <group>
         <name>Renesas_AP_tips</name>
         <group>
-            <name>smc_workaround</name>
+            <name>smc_integration</name>
+            <group>
+                <name>RenesasSimDebug</name>
+                <file>
+                    <name>$PROJ_DIR$\src\smc_integration\RenesasSimDebug\sim_debug_mode_hook.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\smc_integration\RenesasSimDebug\sim_debug_mode_hook.h</name>
+                </file>
+            </group>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\CC_patch.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\CC_patch.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\CG_patch.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\CG_patch.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\FIT_patch.c</name>
+                <name>$PROJ_DIR$\src\smc_integration\FIT_patch.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\FIT_patch.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\FIT_patch.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\IDE_helper.c</name>
+                <name>$PROJ_DIR$\src\smc_integration\IDE_helper.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\IDE_helper.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\IDE_helper.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\IDE_patch.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\IDE_patch.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\sim_debug_mode_hook.c</name>
+                <name>$PROJ_DIR$\src\smc_integration\smc_integration.h</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\sim_debug_mode_hook.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\u_bsp_lowlvl_ext.c</name>
             </file>
             <file>
-                <name>$PROJ_DIR$\src\smc_workaround\smc_workaround.h</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\src\smc_workaround\u_bsp_lowlvl_ext.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\src\smc_workaround\u_bsp_lowlvl_ext.h</name>
+                <name>$PROJ_DIR$\src\smc_integration\u_bsp_lowlvl_ext.h</name>
             </file>
         </group>
     </group>

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V4.20.1.5803/W32 for Renesas RX          02/May/2021  21:45:37
+# IAR ELF Linker V4.20.1.5803/W32 for Renesas RX          09/May/2021  17:04:30
 # Copyright 2009-2020 IAR Systems AB.
 #
 #    Output file  =  RTOSDemo.out
@@ -13,7 +13,7 @@
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\dynamic.o
 #        src\FreeRTOS\Source\event_groups.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\EventGroupsDemo.o
-#        src\smc_workaround\FIT_patch.o
+#        src\smc_integration\FIT_patch.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\flop.o
 #        src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI\FreeRTOS_CLI.o
 #        src\frtos_startup\freertos_object_init.o
@@ -66,7 +66,7 @@
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\TaskNotifyArray.o
 #        src\FreeRTOS\Source\tasks.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\TimerDemo.o
-#        src\FreeRTOS\Source\timers.o src\smc_workaround\u_sci_rx_ext.o
+#        src\FreeRTOS\Source\timers.o src\smc_integration\u_sci_rx_ext.o
 #        src\FreeRTOS_Demo\Full_Demo\UARTCommandConsole.o
 #        src\smc_gen\r_bsp\mcu\rx72n\vecttbl.o -o RTOSDemo.out --debug_lib
 #        --entry __iar_program_start --vfe --enable_stack_usage --map RTOSDemo
@@ -1824,7 +1824,7 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR
     -----------------------------------------------------
     Total:                        1'337      275       64
 
-C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_workaround: [21]
+C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_integration: [21]
     FIT_patch.o                       5
     u_sci_rx_ext.o                   38
     -----------------------------------------------------
@@ -2749,7 +2749,7 @@ xSecondTimerHandler::uxNextOperation
 [18] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_pincfg
 [19] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_sci_rx\src
 [20] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_sci_rx\src\targets\rx72n
-[21] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_workaround
+[21] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_EnvisionKit_IAR_e2studio_EWRX\HardwareDebug\src\smc_integration
 [22] = dbgrxdllnd.a
 [23] = dlrxdlln.a
 [24] = rtrx3dll.a

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V4.20.1.5803/W32 for Renesas RX          02/May/2021  21:26:20
+# IAR ELF Linker V4.20.1.5803/W32 for Renesas RX          09/May/2021  17:24:01
 # Copyright 2009-2020 IAR Systems AB.
 #
 #    Output file  =  RTOSDemo.out
@@ -13,7 +13,7 @@
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\dynamic.o
 #        src\FreeRTOS\Source\event_groups.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\EventGroupsDemo.o
-#        src\smc_workaround\FIT_patch.o
+#        src\smc_integration\FIT_patch.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\flop.o
 #        src\FreeRTOS_Demo\Full_Demo\FreeRTOS-Plus-CLI\FreeRTOS_CLI.o
 #        src\frtos_startup\freertos_object_init.o
@@ -21,7 +21,7 @@
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\GenQTest.o
 #        src\FreeRTOS\Source\portable\MemMang\heap_4.o
 #        src\smc_gen\r_bsp\board\generic_rx72n\hwsetup.o
-#        src\smc_workaround\IDE_helper.o
+#        src\smc_integration\IDE_helper.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\IntQueue.o
 #        src\FreeRTOS_Demo\Full_Demo\IntQueueTimer.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\IntSemTest.o
@@ -54,13 +54,13 @@
 #        src\FreeRTOS_Demo\Full_Demo\Sample-CLI-commands.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\semtest.o
 #        src\FreeRTOS_Demo\Full_Demo\serial.o
-#        src\smc_workaround\sim_debug_mode_hook.o
+#        src\smc_integration\RenesasSimDebug\sim_debug_mode_hook.o
 #        src\FreeRTOS\Source\stream_buffer.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\TaskNotify.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\TaskNotifyArray.o
 #        src\FreeRTOS\Source\tasks.o
 #        src\FreeRTOS_Demo\Full_Demo\Standard_Demo_Tasks\TimerDemo.o
-#        src\FreeRTOS\Source\timers.o src\smc_workaround\u_bsp_lowlvl_ext.o
+#        src\FreeRTOS\Source\timers.o src\smc_integration\u_bsp_lowlvl_ext.o
 #        src\FreeRTOS_Demo\Full_Demo\UARTCommandConsole.o
 #        src\smc_gen\r_bsp\mcu\rx72n\vecttbl.o -o RTOSDemo.out --debug_lib
 #        --entry __iar_program_start --vfe --enable_stack_usage --map RTOSDemo
@@ -231,7 +231,7 @@ No sections matched the following patterns:
                                - 0x8'0000   0x400
 
 "A0":                                        0x74
-  .option_mem        const    0xfe7f'5d00    0x74  option_mem.o [18]
+  .option_mem        const    0xfe7f'5d00    0x74  option_mem.o [19]
                             - 0xfe7f'5d74    0x74
 
 "ROM24", part 1 of 2:                       0x86a
@@ -336,7 +336,7 @@ No sections matched the following patterns:
   .data24.rodata     const    0xffc0'0846     0x5  Sample-CLI-commands.o [5]
   .data24.rodata     const    0xffc0'084b     0x5  tasks.o [1]
   .data24.rodata     const    0xffc0'0850     0x4  main_full.o [5]
-  .data24.rodata     const    0xffc0'0854     0x4  sim_debug_mode_hook.o [15]
+  .data24.rodata     const    0xffc0'0854     0x4  sim_debug_mode_hook.o [16]
   .data24.rodata     const    0xffc0'0858     0x4  UARTCommandConsole.o [5]
   .data24.rodata     const    0xffc0'085c     0x3  freertos_start.o [8]
   .data24.rodata     const    0xffc0'085f     0x3  main_full.o [5]
@@ -353,14 +353,14 @@ No sections matched the following patterns:
   .text              ro code  0xffc0'2750    0xae  list.o [1]
   .text              ro code  0xffc0'27fe   0x1ff  port.o [2]
   .text              ro code  0xffc0'2a00   0x4be  timers.o [1]
-  .text              ro code  0xffc0'2ec0     0xe  strlen.o [17]
-  .text              ro code  0xffc0'2ed0    0x32  sprintf.o [17]
+  .text              ro code  0xffc0'2ec0     0xe  strlen.o [18]
+  .text              ro code  0xffc0'2ed0    0x32  sprintf.o [18]
   .text              ro code  0xffc0'2f02    0x29  lowlvl.o [11]
-  .text              ro code  0xffc0'2f2c     0xa  xsprout.o [17]
+  .text              ro code  0xffc0'2f2c     0xa  xsprout.o [18]
   .text              ro code  0xffc0'2f38   0x6da  main_full.o [5]
   .text              ro code  0xffc0'3612   0x19d  serial.o [5]
   .text              ro code  0xffc0'37b0  0x1039  queue.o [1]
-  .text              ro code  0xffc0'47f0   0x14e  xprintftiny.o [17]
+  .text              ro code  0xffc0'47f0   0x14e  xprintftiny.o [18]
   .text              ro code  0xffc0'4940   0x286  dynamic.o [7]
   .text              ro code  0xffc0'4bc8   0x243  BlockQ.o [7]
   .text              ro code  0xffc0'4e10   0x495  blocktim.o [7]
@@ -381,18 +381,18 @@ No sections matched the following patterns:
   .text              ro code  0xffc0'9507    0x1a  u_bsp_lowlvl_ext.o [15]
   .text              ro code  0xffc0'9521   0x34f  event_groups.o [1]
   .text              ro code  0xffc0'9870   0x20e  FreeRTOS_CLI.o [6]
-  .text              ro code  0xffc0'9a80    0x25  strncat.o [17]
+  .text              ro code  0xffc0'9a80    0x25  strncat.o [18]
   .text              ro code  0xffc0'9aa5   0x924  mcu_interrupts.o [12]
   .text              ro code  0xffc0'a3d0   0x740  r_bsp_interrupts.o [11]
   .text              ro code  0xffc0'ab10     0x8  r_rx_intrinsic_functions.o [11]
   .text              ro code  0xffc0'ab18   0x1c5  mcu_mapped_interrupts.o [12]
   .text              ro code  0xffc0'acdd    0x96  r_bsp_cpu.o [11]
   .inttable                   0xffc0'ad74   0x400  <Block>
-    .inttable        const    0xffc0'ad74   0x400  interrupt_table.o [17]
+    .inttable        const    0xffc0'ad74   0x400  interrupt_table.o [18]
   .text              ro code  0xffc0'b178   0x3d9  IntQueue.o [7]
   .text              ro code  0xffc0'b558   0x2dd  mcu_clocks.o [12]
   .text              ro code  0xffc0'b835    0xdb  r_bsp_common.o [11]
-  .text              ro code  0xffc0'b910   0x200  div64u.o [18]
+  .text              ro code  0xffc0'b910   0x200  div64u.o [19]
   .text              ro code  0xffc0'bb10    0xbd  IDE_helper.o [15]
   .text              ro code  0xffc0'bbcd    0x9c  mcu_init.o [12]
   .text              ro code  0xffc0'bc69    0x8a  IntQueueTimer.o [5]
@@ -401,24 +401,24 @@ No sections matched the following patterns:
   .text              ro code  0xffc0'bdda     0x4  r_smc_cgc.o [9]
   .text              ro code  0xffc0'bdde    0x44  r_gpio_rx.o [13]
   .text              ro code  0xffc0'be22     0x1  r_smc_cgc_user.o [9]
-  .text              ro code  0xffc0'be24    0x78  packbits_init.o [17]
-  .text              ro code  0xffc0'be9c     0xf  __dbg_abort.o [16]
-  .text              ro code  0xffc0'beac     0x1  __dbg_break.o [16]
-  .text              ro code  0xffc0'beb0    0x12  __dbg_xxexit.o [16]
+  .text              ro code  0xffc0'be24    0x78  packbits_init.o [18]
+  .text              ro code  0xffc0'be9c     0xf  __dbg_abort.o [17]
+  .text              ro code  0xffc0'beac     0x1  __dbg_break.o [17]
+  .text              ro code  0xffc0'beb0    0x12  __dbg_xxexit.o [17]
   .data32.rodata     const    0xffc0'bec4    0x48  IDE_helper.o [15]
   .text              ro code  0xffc0'bf0c    0x43  resetprg.o [11]
-  .text              ro code  0xffc0'bf50    0x20  data_init.o [17]
+  .text              ro code  0xffc0'bf50    0x20  data_init.o [18]
   .text              ro code  0xffc0'bf70    0x25  r_bsp_locking.o [11]
-  .text              ro code  0xffc0'bf98    0x33  cstartup.o [18]
+  .text              ro code  0xffc0'bf98    0x33  cstartup.o [19]
   .text              ro code  0xffc0'bfcb     0x1  FIT_patch.o [15]
-  .text              ro code  0xffc0'bfcc     0x4  exit.o [17]
-  .text              ro code  0xffc0'bfd0     0x8  cexit.o [17]
+  .text              ro code  0xffc0'bfcc     0x4  exit.o [18]
+  .text              ro code  0xffc0'bfd0     0x8  cexit.o [18]
   .iar.init_table    const    0xffc0'bfd8    0x2c  - Linker created -
-  .text              ro code  0xffc0'c004    0x18  zero_init2.o [17]
+  .text              ro code  0xffc0'c004    0x18  zero_init2.o [18]
   .switch.rodata     const    0xffc0'c01c    0x10  r_bsp_cpu.o [11]
   .switch.rodata     const    0xffc0'c02c     0xe  r_bsp_interrupts.o [11]
-  .switch.rodata     const    0xffc0'c03c     0xe  xprintftiny.o [17]
-  .text              ro code  0xffc0'c04c     0xe  interrupt_table.o [17]
+  .switch.rodata     const    0xffc0'c03c     0xe  xprintftiny.o [18]
+  .text              ro code  0xffc0'c04c     0xe  interrupt_table.o [18]
                             - 0xffc0'c05a  0xb7ea
 
 "ROM24", part 2 of 2:                        0x2f
@@ -427,11 +427,11 @@ No sections matched the following patterns:
 
 "A2":                                        0x7c
   .exceptvect                 0xffff'ff80    0x7c  <Block>
-    .exceptvect      const    0xffff'ff80    0x7c  exceptvect.o [18]
+    .exceptvect      const    0xffff'ff80    0x7c  exceptvect.o [19]
                             - 0xffff'fffc    0x7c
 
 "A1":                                         0x4
-  .resetvect         const    0xffff'fffc     0x4  resetvect.o [18]
+  .resetvect         const    0xffff'fffc     0x4  resetvect.o [19]
                                     - 0x0     0x4
 
 Unused ranges:
@@ -1217,7 +1217,7 @@ Uncalled function
                                                    32
     "_sprintf"                                     20
     "__PrintfTiny"                                 44
-    "_out" in xprintftiny.o [17]                   16
+    "_out" in xprintftiny.o [18]                   16
     "__SProut"                                      4
 
 Uncalled function
@@ -1229,7 +1229,7 @@ Uncalled function
                                                    24
     "_sprintf"                                     20
     "__PrintfTiny"                                 44
-    "_out" in xprintftiny.o [17]                   16
+    "_out" in xprintftiny.o [18]                   16
     "__SProut"                                      4
 
 Uncalled function
@@ -1256,7 +1256,7 @@ Uncalled function
                                                    32
     "_sprintf"                                     20
     "__PrintfTiny"                                 44
-    "_out" in xprintftiny.o [17]                   16
+    "_out" in xprintftiny.o [18]                   16
     "__SProut"                                      4
 
 Uncalled function
@@ -1602,22 +1602,26 @@ C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_
     -----------------------------------------------------
     Total:
 
-C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_workaround: [15]
+C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_integration: [15]
     FIT_patch.o                       1
     IDE_helper.o                    189       72
-    sim_debug_mode_hook.o                      4
     u_bsp_lowlvl_ext.o               26
     -----------------------------------------------------
-    Total:                          216       76
+    Total:                          216       72
 
-dbgrxdllnd.a: [16]
+C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_integration\RenesasSimDebug: [16]
+    sim_debug_mode_hook.o                      4
+    -----------------------------------------------------
+    Total:                                     4
+
+dbgrxdllnd.a: [17]
     __dbg_abort.o                    15
     __dbg_break.o                     1
     __dbg_xxexit.o                   18
     -----------------------------------------------------
     Total:                           34
 
-dlrxdlln.a: [17]
+dlrxdlln.a: [18]
     cexit.o                           8
     data_init.o                      32
     exit.o                            4
@@ -1632,7 +1636,7 @@ dlrxdlln.a: [17]
     -----------------------------------------------------
     Total:                          647    1'038
 
-rtrx3dll.a: [18]
+rtrx3dll.a: [19]
     cstartup.o                       51
     div64u.o                        512
     exceptvect.o                             124
@@ -1729,19 +1733,19 @@ __OSIS_1 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
 __OSIS_2 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
 __OSIS_3 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
 __OSIS_4 {Abs}          0xffff'ffff           --   Gb  vecttbl.o [12]
-__PrintfTiny            0xffc0'4808   0x136  Code  Gb  xprintftiny.o [17]
+__PrintfTiny            0xffc0'4808   0x136  Code  Gb  xprintftiny.o [18]
 __ROM_CODE {Abs}        0xffff'ffff           --   Gb  vecttbl.o [12]
 __SPCC {Abs}            0xffff'ffff           --   Gb  vecttbl.o [12]
-__SProut                0xffc0'2f2c     0xa  Code  Gb  xsprout.o [17]
+__SProut                0xffc0'2f2c     0xa  Code  Gb  xsprout.o [18]
 __TMEF {Abs}            0xffff'ffff           --   Gb  vecttbl.o [12]
 __TMINF {Abs}           0xffff'ffff           --   Gb  vecttbl.o [12]
-___DebugBreak           0xffc0'beac     0x1  Code  Gb  __dbg_break.o [16]
+___DebugBreak           0xffc0'beac     0x1  Code  Gb  __dbg_break.o [17]
 ___NMI_handler          0xffc0'a8db   0x1cc  Code  Gb  r_bsp_interrupts.o [11]
 ___excep_access_inst    0xffc0'a88c    0x17  Code  Gb  r_bsp_interrupts.o [11]
-___exit                 0xffc0'beb0    0x12  Code  Gb  __dbg_xxexit.o [16]
-___iar_data_init2       0xffc0'bf50    0x20  Code  Gb  data_init.o [17]
-___iar_packbits_init2   0xffc0'be24    0x78  Code  Gb  packbits_init.o [17]
-___iar_zero_init2       0xffc0'c004    0x18  Code  Gb  zero_init2.o [17]
+___exit                 0xffc0'beb0    0x12  Code  Gb  __dbg_xxexit.o [17]
+___iar_data_init2       0xffc0'bf50    0x20  Code  Gb  data_init.o [18]
+___iar_packbits_init2   0xffc0'be24    0x78  Code  Gb  packbits_init.o [18]
+___iar_zero_init2       0xffc0'c004    0x18  Code  Gb  zero_init2.o [18]
 ___interrupt_106        0xffc0'a34a          Code  Gb  mcu_interrupts.o [12]
 ___interrupt_107        0xffc0'a025          Code  Gb  mcu_interrupts.o [12]
 ___interrupt_110        0xffc0'9b17          Code  Gb  mcu_interrupts.o [12]
@@ -1759,20 +1763,20 @@ ___privileged_handler   0xffc0'a875    0x17  Code  Gb  r_bsp_interrupts.o [11]
 ___undefined_handler    0xffc0'a8a3    0x17  Code  Gb  r_bsp_interrupts.o [11]
 ___undefined_interrupt_source_handler
                         0xffc0'aaa7    0x31  Code  Gb  r_bsp_interrupts.o [11]
-__exceptvect_v3         0xffff'ff80          Data  Gb  exceptvect.o [18]
-__exit                  0xffc0'bfd0          Code  Gb  cexit.o [17]
+__exceptvect_v3         0xffff'ff80          Data  Gb  exceptvect.o [19]
+__exit                  0xffc0'bfd0          Code  Gb  cexit.o [18]
 __float_placeholder     0xffc0'a8ba    0x21  Code  Gb  r_bsp_interrupts.o [11]
 __iar_call_low_level_init
-                        0xffc0'bfb4          Code  Gb  cstartup.o [18]
-__iar_cstart_end        0xffc0'bfcb          Code  Gb  cstartup.o [18]
-__iar_div64u            0xffc0'b910          Code  Gb  div64u.o [18]
-__iar_main_call         0xffc0'bfc1          Code  Gb  cstartup.o [18]
-__iar_program_start     0xffc0'bf98          Code  Gb  cstartup.o [18]
-__iar_reset_vector      0xffff'fffc          Data  Gb  resetvect.o [18]
+                        0xffc0'bfb4          Code  Gb  cstartup.o [19]
+__iar_cstart_end        0xffc0'bfcb          Code  Gb  cstartup.o [19]
+__iar_div64u            0xffc0'b910          Code  Gb  div64u.o [19]
+__iar_main_call         0xffc0'bfc1          Code  Gb  cstartup.o [19]
+__iar_program_start     0xffc0'bf98          Code  Gb  cstartup.o [19]
+__iar_reset_vector      0xffff'fffc          Data  Gb  resetvect.o [19]
 __link_file_version_4 {Abs}
                                 0x1          Data  Gb  <internal module>
-__option_mem_2          0xfe7f'5d00          Data  Gb  option_mem.o [18]
-_abort                  0xffc0'be9c     0xf  Code  Gb  __dbg_abort.o [16]
+__option_mem_2          0xfe7f'5d00          Data  Gb  option_mem.o [19]
+_abort                  0xffc0'be9c     0xf  Code  Gb  __dbg_abort.o [17]
 _bsp_interrupt_enable_disable
                         0xffc0'9aa5    0x72  Code  Gb  mcu_interrupts.o [12]
 _bsp_interrupt_open     0xffc0'a3f8    0x32  Code  Gb  r_bsp_interrupts.o [11]
@@ -1787,12 +1791,12 @@ _bus_error_isr          0xffc0'aad8    0x38  Code  Gb  r_bsp_interrupts.o [11]
 _cOutputBuffer               0xb938   0xdac  Data  Lc  FreeRTOS_CLI.o [6]
 _charget                0xffc0'2f13    0x18  Code  Gb  lowlvl.o [11]
 _charput                0xffc0'2f02    0x11  Code  Gb  lowlvl.o [11]
-_default_handler        0xffc0'c04c     0xe  Code  Gb  interrupt_table.o [17]
+_default_handler        0xffc0'c04c     0xe  Code  Gb  interrupt_table.o [18]
 _delay_wait             0xffc0'b835     0x9  Code  Lc  r_bsp_common.o [11]
 _e2_studio_visual_expression_view_helper
                         0xffc0'bb10    0xbd  Code  Gb  IDE_helper.o [15]
 _eTaskGetState          0xffc0'0cca    0x7a  Code  Gb  tasks.o [1]
-_exit                   0xffc0'bfcc     0x4  Code  Gb  exit.o [17]
+_exit                   0xffc0'bfcc     0x4  Code  Gb  exit.o [18]
 _g_bsp_Locks                 0xc6e4   0x210  Data  Gb  mcu_locks.o [11]
 _g_bsp_vectors               0xc8f4   0x1b0  Data  Lc  r_bsp_interrupts.o [11]
 _get_iclk_freq_hz       0xffc0'b558    0xa3  Code  Gb  mcu_clocks.o [12]
@@ -1813,7 +1817,7 @@ _lab_vSoftwareInterruptISR_2
 _main                   0xffc0'bfcb     0x1  Code  Gb  FIT_patch.o [15]
 _main_full              0xffc0'2f38    0xd1  Code  Gb  main_full.o [5]
 _mcu_clock_setup        0xffc0'b600   0x235  Code  Gb  mcu_clocks.o [12]
-_out                    0xffc0'47f0    0x18  Code  Lc  xprintftiny.o [17]
+_out                    0xffc0'47f0    0x18  Code  Lc  xprintftiny.o [18]
 _pcStringToSend              0xcf6c     0x4  Data  Lc  serial.o [5]
 _pcTimerGetName         0xffc0'2b5d     0xf  Code  Gb  timers.o [1]
 _prvAutoReloadTimerCallback
@@ -1913,7 +1917,7 @@ _pxPortInitialiseStack  0xffc0'27fe    0x39  Code  Gb  port.o [2]
 _pxReadyTasksLists           0xcc34    0x8c  Data  Lc  tasks.o [1]
 _r_undefined_exception  0xffc0'bdd9     0x1  Code  Gb  r_cg_hardware_setup.o [9]
 _renesas_simulator_debugging_key
-                        0xffc0'0854     0x4  Data  Gb  sim_debug_mode_hook.o [15]
+                        0xffc0'0854     0x4  Data  Gb  sim_debug_mode_hook.o [16]
 _sBlockingConsumerCount
                              0xcf78     0x6  Data  Lc  BlockQ.o [7]
 _sBlockingProducerCount
@@ -1921,9 +1925,9 @@ _sBlockingProducerCount
 _sCheckVariables             0xcf50     0x8  Data  Lc  semtest.o [7]
 _sNextCheckVariable          0xcfb0     0x2  Data  Lc  semtest.o [7]
 _s_protect_counters          0xcf48     0x8  Data  Lc  r_bsp_cpu.o [11]
-_sprintf                0xffc0'2ed0    0x32  Code  Gb  sprintf.o [17]
-_strlen                 0xffc0'2ec0     0xe  Code  Gb  strlen.o [17]
-_strncat                0xffc0'9a80    0x25  Code  Gb  strncat.o [17]
+_sprintf                0xffc0'2ed0    0x32  Code  Gb  sprintf.o [18]
+_strlen                 0xffc0'2ec0     0xe  Code  Gb  strlen.o [18]
+_strncat                0xffc0'9a80    0x25  Code  Gb  strncat.o [18]
 _ucAutoReloadTimerCounters
                              0xcf90     0x6  Data  Lc  TimerDemo.o [7]
 _ucHeap                       0x138  0xb800  Data  Lc  heap_4.o [3]
@@ -2128,7 +2132,7 @@ _vTimerSetTimerID       0xffc0'2e84    0x19  Code  Gb  timers.o [1]
 _vToggleLED             0xffc0'2702    0x19  Code  Gb  freertos_start.o [8]
 _vUARTCommandConsoleStart
                         0xffc0'9118    0x37  Code  Gb  UARTCommandConsole.o [5]
-_vector_table           0xffc0'ad74   0x400  Data  Gb  interrupt_table.o [17]
+_vector_table           0xffc0'ad74   0x400  Data  Gb  interrupt_table.o [18]
 _xActiveTimerList1           0xcdc8    0x14  Data  Lc  timers.o [1]
 _xActiveTimerList2           0xcddc    0x14  Data  Lc  timers.o [1]
 _xAreBlockTimeTestTasksStillRunning
@@ -2469,10 +2473,11 @@ xSecondTimerHandler::uxNextOperation
 [12] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_bsp\mcu\rx72n
 [13] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_gpio_rx\src
 [14] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_gen\r_gpio_rx\src\targets\rx72n
-[15] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_workaround
-[16] = dbgrxdllnd.a
-[17] = dlrxdlln.a
-[18] = rtrx3dll.a
+[15] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_integration
+[16] = C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RX700_RX72N_RenesasSim_IAR_e2studio_EWRX\HardwareDebug\src\smc_integration\RenesasSimDebug
+[17] = dbgrxdllnd.a
+[18] = dlrxdlln.a
+[19] = rtrx3dll.a
 
   45'880 bytes of readonly  code memory
    3'646 bytes of readonly  data memory

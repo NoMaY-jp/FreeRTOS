@@ -1,4 +1,4 @@
-Renesas Optimizing Linker (W3.03.00 )             02-May-2021 21:29:13
+Renesas Optimizing Linker (W3.03.00 )             09-May-2021 17:27:47
 
 *** Options ***
 
@@ -62,11 +62,11 @@ Renesas Optimizing Linker (W3.03.00 )             02-May-2021 21:29:13
 -input=".\src/smc_gen/r_bsp/mcu/rx72n\vecttbl.obj"
 -input=".\src/smc_gen/r_gpio_rx/src\r_gpio_rx.obj"
 -input=".\src/smc_gen/r_gpio_rx/src/targets/rx72n\r_gpio_rx72n.obj"
--input=".\src/smc_workaround\FIT_patch.obj"
--input=".\src/smc_workaround\IDE_helper.obj"
--input=".\src/smc_workaround/r_bsp_patch\resetprg.obj"
--input=".\src/smc_workaround\sim_debug_mode_hook.obj"
--input=".\src/smc_workaround\u_bsp_lowlvl_ext.obj"
+-input=".\src/smc_integration\FIT_patch.obj"
+-input=".\src/smc_integration\IDE_helper.obj"
+-input=".\src/smc_integration/RenesasSimDebug\sim_debug_mode_hook.obj"
+-input=".\src/smc_integration/r_bsp_patch\resetprg.obj"
+-input=".\src/smc_integration\u_bsp_lowlvl_ext.obj"
 -library=".\RTOSDemo.lib"
 -start=B_1,R_1,B_2,R_2,B,R,B_8,R_8,SI/04,PResetPRG,C_1,C_2,C,C_8,C$*,D_1,D_2,D,D_8,W*,L,P/0FFC00000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
 -output="RTOSDemo.abs"
@@ -742,7 +742,7 @@ FILE=xvalues
                                   0000d208         8   data ,g         0
 
 SECTION=SI
-FILE=.\src\smc_workaround\r_bsp_patch\resetprg.obj
+FILE=.\src\smc_integration\r_bsp_patch\resetprg.obj
                                   0000d210  0000d60f       400
 
 SECTION=$ADDR_C_FE7F5D00
@@ -804,7 +804,7 @@ FILE=.\src\smc_gen\r_bsp\mcu\rx72n\vecttbl.obj
                                   fe7f5d70         4   data ,g         0
 
 SECTION=PResetPRG
-FILE=.\src\smc_workaround\r_bsp_patch\resetprg.obj
+FILE=.\src\smc_integration\r_bsp_patch\resetprg.obj
                                   ffc00000  ffc00079        7a
   _PowerON_Reset_PC
                                   ffc00000        7a   entry,g         1  ch
@@ -870,7 +870,7 @@ FILE=.\src\FreeRTOS_Demo\Full_Demo\Sample-CLI-commands.obj
                                   ffc003a0        10   data ,l         1
   _xQueryHeap
                                   ffc003b0        10   data ,l         1
-FILE=.\src\smc_workaround\IDE_helper.obj
+FILE=.\src\smc_integration\IDE_helper.obj
                                   ffc003c0  ffc00407        48
   _PORT0
                                   ffc003c0         4   data ,g         1
@@ -908,7 +908,7 @@ FILE=.\src\smc_workaround\IDE_helper.obj
                                   ffc00400         4   data ,g         1
   _PORTJ
                                   ffc00404         4   data ,g         1
-FILE=.\src\smc_workaround\sim_debug_mode_hook.obj
+FILE=.\src\smc_integration\RenesasSimDebug\sim_debug_mode_hook.obj
                                   ffc00408  ffc0040b         4
   _renesas_simulator_debugging_key
                                   ffc00408         4   data ,g         3
@@ -948,7 +948,7 @@ FILE=.\src\smc_gen\r_bsp\mcu\all\dbsct.obj
                                   ffc004f8        20   data ,g         0
 
 SECTION=C$VECT
-FILE=.\src\smc_workaround\r_bsp_patch\resetprg.obj
+FILE=.\src\smc_integration\r_bsp_patch\resetprg.obj
                                   ffc00518  ffc00917       400
 
 SECTION=D_1
@@ -1736,17 +1736,17 @@ FILE=.\src\smc_gen\r_gpio_rx\src\r_gpio_rx.obj
                                   ffc0ca3e        20   func ,g         1
   _R_GPIO_PinDirectionSet
                                   ffc0ca5e        25   func ,g         2
-FILE=.\src\smc_workaround\FIT_patch.obj
+FILE=.\src\smc_integration\FIT_patch.obj
                                   ffc0ca83  ffc0ca8a         8
   _malloc
                                   ffc0ca83         4   func ,g         1
   _free
                                   ffc0ca87         4   func ,g         3
-FILE=.\src\smc_workaround\IDE_helper.obj
+FILE=.\src\smc_integration\IDE_helper.obj
                                   ffc0ca8b  ffc0cb68        de
   _e2_studio_visual_expression_view_helper
                                   ffc0ca8b        de   func ,g         1  ch
-FILE=.\src\smc_workaround\u_bsp_lowlvl_ext.obj
+FILE=.\src\smc_integration\u_bsp_lowlvl_ext.obj
                                   ffc0cb69  ffc0cb82        1a
   _is_charput_busy
                                   ffc0cb69         d   func ,g         1
@@ -3271,7 +3271,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
                                           0028(ffc0a509:P)
                  _vTaskStartScheduler
                                  ffc03e2c 0031(ffc0a9d6:P)
-                                          0060(ffc00071:PResetPRG)
+                                          0061(ffc00071:PResetPRG)
                  _vTaskSuspendAll
                                  ffc03e94 0002(ffc01994:P)
                                           0002(ffc019ac:P)
@@ -4530,7 +4530,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
                                           0034(ffc0b2db:P)
                                           0034(ffc0b2e3:P)
                  _Processing_Before_Start_Kernel
-                                 ffc0b35c 0060(ffc0006d:PResetPRG)
+                                 ffc0b35c 0061(ffc0006d:PResetPRG)
                  _vToggleLED
                                  ffc0b36a 0031(ffc0ab3d:P)
                                           0034(ffc0b35d:P)
@@ -4562,7 +4562,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
 0039 hwsetup
      SECTION=P
                  _hardware_setup
-                                 ffc0b407 0060(ffc00048:PResetPRG)
+                                 ffc0b407 0061(ffc00048:PResetPRG)
 0040 dbsct
      SECTION=C$DSEC
                  __DTBL
@@ -4625,9 +4625,9 @@ No   Unit Name   Global.Symbol   Location External Infomation
                                           0072(ffc0d116:P)
      SECTION=P
                  _init_iolib
-                                 ffc0b4b7 0060(ffc0003c:PResetPRG)
+                                 ffc0b4b7 0061(ffc0003c:PResetPRG)
                  _close_all
-                                 ffc0b532 0060(ffc00074:PResetPRG)
+                                 ffc0b532 0061(ffc00074:PResetPRG)
                  _open
                                  ffc0b559 0076(ffc0d7bc:P)
                  _close
@@ -4654,9 +4654,9 @@ No   Unit Name   Global.Symbol   Location External Infomation
                  _R_BSP_CpuInterruptLevelWrite
                                  ffc0b6e2 0046(ffc0b877:P)
                  _bsp_register_protect_open
-                                 ffc0b73c 0060(ffc00044:PResetPRG)
+                                 ffc0b73c 0061(ffc00044:PResetPRG)
                  _bsp_ram_initialize
-                                 ffc0b74e 0060(ffc00038:PResetPRG)
+                                 ffc0b74e 0061(ffc00038:PResetPRG)
      SECTION=C_2
      SECTION=B_2
      SECTION=W
@@ -4669,7 +4669,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
                  _R_BSP_InterruptRequestDisable
                                  ffc0b77e 0053(ffc0c11b:P)
                  _bsp_interrupt_open
-                                 ffc0b78c 0060(ffc00040:PResetPRG)
+                                 ffc0b78c 0061(ffc00040:PResetPRG)
                  _R_BSP_InterruptWrite
                                  ffc0b7c7 0035(ffc0b3f9:P)
                  _R_BSP_InterruptControl
@@ -4760,7 +4760,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
                                           0053(ffc0c7f7:P)
                                           0053(ffc0c816:P)
                                           0053(ffc0c83a:P)
-                                          0060(ffc0005e:PResetPRG)
+                                          0061(ffc0005e:PResetPRG)
                  _excep_supervisor_inst_isr
                                  ffc0bafd 0055(ffffffd0:EXCEPTVECT)
                  _excep_access_isr
@@ -4789,7 +4789,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
                  _R_BSP_SoftwareLock
                                  ffc0bd76 0047(ffc0bd92:P)
                  _R_BSP_HardwareLock
-                                 ffc0bd86 0060(ffc00064:PResetPRG)
+                                 ffc0bd86 0061(ffc00064:PResetPRG)
 0048 r_bsp_mcu_startup
 0049 r_bsp_software_interrupt
 0050 sbrk
@@ -4798,7 +4798,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
                  _get_iclk_freq_hz
                                  ffc0bd93 0044(ffc0b624:P)
                  _mcu_clock_setup
-                                 ffc0be40 0060(ffc00030:PResetPRG)
+                                 ffc0be40 0061(ffc00030:PResetPRG)
 0052 mcu_init
      SECTION=P
                  _bsp_non_existent_port_init
@@ -4916,19 +4916,19 @@ No   Unit Name   Global.Symbol   Location External Infomation
      SECTION=P
                  _e2_studio_visual_expression_view_helper
                                  ffc0ca8b 0035(ffc0b3b2:P)
-0060 resetprg
+0060 sim_debug_mode_hook
+     SECTION=C
+                 _renesas_simulator_debugging_key
+                                 ffc00408 0034(ffc0b237:P)
+                                          0039(ffc0b40b:P)
+                                          0051(ffc0be44:P)
+0061 resetprg
      SECTION=PResetPRG
                  _PowerON_Reset_PC
                                  ffc00000 0055(fffffffc:RESETVECT)
      SECTION=SI
      SECTION=C$VECT
      SECTION=EXCEPTVECT
-0061 sim_debug_mode_hook
-     SECTION=C
-                 _renesas_simulator_debugging_key
-                                 ffc00408 0034(ffc0b237:P)
-                                          0039(ffc0b40b:P)
-                                          0051(ffc0be44:P)
 0062 u_bsp_lowlvl_ext
      SECTION=P
                  _is_charput_busy
@@ -5001,7 +5001,7 @@ No   Unit Name   Global.Symbol   Location External Infomation
 0069 __initsct
      SECTION=P
                  __INITSCT
-                                 ffc0ce59 0060(ffc00034:PResetPRG)
+                                 ffc0ce59 0061(ffc00034:PResetPRG)
      SECTION=C$BSEC
      SECTION=C$DSEC
 0070 fflush

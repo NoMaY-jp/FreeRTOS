@@ -1,5 +1,5 @@
-#ifndef SMC_WORKAROUND_H
-#define SMC_WORKAROUND_H
+#ifndef SMC_INTEGRATION_H
+#define SMC_INTEGRATION_H
 
 #include "CC_patch.h"
 #include "IDE_patch.h"
@@ -41,7 +41,7 @@
 /* For Renesas RX Simulator Debugging.
  */
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
-#include "sim_debug_mode_hook.h"
+#include "RenesasSimDebug/sim_debug_mode_hook.h"
 #endif
 
-#endif /* SMC_WORKAROUND_H */
+#endif /* SMC_INTEGRATION_H */
