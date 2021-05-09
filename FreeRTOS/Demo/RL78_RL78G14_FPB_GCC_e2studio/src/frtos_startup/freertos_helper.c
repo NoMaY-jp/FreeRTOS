@@ -1,4 +1,6 @@
 #include "platform.h"
+#include "freertos_start.h"
+#include "freertos_helper.h"
 #include <stdlib.h>
 
 /* Replacement to be thread-safe (in case of other than using heap_3.c). */

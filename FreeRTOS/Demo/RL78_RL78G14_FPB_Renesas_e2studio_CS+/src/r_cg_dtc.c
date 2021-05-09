@@ -118,4 +118,5 @@ void U_DTCD0_UserInit(volatile uint8_t * tx_buf, uint16_t tx_num)
     dtc_controldata_0.dtsar = (uint16_t)tx_buf;
     dtc_controldata_0.dtdar = (uint16_t)&TXD3;
 }
+
 /* End user code. Do not edit comment generated here */

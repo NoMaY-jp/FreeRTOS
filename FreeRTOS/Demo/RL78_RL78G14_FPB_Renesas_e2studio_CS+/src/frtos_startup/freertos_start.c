@@ -33,6 +33,7 @@
 /******************************************************************************
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
+#include "platform.h"
 #include "freertos_start.h"
 #include "freertos_stack.h"
 #include "r_cg_serial.h"

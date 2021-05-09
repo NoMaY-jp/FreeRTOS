@@ -195,6 +195,8 @@ void R_DTCD0_Start(void);
 void R_DTCD0_Stop(void);
 
 /* Start user code for function. Do not edit comment generated here */
+
 void U_DTCD0_UserInit(volatile uint8_t * tx_buf, uint16_t tx_num);
+
 /* End user code. Do not edit comment generated here */
 #endif

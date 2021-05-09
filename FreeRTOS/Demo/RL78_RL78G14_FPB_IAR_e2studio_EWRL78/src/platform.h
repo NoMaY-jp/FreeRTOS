@@ -67,6 +67,57 @@ extern "C" {
 #include <stddef.h>
 #include <string.h>
 
+#include "freertos_start.h"
+#if defined(__TYPEDEF__)
+#include "freertos_helper.h"
+#endif
+
+#define INTERNAL_NOT_USED(p)        ((void)(p))
+#define R_CG_PRAGMA(...)            _Pragma(#__VA_ARGS__)
+
+#if defined(__CCRL__)
+
+#define R_CG_ISR_UNUSED(function, dummy_vect) \
+    function##_UNUSED(void); \
+    void function##__UNUSED(void); \
+    void function##__UNUSED(void){function##_UNUSED();} \
+    static void __near function##_UNUSED
+
+#define R_CG_API_UNUSED(function) \
+    function
+
+#define R_CG_API_DO_NOT_USE(function) \
+    function
+
+#elif defined(__GNUC__)
+
+#define R_CG_ISR_UNUSED(function, dummy_vect) \
+    function##_UNUSED(void) __attribute__ ((unused)); \
+    __attribute__ ((unused)) void function##_UNUSED
+
+#define R_CG_API_UNUSED(function) \
+    function
+
+#define R_CG_API_DO_NOT_USE(function) \
+    function
+
+#elif defined(__ICCRL78__)
+
+#define R_CG_ISR_UNUSED(function, dummy_vect) \
+    function##___UNUSED(void); \
+    R_CG_PRAGMA(vector = dummy_vect) \
+    __interrupt static void function##__UNUSED(void); \
+    __interrupt static void function##__UNUSED(void){} \
+    static void function##_UNUSED
+
+#define R_CG_API_UNUSED(function) \
+    function
+
+#define R_CG_API_DO_NOT_USE(function) \
+    function
+
+#endif
+
 #if defined(__GNUC__)
 #define BRK()     __asm volatile ("brk")
 #endif
@@ -238,57 +289,9 @@ extern "C" {
 #define nop80000() NOP80000()
 #define nop90000() NOP90000()
 
-#define INTERNAL_NOT_USED(p)        ((void)(p))
-#define R_CG_PRAGMA(...)            _Pragma(#__VA_ARGS__)
-
-#if defined(__CCRL__)
-
-#define R_CG_ISR_UNUSED(function, dummy_vect) \
-    function##_UNUSED(void); \
-    void function##__UNUSED(void); \
-    void function##__UNUSED(void){function##_UNUSED();} \
-    static void __near function##_UNUSED
-
-#define R_CG_API_UNUSED(function) \
-    function
-
-#define R_CG_API_DO_NOT_USE(function) \
-    function
-
-#elif defined(__GNUC__)
-
-#define R_CG_ISR_UNUSED(function, dummy_vect) \
-    function##_UNUSED(void) __attribute__ ((unused)); \
-    __attribute__ ((unused)) void function##_UNUSED
-
-#define R_CG_API_UNUSED(function) \
-    function
-
-#define R_CG_API_DO_NOT_USE(function) \
-    function
-
-#elif defined(__ICCRL78__)
-
-#define R_CG_ISR_UNUSED(function, dummy_vect) \
-    function##___UNUSED(void); \
-    R_CG_PRAGMA(vector = dummy_vect) \
-    __interrupt static void function##__UNUSED(void); \
-    __interrupt static void function##__UNUSED(void){} \
-    static void function##_UNUSED
-
-#define R_CG_API_UNUSED(function) \
-    function
-
-#define R_CG_API_DO_NOT_USE(function) \
-    function
-
-#endif
-
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
 #include "RenesasSimDebug/sim_debug_mode_hook.h"
 #endif
-
-#include "r_cg_userdefine.h"
 
 #ifdef __cplusplus
 }

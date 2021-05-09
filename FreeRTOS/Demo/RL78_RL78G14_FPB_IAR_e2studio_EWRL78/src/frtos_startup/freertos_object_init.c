@@ -29,7 +29,9 @@
 /***********************************************************************************************************************
  * Includes   <System Includes> , "Project Includes"
  **********************************************************************************************************************/
+#include "platform.h"
 #include "freertos_start.h"
+#include "freertos_helper.h"
 #include "freertos_stack.h"
 #include "task_function.h"
 #include "demo_main.h"
