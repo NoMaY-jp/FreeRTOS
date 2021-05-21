@@ -82,11 +82,11 @@
                 </option>
                 <option>
                     <name>GenRTConfigPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\DLib_Config_Normal.h</state>
+                    <state>$TOOLKIT_DIR$\lib\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GenRTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\LIB\dlrlnnf23n.a</state>
+                    <state>$TOOLKIT_DIR$\lib\dlrlnnf23n.a</state>
                 </option>
                 <option>
                     <name>GenLibInFormatterDescription</name>

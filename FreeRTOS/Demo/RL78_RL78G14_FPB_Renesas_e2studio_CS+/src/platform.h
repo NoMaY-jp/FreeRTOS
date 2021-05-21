@@ -67,11 +67,6 @@ extern "C" {
 #include <stddef.h>
 #include <string.h>
 
-#include "freertos_start.h"
-#if defined(__TYPEDEF__)
-#include "freertos_helper.h"
-#endif
-
 #define INTERNAL_NOT_USED(p)        ((void)(p))
 #define R_CG_PRAGMA(...)            _Pragma(#__VA_ARGS__)
 
@@ -288,6 +283,9 @@ extern "C" {
 #define nop70000() NOP70000()
 #define nop80000() NOP80000()
 #define nop90000() NOP90000()
+
+#include "freertos_start.h"
+#include "freertos_helper.h"
 
 #if defined(RENESAS_SIMULATOR_DEBUGGING)
 #include "RenesasSimDebug/sim_debug_mode_hook.h"

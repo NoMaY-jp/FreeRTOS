@@ -122,6 +122,126 @@ static void __near vPortInterruptCommonHandler_C_Helper2(void (__near *func)(voi
     } \
     static void __near _##function
 
+#elif defined(__llvm__)
+
+#define R_CG_ASM(...) __VA_ARGS__ "\n"
+
+extern volatile void * stack;
+extern volatile uint8_t ucInterruptStackNesting;
+extern void vPortFreeRTOSInterruptCommonHandler_C(void) __attribute__((section(".lowtext")));
+extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext")));
+
+/* The function attribute 'naked' is available for our purpos
+ * but it causes the following compiler warning.
+ *
+ * warning: stack usage computation not supported for this target
+ *
+ * So the following asm code outside function is used instead.
+ */
+
+#define R_CG_FREERTOS_INTERRUPT(function) \
+    _##function(void) __attribute__((section(".lowtext." "_" #function))); \
+    __asm \
+    ( \
+        R_CG_ASM("  .section .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .global _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  PUSH BC  ") \
+        R_CG_ASM("  PUSH DE  ") \
+        R_CG_ASM("  PUSH HL  ") \
+        R_CG_ASM("  MOV A, ES  ") \
+        R_CG_ASM("  MOV X, A  ") \
+        R_CG_ASM("  MOV A, CS  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW DE, SP  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  ONEB !_ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
+        \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  BR !_vPortFreeRTOSInterruptCommonHandler_C  ") \
+    ); \
+    void _##function
+
+#define R_CG_FREERTOS_INTERRUPT_EI(function) \
+    _##function(void) __attribute__((section(".lowtext." "_" #function))); \
+    __asm \
+    ( \
+        R_CG_ASM("  .section .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .global _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  PUSH BC  ") \
+        R_CG_ASM("  PUSH DE  ") \
+        R_CG_ASM("  PUSH HL  ") \
+        R_CG_ASM("  MOV A, ES  ") \
+        R_CG_ASM("  MOV X, A  ") \
+        R_CG_ASM("  MOV A, CS  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW DE, SP  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  ONEB !_ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
+        \
+        R_CG_ASM("  EI  ") \
+        \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  BR !_vPortFreeRTOSInterruptCommonHandler_C  ") \
+    ); \
+    void _##function
+
+#define R_CG_INTERRUPT(function) \
+    _##function(void) __attribute__((section(".lowtext." "_" #function))); \
+    __asm \
+        R_CG_ASM("  .section .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .global _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  PUSH BC  ") \
+        R_CG_ASM("  PUSH DE  ") \
+        R_CG_ASM("  PUSH HL  ") \
+        R_CG_ASM("  MOV A, ES  ") \
+        R_CG_ASM("  MOV X, A  ") \
+        R_CG_ASM("  MOV A, CS  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW DE, SP  ") \
+        R_CG_ASM("  CMP0 !_ucInterruptStackNesting  ") \
+        R_CG_ASM("  SKNZ  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  INC !_ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
+        \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  BR !_vPortInterruptCommonHandler_C  ") \
+    ); \
+    void _##function
+
+#define R_CG_INTERRUPT_EI(function) \
+    _##function(void) __attribute__((section(".lowtext." "_" #function))); \
+    __asm \
+    ( \
+        R_CG_ASM("  .section .lowtext." #function ",\"ax\",@progbits  ") \
+        R_CG_ASM("  .global _" #function "  ") \
+        R_CG_ASM("  _" #function ":  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  PUSH BC  ") \
+        R_CG_ASM("  PUSH DE  ") \
+        R_CG_ASM("  PUSH HL  ") \
+        R_CG_ASM("  MOV A, ES  ") \
+        R_CG_ASM("  MOV X, A  ") \
+        R_CG_ASM("  MOV A, CS  ") \
+        R_CG_ASM("  PUSH AX  ") \
+        R_CG_ASM("  MOVW DE, SP  ") \
+        R_CG_ASM("  CMP0 !_ucInterruptStackNesting  ") \
+        R_CG_ASM("  SKNZ  ") \
+        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  INC !_ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
+        \
+        R_CG_ASM("  EI  ") \
+        \
+        R_CG_ASM("  MOVW BC, #__" #function "  ") \
+        R_CG_ASM("  BR !_vPortInterruptCommonHandler_C  ") \
+    ); \
+    void _##function
+
 #elif defined(__GNUC__)
 
 #define R_CG_ASM(...) __VA_ARGS__ "\n"

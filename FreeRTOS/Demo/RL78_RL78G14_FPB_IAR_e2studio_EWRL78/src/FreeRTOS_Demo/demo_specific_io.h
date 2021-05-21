@@ -107,6 +107,15 @@ included.  Alternatively, just manually include the correct files here. */
 			#define LED_INIT()		P4 &= 0xF7; PM4 &= 0xF7; P4 |= 0x10; PM4 &= 0xEF
 		#endif /* RL78_G14_FPB */
 
+		#ifdef RL78_G23_FPB
+			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
+				#include "ior7f100g.h"
+				#include "ior7f100g_ext.h"
+			#endif
+			#define LED_BIT			( P5_bit.no2 )
+			#define LED_INIT()		P5 &= 0xFB; PM5 &= 0xFB; P5 |= 0x08; PM4 &= 0xF7
+		#endif /* RL78_G14_FPB */
+
 		#ifdef AE_R5F100LGAFB
 			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
 				#include "ior5f100lg.h"

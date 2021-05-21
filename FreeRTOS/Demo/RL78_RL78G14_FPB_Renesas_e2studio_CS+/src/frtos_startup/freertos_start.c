@@ -94,13 +94,57 @@ extern void main_task(void *pvParameters);
 #ifdef configSETUP_TICK_INTERRUPT
 void vApplicationSetupTimerInterrupt(void)
 {
-    const uint16_t usClockHz = 15000UL; /* Internal clock. */
-    const uint16_t usCompareMatch = ( usClockHz / configTICK_RATE_HZ ) - 1UL;
+#if( defined( configITL_CLOCK_HZ ) )
 
-    /* Use the internal 15K clock. */
-    OSMC = ( uint8_t ) 0x16;
+/* RL78 second generation. */
+const uint32_t ulClockHz = configITL_CLOCK_HZ; /* Using the IHP clock. */
+const uint32_t ulCompareMatch = ( ulClockHz / configTICK_RATE_HZ ) - 1UL;
 
-    #if ( defined( INTIT_vect ) && INTIT_vect == 0x38 ) || ( defined( INTIT ) && INTIT == 0x38 )
+#else
+
+/* RL78 first generation. */
+const uint16_t usClockHz = 15000UL; /* Internal clock. */
+const uint16_t usCompareMatch = ( usClockHz / configTICK_RATE_HZ ) - 1UL;
+
+	/* Use the internal 15K clock. */
+	OSMC = ( uint8_t ) 0x16;
+
+#endif
+
+    #if( defined( configITL_CLOCK_HZ ) && ( defined( INTITL_vect ) || defined( INTITL ) ) )
+    {
+        /* Supply the 32-bit interval timer clock. */
+        TML32EN = 1U;
+
+        /* Stop the 32-bit interval timer */
+        ITLCTL0 = 0x00U;
+        /* Mask INTITL interrupt */
+        ITLMKF0 |= 0x01; //_01_ITL_CHANNEL0_COUNT_MATCH_MASK;
+        ITLS0 &= (uint16_t)~ 0x01; //_01_ITL_CHANNEL0_COUNT_MATCH_DETECTE;
+        ITLMK = 1U;    /* disable INTITL interrupt */
+        ITLIF = 0U;    /* clear INTITL interrupt flag */
+        /* Set INTITL low priority */
+        ITLPR1 = 1U;
+        ITLPR0 = 1U;
+        /* 32-bit interval timer used as 32-bit timer */
+        ITLCTL0 |= 0x80; //_80_ITL_MODE_32BIT;
+        ITLCSEL0 &= 0xF8; //_F8_ITL_CLOCK_FITL0_CLEAR;
+        ITLCSEL0 |= 0x01; //_01_ITL_CLOCK_FITL0_FIHP;
+        ITLFDIV00 &= 0xF8; //_F8_ITL_ITL000_FITL0_CLEAR;
+        ITLFDIV00 |= 0x00; //_00_ITL_ITL000_FITL0_1;
+        ITLCMP00 = ( uint16_t ) ( ulCompareMatch & 0xFFFF ); //_7CFF_ITL_ITLCMP00_VALUE; //IHP = 32MHz
+        ITLCMP01 = ( uint16_t ) ( ( ulCompareMatch >> 16 ) & 0xFFFF ); //_0000_ITL_ITLCMP01_VALUE; //IHP = 32MHz
+
+        /* Clear INTITL interrupt request and enable operation */
+        ITLIF = 0U;    /* clear INTITL interrupt flag */
+        ITLMK = 0U;    /* enable INTITL interrupt */
+
+        /* Start the 32-bit interval timer */
+        ITLS0 &= (uint16_t)~0x01; //_01_ITL_CHANNEL0_COUNT_MATCH_DETECTE;
+        ITLMKF0 &= (uint16_t)~0x01; //~_01_ITL_CHANNEL0_COUNT_MATCH_MASK;
+        ITLEN00 = 1U;
+    }
+    #elif( ( defined( INTIT_vect ) && ( INTIT_vect == 0x38 ) ) || ( defined( INTIT ) && ( INTIT == 0x38 ) ) )
     {
         /* Supply the interval timer clock. */
         RTCEN = ( uint8_t ) 1U;
@@ -120,7 +164,7 @@ void vApplicationSetupTimerInterrupt(void)
         /* Enable INTIT interrupt. */
         ITMK = ( uint8_t ) 0;
     }
-    #elif ( defined( INTIT_vect ) && INTIT_vect == 0x3C ) || ( defined( INTIT ) && INTIT == 0x3C )
+    #elif( ( defined( INTIT_vect ) && ( INTIT_vect == 0x3C ) ) || ( defined( INTIT ) && ( INTIT == 0x3C ) ) )
     {
         /* Supply the interval timer clock. */
         TMKAEN = ( uint8_t ) 1U;
@@ -142,7 +186,7 @@ void vApplicationSetupTimerInterrupt(void)
     }
     #else
 
-        #error Neither RTC nor TMKA is available for the tick interrupt.
+        #error Neither INTITL nor INTIT is available for the tick interrupt.
 
     #endif
 }
@@ -366,7 +410,7 @@ void vPrintString(const char *pcMessage)
 ******************************************************************************/
 void Processing_Before_Start_Kernel(void)
 {
-#if (mainCREATE_NON_STANDARD_RTOS_DEMO == 1)
+#if( mainCREATE_NON_STANDARD_RTOS_DEMO == 1 )
 
 #if 0
     BaseType_t ret;
@@ -498,7 +542,7 @@ void vSendString( const char * const pcString )
 }
 /*-----------------------------------------------------------*/
 
-#if (mainCREATE_NON_STANDARD_RTOS_DEMO == 1)
+#if( mainCREATE_NON_STANDARD_RTOS_DEMO == 1 )
 
 /* Override or add empty functions which are actually unused but necessary to link
 non standard demo successfully. */

@@ -85,7 +85,7 @@ extern "C" {
 
 #endif
 
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) || defined(__llvm__)
 
 /* Tentative */
 
