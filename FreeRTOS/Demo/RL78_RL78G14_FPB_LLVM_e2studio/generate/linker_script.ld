@@ -154,7 +154,6 @@ SECTIONS
 		__stack = .;
 		ASSERT((__stack > (__end + stack_size)), "Error: Too much data - no room left for the stack");
 	} > RAM
-	_stack = __stack;
 .dtc_vectortable 0xffd00 : AT(0xffd00)
 	{
 		KEEP(*(.dtc_vectortable))

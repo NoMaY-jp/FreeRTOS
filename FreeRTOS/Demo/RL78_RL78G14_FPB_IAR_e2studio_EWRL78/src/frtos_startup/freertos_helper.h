@@ -155,7 +155,7 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
         R_CG_ASM("  MOV A, CS  ") \
         R_CG_ASM("  PUSH AX  ") \
         R_CG_ASM("  MOVW DE, SP  ") \
-        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  MOVW SP, #__stack  ") \
         R_CG_ASM("  ONEB !_ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
         \
         R_CG_ASM("  MOVW BC, #__" #function "  ") \
@@ -179,7 +179,7 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
         R_CG_ASM("  MOV A, CS  ") \
         R_CG_ASM("  PUSH AX  ") \
         R_CG_ASM("  MOVW DE, SP  ") \
-        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  MOVW SP, #__stack  ") \
         R_CG_ASM("  ONEB !_ucInterruptStackNesting  ") /* change: 0 --> 1 */ \
         \
         R_CG_ASM("  EI  ") \
@@ -206,7 +206,7 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
         R_CG_ASM("  MOVW DE, SP  ") \
         R_CG_ASM("  CMP0 !_ucInterruptStackNesting  ") \
         R_CG_ASM("  SKNZ  ") \
-        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  MOVW SP, #__stack  ") \
         R_CG_ASM("  INC !_ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
         \
         R_CG_ASM("  MOVW BC, #__" #function "  ") \
@@ -232,7 +232,7 @@ extern void vPortInterruptCommonHandler_C(void) __attribute__((section(".lowtext
         R_CG_ASM("  MOVW DE, SP  ") \
         R_CG_ASM("  CMP0 !_ucInterruptStackNesting  ") \
         R_CG_ASM("  SKNZ  ") \
-        R_CG_ASM("  MOVW SP, #_stack  ") \
+        R_CG_ASM("  MOVW SP, #__stack  ") \
         R_CG_ASM("  INC !_ucInterruptStackNesting  ") /* change: 0~3 --> 1~4 */ \
         \
         R_CG_ASM("  EI  ") \
