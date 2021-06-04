@@ -39,21 +39,23 @@ typedef unsigned short MD_STATUS;
 //#include    <stddef.h>
 #include <string.h>
 
-#if defined(__llvm__) || defined(__GNUC__)
+
+
+#if defined(__GNUC__) /* And also in case of LLVM */
 
 /*
  * INT_IT (0x38 or 0x3C)
  */
 
-#define r_itl_interrupt vPortTickISR
-void vPortTickISR(void) __attribute__ ((interrupt));
+#define r_itl_interrupt vTickISR
+void vTickISR(void) __attribute__ ((interrupt));
 
 /*
  * INT_BRK_I (0x7E)
  */
-#define INT_BRK_I vPortYield
+#define INT_BRK_I vSoftwareInterruptISR
 
-void vPortYield(void) __attribute__ ((interrupt));
+void vSoftwareInterruptISR(void) __attribute__ ((interrupt));
 
 /*
  * INT_WDTI (0x04)

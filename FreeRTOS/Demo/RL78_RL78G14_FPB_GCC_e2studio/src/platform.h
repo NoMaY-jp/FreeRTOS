@@ -17,7 +17,7 @@ extern "C" {
 #endif
 #endif
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) /* And also in case of LLVM */
 #define asm(str) __asm volatile (str)
 #endif
 #if (defined(__CCRL__) && defined(_STDINT_H)) || (defined(__ICCRL78__) && defined(_STDINT))
@@ -43,7 +43,7 @@ extern "C" {
 #if defined(__ICCRL78__) && !defined(_STDINT)
 #define _STDINT
 #endif
-#if defined(__GNUC__)
+#if defined(__GNUC__) /* And also in case of LLVM */
 #undef asm
 #endif
 
@@ -84,7 +84,7 @@ extern "C" {
 #define R_CG_API_DO_NOT_USE(function) \
     function
 
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) /* And also in case of LLVM */
 
 #define R_CG_ISR_UNUSED(function, dummy_vect) \
     function##_UNUSED(void) __attribute__ ((unused)); \
@@ -113,7 +113,7 @@ extern "C" {
 
 #endif
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) /* And also in case of LLVM */
 #define BRK()     __asm volatile ("brk")
 #endif
 

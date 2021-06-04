@@ -31,7 +31,7 @@ void free( void *pv )
 #endif
 }
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) /* And also in case of LLVM */
 
 int8_t *sbrk( size_t size );
 
@@ -46,7 +46,7 @@ int8_t *sbrk( size_t size )
     return (int8_t *)-1;
 }
 
-#endif /* defined(__GNUC__) */
+#endif /* defined(__GNUC__) */ /* And also in case of LLVM */
 
 /******************************************************************************
 * Function Name: vTaskNotifyGiveFromISR_R_Helper

@@ -280,16 +280,17 @@ void vApplicationMallocFailedHook(void)
     configTOTAL_HEAP_SIZE configuration constant in FreeRTOSConfig.h. */
 
     taskENTER_CRITICAL();
-
-    vPrintString( NL "Insufficient heap memory!" NL );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-
-    for( ; ; )
     {
-        /* Loop here */
-    };
+        vPrintString( NL "Insufficient heap memory!" NL );
+
+        /* Force an assert. */
+        configASSERT( ( volatile void * ) NULL );
+
+        for( ; ; )
+        {
+            /* Loop here */
+        };
+    }
 
 } /* End of function vApplicationMallocFailedHook() */
 #endif /* configUSE_MALLOC_FAILED_HOOK == 1 */
@@ -307,24 +308,30 @@ void vApplicationMallocFailedHook(void)
 #if( configCHECK_FOR_STACK_OVERFLOW != 0 )
 void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
 {
-    ( void ) pcTaskName;
-    ( void ) pxTask;
-
     /* Run time stack overflow checking is performed if
     configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
     function is called if a stack overflow is detected. */
 
     taskENTER_CRITICAL();
-
-    vPrintString( NL "Stack Overflow!" NL );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-
-    for( ; ; )
     {
-        /* Loop here */
-    };
+        /* Use the debugger to view the following variables. */
+        volatile TaskHandle_t pxTask_ = pxTask;
+        char * volatile pcTaskName_ = pcTaskName;
+
+        /* Just prevent from compiler warnings. */
+        ( void ) pxTask_;
+        ( void ) pcTaskName_;
+
+        vPrintString( NL "Stack Overflow!" NL );
+
+        /* Force an assert. */
+        configASSERT( ( volatile void * ) NULL );
+
+        for( ; ; )
+        {
+            /* Loop here */
+        };
+    }
 
 } /* End of function vApplicationStackOverflowHook() */
 #endif /* configCHECK_FOR_STACK_OVERFLOW != 0 */
@@ -549,7 +556,7 @@ non standard demo successfully. */
 
 #if defined(__CCRL__)
 int __far sprintf( char __far * restrict s, const char __far * restrict format, ...)
-#elif defined(__GNUC__) || defined(__ICCRL78__)
+#elif defined(__GNUC__) || defined(__ICCRL78__) /* And also in case of LLVM */
 int sprintf (char *__restrict s, const char *__restrict format, ...)
 #endif
 {

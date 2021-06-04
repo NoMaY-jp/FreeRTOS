@@ -33,104 +33,89 @@ used.  The C and assembler pre-processor must have one of the following board
 definitions defined to have the correct register definition header file
 included.  Alternatively, just manually include the correct files here. */
 
-	/* Prevent the files being included from the FreeRTOS port layer assembly
-	source files. */
-	#if !(defined(__GNUC__) && defined(__ASSEMBLER__))
 
-		#if defined(__CCRL__) || defined(__GNUC__)
-			#include "iodefine.h"
-			#if defined(__GNUC__)
-				#include "iodefine_ext.h"
-			#endif
+	#ifdef YRPBRL78G13
+		#ifdef __ICCRL78__
+			#include "ior5f100le.h"
+			#include "ior5f100le_ext.h"
 		#endif
+		#define LED_BIT			( P7_bit.no7 )
+		#define LED_INIT()		P7 &= 0x7F; PM7 &= 0x7F
+	#endif /* YRPBRL78G13 */
 
-		#ifdef YRPBRL78G13
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f100le.h"
-				#include "ior5f100le_ext.h"
-			#endif
-			#define LED_BIT			( P7_bit.no7 )
-			#define LED_INIT()		P7 &= 0x7F; PM7 &= 0x7F
-		#endif /* YRPBRL78G13 */
-
-		#ifdef YRDKRL78G14
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f104pj.h"
-				#include "ior5f104pj_ext.h"
-			#endif
-			#define LED_BIT			( P4_bit.no1 )
-			#define LED_INIT() 		LED_BIT = 0
-		#endif /* YRDKRL78G14 */
-
-		#ifdef RSKRL78G1C
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f10jgc.h"
-				#include "ior5f10jgc_ext.h"
-			#endif
-			#define LED_BIT			( P0_bit.no1 )
-			#define LED_INIT()		P0 &= 0xFD; PM0 &= 0xFD
-		#endif /* RSKRL78G1C */
-
-		#ifdef RSKRL78L1C
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f110pj.h"
-				#include "ior5f110pj_ext.h"
-			#endif
-			#define LED_BIT			( P4_bit.no1 )
-			#define LED_INIT()		P4 &= 0xFD; PM4 &= 0xFD
-		#endif /* RSKRL78L1C */
-
-		#ifdef RSKRL78L13
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f10wmg.h"
-				#include "ior5f10wmg_ext.h"
-			#endif
-			#define LED_BIT			( P4_bit.no1 )
-			#define LED_INIT() 		P4 &= 0xFD; PM4 &= 0xFD
-		#endif /* RSKRL78L13 */
-
-		#ifdef RL78_G1A_TB
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f10ele.h"
-				#include "ior5f10ele_ext.h"
-			#endif
-			#define LED_BIT			( P6_bit.no2 )
-			#define LED_INIT() 		P6 &= 0xFB; PM6 &= 0xFB
-		#endif /* RL78_G1A_TB */
-
-		#ifdef RL78_G14_FPB
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f104ml.h"
-				#include "ior5f104ml_ext.h"
-			#endif
-			#define LED_BIT			( P4_bit.no3 )
-			#define LED_INIT()		P4 &= 0xF7; PM4 &= 0xF7; P4 |= 0x10; PM4 &= 0xEF
-		#endif /* RL78_G14_FPB */
-
-		#ifdef RL78_G23_FPB
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior7f100g.h"
-				#include "ior7f100g_ext.h"
-			#endif
-			#define LED_BIT			( P5_bit.no2 )
-			#define LED_INIT()		P5 &= 0xFB; PM5 &= 0xFB; P5 |= 0x08; PM4 &= 0xF7
-		#endif /* RL78_G14_FPB */
-
-		#ifdef AE_R5F100LGAFB
-			#if  defined(__ICCRL78__) ||  defined(__IASMRL78__)
-				#include "ior5f100lg.h"
-				#include "ior5f100lg_ext.h"
-			#endif
-			/* P5.0 is compatible with LED_BUILTIN of GR-KURUMI and GR-COTTON */
-			#define LED_BIT			( P5_bit.no0 )
-			#define LED_INIT()		P5 &= 0xFE; PM5 &= 0xFE
-		#endif /* AER5F100LGAFB */
-
-		#ifndef LED_BIT
-			#error The hardware platform is not defined
+	#ifdef YRDKRL78G14
+		#ifdef __ICCRL78__
+			#include "ior5f104pj.h"
+			#include "ior5f104pj_ext.h"
 		#endif
+		#define LED_BIT			( P4_bit.no1 )
+	#define LED_INIT() 		P4 &= 0xFD; PM4 &= 0xFD
+	#endif /* YRDKRL78G14 */
 
-	#endif /* !(defined(__GNUC__) && defined(__ASSEMBLER__)) */
+	#ifdef RSKRL78G1C
+		#ifdef __ICCRL78__
+			#include "ior5f10jgc.h"
+			#include "ior5f10jgc_ext.h"
+		#endif
+		#define LED_BIT			( P0_bit.no1 )
+		#define LED_INIT()		P0 &= 0xFD; PM0 &= 0xFD
+	#endif /* RSKRL78G1C */
+
+	#ifdef RSKRL78L1C
+		#ifdef __ICCRL78__
+			#include "ior5f110pj.h"
+			#include "ior5f110pj_ext.h"
+		#endif
+		#define LED_BIT			( P4_bit.no1 )
+		#define LED_INIT()		P4 &= 0xFD; PM4 &= 0xFD
+	#endif /* RSKRL78L1C */
+
+	#ifdef RSKRL78L13
+		#ifdef __ICCRL78__
+			#include "ior5f10wmg.h"
+			#include "ior5f10wmg_ext.h"
+		#endif
+		#define LED_BIT			( P4_bit.no1 )
+		#define LED_INIT() 		P4 &= 0xFD; PM4 &= 0xFD
+	#endif /* RSKRL78L13 */
+
+	#ifdef RL78_G1A_TB
+		#ifdef __ICCRL78__
+			#include "ior5f10ele.h"
+			#include "ior5f10ele_ext.h"
+		#endif
+		#define LED_BIT			( P6_bit.no2 )
+		#define LED_INIT() 		P6 &= 0xFB; PM6 &= 0xFB
+	#endif /* RL78_G1A_TB */
+
+	#ifdef RL78_G14_FPB
+		#ifdef __ICCRL78__
+			#include "ior5f104ml.h"
+			#include "ior5f104ml_ext.h"
+		#endif
+		#define LED_BIT			( P4_bit.no3 )
+		#define LED_INIT()		P4 &= 0xF7; PM4 &= 0xF7; P4 |= 0x10; PM4 &= 0xEF
+	#endif /* RL78_G14_FPB */
+
+	#ifdef RL78_G23_FPB
+		/* No include file here. */
+		#define LED_BIT			( P5_bit.no2 )
+		#define LED_INIT()		P5 &= 0xFB; PM5 &= 0xFB; P5 |= 0x08; PM4 &= 0xF7
+	#endif /* RL78_G14_FPB */
+
+	#ifdef AE_R5F100LGAFB
+		#ifdef __ICCRL78__
+			#include "ior5f100lg.h"
+			#include "ior5f100lg_ext.h"
+		#endif
+		/* P5.0 is compatible with LED_BUILTIN of GR-KURUMI and GR-COTTON */
+		#define LED_BIT			( P5_bit.no0 )
+		#define LED_INIT()		P5 &= 0xFE; PM5 &= 0xFE
+	#endif /* AER5F100LGAFB */
+
+	#ifndef LED_BIT
+		#error The hardware platform is not defined
+	#endif
 
 #endif /* LED_IO_H */
 

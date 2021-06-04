@@ -8,11 +8,11 @@
  */
 #if INTIT_vect == 0x38
 
-#define R_Vector_0x38 vPortTickISR
+#define R_Vector_0x38 vTickISR
 
 #elif INTIT_vect == 0x3C
 
-#define R_Vector_0x3C vPortTickISR
+#define R_Vector_0x3C vTickISR
 
 #else
 
@@ -20,14 +20,14 @@
 
 #endif
 
-void vPortTickISR(void) __attribute__ ((interrupt));
+void vTickISR(void) __attribute__ ((interrupt));
 
 /*
  * INT_BRK_I (0x7E)
  */
-#define R_Vector_0x7E vPortYield
+#define R_Vector_0x7E vSoftwareInterruptISR
 
-void vPortYield(void) __attribute__ ((interrupt));
+void vSoftwareInterruptISR(void) __attribute__ ((interrupt));
 
 /*
  * INT_WDTI (0x04)
