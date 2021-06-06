@@ -90,13 +90,17 @@ SECTIONS
 		. = ALIGN(2);
 		*(.rodata)
 		*(.rodata.*)
+		*(.const)
+		*(.const.*)
 		_erodata = .;
+/*
 		ASSERT(!(SIZEOF(.rodata) > (__mirror_end - __mirror)), "Error: Too much const data - the size exceeds the mirror area");
 		ASSERT(!(SIZEOF(.rodata) > (__mirror_end - __mirror)), "Please change some of them from 'const' to 'const __far'");
 		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(__rodata) >= __mirror_end)), "Error: No room left for const data - the start address exceeds the mirror area");
 		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(__rodata) < __mirror_end) && (ABSOLUTE(.) > __mirror_end)), "Error: No room left for const data - the end address exceeds the mirror area");
 		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(.) > __mirror_end) && (ADDR(.text) < __rodata)), "Please move the .text section from lower address to higher address");
 		ASSERT(!((SIZEOF(.rodata) <= (__mirror_end - __mirror)) && (SIZEOF(.rodata) > 0) && (ABSOLUTE(.) > __mirror_end) && (__rodata < ADDR(.text))), "Please check the map file");
+*/
 	} > ROM
 	.text . :
 	{

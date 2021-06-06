@@ -89,6 +89,8 @@ SECTIONS
 		. = ALIGN(2);
 		*(.rodata)
 		*(.rodata.*)
+		*(.const)
+		*(.const.*)
 		_erodata = .;
 /*
 		ASSERT(!(SIZEOF(.rodata) > (__mirror_end - __mirror)), "Error: Too much const data - the size exceeds the mirror area");

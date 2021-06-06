@@ -81,7 +81,10 @@
 									<listOptionValue builtIn="false" value="RL78_G14_FPB"/>
 									<listOptionValue builtIn="false" value="RENESAS_SIMULATOR_DEBUGGING=1"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="true" id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.userDefinedCompilerOptions.320874655" name="User defined compiler options" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.userDefinedCompilerOptions" useByScannerDiscovery="false" valueType="stringList"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.userDefinedCompilerOptions.320874655" name="User defined compiler options" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.userDefinedCompilerOptions" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="-frenesas-extensions"/>
+									<listOptionValue builtIn="false" value="-U__CCRL__"/>
+								</option>
 								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.std.950358453" name="Language standard" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.std" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.compiler.common.gnu99" valueType="enumerated"/>
 								<option id="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.optimizationLevel.306404784" name="Optimization Level" superClass="com.renesas.cdt.managedbuild.llvm.core.option.compiler.source.optimizationLevel" useByScannerDiscovery="true" value="com.renesas.cdt.managedbuild.llvm.core.option.optimization.optimizationLevel.codeSize" valueType="enumerated"/>
 								<inputType id="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.c.1914548975" superClass="com.renesas.cdt.managedbuild.llvm.core.inputType.compiler.c"/>
