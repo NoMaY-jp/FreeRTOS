@@ -21,7 +21,7 @@
                 <option>
                     <name>GenCodeModel</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GenDataModel</name>
@@ -86,7 +86,7 @@
                 </option>
                 <option>
                     <name>GenRTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\lib\dlrlnnf23n.a</state>
+                    <state>$TOOLKIT_DIR$\lib\dlrlfnf23nf.a</state>
                 </option>
                 <option>
                     <name>GenLibInFormatterDescription</name>
@@ -132,7 +132,7 @@
                 </option>
                 <option>
                     <name>GenCodeFarFar</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GenMathFunctionVariant</name>
@@ -543,16 +543,13 @@
                 </option>
                 <option>
                     <name>AsmIncludePath</name>
-                    <state>$PROJ_DIR$\src\FreeRTOS_Demo</state>
                     <state>$PROJ_DIR$\..\..\Source\portable\IAR\RL78</state>
-                    <state>$PROJ_DIR$\src\frtos_config</state>
-                    <state>$PROJ_DIR$\src\smc_integration</state>
                 </option>
                 <option>
                     <name>AsmDefines</name>
-                    <state>__NEAR_MODEL__</state>
+                    <state>__FAR_MODEL__</state>
+                    <state>__USE_FAR_RT_CALLS__</state>
                     <state>__NEAR_DATA_MODEL__</state>
-                    <state>RL78_G23_FPB</state>
                 </option>
                 <option>
                     <name>AsmPreprocOutput</name>
@@ -1589,12 +1586,6 @@
         </group>
         <file>
             <name>$PROJ_DIR$\src\smc_integration\BSP_patch.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\smc_integration\ior7f100g.h</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\smc_integration\ior7f100g_ext.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\src\smc_integration\smc_integration.h</name>

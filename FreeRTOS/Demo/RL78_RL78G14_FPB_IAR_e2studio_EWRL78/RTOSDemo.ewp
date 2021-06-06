@@ -21,7 +21,7 @@
                 <option>
                     <name>GenCodeModel</name>
                     <version>0</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GenDataModel</name>
@@ -132,7 +132,7 @@
                 </option>
                 <option>
                     <name>GenCodeFarFar</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GenMathFunctionVariant</name>
@@ -352,7 +352,7 @@
                 </option>
                 <option>
                     <name>CCDiagSuppress</name>
-                    <state>Pa091,Pe177,Pe082,Ta026</state>
+                    <state>Pa091,Pe177</state>
                 </option>
                 <option>
                     <name>CCDiagRemark</name>
@@ -534,15 +534,13 @@
                 </option>
                 <option>
                     <name>AsmIncludePath</name>
-                    <state>$PROJ_DIR$\src\FreeRTOS_Demo</state>
                     <state>$PROJ_DIR$\..\..\Source\portable\IAR\RL78</state>
-                    <state>$PROJ_DIR$\src\frtos_config</state>
                 </option>
                 <option>
                     <name>AsmDefines</name>
-                    <state>__NEAR_MODEL__</state>
+                    <state>__FAR_MODEL__</state>
+                    <state>__USE_FAR_RT_CALLS__</state>
                     <state>__NEAR_DATA_MODEL__</state>
-                    <state>RL78_G14_FPB</state>
                 </option>
                 <option>
                     <name>AsmPreprocOutput</name>
@@ -668,9 +666,9 @@
         </settings>
         <settings>
             <name>ILINK</name>
-            <archiveVersion>16</archiveVersion>
+            <archiveVersion>17</archiveVersion>
             <data>
-                <version>7</version>
+                <version>8</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -999,6 +997,26 @@
                 <option>
                     <name>IlinkThreadsSlave</name>
                     <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkLogCrtRoutineSelection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogFragmentInfo</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogInlining</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogMerging</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkDemangle</name>
+                    <state>0</state>
                 </option>
             </data>
         </settings>
