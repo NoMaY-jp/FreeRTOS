@@ -31,7 +31,12 @@
 /* ATTENTION : 2Mbps UART is used by also the command console demo of the full
 demo, the comprehensive test and demo which is one of the two standard RTOS Demos,
 for the RL78/G14 Fast Prototyping Board, instead of 115.2Kbps UART used by the
-same demo for the RX72N Envision Kit. */
+same demo for the RX72N Envision Kit.
+
+Some compiler optimization aren't supported/checked by the full demo as follows.
+LLVM-RL78's -O0 isn't supported due to low performance and/or large stack usage.
+ICCRL78's -Ohz only is checked due to size limitation of 16K KickStart Edition.
+*/
 
 /* Set mainCREATE_NON_STANDARD_RTOS_DEMO to one to run the following non standard
 RTOS Demo, or 0 to run the standard RTOS Demo which is the simple blinky demo or
