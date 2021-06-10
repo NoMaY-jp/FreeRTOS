@@ -514,7 +514,7 @@ static void prvSetupHardware( void )
 
     /* Start the UART. It is done in case of the simple blinky demo only but
     it isn't done in case of the full demo because the UART is used for other
-    purpos "FreeRTOS+CLI command console" by the full demo. */
+    purpose "FreeRTOS+CLI command console" by the full demo. */
     #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 1 )
     {
         R_Config_UART1_Start();
@@ -529,7 +529,7 @@ static void prvSetupHardware( void )
 void vToggleLED( void )
 {
     /* Toggle the LED */
-    LED_BIT = !LED_BIT;
+    LED_BIT = ~LED_BIT;
 }
 /*-----------------------------------------------------------*/
 

@@ -22,7 +22,11 @@ $IFNDEF __RENESAS_VERSION__
 __RENESAS_VERSION__	.EQU	0x01000000
 $ENDIF
 
+	.extern	_PowerON_Reset_PC
+
 	.public	_start
+	.public	_INIT_BSS
+	.public	_INIT_DATA
 	.public _exit
 
 ;-----------------------------------------------------------------------------
@@ -55,6 +59,8 @@ _start	.VECTOR	0
 ;-----------------------------------------------------------------------------
 .SECTION .text, TEXT
 _start:
+	.STACK _start = 0
+
 	;--------------------------------------------------
 	; setting register bank
 	;--------------------------------------------------
@@ -78,20 +84,63 @@ $ENDIF
 	; initializing stack area
 	;--------------------------------------------------
 $IF (__RENESAS_VERSION__ >= 0x01010000)
-	MOVW	AX,#LOWW(__STACK_ADDR_END)
+	MOVW	HL,#LOWW(__STACK_ADDR_END)
 $ELSE	; for CC-RL V1.00
-	MOVW	AX,#LOWW(_stackend)
+	MOVW	HL,#LOWW(_stackend)
 $ENDIF
-	CALL	!!_stkinit
+	MOVW	AX,SP
+	SUBW	AX,HL		; SUBW  AX,#LOWW _@STEND
+	BNH	$.LSTINIT3	; goto end
+	SHRW	AX,5		; loop count for 32 byte transfer
+	MOVW	BC,AX
+	CLRW	AX
+.LSTINIT1:
+	CMPW	AX,BC
+	BZ	$.LSTINIT2
+	MOVW	[HL],AX
+	MOVW	[HL+2],AX
+	MOVW	[HL+4],AX
+	MOVW	[HL+6],AX
+	MOVW	[HL+8],AX
+	MOVW	[HL+10],AX
+	MOVW	[HL+12],AX
+	MOVW	[HL+14],AX
+	MOVW	[HL+16],AX
+	MOVW	[HL+18],AX
+	MOVW	[HL+20],AX
+	MOVW	[HL+22],AX
+	MOVW	[HL+24],AX
+	MOVW	[HL+26],AX
+	MOVW	[HL+28],AX
+	MOVW	[HL+30],AX
+	XCHW	AX,HL
+	ADDW	AX,#0x20
+	XCHW	AX,HL
+	DECW	BC
+	BR	$.LSTINIT1
+.LSTINIT2:
+	MOVW	AX,SP
+	CMPW	AX,HL
+	BZ	$.LSTINIT3	; goto end
+	CLRW	AX
+	MOVW	[HL],AX
+	INCW	HL
+	INCW	HL
+	BR	$.LSTINIT2
+.LSTINIT3:
 
 	;--------------------------------------------------
-	; hardware initialization
+	; jump PowerON_Reset_PC function
 	;--------------------------------------------------
-	CALL	!!_hdwinit
+	BR	!!_PowerON_Reset_PC
 
-	;--------------------------------------------------
-	; initializing BSS
-	;--------------------------------------------------
+;--------------------------------------------------
+; initializing BSS
+;--------------------------------------------------
+.SECTION .textf, TEXTF
+_INIT_BSS:
+	.STACK _INIT_BSS = 4
+
 	; clear external variables which doesn't have initial value (near)
 	MOVW	HL,#LOWW(STARTOF(.bss))
 	MOVW	AX,#LOWW(STARTOF(.bss) + SIZEOF(.bss))
@@ -126,9 +175,15 @@ $ENDIF
 ;	CMPW	AX,HL
 ;	BNZ	$.L1_BSSF
 
-	;--------------------------------------------------
-	; ROM data copy
-	;--------------------------------------------------
+	RET
+
+;--------------------------------------------------
+; ROM data copy
+;--------------------------------------------------
+.SECTION .textf, TEXTF
+_INIT_DATA:
+	.STACK _INIT_DATA = 4
+
 	; copy external variables having initial value (near)
 	MOV	ES,#HIGHW(STARTOF(.data))
 	MOVW	BC,#LOWW(SIZEOF(.data))
@@ -190,16 +245,14 @@ $ENDIF
 ;	CMPW	AX,#LOWW(STARTOF(.text) + SIZEOF(.text))
 ;	BNZ	$.L1_TEXT
 
-	;--------------------------------------------------
-	; call main function
-	;--------------------------------------------------
-	CALL	!!_main		; main();
+	RET
 
-	;--------------------------------------------------
-	; call exit function
-	;--------------------------------------------------
-	CLRW	AX		; exit(0)
+;--------------------------------------------------
+; exit function
+;--------------------------------------------------
+.SECTION .textf, TEXTF
 _exit:
+	.STACK _exit = 4
 	BR	$_exit
 
 ;-----------------------------------------------------------------------------

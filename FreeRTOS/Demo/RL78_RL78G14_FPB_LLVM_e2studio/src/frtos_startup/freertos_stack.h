@@ -12,7 +12,10 @@ extern "C" {
 #if defined(__CCRL__)
 
 /* The stack usage analysis tool 'Call Walker' provides detail stack usage information.
- * The following table is based on the result of analysis 16-Mar-2021.
+ * The following table is based on the result of analysis 10-Jun-2021.
+ *
+ * Each task stack has a space for the return address to prvTaskExitError() function.
+ * The size of the space is already incorporated in the stack size of top level task function.
  *
  * The stack space for interrupt stub is calculated as follows:
  *
@@ -50,7 +53,10 @@ extern "C" {
 #elif defined(__ICCRL78__)
 
 /* The linker log file's stack usage call graph provides detail stack usage information.
- * The following table is based on the result of analysis 16-Mar-2021.
+ * The following table is based on the result of analysis 10-Jun-2021.
+ *
+ * Each task stack has a space for the return address to prvTaskExitError() function.
+ * The size of the space is already incorporated in the stack size of top level task function.
  *
  * The stack space for interrupt stub is calculated as follows:
  *

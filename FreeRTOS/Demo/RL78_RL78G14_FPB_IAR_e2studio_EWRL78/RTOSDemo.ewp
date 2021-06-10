@@ -86,7 +86,7 @@
                 </option>
                 <option>
                     <name>GenRTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\lib\dlrlnnf23n.a</state>
+                    <state>$TOOLKIT_DIR$\lib\dlrlfnf23nf.a</state>
                 </option>
                 <option>
                     <name>GenLibInFormatterDescription</name>
@@ -1000,23 +1000,23 @@
                 </option>
                 <option>
                     <name>IlinkLogCrtRoutineSelection</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkLogFragmentInfo</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkLogInlining</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkLogMerging</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkDemangle</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
             </data>
         </settings>

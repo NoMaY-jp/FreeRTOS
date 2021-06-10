@@ -12,7 +12,10 @@ extern "C" {
 #if defined(__CCRL__)
 
 /* The stack usage analysis tool 'Call Walker' provides detail stack usage information.
- * The following table is based on the result of analysis 16-Mar-2021.
+ * The following table is based on the result of analysis 10-Jun-2021.
+ *
+ * Each task stack has a space for the return address to prvTaskExitError() function.
+ * The size of the space is already incorporated in the stack size of top level task function.
  *
  * The stack space for interrupt stub is calculated as follows:
  *
@@ -23,14 +26,6 @@ extern "C" {
  *                     = 16
  */
 
-#define task_LED0_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( 256 )
-#define task_LED1_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( 256 )
-#define task_CONIO_STACK_BUFF_DEPTH stackBYTES_TO_DEPTH( 256 )
-#define main_task_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH(  64 )
-#define IdleTask_STACK_BUFF_DEPTH   stackBYTES_TO_DEPTH(  64 )
-#define TimerTask_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH(   0 )
-
-#if 0
 #if defined(NDEBUG)
 
 /* The following table is for the case of using compile optimization of CC-RL. */
@@ -54,12 +49,14 @@ extern "C" {
 #define TimerTask_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( stackBUFF_BYTES(   0,  0,  0 ) )
 
 #endif
-#endif
 
 #elif defined(__ICCRL78__)
 
 /* The linker log file's stack usage call graph provides detail stack usage information.
- * The following table is based on the result of analysis 16-Mar-2021.
+ * The following table is based on the result of analysis 10-Jun-2021.
+ *
+ * Each task stack has a space for the return address to prvTaskExitError() function.
+ * The size of the space is already incorporated in the stack size of top level task function.
  *
  * The stack space for interrupt stub is calculated as follows:
  *
@@ -70,13 +67,6 @@ extern "C" {
  *                     = 16
  */
 
-#define task_LED0_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( 256 )
-#define task_LED1_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( 256 )
-#define task_CONIO_STACK_BUFF_DEPTH stackBYTES_TO_DEPTH( 256 )
-#define main_task_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH(  64 )
-#define IdleTask_STACK_BUFF_DEPTH   stackBYTES_TO_DEPTH(  64 )
-#define TimerTask_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH(   0 )
-#if 0
 #if defined(NDEBUG)
 
 /* The following table is for the case of using compile optimization of ICCRL78. */
@@ -99,7 +89,6 @@ extern "C" {
 #define IdleTask_STACK_BUFF_DEPTH   stackBYTES_TO_DEPTH( stackBUFF_BYTES(  74, 16, 32 ) )
 #define TimerTask_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( stackBUFF_BYTES(   0,  0,  0 ) )
 
-#endif
 #endif
 
 #elif defined(__GNUC__) /* And also in case of LLVM */

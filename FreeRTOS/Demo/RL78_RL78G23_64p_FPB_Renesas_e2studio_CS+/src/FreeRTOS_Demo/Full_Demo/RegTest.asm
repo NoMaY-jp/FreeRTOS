@@ -58,6 +58,7 @@
 ;
 ;------------------------------------------------------------------------------
 	.SECTION .textf,TEXTF
+	.STACK _vRegTest1Task = 4
 _vRegTest1Task:
 
 	; First fill the registers.
@@ -68,7 +69,7 @@ _vRegTest1Task:
 	MOV		CS, #0x01
 	MOV		ES, #0x02
 
-loop1:
+.loop1:
 
 	; Continuously check that the register values remain at their expected
 	; values.  The BRK is to test the yield.  This task runs at low priority
@@ -81,29 +82,29 @@ loop1:
 
 	; Jump over the branch to vRegTestError() if the register contained the
 	; expected value - otherwise flag an error by executing vRegTestError().
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 
 	; Repeat for all the registers.
 	MOVW	AX, BC
 	CMPW	AX, #0x3344
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOVW	AX, DE
 	CMPW	AX, #0x5566
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOVW	AX, HL
 	CMPW	AX, #0x7788
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOV		A, CS
 	CMP		A, #0x01
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOV		A, ES
 	CMP		A, #0x02
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 
 	; Set AX back to its initial value.
 	MOVW	AX, #0x1122
@@ -111,7 +112,7 @@ loop1:
 	; Indicate that this task is still cycling.
 	INCW	!_usRegTest1LoopCounter
 
-	BR 		$loop1
+	BR 		!!.loop1
 
 
 ;------------------------------------------------------------------------------
@@ -127,6 +128,7 @@ loop1:
 ;
 ;------------------------------------------------------------------------------
 	.SECTION .textf,TEXTF
+	.STACK _vRegTest2Task = 4
 _vRegTest2Task:
 
 	MOVW	AX, #0x99aa
@@ -136,30 +138,30 @@ _vRegTest2Task:
 	MOV		CS, #0x03
 	MOV		ES, #0x04
 
-loop2:
+.loop2:
 	CMPW	AX, #0x99aa
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOVW	AX, BC
 	CMPW	AX, #0xbbcc
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOVW	AX, DE
 	CMPW	AX, #0xddee
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOVW	AX, HL
 	CMPW	AX, #0xff12
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOV		A, CS
 	CMP		A, #0x03
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 	MOV		A, ES
 	CMP		A, #0x04
 	SKZ
-	BR		!!_vRegTestError
+	CALL	!!_vRegTestError
 
 	; Set AX back to its initial value.
 	MOVW	AX, #0x99aa
@@ -167,6 +169,6 @@ loop2:
 	; Indicate that this task is still cycling.
 	INCW	!_usRegTest2LoopCounter
 
-	BR 		$loop2
+	BR 		!!.loop2
 
 

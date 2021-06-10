@@ -57,7 +57,7 @@
 ;   Output: NONE
 ;
 ;------------------------------------------------------------------------------
-    RSEG CODE:CODE
+	RSEG .textf:CODE
 _vRegTest1Task:
 
 	; First fill the registers.
@@ -66,14 +66,7 @@ _vRegTest1Task:
 	MOVW	DE, #0x5566
 	MOVW	HL, #0x7788
 	MOV		CS, #0x01
-
-;;;;#if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
-	; ES is not saved or restored when using the near memory model so only
-	; test it when using the far model.
 	MOV		ES, #0x02
-
-;;;;#endif
 
 loop1:
 
@@ -86,46 +79,39 @@ loop1:
 	CMPW	AX, #0x1122
 	SKZ
 
-	; Jump over the branch to _vRegTestError() if the register contained the
-	; expected value - otherwise flag an error by executing _vRegTestError().
-	BR		_vRegTestError
+	; Jump over the branch to vRegTestError() if the register contained the
+	; expected value - otherwise flag an error by executing vRegTestError().
+	CALL	F:_vRegTestError
 
 	; Repeat for all the registers.
 	MOVW	AX, BC
 	CMPW	AX, #0x3344
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOVW	AX, DE
 	CMPW	AX, #0x5566
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOVW	AX, HL
 	CMPW	AX, #0x7788
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOV		A, CS
 	CMP		A, #0x01
 	SKZ
-	BR		_vRegTestError
-
-;;;;#if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
-	; ES is not saved or restored when using the near memory model so only
-	; test it when using the far model.
+	CALL	F:_vRegTestError
 	MOV		A, ES
 	CMP		A, #0x02
 	SKZ
-	BR		_vRegTestError
-
-;;;;#endif
+	CALL	F:_vRegTestError
 
 	; Set AX back to its initial value.
 	MOVW	AX, #0x1122
 
 	; Indicate that this task is still cycling.
-	INCW	_usRegTest1LoopCounter
+	INCW	N:_usRegTest1LoopCounter
 
-	BR 		loop1
+	BR 		F:loop1
 
 
 ;------------------------------------------------------------------------------
@@ -140,7 +126,7 @@ loop1:
 ;   Output: NONE
 ;
 ;------------------------------------------------------------------------------
-    RSEG CODE:CODE
+	RSEG .textf:CODE
 _vRegTest2Task:
 
 	MOVW	AX, #0x99aa
@@ -148,50 +134,40 @@ _vRegTest2Task:
 	MOVW	DE, #0xddee
 	MOVW	HL, #0xff12
 	MOV		CS, #0x03
-
-;;;;#if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
 	MOV		ES, #0x04
-
-;;;;#endif
 
 loop2:
 	CMPW	AX, #0x99aa
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOVW	AX, BC
 	CMPW	AX, #0xbbcc
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOVW	AX, DE
 	CMPW	AX, #0xddee
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOVW	AX, HL
 	CMPW	AX, #0xff12
 	SKZ
-	BR		_vRegTestError
+	CALL	F:_vRegTestError
 	MOV		A, CS
 	CMP		A, #0x03
 	SKZ
-	BR		_vRegTestError
-
-;;;;#if __DATA_MODEL__ == __DATA_MODEL_FAR__
-
+	CALL	F:_vRegTestError
 	MOV		A, ES
 	CMP		A, #0x04
 	SKZ
-	BR		_vRegTestError
-
-;;;;#endif
+	CALL	F:_vRegTestError
 
 	; Set AX back to its initial value.
 	MOVW	AX, #0x99aa
 
 	; Indicate that this task is still cycling.
-	INCW	_usRegTest2LoopCounter
+	INCW	N:_usRegTest2LoopCounter
 
-	BR 		loop2
+	BR 		F:loop2
 
 
 	END
