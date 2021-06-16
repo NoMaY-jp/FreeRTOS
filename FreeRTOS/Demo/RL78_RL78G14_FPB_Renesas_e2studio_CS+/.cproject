@@ -165,6 +165,7 @@
 									<listOptionValue builtIn="false" value="&quot;.\src/r_cg_intc_user.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/r_cg_serial.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/r_cg_serial_user.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/ide_helper.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/rl78g14_fpb_main.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_CONIO.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED0.obj&quot;"/>

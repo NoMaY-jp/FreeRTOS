@@ -114,6 +114,8 @@ SECTIONS
 		. = ALIGN(2);
 		*(.frodata)
 		*(.frodata.*)
+		*(.constf)
+		*(.constf.*)
 		_efrodata = .;
 	} > ROM
 	.eh_frame_hdr :

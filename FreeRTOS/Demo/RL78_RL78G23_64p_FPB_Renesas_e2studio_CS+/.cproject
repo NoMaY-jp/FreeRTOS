@@ -161,11 +161,6 @@
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/main_full.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/RegTest.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/FreeRTOS_Demo/Full_Demo/serial.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/rl78g23_fpb_main.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_CONIO.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED0.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED1.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/UART1.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_gen/Config_DTC/Config_DTC.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_gen/Config_DTC/Config_DTC_user.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_gen/Config_INTC/Config_INTC.obj&quot;"/>
@@ -187,7 +182,13 @@
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_gen/r_bsp/board/generic_rl78_g23/r_bsp_init.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_gen/r_bsp/mcu/all/r_bsp_common.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_gen/r_bsp/mcu/rl78_g23/mcu_clocks.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/BSP_patch.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/r_main.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/ide_helper.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/rl78g23_fpb_main.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_CONIO.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED0.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/frtos_skeleton/task_LED1.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/UART1.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Renesas\CS+\CC\CC-RL\V1.10.00\lib\rl78em4s99.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Renesas\CS+\CC\CC-RL\V1.10.00\lib\rl78em4r.lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\Renesas\CS+\CC\CC-RL\V1.10.00\lib\malloc_n.lib&quot;"/>

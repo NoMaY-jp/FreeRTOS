@@ -203,17 +203,26 @@ void vAssertCalled(void)
 {
     static volatile unsigned long ul;
 
+    /* Set breakpoint at the line below to catch assertion failed. */
+    /* Assertion failed! */
+    /* Assertion failed! */
+    portNOP(); /* Assertion failed! */
+    /* Assertion failed! */
+    /* Assertion failed! */
+
     taskENTER_CRITICAL();
     {
         vPrintString( NL "Assertion failed!" NL );
 
         /* Use the debugger to set ul to a non-zero value in order to step out
         of this function to determine why it was called. */
-        ul = 0;
         while( 0 == ul )
         {
             portNOP();
         }
+
+        /* Set ul to zero again for the next assertion failed. */
+        ul = 0;
     }
     taskEXIT_CRITICAL();
 
@@ -289,7 +298,7 @@ void vApplicationMallocFailedHook(void)
         for( ; ; )
         {
             /* Loop here */
-        };
+        }
     }
 
 } /* End of function vApplicationMallocFailedHook() */
@@ -330,7 +339,7 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
         for( ; ; )
         {
             /* Loop here */
-        };
+        }
     }
 
 } /* End of function vApplicationStackOverflowHook() */
@@ -654,6 +663,15 @@ BaseType_t xEventGroupSetBitsFromISR( EventGroupHandle_t xEventGroup,
 
     return pdFAIL;
 }
+
+/* Add empty function which is unused but necessary for the debugger startup command
+or script to be executed successfully. */
+
+#if( configASSERT_DEFINED == 0 )
+void vAssertCalled(void)
+{
+}
+#endif /* configASSERT_DEFINED == 0 */
 
 #endif /* mainCREATE_NON_STANDARD_RTOS_DEMO == 1 */
 /*-----------------------------------------------------------*/

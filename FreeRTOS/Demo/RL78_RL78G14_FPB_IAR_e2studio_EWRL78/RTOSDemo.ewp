@@ -1382,6 +1382,12 @@
     <group>
         <name>Src</name>
         <file>
+            <name>$PROJ_DIR$\src\ide_helper.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\ide_helper.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\src\platform.h</name>
         </file>
         <file>

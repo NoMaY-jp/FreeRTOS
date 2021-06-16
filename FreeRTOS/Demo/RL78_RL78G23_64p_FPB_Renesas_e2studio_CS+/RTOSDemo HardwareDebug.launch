@@ -54,8 +54,8 @@
     <booleanAttribute key="com.renesas.hardwaredebug.rl78.serial.use.wide.voltage.mode" value="true"/>
     <booleanAttribute key="com.renesas.hardwaredebug.rl78.serial.verify.on.writing.to.memory" value="true"/>
     <booleanAttribute key="com.renesas.hardwaredebug.timemeasurement" value="false"/>
-    <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
-    <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="true"/>
+    <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="0"/>
+    <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="false"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageFileName" value="C:\Renesas\GitHubDesktop\work\FreeRTOS\FreeRTOS\Demo\RL78_RL78G23_64p_FPB_Renesas_e2studio_CS+\HardwareDebug\RTOSDemo.x"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.imageOffset" value=""/>
@@ -63,7 +63,7 @@
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadImage" value="true"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadSymbols" value="true"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.pcRegister" value=""/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value=""/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="break vAssertCalled&#13;&#10;clear vAssertCalled&#13;&#10;break vAssertCalled&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;disable $bpnum"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setPcRegister" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setResume" value="true"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>

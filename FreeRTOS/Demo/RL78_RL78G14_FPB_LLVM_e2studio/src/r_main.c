@@ -57,17 +57,23 @@ void main(void)
     R_MAIN_UserInit();
     /* Start user code. Do not edit comment generated here */
 
-#if defined(RENESAS_SIMULATOR_DEBUGGING)
-    /* Prevent the variable from being optimized away for the debugger stratup command or script */
-    (void) *(volatile unsigned short *)&renesas_simulator_debugging_key;
-#endif
-
     /* Prepare the necessary tasks, FreeRTOS's resources... required to be executed at the beginning
      * after vTaskStarScheduler() is called. Other tasks can also be created after starting scheduler at any time */
     Processing_Before_Start_Kernel();
 
     /* Call the kernel startup (should not return) */
     vTaskStartScheduler();
+
+    /* Prevent the function from being optimized away for the debugger startup command or script */
+    vAssertCalled();
+
+#if defined(RENESAS_SIMULATOR_DEBUGGING)
+    /* Prevent the variable from being optimized away for the debugger startup command or script */
+    (void) *(volatile unsigned short *)&renesas_simulator_debugging_key;
+#endif
+
+    /* Prevent port definitions from being optimized away for e2 studio's Visual Expression View */
+    e2_studio_visual_expression_view_helper();
 
     while (1U)
     {

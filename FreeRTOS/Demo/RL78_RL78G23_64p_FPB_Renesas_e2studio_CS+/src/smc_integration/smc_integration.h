@@ -292,6 +292,7 @@ void u_wdt_interrupt(void) __attribute__ ((interrupt));
 #include "RenesasSimDebug/sim_debug_mode_hook.h"
 #endif
 
+#include "ide_helper.h"
 
 
 #if 0

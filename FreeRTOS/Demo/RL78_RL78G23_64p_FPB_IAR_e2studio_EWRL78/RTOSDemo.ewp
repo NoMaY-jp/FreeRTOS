@@ -1585,7 +1585,13 @@
             </group>
         </group>
         <file>
-            <name>$PROJ_DIR$\src\smc_integration\BSP_patch.c</name>
+            <name>$PROJ_DIR$\src\smc_integration\ide_helper.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\smc_integration\ide_helper.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\smc_integration\r_main.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\src\smc_integration\smc_integration.h</name>

@@ -1013,10 +1013,24 @@
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
       <Property>b199f1d1-b443-4579-9be4-d4b7b92afa3b</Property>
     </Instance>
-    <Instance Guid="8b908192-7ee2-4010-b7a7-41d64597a57a">
-      <Name>BSP_patch.c</Name>
+    <Instance Guid="d901f9f7-51f6-4a3a-a4d3-777b37eb03f2">
+      <Name>ide_helper.c</Name>
       <Type>File</Type>
-      <RelativePath>src\smc_integration\BSP_patch.c</RelativePath>
+      <RelativePath>src\smc_integration\ide_helper.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
+    </Instance>
+    <Instance Guid="d761f425-2da6-4669-929e-2fee2c0ef20d">
+      <Name>ide_helper.h</Name>
+      <Type>File</Type>
+      <RelativePath>src\smc_integration\ide_helper.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
+    </Instance>
+    <Instance Guid="8b908192-7ee2-4010-b7a7-41d64597a57a">
+      <Name>r_main.c</Name>
+      <Type>File</Type>
+      <RelativePath>src\smc_integration\r_main.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>f2b66ed7-ada1-4ac0-bd11-c8c9c78822c3</ParentItem>
     </Instance>
@@ -1763,7 +1777,9 @@
       <SourceItemType71>CSource</SourceItemType71>
       <SourceItemGuid72>ae394ab4-cf0c-4598-911c-eecf9efce92c</SourceItemGuid72>
       <SourceItemType72>CSource</SourceItemType72>
-      <SourceItemCount>73</SourceItemCount>
+      <SourceItemGuid73>d901f9f7-51f6-4a3a-a4d3-777b37eb03f2</SourceItemGuid73>
+      <SourceItemType73>CSource</SourceItemType73>
+      <SourceItemCount>74</SourceItemCount>
       <LastDeviceChangedCounter>0</LastDeviceChangedCounter>
     </Instance>
     <Instance Guid="6bb7060d-7e24-4135-bd9b-7db166417523">
@@ -2611,139 +2627,144 @@ src
       <ItemAddTime>637451389704688699</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="504775f8-bd52-4f90-a882-2be5600cf7b8">
-      <LinkOrder-0>37</LinkOrder-0>
-      <ItemAddTime>636532015732967472</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="b38d4282-c799-4f0f-9c39-18acc20f63f8">
-      <LinkOrder-0>38</LinkOrder-0>
-      <ItemAddTime>637119632083234544</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="d9e199fe-1659-44b6-876a-f8148032a77e">
-      <LinkOrder-0>39</LinkOrder-0>
-      <ItemAddTime>637119632160946288</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="da114a52-fc3d-4b9b-95f6-81bd22e9b6aa">
-      <LinkOrder-0>40</LinkOrder-0>
-      <ItemAddTime>637119632222234416</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
-    <Instance Guid="0275eafe-4357-445c-89a4-3aaf3afcb181">
-      <LinkOrder-0>41</LinkOrder-0>
-      <ItemAddTime>637456788143193030</ItemAddTime>
-      <ItemAddTimeCount>0</ItemAddTimeCount>
-    </Instance>
     <Instance Guid="84f2f44e-0a63-43d9-8a90-8afc6fb13594">
-      <LinkOrder-0>42</LinkOrder-0>
+      <LinkOrder-0>37</LinkOrder-0>
       <ItemAddTime>637566101896492187</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="39c8418a-fc81-4ae2-853b-624ac281f998">
-      <LinkOrder-0>43</LinkOrder-0>
+      <LinkOrder-0>38</LinkOrder-0>
       <ItemAddTime>637566101896492187</ItemAddTime>
       <ItemAddTimeCount>2</ItemAddTimeCount>
     </Instance>
     <Instance Guid="68e41432-2576-45b8-ac70-f6bd101d6dc6">
-      <LinkOrder-0>44</LinkOrder-0>
+      <LinkOrder-0>39</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="c4515a09-d6b7-4642-8482-fcbbdb377f9a">
-      <LinkOrder-0>45</LinkOrder-0>
+      <LinkOrder-0>40</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>2</ItemAddTimeCount>
     </Instance>
     <Instance Guid="ffb2d3f3-3413-42b1-9b16-adf7c058e135">
-      <LinkOrder-0>46</LinkOrder-0>
+      <LinkOrder-0>41</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>3</ItemAddTimeCount>
     </Instance>
     <Instance Guid="926ba1fb-68cf-4a22-898b-3faef32cd3d2">
-      <LinkOrder-0>47</LinkOrder-0>
+      <LinkOrder-0>42</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>5</ItemAddTimeCount>
     </Instance>
     <Instance Guid="6008364b-2d58-4e17-98b6-95764b176a2a">
-      <LinkOrder-0>48</LinkOrder-0>
+      <LinkOrder-0>43</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>6</ItemAddTimeCount>
     </Instance>
     <Instance Guid="131ea4f8-9616-4d4e-91e6-929d6f041535">
-      <LinkOrder-0>49</LinkOrder-0>
+      <LinkOrder-0>44</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>8</ItemAddTimeCount>
     </Instance>
     <Instance Guid="8d5cf7db-db83-4239-836b-6ad993f7390e">
-      <LinkOrder-0>50</LinkOrder-0>
+      <LinkOrder-0>45</LinkOrder-0>
       <ItemAddTime>637566101899460780</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="aa101cec-f944-4e98-8369-2365b99aedb4">
-      <LinkOrder-0>51</LinkOrder-0>
+      <LinkOrder-0>46</LinkOrder-0>
       <ItemAddTime>637566101899460780</ItemAddTime>
       <ItemAddTimeCount>2</ItemAddTimeCount>
     </Instance>
     <Instance Guid="0c13d1fd-9287-41a4-9475-e17d95290b17">
-      <LinkOrder-0>52</LinkOrder-0>
+      <LinkOrder-0>47</LinkOrder-0>
       <ItemAddTime>637566101900398319</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
     <Instance Guid="2e4aafff-d65a-44db-afa5-a878545f85b3">
-      <LinkOrder-0>53</LinkOrder-0>
+      <LinkOrder-0>48</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>11</ItemAddTimeCount>
     </Instance>
     <Instance Guid="57ea0a58-9d94-4e42-81f8-3cfa8eced55c">
-      <LinkOrder-0>54</LinkOrder-0>
+      <LinkOrder-0>49</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>13</ItemAddTimeCount>
     </Instance>
     <Instance Guid="817a518c-9222-4980-967d-faa5d6cd47f4">
-      <LinkOrder-0>55</LinkOrder-0>
+      <LinkOrder-0>50</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>15</ItemAddTimeCount>
     </Instance>
     <Instance Guid="657bd3d8-d89c-4aaf-a4c9-0f102542ab3f">
-      <LinkOrder-0>56</LinkOrder-0>
+      <LinkOrder-0>51</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>17</ItemAddTimeCount>
     </Instance>
     <Instance Guid="cd4a0737-92e7-4d30-8716-70c6f27e3721">
-      <LinkOrder-0>57</LinkOrder-0>
+      <LinkOrder-0>52</LinkOrder-0>
       <ItemAddTime>637566101900398319</ItemAddTime>
       <ItemAddTimeCount>15</ItemAddTimeCount>
     </Instance>
     <Instance Guid="13fabf11-508e-4bea-802b-c5d8188e51c1">
-      <LinkOrder-0>58</LinkOrder-0>
+      <LinkOrder-0>53</LinkOrder-0>
       <ItemAddTime>637566134995867398</ItemAddTime>
       <ItemAddTimeCount>20</ItemAddTimeCount>
     </Instance>
     <Instance Guid="cd71bec7-dfd6-4751-8c89-065e2d529d13">
-      <LinkOrder-0>59</LinkOrder-0>
+      <LinkOrder-0>54</LinkOrder-0>
       <ItemAddTime>637566353123712288</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="bdfe3c65-cd08-44ec-9ff8-b8d403134e02">
-      <LinkOrder-0>60</LinkOrder-0>
+      <LinkOrder-0>55</LinkOrder-0>
       <ItemAddTime>637566134996023681</ItemAddTime>
       <ItemAddTimeCount>2</ItemAddTimeCount>
     </Instance>
     <Instance Guid="c36b449f-d077-4904-a22c-a650a828a2c2">
-      <LinkOrder-0>61</LinkOrder-0>
+      <LinkOrder-0>56</LinkOrder-0>
       <ItemAddTime>637566353123712288</ItemAddTime>
       <ItemAddTimeCount>1</ItemAddTimeCount>
     </Instance>
     <Instance Guid="ae394ab4-cf0c-4598-911c-eecf9efce92c">
-      <LinkOrder-0>62</LinkOrder-0>
+      <LinkOrder-0>57</LinkOrder-0>
       <ItemAddTime>637566333431837466</ItemAddTime>
       <ItemAddTimeCount>12</ItemAddTimeCount>
     </Instance>
     <Instance Guid="8b908192-7ee2-4010-b7a7-41d64597a57a">
-      <LinkOrder-0>63</LinkOrder-0>
+      <LinkOrder-0>58</LinkOrder-0>
       <ItemAddTime>637566333431680644</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="d901f9f7-51f6-4a3a-a4d3-777b37eb03f2">
+      <LinkOrder-0>59</LinkOrder-0>
+      <ItemAddTime>637594588343489554</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="504775f8-bd52-4f90-a882-2be5600cf7b8">
+      <LinkOrder-0>60</LinkOrder-0>
+      <ItemAddTime>636532015732967472</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="b38d4282-c799-4f0f-9c39-18acc20f63f8">
+      <LinkOrder-0>61</LinkOrder-0>
+      <ItemAddTime>637119632083234544</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="d9e199fe-1659-44b6-876a-f8148032a77e">
+      <LinkOrder-0>62</LinkOrder-0>
+      <ItemAddTime>637119632160946288</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="da114a52-fc3d-4b9b-95f6-81bd22e9b6aa">
+      <LinkOrder-0>63</LinkOrder-0>
+      <ItemAddTime>637119632222234416</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="0275eafe-4357-445c-89a4-3aaf3afcb181">
+      <LinkOrder-0>64</LinkOrder-0>
+      <ItemAddTime>637456788143193030</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="b6e9fef0-f2fb-438a-ace6-98a05e091ebc">
@@ -4138,6 +4159,10 @@ src
       <ItemAddTime>637566333431837466</ItemAddTime>
       <ItemAddTimeCount>16</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="d761f425-2da6-4669-929e-2fee2c0ef20d">
+      <ItemAddTime>637594588343489554</ItemAddTime>
+      <ItemAddTimeCount>1</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="f782db2c-1c42-4ca1-af6a-53a3a5067217">
       <TimeTagModified-SourceItem0--0>-8586415335831935216</TimeTagModified-SourceItem0--0>
       <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
@@ -4411,6 +4436,10 @@ src
       <SourceItem72-IsLockedByUser>False</SourceItem72-IsLockedByUser>
       <SourceItem72-BuildingTarget-0>True</SourceItem72-BuildingTarget-0>
       <SourceItem72-IndividualCompileOption-0>False</SourceItem72-IndividualCompileOption-0>
+      <TimeTagModified-SourceItem73--0>-8585777772511286254</TimeTagModified-SourceItem73--0>
+      <SourceItem73-IsLockedByUser>False</SourceItem73-IsLockedByUser>
+      <SourceItem73-BuildingTarget-0>True</SourceItem73-BuildingTarget-0>
+      <SourceItem73-IndividualCompileOption-0>False</SourceItem73-IndividualCompileOption-0>
     </Instance>
     <Instance Guid="0b7e78c3-aadd-45ee-9f9d-ffac6141eeb2">
       <TimeTagModified-SourceItem14--0>-8585927366376061163</TimeTagModified-SourceItem14--0>
@@ -4673,9 +4702,9 @@ src
       <Simulator-EditWave-WindowCount>0</Simulator-EditWave-WindowCount>
       <Simulator-Panel-WindowCount>1</Simulator-Panel-WindowCount>
       <Simulator-Panel-DocumentName-0>UgBUAE8AUwBEAGUAbQBvADAALgBwAG4AbAA=</Simulator-Panel-DocumentName-0>
-      <Simulator-Panel-Contents-0>FlBhbmVsIGZpbGUgb2YgU00gcGx1cy7///8AAAAFAP//AAAJAENQYXJ0c0xlZJb+//8cAgAA2P7//+ABAAABAAEABgAAAAEAAAABAAAAAAAAAAYAAAABAAAAAQAAAAAAAAABAAEAAAAAAMDAwAAAAAAAAAAAAAAA/wAAAAAA9P///wAAAAAAAAAAAAAAAAAAAAAAAAABBwAAMQxNUyBVSSBHb3RoaWMJAAAAAQAETEVEMiUAAAAkPEJhc2ljIEJpdG1hcCBQYXRoPjpcbGVkX2JsdWVfb24uYm1wJTxCYXNpYyBCaXRtYXAgUGF0aD46XGxlZF9ibHVlX29mZi5ibXABAAAAA1A1Mv//AQAMAENQYXJ0c0J1dHRvboj///8cAgAAAAAAAN0BAAABAAEABgAAAAEAAAABAAAAAAAAAAYAAAABAAAAAQAAAAAAAAABAAEAAAAAAMDAwAAAAAAAAAAAAAAA/wAAAAAA9P///wAAAAAAAAAAAAAAAAAAAAAAAAABBwAAMQxNUyBVSSBHb3RoaWMJAAAAAQAKU1cxIC0gUHVzaCUAAAApPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfZG93bi5ibXAnPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfdXAuYm1wAAABACBOAAAQUDEzNy9FSTEzNy9JTlRQMAAAACBOAAABAAGAEP///xwCAABS////4AEAAAEAAQAGAAAAAQAAAAEAAAAAAAAABgAAAAEAAAABAAAAAAAAAAEAAQAAAAAAwMDAAAAAAAAAAAAAAAD/AAAAAAD0////AAAAAAAAAAAAAAAAAAAAAAAAAAEHAAAxDE1TIFVJIEdvdGhpYwkAAAABAARMRUQxJQAAACQ8QmFzaWMgQml0bWFwIFBhdGg+OlxsZWRfYmx1ZV9vbi5ibXAlPEJhc2ljIEJpdG1hcCBQYXRoPjpcbGVkX2JsdWVfb2ZmLmJtcAEAAAADUDUzA4AAAAAAHAIAAHgAAADdAQAAAQABAAYAAAABAAAAAQAAAAAAAAAGAAAAAQAAAAEAAAAAAAAAAQABAAAAAADAwMAAAAAAAAAAAAAAAP8AAAAAAPT///8AAAAAAAAAAAAAAAAAAAAAAAAAAQcAADEMTVMgVUkgR290aGljCQAAAAEADFNXMSAtIFRvZ2dsZSUAAAApPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2dyYXlfZG93bi5ibXAnPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2dyYXlfdXAuYm1wAAABAPQBAAAQUDEzNy9FSTEzNy9JTlRQMAEAAPQBAAAAAAOAtAAAABwCAAAsAQAA3QEAAAEAAQAGAAAAAQAAAAEAAAAAAAAABgAAAAEAAAABAAAAAAAAAAEAAQAAAAAAwMDAAAAAAAAAAAAAAAD/AAAAAAD0////AAAAAAAAAAAAAAAAAAAAAAAAAAEHAAAxDE1TIFVJIEdvdGhpYwkAAAABAAVSRVNFVCUAAAApPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfZG93bi5ibXAnPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfdXAuYm1wAAABACBOAAAGX1JFU0VUAAAAIE4AAAAA</Simulator-Panel-Contents-0>
-      <Simulator-PrmFile-Contents>AQAAACsAAABzdGRpbwAAAAEAAACwFn4TAM5tAKU913WwFn4T7NpPAHc913XQFn4TQj3XddGUMBL4208AtBZ+EwEAAACwFn4TsBZ+EwEAAAC42k8AWNtPADTbTwDg+9p1HZybZ/7///9A208AA1LJcgEAAACwFn4Tq4hrMwgAAABQUclyL1PJchP213XwatV1+GrVdQgAAAAo4MkegNtPAFgY5nVFySd1bNtPAPjbTwBAU8lyCAAAAFTbTwB7/LR1UNtPAAJz2HXQFn4TeNtPAE5TyXKwFn4TgSsmdeYXHcUAAAAArNtPAIjbTwDF/Ch1/////5TbTwDMKyZ1ChcdxfTbTwDE208AJwAAAAEAAQABAAAAECcAAAAAAAAA6////wgAAAAwMDAwMDAwMAIAAAAuXA==</Simulator-PrmFile-Contents>
-      <Simulator-PrsFile-Contents>W1BhbmVsXQ0KUHVsbFVwIFBpbnM9DQpQdWxsRG93biBQaW5zPQ0KV2luZG93WzBdIExlZnQ9MA0KV2luZG93WzBdIFRvcD0wDQpXaW5kb3dbMF0gUmlnaHQ9Nzk0DQpXaW5kb3dbMF0gQm90dG9tPTEzNg0KV2luZG93WzBdIFNob3c9MQ0KV2luZG93WzBdIERvY3VtZW50IE5hbWU9UlRPU0RlbW8wLnBubA0KV2luZG93IENvdW50PTENCltNYWluXQ0KRmxhZz0wDQpTaG93U3R5bGU9MQ0KTWluUG9zaXRpb24tWD0tMQ0KTWluUG9zaXRpb24tWT0tMQ0KTWF4UG9zaXRpb24tWD0tMQ0KTWF4UG9zaXRpb24tWT0tMQ0KTm9ybWFsUG9zaXRpb24tTGVmdD0xODQNCk5vcm1hbFBvc2l0aW9uLVRvcD0wDQpOb3JtYWxQb3NpdGlvbi1SaWdodD0xMTk4DQpOb3JtYWxQb3NpdGlvbi1Cb3R0b209MzQzDQo=</Simulator-PrsFile-Contents>
+      <Simulator-Panel-Contents-0>FlBhbmVsIGZpbGUgb2YgU00gcGx1cy7///8AAAAFAP//AAAJAENQYXJ0c0xlZHD+//8cAgAArf7//98BAAABAAEABgAAAAEAAAABAAAAAAAAAAYAAAABAAAAAQAAAAAAAAABAAEAAAAAAMDAwAAAAAAAAAAAAAAA/wAAAAAA9P///wAAAAAAAAAAAAAAAAAAAAAAAAABBwAAMQxNUyBVSSBHb3RoaWMJAAAAAQAETEVEMiUAAAAkPEJhc2ljIEJpdG1hcCBQYXRoPjpcbGVkX2JsdWVfb24uYm1wJTxCYXNpYyBCaXRtYXAgUGF0aD46XGxlZF9ibHVlX29mZi5ibXABAAAAA1A1Mv//AQAMAENQYXJ0c0J1dHRvbhD///8cAgAAnP///90BAAABAAEABgAAAAEAAAABAAAAAAAAAAYAAAABAAAAAQAAAAAAAAABAAEAAAAAAMDAwAAAAAAAAAAAAAAA/wAAAAAA9P///wAAAAAAAAAAAAAAAAAAAAAAAAABBwAAMQxNUyBVSSBHb3RoaWMJAAAAAQAKU1cxIC0gUHVzaCUAAAApPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfZG93bi5ibXAnPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfdXAuYm1wAAABACBOAAAQUDEzNy9FSTEzNy9JTlRQMAAAACBOAAABAAGAwP7//xwCAAD9/v//3wEAAAEAAQAGAAAAAQAAAAEAAAAAAAAABgAAAAEAAAABAAAAAAAAAAEAAQAAAAAAwMDAAAAAAAAAAAAAAAD/AAAAAAD0////AAAAAAAAAAAAAAAAAAAAAAAAAAEHAAAxDE1TIFVJIEdvdGhpYwkAAAABAARMRUQxJQAAACQ8QmFzaWMgQml0bWFwIFBhdGg+OlxsZWRfYmx1ZV9vbi5ibXAlPEJhc2ljIEJpdG1hcCBQYXRoPjpcbGVkX2JsdWVfb2ZmLmJtcAEAAAADUDUzA4Cc////HAIAACgAAADdAQAAAQABAAYAAAABAAAAAQAAAAAAAAAGAAAAAQAAAAEAAAAAAAAAAQABAAAAAADAwMAAAAAAAAAAAAAAAP8AAAAAAPT///8AAAAAAAAAAAAAAAAAAAAAAAAAAQcAADEMTVMgVUkgR290aGljCQAAAAEADFNXMSAtIFRvZ2dsZSUAAAApPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2dyYXlfZG93bi5ibXAnPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2dyYXlfdXAuYm1wAAABAPQBAAAQUDEzNy9FSTEzNy9JTlRQMAEAAPQBAAAAAAOAPAAAABwCAADIAAAA3QEAAAEAAQAGAAAAAQAAAAEAAAAAAAAABgAAAAEAAAABAAAAAAAAAAEAAQAAAAAAwMDAAAAAAAAAAAAAAAD/AAAAAAD0////AAAAAAAAAAAAAAAAAAAAAAAAAAEHAAAxDE1TIFVJIEdvdGhpYwkAAAABAAVSRVNFVCUAAAApPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfZG93bi5ibXAnPEJhc2ljIEJpdG1hcCBQYXRoPjpcYnV0dG9uX2J1bGVfdXAuYm1wAAABACBOAAAGX1JFU0VUAAAAIE4AAAAA</Simulator-Panel-Contents-0>
+      <Simulator-PrmFile-Contents>AQAAACsAAABzdGRpbwAAAAEAAADAEyMg0MMQAaU99HXAEyMgDN73AHc99HXgEyMgQj30dXUDL5oY3/cAxBMjIAEAAADAEyMgwBMjIAEAAADY3fcAeN73AFTe9wDg+/d1WQ/Z7P7///9g3vcAA1IibwEAAADAEyMgRJ9hHQgAAABQUSJvL1MibxP29HXwavJ1+GrydQYAAAC4lGomoN73AFgYA3ZFyUpsjN73ABjf9wBAUyJvCAAAAHTe9wB7/EJ3cN73AAJz9XXgEyMgmN73AE5TIm/AEyMggStJbJoSiZAAAAAAzN73AKje9wDF/Ets/////7Te9wDMK0lsthKJkBTf9wDk3vcAJwAAAAEAAQABAAAAECcAAAAAAAAA6////wgAAAAwMDAwMDAwMAIAAAAuXHNlcmlhbAAAAQAAAMATIyDQwxABpT30dcATIyAM3vcAdz30deATIyBCPfR1dQMvmhjf9wDEEyMgAQAAAMATIyDAEyMgAQAAANjd9wB43vcAVN73AOD793VZD9ns/v///2De9wADUiJvAQAAAMATIyBEn2EdCAAAAFBRIm8vUyJvE/b0dfBq8nX4avJ1BgAAALiUaiag3vcAWBgDdkXJSmyM3vcAGN/3AEBTIm8IAAAAdN73AHv8Qndw3vcAAnP1deATIyCY3vcATlMib8ATIyCBK0lsmhKJkAAAAADM3vcAqN73AMX8S2z/////tN73AMwrSWy2EomQFN/3AOTe9wC4AAAAAQAAAAgAAAAwMDAwMDAwMgYAAABVQVJUXzEAAIA/BgAAAFVBUlRfMQAAAAAAAAAAAQAAAAEAAAAIAAAAgIQeAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAAAAAAAAAHQAAAAAAAAAYQAAAAAAAABzAAAAAAAAAGsAAAAAAAAALQAAAAAAAABzAAAAAAAAAHQAAAAAAAAAYQAAAAAAAAB0AAAAAAAAAHMAAAAAAAAADQAAAA==</Simulator-PrmFile-Contents>
+      <Simulator-PrsFile-Contents>W0Jyb3dzZVdhdmVdDQpXaW5kb3dbMF0gTGVmdD0wDQpXaW5kb3dbMF0gVG9wPTANCldpbmRvd1swXSBSaWdodD05OTQNCldpbmRvd1swXSBCb3R0b209MjEwDQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gWm9vbT0wDQpXaW5kb3dbMF0gUGluIENvdW50PTUNCldpbmRvd1swXSBQaW5bMF1OYW1lPVA1Mg0KV2luZG93WzBdIFBpblswXUZ1bmNOYW1lPUxFRDINCldpbmRvd1swXSBQaW5bMF1Jc0FuYWxvZz0wDQpXaW5kb3dbMF0gUGluWzFdTmFtZT1QNTMNCldpbmRvd1swXSBQaW5bMV1GdW5jTmFtZT1MRUQxDQpXaW5kb3dbMF0gUGluWzFdSXNBbmFsb2c9MA0KV2luZG93WzBdIFBpblsyXU5hbWU9UDEzNy9FSTEzNy9JTlRQMA0KV2luZG93WzBdIFBpblsyXUZ1bmNOYW1lPVNXMQ0KV2luZG93WzBdIFBpblsyXUlzQW5hbG9nPTANCldpbmRvd1swXSBQaW5bM11OYW1lPVAwMy9BTkkxNi9TSTEwL1J4RDEvU0RBMTANCldpbmRvd1swXSBQaW5bM11GdW5jTmFtZT1SeEQxDQpXaW5kb3dbMF0gUGluWzNdSXNBbmFsb2c9MA0KV2luZG93WzBdIFBpbls0XU5hbWU9UDAyL0FOSTE3L1NPMTAvVHhEMQ0KV2luZG93WzBdIFBpbls0XUZ1bmNOYW1lPVR4RDENCldpbmRvd1swXSBQaW5bNF1Jc0FuYWxvZz0wDQpXaW5kb3cgQ291bnQ9MQ0KW1BhbmVsXQ0KUHVsbFVwIFBpbnM9DQpQdWxsRG93biBQaW5zPQ0KV2luZG93WzBdIExlZnQ9MA0KV2luZG93WzBdIFRvcD0yMTANCldpbmRvd1swXSBSaWdodD02NTQNCldpbmRvd1swXSBCb3R0b209MzQ2DQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gRG9jdW1lbnQgTmFtZT1SVE9TRGVtbzAucG5sDQpXaW5kb3cgQ291bnQ9MQ0KW1NlcmlhbF0NCldpbmRvd1swXSBJRk5hbWU9MDAwMDAwMDINCldpbmRvd1swXSBMZWZ0PTY1NA0KV2luZG93WzBdIFRvcD0yMTANCldpbmRvd1swXSBSaWdodD05OTQNCldpbmRvd1swXSBCb3R0b209NzI0DQpXaW5kb3dbMF0gU2hvdz0xDQpXaW5kb3dbMF0gTmFtZT1VQVJUXzENCldpbmRvd1swXSBEbGdMZWZ0PTQyOTQ5NjcyNzYNCldpbmRvd1swXSBEbGdUb3A9NDI5NDk2NzI5MA0KV2luZG93WzBdIERsZ1JpZ2h0PTMwOA0KV2luZG93WzBdIERsZ0JvdHRvbT0yNjcNCldpbmRvd1swXSBEbGdWaXNpYmxlPTENCldpbmRvd1swXSBEbGdGbG9hdGluZz0wDQpXaW5kb3dbMF0gRGxnWFBvcz04NTINCldpbmRvd1swXSBEbGdZUG9zPTY0MQ0KV2luZG93WzBdIFN0eWxlPTU5NDIyDQpXaW5kb3cgQ291bnQ9MQ0KW01haW5dDQpGbGFnPTANClNob3dTdHlsZT0xDQpNaW5Qb3NpdGlvbi1YPS0xDQpNaW5Qb3NpdGlvbi1ZPS0xDQpNYXhQb3NpdGlvbi1YPS0xDQpNYXhQb3NpdGlvbi1ZPS0xDQpOb3JtYWxQb3NpdGlvbi1MZWZ0PTE4Mg0KTm9ybWFsUG9zaXRpb24tVG9wPTENCk5vcm1hbFBvc2l0aW9uLVJpZ2h0PTExOTYNCk5vcm1hbFBvc2l0aW9uLUJvdHRvbT05MzINCg==</Simulator-PrsFile-Contents>
     </Instance>
     <Instance Guid="754eca4d-0f70-4c47-97d1-5dfcddd4123d">
       <DeviceChangedCounter>0</DeviceChangedCounter>
