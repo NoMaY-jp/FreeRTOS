@@ -6,10 +6,10 @@
 	<VEModelDiagram.BackgroundImageStretchOption>true</VEModelDiagram.BackgroundImageStretchOption>
 </DIAGRAM>
 <IMAGE>
-	<VEModelChildElement.LocationX>26</VEModelChildElement.LocationX>
-	<VEModelChildElement.LocationY>26</VEModelChildElement.LocationY>
-	<VEModelChildElement.SizeCX>124</VEModelChildElement.SizeCX>
-	<VEModelChildElement.SizeCY>124</VEModelChildElement.SizeCY>
+	<VEModelChildElement.LocationX>25</VEModelChildElement.LocationX>
+	<VEModelChildElement.LocationY>25</VEModelChildElement.LocationY>
+	<VEModelChildElement.SizeCX>125</VEModelChildElement.SizeCX>
+	<VEModelChildElement.SizeCY>125</VEModelChildElement.SizeCY>
 	<VEModelChildElement.expressionTitleVisible>true</VEModelChildElement.expressionTitleVisible>
 	<VEModelChildElement.minRange>0.0</VEModelChildElement.minRange>
 	<VEModelChildElement.maxRange>100.0</VEModelChildElement.maxRange>
