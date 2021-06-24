@@ -4,7 +4,11 @@
 #include <stdlib.h>
 
 /* Replacement to be thread-safe (in case of other than using heap_3.c). */
+#if defined(__CCRL__)
+void __near * __far malloc( size_t xWantedSize )
+#else
 void *malloc( size_t xWantedSize )
+#endif
 {
 #if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
     return pvPortMalloc( xWantedSize );
@@ -19,7 +23,11 @@ void *malloc( size_t xWantedSize )
 }
 
 /* Replacement to be thread-safe (in case of other than using heap_3.c). */
+#if defined(__CCRL__)
+void __far free( void __near *pv )
+#else
 void free( void *pv )
+#endif
 {
 #if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
     vPortFree( pv );
