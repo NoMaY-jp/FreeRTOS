@@ -71,7 +71,7 @@
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadImage" value="true"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.loadSymbols" value="true"/>
     <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.pcRegister" value=""/>
-    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="break vAssertCalled&#13;&#10;clear vAssertCalled&#13;&#10;break vAssertCalled&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;disable $bpnum"/>
+    <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value="break vAssertCalled&#13;&#10;disable $bpnum&#13;&#10;clear vAssertCalled&#13;&#10;break vAssertCalled&#13;&#10;disable $bpnum&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;disable $bpnum&#13;&#10;clear sim_debugger_console.c:1&#13;&#10;dprintf sim_debugger_console.c:1,&quot;%s&quot;,msg&#13;&#10;disable $bpnum"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setPcRegister" value="false"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setResume" value="true"/>
     <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>
