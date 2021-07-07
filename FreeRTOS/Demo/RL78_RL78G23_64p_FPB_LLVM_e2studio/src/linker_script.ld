@@ -8,8 +8,8 @@ MEMORY
 	OCDROM : ORIGIN = 0x1ff00, LENGTH = 0x100
 	ROM : ORIGIN = 0xD8, LENGTH = 130344
 	MIRROR : ORIGIN = 0xF3000, LENGTH = 36608
+	OCDTR : ORIGIN = 0xFC300, LENGTH = 1024
 	RAM : ORIGIN = 0xFBF00, LENGTH = 16384
-/*	RAM : ORIGIN = 0xFC700, LENGTH = 14336	*/
 }
 SECTIONS
 {
@@ -131,7 +131,7 @@ SECTIONS
 		*(.jcr)
 		. = ALIGN(2);
 	} > ROM
-	.data 0xFBF00: AT(_mdata)
+	.data 0xFC700: AT(_mdata)
 	{
 		. = ALIGN(2);
 		__data = .;

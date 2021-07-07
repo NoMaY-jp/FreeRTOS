@@ -124,10 +124,10 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.show.566816167" name="Output method (-show)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.show" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.show.all" valueType="enumerated"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.stack.364441647" name="Outputs a stack use information file (-stack)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.stack" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noneLinkageOrderList.120249716" name="None(Linkage order list)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.noneLinkageOrderList" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/RenesasSimDebug/sim_debugger_console.obj&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/CallWalker/cstart.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/CallWalker/resetprg.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/RenesasSimDebug/sim_debugger_console.obj&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;.\src/smc_integration/RenesasSimDebug/sim_debug_mode_hook.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_startup/freertos_helper.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_startup/freertos_object_init.obj&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;.\src/frtos_startup/freertos_start.obj&quot;"/>
@@ -206,6 +206,7 @@
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.section.1213863316" name="Sections (-start)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.section" useByScannerDiscovery="false" value="" valueType="string"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.optimize.478894127" name="Optimization type (-nooptimize/-optimize)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.optimize" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.optimize.speed" valueType="enumerated"/>
 								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.c99Library.565469306" name="Use C99 edition libraries (-library)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.c99Library" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.1384781596" name="RAM area without section (-self/-ocdtr/-ocdhpi)" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea" useByScannerDiscovery="false" value="com.renesas.cdt.managedbuild.renesas.ccrl.linker.option.RAMarea.ocdtr" valueType="enumerated"/>
 								<inputType id="Base.Linker.ccrl.inputType.2003035264" name="Linker InputType" superClass="Base.Linker.ccrl.inputType"/>
 							</tool>
 							<tool id="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter.483999633" name="Converter" superClass="com.renesas.cdt.managedbuild.renesas.ccrl.base.converter">

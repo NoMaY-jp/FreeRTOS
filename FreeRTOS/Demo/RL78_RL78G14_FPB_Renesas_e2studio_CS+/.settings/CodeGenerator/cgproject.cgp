@@ -147,7 +147,7 @@
     <UseSecurityId Name="GI" Text="0" />
     <SecurityId Name="GIValue" Text="00000000000000000000" />
     <LinkDirectiveFile Name="D0" Text="lk.dr" />
-    <OnChipDebugTraceDTC Name="GTraceRam" Text="2" Trigger="ocdtraceram">
+    <OnChipDebugTraceDTC Name="GTraceRam" Text="1" Trigger="ocdtraceram">
       <Effect>
         <DTC />
       </Effect>
@@ -157,7 +157,7 @@
         <DTC />
       </Effect>
     </DataFlashDTC>
-    <OnChipDebugTrace Name="GTrace" Text="2" />
+    <OnChipDebugTrace Name="GTrace" Text="1" />
     <OnChipDebugOptionBytes Name="GO" Text="1" />
     <OnChipDebugOptionBytesValue Name="GOValue" Text="85" />
     <StartAddressOfOnChipDebugOptionBytes Name="GOStart" Text="7FF00" />
@@ -198,7 +198,7 @@
     <OCDROM_Address Name="OCDROM_Address" Text="0007FF00" />
     <OCDROM_Length Name="OCDROM_Length" Text="256" />
     <HasRRMRam Name="HasRRMRam" Text="7FF00" />
-    <HasTraceRam Name="HasTraceRam" Text="" />
+    <HasTraceRam Name="HasTraceRam" Text="F4300" />
     <PrjVersion Name="PrjVersion" Text="1.2.0.1" />
     <ProductVersion Name="ProductVersion" Text="2.18.00.01" />
     <LinkFileName Name="LinkFileName" Text="" />
@@ -1760,6 +1760,7 @@
         <ocdstart Name="ocdstart" Value="7FF00" />
         <rrm Name="rrm" Value="7FF00" />
         <cg_pms_value Name="cg_pms_value" Value="00" />
+        <gtraceused Name="gtraceused" Value="" />
       </GlobleUserTag>
     </TAG>
   </DIR>
@@ -1865,7 +1866,7 @@
       <setting name="RESET_PIN_UNUSED" value="false" />
       <setting name="On_chip_debug" value="used" />
       <setting name="RRM" value="unused" />
-      <setting name="Trace" value="Unused" />
+      <setting name="Trace" value="Used" />
       <setting name="Erase_flash_memory" value="no" />
       <setting name="Security_ID_setting" value="used" />
       <setting name="Security_ID" value="0x00000000000000000000" />

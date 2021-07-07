@@ -426,6 +426,9 @@ void vPrintString(const char *pcMessage)
 ******************************************************************************/
 void Processing_Before_Start_Kernel(void)
 {
+    /* Just for setting a breakpoint. */
+    nop();
+
 #if( mainCREATE_NON_STANDARD_RTOS_DEMO == 1 )
 
 #if 0

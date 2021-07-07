@@ -8,6 +8,7 @@ MEMORY
 	OCDROM : ORIGIN = 0x7ff00, LENGTH = 0x100
 	ROM : ORIGIN = 0xD8, LENGTH = 523560
 	MIRROR : ORIGIN = 0xF3000, LENGTH = 3840
+	OCDTR : ORIGIN = 0xF4300, LENGTH = 1024
 	RAM : ORIGIN = 0xF3F00, LENGTH = 49152
 }
 SECTIONS
@@ -124,7 +125,7 @@ SECTIONS
 		*(.jcr)
 		. = ALIGN(2);
 	} > ROM
-	.data 0xF3F00: AT(_mdata)
+	.data 0xF4700: AT(_mdata)
 	{
 		. = ALIGN(2);
 		_data = .;
@@ -152,6 +153,10 @@ SECTIONS
 		_stack = .;
 		ASSERT((_stack > (_end + stack_size)), "Error: Too much data - no room left for the stack");
 	} > RAM
+	.ocd_traceram 0xf4300 : AT(0xf4300)
+	{
+		KEEP(*(.ocd_traceram))
+	} >RAM
 .dtc_vectortable 0xffd00 : AT(0xffd00)
 	{
 		KEEP(*(.dtc_vectortable))

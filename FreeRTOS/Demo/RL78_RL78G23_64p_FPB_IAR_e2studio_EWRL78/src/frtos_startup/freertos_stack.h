@@ -99,7 +99,7 @@ extern "C" {
 #define task_LED1_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH( 256 )
 #define task_CONIO_STACK_BUFF_DEPTH stackBYTES_TO_DEPTH( 256 )
 #define main_task_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH(  64 )
-#define IdleTask_STACK_BUFF_DEPTH   stackBYTES_TO_DEPTH(  64 )
+#define IdleTask_STACK_BUFF_DEPTH   stackBYTES_TO_DEPTH( 256 )
 #define TimerTask_STACK_BUFF_DEPTH  stackBYTES_TO_DEPTH(   0 )
 
 #endif

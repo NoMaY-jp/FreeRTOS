@@ -41,17 +41,50 @@ void free( void *pv )
 
 #if defined(__GNUC__) /* And also in case of LLVM */
 
-int8_t *sbrk( size_t size );
+/* Maybe not called but prepared but for the sake of fool-proof. */
 
-/* Maybe not called but necessary for linking without an undefined error. */
-int8_t *sbrk( size_t size )
+void *_malloc_r( struct _reent *xReent, size_t xWantedSize )
 {
-    INTERNAL_NOT_USED( size );
+    INTERNAL_NOT_USED( xReent );
+    INTERNAL_NOT_USED( xWantedSize );
 
     /* Force an assert. */
     configASSERT( ( volatile void * ) NULL );
 
-    return (int8_t *)-1;
+    return NULL;
+}
+
+void *_calloc_r( struct _reent *xReent, size_t xWantedNum, size_t xWantedSize )
+{
+    INTERNAL_NOT_USED( xReent );
+    INTERNAL_NOT_USED( xWantedNum );
+    INTERNAL_NOT_USED( xWantedSize );
+
+    /* Force an assert. */
+    configASSERT( ( volatile void * ) NULL );
+
+    return NULL;
+}
+
+void _free_r( struct _reent *xReent, void * pvMemPtr )
+{
+    INTERNAL_NOT_USED( xReent );
+    INTERNAL_NOT_USED( pvMemPtr );
+
+    /* Force an assert. */
+    configASSERT( ( volatile void * ) NULL );
+}
+
+void *_realloc_r( struct _reent *xReent, void *pvMemPtr, size_t xWantedSize )
+{
+    INTERNAL_NOT_USED( xReent );
+    INTERNAL_NOT_USED( pvMemPtr );
+    INTERNAL_NOT_USED( xWantedSize );
+
+    /* Force an assert. */
+    configASSERT( ( volatile void * ) NULL );
+
+    return NULL;
 }
 
 #endif /* defined(__GNUC__) */ /* And also in case of LLVM */

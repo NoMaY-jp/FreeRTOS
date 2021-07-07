@@ -59,6 +59,8 @@ __root const uint8_t opbyte3 = 0x85U;
 #pragma location = "SECUID"
 __root const uint8_t secuid[10] = 
     {0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U};
+/* Secure trace RAM area */
+__no_init __root uint8_t ocdtraceram[1024] @ 0xF4300;
 
 void R_MAIN_UserInit(void);
 

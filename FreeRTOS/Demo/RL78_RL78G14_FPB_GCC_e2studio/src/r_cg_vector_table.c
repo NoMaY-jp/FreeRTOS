@@ -45,6 +45,9 @@ const uint8_t Option_Bytes[] OPTION_SECT =
 #define SECURITYID_SECT          __attribute__ ((section (".security_id")))
 const uint8_t Security_Id[] SECURITYID_SECT = 
     {0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U, 0x00U};
+/* Secure trace RAM area */
+#define OCDTRACERAM_SECT          __attribute__ ((section (".ocd_traceram")))
+uint8_t Ocd_TraceRam[1024] OCDTRACERAM_SECT;
 
 #define VEC          __attribute__ ((section (".vec")))
 const void *HardwareVectors[] VEC  = {

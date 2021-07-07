@@ -732,7 +732,7 @@
                 <option>
                     <name>IlinkConfigDefines</name>
                     <state>__RESERVE_OCD_ROM=1</state>
-                    <state>__RESERVE_OCD_TRACE_RAM=0</state>
+                    <state>__RESERVE_OCD_TRACE_RAM=1</state>
                     <state>__RESERVE_HOTPLUGIN_RAM=0</state>
                 </option>
                 <option>
