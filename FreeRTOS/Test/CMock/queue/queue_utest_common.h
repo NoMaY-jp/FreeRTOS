@@ -1,5 +1,5 @@
 /*
- * FreeRTOS V202012.00
+ * FreeRTOS V202104.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -68,13 +68,15 @@
 #define TICKS_TO_WAIT             10
 #define NUM_CALLS_TO_INTERCEPT    TICKS_TO_WAIT / 2
 
+/* ===========================  FUNCTION PROTOTYPES  ======================== */
+void setxMaskAssertAndAbort( bool mask );
+bool getxMaskAssertAndAbort( );
 /* ============================  GLOBAL VARIABLES =========================== */
-bool xMaskAssertAndAbort;
 
 /* =================================  MACROS ================================ */
 
 /**
- * @brief Expect a configASSERT from the funciton called.
+ * @brief Expect a configASSERT from the function called.
  *  Break out of the called function when this occurs.
  * @details Use this macro when the call passsed in as a parameter is expected
  * to cause invalid memory access.
@@ -82,7 +84,7 @@ bool xMaskAssertAndAbort;
 #define EXPECT_ASSERT_BREAK( call )             \
     do                                          \
     {                                           \
-        xMaskAssertAndAbort = true;             \
+        setxMaskAssertAndAbort( true );         \
         CEXCEPTION_T e = CEXCEPTION_NONE;       \
         Try                                     \
         {                                       \
@@ -115,7 +117,7 @@ void vPortFree( void * pv );
  *          provided assertion is false and the fakeAssertExpectFail()
  *          function was not called prior to the assertion.
  * @param assertion Boolean assertion passed into the configASSERT() macro
- * @param file Name of the file in which the assert occured
+ * @param file Name of the file in which the assert occurred
  * @param line Line number of the assertion
  * @param num_calls Number of times configASSERT() was called
  */
@@ -185,7 +187,7 @@ void fakeAssertExpectFail( void );
 
 /**
  * @brief Determine if a configASSERT occurred and clear the assertion flag.
- * @return true if an assert occureed since the start of the test suite or
+ * @return true if an assert occurred since the start of the test suite or
  *  the last call to fakeAssertGetFlagAndClear.
  * @return false if no assert was triggered.
  */
@@ -247,7 +249,7 @@ void vSetQueueTxLock( QueueHandle_t xQueue,
 BaseType_t fakeAssertGetNumAssertsAndClear( void );
 
 /**
- * @brief Check that the number of failed configASSERTs that have occured in this test case equals the given number.
+ * @brief Check that the number of failed configASSERTs that have occurred in this test case equals the given number.
  */
 void fakeAssertVerifyNumAssertsAndClear( uint32_t ulNumAssertsExpected );
 
@@ -275,7 +277,7 @@ void td_port_register_stubs( void );
 /**
  * @brief Validate ending state of td_port related variables.
  * @details This function should be called after every test case.
- * It verifies the state of the variables used by td_port funcitons and
+ * It verifies the state of the variables used by td_port functions and
  * frees resources used by CMock.
  */
 void td_port_teardown_check( void );

@@ -1,5 +1,5 @@
 /*
- * FreeRTOS V202012.00
+ * FreeRTOS V202104.00
  * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -134,70 +134,6 @@ void test_macro_xQueueSend_fail_full( void )
 }
 
 /**
- * @brief Test xQueueSend with a queue of uxQueueLength=0, uxItemSize=0
- * @details This is an invalid queue configuration and causes a failed configASSERT.
- * @coverage xQueueGenericSend
- */
-void test_macro_xQueueSend_fail_zeroQueueLength_zeroItemSize()
-{
-    /* Expect that xQueueCreate will assert because a length of 0 is invalid */
-    fakeAssertExpectFail();
-
-    QueueHandle_t xQueue = xQueueCreate( 0, 0 );
-
-    /* Clear the assert flag*/
-    fakeAssertGetFlagAndClear();
-
-    uint32_t testVal = getNextMonotonicTestValue();
-
-    TEST_ASSERT_EQUAL( pdFALSE, xQueueSend( xQueue, &testVal, 0 ) );
-
-    vQueueDelete( xQueue );
-}
-
-/**
- * @brief Test xQueueSend with a queue of uxQueueLength=0, uxItemSize=0 and NULL item.
- * @details This is an invalid queue configuration and causes a failed configASSERT.
- * @coverage xQueueGenericSend
- */
-void test_macro_xQueueSend_fail_zeroQueueLength_zeroItemSize_null()
-{
-    /* Expect that xQueueCreate will assert because a length of 0 is invalid */
-    fakeAssertExpectFail();
-
-    QueueHandle_t xQueue = xQueueCreate( 0, 0 );
-
-    /* Clear the assert flag*/
-    fakeAssertGetFlagAndClear();
-
-    TEST_ASSERT_EQUAL( pdFALSE, xQueueSend( xQueue, NULL, 0 ) );
-
-    vQueueDelete( xQueue );
-}
-
-/**
- * @brief Test xQueueSend with uxQueueLength=0, uxItemSize=1
- * @details xQueueSend should return pdFALSE because the queue is full.
- * @coverage xQueueGenericSend
- */
-void test_macro_xQueueSend_zeroQueueLength_oneItemSize( void )
-{
-    /* Expect that xQueueCreate will assert because a length of 0 is invalid */
-    fakeAssertExpectFail();
-
-    QueueHandle_t xQueue = xQueueCreate( 0, 1 );
-
-    /* Clear the assert flag*/
-    fakeAssertGetFlagAndClear();
-
-    uint8_t testVal = getNextMonotonicTestValue();
-
-    TEST_ASSERT_EQUAL( pdFALSE, xQueueSend( xQueue, &testVal, 0 ) );
-
-    vQueueDelete( xQueue );
-}
-
-/**
  * @brief Test xQueueSend with uxQueueLength=1, uxItemSize=0
  * @details xQueueSend should return pdTRUE because the queue is empty.
  *  This queue is eqivalent to a binary semaphore.
@@ -259,7 +195,7 @@ void test_macro_xQueueSend_oneQueueLength_oneItemSize( void )
 
 /**
  * @brief Test xQueueSend with uxQueueLength=1, uxItemSize=1 and null item.
- * @details xQueueSend should configASSERT becaause of the null item pointer.
+ * @details xQueueSend should configASSERT because of the null item pointer.
  * @coverage xQueueGenericSend
  */
 void test_macro_xQueueSend_oneQueueLength_oneItemSize_null( void )
@@ -371,7 +307,7 @@ void test_macro_xQueueSend_task_waiting_lower_priority_success( void )
 
 /**
  *  @brief Test xQueueSend with taskSCHEDULER_SUSPENDED and timeout=0
- *  @details This should not cause xQueueSend to configASSERT becuase
+ *  @details This should not cause xQueueSend to configASSERT because
  *  xQueueSend is non-blocking when timeout=0.
  *  @coverage xQueueGenericSend
  */
@@ -465,88 +401,6 @@ void test_macro_xQueueSendFromISR_fail( void )
 }
 
 /**
- * @brief Test xQueueSendFromISR with a queue of uxQueueLength=0, uxItemSize=0
- * @details This is an invalid queue configuration and causes a failed configASSERT.
- * @coverage xQueueGenericSendFromISR
- */
-void test_macro_xQueueSendFromISR_fail_zeroQueueLength_zeroItemSize()
-{
-    /* Expect that xQueueCreate will assert because a length of 0 is invalid */
-    fakeAssertExpectFail();
-
-    QueueHandle_t xQueue = xQueueCreate( 0, 0 );
-
-    /* Clear the assert flag*/
-    fakeAssertGetFlagAndClear();
-
-    vFakePortAssertIfInterruptPriorityInvalid_Expect();
-
-    uint32_t testVal = getNextMonotonicTestValue();
-
-    TEST_ASSERT_EQUAL( 0, uxQueueMessagesWaiting( xQueue ) );
-
-    TEST_ASSERT_EQUAL( pdFALSE, xQueueSendFromISR( xQueue, &testVal, 0 ) );
-
-    TEST_ASSERT_EQUAL( 0, uxQueueMessagesWaiting( xQueue ) );
-
-    vQueueDelete( xQueue );
-}
-
-/**
- * @brief Test xQueueSendFromISR with a queue of uxQueueLength=0, uxItemSize=0 and NULL item.
- * @details This is an invalid queue configuration and causes a failed configASSERT.
- * @coverage xQueueGenericSendFromISR
- */
-void test_macro_xQueueSendFromISR_fail_zeroQueueLength_zeroItemSize_null()
-{
-    /* Expect that xQueueCreate will assert because a length of 0 is invalid */
-    fakeAssertExpectFail();
-
-    QueueHandle_t xQueue = xQueueCreate( 0, 0 );
-
-    vFakePortAssertIfInterruptPriorityInvalid_Expect();
-
-    /* Clear the assert flag*/
-    fakeAssertGetFlagAndClear();
-
-    TEST_ASSERT_EQUAL( 0, uxQueueMessagesWaiting( xQueue ) );
-
-    TEST_ASSERT_EQUAL( pdFALSE, xQueueSendFromISR( xQueue, NULL, 0 ) );
-
-    TEST_ASSERT_EQUAL( 0, uxQueueMessagesWaiting( xQueue ) );
-
-    vQueueDelete( xQueue );
-}
-
-/**
- * @brief Test xQueueSendFromISR with uxQueueLength=0, uxItemSize=1
- * @details xQueueSendFromISR should return pdFALSE because the queue is full.
- * @coverage xQueueGenericSendFromISR
- */
-void test_macro_xQueueSendFromISR_zeroQueueLength_oneItemSize( void )
-{
-    /* Expect that xQueueCreate will assert because a length of 0 is invalid */
-    fakeAssertExpectFail();
-
-    QueueHandle_t xQueue = xQueueCreate( 0, 1 );
-
-    /* Clear the assert flag*/
-    fakeAssertGetFlagAndClear();
-
-    uint8_t testVal = getNextMonotonicTestValue();
-
-    vFakePortAssertIfInterruptPriorityInvalid_Expect();
-
-    TEST_ASSERT_EQUAL( 0, uxQueueMessagesWaiting( xQueue ) );
-
-    TEST_ASSERT_EQUAL( pdFALSE, xQueueSendFromISR( xQueue, &testVal, 0 ) );
-
-    TEST_ASSERT_EQUAL( 0, uxQueueMessagesWaiting( xQueue ) );
-
-    vQueueDelete( xQueue );
-}
-
-/**
  * @brief Test xQueueSendFromISR with uxQueueLength=1, uxItemSize=0
  * @details xQueueSendFromISR should return pdTRUE because the queue is empty.
  *  This queue is eqivalent to a binary semaphore.
@@ -614,7 +468,7 @@ void test_macro_xQueueSendFromISR_oneQueueLength_oneItemSize( void )
 
 /**
  * @brief Test xQueueSendFromISR with uxQueueLength=1, uxItemSize=1 and null item.
- * @details xQueueSendFromISR should configASSERT becaause of the null item pointer.
+ * @details xQueueSendFromISR should configASSERT because of the null item pointer.
  * @coverage xQueueGenericSendFromISR
  */
 void test_macro_xQueueSendFromISR_oneQueueLength_oneItemSize_null( void )
@@ -665,7 +519,7 @@ void test_macro_xQueueSendFromISR_task_waiting_higher_priority_null_pxHigherPrio
 /**
  * @brief Test xQueueSendFromISR with a higher priority task waiting
  * @details Test xQueueSendFromISR with a higher priority task waiting and
- *  verifies that xHigherPriorityTaskWoken is set accoridngly.
+ *  verifies that xHigherPriorityTaskWoken is set accordingly.
  * @coverage xQueueGenericSendFromISR
  */
 void test_macro_xQueueSendFromISR_task_waiting_higher_priority_success( void )
