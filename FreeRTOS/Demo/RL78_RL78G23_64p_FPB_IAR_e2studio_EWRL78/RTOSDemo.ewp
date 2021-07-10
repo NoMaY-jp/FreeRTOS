@@ -21,7 +21,7 @@
                 <option>
                     <name>GenCodeModel</name>
                     <version>0</version>
-                    <state>1</state>
+                    <state>0</state>
                 </option>
                 <option>
                     <name>GenDataModel</name>
@@ -86,7 +86,7 @@
                 </option>
                 <option>
                     <name>GenRTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\lib\dlrlfnf23nf.a</state>
+                    <state>$TOOLKIT_DIR$\lib\dlrlnnf23n.a</state>
                 </option>
                 <option>
                     <name>GenLibInFormatterDescription</name>
@@ -547,8 +547,7 @@
                 </option>
                 <option>
                     <name>AsmDefines</name>
-                    <state>__FAR_MODEL__</state>
-                    <state>__USE_FAR_RT_CALLS__</state>
+                    <state>__NEAR_MODEL__</state>
                     <state>__NEAR_DATA_MODEL__</state>
                 </option>
                 <option>

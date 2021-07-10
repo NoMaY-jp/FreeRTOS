@@ -16,10 +16,10 @@
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeHwSupport::hwSupport.1645285072" name="Disable Hardware Multiplier/Divider Unit" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeHwSupport::hwSupport" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenDevice::deviceSelect.1405470760" name="Device" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenDevice::deviceSelect" useByScannerDiscovery="false" value="R5F104ML&#9;RL78 - R5F104ML" valueType="string"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.General.wtdxToolVersion.750484128" name="wtd version" superClass="iar.wtdx.rl78_v3.toolchain.option.General.wtdxToolVersion" useByScannerDiscovery="false"/>
-							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.1629971180" name="Code model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.OGenCodeModel::kFar" valueType="enumerated"/>
+							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.1629971180" name="Code model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::list.OGenCodeModel::kNear" valueType="enumerated"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::farfar.883245230" name="Use far runtime library calls" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCodeModel::farfar" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::configPath.719352125" name="Configuration file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::configPath" useByScannerDiscovery="false" value="$TOOLKIT_DIR$\LIB\DLib_Config_Normal.h" valueType="string"/>
-							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath.241831809" name="Library file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath" useByScannerDiscovery="false" value="$TOOLKIT_DIR$\LIB\dlrl78fnf23nf.a" valueType="string"/>
+							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath.241831809" name="Library file:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::libraryPath" useByScannerDiscovery="false" value="$TOOLKIT_DIR$\LIB\dlrl78nnf23n.a" valueType="string"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::list.1083510595" name="Library:" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenRuntimeLibrary::list" useByScannerDiscovery="false"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list.422013009" name="Data model" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list" useByScannerDiscovery="false" value="iar.wtdx.rl78_v3.toolchain.option.OGenDataModel::list.OGenDataModel::kNear" valueType="enumerated"/>
 							<option id="iar.wtdx.rl78_v3.toolchain.option.OGenCallingConvention::list.171366783" name="Calling convention" superClass="iar.wtdx.rl78_v3.toolchain.option.OGenCallingConvention::list" useByScannerDiscovery="false"/>
@@ -136,8 +136,7 @@
 								<option defaultValue="true" id="iar.wtdx.rl78_v3.toolchain.option.OAsmDebugInfo::enable.1312281930" name="Generate debug information" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDebugInfo::enable" useByScannerDiscovery="false" valueType="boolean"/>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmCodeModel::codemodel.783990636" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmCodeModel::codemodel" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="iar.wtdx.rl78_v3.toolchain.option.OAsmDefines::symbols.936781286" name="Defined symbols: (one per line)" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDefines::symbols" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="__FAR_MODEL__"/>
-									<listOptionValue builtIn="false" value="__USE_FAR_RT_CALLS__"/>
+									<listOptionValue builtIn="false" value="__NEAR_MODEL__"/>
 									<listOptionValue builtIn="false" value="__NEAR_DATA_MODEL__"/>
 								</option>
 								<option id="iar.wtdx.rl78_v3.toolchain.option.OAsmDataModel::datamodel.1050725549" name="" superClass="iar.wtdx.rl78_v3.toolchain.option.OAsmDataModel::datamodel" useByScannerDiscovery="false"/>
