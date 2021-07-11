@@ -39,7 +39,6 @@ Includes   <System Includes> , "Project Includes"
 #include "r_smc_entry.h"
 #include "demo_main.h"
 #include "demo_specific_io.h"
-#include <stdlib.h>
 
 /******************************************************************************
 Macro definitions
@@ -71,6 +70,9 @@ void vApplicationSetupTimerInterrupt(void);
 #endif /* configSETUP_TICK_INTERRUPT */
 
 /* Hook functions used by FreeRTOS. */
+#if defined(__CCRL__)
+#pragma noinline vAssertCalled
+#endif
 void vAssertCalled(void);
 void vApplicationIdleHook(void);
 void vApplicationTickHook(void);
@@ -84,6 +86,7 @@ void Processing_Before_Start_Kernel(void);
 
 /* Main task. */
 extern void main_task(void *pvParameters);
+
 
 /******************************************************************************
 * Function Name: vApplicationSetupTimerInterrupt
@@ -198,7 +201,6 @@ const uint16_t usCompareMatch = ( usClockHz / configTICK_RATE_HZ ) - 1UL;
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
-#if( configASSERT_DEFINED == 1 )
 void vAssertCalled(void)
 {
     static volatile unsigned long ul;
@@ -227,7 +229,6 @@ void vAssertCalled(void)
     taskEXIT_CRITICAL();
 
 } /* End of function vAssertCalled() */
-#endif /* configASSERT_DEFINED == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationIdleHook
@@ -324,8 +325,11 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
     taskENTER_CRITICAL();
     {
         /* Use the debugger to view the following variables. */
-        volatile TaskHandle_t pxTask_ = pxTask;
-        char * volatile pcTaskName_ = pcTaskName;
+        static volatile TaskHandle_t pxTask_;
+        static char * volatile pcTaskName_;
+
+        pxTask_ = pxTask;
+        pcTaskName_ = pcTaskName;
 
         /* Just prevent from compiler warnings. */
         ( void ) pxTask_;
@@ -397,18 +401,35 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, Stack
 
 /******************************************************************************
 * Function Name: vPrintString
-* Description  : This function is used to write a string to a debug console.
-* Arguments    : None.
+* Description  : This function is used to write a string to the Debug Console.
+*                NOTE: EWRL78 doesn't have such debug console. When you use ICCRL78,
+*                if you want to use the Debug Console, use e2 studio instead.
+* Arguments    : pcMessage -
+*                    Pointer to the string
 * Return Value : None.
 ******************************************************************************/
 void vPrintString(const char *pcMessage)
 {
-    /* Write the string to a debug console, using a critical section
-    as a crude method of mutual exclusion. */
+    /* Write the string to the Debug Console, using a critical section
+    as a crude method of mutual exclusion. If this function is called
+    before the scheduler has been started, taskENTER_CRITICAL() and
+    taskEXIT_CRITICAL() have no effect regarding mutual exclusion. */
 
-    extern void sim_debugger_console( const char *message );
+    #if !defined(DISABLE_DEBUG_CONSOLE)
+    {
+        taskENTER_CRITICAL();
+        {
+            extern void sim_debugger_console( const char *message );
 
-    sim_debugger_console( pcMessage );
+            sim_debugger_console( pcMessage );
+        }
+        taskEXIT_CRITICAL();
+    }
+    #else
+    {
+        INTERNAL_NOT_USED( pcMessage );
+    }
+    #endif
 
 } /* End of function vPrintString() */
 
@@ -427,7 +448,7 @@ void vPrintString(const char *pcMessage)
 void Processing_Before_Start_Kernel(void)
 {
     /* Just for setting a breakpoint. */
-    nop();
+    nop(); /* Processing_Before_Start_Kernel() */
 
 #if( mainCREATE_NON_STANDARD_RTOS_DEMO == 1 )
 

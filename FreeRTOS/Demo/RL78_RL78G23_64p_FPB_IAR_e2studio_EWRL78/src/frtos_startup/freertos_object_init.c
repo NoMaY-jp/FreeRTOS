@@ -49,7 +49,6 @@
  **********************************************************************************************************************/
 void Kernel_Object_init (void);
 void Object_init_manual (void);
-BaseType_t ret;
 /***********************************************************************************************************************
  * Function Name: Kernel_Object_init
  * Description  : This function initializes FreeRTOS objects.
