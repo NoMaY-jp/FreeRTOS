@@ -42,10 +42,6 @@ def AfterDownload():
         if bi.Enable != True:
             debugger.Breakpoint.Disable(bp_number)
 
-    # Set the switch key variable in case of simulator.
-    if debugger.DebugTool.GetType() == DebugTool.Simulator:
-        debugger.Memory.Write(debugger.Address('_renesas_simulator_debugging_key'), 0x00000001, MemoryOption.Word)
-
     common.ThrowExcept = ThrowExceptSave
     common.ViewOutput  = ViewOutputSave
     return

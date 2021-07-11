@@ -33,6 +33,10 @@
 #ifndef FREERTOS_START_H_
 #define FREERTOS_START_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /******************************************************************************
 Macro definitions
 ******************************************************************************/
@@ -71,8 +75,12 @@ Exported global variables
 /******************************************************************************
 Exported global functions (to be accessed by other files)
 ******************************************************************************/
-extern void vPrintString(const char *pcMessage);
 extern void Processing_Before_Start_Kernel(void);
 extern void Kernel_Object_init(void);
+extern void vPrintString(const char *pcMessage);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* FREERTOS_START_H_ */

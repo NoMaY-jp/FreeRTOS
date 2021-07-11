@@ -49,6 +49,11 @@ void Object_init_manual (void);
  * Description  : This function initializes FreeRTOS objects.
  * Arguments    : None.
  * Return Value : None.
+ * Note         : Be aware that auto variables created on the stack in this
+ *                function will be discarded after returning from this function.
+ *                Therefore don't pass the address of auto variables to tasks.
+ *                (Moreover, the stack used before starting scheduler will be
+ *                re-used as interrupt dedicated stack after scheduler started.)
  **********************************************************************************************************************/
 void Kernel_Object_init (void)
 {
@@ -73,6 +78,11 @@ void Kernel_Object_init (void)
  * Description   : This function re-initializes FreeRTOS objects and should be called at runtime.
  * Arguments     : None.
  * Return value  : None.
+ * Note          : Be aware that auto variables created on the stack in this
+ *                 function will be discarded after returning from this function.
+ *                 Therefore don't pass the address of auto variables to tasks.
+ *                 (Moreover, the stack used before starting scheduler will be
+ *                 re-used as interrupt dedicated stack after scheduler started.)
  **********************************************************************************************************************/
 void Object_init_manual (void)
 {

@@ -49,6 +49,8 @@ Includes   <System Includes> , "Project Includes"
 Macro definitions
 ******************************************************************************/
 
+#define NL "\r\n"
+
 /******************************************************************************
 Typedef definitions
 ******************************************************************************/
@@ -71,6 +73,9 @@ Exported global functions (to be accessed by other files)
 void vApplicationSetupTimerInterrupt(void);
 
 /* Hook functions used by FreeRTOS. */
+#if defined(__CCRX__)
+#pragma noinline vAssertCalled
+#endif
 void vAssertCalled(void);
 void vApplicationIdleHook(void);
 void vApplicationTickHook(void);
@@ -250,12 +255,18 @@ void vApplicationSetupTimerInterrupt(void)
 ******************************************************************************/
 void vAssertCalled(void)
 {
-    volatile unsigned long ul = 0;
+    static volatile unsigned long ul;
+
+    /* Set breakpoint at the line below to catch assertion failed. */
+    /* Assertion failed! */
+    /* Assertion failed! */
+    portNOP(); /* Assertion failed! */
+    /* Assertion failed! */
+    /* Assertion failed! */
 
     taskENTER_CRITICAL();
     {
-        vPrintString( "\r\n" );
-        vPrintString( "Assertion failed!\n" );
+        vPrintString( NL "Assertion failed!" NL );
 
         /* Use the debugger to set ul to a non-zero value in order to step out
         of this function to determine why it was called. */
@@ -263,6 +274,9 @@ void vAssertCalled(void)
         {
             portNOP();
         }
+
+        /* Set ul to zero again for the next assertion failed. */
+        ul = 0;
     }
     taskEXIT_CRITICAL();
 
@@ -276,6 +290,7 @@ void vAssertCalled(void)
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configUSE_IDLE_HOOK == 1 )
 void vApplicationIdleHook(void)
 {
     volatile size_t xFreeHeapSpace;
@@ -293,6 +308,7 @@ void vApplicationIdleHook(void)
     ( void ) xFreeHeapSpace;
 
 } /* End of function vApplicationIdleHook() */
+#endif /* configUSE_IDLE_HOOK == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationTickHook
@@ -304,10 +320,11 @@ void vApplicationIdleHook(void)
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configUSE_TICK_HOOK == 1 )
 void vApplicationTickHook(void)
 {
     /* The tick hook is not used by the blinky demo, but is by the full demo. */
-    #if mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 0
+    #if( mainCREATE_SIMPLE_BLINKY_DEMO_ONLY == 0 )
     {
         extern void vFullDemoTickHook( void );
 
@@ -316,6 +333,7 @@ void vApplicationTickHook(void)
     #endif
 
 } /* End of function vApplicationTickHook() */
+#endif /* configUSE_TICK_HOOK == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationMallocFailedHook
@@ -324,6 +342,7 @@ void vApplicationTickHook(void)
 * Arguments    : None.
 * Return Value : None.
 ******************************************************************************/
+#if( configUSE_MALLOC_FAILED_HOOK == 1 )
 void vApplicationMallocFailedHook(void)
 {
     /* Called if a call to pvPortMalloc() fails because there is insufficient
@@ -333,19 +352,20 @@ void vApplicationMallocFailedHook(void)
     configTOTAL_HEAP_SIZE configuration constant in FreeRTOSConfig.h. */
 
     taskENTER_CRITICAL();
-    vPrintString( "\r\n" );
-    vPrintString( "Insufficient heap memory!\n" );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-
-    taskDISABLE_INTERRUPTS();
-    for( ; ; )
     {
-        /* Loop here */
-    };
+        vPrintString( NL "Insufficient heap memory!" NL );
+
+        /* Force an assert. */
+        configASSERT( ( volatile void * ) NULL );
+
+        for( ; ; )
+        {
+            /* Loop here */
+        }
+    }
 
 } /* End of function vApplicationMallocFailedHook() */
+#endif /* configUSE_MALLOC_FAILED_HOOK == 1 */
 
 /******************************************************************************
 * Function Name: vApplicationStackOverflowHook
@@ -357,29 +377,39 @@ void vApplicationMallocFailedHook(void)
 *                    Pointer of where to store the task's name
 * Return Value : None.
 ******************************************************************************/
+#if( configCHECK_FOR_STACK_OVERFLOW != 0 )
 void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
 {
-    ( void ) pcTaskName;
-    ( void ) pxTask;
-
     /* Run time stack overflow checking is performed if
     configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
     function is called if a stack overflow is detected. */
 
     taskENTER_CRITICAL();
-    vPrintString( "\r\n" );
-    vPrintString( "Stack Overflow!\n" );
-
-    /* Force an assert. */
-    configASSERT( ( volatile void * ) NULL );
-
-    taskDISABLE_INTERRUPTS();
-    for( ; ; )
     {
-        /* Loop here */
-    };
+        /* Use the debugger to view the following variables. */
+        static volatile TaskHandle_t pxTask_;
+        static char * volatile pcTaskName_;
+
+        pxTask_ = pxTask;
+        pcTaskName_ = pcTaskName;
+
+        /* Just prevent from compiler warnings. */
+        ( void ) pxTask_;
+        ( void ) pcTaskName_;
+
+        vPrintString( NL "Stack Overflow!" NL );
+
+        /* Force an assert. */
+        configASSERT( ( volatile void * ) NULL );
+
+        for( ; ; )
+        {
+            /* Loop here */
+        }
+    }
 
 } /* End of function vApplicationStackOverflowHook() */
+#endif /* configCHECK_FOR_STACK_OVERFLOW != 0 */
 
 /******************************************************************************
 * Function Name: vPrintString
@@ -388,30 +418,32 @@ void vApplicationStackOverflowHook(TaskHandle_t pxTask, char *pcTaskName)
 *                if you want to use the Debug Console, use e2 studio instead.
 * Arguments    : pcMessage -
 *                    Pointer to the string
-* Arguments    : pcMessage.
 * Return Value : None.
 ******************************************************************************/
 void vPrintString(const char *pcMessage)
 {
-#ifdef ideDISABLE_DEBUG_CONSOLE
-
-    INTERNAL_NOT_USED( pcMessage );
-
-#else
-
     /* Write the string to the Debug Console, using a critical section
-    as a crude method of mutual exclusion. */
+    as a crude method of mutual exclusion. If this function is called
+    before the scheduler has been started, taskENTER_CRITICAL() and
+    taskEXIT_CRITICAL() have no effect regarding mutual exclusion. */
 
-    taskENTER_CRITICAL();
+    #if !defined(DISABLE_DEBUG_CONSOLE)
     {
-        while( *pcMessage )
+        taskENTER_CRITICAL();
         {
-            charput(*pcMessage++);
+            while( *pcMessage )
+            {
+                charput(*pcMessage++);
+            }
         }
+        taskEXIT_CRITICAL();
     }
-    taskEXIT_CRITICAL();
+    #else
+    {
+        INTERNAL_NOT_USED( pcMessage );
+    }
+    #endif
 
-#endif
 } /* End of function vPrintString() */
 
 /******************************************************************************
@@ -420,9 +452,17 @@ void vPrintString(const char *pcMessage)
 *                 semaphore, mutex...) if required.
 * Arguments     : None.
 * Return value  : None.
+* Note          : Be aware that auto variables created on the stack in this
+*                 function will be discarded after returning from this function.
+*                 Therefore don't pass the address of auto variables to tasks.
+*                 (Moreover, the stack used before starting scheduler will be
+*                 re-used as interrupt dedicated stack after scheduler started.)
 ******************************************************************************/
 void Processing_Before_Start_Kernel(void)
 {
+    /* Just for setting a breakpoint. */
+    nop(); /* Processing_Before_Start_Kernel() */
+
 #if 0 /* Generated Renesas Code */
 
     BaseType_t ret;
@@ -525,15 +565,15 @@ static void prvSetupHardware( void )
     src/smc_gen/general/r_cg_hardware_setup.c.) */
     vToggleLED();
 
-    /* Write "\r\n" to the UART and/or the Debug Console. */
-    vSendString( "\r\n" );
+    /* Write new line to the UART and/or the Debug Console. */
+    vSendString( NL );
 }
 /*-----------------------------------------------------------*/
 
 void vToggleLED( void )
 {
     /* Toggle the LED */
-    LED0 = !LED0;
+    LED0 = ~LED0;
 }
 /*-----------------------------------------------------------*/
 
